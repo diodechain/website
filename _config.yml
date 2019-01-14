@@ -47,13 +47,13 @@ jekyll-archives:
 #######################################################
 
 # This is your site title
-title: Sera - OnePage Multi-Purpose Theme
+title: Diode - The IoT Network
 # Website language
 lang: en-US
 # Header Title
-header-title: Create the <strong>Impossible</strong>
+header-title: <strong>The Future of IoT</strong>
 # Header Tagline
-headter-tagline: We Always
+headter-tagline: Welcome to
 
 ####################################
 ######   CTA Header Buttons   ######
@@ -135,7 +135,7 @@ mailchimp:
 #####################################
 #############   About   #############
 #####################################
-about-title: Welcome to Sera
+about-title: Welcome to Diode
 about-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed, suscipit et nisi. Nulla a tellus at turpis gravida congue non sed nisl. Pellentesque scelerisque eu neque et tincidunt.
 
 
