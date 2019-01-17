@@ -9,10 +9,11 @@ A project including full setup for Jekyll, GulpJS, SASS, AutoPrefixer &amp; Brow
 
 To use this project, you'll need the following things installed on your machine.
 
-1. [Jekyll](http://jekyllrb.com/) - `$ gem install jekyll`
-2. [Jekyll-Archives](http://jekyllrb.com) - `$ bundle install`
-3. [NodeJS](http://nodejs.org) - use the installer.
-4. [GulpJS](https://github.com/gulpjs/gulp) - `$ npm install -g gulp` (mac users may need sudo)
+1. Ruby (v2.5.1p57)
+2. [Jekyll](http://jekyllrb.com/) - `$ gem install jekyll`
+3. [Jekyll-Archives](http://jekyllrb.com) - `$ bundle install`
+4. [NodeJS](http://nodejs.org) - use the installer (v6.5.0).
+5. [GulpJS](https://github.com/gulpjs/gulp) - `$ npm install -g gulp` (mac users may need sudo)
 
 ## Local Installation
 
