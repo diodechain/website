@@ -25,6 +25,10 @@ section.site-section {
     }
   }
 
+  div.section-content {
+    text-align: justify;
+  }
+
   // Section Focus
   &.section-focus {
     background-color: $section-focus;

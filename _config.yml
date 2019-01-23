@@ -61,13 +61,13 @@ headter-tagline: Welcome to
 
 # Focus Buttons
 header-focus-button:
-  title: Download Now
-  url: https://themeforest.net/collections/6069390-sera
+  title: Watch Video
+  url: https://youtu.be/uKfKtXYLG78
 
 # Secondary Buttons
 header-secondary-button:
-  title: Discover More
-  url: http://themeforest.net/user/gleesik
+  title: Whitepaper
+  url: whitepaper.pdf
 
 #
 # This is your email adress, contact from send here all emails from contact section
@@ -135,15 +135,24 @@ mailchimp:
 #####################################
 #############   About   #############
 #####################################
-about-title: Welcome to Diode
-about-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed, suscipit et nisi. Nulla a tellus at turpis gravida congue non sed nisl. Pellentesque scelerisque eu neque et tincidunt.
+about-title: Diode IoT Network
+about-description: >-
+  The Diode IoT Network is a new type of transport layer specifically designed for IoT
+  devices. Diode is the first network to implement unforgable network-device authentication
+  based on blockchain technology. Man-In-The middle attacks become impossible and dependencies 
+  on third parties to entrust security are removed. The network has higher security than PKI with
+  much lower overhead and maintenance needs. Truly autonomous.
+  Diode allows developers to build new IoT applications on top of it's network or migrate existing
+  workloads for the higher security and lower operating costs.
+  
 
 
 #####################################
 #############  Features  ############
 #####################################
-features-title: Features
-features-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante.
+features-title: What can Diode do for IoT?
+features-description: >- 
+  The best thing since sliced bread.
 
 #
 # Features
@@ -151,19 +160,32 @@ features-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. A
 features:
 
 # Feature
-- title: Clean & Unique Design
-  description: Maecenas sed laoreet urna. Praesent eget tristique tortor. Suspendisse consequat sed turpis in mattis.
-  icon: pe-7s-vector
+- title: Secure Connectivity
+  description: >-
+    Merkle proof secured identity data in the blockchain not only make for tamper proof
+    data, but also allow proofing recentness. Whether it's credentials or software updates IoT
+    devices not only can proof validity but also proof recentness. 
+    Using encryption technology accross the network no third party can read or access your data.
+
+  icon: pe-7s-shield
 
 # Feature
-- title: Professional Support
-  description: Maecenas sed laoreet urna. Praesent eget tristique tortor. Suspendisse consequat sed turpis in mattis.
-  icon: pe-7s-help2
+- title: Lower Cost
+  description: >-
+    The Diode Network creates an IoT marketplace in which providers compete for your business,
+    which leads to the lowest possible prices. The blockchain autonomously keeps the controls
+    tight and ensure correct behaviour.
+
+  icon: pe-7s-gift
 
 # Feature
-- title: Pixel Perfect
-  description: Maecenas sed laoreet urna. Praesent eget tristique tortor. Suspendisse consequat sed turpis in mattis.
-  icon: pe-7s-airplay
+- title: Streaming Network
+  description: >-
+    Whether it is video data from a home camera to an end user or broadcasting messages to thousands of 
+    endpoints the Diode Network is a native IoT network providing streaming and storage services for all 
+    connected devices.
+
+  icon: pe-7s-shuffle
 
 
 #####################################
@@ -353,57 +375,43 @@ team-description: Nulla a tellus at turpis gravida congue non interdum et malesu
 team:
 
 # Team Member
-- name: Jack Skilton
-  tagline: Graphic Designer
-  avatar: avatar-01.jpg
+- name: Dominic Letz
+  tagline: Chief Technology Officer
+  avatar: dominic-letz.jpg
 
   # Social Links
-  youtube: '#'
-  pinterest: '#'
-  facebook: '#'
-  twitter: '#'
-  google-plus: '#'
-  vimeo: '#'
+  # youtube: '#'
+  # pinterest: '#'
+  # facebook: '#'
+  # twitter: '#'
+  # google-plus: '#'
+  # vimeo: '#'
 
 # Team Member
-- name: James Young
-  tagline: Developer
-  avatar: avatar-02.jpg
+- name: Greg Belcher
+  tagline: VP Business Development
+  avatar: greg-belcher.jpg
 
   # Social Links
-  youtube: '#'
-  pinterest: '#'
-  facebook: '#'
-  twitter: '#'
-  google-plus: '#'
-  vimeo: '#'
+  # youtube: '#'
+  # pinterest: '#'
+  # facebook: '#'
+  # twitter: '#'
+  # google-plus: '#'
+  # vimeo: '#'
 
 # Team Member
-- name: Johnatan Doe
-  tagline: Hacker
-  avatar: avatar-04.jpg
+- name: Hans Rempel
+  tagline: CEO
+  avatar: hans-rempel.jpg
 
   # Social Links
-  youtube: '#'
-  pinterest: '#'
-  facebook: '#'
-  twitter: '#'
-  google-plus: '#'
-  vimeo: '#'
-
-# Team Member
-- name: Ecaterina Doe
-  tagline: Support Expert
-  avatar: avatar-03.jpg
-
-  # Social Links
-  youtube: '#'
-  pinterest: '#'
-  facebook: '#'
-  twitter: '#'
-  google-plus: '#'
-  vimeo: '#'
-
+  # youtube: '#'
+  # pinterest: '#'
+  # facebook: '#'
+  # twitter: '#'
+  # google-plus: '#'
+  # vimeo: '#'
 
 #####################################
 ########## Pricing Tables ###########
@@ -453,6 +461,6 @@ contact-description: Nulla a tellus at turpis gravida congue non interdum et mal
 #############   Footer   ############
 #####################################
 footer-description: Nulla a tellus at turpis gravida congue non interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat.
-footer-copyright-text: Gleesik&trade;
+footer-copyright-text: DIODE;
 footer-copyright-url: http://gleesik.ro/
 footer-copyright-year: 2016

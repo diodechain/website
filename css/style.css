@@ -283,11 +283,6 @@ table {
   min-height: 120%;
   max-width: inherit;
   max-height: 140%;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 
 .parallax .cover .content {
@@ -2635,7 +2630,7 @@ input, textarea, button {
   width: 100%;
   height: auto;
   font-size: 1rem;
-  font-family: "Lato";
+  font-family: "Titillium Web";
   padding: 15px;
   outline: 0;
   color: #5e5e5e;
@@ -2833,7 +2828,7 @@ button.button-block,
  *
  **/
 body {
-  font-family: "Lato", Arial, sans-serif;
+  font-family: "Titillium Web", Arial, sans-serif;
   font-size: 16px;
   font-weight: normal;
   letter-spacing: 0.08rem;
@@ -3172,6 +3167,8 @@ header.site-header .site-navigation-bar {
   height: 100px;
   min-height: 100px;
   z-index: 2;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 header.site-header .site-navigation-bar .logo img {
@@ -3671,6 +3668,10 @@ section.site-section header.section-header h1, section.site-section header.secti
 
 section.site-section header.section-header hr.normal {
   margin: 40px auto;
+}
+
+section.site-section div.section-content {
+  text-align: justify;
 }
 
 section.site-section.section-focus {
