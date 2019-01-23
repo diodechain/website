@@ -34,11 +34,9 @@
         <!-- Navigation Menu -->
         <nav id="navMenu" class="nav-menu">
           <ul class="menu">
-            <li class="current-menu-item"><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#news_events">News+Events</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
+          {% for nav in site.navigation %}
+            <li><a href="{{ site.baseurl }}{{ nav.link }}">{{ nav.title }}</a></li>
+          {% endfor %}
           </ul>
         </nav>
 

@@ -34,12 +34,9 @@
         <!-- Navigation Menu -->
         <nav id="navMenu" class="nav-menu">
           <ul class="menu">
-            <li><a href="{{ site.baseurl }}/index.html#home">Home</a></li>
-            <li><a href="{{ site.baseurl }}/index.html#about">About</a></li>
-            <li><a href="{{ site.baseurl }}/index.html#features">Features</a></li>
-            <li><a href="{{ site.baseurl }}/index.html#news_events">News+Events</a></li>
-            <li><a href="{{ site.baseurl }}/index.html#team">Team</a></li>
-            <li><a href="{{ site.baseurl }}/index.html#contact">Contact</a></li>
+          {% for nav in site.navigation %}
+            <li><a href="{{ site.baseurl }}{{ nav.link }}">{{ nav.title }}</a></li>
+          {% endfor %}
           </ul>
         </nav>
 
