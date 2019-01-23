@@ -1,14 +1,13 @@
 ---
 layout: post
-title: "How to tell a story"
-tagline: Single Page
-date: 2016-05-26 13:23
-categories: [Storyline]
-tags: [Storyline, How To, Tips]
+title: "The hidden threat"
+date: 2019-01-21 13:23
+categories: [Security]
+tags: [Security, Blockchain]
 image: img-03.jpg
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum condimentum justo, rhoncus ullamcorper orci dapibus eget. Aliquam id efficitur lacus. Donec ac mattis ante. Nam vehicula turpis augue. Aliquam erat volutpat.
+If you're running IoT devices in your business or at your home it's likely that you're protected by 30 year old security infrastructure. In this post we will have a deeper look into what PKI is that holds most of the internet together today and summarize the more obvious known flaws and security threats. This will be the beginning of a series where we will have a look at...
 
 Aliquam fermentum ornare iaculis. Proin vehicula nisi sed vestibulum consectetur. Praesent placerat enim eu justo euismod, vel consequat ligula mollis. Quisque mollis, lacus sed imperdiet finibus, risus felis tempor sapien, in suscipit sem nulla bibendum magna. Curabitur venenatis condimentum ipsum, at hendrerit dui dictum quis. In sodales in ligula eget venenatis. Suspendisse imperdiet congue odio at tempus. Donec pellentesque cursus semper. Praesent vel augue sem. Integer nec diam consequat, sollicitudin urna eu, placerat justo. Donec in odio et tellus lobortis vehicula at pellentesque nisi.
 

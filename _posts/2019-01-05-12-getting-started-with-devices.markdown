@@ -1,14 +1,13 @@
 ---
 layout: post
-title:  "12 Cool tips in design"
-tagline: Single Page
-date: 2016-05-02 15:32
-categories: [Web Design]
-tags: [Web, Design, Tips & Tricks, Tips]
+title:  "Getting Started: Devices"
+date: 2019-01-05 15:32
+categories: [Guides]
+tags: [Development, Security, Guides, Device Client]
 image: img-01.jpg
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum condimentum justo, rhoncus ullamcorper orci dapibus eget. Aliquam id efficitur lacus. Donec ac mattis ante. Nam vehicula turpis augue. Aliquam erat volutpat.
+This guide will step by step go through enabling and using an IoT device on the Diode Network. Whether you're a newcomer or a long time Diode follower this will lead you to your first online device.
 
 Aliquam fermentum ornare iaculis. Proin vehicula nisi sed vestibulum consectetur. Praesent placerat enim eu justo euismod, vel consequat ligula mollis. Quisque mollis, lacus sed imperdiet finibus, risus felis tempor sapien, in suscipit sem nulla bibendum magna. Curabitur venenatis condimentum ipsum, at hendrerit dui dictum quis. In sodales in ligula eget venenatis. Suspendisse imperdiet congue odio at tempus. Donec pellentesque cursus semper. Praesent vel augue sem. Integer nec diam consequat, sollicitudin urna eu, placerat justo. Donec in odio et tellus lobortis vehicula at pellentesque nisi.
 

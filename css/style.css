@@ -3670,10 +3670,6 @@ section.site-section header.section-header hr.normal {
   margin: 40px auto;
 }
 
-section.site-section div.section-content {
-  text-align: justify;
-}
-
 section.site-section.section-focus {
   background-color: #f4f8f9;
 }

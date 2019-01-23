@@ -78,17 +78,18 @@ email: your_email@example.com
 
 # Offer Banner Link
 # Default link is a link to all Sera OnePage products
-banner-link: https://themeforest.net/collections/6069390-sera
+banner-link: /signup
 
 ####################################
 ######  Global Social Links   ######
 ####################################
-youtube: '#'
-pinterest: '#'
-facebook: '#'
-twitter: '#'
-google-plus: '#'
-vimeo: '#'
+# youtube: '#'
+# pinterest: '#'
+# facebook: '#'
+twitter: 'https://twitter.com/diode_chain'
+telegram: 'https://t.me/DiodeChain'
+# google-plus: '#'
+# vimeo: '#'
 
 #########################
 ######   Widgets   ######
@@ -151,8 +152,7 @@ about-description: >-
 #############  Features  ############
 #####################################
 features-title: What can Diode do for IoT?
-features-description: >- 
-  The best thing since sliced bread.
+features-description:
 
 #
 # Features
@@ -255,112 +255,14 @@ portfolio:
   url: '#'
 
 
-#####################################
-##########  Core Features  ##########
-#####################################
-core-title: Core Features
-core-description: Duis at odio vitae ex gravida volutpat. Nulla finibus aliquet diam ut eleifend. Mauris consequat interdum quam. Mauris dui sapien, efficitur et cursus id, molestie fringilla turpis aliquet diam ut eleifend.
-
-#
-# Core Features Left
-#
-core-features-left:
-
-# Feature
-- name: Creative
-  description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-  icon: pe-7s-light
-
-# Feature
-- name: Minimalism
-  description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-  icon: pe-7s-drop
-
-# Feature
-- name: Clean Coding
-  description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-  icon: pe-7s-coffee
-
-# Feature
-- name: Friendly
-  description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-  icon: pe-7s-smile
-
-#
-# Core Features Right
-#
-core-features-right:
-
-# Feature
-- name: Branding
-  description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-  icon: pe-7s-wine
-
-# Feature
-- name: Web Design
-  description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-  icon: pe-7s-monitor
-
-# Feature
-- name: Graphic Design
-  description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-  icon: pe-7s-crop
-
-# Feature
-- name: Photography
-  description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-  icon: pe-7s-camera
-
-
-#####################################
-########### Testimonials ############
-#####################################
-testimonials-title: Testimonials
-testimonials-description: Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed, suscipit et nisi.
-
-#
-# Testimonials
-#
-testimonials:
-
-# Client
-- name: Johnatan Doe
-  url: http://themeforest.net
-  url-text: ThemeForest.net
-  avatar: avatar-01.jpg
-  cite: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius adipiscing lectus, eu ornare lectus semper in. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed.
-  logo-img: themeforest.png
-
-# Client
-- name: Adam Smith
-  url: http://codecanyon.net
-  url-text: CodeCanyon.net
-  avatar: avatar-02.jpg
-  cite: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius adipiscing lectus, eu ornare lectus semper in. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed.
-  logo-img: codecanyon.png
-
-# Client
-- name: Irene Warner
-  url: http://videohive.net
-  url-text: VideoHive.net
-  avatar: avatar-03.jpg
-  cite: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius adipiscing lectus, eu ornare lectus semper in. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed.
-  logo-img: videohive.png
-
-# Client
-- name: Richard Ryan
-  url: http://audiojungle.net
-  url-text: AudioJungle.net
-  avatar: avatar-04.jpg
-  cite: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius adipiscing lectus, eu ornare lectus semper in. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed.
-  logo-img: audiojungle.png
-
 
 #####################################
 ############# Our Blog ##############
 #####################################
-blog-title: Our Blog
-blog-description: Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed, suscipit et nisi. Nulla a tellus at turpis gravida congue non sed nisl. Pellentesque scelerisque eu neque et tincidunt.
+blog-title: News + Events
+blog-description: >-
+  As we're working on rolling out the next evolutionary steps of the Diode network we will be 
+  posting updates regularly. Also keep track of our twitter account to get all the latest news.
 
 
 #####################################
@@ -414,43 +316,6 @@ team:
   # vimeo: '#'
 
 #####################################
-########## Pricing Tables ###########
-#####################################
-pricing-title: Pricing Tables
-pricing-description: Nulla a tellus at turpis gravida congue non interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed, suscipit et nisi. Nulla a tellus at turpis gravida congue non sed nisl. Pellentesque scelerisque eu neque et tincidunt.
-
-#
-# Plan Personal
-#
-plan-personal-price: $99
-plan-personal-offer-1-title: 01 PSD Pack
-plan-personal-offer-1-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
-plan-personal-offer-2-title: 100 Support Tickets
-plan-personal-offer-2-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
-plan-personal-url: '#'
-
-#
-# Plan Business
-#
-plan-business-price: $499
-plan-business-offer-1-title: 05 PSD Pack
-plan-business-offer-1-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
-plan-business-offer-2-title: 1000 Support Tickets
-plan-business-offer-2-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
-plan-business-url: '#'
-
-#
-# Plan Ultimate
-#
-plan-ultimate-price: $999
-plan-ultimate-offer-1-title: 10 PSD Pack
-plan-ultimate-offer-1-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
-plan-ultimate-offer-2-title: Support Unlimited
-plan-ultimate-offer-2-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
-plan-ultimate-url: '#'
-
-
-#####################################
 ############   Contact   ############
 #####################################
 contact-title: Contact Us
@@ -460,7 +325,172 @@ contact-description: Nulla a tellus at turpis gravida congue non interdum et mal
 #####################################
 #############   Footer   ############
 #####################################
-footer-description: Nulla a tellus at turpis gravida congue non interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat.
+footer-description: 
 footer-copyright-text: DIODE;
-footer-copyright-url: http://gleesik.ro/
-footer-copyright-year: 2016
+footer-copyright-url: https://diodechain.io/
+footer-copyright-year: 2019
+
+
+
+#####################################
+##########  Core Features  ##########
+#####################################
+# core-title: Core Features
+# core-description: Duis at odio vitae ex gravida volutpat. Nulla finibus aliquet diam ut eleifend. Mauris consequat interdum quam. Mauris dui sapien, efficitur et cursus id, molestie fringilla turpis aliquet diam ut eleifend.
+
+# #
+# # Core Features Left
+# #
+# core-features-left:
+
+# # Feature
+# - name: Creative
+#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
+#   icon: pe-7s-light
+
+# # Feature
+# - name: Minimalism
+#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
+#   icon: pe-7s-drop
+
+# # Feature
+# - name: Clean Coding
+#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
+#   icon: pe-7s-coffee
+
+# # Feature
+# - name: Friendly
+#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
+#   icon: pe-7s-smile
+
+# #
+# # Core Features Right
+# #
+# core-features-right:
+
+# # Feature
+# - name: Branding
+#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
+#   icon: pe-7s-wine
+
+# # Feature
+# - name: Web Design
+#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
+#   icon: pe-7s-monitor
+
+# # Feature
+# - name: Graphic Design
+#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
+#   icon: pe-7s-crop
+
+# # Feature
+# - name: Photography
+#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
+#   icon: pe-7s-camera
+
+
+# #####################################
+# ########### Testimonials ############
+# #####################################
+# testimonials-title: Testimonials
+# testimonials-description: Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed, suscipit et nisi.
+
+# #
+# # Testimonials
+# #
+# testimonials:
+
+# # Client
+# - name: Johnatan Doe
+#   url: http://themeforest.net
+#   url-text: ThemeForest.net
+#   avatar: avatar-01.jpg
+#   cite: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius adipiscing lectus, eu ornare lectus semper in. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed.
+#   logo-img: themeforest.png
+
+# # Client
+# - name: Adam Smith
+#   url: http://codecanyon.net
+#   url-text: CodeCanyon.net
+#   avatar: avatar-02.jpg
+#   cite: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius adipiscing lectus, eu ornare lectus semper in. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed.
+#   logo-img: codecanyon.png
+
+# # Client
+# - name: Irene Warner
+#   url: http://videohive.net
+#   url-text: VideoHive.net
+#   avatar: avatar-03.jpg
+#   cite: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius adipiscing lectus, eu ornare lectus semper in. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed.
+#   logo-img: videohive.png
+
+# # Client
+# - name: Richard Ryan
+#   url: http://audiojungle.net
+#   url-text: AudioJungle.net
+#   avatar: avatar-04.jpg
+#   cite: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius adipiscing lectus, eu ornare lectus semper in. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed.
+#   logo-img: audiojungle.png
+
+#####################################
+########## Pricing Tables ###########
+#####################################
+# pricing-title: Pricing Tables
+# pricing-description: Nulla a tellus at turpis gravida congue non interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed, suscipit et nisi. Nulla a tellus at turpis gravida congue non sed nisl. Pellentesque scelerisque eu neque et tincidunt.
+
+# #
+# # Plan Personal
+# #
+# plan-personal-price: $99
+# plan-personal-offer-1-title: 01 PSD Pack
+# plan-personal-offer-1-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
+# plan-personal-offer-2-title: 100 Support Tickets
+# plan-personal-offer-2-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
+# plan-personal-url: '#'
+
+# #
+# # Plan Business
+# #
+# plan-business-price: $499
+# plan-business-offer-1-title: 05 PSD Pack
+# plan-business-offer-1-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
+# plan-business-offer-2-title: 1000 Support Tickets
+# plan-business-offer-2-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
+# plan-business-url: '#'
+
+# #
+# # Plan Ultimate
+# #
+# plan-ultimate-price: $999
+# plan-ultimate-offer-1-title: 10 PSD Pack
+# plan-ultimate-offer-1-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
+# plan-ultimate-offer-2-title: Support Unlimited
+# plan-ultimate-offer-2-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
+# plan-ultimate-url: '#'
+
+#########################
+######   Widgets   ######
+#########################
+
+# #
+# # About Blog Author Widget
+# #
+# about-widget:
+#   author-avatar: avatar-02.jpg
+#   author-name: John Doe
+#   author-tagline: Blog Author
+#   author-info: Cum sociis que penatibus et magnis dis parturient montes lorem, nascetur ridiculus mus. Donec quam felis, ultricies.
+#   author-social-links:
+#     youtube: '#'
+#     pinterest: '#'
+#     facebook: '#'
+#     twitter: '#'
+#     google-plus: '#'
+
+# # Google Map JS api
+# # This is my api for this template
+# key-api: AIzaSyDbnxVZQannH0GF4gtnnBFPiP9ofm2WqGs
+# map-text: Sera Google Map
+# map-text-location: Bucharest, Romania
+# map-lat: 44.4267674
+# map-lng: 26.102538399999958
