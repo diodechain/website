@@ -169,6 +169,28 @@ img {
   height: auto !important;
 }
 
+// Superscript (for footnotes)
+sup a {
+  text-decoration: underline;
+}
+
+// Footnotes
+div.footnotes {
+  ol {
+    margin-left: 1em;
+    padding-top: 10px;
+    list-style: decimal;
+  }
+}
+div.footnotes:before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  border-top: 1px solid black;
+  // top: 0;
+  width: 30%;
+}
+
 // Quotes
 blockquote {
   display: block;
