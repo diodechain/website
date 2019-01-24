@@ -271,7 +271,7 @@ team:
 #####################################
 ############   Contact   ############
 #####################################
-contact-title: Contact Us
+contact-title: Say Hello
 contact-description: Nulla a tellus at turpis gravida congue non interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat.
 
 
@@ -279,7 +279,7 @@ contact-description: Nulla a tellus at turpis gravida congue non interdum et mal
 #############   Footer   ############
 #####################################
 footer-description: 
-footer-copyright-text: DIODE;
+footer-copyright-text: DIODE
 footer-copyright-url: https://diodechain.io/
 footer-copyright-year: 2019
 

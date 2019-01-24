@@ -24,10 +24,10 @@
       {% for member in site.team %}
 
       <!-- Member -->
-      <div class="col-md-3 col-md-push-0 col-sm-6 col-sm-push-0 col-xs-6 col-xs-push-0">
+      <div class="col-md-4 col-md-push-0 col-sm-6 col-sm-push-0 col-xs-6 col-xs-push-0">
         <div class="team-member">
           <div class="img-wrapper">
-            <img src="{{ site.baseurl }}/images/avatars/{{ member.avatar }}" alt="Avatar {{ member.name }}" />
+            <img src="{{ site.baseurl }}/images/avatars/{{ member.avatar }}?{{site.time | date: '%s%N'}}" alt="Avatar {{ member.name }}" />
           </div>
           <div class="team-member-content">
             <h3 class="name">{{ member.name }}</h3>
