@@ -1,0 +1,19 @@
+---
+layout: page
+title: Tags
+---
+
+{% for tag in site.tags %}
+  <div class="post-full">
+    <h3 class="category">{{ tag[0] }}</h4>
+
+
+  <!-- Blog Article -->
+  {% for post in tag[1] %}
+      <div class="article-title">
+        <h4 class="title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+      </div>
+  {% endfor %}
+  </div>
+{% endfor %}
+
