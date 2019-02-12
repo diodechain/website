@@ -3808,11 +3808,11 @@ aside.site-sidebar .categories-widget .widget-content ul.categories-box li:last-
   border-bottom: 0;
 }
 
-aside.site-sidebar .newsletter-widget .widget-content form.newsletter-email-signup .field-group {
+aside.site-sidebar .newsletter-widget .widget-content form.newsletter-email-signup .field-group, aside.site-sidebar .newsletter-widget .widget-content form.newsletter-email-signup .hs-form-field {
   margin-bottom: 20px;
 }
 
-aside.site-sidebar .newsletter-widget .widget-content form.newsletter-email-signup .field-group input {
+aside.site-sidebar .newsletter-widget .widget-content form.newsletter-email-signup .field-group input, aside.site-sidebar .newsletter-widget .widget-content form.newsletter-email-signup .hs-form-field input {
   border-width: 2px;
   padding: 20px;
 }

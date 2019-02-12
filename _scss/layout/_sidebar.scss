@@ -137,12 +137,17 @@ aside.site-sidebar {
     .widget-content {
 
       form.newsletter-email-signup {
-        .field-group {
+        .field-group, .hs-form-field {
           margin-bottom: 20px;
 
           input {
             border-width: 2px;
             padding: 20px;
+          }
+
+          label {
+            // padding-bottom: 1em;
+            // display: none;
           }
         }
 
