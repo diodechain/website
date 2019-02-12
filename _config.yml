@@ -4,7 +4,7 @@
 #
 
 # Information for compile
-exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md"]
+exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md", "resources"]
 
 #
 # If your website is placed in a separate folder on your server please modify
