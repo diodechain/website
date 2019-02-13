@@ -282,6 +282,10 @@ table {
   min-height: 120%;
   max-width: inherit;
   max-height: 140%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 
 .parallax .cover .content {

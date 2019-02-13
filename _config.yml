@@ -51,9 +51,9 @@ title: Diode - The IoT Network
 # Website language
 lang: en-US
 # Header Title
-header-title: <strong>Jump now to Safe IIoT</strong>
+header-title: <strong>Make it rock solid again</strong>
 # Header Tagline
-header-tagline: The Platform is burning
+header-tagline: IoT security is broken
 
 ####################################
 ######   CTA Header Buttons   ######
@@ -167,7 +167,7 @@ about-title: Diode IIoT/IoT Network
 about-description: >-
   PKI the system that protects web traffic since 30 years is broken for IoT. The governance structures 
   have failed, broken implementations and misuse are spread far beyond repair and fraud is done through it's 
-  weaknesses every day. The Diode IoT Network is a new type of security network specifically designed for IoT
+  weaknesses every day. The Diode IoT Network is a new type of security network specifically designed for smart
   devices. Diode is the first network to implement unforgable proof-of-time and network-device authentication
   based on blockchain technology. Man-In-The middle attacks become impossible and dependencies 
   on third parties to entrust security are removed. The network has higher security than PKI with
