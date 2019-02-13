@@ -1,20 +1,6 @@
-#
-# Sera - OnePage Jekyll Template
-# Configuration File
-#
-
 # Information for compile
 exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md", "resources"]
 
-#
-# If your website is placed in a separate folder on your server please modify
-# this with your folder name, by default is empty.
-# Example: Sera Demo is hosted on projects.gleesik.ro/sera-onepage
-# If I compile Sera Template and I put in /sera-onepage without modifing baseurl
-# than scripts can't be loaded corectly.
-# For this example my site url is: projects.gleesik.ro (This can be just www.example.com)
-# My folder for Demo Website is: /sera-onepage so baseurl: /sera-onepage
-#
 baseurl:
 
 # the base hostname & protocol for your site
@@ -167,8 +153,6 @@ about-description: >-
   much lower overhead and maintenance needs. Truly autonomous.
   Diode allows developers to build new IoT applications on top of it's network or migrate existing
   workloads for the higher security and lower operating costs.
-  
-
 
 #####################################
 #############  Features  ############
@@ -208,6 +192,56 @@ features:
     connected devices.
 
   icon: svgs/streaming.svg
+
+
+#####################################
+############   About us   ###########
+#####################################
+about-us-title: Diode<sup>sm</sup>
+about-us-description: >-
+  Diode is responsible for governance and issuance of Diode Tokens, governance and maintenance of the Diode Network, and growing the ecosystem surrounding both.  The Diode Network is formed by the producers and miners who run instances of the Diode Chain&trade; Software.  The Diode Chain Software’s development and configuration management is provided by Diode.  Users of the Diode Network must use Diode Tokens to be granted access to the Diode Network’s unique capabilities for secure IoT communications.  Diode manages the issuance (block rewards) and other tokenomics for Diode Tokens.
+  
+#####################################
+####### Diode Chain Features  #######
+#####################################
+chain-features-title: What is the Diode Chain<sup>tm</sup> software?
+chain-features-description:
+
+  #
+# Diode Chain Features
+#
+chain-features:
+
+# Feature
+- title: Edge Connector
+  description: >-
+    Designed for microchips Diode Chains edge connector software runs even on very constrained client 
+    devices. Written in protable C and implemening Diodes BlockQuick&trade; algorithm this piece of
+    sofware allos to connect real world microchips such as the TI CC3220, development boards such as
+    Arduino Yun and Industrial Gateways securely to the IoT cloud. With 10x less memory than 
+    competitive products it's delivering 1000x times higher security for endpoint devices.
+
+  icon: svgs/security.svg
+
+# Feature
+- title: Efficient & Secure Mining
+  description: >-
+    The Diode Chain software bundles the StakeWork&trade; consensus algorithm, providing more than 3x
+    better energy efficiency compared with BitCoin and Ethereum while providing effective protections
+    against Proof-Of-Work attacks. The algorithm is bundled with both the edge connector and the
+    mining node software providing providing reference implementations.  
+
+  icon: svgs/streaming.svg
+
+# Feature
+- title: Mining Node Sofware
+  description: >-
+    The full nodes of the Diode network are Ethereum VM and Ethereum RPC compatible offering 
+    developers access to the full set of the development tools of the Ethereum Ecosystem
+    such as remix and solidity. The Diode Chain software bundle contains the full reference
+    implementation allowing easy operation in datacanters and mining operations. 
+
+  icon: svgs/lower_cost.svg
 
 
 #####################################
@@ -279,149 +313,6 @@ footer-copyright-text: DIODE
 footer-copyright-url: https://diode.io/
 footer-copyright-year: 2019
 
-#####################################
-############   Contact   ############
-#####################################
-# contact-title: Say Hello
-# contact-description: Nulla a tellus at turpis gravida congue non interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat.
-
-
-#####################################
-##########  Core Features  ##########
-#####################################
-# core-title: Core Features
-# core-description: Duis at odio vitae ex gravida volutpat. Nulla finibus aliquet diam ut eleifend. Mauris consequat interdum quam. Mauris dui sapien, efficitur et cursus id, molestie fringilla turpis aliquet diam ut eleifend.
-
-# #
-# # Core Features Left
-# #
-# core-features-left:
-
-# # Feature
-# - name: Creative
-#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-#   icon: pe-7s-light
-
-# # Feature
-# - name: Minimalism
-#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-#   icon: pe-7s-drop
-
-# # Feature
-# - name: Clean Coding
-#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-#   icon: pe-7s-coffee
-
-# # Feature
-# - name: Friendly
-#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-#   icon: pe-7s-smile
-
-# #
-# # Core Features Right
-# #
-# core-features-right:
-
-# # Feature
-# - name: Branding
-#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-#   icon: pe-7s-wine
-
-# # Feature
-# - name: Web Design
-#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-#   icon: pe-7s-monitor
-
-# # Feature
-# - name: Graphic Design
-#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-#   icon: pe-7s-crop
-
-# # Feature
-# - name: Photography
-#   description: Lorem ipsum dolor sit amet, consectetuer adipiscing diam.
-#   icon: pe-7s-camera
-
-
-# #####################################
-# ########### Testimonials ############
-# #####################################
-# testimonials-title: Testimonials
-# testimonials-description: Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed, suscipit et nisi.
-
-# #
-# # Testimonials
-# #
-# testimonials:
-
-# # Client
-# - name: Johnatan Doe
-#   url: http://themeforest.net
-#   url-text: ThemeForest.net
-#   avatar: avatar-01.jpg
-#   cite: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius adipiscing lectus, eu ornare lectus semper in. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed.
-#   logo-img: themeforest.png
-
-# # Client
-# - name: Adam Smith
-#   url: http://codecanyon.net
-#   url-text: CodeCanyon.net
-#   avatar: avatar-02.jpg
-#   cite: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius adipiscing lectus, eu ornare lectus semper in. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed.
-#   logo-img: codecanyon.png
-
-# # Client
-# - name: Irene Warner
-#   url: http://videohive.net
-#   url-text: VideoHive.net
-#   avatar: avatar-03.jpg
-#   cite: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius adipiscing lectus, eu ornare lectus semper in. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed.
-#   logo-img: videohive.png
-
-# # Client
-# - name: Richard Ryan
-#   url: http://audiojungle.net
-#   url-text: AudioJungle.net
-#   avatar: avatar-04.jpg
-#   cite: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius adipiscing lectus, eu ornare lectus semper in. Aenean at tincidunt sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed.
-#   logo-img: audiojungle.png
-
-#####################################
-########## Pricing Tables ###########
-#####################################
-# pricing-title: Pricing Tables
-# pricing-description: Nulla a tellus at turpis gravida congue non interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat vitae volutpat sed, suscipit et nisi. Nulla a tellus at turpis gravida congue non sed nisl. Pellentesque scelerisque eu neque et tincidunt.
-
-# #
-# # Plan Personal
-# #
-# plan-personal-price: $99
-# plan-personal-offer-1-title: 01 PSD Pack
-# plan-personal-offer-1-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
-# plan-personal-offer-2-title: 100 Support Tickets
-# plan-personal-offer-2-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
-# plan-personal-url: '#'
-
-# #
-# # Plan Business
-# #
-# plan-business-price: $499
-# plan-business-offer-1-title: 05 PSD Pack
-# plan-business-offer-1-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
-# plan-business-offer-2-title: 1000 Support Tickets
-# plan-business-offer-2-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
-# plan-business-url: '#'
-
-# #
-# # Plan Ultimate
-# #
-# plan-ultimate-price: $999
-# plan-ultimate-offer-1-title: 10 PSD Pack
-# plan-ultimate-offer-1-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
-# plan-ultimate-offer-2-title: Support Unlimited
-# plan-ultimate-offer-2-info: Mauris gravida fringilla est. Proin sodales sed erat et cursus. Mauris quis posuere enim.
-# plan-ultimate-url: '#'
-
 #########################
 ######   Widgets   ######
 #########################
@@ -440,77 +331,3 @@ footer-copyright-year: 2019
 #     facebook: '#'
 #     twitter: '#'
 #     google-plus: '#'
-
-# # Google Map JS api
-# # This is my api for this template
-# key-api: AIzaSyDbnxVZQannH0GF4gtnnBFPiP9ofm2WqGs
-# map-text: Sera Google Map
-# map-text-location: Bucharest, Romania
-# map-lat: 44.4267674
-# map-lng: 26.102538399999958
-
-#####################################
-############  Portfolio  ############
-#####################################
-#~ portfolio-title: Portfolio
-#~ portfolio-description: Maecenas tempus nec mi et placerat. Duis at odio vitae ex gravida volutpat. Nulla finibus aliquet diam ut eleifend. Mauris consequat interdum quam. Mauris dui sapien, efficitur et cursus id, molestie fringilla turpis.
-
-#~ #
-#~ # Portfolio Grid
-#~ #
-#~ portfolio-categories: [Websites, Logo, Graphic Design, Development, Video, Photography]
-#~ portfolio:
-
-#~ # Portfolio Item
-#~ - title: S<span class="thin">era</span> Style
-  #~ categories: [Websites, Graphic Design]
-  #~ image: img-01.jpg
-  #~ url: '#'
-
-#~ # Portfolio Item
-#~ - title: S<span class="thin">era</span> Style
-  #~ categories: [Graphic Design, Logo, Websites]
-  #~ image: img-02.jpg
-  #~ url: '#'
-
-#~ # Portfolio Item
-#~ - title: S<span class="thin">era</span> Style
-  #~ categories: [Graphic Design, Logo, Photography]
-  #~ image: img-03.jpg
-  #~ url: '#'
-
-#~ # Portfolio Item
-#~ - title: S<span class="thin">era</span> Style
-  #~ categories: [Websites, Video, Photography]
-  #~ image: img-04.jpg
-  #~ url: '#'
-
-#~ # Portfolio Item
-#~ - title: S<span class="thin">era</span> Style
-  #~ categories: [Development, Logo]
-  #~ image: img-05.jpg
-  #~ url: '#'
-
-#~ # Portfolio Item
-#~ - title: S<span class="thin">era</span> Style
-  #~ categories: [Development, Video]
-  #~ image: img-06.jpg
-  #~ url: '#'
-
-#~ # Portfolio Item
-#~ - title: S<span class="thin">era</span> Style
-  #~ categories: [Websites, Graphic Design]
-  #~ image: img-07.jpg
-  #~ url: '#'
-
-#~ # Portfolio Item
-#~ - title: S<span class="thin">era</span> Style
-  #~ categories: [Websites , Video]
-  #~ image: img-08.jpg
-  #~ url: '#'
-
-#~ # Portfolio Item
-#~ - title: S<span class="thin">era</span> Style
-  #~ categories: [Photography, Logo]
-  #~ image: img-09.jpg
-  #~ url: '#'
