@@ -163,10 +163,10 @@ mailchimp:
 #####################################
 #############   About   #############
 #####################################
-about-title: Diode IoT Network
+about-title: Diode IIoT/IoT Network
 about-description: >-
   PKI the system that protects web traffic since 30 years is broken for IoT. The governance structures 
-  have failed, broken implementations and misuse is far beyond repair and fraud is done through it's 
+  have failed, broken implementations and misuse are spread far beyond repair and fraud is done through it's 
   weaknesses every day. The Diode IoT Network is a new type of security network specifically designed for IoT
   devices. Diode is the first network to implement unforgable proof-of-time and network-device authentication
   based on blockchain technology. Man-In-The middle attacks become impossible and dependencies 
