@@ -35,7 +35,7 @@
         <nav id="navMenu" class="nav-menu">
           <ul class="menu">
           {% for nav in site.navigation %}
-            <li><a href="{{ site.baseurl }}{{ nav.link }}">{{ nav.title }}</a></li>
+            <li><a href="{{ site.baseurl }}{{ nav.link }}" {% if nav.target %}target="{{ nav.target }}"{% endif %}>{{ nav.title }}</a></li>
           {% endfor %}
           </ul>
         </nav>
