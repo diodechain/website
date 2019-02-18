@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What is the internet PKI"
+title: "The hidden threat"
 date: 2019-01-21 13:23
 categories: [Security]
 tags: [Security, Blockchain]
@@ -31,7 +31,6 @@ This wide availability of trusted third party certificates has allowed the web t
 * * ValidityValidity
 * * Common Name Consensus
 * * Revocation
-* Add images
 * Add specific but funny details, e.g.:
 * * Netscape screenshot
 * * The four Netscape 1.0 root certificates AT&T Bell Labs / RSA / Netscape / MCI
