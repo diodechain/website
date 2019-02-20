@@ -7,6 +7,22 @@ tags: [Security, Blockchain]
 image: img-03.jpg
 ---
 
+This is the second part in our series about internet PKI and security. If you've missed the first part and wonder what PKI is you can find it here.
+
+<blockquote>
+“If you knew Time as well as I do,” said the Hatter, “ you wouldn’t talk about 
+wasting it. It’s him.” 
+
+“ I don’t know what you mean,” said Alice.
+
+“ Of course you don’t !” the Hatter said, tossing his head contemptuously. “ I dare say you never even spoke to Time !
+<small>Alice in Wonderland</small>
+</blockquote>
+
+In this part we want to talk about time and it's role - or his role in PKI and signed certificates. As we've discussed in the previous part certificate authorities testify ownership of domain names to servers by signing the servers certificate which contains at least a cryptographic identity of the server the name of the domain e.g. "example.com" and a validity period. This validity period is fundamental to the mechanisms of PKI as it is effectively the time until the certificate authority will check again, and only sign a new certificate if "example.com" is still owned by the server. The certificate authority receives from the applicant at least the certificate and a certificate signing request (CSR) does then point-in-time check whether the applicant is the rightful owner of the domain. There are different methods for this check that range from low-touch full automated checks as offered by Let's Encrypt and others, to high touch full legal entity validation. In cases though this is a point in time check and the ownership of the domain name can not be guaranteed after it. So certificate authorities sign validity periods in the range of 3-month for full automatic point-in-time checks to up to 3 years for extended validation (EV).
+
+Now for the lifetime of an IoT device 3 even years is not nearly enough. S
+
 If you're running IoT devices in your business or at your home it's likely that you're protected by 30 year old security infrastructure. In this post we will have a deeper look into what PKI is that holds most of the internet together today and summarize the more obvious known flaws and security threats. This will be the beginning of a series where we will have a look at...
 
 In 1994 Netscape started to make the Web secure and created with the SSL protocol the first stepping stone for today's internet security. With it came the adoption of https - The <strong>secure</strong> version of the Hypertext transmission protocol and the public key infrastructure based on the X.509 standard. 

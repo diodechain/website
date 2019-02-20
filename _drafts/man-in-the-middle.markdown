@@ -1,3 +1,12 @@
+---
+layout: post
+title: "What is the internet PKI"
+date: 2019-01-21 13:23
+categories: [Security]
+tags: [Security, Blockchain]
+image: img-03.jpg
+---
+
 <blockquote cite="http://gleesik.ro">
   For years, though, hackers have been using valid signing authorities to create valid authentication signatures for <strong>bad updates</strong>
   <small>Bruce Schneier</small>
