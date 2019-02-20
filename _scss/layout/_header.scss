@@ -13,6 +13,26 @@ header.site-header {
   max-height: 1080px;
   z-index: 1;
 
+  // Overlay Lightbox
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $black-transparent;
+    z-index: 99999999999999;
+
+    iframe {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }  
+
   // Blog Header
   &.blog-header {
     height: 600px;

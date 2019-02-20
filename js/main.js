@@ -70,6 +70,38 @@
     });
 
     /**
+     *  Video
+     */
+    var $site_header = $('.site-header');
+    var $video_overlay = $site_header.find("#video_overlay");
+    var $video_button = $site_header.find('#video_btn');
+
+    $video_button.on('click', function(e) {
+      e.preventDefault();
+      //var $src = $(this).attr("href");
+      var $iframe = '<iframe src="https://player.vimeo.com/video/318384993?autoplay=1" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+      $video_overlay.html($iframe).fadeIn(200);
+
+      // Lock Body Scroll
+      $body.addClass('no-scroll');
+
+    });
+    // Hide Overlay Lightbox
+    $video_overlay.on('click', function() {
+
+      // Hide Overlay Image
+      $(this).fadeOut(200);
+
+      // Remove Image from DOM
+      $video_overlay.children("iframe").remove();
+
+      // Unlock Body Scroll
+      $body.removeClass('no-scroll');
+
+    });    
+    
+
+    /**
      *  Portfolio
      **/
     var $filter_menu_item = $('.filter-menu ul li');
