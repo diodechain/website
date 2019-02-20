@@ -137,6 +137,10 @@ aside.site-sidebar {
     .widget-content {
 
       form.newsletter-email-signup {
+        .hs-form-required {
+          display: none;
+        }
+
         .field-group, .hs-form-field {
           margin-bottom: 20px;
 

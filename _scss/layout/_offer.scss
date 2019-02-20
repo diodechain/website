@@ -11,6 +11,25 @@ section.offer-section {
   color: $white;
   background-color: $primary;
 
+  .hs-form-required {
+    display: none;
+  }
+
+  .hs-form-field input, .hs-submit input {
+    border-color: white;
+    border-width: 2px;
+    color: white;
+  }
+
+  .hs-form-field, .hs-submit {
+    float: left;
+    margin-left: 1em;
+  }
+
+  .hs-form-field input, .hs-submit input {
+    height: 4em;
+  }
+
   h2 {
     text-transform: uppercase;
     font-size: 1.75rem;
