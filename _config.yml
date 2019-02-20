@@ -61,8 +61,8 @@ header-tagline: IoT security is broken
 
 # Focus Buttons
 header-focus-button:
-  title: Watch Video
-  url: https://youtu.be/uKfKtXYLG78
+  title: Watch the Video
+  url: https://www.youtube.com/embed/uKfKtXYLG78
 
 # Secondary Buttons
 header-secondary-button:
