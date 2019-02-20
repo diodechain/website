@@ -4,4 +4,4 @@ if [ -e "$HOME/.nvm/nvm.sh" ]; then
   nvm use v6.5
 fi
 
-bundle exec ./node_modules/.bin/gulp
+bundle exec ./node_modules/.bin/gulp $1
