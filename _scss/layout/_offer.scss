@@ -21,6 +21,10 @@ section.offer-section {
     color: white;
   }
 
+  .hs-form-field input::placeholder {
+    color: white;
+  }
+
   .hs-form-field, .hs-submit {
     float: left;
     margin-left: 1em;

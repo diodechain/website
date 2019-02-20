@@ -3879,6 +3879,22 @@ section.offer-section .hs-form-field input, section.offer-section .hs-submit inp
   color: white;
 }
 
+section.offer-section .hs-form-field input::-webkit-input-placeholder {
+  color: white;
+}
+
+section.offer-section .hs-form-field input::-moz-placeholder {
+  color: white;
+}
+
+section.offer-section .hs-form-field input::-ms-input-placeholder {
+  color: white;
+}
+
+section.offer-section .hs-form-field input::placeholder {
+  color: white;
+}
+
 section.offer-section .hs-form-field, section.offer-section .hs-submit {
   float: left;
   margin-left: 1em;
