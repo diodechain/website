@@ -79,7 +79,7 @@
     $video_button.on('click', function(e) {
       e.preventDefault();
       //var $src = $(this).attr("href");
-      var $iframe = '<iframe src="https://player.vimeo.com/video/318384993?autoplay=1" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+      var $iframe = '<iframe src="https://player.vimeo.com/video/318384993?autoplay=1" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
       $video_overlay.html($iframe).fadeIn(200);
 
       // Lock Body Scroll
