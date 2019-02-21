@@ -13,7 +13,7 @@ layout: page
       </div>
       <div class="article-title">
         <h3 class="title">{{ page.title }}</h3>
-        <h4 class="category">{{ page.categories | first }}</h4>
+        <h4 class="category">{{ page.tags | first }}</h4>
       </div>
     </header>
 
@@ -32,11 +32,11 @@ layout: page
           {% assign tags_list = page.tags %}
             {% if tags_list.first[0] == null %}
               {% for tag in tags_list %}
-                <li><a href="{{ site.baseurl }}/tag/{{ tag | slugify }}">{{ tag }}</a></li>
+                <li><a href="{{ site.baseurl }}{{ site.tagurl }}{{ tag | slugify }}">{{ tag }}</a></li>
               {% endfor %}
             {% else %}
               {% for tag in tags_list %}
-                <li><a href="{{ site.baseurl }}/tag/{{ tag[0] | slugify }}">{{ tag[0] }}</a></li>
+                <li><a href="{{ site.baseurl }}{{ site.tagurl }}{{ tag[0] | slugify }}">{{ tag[0] }}</a></li>
               {% endfor %}
             {% endif %}
           {% assign tags_list = nil %}
@@ -61,9 +61,9 @@ layout: page
               </a>
             </li>
             <li>
-              <a href="https://plus.google.com/share?url={{ site.url }}{{ site.baseurl }}{{ page.url }}" 
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" 
               onclick="window.open(this.href, 'facebook-share', 'width=280,height=480');return false;">
-                <i class="fi flaticon-google-plus"></i>
+                <i class="fi flaticon-linkedin"></i>
               </a>
             </li>
           </ul>

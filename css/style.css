@@ -2971,7 +2971,7 @@ img {
   display: block;
   position: relative;
   max-width: 100%;
-  height: auto !important;
+  height: auto;
 }
 
 sup a {
@@ -3921,6 +3921,17 @@ section.offer-section h2 {
 
 section.offer-section .button-cta {
   margin-bottom: 0;
+}
+
+.taglist-post {
+  margin-bottom: 400px;
+}
+
+.taglist-post .img-wrap img {
+  -o-object-fit: none;
+     object-fit: none;
+  height: 100px;
+  width: 100%;
 }
 
 /**
