@@ -3965,21 +3965,29 @@ section.features-section .feature .icon .circle {
 
 section.features-section .feature .icon .circle .circle {
   width: 50%;
+  height: 50%;
   padding-bottom: 50%;
   border: 0;
   background: #bdc3c7;
 }
 
-section.features-section .feature .icon .circle .circle i {
-  font-size: 3rem;
-  color: #2c3e50;
-  -webkit-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+section.features-section .feature .icon .circle .circle path.fill {
+  fill: #1f2739;
+  stroke: #1f2739;
+  stroke-width: 4;
+  fill-opacity: 1;
+  fill-rule: nonzero;
 }
 
-section.features-section .feature .icon .circle .circle i:before {
-  padding-left: 3%;
+section.features-section .feature .icon .circle .circle path.stroke {
+  fill: none;
+  stroke: #1f2739;
+  stroke-width: 4;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 10;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
 }
 
 section.features-section .feature .content h3 {
@@ -4002,8 +4010,13 @@ section.features-section .feature:hover .icon .circle .circle {
   background: #F15C2E;
 }
 
-section.features-section .feature:hover .icon .circle .circle i {
-  color: #fff;
+section.features-section .feature:hover .icon .circle .circle path.stroke {
+  stroke: #fff;
+}
+
+section.features-section .feature:hover .icon .circle .circle path.fill {
+  fill: #fff;
+  stroke: #fff;
 }
 
 section.features-section .feature:hover .content h3 {

@@ -34,18 +34,28 @@ section.features-section {
 
         .circle {
           width: 50%;
+          height: 50%;
           padding-bottom: 50%;
           border: 0;
           background: $simple-gray;
 
-          i {
-            font-size: 3rem;
-            color: $secondary;
-            transition: all $transition-links $transition-links-type;
+          path.fill {
+            fill:#1f2739;
+            stroke:#1f2739;
+            stroke-width:4;
+            fill-opacity:1;
+            fill-rule:nonzero;
+          }
 
-            &:before {
-              padding-left: 3%;
-            }
+          path.stroke {
+            fill:none;
+            stroke:#1f2739;
+            stroke-width:4;
+            stroke-linecap:butt;
+            stroke-linejoin:miter;
+            stroke-miterlimit:10;
+            stroke-dasharray:none;
+            stroke-opacity:1;
           }
         }
       }
@@ -75,8 +85,13 @@ section.features-section {
           .circle {
             background: $primary;
 
-            i {
-              color: $white;
+            path.stroke {
+              stroke: $white;
+            }
+
+            path.fill {
+              fill: $white;
+              stroke: $white;
             }
           }
         }

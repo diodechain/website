@@ -197,7 +197,7 @@ features:
     consensus. Traditional Man-In-The-Middle attacks through fake PKI certificates and DNS spoofing
     have no chance.
 
-  icon: pe-7s-shield
+  icon: svgs/security.svg
 
 # Feature
 - title: Lower Cost
@@ -206,7 +206,7 @@ features:
     which leads to the lowest possible prices. The blockchain autonomously keeps the controls
     tight and ensures correct behaviour.
 
-  icon: pe-7s-gift
+  icon: svgs/lower_cost.svg
 
 # Feature
 - title: Streaming Network
@@ -215,7 +215,7 @@ features:
     endpoints the Diode Network is a native IoT network providing streaming and storage services for all 
     connected devices.
 
-  icon: pe-7s-shuffle
+  icon: svgs/streaming.svg
 
 
 #####################################
