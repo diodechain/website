@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Breaking new ground"
+title: "Breaking new ground in IoT"
 tagline: "Hello World. This is Diode"
 date: 2019-01-21 13:23
 categories: [News]
-tags: [News, Conferences]
+tags: [News, Blockchain]
 image: groundbreaking.jpg
 ---
 
-After months of incubation we're excited to start talking about our new, we believe groundbreaking initative Diode. Today at the [IoT Fuse](https://iotfuse.com/home/more-events/monthly-meetup/) event ["Stop Meshing With Me - IoT Demos and Mesh Networking HowTo"](https://www.meetup.com/iotfuse/events/258172945/) in Minneapolis let's talk about what how we can make IoT security rock solid and unleash the growth it needs.
+After months of incubation we're excited to start talking about our new, we believe groundbreaking, initiative: Diode&trade;. Incubating within [Exosite](https://exosite.com), we've been working hard to fix some of the fundamental shortcomings of PKI that are underlying 99% of all Internet communication today.
+
+For the first time now it becomes practical, with Diode, to use blockchain technology to eradicate the issues with PKI for IoT devices.  Our technologies work even on low-end embedded devices and increase the security of existing and new solutions manyfold. Follow us here on the journey in the weeks to come as we chart a new course for IoT Device security!
