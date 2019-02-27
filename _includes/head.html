@@ -8,4 +8,16 @@
 
   <!-- Importing Styles -->
   <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css?{{site.time | date: '%s%N'}}">
+
+  {% if jekyll.environment != "development" %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135255804-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-135255804-1');
+  </script>
+  {% endif %}
 </head>
