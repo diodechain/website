@@ -8,12 +8,24 @@
 
 section.blog-section {
 
+  hr.small {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
   // Blog Page
   &.page-layout {
     padding-top: 30px;
 
     .blog-articles-container {
       margin-top: 0;
+    }
+
+    article.border-article {
+
+      border: 1px solid gray;
+      padding: 1em;
+      border-style: dashed;      
     }
 
     article.blog-article {
@@ -127,6 +139,13 @@ section.blog-section {
           display: block;
           width: 100%;
           height: auto;
+          margin-bottom: 1em;
+          img.preview {
+            object-fit: cover;
+            height: 200px;
+            width: 100%;
+          }
+
         }
 
         .article-title {

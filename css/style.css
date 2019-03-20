@@ -3172,7 +3172,7 @@ header.site-header .overlay iframe {
 }
 
 header.site-header.blog-header {
-  height: 600px;
+  height: 100px;
 }
 
 header.site-header.blog-header .parallax-wrapper {
@@ -3276,11 +3276,6 @@ header.site-header .header-banner .heading-content {
   text-transform: uppercase;
 }
 
-header.site-header .header-banner .heading-content .heading-title hr.small {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
 header.site-header .header-banner .heading-content .buttons-header {
   margin-top: 40px;
 }
@@ -3372,7 +3367,6 @@ header.site-header .arrow-down-section .arrow-down i:before {
 @media (max-width: 1000px) {
   header.site-header {
     width: 100%;
-    overflow: visible !important;
     z-index: 99999;
   }
   header.site-header .header-banner {
@@ -3385,9 +3379,8 @@ header.site-header .arrow-down-section .arrow-down i:before {
   header.site-header .header-banner .heading-content {
     padding: 0 40px;
   }
-  header.site-header .header-banner .heading-content .heading-title hr.small {
-    margin-top: 15px;
-    margin-bottom: 15px;
+  header.site-header.blog-header {
+    height: 60px;
   }
   header.site-header .site-navigation-bar {
     display: block;
@@ -4524,12 +4517,23 @@ section.testimonials-section .owl-theme .owl-controls .owl-page.active span, sec
  *  @package gleesik_layout
  *
  **/
+section.blog-section hr.small {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 section.blog-section.page-layout {
   padding-top: 30px;
 }
 
 section.blog-section.page-layout .blog-articles-container {
   margin-top: 0;
+}
+
+section.blog-section.page-layout article.border-article {
+  border: 1px solid gray;
+  padding: 1em;
+  border-style: dashed;
 }
 
 section.blog-section.page-layout article.blog-article .article-boxes {
@@ -4619,6 +4623,14 @@ section.blog-section .blog-articles-container article.blog-article header.articl
   display: block;
   width: 100%;
   height: auto;
+  margin-bottom: 1em;
+}
+
+section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.preview {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 200px;
+  width: 100%;
 }
 
 section.blog-section .blog-articles-container article.blog-article header.article-header .article-title {

@@ -35,7 +35,7 @@ header.site-header {
 
   // Blog Header
   &.blog-header {
-    height: 600px;
+    height: 100px;
 
     .parallax-wrapper {
       height: 600px;
@@ -149,13 +149,6 @@ header.site-header {
     .heading-content {
       width: 100%;
       text-transform: uppercase;
-
-      .heading-title {
-        hr.small {
-          margin-top: 40px;
-          margin-bottom: 40px;
-        }
-      }
 
       .buttons-header {
         margin-top: 40px;

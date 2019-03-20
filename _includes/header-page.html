@@ -15,7 +15,7 @@
 
       <!-- Logo -->
       <div class="col-sm-2 col-xs-4 logo child-center-v">
-        <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/logo.svg?{{site.time | date: '%s%N'}}" width="180" alt="Diode - Logo"></a>
+        <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/logo.svg?{{site.time | date: '%s%N'}}" width="170" alt="Diode - Logo"></a>
       </div>
 
       <!-- Toggle Mobile Menu -->
@@ -45,40 +45,6 @@
         </nav>
 
       </div>
-
-    </div>
-
-    <!-- Site Header Banner -->
-    <div class="row header-banner parent" data-scrollax="properties: { 'translateY': '48%', 'opacity': '1.4' }">
-
-      <div class="heading-content text-center child-center-v">
-
-        <!-- Heading Title -->
-        <div class="row heading-title">
-          <h2>
-            {% if page.tagline == null %}
-              {{ page.type }}
-            {% else %}
-              {{ page.tagline }}
-            {% endif %}
-
-          </h2>
-          <hr class="small">
-          <h1 class="thin">{{ page.title }}</h1>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- Arrow Down -->
-    <div class="row arrow-down-section" data-scrollax="properties: { 'opacity': '0.6' }">
-
-        <div class="wrapper-arrow child-center">
-          <a href="#start" class="arrow-down">
-            <i class="pe-7s-angle-down"></i>
-          </a>
-        </div>
 
     </div>
 

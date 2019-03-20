@@ -15,7 +15,7 @@
   // Site Header Mobile
   header.site-header {
     width: 100%;
-    overflow: visible !important;
+    // overflow: visible !important;
     z-index: 99999;
 
     // Header Banner
@@ -26,16 +26,13 @@
 
       .heading-content {
         padding: 0 40px;
-
-        .heading-title {
-          hr.small {
-            margin-top: 15px;
-            margin-bottom: 15px;
-          }
-        }
       }
 
     }
+
+    &.blog-header {
+      height: 60px;
+    }  
 
     // Site Navigation Bar
     .site-navigation-bar {

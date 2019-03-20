@@ -8,17 +8,17 @@ title: Diode Network <strong>Blog</strong>
 
   <!-- Blog Article -->
   <div class="post-full">
-    <article class="blog-article clearfix">
+    <article class="blog-article border-article clearfix">
 
       <!-- Article Header -->
       <header class="article-header">
-        <div class="img-wrap">
-          <img src="{{ site.baseurl }}/images/blog/{{ post.image }}" alt="Article Blog Image">
-        </div>
         <div class="article-title">
           <h3 class="title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
           <h4 class="category">{{ post.tags | first }}</h4>
         </div>
+        <div class="img-wrap">
+            <img img class="preview" src="{{ site.baseurl }}/images/blog/{{ post.image }}" alt="Article Blog Image">
+          </div>
       </header>
 
       <!-- Article Content -->

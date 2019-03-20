@@ -12,7 +12,34 @@
 
     <!-- Page Section -->
     <section class="site-section blog-section page-layout" id="start">
+      
       <div class="container">
+
+        <!-- Page Layout -->
+        <div class="row">
+
+          <!-- Sidebar -->
+          <div class="col-md-4 hidden-xs hidden-sm">
+    
+          </div>
+    
+          <!-- Content -->
+          <div class="col-md-8 blog-articles-container">
+    
+            <h2>
+              {% if page.tagline == null %}
+                {{ page.type }}
+              {% else %}
+                {{ page.tagline }}
+              {% endif %}
+    
+            </h2>
+            <h1 class="thin">{{ page.title }}</h1>
+            <hr class="small">
+    
+          </div>
+  
+        </div>        
 
         <!-- Page Layout -->
         <div class="row">
