@@ -4654,6 +4654,17 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
   width: 100%;
 }
 
+section.blog-section .blog-articles-container article.blog-article .article-content ol {
+  list-style: decimal;
+  margin-left: 1.2em;
+  margin: 1em;
+  line-height: 1.2em;
+}
+
+section.blog-section .blog-articles-container article.blog-article .article-content ol li {
+  margin-bottom: 0.5em;
+}
+
 section.blog-section .blog-articles-container article.blog-article .article-content .article-date {
   width: 100px;
   float: left;

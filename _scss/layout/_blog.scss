@@ -165,6 +165,17 @@ section.blog-section {
         float: left;
         width: 100%;
 
+        ol {
+          list-style: decimal;
+          margin-left: 1.2em;
+          margin: 1em;
+          line-height: 1.2em;
+
+          li {
+            margin-bottom: 0.5em;
+          }
+        }
+
         // Article Date
         .article-date {
           width: 100px;
