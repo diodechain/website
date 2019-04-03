@@ -3,7 +3,7 @@ layout: post
 title: "DarkMatter and industrial IoT security"
 date: 2019-01-27 12:11
 categories: [Burning-Platform-PKI]
-tags: [Burning Platform, News, PKI, IIoT]
+tags: [Burning Platform, News, PKI, Industrial IoT]
 image: darkmatter.jpg
 ---
 
