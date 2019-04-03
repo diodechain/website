@@ -4666,6 +4666,16 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
   width: 100%;
 }
 
+section.blog-section .blog-articles-container article.blog-article .article-content div.highlight {
+  background-color: black;
+  color: lightgray;
+  padding: 1em;
+  font-size: 0.8em;
+  overflow: auto;
+  margin: 1em;
+  font-family: monospace;
+}
+
 section.blog-section .blog-articles-container article.blog-article .article-content ol {
   list-style: decimal;
   margin-left: 1.2em;
