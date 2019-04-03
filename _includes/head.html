@@ -1,14 +1,16 @@
 <!-- Site Head -->
 <head>
   <meta charset="utf-8" />
-  <meta name="twitter:site" content="@{{ site.twitter_username }}">
+  <meta name="twitter:site"    content="@{{ site.twitter_username }}">
+  <meta property="og:url"      content="{{ site.url }}{{page.url}}">
+
 
   {%- if page.title %}
   <title>{{ page.title }}</title>
-  <meta name="twitter:title"   content="{{ page.title }}">
+  <meta property="og:title"    content="{{ page.title }}">
   {%- else -%}
   <title>{{ site.title }}</title>
-  <meta name="twitter:title"   content="{{ site.title }}">
+  <meta property="og:title"    content="{{ site.title }}">
   {% endif -%}
 
   {%- if page.author %}
@@ -16,11 +18,11 @@
   {% endif -%}
 
   {%- if page.image %}
-  <meta name="twitter:card"  content="summary_large_image">
-  <meta name="twitter:image" content="{{ site.url }}/images/blog/{{ page.image }}">
+  <meta name="twitter:card"    content="summary_large_image">
+  <meta property="og:image"    content="{{ site.url }}/images/blog/{{ page.image }}">  
   {%- else -%}
-  <meta name="twitter:card"  content="summary">
-  <meta name="twitter:image" content="{{ site.url }}/images/twitter_head.jpg">
+  <meta name="twitter:card"    content="summary_large_image">
+  <meta property="og:image"    content="{{ site.url }}/images/blog/{{ page.image }}">  
   {% endif -%}
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
