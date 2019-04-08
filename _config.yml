@@ -18,7 +18,7 @@ exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md",
 baseurl:
 
 # the base hostname & protocol for your site
-url: "https://diodechain.io"
+url: "https://diode.io"
 
 ####################################
 ######   Optional Features    ######
@@ -276,7 +276,7 @@ team:
 #####################################
 footer-description: 
 footer-copyright-text: DIODE
-footer-copyright-url: https://diodechain.io/
+footer-copyright-url: https://diode.io/
 footer-copyright-year: 2019
 
 #####################################
