@@ -2941,7 +2941,7 @@ hr.normal {
   border: none;
   width: 100px;
   height: 4px;
-  background-color: #2c3e50;
+  background-color: #2d3e50;
 }
 
 hr.normal:after {
@@ -3698,7 +3698,7 @@ section.site-section {
 section.site-section header.section-header h1, section.site-section header.section-header h2, section.site-section header.section-header h3, section.site-section header.section-header h4, section.site-section header.section-header h5, section.site-section header.section-header h6 {
   font-weight: bold;
   text-transform: uppercase;
-  color: #2c3e50;
+  color: #2d3e50;
 }
 
 section.site-section header.section-header hr.normal {
@@ -3746,7 +3746,7 @@ aside.site-sidebar .widget {
 
 aside.site-sidebar .widget header.widget-header {
   padding: 24px 30px;
-  color: #2c3e50;
+  color: #2d3e50;
   margin-bottom: 30px;
   background-color: #f4f8f9;
 }
@@ -3774,7 +3774,7 @@ aside.site-sidebar .about-widget .widget-content .info {
 
 aside.site-sidebar .about-widget .widget-content .info .author-name {
   font-size: 1.25rem;
-  color: #2c3e50;
+  color: #2d3e50;
   text-transform: uppercase;
   margin-bottom: 6px;
 }
@@ -3995,7 +3995,7 @@ section.features-section .feature .icon .circle .circle path.stroke {
 }
 
 section.features-section .feature .content h3 {
-  color: #2c3e50;
+  color: #2d3e50;
   text-transform: uppercase;
   margin-bottom: 1.25rem;
 }
@@ -4028,7 +4028,7 @@ section.features-section .feature:hover .content h3 {
 }
 
 section.features-section .feature:hover .content p {
-  color: #2c3e50;
+  color: #2d3e50;
 }
 
 /**
@@ -4063,7 +4063,7 @@ section.portfolio-section .filter-menu-wrapper .filter-menu ul li {
   position: relative;
   padding: 15px;
   cursor: pointer;
-  color: #2c3e50;
+  color: #2d3e50;
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -4384,7 +4384,7 @@ section.testimonials-section .client-testimonial .testimonial-face .face img {
 }
 
 section.testimonials-section .client-testimonial .testimonial-face .info h3.name {
-  color: #2c3e50;
+  color: #2d3e50;
   font-size: 1.5625rem;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -4423,7 +4423,7 @@ section.testimonials-section .client-testimonial .testimonial-quote:before {
 
 section.testimonials-section .client-testimonial .testimonial-quote .quote {
   position: relative;
-  color: #2c3e50;
+  color: #2d3e50;
   font-style: italic;
   font-size: 1rem;
   line-height: 1.4;
@@ -4555,7 +4555,7 @@ section.blog-section.page-layout article.blog-article .article-boxes .box:last-c
 
 section.blog-section.page-layout article.blog-article .article-boxes .box span.title {
   float: left;
-  color: #2c3e50;
+  color: #2d3e50;
   font-weight: bold;
   width: 100px;
 }
@@ -4608,7 +4608,7 @@ section.blog-section .blog-articles-container article.blog-article.blog-single-p
 }
 
 section.blog-section .blog-articles-container article.blog-article.blog-single-page header.article-header .article-title h3.title {
-  color: #2c3e50;
+  color: #2d3e50;
   font-size: 2rem;
 }
 
@@ -4647,7 +4647,7 @@ section.blog-section .blog-articles-container article.blog-article header.articl
 }
 
 section.blog-section .blog-articles-container article.blog-article header.article-header .article-title h3.title a {
-  color: #2c3e50;
+  color: #2d3e50;
 }
 
 section.blog-section .blog-articles-container article.blog-article header.article-header .article-title h3.title a:hover, section.blog-section .blog-articles-container article.blog-article header.article-header .article-title h3.title a:active {
@@ -4825,7 +4825,7 @@ section.team-section .team-members-container .team-member .team-member-content {
 section.team-section .team-members-container .team-member .team-member-content h3.name {
   font-size: 1.25rem;
   line-height: 1.4;
-  color: #2c3e50;
+  color: #2d3e50;
   text-transform: uppercase;
   margin-bottom: 5px;
 }
@@ -4978,7 +4978,7 @@ section.prices-section .pricing-tables-container .pricing-table .plan-head .offe
 
 section.prices-section .pricing-tables-container .pricing-table .plan-head .plan-title {
   text-transform: uppercase;
-  color: #2c3e50;
+  color: #2d3e50;
   font-size: 1.25rem;
 }
 
@@ -5004,7 +5004,7 @@ section.prices-section .pricing-tables-container .pricing-table .plan-content {
 
 section.prices-section .pricing-tables-container .pricing-table .plan-content h4.feature-title {
   font-weight: bold;
-  color: #2c3e50;
+  color: #2d3e50;
   font-size: 1rem;
 }
 
