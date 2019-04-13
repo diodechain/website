@@ -7,7 +7,7 @@ tags: [Blockchain, Lower Cost, Mining]
 image: img-02.jpg
 ---
 
-The Diode Network comes with built-in service features for IoT devices. This post will have a closer look at how the economics behind these work and why this ultimately leads to the lowerst possible prices. At the end we will have a look at how to make plans for fleet provisioning and how to prepare a fleet launch on the Diode network from an economic perspective on some examples.
+The Diode Network comes with built-in service features for IoT devices. This post will have a closer look at how the economics behind these work and why this ultimately leads to the lowerst possible prices. At the end we will have a look at how to make plans for fleet provisioning and how to prepare a fleet launch on the Diode Network from an economic perspective on some examples.
 
 Aliquam fermentum ornare iaculis. Proin vehicula nisi sed <strong>vestibulum consectetur</strong>. Praesent placerat enim eu justo euismod, vel consequat ligula mollis. Quisque mollis, lacus sed imperdiet finibus, risus felis tempor sapien, in suscipit sem nulla bibendum magna. Curabitur venenatis condimentum ipsum, at hendrerit dui dictum quis. In sodales in ligula eget venenatis. Suspendisse imperdiet congue odio at tempus. Donec pellentesque cursus semper. Praesent vel augue sem. Integer nec diam consequat, sollicitudin urna eu, placerat justo. Donec in odio et tellus lobortis vehicula at pellentesque nisi.
 

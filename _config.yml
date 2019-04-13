@@ -38,7 +38,7 @@ tagurl: '/blog/tags.html#'
 #######################################################
 
 # This is your site title
-title: Diode&trade; - The IoT Network
+title: Diode&#8480; - The IoT Network
 # Website language
 lang: en-US
 # Header Title
@@ -155,12 +155,12 @@ mailchimp:
 #####################################
 #############   About   #############
 #####################################
-about-title: Diode&trade; IIoT/IoT Network
+about-title: Diode<sup>sm</sup> IIoT/IoT Network
 about-description: >-
   PKI the system that protects web traffic since 30 years is broken for IoT. The governance structures 
   have failed, broken implementations and misuse are spread far beyond repair and fraud is done through it's 
-  weaknesses every day. Diode is a new security network designed for smart
-  devices. Diode is the first network to implement unforgable proof-of-time and network-device authentication
+  weaknesses every day. Our Diode Chain software creates a new network designed for smart
+  devices. The Diode Network is the first to implement unforgable proof-of-time and network-device authentication
   based on blockchain technology. 
   Man-In-The middle attacks become impossible and dependencies 
   on third parties to entrust security are removed. The network has higher security than PKI with
@@ -184,8 +184,8 @@ features:
 # Feature
 - title: Secure Connectivity
   description: >-
-    Diodes unique blockchain authentication enables devices to establish secure connectivity
-    to the blockchain. From there devices have full access to the data protected by the blockchain
+    The Diode Chain software uses unique blockchain authentication that allows devices to establish secure connectivity
+    to the blockchain. From there, devices have full access to the data protected by the blockchain
     consensus. Traditional Man-In-The-Middle attacks through fake PKI certificates and DNS spoofing
     have no chance.
 
@@ -204,7 +204,7 @@ features:
 - title: Streaming Network
   description: >-
     Whether it is video data from a home camera to an end user or broadcasting messages to thousands of 
-    endpoints the Diode Network is a native IoT network providing streaming and storage services for all 
+    endpoints, the Diode Network is a native IoT network providing streaming and storage services for all 
     connected devices.
 
   icon: svgs/streaming.svg
@@ -215,7 +215,7 @@ features:
 #####################################
 blog-title: News + Events
 blog-description: >-
-  As we're working on rolling out the next evolutionary steps of the Diode network we will be 
+  As we're working on rolling out the next evolutionary steps of the Diode Network we will be 
   posting updates regularly. Also keep track of our twitter account to get all the latest news.
 
 

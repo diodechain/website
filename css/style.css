@@ -2839,6 +2839,12 @@ body {
   background-color: #fff;
 }
 
+body sup {
+  font-size: 40%;
+  font-weight: bold;
+  vertical-align: text-top;
+}
+
 body .site-header .container:before {
   content: '';
   display: block;
@@ -3873,10 +3879,6 @@ section.offer-section .hs-form-field input, section.offer-section .hs-submit inp
 }
 
 section.offer-section .hs-form-field input::-webkit-input-placeholder {
-  color: white;
-}
-
-section.offer-section .hs-form-field input::-moz-placeholder {
   color: white;
 }
 
