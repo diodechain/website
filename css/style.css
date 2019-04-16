@@ -3882,6 +3882,10 @@ section.offer-section .hs-form-field input::-webkit-input-placeholder {
   color: white;
 }
 
+section.offer-section .hs-form-field input::-moz-placeholder {
+  color: white;
+}
+
 section.offer-section .hs-form-field input::-ms-input-placeholder {
   color: white;
 }
