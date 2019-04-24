@@ -126,34 +126,6 @@ table {
 
 /**
  *
- *  Theme Style Configuration
- *
- *  @package gleesik_module
- *
- *
- *
- *
- *  ##### Typography
- *  $font-family: 'Lato'; // Google Font
- *  $global-font-size: 16px; // Default Global Font Size
- *
- *  ##### Animations Timing
- *  $transition-links: 300ms; // Default Global Animation Timing
- *  $animation-arrow-header-time: 2.5s;
- *
- *  ##### Animations Types
- *  $transition-links-type: ease-in-out; // Default Global Transition Type
- *  $animation-arrow-header-type: ease-in-out;
- *
- *  ##### Mobile Menu Settings
- *  $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
- *
- *
- *
- *
- **/
-/**
- *
  *  Color Skin
  *
  *  @package gleesik_module
@@ -3003,7 +2975,7 @@ blockquote {
   position: relative;
   width: auto;
   float: left;
-  font-size: 2.2em;
+  font-size: 1.5em;
   font-weight: lighter;
   line-height: 1.35;
   padding: 0 10%;
@@ -4666,6 +4638,7 @@ section.blog-section .blog-articles-container article.blog-article header.articl
 }
 
 section.blog-section .blog-articles-container article.blog-article .article-content {
+  font-size: 21px;
   display: block;
   position: relative;
   float: left;

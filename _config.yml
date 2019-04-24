@@ -272,12 +272,12 @@ team:
   avatar: dominic-letz.jpg
 
   # Social Links
-  # youtube: '#'
-  # pinterest: '#'
-  # facebook: '#'
-  # twitter: '#'
-  # google-plus: '#'
-  # vimeo: '#'
+  linkedin: 'https://www.linkedin.com/in/dominic-letz-3b771424/'
+  twitter: 'https://twitter.com/dominicletz'
+  info: >-
+    Dominic has more than ten years
+    expertise in managing large scale M2M and IoT deployments both at Exosite and before at Nokia. 
+    His goal is now to bring the security of smart device communication to the next level. 
 
 # Team Member
 - name: Greg Belcher

@@ -70,6 +70,12 @@
     });
 
     /**
+     * Updating Article Links to open in new tabs
+     */
+    $('.article-content a').attr("target", "_blank");
+
+
+    /**
      *  Video
      */
     var $site_header = $('.site-header');
