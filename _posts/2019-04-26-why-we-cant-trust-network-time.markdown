@@ -61,3 +61,15 @@ The problem is that at this moment the device becomes susceptible to attacks usi
 # Way Forward
 
 Today fetching time from a network is not possible in a secure way. This in return shakes the foundation of PKI security for internet communication. Next to the [PKI governance issues discussed](https://diode.io/burning-platform-pki/2019/04/08/why-there-are-3652-organizations-that-can-read-your-traffic.html) in the last blog post this poses a major technical security issue. In the next blog post of this series we want to introduce a new secure network time protocol based on blockchain technology and show how even the smallest devices can establish completely secure connections. Be sure to follow our [twitter account](https://twitter.com/diode_chain) to get notified when the next post comes out.
+
+<hr/>
+
+Sources
+
+[https://knowledge.digicert.com/generalinformation/INFO3977.html](https://knowledge.digicert.com/generalinformation/INFO3977.html)
+
+[https://revoked.grc.com/](https://revoked.grc.com/)
+
+[https://tools.ietf.org/html/rfc868](https://tools.ietf.org/html/rfc868)
+
+[https://searchsecurity.techtarget.com/news/252460108/Study-reveals-sale-of-SSL-TLS-certificates-on-dark-web](https://searchsecurity.techtarget.com/news/252460108/Study-reveals-sale-of-SSL-TLS-certificates-on-dark-web)

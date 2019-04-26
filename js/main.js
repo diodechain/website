@@ -72,7 +72,7 @@
     /**
      * Updating Article Links to open in new tabs
      */
-    $('.article-content a').attr("target", "_blank");
+    $('.blog-single-page .article-content a').attr("target", "_blank");
 
 
     /**
