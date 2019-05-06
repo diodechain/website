@@ -30,6 +30,8 @@ section.blog-section {
 
     article.blog-article {
 
+      overflow: hidden;
+
       // Article Boxes
       .article-boxes {
         float: left;

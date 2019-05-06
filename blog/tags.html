@@ -35,7 +35,7 @@ title: Tags
         <div class="time">{{ post.date | date: "%H:%M" }}</div>
       </div>
       <div class="article-text">
-        <p>{{ post.excerpt | strip_html }}</p>
+        <p>{{ post.content | strip_html | truncate: 300 }}</p>
       </div>
       <div class="show-more">
         <a href="{{ site.baseurl }}{{ post.url }}" class="button">Read More</a>

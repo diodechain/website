@@ -2974,7 +2974,6 @@ blockquote {
   display: block;
   position: relative;
   width: auto;
-  float: left;
   font-size: 1.5em;
   font-weight: lighter;
   line-height: 1.35;
@@ -2987,7 +2986,6 @@ blockquote small {
   display: block;
   font-size: 1.6rem;
   font-style: italic;
-  margin-top: 3%;
   float: right;
 }
 
@@ -3003,9 +3001,6 @@ blockquote:before {
 }
 
 @media (max-width: 450px) {
-  blockquote {
-    font-size: 2em;
-  }
   blockquote small {
     font-size: 1.2rem;
   }
@@ -4512,6 +4507,10 @@ section.blog-section.page-layout article.border-article {
   border: 1px solid gray;
   padding: 1em;
   border-style: dashed;
+}
+
+section.blog-section.page-layout article.blog-article {
+  overflow: hidden;
 }
 
 section.blog-section.page-layout article.blog-article .article-boxes {
