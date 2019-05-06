@@ -187,6 +187,14 @@ section.blog-section {
         float: left;
         width: 100%;
 
+        code {
+          font-family: 'Times New Roman', serif;
+          background-color: #f3f3f3;
+          font-size: 0.9em;
+          padding: 1em;
+          margin: 1em;
+        }
+
         div.highlight {
           background-color: black;
           color: lightgray;
@@ -197,11 +205,16 @@ section.blog-section {
           font-family: monospace;
         }
 
+        em, i {
+          background-color: #f5e2dd;
+        }
+
         ol {
           list-style: decimal;
           margin-left: 1.2em;
           margin: 1em;
           line-height: 1.2em;
+          padding-left: 0.3em;
 
           li {
             margin-bottom: 0.5em;

@@ -285,18 +285,18 @@ team:
   avatar: greg-belcher.jpg
 
   # Social Links
-  # youtube: '#'
-  # pinterest: '#'
-  # facebook: '#'
-  # twitter: '#'
-  # google-plus: '#'
-  # vimeo: '#'
+  linkedin: 'https://www.linkedin.com/in/greg-belcher-4b48025/'
+  twitter: 'https://twitter.com/gbelcher0'
+  info: >-
+    Greg has held various positions in finance and corporate development and has consulted numerous
+    private equity and corporate clients on M&A transactions. His ambition is to apply his past
+    experience to today's technology to help shape tomorrow's economies.
+
 
 # Team Member
 - name: Hans Rempel
   tagline: CEO
   avatar: hans-rempel.jpg
-
   # Social Links
   # youtube: '#'
   # pinterest: '#'

@@ -4644,6 +4644,14 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
   width: 100%;
 }
 
+section.blog-section .blog-articles-container article.blog-article .article-content code {
+  font-family: 'Times New Roman', serif;
+  background-color: #f3f3f3;
+  font-size: 0.9em;
+  padding: 1em;
+  margin: 1em;
+}
+
 section.blog-section .blog-articles-container article.blog-article .article-content div.highlight {
   background-color: black;
   color: lightgray;
@@ -4654,11 +4662,16 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
   font-family: monospace;
 }
 
+section.blog-section .blog-articles-container article.blog-article .article-content em, section.blog-section .blog-articles-container article.blog-article .article-content i {
+  background-color: #f5e2dd;
+}
+
 section.blog-section .blog-articles-container article.blog-article .article-content ol {
   list-style: decimal;
   margin-left: 1.2em;
   margin: 1em;
   line-height: 1.2em;
+  padding-left: 0.3em;
 }
 
 section.blog-section .blog-articles-container article.blog-article .article-content ol li {
