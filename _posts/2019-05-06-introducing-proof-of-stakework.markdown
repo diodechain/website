@@ -85,7 +85,7 @@ In [part 3](https://medium.com/p/672a3d413501) Sharma details the ‘Long Range 
 
 [Diode](https://diode.io/), a blockchain developed for industrial IoT applications, combined some of the most desirable attributes of both POW and POS to create Proof-of-StakeWork<sup>TM</sup>.
 
-Proof-of-StakeWork is, at its core, a POW protocol but also employes POS economics to allow miners to grow their mining operation by reinvesting the block reward instead of having to buy more hardware and consume more electricity.
+Proof-of-StakeWork is, at its core, a POW protocol but also employs POS economics to allow miners to grow their mining operation by reinvesting the block reward instead of having to buy more hardware and consume more electricity.
 
 Proof-of-StakeWork<sup>TM</sup> defends against 51% attacks without the expense and environmental impact of POW mining. But at the same time, doesn’t have the ‘Nothing at stake’ vulnerability because miners can only mine one blockchain at a time.
 
