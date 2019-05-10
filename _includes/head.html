@@ -8,9 +8,11 @@
   {%- if page.title %}
   <title>{{ page.title }}</title>
   <meta property="og:title"    content="{{ page.title }}">
+  <meta property="description" content="{{ page.tagline }}">
   {%- else -%}
   <title>{{ site.title }}</title>
   <meta property="og:title"    content="{{ site.title }}">
+  <meta property="description" content="{{ site.description }}">
   {% endif -%}
 
   {%- if page.author %}

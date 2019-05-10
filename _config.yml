@@ -27,7 +27,9 @@ tagurl: '/blog/tags.html#'
 #######################################################
 
 # This is your site title
-title: Diode&#8480; - The IoT Network
+title: Diode&#8480; - The IoT Network Blockchain Network
+# Meta description
+description: The First Super Light Client and Blockchain Network for IoT, ARM, ESP32, Arduino, RaspberryPI and other embedded MCU
 # Website language
 lang: en-US
 # Header Title
