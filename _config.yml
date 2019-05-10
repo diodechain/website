@@ -1,7 +1,10 @@
 # Information for compile
-exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md", "resources"]
+exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md", "resources", "run"]
 
 baseurl:
+
+plugins:
+ - jekyll-sitemap
 
 # the base hostname & protocol for your site
 url: "https://diode.io"
