@@ -27,43 +27,65 @@ layout: page-sidebar-left
 
       <!-- Tags Box -->
       <div class="tags-article box">
-        <span class="title">Tags:</span>
         <ul class="tag-cloud-box box-content">
           {% assign tags_list = page.tags %}
             {% if tags_list.first[0] == null %}
               {% for tag in tags_list %}
-                <li><a href="{{ site.baseurl }}{{ site.tagurl }}{{ tag | slugify }}">{{ tag }}</a></li>
+                <li><a href="{{ site.baseurl }}{{ site.tagurl }}{{ tag | slugify }}">#{{ tag }}</a></li>
               {% endfor %}
             {% else %}
               {% for tag in tags_list %}
-                <li><a href="{{ site.baseurl }}{{ site.tagurl }}{{ tag[0] | slugify }}">{{ tag[0] }}</a></li>
+                <li><a href="{{ site.baseurl }}{{ site.tagurl }}{{ tag[0] | slugify }}">#{{ tag[0] }}</a></li>
               {% endfor %}
             {% endif %}
           {% assign tags_list = nil %}
         </ul>
       </div>
 
+      <section class="offer-section box clearfix">
+
+          <div class="col-lg-8 col-sm-12">
+            <h2>Follow us on twitter!</h2>
+          </div>
+          <div class="col-lg-4 col-lg-push-0 col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1">
+            <a href="https://twitter.com/diode_chain" target="_blank" class="button-cta button-block">@diode_chain</a>
+          </div>
+      
+      </section>
+    
       <!-- Share Article Links Box -->
       <div class="share-article box clearfix">
-        <span class="title">Share:</span>
         <div class="social-icons box-content">
           <ul class="icons global-text-color-icons">
             <li>
-              <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" 
-              onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
-                <i class="fi flaticon-facebook"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/home?status={{ site.url }}{{ site.baseurl }}{{ page.url }}" 
-              onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+              <a href="https://twitter.com/home?status={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">
                 <i class="fi flaticon-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" 
-              onclick="window.open(this.href, 'facebook-share', 'width=280,height=480');return false;">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">
                 <i class="fi flaticon-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://telegram.me/share/url?url={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">
+                <i class="fi flaticon-telegram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">
+                <i class="fi flaticon-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/?text={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">
+                <i class="fi flaticon-whatsapp"></i>
+              </a>
+            </li>
+            <li>
+              <input style="position: absolute; top: -9999px;" id="copy" type="text" value="{{ site.url }}{{ site.baseurl }}{{ page.url }}"/>
+              <a onclick="$('#copy').select(); document.execCommand('copy')">
+                <i class="pe-7s-paperclip"></i>
               </a>
             </li>
           </ul>

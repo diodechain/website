@@ -70,6 +70,7 @@ header.site-header {
   // Site Navigation Bar
   .site-navigation-bar {
     position: relative;
+    overflow: hidden;
     height: 100px;
     min-height: 100px;
     z-index: 2;
@@ -91,6 +92,11 @@ header.site-header {
         position: relative;
         display: block;
         float: right;
+        line-height: 2em;
+
+        i.fi {
+          font-size: 2em;
+        }
 
         ul {
           li {

@@ -16,8 +16,8 @@ ul.tag-cloud-box {
     a {
       display: block;
       padding: 8px 12px;
-      color: $simple-gray;
-      border: 1px solid $simple-gray;
+      // color: $simple-gray;
+      border: 1px solid $primary;
 
       &:hover {
         color: $white;

@@ -3,9 +3,6 @@ exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md",
 
 baseurl:
 
-plugins:
- - jekyll-sitemap
-
 # the base hostname & protocol for your site
 url: "https://diode.io"
 
