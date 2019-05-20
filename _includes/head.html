@@ -18,7 +18,7 @@
   {%- if page.author %}
   {% assign author = site.team | where: 'name', page.author | first %}
   <meta property="description" content="{{ page.content | strip_newlines | strip_html | truncate: 300 }}">
-  <meta name="twitter:creator" content="@{{ page.author }}">
+  <meta name="twitter:creator" content="{{ author.thandle }}">
   <meta property="og:type" content="article">
   <meta property="article:section" content="{{ page.categories[0] }}" />
   <meta property="article:publisher" content="https://diode.io">

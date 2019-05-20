@@ -17,7 +17,7 @@ layout: none
     <priority>0.5</priority>
     <news:news> 
         <news:publication> 
-            <news:name>The Weekly Block</news:name> 
+            <news:name>{{ site.blog-name }}</news:name> 
             <news:language>en</news:language> 
         </news:publication> 
         <news:publication_date>{{ post.date | date_to_xmlschema }}</news:publication_date> 
