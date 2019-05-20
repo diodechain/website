@@ -1,10 +1,12 @@
 ---
+redirect_from: burning-platform-pki/2019/03/20/decentralized-pki.html
 layout: post
 title:  "Decentralized PKI in a nutshell"
 date: 2019-03-20 16:58
 categories: [Burning-Platform-PKI]
-tags: [Burning Platform, Development, Security, PKI]
+tags: [Burning Platform, Development, Security, PKI, Distributed Infrastructure]
 image: conflict.png
+author: Dominic Letz
 ---
 
 In Today's internet, the authenticity of content is secured by the internet PKI system and the domain name registries. To make it all work first the domain name server (DNS), second you - holding the certificate and the corresponding private key and third a certificate authority which signed your certificate all have to agree on the same data to create this security.

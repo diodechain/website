@@ -1,4 +1,5 @@
 ---
+redirect_from: burning-platform-pki/2019/01/27/darkmatter.html
 layout: post
 title: "DarkMatter and industrial IoT security"
 date: 2019-01-27 12:11

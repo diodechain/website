@@ -1,10 +1,12 @@
 ---
+redirect_from: burning-platform-pki/2019/04/08/why-there-are-3652-organizations-that-can-read-your-traffic.html
 layout: post
 title: "Why there are 3652 organizations that can read everyone's encrypted traffic"
 date: 2019-04-08 13:23
 categories: [Burning-Platform-PKI]
 tags: [Burning Platform, Security, PKI]
 image: Netscape-and.png
+author: Dominic Letz
 ---
 
 You may not be aware of this but if you are browsing the web or running IoT devices in your business or at your home, you are being protected by a 30-year-old security infrastructure. In this post, we will uncover the history of the internet PKI that holds most of the internet together today and highlight some of the most obvious threats and known flaws. This article is the first in a series investigating the current state of PKI and the events leading up to the first Diode concept.

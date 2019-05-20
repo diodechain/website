@@ -2471,6 +2471,10 @@ table {
 
 .flaticon-facebook:before {
   content: "\f108";
+}
+
+.flaticon-facebook-c:before {
+  content: "\f108";
   color: #1877f2;
 }
 
@@ -2495,6 +2499,10 @@ table {
 }
 
 .flaticon-linkedin:before {
+  content: "\f10e";
+}
+
+.flaticon-linkedin-c:before {
   content: "\f10e";
   color: #007bb5;
 }
@@ -2521,6 +2529,10 @@ table {
 
 .flaticon-telegram:before {
   content: "\f114";
+}
+
+.flaticon-telegram-c:before {
+  content: "\f114";
   color: #0088cc;
 }
 
@@ -2529,6 +2541,10 @@ table {
 }
 
 .flaticon-twitter:before {
+  content: "\f116";
+}
+
+.flaticon-twitter-c:before {
   content: "\f116";
   color: #1da1f2;
 }
@@ -2550,6 +2566,10 @@ table {
 }
 
 .flaticon-whatsapp:before {
+  content: "\f11b";
+}
+
+.flaticon-whatsapp-c:before {
   content: "\f11b";
   color: #25d366;
 }
@@ -3171,11 +3191,11 @@ header.site-header .site-navigation-bar .navigation-bar nav.nav-menu {
   position: relative;
   display: block;
   float: right;
-  line-height: 2em;
+  line-height: 1.8em;
 }
 
 header.site-header .site-navigation-bar .navigation-bar nav.nav-menu i.fi {
-  font-size: 2em;
+  font-size: 1.8em;
 }
 
 header.site-header .site-navigation-bar .navigation-bar nav.nav-menu ul li {
@@ -3880,6 +3900,11 @@ section.offer-section .button-cta {
      object-fit: none;
   height: 100px;
   width: 100%;
+}
+
+.taglist-post h2.category {
+  color: #F15C2E;
+  text-transform: capitalize;
 }
 
 /**

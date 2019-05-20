@@ -1,4 +1,5 @@
 ---
+redirect_from: news/2019/01/21/hello-world.html
 layout: post
 title: "Breaking new ground in IoT"
 tagline: "Hello World. This is Diode"

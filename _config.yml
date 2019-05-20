@@ -3,6 +3,9 @@ exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md",
 
 baseurl:
 
+plugins:
+  - jekyll-redirect-from
+
 # the base hostname & protocol for your site
 url: "https://diode.io"
 
@@ -101,21 +104,6 @@ telegram: 'https://t.me/DiodeChain'
 #########################
 ######   Widgets   ######
 #########################
-
-#
-# About Blog Author Widget
-#
-about-widget:
-  author-avatar: avatar-02.jpg
-  author-name: John Doe
-  author-tagline: Blog Author
-  author-info: Cum sociis que penatibus et magnis dis parturient montes lorem, nascetur ridiculus mus. Donec quam felis, ultricies.
-  author-social-links:
-    youtube: '#'
-    pinterest: '#'
-    facebook: '#'
-    twitter: '#'
-    google-plus: '#'
 
 # Google Map JS api
 # This is my api for this template
@@ -249,6 +237,7 @@ chain-features:
 #####################################
 ############# Our Blog ##############
 #####################################
+blog-name: The Blockchain Journal
 blog-title: News + Events
 blog-description: >-
   As we're working on rolling out the next evolutionary steps of the Diode Network we will be 
@@ -276,6 +265,7 @@ team:
   # Social Links
   linkedin: 'https://www.linkedin.com/in/dominic-letz-3b771424/'
   twitter: 'https://twitter.com/dominicletz'
+  thandle: "@DominicLetz"
   info: >-
     Dominic has more than ten years
     expertise in managing large scale M2M and IoT deployments both at Exosite and before at Nokia. 
@@ -289,6 +279,7 @@ team:
   # Social Links
   linkedin: 'https://www.linkedin.com/in/greg-belcher-4b48025/'
   twitter: 'https://twitter.com/gbelcher0'
+  thandle: "@gbelcher0"
   info: >-
     Greg has held various positions in finance and corporate development and has consulted numerous
     private equity and corporate clients on M&A transactions. His ambition is to apply his past
@@ -299,13 +290,15 @@ team:
 - name: Hans Rempel
   tagline: CEO
   avatar: hans-rempel.jpg
+
   # Social Links
-  # youtube: '#'
-  # pinterest: '#'
-  # facebook: '#'
-  # twitter: '#'
-  # google-plus: '#'
-  # vimeo: '#'
+  linkedin: 'https://www.linkedin.com/in/hansrempel'
+  twitter: 'https://twitter.com/hansrempel'
+  thandle: "@hansrempel"
+  info: >-
+    Hans has led teams for two decades creating innovations in distributed ledger and connected
+    device applications.  He has seen first hand the market transformation brought by these
+    innovations, and is passionate about removing barriers to adoption and unlocking scale.
 
 #####################################
 #############   Footer   ############
@@ -319,17 +312,7 @@ footer-copyright-year: 2019
 ######   Widgets   ######
 #########################
 
-# #
-# # About Blog Author Widget
-# #
-# about-widget:
-#   author-avatar: avatar-02.jpg
-#   author-name: John Doe
-#   author-tagline: Blog Author
-#   author-info: Cum sociis que penatibus et magnis dis parturient montes lorem, nascetur ridiculus mus. Donec quam felis, ultricies.
-#   author-social-links:
-#     youtube: '#'
-#     pinterest: '#'
-#     facebook: '#'
-#     twitter: '#'
-#     google-plus: '#'
+collections:
+  posts:
+    output: true 
+    permalink: /:categories/:title-:short_year:y_day/

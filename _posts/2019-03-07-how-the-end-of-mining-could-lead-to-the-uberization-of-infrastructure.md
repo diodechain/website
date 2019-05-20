@@ -1,10 +1,12 @@
 ---
+redirect_from: distributed-infrastructure/2019/03/07/the-end-of-mining.html
 layout: post
 title: "How the End of Mining Could Lead to the ‘Uberization’ of Infrastructure"
 date: 2019-03-07 12:11
 category: [Distributed-Infrastructure]
 tags: [Distributed Infrastructure, PKI, Industrial IoT]
 image: the-end-of-mining.jpg
+author: Greg Belcher
 ---
 
 The public was aghast back in early 2018 when PwC Bitcoin specialist Alex de Vries [estimated](https://www.cell.com/joule/fulltext/S2542-4351(18)30177-6) that Bitcoin servers consume more than 22 terawatt-hours of electricity per year which is comparable to entire countries such as Austria and Ireland.

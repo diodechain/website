@@ -1,9 +1,10 @@
 ---
+redirect_from: /mining/2019/05/06/introducing-proof-of-stakework.html
 layout: post
 title: Introducing Proof-Of-StakeWork
 date: 2019-05-06 13:42
 categories: [Mining]
-tags: [Proof-Of-StakeWork, Mining, Blockchain]
+tags: [Mining, Proof-Of-StakeWork, Blockchain]
 author: Greg Belcher
 image: StakeWork0.jpg
 ---
@@ -94,6 +95,3 @@ Diode’s Proof-of-StakeWork<sup>TM  </sup>is a more fair and inclusive protocol
 Most importantly Proof-of-StakeWork gives miners a choice and empowers them to decide which growth model works best for their mining operation. Some may feel that they have an advantage in the development and procurement of advanced mining hardware or may have access to low -cost electricity. While others in the community may feel more comfortable growing their operation by reinvesting their block rewards into an increased stake. Either approach or even a combination of the two can make you successful with Diode.
 
 For these reasons and more, we believe Proof-of-StakeWork<sup>TM</sup> is the next logical evolution toward a more perfect blockchain protocol that works for everyone in the community. To learn more please join us on this exciting journey and follow us on Twitter and Telegram and sign up for our mailing list.
-
-
-<!-- Docs to Markdown version 1.0β17 -->
