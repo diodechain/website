@@ -42,4 +42,4 @@ What is perhaps most troubling is the lack of commentary around the repercussion
 
 To address these threats, Exosite, an industrial IoT platform has built the Diode technology stack for IoT devices. [Diode](https://diode.io), is a public blockchain that acts as a registry for certificates and authorities. It enables companies to comply with their local rules and regulations without the risk that their sensitive data can be intercepted and used against them by attackers or agents of hostile foreign powers.
 
-To learn more join our [Telegram](https://t.me/DiodeChain), follow us on [Twitter](https://twitter.com/diode_chain) and sign up for email notifications.
+To learn more join our [Telegram](https://t.me/diode_chain), follow us on [Twitter](https://twitter.com/diode_chain) and sign up for email notifications.

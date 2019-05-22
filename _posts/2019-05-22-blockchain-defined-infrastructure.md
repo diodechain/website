@@ -82,10 +82,9 @@ Configuring millions of IoT endpoints into a single network is not a problem any
   </tr>
 </table>
 
-If you're interested to learn more about this exciting development, or if you are an enterprise using SD-WANs and are looking for ways to extend them to your IoT fleet, follow us on twitter or signup for our newsletter and we'll keep you up-to-date.
+If you're interested to learn more about this exciting development, or if you are an enterprise using SD-WANs and are looking for ways to extend them to your IoT fleet, follow us on [Twitter](https://twitter.com/diode_chain) or signup for our newsletter and we'll keep you up-to-date.
 
-If you're a supplier of SDN or SD-WAN solutions, and would like to reach out to us for partnerships and cooperation, feel free to reach out to us directly at [partner@diode.io](mailto:partner@diode.io) or join the conversation on telegram.
-
+If you're a supplier of SDN or SD-WAN solutions, and would like to reach out to us for partnerships and cooperation, feel free to reach out to us directly at [partner@diode.io](mailto:partner@diode.io) or join the conversation on [Telegram](https://t.me/diode_chain).
 
 <hr/>
 

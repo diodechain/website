@@ -82,7 +82,7 @@ navigation:
 - title: Blog
   link: /blog/
 - title: <i class="fi flaticon-telegram"></i>
-  link: https://t.me/DiodeChain
+  link: https://t.me/diode_chain
   target: _blank
 - title: <i class="fi flaticon-twitter"></i>
   link: https://twitter.com/diode_chain
@@ -97,7 +97,7 @@ youtube: 'https://www.youtube.com/channel/UC3b5voADiipUmq1Q-vtPKsA'
 # facebook: '#'
 twitter: 'https://twitter.com/diode_chain'
 twitter_username: 'diode_chain'
-telegram: 'https://t.me/DiodeChain'
+telegram: 'https://t.me/diode_chain'
 # google-plus: '#'
 # vimeo: '#'
 
