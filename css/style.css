@@ -4702,6 +4702,30 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
   }
 }
 
+section.blog-section .blog-articles-container article.blog-article .article-content table {
+  border: 1px solid black;
+}
+
+section.blog-section .blog-articles-container article.blog-article .article-content td, section.blog-section .blog-articles-container article.blog-article .article-content th {
+  padding: 0.3em;
+}
+
+section.blog-section .blog-articles-container article.blog-article .article-content td.red, section.blog-section .blog-articles-container article.blog-article .article-content th.red {
+  background-color: #ea9999;
+}
+
+section.blog-section .blog-articles-container article.blog-article .article-content td.green, section.blog-section .blog-articles-container article.blog-article .article-content th.green {
+  background-color: #b6d7a8;
+}
+
+section.blog-section .blog-articles-container article.blog-article .article-content td.yellow, section.blog-section .blog-articles-container article.blog-article .article-content th.yellow {
+  background-color: #f1c232;
+}
+
+section.blog-section .blog-articles-container article.blog-article .article-content th {
+  background-color: #e3e9ed;
+}
+
 section.blog-section .blog-articles-container article.blog-article .article-content code {
   display: block;
   font-family: 'Times New Roman', serif;

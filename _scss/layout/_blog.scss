@@ -216,6 +216,27 @@ section.blog-section {
           font-size: 16px;
         }
 
+        table {
+          border: 1px solid black;
+        }
+
+        td, th {
+          padding: 0.3em;
+          &.red {
+            background-color: #ea9999;
+          }
+          &.green {
+            background-color: #b6d7a8;
+          }
+          &.yellow {
+            background-color: #f1c232;
+          }
+        }
+
+        th {
+          background-color: $light-gray;
+        }
+
         code {
           display: block;
           font-family: 'Times New Roman', serif;
