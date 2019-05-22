@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "From Software Defined Networking to  Blockchain Defined Networking"
+title: "From Software Defined Networking to Blockchain Defined Networking"
 date: 2019-05-22 17:02
 categories: [Distributed-Infrastructure]
 tags: [Distributed Infrastructure, Blockchain, BDN, Security]
