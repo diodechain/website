@@ -4704,6 +4704,7 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
 
 section.blog-section .blog-articles-container article.blog-article .article-content table {
   border: 1px solid black;
+  margin: 1em 0em;
 }
 
 section.blog-section .blog-articles-container article.blog-article .article-content td, section.blog-section .blog-articles-container article.blog-article .article-content th {
@@ -4726,7 +4727,7 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
   background-color: #e3e9ed;
 }
 
-section.blog-section .blog-articles-container article.blog-article .article-content code {
+section.blog-section .blog-articles-container article.blog-article .article-content .math {
   display: block;
   font-family: 'Times New Roman', serif;
   background-color: #f3f3f3;

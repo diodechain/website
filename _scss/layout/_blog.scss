@@ -218,6 +218,7 @@ section.blog-section {
 
         table {
           border: 1px solid black;
+          margin: 1em 0em;
         }
 
         td, th {
@@ -237,7 +238,7 @@ section.blog-section {
           background-color: $light-gray;
         }
 
-        code {
+        .math {
           display: block;
           font-family: 'Times New Roman', serif;
           background-color: #f3f3f3;

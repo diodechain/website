@@ -39,7 +39,7 @@ Samani coined the phrase ‘security budget’ when describing the computational
 
 Samani provides a formula to quantify a network’s security budget.
 
-<code>
+<code class="math">
 SB = aggregate network value &times; inflation rate + transaction fees
 </code>
 
