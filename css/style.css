@@ -3167,12 +3167,14 @@ header.site-header .parallax-wrapper {
 }
 
 header.site-header .container {
+  pointer-events: none;
   position: relative;
   height: 100vh;
   max-height: 1080px;
 }
 
 header.site-header .site-navigation-bar {
+  pointer-events: all;
   position: relative;
   overflow: hidden;
   height: 100px;

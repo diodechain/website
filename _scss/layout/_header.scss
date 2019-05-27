@@ -62,6 +62,7 @@ header.site-header {
   }
 
   .container {
+    pointer-events: none;
     position: relative;
     height: 100vh;
     max-height: 1080px;
@@ -69,6 +70,7 @@ header.site-header {
 
   // Site Navigation Bar
   .site-navigation-bar {
+    pointer-events: all;
     position: relative;
     overflow: hidden;
     height: 100px;
