@@ -3110,6 +3110,10 @@ blockquote:before {
  *  @package gleesik_layout
  *
  **/
+.no-scroll header.site-header .site-navigation-bar {
+  overflow: visible;
+}
+
 header.site-header {
   position: relative;
   width: 100%;
@@ -3182,6 +3186,7 @@ header.site-header .site-navigation-bar {
   z-index: 2;
   text-transform: uppercase;
   font-weight: bold;
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 header.site-header .site-navigation-bar .logo img {
@@ -4707,6 +4712,9 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
 section.blog-section .blog-articles-container article.blog-article .article-content table {
   border: 1px solid black;
   margin: 1em 0em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 section.blog-section .blog-articles-container article.blog-article .article-content td, section.blog-section .blog-articles-container article.blog-article .article-content th {

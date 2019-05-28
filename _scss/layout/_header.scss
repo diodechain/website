@@ -6,6 +6,11 @@
  *
  **/
 
+.no-scroll header.site-header .site-navigation-bar {
+  overflow: visible;
+}
+
+
 header.site-header {
   position: relative;
   width: 100%;
@@ -78,6 +83,7 @@ header.site-header {
     z-index: 2;
     text-transform: uppercase;    
     font-weight: bold;
+    -webkit-transform: translate3d(0, 0, 0);
 
     // Logo
     .logo {

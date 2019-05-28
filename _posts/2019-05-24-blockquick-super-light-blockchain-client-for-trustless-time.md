@@ -21,7 +21,7 @@ Conveniently for our quest to getting the current time without trusting anyone b
 When HTC announced that their new Handheld [Exodus 1s will be running a full Bitcoin node](https://www.engadget.com/2019/05/11/htc-exodus-1s-blockchain-phone-node/) that immediately raised eyebrows. Running a full Bitcoin node at this time requires ~200gb of storage plenty of ram and constant data bandwidth of ~140mb a day. For Ethereum the situation is similar:
 
 
-<table>
+<div style="overflow: auto"><table>
   <tr>
    <th>Node Type
    </th>
@@ -62,7 +62,7 @@ When HTC announced that their new Handheld [Exodus 1s will be running a full Bit
    <td>minutes
    </td>
   </tr>
-</table>
+</table></div>
 
 **For just getting the current time loading 1.2gb of blockchain data seems a bit hefty**. Also, we're working mostly on low-end chips for small IoT products, such as an [ESP32](https://www.espressif.com/en/products/hardware/esp32/overview), [TI CC3220](http://www.ti.com/product/CC3220S), or a [LinkIt 7697](https://labs.mediatek.com/en/platform/linkit-7697). The RAM budget in this class is ~200kb and storage ~1mb. So we needed a different solution. One that would also withstand Man-In-The-Middle attacks.
 
@@ -73,7 +73,7 @@ Just 20kb to validate the blockchain.
 
 We started developing [BlockQuick](https://diode.io/files/blockquick.pdf) with these goals in mind. BlockQuick is a super-light-client, meaning the amount of data that it needs to fetch from the blockchain is sublinear to the total size of the blockchain. BlockQuick is using a consensus-based reputation scheme to accept blocks. During development, [Benedikt Bünz](https://twitter.com/benediktbuenz) released [FlyClient](https://eprint.iacr.org/2019/226.pdf), another super-light-client which inspired a better solution to do Block-Inclusion-Proofs in BlockQuick. To our knowledge these two forms currently the only two entrants in the new class of super-light-clients for decentralized blockchain validation on resource-constrained devices.
 
-<table>
+<div style="overflow: auto"><table>
   <tr>
    <th>Node Type</th>
    <th><a href="https://www.usenix.org/node/190891">Eclipse Resistant</a>
@@ -103,7 +103,7 @@ We started developing [BlockQuick](https://diode.io/files/blockquick.pdf) with t
    <td>sub-seconds
    </td>
   </tr>
-</table>
+</table></div>
 
 With the current BlockQuick implementation we can finally reach our trivial goal of breaking the circular dependency with a 20kb handshake to get a relatively accurate time. But this has also brought more opportunities to leverage blockchain from small devices.
 

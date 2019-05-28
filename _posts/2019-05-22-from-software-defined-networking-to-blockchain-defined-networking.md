@@ -44,7 +44,7 @@ Configuring millions of IoT endpoints into a single network is not a problem any
 
 **Summary**. For many applications, the introduction of blockchain technology provides the potential for improvements.  But, in a few applications, like SDN deployments with growing IoT fleets, the advantages are game-changing. Today, Diode is the only IoT-Blockchain organization working on this new technology trend - we’re excited to be at the front end of what we are certain will become a large and vibrant market sector in the near future. 
 
-<table>
+<div style="overflow: auto"><table>
   <tr>
    <th></th>
    <th>SDN / SD-WAN</th>
@@ -80,7 +80,7 @@ Configuring millions of IoT endpoints into a single network is not a problem any
    <td class="red">No, requires dedicated, vendor trained teams.</td>
    <td class="green">Yes</td>
   </tr>
-</table>
+</table></div>
 
 If you're interested to learn more about this exciting development, or if you are an enterprise using SD-WANs and are looking for ways to extend them to your IoT fleet, follow us on [Twitter](https://twitter.com/diode_chain) or signup for our newsletter and we'll keep you up-to-date.
 
