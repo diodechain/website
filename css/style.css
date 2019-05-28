@@ -3848,35 +3848,27 @@ section.offer-section .hs-form-required {
   display: none;
 }
 
-section.offer-section .hs-form-field input, section.offer-section .hs-submit input {
+section.offer-section .newsletter-email-signup input {
   border-color: white;
   border-width: 2px;
   color: white;
-}
-
-section.offer-section .hs-form-field input::-webkit-input-placeholder {
-  color: white;
-}
-
-section.offer-section .hs-form-field input::-moz-placeholder {
-  color: white;
-}
-
-section.offer-section .hs-form-field input::-ms-input-placeholder {
-  color: white;
-}
-
-section.offer-section .hs-form-field input::placeholder {
-  color: white;
-}
-
-section.offer-section .hs-form-field, section.offer-section .hs-submit {
-  float: left;
-  margin-left: 1em;
-}
-
-section.offer-section .hs-form-field input, section.offer-section .hs-submit input {
   height: 4em;
+}
+
+section.offer-section .newsletter-email-signup input::-webkit-input-placeholder {
+  color: white;
+}
+
+section.offer-section .newsletter-email-signup input::-moz-placeholder {
+  color: white;
+}
+
+section.offer-section .newsletter-email-signup input::-ms-input-placeholder {
+  color: white;
+}
+
+section.offer-section .newsletter-email-signup input::placeholder {
+  color: white;
 }
 
 section.offer-section h2 {
@@ -3885,17 +3877,25 @@ section.offer-section h2 {
   padding: 1.125rem 0;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
   section.offer-section h2 {
     text-align: center;
-    line-height: 1.4;
+    line-height: 1.2;
     padding: 0;
-    padding-bottom: 40px;
+  }
+  section.offer-section .mc_embed_signup_scroll {
+    margin-top: 10px;
+  }
+  section.offer-section .newsletter-email-signup {
+    text-align: center;
+  }
+  section.offer-section .newsletter-email-signup input {
+    height: 3em;
   }
 }
 
-section.offer-section .button-cta {
-  margin-bottom: 0;
+section.offer-section .button {
+  padding: 0em 3em;
 }
 
 .taglist-post {

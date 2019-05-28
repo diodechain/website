@@ -15,23 +15,18 @@ section.offer-section {
     display: none;
   }
 
-  .hs-form-field input, .hs-submit input {
-    border-color: white;
-    border-width: 2px;
-    color: white;
-  }
+  .newsletter-email-signup {
+    input {
+      border-color: white;
+      border-width: 2px;
+      color: white;
+      height: 4em;
+    }
 
-  .hs-form-field input::placeholder {
-    color: white;
-  }
+    input::placeholder {
+      color: white;
+    }
 
-  .hs-form-field, .hs-submit {
-    float: left;
-    margin-left: 1em;
-  }
-
-  .hs-form-field input, .hs-submit input {
-    height: 4em;
   }
 
   h2 {
@@ -40,16 +35,26 @@ section.offer-section {
     padding: 1.125rem 0;
   }
 
-  @media (max-width: 1199px) {
+  @media (max-width: 991px) {
     h2 {
       text-align: center;
-      line-height: 1.4;
+      line-height: 1.2;
       padding: 0;
-      padding-bottom: 40px;
+    }
+
+    .mc_embed_signup_scroll {
+      margin-top: 10px;
+    }
+
+    .newsletter-email-signup {
+      text-align: center;
+      input {
+        height: 3em;
+      }
     }
   }
 
-  .button-cta {
-    margin-bottom: 0;
+  .button {
+    padding: 0em 3em;
   }
 }
