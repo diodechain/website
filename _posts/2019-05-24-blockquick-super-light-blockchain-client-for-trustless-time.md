@@ -7,7 +7,7 @@ tags: [Burning Platform, Security, Time]
 author: Dominic Letz
 image: blockquick.jpg
 ---
-[- Click here if you just want to read the Paper -](https://diode.io/files/blockquick.pdf)
+[- Click here if you just want to read the Paper -](https://eprint.iacr.org/2019/579.pdf)
 
 In the last two posts of this series, we [first introduced the governance issues in PKI](https://diode.io/burning-platform-pki/why-there-are-3652-organizations-that-can-read-everyones-encrypted-traffic-19098/) and then the circular dependency between establishing trust in PKI certificates and [establishing the current time on a connected device](https://diode.io/burning-platform-pki/why-we-cant-trust-network-time-19116/).
 
@@ -69,9 +69,9 @@ When HTC announced that their new Handheld [Exodus 1s will be running a full Bit
 # Enter BlockQuick
 Just 20kb to validate the blockchain.
 
-[![BlockQuick](/images/blog/blockquick.png "BlockQuick Paper"){: .center-block }](https://diode.io/files/blockquick.pdf)
+[![BlockQuick](/images/blog/blockquick.png "BlockQuick Paper"){: .center-block }](https://eprint.iacr.org/2019/579.pdf)
 
-We started developing [BlockQuick](https://diode.io/files/blockquick.pdf) with these goals in mind. BlockQuick is a super-light-client, meaning the amount of data that it needs to fetch from the blockchain is sublinear to the total size of the blockchain. BlockQuick is using a consensus-based reputation scheme to accept blocks. During development, [Benedikt Bünz](https://twitter.com/benediktbuenz) released [FlyClient](https://eprint.iacr.org/2019/226.pdf), another super-light-client which inspired a better solution to do Block-Inclusion-Proofs in BlockQuick. To our knowledge these two forms currently the only two entrants in the new class of super-light-clients for decentralized blockchain validation on resource-constrained devices.
+We started developing [BlockQuick](https://eprint.iacr.org/2019/579.pdf) with these goals in mind. BlockQuick is a super-light-client, meaning the amount of data that it needs to fetch from the blockchain is sublinear to the total size of the blockchain. BlockQuick is using a consensus-based reputation scheme to accept blocks. During development, [Benedikt Bünz](https://twitter.com/benediktbuenz) released [FlyClient](https://eprint.iacr.org/2019/226.pdf), another super-light-client which inspired a better solution to do Block-Inclusion-Proofs in BlockQuick. To our knowledge these two forms currently the only two entrants in the new class of super-light-clients for decentralized blockchain validation on resource-constrained devices.
 
 <div style="overflow: auto"><table>
   <tr>
@@ -94,7 +94,7 @@ We started developing [BlockQuick](https://diode.io/files/blockquick.pdf) with t
    </td>
   </tr>
   <tr>
-   <th><a href="https://diode.io/files/blockquick.pdf">BlockQuick</a>
+   <th><a href="https://eprint.iacr.org/2019/579.pdf">BlockQuick</a>
    </th>
    <td>Yes
    </td>
@@ -129,4 +129,4 @@ If this made you curious follow us on Twitter or feel free to reach out to us on
 
 [https://eprint.iacr.org/2019/226.pdf](https://eprint.iacr.org/2019/226.pdf)
 
-[https://diode.io/files/blockquick.pdf](https://diode.io/files/blockquick.pdf)
+[https://eprint.iacr.org/2019/579.pdf](https://eprint.iacr.org/2019/579.pdf)
