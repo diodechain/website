@@ -3161,6 +3161,7 @@ header.site-header.blog-header .header-banner {
 }
 
 header.site-header .parallax-wrapper {
+  pointer-events: none;
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -3175,6 +3176,10 @@ header.site-header .container {
   position: relative;
   height: 100vh;
   max-height: 1080px;
+}
+
+header.site-header .container .heading-content {
+  pointer-events: all;
 }
 
 header.site-header .site-navigation-bar {
@@ -3856,10 +3861,6 @@ section.offer-section .newsletter-email-signup input {
 }
 
 section.offer-section .newsletter-email-signup input::-webkit-input-placeholder {
-  color: white;
-}
-
-section.offer-section .newsletter-email-signup input::-moz-placeholder {
   color: white;
 }
 
@@ -4637,10 +4638,6 @@ section.blog-section .blog-articles-container article.blog-article {
   width: 100%;
   float: left;
   margin-bottom: 30px;
-}
-
-section.blog-section .blog-articles-container article.blog-article.blog-single-page header.article-header .article-title {
-  margin: 50px 0;
 }
 
 section.blog-section .blog-articles-container article.blog-article.blog-single-page header.article-header .article-title h3.title {

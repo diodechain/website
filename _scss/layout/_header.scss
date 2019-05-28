@@ -57,6 +57,7 @@ header.site-header {
 
   // Parallax-wrapper
   .parallax-wrapper {
+    pointer-events: none;
     overflow: hidden;
     position: absolute;
     width: 100%;
@@ -71,6 +72,10 @@ header.site-header {
     position: relative;
     height: 100vh;
     max-height: 1080px;
+
+    .heading-content {
+      pointer-events: all;
+    }
   }
 
   // Site Navigation Bar
