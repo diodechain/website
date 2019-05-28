@@ -300,6 +300,21 @@ team:
     device applications.  He has seen first hand the market transformation brought by these
     innovations, and is passionate about removing barriers to adoption and unlocking scale.
 
+- name: Yahsin Huang
+  tagline: Social Media Manager
+  avatar: yahsin-huang.jpg
+
+  # Social Links
+  linkedin: 'https://www.linkedin.com/in/yahsinhuangtw/'
+  twitter: 'https://twitter.com/YahsinHuang'
+  thandle: '@YahsinHuang'
+
+  info: >-
+    Yahsin has covered the impact of emerging technologies on business in Taiwan for various media outlets. 
+    Her goal is to help industry leaders understand the implications of new technologies such as blockchain 
+    and the Internet of Things.
+
+
 #####################################
 #############   Footer   ############
 #####################################
