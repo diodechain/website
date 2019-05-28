@@ -1,5 +1,4 @@
 ---
-redirect_from: burning-platform-pki/2019/04/26/why-we-cant-trust-network-time.html
 layout: post
 date: 2019-05-24 19:12
 categories: [Burning-Platform-PKI]
