@@ -261,6 +261,7 @@ team:
 - name: Dominic Letz
   tagline: Chief Technology Officer
   avatar: dominic-letz.jpg
+  management: true
 
   # Social Links
   linkedin: 'https://www.linkedin.com/in/dominic-letz-3b771424/'
@@ -275,6 +276,7 @@ team:
 - name: Greg Belcher
   tagline: VP Business Development
   avatar: greg-belcher.jpg
+  management: true
 
   # Social Links
   linkedin: 'https://www.linkedin.com/in/greg-belcher-4b48025/'
@@ -290,6 +292,7 @@ team:
 - name: Hans Rempel
   tagline: CEO
   avatar: hans-rempel.jpg
+  management: true
 
   # Social Links
   linkedin: 'https://www.linkedin.com/in/hansrempel'
@@ -303,6 +306,7 @@ team:
 - name: Yahsin Huang
   tagline: Social Media Manager
   avatar: yahsin-huang.jpg
+  management: false
 
   # Social Links
   linkedin: 'https://www.linkedin.com/in/yahsinhuangtw/'

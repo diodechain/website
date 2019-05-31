@@ -21,8 +21,8 @@
     <!-- Team Members -->
     <div class="row team-members-container">
 
-      {% for member in site.team %}
-
+      {% assign team = site.team | where: 'management', true %}
+      {% for member in team %}
       <!-- Member -->
       <div class="col-md-4 col-md-push-0 col-sm-6 col-sm-push-0 col-xs-6 col-xs-push-0">
         <div class="team-member">
