@@ -3864,6 +3864,10 @@ section.offer-section .newsletter-email-signup input::-webkit-input-placeholder 
   color: white;
 }
 
+section.offer-section .newsletter-email-signup input::-moz-placeholder {
+  color: white;
+}
+
 section.offer-section .newsletter-email-signup input::-ms-input-placeholder {
   color: white;
 }

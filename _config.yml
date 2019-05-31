@@ -48,8 +48,8 @@ header-focus-button:
 
 # Secondary Buttons
 header-secondary-button:
-  title: Whitepaper
-  url: whitepaper.pdf
+  title: BlockQuick Paper
+  url: https://eprint.iacr.org/2019/579.pdf
 
 #
 # This is your email adress, contact from send here all emails from contact section
