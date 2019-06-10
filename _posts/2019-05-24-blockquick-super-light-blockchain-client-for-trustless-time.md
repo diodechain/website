@@ -2,7 +2,7 @@
 layout: post
 date: 2019-05-24 19:12
 categories: [Burning-Platform-PKI]
-tags: [Burning Platform, Security, Time]
+tags: [Burning Platform, Security, Time, Blockchain]
 author: Dominic Letz
 image: blockquick.jpg
 ---

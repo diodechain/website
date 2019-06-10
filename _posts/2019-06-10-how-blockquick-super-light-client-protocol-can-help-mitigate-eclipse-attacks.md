@@ -1,8 +1,8 @@
 ---
 layout: post
 date: 2019-06-10 14:24
-categories: [BlockQuick]
-tags: [BlockQuick, Eclipse Attack, Blockchain]
+categories: [Blockchain]
+tags: [Blockchain, Eclipse Attack, Security]
 author: Yahsin Huang
 image: Eclipse-Attacks2.jpg
 ---
