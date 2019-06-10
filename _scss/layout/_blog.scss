@@ -162,6 +162,27 @@ section.blog-section {
         width: 100%;
         float: left;
 
+        .article-author {
+          .avatar {
+            width: 38px;
+            height: 38px;
+            background-size: auto 100%;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            display: inline-block;
+            vertical-align: top;
+            border-radius: 50%;
+            margin-right: 10px;
+            position: relative;
+            bottom: 8px;            
+          }
+        }
+
+        .article-date {
+          float: right;
+        }
+
         .img-wrap {
           display: block;
           width: 100%;

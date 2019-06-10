@@ -4656,6 +4656,27 @@ section.blog-section .blog-articles-container article.blog-article header.articl
   float: left;
 }
 
+section.blog-section .blog-articles-container article.blog-article header.article-header .article-author .avatar {
+  width: 38px;
+  height: 38px;
+  -webkit-background-size: auto 100%;
+          background-size: auto 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  bottom: 8px;
+}
+
+section.blog-section .blog-articles-container article.blog-article header.article-header .article-date {
+  float: right;
+}
+
 section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap {
   display: block;
   width: 100%;

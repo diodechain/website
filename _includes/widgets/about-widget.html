@@ -1,6 +1,11 @@
 {% if page.author %}
 {% assign author = site.team | where: 'name', page.author | first %}
+{% endif %}
+{% if page.type == "team" %}
+{% assign author = page %}
+{% endif %}
 
+{% if author %}
 <!-- About Widget -->
 <div class="widget about-widget">
 
@@ -25,10 +30,10 @@
       <div class="col-sm-6">
         <div class="info clearfix">
           <h4 class="author-name">{{ author.name }}</h4>
-          <h5 class="author-info">{{ author.tagline }}</h5>
+          <h5 class="author-info">{{ author.jobtitle }}</h5>
           <hr class="medium">
         </div>
-        <p class="author-text">{{ author.info }}</p>
+        <p class="author-text">{{ author.content }}</p>
       </div>
     </div>
 
