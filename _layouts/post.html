@@ -9,19 +9,18 @@ layout: page-sidebar-left
     <!-- Article Header -->
     <header class="article-header">
       <div class="article-title">
-          <div class="article-date">
-              {{ page.date | date: "%b %d, %Y" }}
-            </div>
-            {%- if page.author %}
-            {% assign author = site.team | where: 'name', page.author | first %}
-            <div class="article-author">
-              <div class="avatar" style="background-image: url('{{ site.baseurl }}/images/avatars/{{ author.avatar }}'"></div>
-              by <a href="{{ author.url }}">{{ author.name }}</a>
-            </div>
-            {% endif -%}
-      
         <h3 class="title">{{ page.title }}</h3>
-        <h4 class="category">#{{ page.tags | first }}</h4>
+        {%- if page.author %}
+        {% assign author = site.team | where: 'name', page.author | first %}
+        <div class="article-author">
+          <div class="avatar" style="background-image: url('{{ site.baseurl }}/images/avatars/{{ author.avatar }}'"></div>
+          by <a href="{{ author.url }}">{{ author.name }}</a> 
+          | {{ page.date | date: "%B %d, %Y" }}
+          | Category: <a href="{{ site.baseurl }}{{ site.tagurl }}{{ page.tags | first | slugify }}" class="category">#{{ page.tags | first }}
+
+        </div>
+        {% endif -%}
+      
       </div>
       <div class="img-wrap">
         <img img class="full" src="{{ site.baseurl }}/images/blog/{{ page.image }}" alt="Article Blog Image">
