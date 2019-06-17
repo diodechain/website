@@ -4,7 +4,7 @@ date: 2019-06-17 17:46
 categories: [Mining]
 tags: [Mining, Proof-Of-StakeWork, Blockchain]
 author: Greg Belcher
-image: POSW-Community3.png
+image: POSW-Community3.jpg
 ---
 [Note: This post is a follow-on discussion to topics discussed in [Introducing Proof-Of-StakeWork](https://diode.io/mining/introducing-proof-of-stakework-19126/) and requires some background knowledge in blockchain technology.] 
 
