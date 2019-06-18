@@ -1,6 +1,7 @@
 ---
 layout: post
 date: 2019-06-18 16:07
+title: "this is cool with, and ?"
 categories: [Security]
 tags: [Security, DDoS, Decentralized Web, Blockchain]
 author: Yahsin Huang
@@ -13,7 +14,7 @@ According to a [report](https://www.reuters.com/article/us-telegram-cyber/messag
 
 [DDoS](https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/) is a type of cyber attack which usually targets websites and online services. The attackers want to overwhelm them with more traffic than the server can accommodate and thereby making the website or the service inoperable. DDoS attacks are often accomplished through a network of bots. These remotely controlled bots can form a “botnet” that can be launched for attacks. Your IoT device may be part of a botnet, your computer can also be hacked and become a bot, without you knowing it.
 
-Today’s modern internet infrastructure is based on a centralized [client-server model](https://en.wikipedia.org/wiki/Client–server_model). Unfortunately, there are problems with centralized client-server model that remain to be solved. For instance, online contents such as Telegram’s text messages, videos, pictures will need to be hosted on dedicated servers. Not just Telegram, but currently most social media platforms are storing their contents and data on their private, centralized servers. This means that these tech firms will need to ensure their servers and resources can satisfy the overall demand. Another problem is the cost of maintaining central servers to serve all users is high. Further, the risk of centralized attacks like the one Telegram experienced is also extremely high.
+So, you may wonder, what needs to change? Today’s modern internet infrastructure is based on a centralized [client-server model](https://en.wikipedia.org/wiki/Client–server_model). Unfortunately, there are problems with centralized client-server model that remain to be solved. For instance, online contents such as Telegram’s text messages, videos, pictures will need to be hosted on dedicated servers. Not just Telegram, but currently most social media platforms are storing their contents and data on their private, centralized servers. This means that these tech firms will need to ensure their servers and resources can satisfy the overall demand. Another problem is the cost of maintaining central servers to serve all users is high. Further, the risk of centralized attacks like the one Telegram experienced is also extremely high.
 
 Thanks to [blockchain](https://en.wikipedia.org/wiki/Blockchain) technologies, for the first time we are able to realize [a decentralized model](https://diode.io/dpki/how-decentralized-public-key-infrastructure-will-be-the-future-for-the-web-19148/) in the modern Internet infrastructure. The decentralized web would not use centralized servers; instead, it would use blockchain and thereby adopting a model of a [peer-to-peer](https://en.wikipedia.org/wiki/Peer-to-peer) infrastructure of nodes. 
 
