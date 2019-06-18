@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-06-18 16:07
-title: "this is cool with, and ?"
+title: "Messaging Service Telegram Was Hit By a DDoS Attack, What Needs to Change?"
 categories: [Security]
 tags: [Security, DDoS, Decentralized Web, Blockchain]
 author: Yahsin Huang
