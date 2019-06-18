@@ -3270,6 +3270,11 @@ header.site-header .header-banner .heading-content .buttons-header .button-cta {
   width: 100%;
 }
 
+header.site-header .header-banner .heading-content .buttons-header div {
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
 header.site-header .arrow-down-section {
   position: absolute;
   width: 100%;
