@@ -16,7 +16,7 @@ layout: page-sidebar-left
           <div class="avatar" style="background-image: url('{{ site.baseurl }}/images/avatars/{{ author.avatar }}'"></div>
           by <a href="{{ author.url }}">{{ author.name }}</a> 
           | {{ page.date | date: "%B %d, %Y" }}
-          | Category: <a href="{{ site.baseurl }}{{ site.tagurl }}{{ page.tags | first | slugify }}" class="category">#{{ page.tags | first }}
+          | Category: <a href="{{ site.baseurl }}{{ site.tagurl }}{{ page.tags | first | slugify }}" class="category">#{{ page.tags | first }}</a>
 
         </div>
         {% endif -%}
