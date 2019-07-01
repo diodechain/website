@@ -5,6 +5,8 @@ categories: [Blockquick]
 tags: [Blockquick, Blockchain, Consensus Reputation Table]
 author: Yahsin Huang
 image: Blockquick-RT0.jpg
+imageclass: contain
+# contain | fill | top | bottom
 ---
 
 [Download full paper here (PDF).](https://eprint.iacr.org/2019/579.pdf)

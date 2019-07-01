@@ -193,7 +193,27 @@ section.blog-section {
             height: 200px;
             width: 100%;
           }
-
+          img.top {
+            object-position: top;
+          }
+          img.bottom {
+            object-position: bottom;
+          }
+          img.center {
+            object-position: center;
+          }
+          img.cover {
+            object-fit: cover;
+          }
+          img.contain {
+            object-fit: contain;
+          }
+          img.fill {
+            object-fit: fill;
+          }
+          img.none {
+            object-fit: none;
+          }
         }
 
         .article-title {

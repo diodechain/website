@@ -7,6 +7,7 @@ categories: [Burning-Platform-PKI]
 tags: [Burning Platform, Security, Time]
 author: Dominic Letz
 image: Why-We0.png
+imageclass: top
 ---
 
 <blockquote>

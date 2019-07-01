@@ -4696,6 +4696,41 @@ section.blog-section .blog-articles-container article.blog-article header.articl
   width: 100%;
 }
 
+section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.top {
+  -o-object-position: top;
+     object-position: top;
+}
+
+section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.bottom {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.center {
+  -o-object-position: center;
+     object-position: center;
+}
+
+section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.fill {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.none {
+  -o-object-fit: none;
+     object-fit: none;
+}
+
 section.blog-section .blog-articles-container article.blog-article header.article-header .article-title {
   display: block;
   width: 100%;
