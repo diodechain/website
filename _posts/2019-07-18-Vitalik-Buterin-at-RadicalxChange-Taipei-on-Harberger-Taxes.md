@@ -9,6 +9,8 @@ image: V-Taipei-event1.jpg
 
 On Tuesday (7/16), Vitalik Buterin, the creator of Ethereum, gave a 30-minute presentation entitled, “Harberger taxes for virtual property.” In his presentation (18 slides in English and Mandarin) at the first event of [RadicalxChange Taipei](https://twitter.com/rxctaipei), Vitalik looked at what Harberger taxes are and what are the ways to apply Harberger taxes for domain names. Vitalik’s presentation starts at 1:50:47 in the YouTube [video](https://www.youtube.com/watch?v=6S5j35Y9AzQ).
 
+<iframe width="954" height="596" src="https://www.youtube.com/embed/6S5j35Y9AzQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Diode](https://twitter.com/diode_chain), a developer of blockchains for IoT devices, believes in the vision of [decentralized PKI](https://diode.io/burning-platform-pki/decentralized-pki-in-a-nutshell-19079/). We think highly of decentralized alternatives to DNS, such as [the Ethereum Name Service (ENS)](https://ens.domains) and [Handshake](https://handshake.org). This write-up of Vitalik’s latest take on the topic is to show our support to the growing blockchain community; we look forward to having further discussions! Our CTO [Dominic Letz](https://twitter.com/dominicletz) published a [paper](https://eprint.iacr.org/2019/579.pdf) recently to introduce [BlockQuick](https://diode.io/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/), a super light client protocol for blockchain validation on constrained devices. Would love to hear your thoughts and feedback!
 
 
