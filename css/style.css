@@ -4833,6 +4833,25 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
   margin-bottom: 0.5em;
 }
 
+section.blog-section .blog-articles-container article.blog-article .article-content ul {
+  list-style: disc;
+  margin: 1em 1em 1em 1.2em;
+  line-height: 1.2em;
+  padding-left: 0.3em;
+}
+
+section.blog-section .blog-articles-container article.blog-article .article-content ul li {
+  margin-bottom: 0.5em;
+}
+
+section.blog-section .blog-articles-container article.blog-article .article-content ul ul {
+  list-style: circle;
+}
+
+section.blog-section .blog-articles-container article.blog-article .article-content ul ul ul {
+  list-style: square;
+}
+
 section.blog-section .blog-articles-container article.blog-article .article-content .article-date {
   width: 100px;
   float: left;

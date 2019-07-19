@@ -314,6 +314,25 @@ section.blog-section {
           }
         }
 
+        ul {
+          list-style: disc;
+          margin: 1em 1em 1em 1.2em;
+          line-height: 1.2em;
+          padding-left: 0.3em;
+
+          li {
+            margin-bottom: 0.5em;
+          }
+        }
+
+        ul ul {
+          list-style: circle;
+        }
+
+        ul ul ul {
+          list-style: square;
+        }
+
         // Article Date
         .article-date {
           width: 100px;
