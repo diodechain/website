@@ -68,27 +68,27 @@ layout: page-sidebar-left
         <div class="social-icons box-content">
           <ul class="icons global-text-color-icons">
             <li>
-              <a href="https://twitter.com/home?status={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">
+		    <a href="https://twitter.com/share?url={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}&text={{ page.title | url_encode }}" target="_blank">
                 <i class="fi flaticon-twitter-c"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}" target="_blank">
                 <i class="fi flaticon-linkedin-c"></i>
               </a>
             </li>
             <li>
-              <a href="https://telegram.me/share/url?url={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">
+              <a href="https://telegram.me/share/url?url={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}" target="_blank">
                 <i class="fi flaticon-telegram-c"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">
+              <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}" target="_blank">
                 <i class="fi flaticon-facebook-c"></i>
               </a>
             </li>
             <li>
-              <a href="https://wa.me/?text={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">
+              <a href="https://wa.me/?text={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}" target="_blank">
                 <i class="fi flaticon-whatsapp-c"></i>
               </a>
             </li>
