@@ -4905,6 +4905,10 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
   margin: 0 0 0 100px;
 }
 
+section.blog-section .blog-articles-container article.blog-article .article-content h1, section.blog-section .blog-articles-container article.blog-article .article-content h2, section.blog-section .blog-articles-container article.blog-article .article-content h3, section.blog-section .blog-articles-container article.blog-article .article-content h4, section.blog-section .blog-articles-container article.blog-article .article-content h5, section.blog-section .blog-articles-container article.blog-article .article-content h6 {
+  margin-bottom: 1em;
+}
+
 section.blog-section .view-posts hr.normal {
   margin: 20px auto;
 }
