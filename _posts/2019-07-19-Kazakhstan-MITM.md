@@ -7,7 +7,7 @@ author: Dominic Letz
 image: Kazhakstan0.png
 ---
 
-__OMG! So it happens again. PKI the Public Key Infrastructure is a centrally rooted security  infrastructure to encrypt nearly all of todays internet traffic. And is being used to crack all traffic in Kazakhstan__
+__OMG! So it happens again. PKI the Public Key Infrastructure is a centrally rooted security infrastructure to encrypt nearly all of todays internet traffic. And is being used to crack all traffic in Kazakhstan.__ 
 
 Yesterday on the 18h July 2019, the state-owned telecommunications organization of Kazakhstan started to misuse this central infrastructure in the states initiative against free speech. The now dictatorship of Kazakhstan is forcing its users to install a custom Kazakhstan root certificate. With this certificate in place the government is able to read, intercept & change all traffic send from those internet users to public websites. This is a general _Man-In-The-Middle attack on all citizens_ including destinations such as facebook.com or gmail.com giving and the government wide access to their citizens most personal data. 
 
