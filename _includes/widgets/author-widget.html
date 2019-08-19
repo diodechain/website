@@ -7,7 +7,7 @@
 
 {% if author %}
 <!-- About Widget -->
-<div class="widget about-widget">
+<div class="widget author-widget">
 
   <!-- Widget Header -->
   <header class="widget-header">
@@ -24,6 +24,9 @@
           <ul class="icons global-text-color-icons">
             <li><a href="{{ author.linkedin }}" target="_blank"><i class="fi flaticon-linkedin"></i></a></li>
             <li><a href="{{ author.twitter }}" target="_blank"><i class="fi flaticon-twitter"></i></a></li>
+            {% if author.github %}
+            <li><a class="github" href="{{ author.github }}" target="_blank">{% include svgs/github.svg %}</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>

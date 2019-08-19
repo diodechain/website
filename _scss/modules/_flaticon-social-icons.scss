@@ -101,3 +101,20 @@
     $font-Flaticon-whatsapp: "\f11b";
     $font-Flaticon-xing: "\f11c";
     $font-Flaticon-youtube: "\f11d";
+
+a.github {
+  svg {
+    margin-top: 4px;
+  }
+
+  path.fill {
+    fill: rgb(94, 94, 94);
+  }
+  &:hover {
+    path.fill {
+      fill: $primary;
+    }
+  }
+
+}
+    

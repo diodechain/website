@@ -2582,6 +2582,18 @@ table {
   content: "\f11d";
 }
 
+a.github svg {
+  margin-top: 4px;
+}
+
+a.github path.fill {
+  fill: #5e5e5e;
+}
+
+a.github:hover path.fill {
+  fill: #F15C2E;
+}
+
 /**
  *
  *  Forms & Inputs Style
@@ -3748,40 +3760,40 @@ aside.site-sidebar .widget header.widget-header h4.widget-title {
   text-transform: uppercase;
 }
 
-aside.site-sidebar .about-widget .widget-content .social-icons {
+aside.site-sidebar .author-widget .widget-content .social-icons {
   margin-top: 10px;
 }
 
-aside.site-sidebar .about-widget .widget-content .social-icons .icons a .fi {
+aside.site-sidebar .author-widget .widget-content .social-icons .icons a .fi {
   display: inline-block;
   font-size: 1.48rem;
   margin-bottom: 10px;
 }
 
-aside.site-sidebar .about-widget .widget-content .info {
+aside.site-sidebar .author-widget .widget-content .info {
   display: block;
   position: relative;
   clear: both;
 }
 
-aside.site-sidebar .about-widget .widget-content .info .author-name {
+aside.site-sidebar .author-widget .widget-content .info .author-name {
   font-size: 1.25rem;
   color: #2d3e50;
   text-transform: uppercase;
   margin-bottom: 6px;
 }
 
-aside.site-sidebar .about-widget .widget-content .info .author-info {
+aside.site-sidebar .author-widget .widget-content .info .author-info {
   color: #bdc3c7;
 }
 
-aside.site-sidebar .about-widget .widget-content .info hr.medium {
+aside.site-sidebar .author-widget .widget-content .info hr.medium {
   float: left;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-aside.site-sidebar .about-widget .widget-content .author-text {
+aside.site-sidebar .author-widget .widget-content .author-text {
   font-size: 0.8rem;
 }
 
