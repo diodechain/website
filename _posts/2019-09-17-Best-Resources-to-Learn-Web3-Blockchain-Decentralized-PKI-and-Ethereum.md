@@ -4,18 +4,13 @@ date: 2019-09-19 17:30
 categories: [Blockchain]
 tags: [Blockchain, Resources, Reading list, Web3, DPKI, PKI, Decentralization, Ethereum]
 author: Yahsin Huang
-image: Best-R1.png
+image: Best-R1.jpg
 ---
 
 Here is a curated list of readings and resources that ignited our interest in realizing a [decentralized Public Key Infrastructure (PKI)](https://diode.io/blockchain/MITM-attacks-and-why-it's-time-to-start-thinking-about-decentralized-PKI-19210/) vision for the future. We included topics such as fundamentals, Web3, blockchain, web PKI, DNS, time, IoT security, light clients, Ethereum, as well as development tools and tutorials. We are also collecting feedback for our newly published research [paper](https://eprint.iacr.org/2019/579.pdf) about [BlockQuick](https://diode.io/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/), a super light client protocol for blockchain validation. DM us on [Twitter](https://twitter.com/diode_chain) if you want to share your thoughts. We look forward to hearing from you!
 
 
 ## **Fundamentals**
-
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline drawings not supported directly from Docs. You may want to copy the inline drawing to a standalone drawing and export by reference. See <a href="https://github.com/evbacher/gd2md-html/wiki/Google-Drawings-by-reference">Google Drawings by reference</a> for details. The img URL below is a placeholder. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
 
 ![alt_text](/images/blog/Best-R2.png "image_tooltip"){: .center-block }
 
