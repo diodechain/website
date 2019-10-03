@@ -26,7 +26,7 @@ Diodes are embedded components that conduct electric current primarily in one di
 
 Diode stands for Decentralized Internet of Devices in addition to the above-mentioned reference.
 
-![alt_text](/images/blog/FAQ-02.png "image_tooltip"){: .center-block }
+![alt_text](/images/blog/FAQ-Diode-name.png "image_tooltip"){: .center-block }
 
 Q: What is your biggest unique proposition that puts you ahead of the competition?
 The Diode Network is an implementation of a truly decentralized internet replacement. It builds on top of Ethereum as base technology but melds BlockQuick and Swarm like capabilities natively into the chain. 
