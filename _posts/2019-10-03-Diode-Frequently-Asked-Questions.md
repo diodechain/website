@@ -26,6 +26,7 @@ Diodes are embedded components that conduct electric current primarily in one di
 
 Diode stands for Decentralized Internet of Devices in addition to the above-mentioned reference.
 
+![alt_text](/images/blog/FAQ-02.png "image_tooltip"){: .center-block }
 
 Q: What is your biggest unique proposition that puts you ahead of the competition?
 The Diode Network is an implementation of a truly decentralized internet replacement. It builds on top of Ethereum as base technology but melds BlockQuick and Swarm like capabilities natively into the chain. 
@@ -103,7 +104,7 @@ In the Ethereum network, you have the option of running various types of nodes: 
 
 Below is an overview of the three node types with their storage requirements.
 
-![alt_text](/images/blog/FAQ-2.png "image_tooltip"){: .center-block }
+![alt_text](/images/blog/FAQ-03.png "image_tooltip"){: .center-block }
 
 Full nodes are typically run on servers in data-centers; they are commonly used for mining purposes. Light clients require less storage, but also offer less functionality as compared to running a full node. Light clients only need to download the block headers of the blockchain, and are designed for desktop and mobile wallet applications. The amount of data they have to store is much smaller, but still grows at the same pace as the blockchain itself.
 
