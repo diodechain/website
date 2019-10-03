@@ -81,6 +81,8 @@ navigation:
 #   link: /#contact
 - title: Blog
   link: /blog/
+- title: FAQ
+  link: https://diode.io/diode/Diode-Frequently-Asked-Questions-19276/
 - title: <i class="fi flaticon-telegram"></i>
   link: https://t.me/diode_chain
   target: _blank
