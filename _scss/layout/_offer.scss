@@ -15,6 +15,19 @@ section.offer-section {
     display: none;
   }
 
+  a {
+    color: $white;
+    &:hover,
+    &:active {
+      background-color: lighten($primary, 20%);
+    }
+  }
+
+  .underline {
+    text-decoration: none;
+    border-bottom: 7px solid $white;    
+  }
+
   .newsletter-email-signup {
     input {
       border-color: white;

@@ -14,7 +14,6 @@ So let's break that circular dependency between time and trust. The difference b
 
 Conveniently for our quest to getting the current time without trusting anyone both trustless blockchains Bitcoin and Ethereum carry a timestamp in their block. So it seems as easy as that - if we can establish a connection to the blockchain consensus of either of these networks - we have established the current time - trustless! But...
 
-
 # "Resource-Constrained Devices"
 
 When HTC announced that their new Handheld [Exodus 1s will be running a full Bitcoin node](https://www.engadget.com/2019/05/11/htc-exodus-1s-blockchain-phone-node/) that immediately raised eyebrows. Running a full Bitcoin node at this time requires ~200gb of storage plenty of ram and constant data bandwidth of ~140mb a day. For Ethereum the situation is similar:

@@ -3870,6 +3870,19 @@ section.offer-section .hs-form-required {
   display: none;
 }
 
+section.offer-section a {
+  color: #fff;
+}
+
+section.offer-section a:hover, section.offer-section a:active {
+  background-color: #f7a78e;
+}
+
+section.offer-section .underline {
+  text-decoration: none;
+  border-bottom: 7px solid #fff;
+}
+
 section.offer-section .newsletter-email-signup input {
   border-color: white;
   border-width: 2px;
