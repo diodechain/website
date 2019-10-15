@@ -135,7 +135,7 @@ The BlockQuick consensus reputation table is not designed to keep the whole hist
 
 The current proof of concept clients are working with consensus table sizes of 100. 
 
-What we learned in Ethereum is that small miners are fluctuating a lot, while big miners stay for very long periods. So for the reputation table size, the question is how we can achieve the maximum consensus stability. Keeping big miners 
+What we learned in Ethereum is that small miners are fluctuating a lot, while big miners stay for very long periods. So for the reputation table size, the question is how we can achieve the maximum consensus stability.
 
 Factors influencing the size of the table:
 
@@ -148,7 +148,7 @@ Pro Big
 *   Variability vs Stability
 
 **Q: So every DNS change is stored into the blockchain, forever?**
- 
+
 The question came from some comments from Hacker News ([https://news.ycombinator.com/item?id=20764104#20764865](https://news.ycombinator.com/item?id=20764104#20764865)) "So every DNS change is stored into the blockchain, forever? Will you have to download terabytes and terabytes of the blockchain in order to serve as a node? Why is that kind of audit history necessary?"
 
 You don’t necessarily need to store DNS changes into the blockchain. The blockchain will only keep the current state and would prune the changes. According to Diode’s blog posts, 20kb of storage is all it needs with BlockQuick, the newly developed light-client protocol. The point is less about storing the audit history, but more about preventing Man-in-the-Middle attacks and solving the timestamp-certificate chicken-egg problem.
