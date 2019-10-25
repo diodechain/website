@@ -35,7 +35,7 @@ title: Tags
         <div class="time">{{ post.date | date: "%H:%M" }}</div>
       </div>
       <div class="article-text">
-        <p>{{ post.content | strip_html | truncate: 300 }}</p>
+        <p>{{ post.content | replace: "iframe","span" | replace: "img","span" | replace: "blockquote","span" | truncatewords: 75 }}</p>
       </div>
       <div class="show-more">
         <a href="{{ site.baseurl }}{{ post.url }}" class="button">Read More</a>
