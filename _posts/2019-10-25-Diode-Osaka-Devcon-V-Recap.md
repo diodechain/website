@@ -28,10 +28,15 @@ On Day 3 at Devcon, Dominic took the center stage to give the community a highli
 ![alt_text](/images/blog/Devcon_7.jpg "image_tooltip"){: .center-block }
 
 1. Super light clients 
+
 So far there are two papers that are making clients with less than 1MB of storage possible: our own [BlockQuick](https://eprint.iacr.org/2019/579) and [FlyClient](https://eprint.iacr.org/2019/226). Nevertheless, at this point there is no Ethereum standard implementation yet.
+
 2. Real-time P2P messaging 
+
 What Whatsapp and Telegram have become for personal messaging, is still missing for your browsing needs. Protocols such as [Telehash](http://telehash.org/) exist, but they still experience a lack of adoption because there is no built-in incentive mechanism. We believe a blockchain native protocol with tightly coupled incentive mechanisms is the right way to go.
+
 3. Browser enablement 
+
 Having implemented all protocols, the next step is to have a great user experience for the Web3 to get adoption and to fully realize its potential. Mozilla has started a project called “libdweb” ([https://github.com/mozilla/libdweb/](https://github.com/mozilla/libdweb/)) that looks into allowing custom communication protocols for schemes such as **dat://** or **web3://**.
 
 ![alt_text](/images/blog/Devcon_8.jpg "image_tooltip"){: .center-block }
