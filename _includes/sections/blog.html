@@ -31,7 +31,9 @@
             <!-- Article Header -->
             <header class="article-header">
               <div class="img-wrap">
-                <img class="preview {{ post.imageclass }}" src="images/blog/{{ post.image }}" alt="Article Blog Image">
+                <a href="{{ site.baseurl }}{{ post.url }}">
+                  <img class="preview {{ post.imageclass }}" src="images/blog/{{ post.image }}" alt="Article Blog Image">
+                </a>
               </div>
               <div class="article-title">
                 <h3 class="title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | truncate: 40 }}</a></h3>

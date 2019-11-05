@@ -18,8 +18,10 @@ title: The Blockchain Journal
           <h4 class="category">{{ post.tags | first }}</h4>
         </div>
         <div class="img-wrap">
+          <a href="{{ site.baseurl }}{{ post.url }}">
             <img img class="preview {{ post.imageclass }}" src="{{ site.baseurl }}/images/blog/{{ post.image }}" alt="Article Blog Image">
-          </div>
+          </a>
+        </div>
       </header>
 
       <!-- Article Content -->

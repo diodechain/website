@@ -18,9 +18,11 @@ title: Tags
         <h3 class="title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
         <!-- <h4 class="category">{{ post.tags | first }}</h4> -->
         <div class="img-wrap">
-          <img class="preview {{ post.imageclass }}" src="../images/blog/{{ post.image }}" alt="Article Blog Image">
+          <a href="{{ site.baseurl }}{{ post.url }}">
+            <img class="preview {{ post.imageclass }}" src="../images/blog/{{ post.image }}" alt="Article Blog Image">
+          </a>
         </div>
-        </div>
+      </div>
     </header>
 
     <!-- Article Content -->
