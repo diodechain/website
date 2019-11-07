@@ -1,0 +1,142 @@
+/* @import url(https://fonts.googleapis.com/css?family=Montserrat:400); */
+@import url(ttps://fonts.googleapis.com/css?family=Titillium+Web:400);
+body {
+    /* font: 16px/1.4em "Montserrat", Arial, sans-serif; */
+    font: 16px/1.4em "Titillium Web", Arial, sans-serif;
+    /* color: lightgray; */
+    background-image: url(background.png);
+    /* background-size: 0%; */
+    /* background-size: contain; */
+    /* background-repeat: no-repeat */
+}
+
+.title {
+    text-align: center;
+}
+.title h1 {
+    margin:0.2em
+}
+
+.ether-value {
+    text-align: right;
+    font-family: monospace;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.chart-text {
+    /*font: 16px/1.4em "Montserrat", Arial, sans-serif;*/
+    fill: #000;
+    -moz-transform: translateY(0.25em);
+    -ms-transform: translateY(0.25em);
+    -webkit-transform: translateY(0.25em);
+    transform: translateY(0.25em);
+}
+
+.chart-number {
+    font-size: 0.6em;
+    line-height: 1;
+    text-anchor: middle;
+    -moz-transform: translateY(-0.25em);
+    -ms-transform: translateY(-0.25em);
+    -webkit-transform: translateY(-0.25em);
+    transform: translateY(-0.25em);
+}
+
+.chart-label {
+    font-size: 0.2em;
+    text-transform: uppercase;
+    text-anchor: middle;
+    -moz-transform: translateY(0.7em);
+    -ms-transform: translateY(0.7em);
+    -webkit-transform: translateY(0.7em);
+    transform: translateY(0.7em);
+}
+
+figure {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+@media (min-width: 768px) {
+    figure {
+        flex-direction: row;
+    }
+}
+
+.figure-content {
+    flex: 2;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-self: center;
+}
+
+.figure-key {
+    flex: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-self: center;
+}
+
+.figure-content svg {
+    height: auto;
+}
+
+.figure-key {
+    min-width: calc(8 / 12);
+}
+
+.figure-key [class*="shape-"] {
+    margin-right: 6px;
+}
+
+.figure-key-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.figure-key-list li {
+    margin: 0 0 8px;
+    padding: 0;
+}
+
+.shape-circle {
+    display: inline-block;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.shape-fuschia {
+    background-color: #ce4b99;
+}
+
+.shape-lemon-lime {
+    background-color: #b1c94e;
+}
+
+.shape-blue {
+    background-color: #377bbc;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

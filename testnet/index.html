@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Testnet</title>
+    <meta charset="utf-8">
+    <!-- From example https://vuejs.org/v2/guide/computed.html -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    </link>
+</head>
+
+<body>
+    <div id="app">
+        <div class="title">
+            <h1>Testnet Power Distribution</h1>
+            <small>connected to {{ base }}</small>
+        </div>
+        <div style="display: flex; flex-direction: row; align-items: flex-start;">
+
+            <table>
+                <tr>
+                    <th>Miner</th>
+                    <th>Staked ETH</th>
+                </tr>
+                <tr v-for="miner in stakes">
+                    <td>{{ miner.name }}</td>
+                    <td class="ether-value">{{ miner.value }}</td>
+                </tr>
+            </table>
+            <!-- https://medium.com/@heyoka/scratch-made-svg-donut-pie-charts-in-html5-2c587e935d72 -->
+            <figure>
+                <div class="figure-content">
+                    <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut"
+                        aria-labelledby="beers-title beers-desc" role="img">
+                        <title id="beers-title">Block Stats</title>
+                        <desc id="beers-desc">Donut chart of the last {{ blocks.length }} blocks.</desc>
+                        <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"
+                            role="presentation">
+                        </circle>
+                        <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent"
+                            stroke="#d2d3d4" stroke-width="3" role="presentation"></circle>
+
+                        <circle v-for="miner in shares" class="donut-segment" cx="21" cy="21" r="15.91549430918954"
+                            fill="transparent" v-bind:stroke="miner.color" stroke-width="3"
+                            v-bind:stroke-dasharray="miner.stroke" v-bind:stroke-dashoffset="miner.offset"
+                            aria-labelledby="donut-segment-1-title donut-segment-1-desc">
+                            <title id="donut-segment-1-title">{{ miner.name }}</title>
+                            <desc id="donut-segment-1-desc">Segment spanning {{ miner.percent }}% of the whole</desc>
+                        </circle>
+                        <!-- unused 10% -->
+                        <g class="chart-text">
+                            <text x="50%" y="50%" class="chart-number">
+                                {{ blocks.length }}
+                            </text>
+                            <text x="50%" y="50%" class="chart-label">
+                                Last Blocks
+                            </text>
+                        </g>
+                    </svg>
+                </div>
+                <figcaption class="figure-key">
+                    <p class="sr-only">Donut chart showing {{ blocks.length }} most recent blocks.</p>
+
+                    <ul class="figure-key-list" aria-hidden="true" role="presentation">
+                        <li v-for="miner in shares">
+                            <span class="shape-circle" v-bind:style="{ backgroundColor: miner.color }"></span>
+                            {{ miner.name }} ({{ miner.percent }}% / {{ miner.count }} blocks)
+                        </li>
+                    </ul>
+                </figcaption>
+            </figure>
+
+
+            <table>
+                <tr>
+                    <th>Block</th>
+                    <th>Timestamp</th>
+                    <th>Miner</th>
+                    <th>Tx</th>
+                </tr>
+                <tr v-for="block in blocks">
+                    <td>{{ block.number }}</td>
+                    <td>{{ formatUnix(block.timestamp) }}</td>
+                    <td>{{ resolveName(block.miner) }}</td>
+                    <td>{{ block.transactions.length }}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        // window.onload = function () {
+        // var web3 = new Web3('ws://testnet.diode.io:8545/ws')
+        let web3 = new Web3('wss://testnet.diode.io:8443/ws')
+        // let web3 = new Web3('ws://localhost:8545/ws')
+        // let web3 = new Web3('http://localhost:8545')
+        // x = async () => {
+        //     if (window.ethereum) {
+        //         let accounts = await window.ethereum.enable()
+        //         console.log(accounts)
+        //         let balance = await web3.eth.getBalance(accounts[0])
+        //         console.log(balance)
+        //     }
+        // }
+        // x()
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                base: "",
+                miners: [],
+                blocks: [],
+                stakes: {}
+            },
+            computed: {
+                shares: function () {
+                    let groups = {}
+                    let size = this.blocks.length
+                    this.blocks.forEach(block => {
+                        if (groups[block.miner]) {
+                            groups[block.miner].count++
+                        } else {
+                            groups[block.miner] = {
+                                count: 1,
+                                address: block.miner,
+                                name: resolveName(block.miner),
+                                color: "#" + block.miner.substr(3, 6),
+                                shape: "background-color(#" + block.miner.substr(3, 6) + ")"
+                            }
+                        }
+                    });
+
+                    let total = 0
+                    groups = Object.values(groups)
+                    groups.forEach(miner => {
+                        if (total == 0) miner.offset = 25
+                        else miner.offset = 100 - total + 25
+                        miner.percent = Math.round(100 * miner.count / this.blocks.length)
+                        total += miner.percent
+                        miner.stroke = "" + miner.percent + " " + (100 - miner.percent)
+                        fetchStake(miner.address)
+                    })
+                    return groups;
+                },
+            },
+            created: function () {
+            }
+        })
+
+        async function loader() {
+
+            web3.eth.getCoinbase().then((base) => {
+                app.base = resolveName(base)
+                fetchStake(base)
+            })
+            let nr = await web3.eth.getBlockNumber()
+            let batch = new web3.BatchRequest()
+            let blocks = []
+            let size = 500 > nr ? nr : 500
+            let cb = (error, block) => {
+                blocks.push(block)
+                if (blocks.length == size) {
+                    app.blocks = blocks
+                }
+                let name = resolveName(block.miner)
+                if (!app.stakes[name]) {
+                    app.$set(app.stakes, name, {
+                        name: name,
+                        value: "fetching.."
+                    })
+                    fetchStake(block.miner)
+                }
+            }
+            for (let i = 0; i < size; i++) {
+                batch.add(web3.eth.getBlock.request(nr - i, false, cb))
+            }
+            batch.execute()
+        }
+        loader()
+
+        function resolveName(name) {
+            switch (name.toLowerCase()) {
+                case "0x937c492a77ae90de971986d003ffbc5f8bb2232c": return "beta"
+                case "0xceca2f8cf1983b4cf0c1ba51fd382c2bc37aba58": return "gamma"
+                case "0x68e0bafdda9ef323f692fc080d612718c941d120": return "alpha"
+                default: return name;
+            }
+        }
+
+        function fetchStake(address) {
+            let name = resolveName(address)
+            let call = web3.eth.abi.encodeFunctionCall({
+                name: 'MinerValue',
+                type: 'function',
+                inputs: [{
+                    type: 'uint8',
+                    name: 'mode'
+                }, {
+                    type: 'address',
+                    name: 'miner'
+                }]
+            }, [0, address]);
+            return web3.eth.call({
+                to: "0x5000000000000000000000000000000000000000",
+                data: call,
+                gasPrice: 0
+            }).then((value) => {
+                app.$set(app.stakes, name, {
+                    name: name,
+                    value: web3.utils.fromWei(web3.utils.toBN(value)).toString()
+                })
+            })
+        }
+
+        function formatUnix(unix_timestamp) {
+            // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
+            let date = new Date(unix_timestamp * 1000);
+            // Hours part from the timestamp
+            let hours = date.getHours();
+            // Minutes part from the timestamp
+            let minutes = "0" + date.getMinutes();
+            // Seconds part from the timestamp
+            let seconds = "0" + date.getSeconds();
+
+            // Will display time in 10:30:23 format
+            return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        }
+    </script>
+</body>
+
+</html>
