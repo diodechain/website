@@ -26,7 +26,7 @@
                     <th>Miner</th>
                     <th>Staked ETH</th>
                 </tr>
-                <tr v-for="miner in stakes">
+                <tr v-for="miner in Object.values(stakes).sort()">
                     <td>{{ miner.name }}</td>
                     <td class="ether-value">{{ miner.value }}</td>
                 </tr>
@@ -82,12 +82,16 @@
                     <th>Miner</th>
                     <th>Tx</th>
                 </tr>
-                <tr v-for="block in blocks">
-                    <td>{{ block.number }}</td>
-                    <td>{{ formatUnix(block.timestamp) }}</td>
-                    <td>{{ resolveName(block.miner) }}</td>
-                    <td>{{ block.transactions.length }}</td>
-                </tr>
+                <!-- <transition-group name="list-complete" tag="tbody"> -->
+                <tbody is="transition-group" name="list-complete">
+
+                    <tr v-for="block in blocks" v-bind:key="block" class="list-complete-item">
+                        <td>{{ block.number }}</td>
+                        <td>{{ formatUnix(block.timestamp) }}</td>
+                        <td>{{ resolveName(block.miner) }}</td>
+                        <td>{{ block.transactions.length }}</td>
+                    </tr>
+                    </transition-group>
             </table>
         </div>
 
@@ -95,10 +99,8 @@
 
     <script>
         // window.onload = function () {
-        // var web3 = new Web3('ws://testnet.diode.io:8545/ws')
         let web3 = new Web3('wss://testnet.diode.io:8443/ws')
         // let web3 = new Web3('ws://localhost:8545/ws')
-        // let web3 = new Web3('http://localhost:8545')
         // x = async () => {
         //     if (window.ethereum) {
         //         let accounts = await window.ethereum.enable()
@@ -145,12 +147,14 @@
                         miner.stroke = "" + miner.percent + " " + (100 - miner.percent)
                         fetchStake(miner.address)
                     })
-                    return groups;
+                    return groups.sort((a, b) => a.count - b.count);
                 },
             },
             created: function () {
             }
         })
+
+
 
         async function loader() {
 
@@ -158,6 +162,25 @@
                 app.base = resolveName(base)
                 fetchStake(base)
             })
+            let subscription = web3.eth.subscribe('newBlockHeaders', function (error, block) {
+                var buffer = []
+                if (!error) {
+                    buffer.push(block)
+                } else {
+                    console.log("error", error)
+                }
+                setInterval(() => {
+                    if (buffer.length == 0) return
+                    // Array.prototype.unshift.apply(app.blocks, buffer);
+                    // app.blocks.splice(-buffer.length, buffer.length)
+                    let blocks = app.blocks.slice()
+                    Array.prototype.unshift.apply(blocks, buffer);
+                    blocks.splice(-buffer.length, buffer.length)
+                    app.blocks = blocks
+                    buffer = []
+                }, 2000)
+            })
+
             let nr = await web3.eth.getBlockNumber()
             let batch = new web3.BatchRequest()
             let blocks = []

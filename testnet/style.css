@@ -1,4 +1,5 @@
 /* @import url(https://fonts.googleapis.com/css?family=Montserrat:400); */
+
 @import url(ttps://fonts.googleapis.com/css?family=Titillium+Web:400);
 body {
     /* font: 16px/1.4em "Montserrat", Arial, sans-serif; */
@@ -13,8 +14,9 @@ body {
 .title {
     text-align: center;
 }
+
 .title h1 {
-    margin:0.2em
+    margin: 0.2em
 }
 
 .ether-value {
@@ -139,4 +141,22 @@ figure {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+.list-complete-item {
+    transition: all 1s;
+    /* display: inline-block; */
+    margin-right: 10px;
+}
+
+.list-complete-enter, .list-complete-leave-to
+/* .list-complete-leave-active below version 2.1.8 */
+
+    {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.list-complete-leave-active {
+    position: absolute;
 }
