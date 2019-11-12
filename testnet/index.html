@@ -1,3 +1,8 @@
+---
+layout: ""
+---
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,208 +10,66 @@
     <title>Testnet</title>
     <meta charset="utf-8">
     <!-- From example https://vuejs.org/v2/guide/computed.html -->
-    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router"></script>
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     </link>
 </head>
 
 <body>
+    {% include_relative vue/fleet_registration.vue %}
+    {% include_relative vue/power_distribution.vue %}
     <div id="app">
-        <div class="title">
-            <h1>Testnet Power Distribution</h1>
-            <small>connected to {{ base }}</small>
-        </div>
-        <div style="display: flex; flex-direction: row; align-items: flex-start;">
+        <ul class="navbar">
+            <li v-for="r in routes">
+                <router-link :to="r.path"><% r.name %></router-link>
+            </li>
+        </ul>
 
-            <table>
-                <tr>
-                    <th>Miner</th>
-                    <th>Staked ETH</th>
-                </tr>
-                <tr v-for="miner in Object.values(stakes).sort()">
-                    <td>{{ miner.name }}</td>
-                    <td class="ether-value">{{ miner.value }}</td>
-                </tr>
-            </table>
-            <!-- https://medium.com/@heyoka/scratch-made-svg-donut-pie-charts-in-html5-2c587e935d72 -->
-            <figure>
-                <div class="figure-content">
-                    <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut"
-                        aria-labelledby="beers-title beers-desc" role="img">
-                        <title id="beers-title">Block Stats</title>
-                        <desc id="beers-desc">Donut chart of the last {{ blocks.length }} blocks.</desc>
-                        <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"
-                            role="presentation">
-                        </circle>
-                        <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent"
-                            stroke="#d2d3d4" stroke-width="3" role="presentation"></circle>
-
-                        <circle v-for="miner in shares" class="donut-segment" cx="21" cy="21" r="15.91549430918954"
-                            fill="transparent" v-bind:stroke="miner.color" stroke-width="3"
-                            v-bind:stroke-dasharray="miner.stroke" v-bind:stroke-dashoffset="miner.offset"
-                            aria-labelledby="donut-segment-1-title donut-segment-1-desc">
-                            <title id="donut-segment-1-title">{{ miner.name }}</title>
-                            <desc id="donut-segment-1-desc">Segment spanning {{ miner.percent }}% of the whole</desc>
-                        </circle>
-                        <!-- unused 10% -->
-                        <g class="chart-text">
-                            <text x="50%" y="50%" class="chart-number">
-                                {{ blocks.length }}
-                            </text>
-                            <text x="50%" y="50%" class="chart-label">
-                                Last Blocks
-                            </text>
-                        </g>
-                    </svg>
-                </div>
-                <figcaption class="figure-key">
-                    <p class="sr-only">Donut chart showing {{ blocks.length }} most recent blocks.</p>
-
-                    <ul class="figure-key-list" aria-hidden="true" role="presentation">
-                        <li v-for="miner in shares">
-                            <span class="shape-circle" v-bind:style="{ backgroundColor: miner.color }"></span>
-                            {{ miner.name }} ({{ miner.percent }}% / {{ miner.count }} blocks)
-                        </li>
-                    </ul>
-                </figcaption>
-            </figure>
-
-
-            <table>
-                <tr>
-                    <th>Block</th>
-                    <th>Timestamp</th>
-                    <th>Miner</th>
-                    <th>Tx</th>
-                </tr>
-                <!-- <transition-group name="list-complete" tag="tbody"> -->
-                <tbody is="transition-group" name="list-complete">
-
-                    <tr v-for="block in blocks" v-bind:key="block" class="list-complete-item">
-                        <td>{{ block.number }}</td>
-                        <td>{{ formatUnix(block.timestamp) }}</td>
-                        <td>{{ resolveName(block.miner) }}</td>
-                        <td>{{ block.transactions.length }}</td>
-                    </tr>
-                    </transition-group>
-            </table>
-        </div>
-
+        <transition>
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
+        </transition>
     </div>
 
     <script>
-        // window.onload = function () {
+
         let web3 = new Web3('wss://testnet.diode.io:8443/ws')
         // let web3 = new Web3('ws://localhost:8545/ws')
-        // x = async () => {
-        //     if (window.ethereum) {
-        //         let accounts = await window.ethereum.enable()
-        //         console.log(accounts)
-        //         let balance = await web3.eth.getBalance(accounts[0])
-        //         console.log(balance)
-        //     }
-        // }
-        // x()
 
-        var app = new Vue({
-            el: '#app',
+        web3.extend({
+            property: 'eth',
+            methods: [{
+                name: 'getCodeHash',
+                call: 'eth_getCodeHash',
+                params: 2,
+                inputFormatter: [web3.extend.formatters.inputAddressFormatter, web3.extend.formatters.inputDefaultBlockNumberFormatter]
+                // outputFormatter: web3.utils.hexToNumberString
+            }]
+        });
+
+        let Registry = "0x5000000000000000000000000000000000000000"
+
+        var routes = [
+            {name: 'Power Distribution', path: '/', component: PowerDistribution},
+            {name: 'Fleet Registration', path: '/fleets', component: FleetRegistration}
+        ];
+
+        const app = new Vue({
             data: {
-                base: "",
-                miners: [],
-                blocks: [],
-                stakes: {}
+                routes
             },
-            computed: {
-                shares: function () {
-                    let groups = {}
-                    let size = this.blocks.length
-                    this.blocks.forEach(block => {
-                        if (groups[block.miner]) {
-                            groups[block.miner].count++
-                        } else {
-                            groups[block.miner] = {
-                                count: 1,
-                                address: block.miner,
-                                name: resolveName(block.miner),
-                                color: "#" + block.miner.substr(3, 6),
-                                shape: "background-color(#" + block.miner.substr(3, 6) + ")"
-                            }
-                        }
-                    });
+            router: new VueRouter({
+                routes
+            }),
+            delimiters: ["<%", "%>"]
+        }).$mount('#app')
 
-                    let total = 0
-                    groups = Object.values(groups)
-                    groups.forEach(miner => {
-                        if (total == 0) miner.offset = 25
-                        else miner.offset = 100 - total + 25
-                        miner.percent = Math.round(100 * miner.count / this.blocks.length)
-                        total += miner.percent
-                        miner.stroke = "" + miner.percent + " " + (100 - miner.percent)
-                        fetchStake(miner.address)
-                    })
-                    return groups.sort((a, b) => a.count - b.count);
-                },
-            },
-            created: function () {
-            }
-        })
-
-
-
-        async function loader() {
-
-            web3.eth.getCoinbase().then((base) => {
-                app.base = resolveName(base)
-                fetchStake(base)
-            })
-            let subscription = web3.eth.subscribe('newBlockHeaders', function (error, block) {
-                var buffer = []
-                if (!error) {
-                    buffer.push(block)
-                } else {
-                    console.log("error", error)
-                }
-                setInterval(() => {
-                    if (buffer.length == 0) return
-                    // Array.prototype.unshift.apply(app.blocks, buffer);
-                    // app.blocks.splice(-buffer.length, buffer.length)
-                    let blocks = app.blocks.slice()
-                    Array.prototype.unshift.apply(blocks, buffer);
-                    blocks.splice(-buffer.length, buffer.length)
-                    app.blocks = blocks
-                    buffer = []
-                }, 2000)
-            })
-
-            let nr = await web3.eth.getBlockNumber()
-            let batch = new web3.BatchRequest()
-            let blocks = []
-            let size = 500 > nr ? nr : 500
-            let cb = (error, block) => {
-                blocks.push(block)
-                if (blocks.length == size) {
-                    app.blocks = blocks
-                }
-                let name = resolveName(block.miner)
-                if (!app.stakes[name]) {
-                    app.$set(app.stakes, name, {
-                        name: name,
-                        value: "fetching.."
-                    })
-                    fetchStake(block.miner)
-                }
-            }
-            for (let i = 0; i < size; i++) {
-                batch.add(web3.eth.getBlock.request(nr - i, false, cb))
-            }
-            batch.execute()
-        }
-        loader()
 
         function resolveName(name) {
+            if (!name) return "null"
             switch (name.toLowerCase()) {
                 case "0x937c492a77ae90de971986d003ffbc5f8bb2232c": return "beta"
                 case "0xceca2f8cf1983b4cf0c1ba51fd382c2bc37aba58": return "gamma"
@@ -215,7 +78,8 @@
             }
         }
 
-        function fetchStake(address) {
+        function fetchStake(Main, address) {
+            if (!address) return
             let name = resolveName(address)
             let call = web3.eth.abi.encodeFunctionCall({
                 name: 'MinerValue',
@@ -229,11 +93,11 @@
                 }]
             }, [0, address]);
             return web3.eth.call({
-                to: "0x5000000000000000000000000000000000000000",
+                to: Registry,
                 data: call,
                 gasPrice: 0
             }).then((value) => {
-                app.$set(app.stakes, name, {
+                Main.$set(Main.stakes, name, {
                     name: name,
                     value: web3.utils.fromWei(web3.utils.toBN(value)).toString()
                 })
