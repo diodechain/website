@@ -20,10 +20,13 @@ layout: ""
 <body>
     {% include_relative vue/fleet_registration.vue %}
     {% include_relative vue/power_distribution.vue %}
+    {% include_relative vue/account.vue %}
+    {% include_relative vue/block.vue %}
+    {% include_relative vue/transaction.vue %}
     <div id="app">
         <ul class="navbar">
             <li v-for="r in routes">
-                <router-link :to="r.path"><% r.name %></router-link>
+                <router-link :to="r"><% r.name %></router-link>
             </li>
         </ul>
 
@@ -52,21 +55,42 @@ layout: ""
 
         let Registry = "0x5000000000000000000000000000000000000000"
 
+        var app;
         var routes = [
             {name: 'Power Distribution', path: '/', component: PowerDistribution},
-            {name: 'Fleet Registration', path: '/fleets', component: FleetRegistration}
+            {name: 'Fleet Registration', path: '/fleets', component: FleetRegistration},
+            {name: 'Transactions', path: '/tx/:hash', params: {hash: '0x1'}, component: Transaction, props: true},
+            {name: 'Blocks', path: '/block/:number', params: {number: 1}, component: Block, props: true},
+            {name: 'Accounts', path: '/account/:hash', params: {hash: Registry}, component: Account, props: true}
         ];
-
-        const app = new Vue({
+        const router = new VueRouter({routes});
+        router.beforeEach((to, from, next) => {
+            if (Object.values(to.params).length) {
+                for (i = 0; i < routes.length; i++) {
+                    let route = routes[i];
+                    if (route.name == to.name) {
+                        route.params = to.params
+                        if (app) app.$set(app.routes, i, route)
+                        else routes[i] = route
+                    }
+                }
+            }
+            next()
+        })
+        app = new Vue({
             data: {
                 routes
             },
-            router: new VueRouter({
-                routes
-            }),
+            router,
             delimiters: ["<%", "%>"]
-        }).$mount('#app')
+        })
+        app.$mount('#app')
 
+        Vue.component("account-link", {
+            template: '<router-link :to="\'/account/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link>',
+            props: {hash: String, onlyAlias: {type: Boolean, default: true}, length: {type: Number, default: 30}},
+            delimiters: ["<%", "%>"]
+        })
 
         function resolveName(name) {
             if (!name) return "null"
@@ -74,11 +98,12 @@ layout: ""
                 case "0x937c492a77ae90de971986d003ffbc5f8bb2232c": return "beta"
                 case "0xceca2f8cf1983b4cf0c1ba51fd382c2bc37aba58": return "gamma"
                 case "0x68e0bafdda9ef323f692fc080d612718c941d120": return "alpha"
+                case "0x5000000000000000000000000000000000000000": return "Registry"
                 default: return name;
             }
         }
 
-        function fetchStake(Main, address) {
+        function fetchStake(address, callback) {
             if (!address) return
             let name = resolveName(address)
             let call = web3.eth.abi.encodeFunctionCall({
@@ -96,12 +121,20 @@ layout: ""
                 to: Registry,
                 data: call,
                 gasPrice: 0
-            }).then((value) => {
-                Main.$set(Main.stakes, name, {
-                    name: name,
-                    value: web3.utils.fromWei(web3.utils.toBN(value)).toString()
-                })
-            })
+            }).then(callback)
+        }
+
+        function shorten(str, length) {
+            if (!length) length = 10;
+            if (str.length > length) return str.substr(0, length - 3) + '...';
+            return str;
+        }
+
+        function formatAddr(addr, onlyAlias, length) {
+            let alias = resolveName(addr);
+            if (onlyAlias) return shorten(alias, length);
+            if (alias != addr) return shorten(addr, length) + ' (' + alias + ')';
+            return shorten(addr, length);
         }
 
         function formatUnix(unix_timestamp) {

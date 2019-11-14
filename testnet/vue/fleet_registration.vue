@@ -141,7 +141,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
         args
       );
       let code = contract + constructor.substr(2);
-      console.log("account: ", this.account);
       let ret = await window.ethereum.sendAsync({
         method: "eth_sendTransaction",
         params: [{ from: this.account, data: code, gasPrice: 0 }],
@@ -183,7 +182,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
             console.log("registerDevice.error: ", err);
             return;
           }
-          console.log("registerDevice.ret: ", result);
           if (this.devices.indexOf(device) == -1) {
             this.devices.push(device);
             localStorage.devices = this.devices.join(",");

@@ -2,19 +2,9 @@
   <div>
     <div class="title">
       <h1>Testnet Power Distribution</h1>
-      <small>connected to <% base %></small>
+      <small>connected to <account-link :hash="base" :length="50" :onlyAlias="false"/></small>
     </div>
     <div style="display: flex; flex-direction: row; align-items: flex-start;">
-      <table>
-        <tr>
-          <th>Miner</th>
-          <th>Staked ETH</th>
-        </tr>
-        <tr v-for="miner in Object.values(stakes).sort()">
-          <td><% miner.name %></td>
-          <td class="ether-value"><% miner.value %></td>
-        </tr>
-      </table>
       <!-- https://medium.com/@heyoka/scratch-made-svg-donut-pie-charts-in-html5-2c587e935d72 -->
       <figure>
         <div class="figure-content">
@@ -75,14 +65,18 @@
           <p class="sr-only">Donut chart showing <% blocks.length %> most recent blocks.</p>
 
           <ul class="figure-key-list" aria-hidden="true" role="presentation">
-            <li v-for="miner in shares">
+            <li v-for="miner in shares" :key="miner.name">
               <span class="shape-circle" v-bind:style="{ backgroundColor: miner.color }"></span>
-              <% miner.name %> (<% miner.percent %>% / <% miner.count %> blocks)
+              <div style="flow: flex; flex-layout: column;">
+                <div class="figure-title"><% shorten(miner.name) %> <% miner.percent %>%</div>
+                <div><% miner.count %> Blocks</div>
+                <div v-if="stakes[miner.name]"><% stakes[miner.name].value %> DIO</div>
+              </div>
             </li>
           </ul>
         </figcaption>
       </figure>
-      <table>
+      <table class="data" style="width: auto">
         <tr>
           <th>Block</th>
           <th>Timestamp</th>
@@ -91,9 +85,11 @@
         </tr>
         <tbody is="transition-group" name="list-complete">
           <tr v-for="block in blocks" v-bind:key="block" class="list-complete-item">
-            <td><% block.number %></td>
+            <td>
+              <router-link :to="'/block/' + block.number"><% block.number %></router-link>
+            </td>
             <td><% formatUnix(block.timestamp) %></td>
-            <td><% resolveName(block.miner) %></td>
+            <td><account-link :hash="block.miner" :length="10"/></td>
             <td><% block.transactions.length %></td>
           </tr>
         </tbody>
@@ -139,24 +135,32 @@ var PowerDistribution = Vue.component("power_distribution", {
         miner.percent = Math.round((100 * miner.count) / this.blocks.length);
         total += miner.percent;
         miner.stroke = "" + miner.percent + " " + (100 - miner.percent);
-        fetchStake(miner.address);
+        this.fetchStake(miner.address);
       });
       return groups.sort((a, b) => a.count - b.count);
     }
   },
   created: function() {
-    this.loader(this);
+    this.loader();
   },
   methods: {
-    loader: async function(Main) {
-      web3.eth.getCoinbase().then(base => {
-        Main.base = resolveName(base);
-        fetchStake(Main, base);
+    fetchStake: function(addr) {
+      fetchStake(addr, value => {
+        this.$set(this.stakes, name, {
+          name: name,
+          value: web3.utils.fromWei(web3.utils.toBN(value)).toString()
+        });
       });
-      let subscription = web3.eth.subscribe("newBlockHeaders", function(
+    },
+    loader: async function() {
+      web3.eth.getCoinbase().then(base => {
+        this.base = resolveName(base);
+        this.fetchStake(base);
+      });
+      let subscription = web3.eth.subscribe("newBlockHeaders", (
         error,
         block
-      ) {
+      ) => {
         var buffer = [];
         if (!error) {
           buffer.push(block);
@@ -165,12 +169,10 @@ var PowerDistribution = Vue.component("power_distribution", {
         }
         setInterval(() => {
           if (buffer.length == 0) return;
-          // Array.prototype.unshift.apply(Main.blocks, buffer);
-          // Main.blocks.splice(-buffer.length, buffer.length)
-          let blocks = Main.blocks.slice();
+          let blocks = this.blocks.slice();
           Array.prototype.unshift.apply(blocks, buffer);
           blocks.splice(-buffer.length, buffer.length);
-          Main.blocks = blocks;
+          this.blocks = blocks;
           buffer = [];
         }, 2000);
       });
@@ -186,15 +188,15 @@ var PowerDistribution = Vue.component("power_distribution", {
         }
         blocks.push(block);
         if (blocks.length == size) {
-          Main.blocks = blocks;
+          this.blocks = blocks;
         }
         let name = resolveName(block.miner);
-        if (!Main.stakes[name]) {
-          Main.$set(Main.stakes, name, {
+        if (!this.stakes[name]) {
+          this.$set(this.stakes, name, {
             name: name,
             value: "fetching.."
           });
-          fetchStake(Main, block.miner);
+          this.fetchStake(block.miner);
         }
       };
       for (let i = 0; i < size; i++) {
