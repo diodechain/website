@@ -18,9 +18,7 @@
           <td v-if="number > 0">
             <router-link :to="'/block/' + (number-1)"><% number-1 %></router-link>
           </td>
-          <td v-else>
-            Genesis
-          </td>
+          <td v-else>Genesis</td>
         </tr>
         <tr>
           <th>Timestamp</th>
@@ -28,16 +26,18 @@
         </tr>
         <tr>
           <th>Miner</th>
-          <td><account-link :hash="block.miner" :length="50" :onlyAlias="false"></td>
+          <td>
+            <account-link :hash="block.miner" :length="50" :onlyAlias="false" />
+          </td>
         </tr>
         <tr>
           <th>Transactions</th>
           <td v-if="block.transactions.length > 0">
-            <router-link v-for="tx in block.transactions" :key="tx" :to="'/tx/' + tx"><% tx %></router-link>
+            <div :key="tx" v-for="tx in block.transactions">
+              <router-link :key="tx" :to="'/tx/' + tx"><% tx %></router-link>
+            </div>
           </td>
-          <td v-else>
-            None
-          </td>
+          <td v-else>None</td>
         </tr>
         <tr>
           <th>Size</th>

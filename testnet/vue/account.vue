@@ -11,7 +11,7 @@
       <table class="data">
         <tr>
           <th>Account Hash</th>
-          <td><% hash %></td>
+          <td><% formatAddr(hash, false, 50) %></td>
         </tr>
         <tr>
           <th>Type</th>
@@ -25,6 +25,10 @@
         <tr v-if="code != '0x'">
           <th>Code Hash</th>
           <td><% codehash %></td>
+        </tr>
+        <tr v-if="code != '0x'">
+          <th>Code</th>
+          <td class="big"><% code %></td>
         </tr>
       </table>
     </div>

@@ -2,7 +2,10 @@
   <div>
     <div class="title">
       <h1>Testnet Power Distribution</h1>
-      <small>connected to <account-link :hash="base" :length="50" :onlyAlias="false"/></small>
+      <small>
+        connected to
+        <account-link :hash="base" :length="50" :onlyAlias="false" />
+      </small>
     </div>
     <div style="display: flex; flex-direction: row; align-items: flex-start;">
       <!-- https://medium.com/@heyoka/scratch-made-svg-donut-pie-charts-in-html5-2c587e935d72 -->
@@ -68,7 +71,7 @@
             <li v-for="miner in shares" :key="miner.name">
               <span class="shape-circle" v-bind:style="{ backgroundColor: miner.color }"></span>
               <div style="flow: flex; flex-layout: column;">
-                <div class="figure-title"><% shorten(miner.name) %> <% miner.percent %>%</div>
+                <div class="figure-title"><account-link :hash="miner.name" :length="10"></account-link> <% miner.percent %>%</div>
                 <div><% miner.count %> Blocks</div>
                 <div v-if="stakes[miner.name]"><% stakes[miner.name].value %> DIO</div>
               </div>
@@ -89,7 +92,9 @@
               <router-link :to="'/block/' + block.number"><% block.number %></router-link>
             </td>
             <td><% formatUnix(block.timestamp) %></td>
-            <td><account-link :hash="block.miner" :length="10"/></td>
+            <td>
+              <account-link :hash="block.miner" :length="10" />
+            </td>
             <td><% block.transactions.length %></td>
           </tr>
         </tbody>
@@ -120,7 +125,7 @@ var PowerDistribution = Vue.component("power_distribution", {
           groups[block.miner] = {
             count: 1,
             address: block.miner,
-            name: resolveName(block.miner),
+            name: block.miner,
             color: "#" + block.miner.substr(3, 6),
             shape: "background-color(#" + block.miner.substr(3, 6) + ")"
           };
@@ -146,36 +151,36 @@ var PowerDistribution = Vue.component("power_distribution", {
   methods: {
     fetchStake: function(addr) {
       fetchStake(addr, value => {
-        this.$set(this.stakes, name, {
-          name: name,
+        this.$set(this.stakes, addr, {
+          name: addr,
           value: web3.utils.fromWei(web3.utils.toBN(value)).toString()
         });
       });
     },
     loader: async function() {
       web3.eth.getCoinbase().then(base => {
-        this.base = resolveName(base);
+        this.base = base;
         this.fetchStake(base);
       });
-      let subscription = web3.eth.subscribe("newBlockHeaders", (
-        error,
-        block
-      ) => {
-        var buffer = [];
-        if (!error) {
-          buffer.push(block);
-        } else {
-          console.log("newBlockHeaders.subscription.error", error);
+      let subscription = web3.eth.subscribe(
+        "newBlockHeaders",
+        (error, block) => {
+          var buffer = [];
+          if (!error) {
+            buffer.push(block);
+          } else {
+            console.log("newBlockHeaders.subscription.error", error);
+          }
+          setInterval(() => {
+            if (buffer.length == 0) return;
+            let blocks = this.blocks.slice();
+            Array.prototype.unshift.apply(blocks, buffer);
+            blocks.splice(-buffer.length, buffer.length);
+            this.blocks = blocks;
+            buffer = [];
+          }, 2000);
         }
-        setInterval(() => {
-          if (buffer.length == 0) return;
-          let blocks = this.blocks.slice();
-          Array.prototype.unshift.apply(blocks, buffer);
-          blocks.splice(-buffer.length, buffer.length);
-          this.blocks = blocks;
-          buffer = [];
-        }, 2000);
-      });
+      );
 
       let nr = await web3.eth.getBlockNumber();
       let batch = new web3.BatchRequest();
@@ -190,10 +195,9 @@ var PowerDistribution = Vue.component("power_distribution", {
         if (blocks.length == size) {
           this.blocks = blocks;
         }
-        let name = resolveName(block.miner);
-        if (!this.stakes[name]) {
-          this.$set(this.stakes, name, {
-            name: name,
+        if (!this.stakes[block.miner]) {
+          this.$set(this.stakes, block.miner, {
+            name: block.miner,
             value: "fetching.."
           });
           this.fetchStake(block.miner);

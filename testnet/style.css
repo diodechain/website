@@ -85,6 +85,10 @@ table.data th, table.data td {
     padding: 8px;
 }
 
+table.data td.big {
+    overflow-wrap: anywhere;
+}
+
 .ether-value {
     text-align: right;
     font-family: monospace;

@@ -9,7 +9,10 @@
       <div v-if="error" class="error"><% error %></div>
     </div>
     <div v-else class="column">
-      <div>Account: <% account %></div>
+      <div>
+        Account:
+        <account-link :hash="account" :length="50" />
+      </div>
       <div>Balance: <% balance %></div>
       <div v-if="contracts == undefined">Loading...</div>
       <div v-else-if="contracts.length == 0">
@@ -17,7 +20,8 @@
         <button v-on:click="createFleet()">Create New Fleet</button>
       </div>
       <div v-else>
-        Found Fleet Contract: <% contracts[0] %>
+        Found Fleet Contract:
+        <account-link :hash="contracts[0]" :length="50"></account-link>
         <ul>
           <li v-for="device in devices">Device: <% device %></li>
           <div>

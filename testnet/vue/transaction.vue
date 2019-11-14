@@ -33,7 +33,7 @@
         </tr>
         <tr>
           <th>Input</th>
-          <td><% tx.input %></td>
+          <td class="big"><% tx.input %></td>
         </tr>
         <tr>
           <th>Nonce</th>
