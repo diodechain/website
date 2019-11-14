@@ -41,11 +41,35 @@
         </tr>
         <tr>
           <th>To</th>
-          <td><% formatAddr(tx.to) %></td>
+          <td><account-link :hash="tx.to" :only-alias="false" :length="50"></account-link></td>
         </tr>
         <tr>
           <th>Value</th>
           <td><% tx.value %> DIO</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td><% receipt.status %></td>
+        </tr>
+        <tr v-if="receipt.contractAddress">
+          <th>New Contract Address</th>
+          <td><account-link :hash="receipt.contractAddress" :onlyAlias="false" :length="50"></account-link></td>
+        </tr>
+        <tr>
+          <th>Gas Used</th>
+          <td><% receipt.gasUsed %></td>
+        </tr>
+        <tr>
+          <th>Logs</th>
+          <td class="big"><% receipt.logs %></td>
+        </tr>
+        <tr>
+          <th>Cumulative Gas Used</th>
+          <td><% receipt.cumulativeGasUsed %></td>
+        </tr>
+        <tr>
+          <th>Transaction Index</th>
+          <td><% receipt.transactionIndex %></td>
         </tr>
       </table>
     </div>
@@ -57,7 +81,7 @@ var Transaction = Vue.component("transaction", {
   props: { hash: String },
   delimiters: ["<%", "%>"],
   data: () => {
-    return { tx: undefined, error: undefined };
+    return { tx: undefined, error: undefined, receipt: {} };
   },
   created: function() {
     this.update();
@@ -65,11 +89,17 @@ var Transaction = Vue.component("transaction", {
   methods: {
     update: function() {
       this.tx = undefined;
-      web3.eth.getTransaction(this.hash, (err, tx) => {
+      web3.eth.getTransaction(this.hash, (err, ret) => {
         this.err = undefined;
         if (err) this.error = err;
-        else this.tx = tx;
+        else this.tx = ret;
       });
+      web3.eth.getTransactionReceipt(this.hash, (err, ret) => {
+        this.err = undefined;
+        if (err) this.error = err;
+        else this.receipt = ret;
+      });
+      // 0xd8e3e2e81319f6af36533bee63bc9b129ba6b0d7d607560f76fc291e2507a405
     }
   },
   watch: {

@@ -4,7 +4,7 @@
       <h1>Testnet Power Distribution</h1>
       <small>
         connected to
-        <account-link :hash="base" :length="50" :onlyAlias="false" />
+        <account-link :hash="base" :length="50" :only-alias="false" />
       </small>
     </div>
     <div style="display: flex; flex-direction: row; align-items: flex-start;">
@@ -71,7 +71,7 @@
             <li v-for="miner in shares" :key="miner.name">
               <span class="shape-circle" v-bind:style="{ backgroundColor: miner.color }"></span>
               <div style="flow: flex; flex-layout: column;">
-                <div class="figure-title"><account-link :hash="miner.name" :length="10"></account-link> <% miner.percent %>%</div>
+                <div class="figure-title"><account-link :hash="miner.name" :only-alias="true" :length="10"></account-link> <% miner.percent %>%</div>
                 <div><% miner.count %> Blocks</div>
                 <div v-if="stakes[miner.name]"><% stakes[miner.name].value %> DIO</div>
               </div>
@@ -93,7 +93,7 @@
             </td>
             <td><% formatUnix(block.timestamp) %></td>
             <td>
-              <account-link :hash="block.miner" :length="10" />
+              <account-link :hash="block.miner" :only-alias="true" :length="10"></account-link>
             </td>
             <td><% block.transactions.length %></td>
           </tr>

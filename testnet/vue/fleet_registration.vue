@@ -104,8 +104,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
       this.balance = await web3.eth.getBalance(this.account);
     },
     getContracts: async function() {
-      const FleetHash =
-        "0x7e9d94e966d33cff302ef86e2337df8eaf9a6388d45e4744321240599d428343";
       let proms = [];
       let candidates = [];
       for (let i = 0; i < 10; i++) {

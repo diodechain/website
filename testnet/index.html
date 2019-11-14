@@ -50,10 +50,18 @@ layout: ""
                 params: 2,
                 inputFormatter: [web3.extend.formatters.inputAddressFormatter, web3.extend.formatters.inputDefaultBlockNumberFormatter]
                 // outputFormatter: web3.utils.hexToNumberString
+            },
+            {
+                name: 'getStorage',
+                call: 'eth_getStorage',
+                params: 2,
+                inputFormatter: [web3.extend.formatters.inputAddressFormatter, web3.extend.formatters.inputDefaultBlockNumberFormatter]
+                // outputFormatter: web3.utils.hexToNumberString
             }]
         });
 
         let Registry = "0x5000000000000000000000000000000000000000"
+        const FleetHash = "0x7e9d94e966d33cff302ef86e2337df8eaf9a6388d45e4744321240599d428343"
 
         var app;
         var routes = [
@@ -88,7 +96,11 @@ layout: ""
 
         Vue.component("account-link", {
             template: '<router-link :to="\'/account/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link>',
-            props: {hash: String, onlyAlias: {type: Boolean, default: true}, length: {type: Number, default: 30}},
+            props: {
+                hash: String,
+                onlyAlias: {type: Boolean, default: false},
+                length: {type: Number, default: 50}
+            },
             delimiters: ["<%", "%>"]
         })
 

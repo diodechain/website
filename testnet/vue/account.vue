@@ -15,8 +15,7 @@
         </tr>
         <tr>
           <th>Type</th>
-          <td v-if="code == '0x'">User/Device</td>
-          <td v-else>Contract</td>
+          <td><% type %></td>
         </tr>
         <tr>
           <th>Balance</th>
@@ -29,6 +28,21 @@
         <tr v-if="code != '0x'">
           <th>Code</th>
           <td class="big"><% code %></td>
+        </tr>
+        <tr v-if="code != '0x'">
+          <th>Storage</th>
+          <td class="big">
+            <table class="data">
+              <tr>
+                <th>Address</th>
+                <th>Value</th>
+              </tr>
+              <tr :key="kv[0]" v-for="kv in storage">
+                <td><% kv[0] %></td>
+                <td><% kv[1] %></td>
+              </tr>
+            </table>
+          </td>
         </tr>
       </table>
     </div>
@@ -44,8 +58,16 @@ var Account = Vue.component("account", {
       error: undefined,
       balance: undefined,
       code: undefined,
-      codehash: undefined
+      codehash: undefined,
+      storage: []
     };
+  },
+  computed: {
+    type: function() {
+      if (this.code == "0x") return "user";
+      if (this.codehash == FleetHash) return "fleet";
+      return "contract";
+    }
   },
   created: function() {
     this.update();
@@ -67,6 +89,11 @@ var Account = Vue.component("account", {
         this.err = undefined;
         if (err) this.error = err;
         else this.code = ret;
+      });
+      web3.eth.getStorage(this.hash, (err, ret) => {
+        this.err = undefined;
+        if (err) this.error = err;
+        else this.storage = ret;
       });
     }
   },

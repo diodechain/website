@@ -27,7 +27,7 @@
         <tr>
           <th>Miner</th>
           <td>
-            <account-link :hash="block.miner" :length="50" :onlyAlias="false" />
+            <account-link :hash="block.miner" :length="50" :only-alias="false" />
           </td>
         </tr>
         <tr>
