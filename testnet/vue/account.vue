@@ -64,9 +64,9 @@ var Account = Vue.component("account", {
   },
   computed: {
     type: function() {
-      if (this.code == "0x") return "user";
-      if (this.codehash == FleetHash) return "fleet";
-      return "contract";
+      if (this.code == "0x") return "User (Human or Miner or Device)";
+      if (this.codehash == FleetHash) return "Fleet Contract";
+      return "General Smart Contract";
     }
   },
   created: function() {
