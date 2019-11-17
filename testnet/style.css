@@ -10,9 +10,15 @@ body {
 }
 
 #app {
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media only screen and (min-width: 800px) {
+    #app {
+        width: 80%;
+    }
 }
 
 .column {
@@ -36,6 +42,7 @@ ul.navbar li a {
     text-transform: uppercase;
     letter-spacing: 0.08rem;
     text-decoration: none;
+    white-space: nowrap;
     font-weight: bold;
     transition: all 300ms ease-in-out;
 }
@@ -84,6 +91,12 @@ table.data th, table.data td {
     border: 1px solid #ddd;
     padding: 8px;
 }
+
+table.data th {
+    white-space: nowrap;
+    vertical-align: top;
+}
+
 
 table.data td.big {
     overflow-wrap: anywhere;
