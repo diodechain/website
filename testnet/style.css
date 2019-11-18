@@ -90,6 +90,7 @@ table.data th, table.data td {
     text-align: left;
     border: 1px solid #ddd;
     padding: 8px;
+    word-break: break-all;
 }
 
 table.data th {
