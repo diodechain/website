@@ -2582,16 +2582,13 @@ table {
   content: "\f11d";
 }
 
-a.github svg {
-  margin-top: 4px;
-}
-
-a.github path.fill {
-  fill: #5e5e5e;
-}
-
-a.github:hover path.fill {
-  fill: #F15C2E;
+.icon-github {
+  background-image: url("/images/github.svg");
+  -webkit-background-size: cover;
+          background-size: cover;
+  width: 1.8em;
+  height: 1.8em;
+  display: inline-block;
 }
 
 /**

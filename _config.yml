@@ -89,6 +89,9 @@ navigation:
 - title: <i class="fi flaticon-twitter"></i>
   link: https://twitter.com/diode_chain
   target: _blank
+- title: <i class="icon-github"></i>
+  link: https://github.com/diodechain
+  target: _blank
 
 
 ####################################
