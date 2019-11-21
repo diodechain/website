@@ -111,7 +111,8 @@ var PowerDistribution = Vue.component("power_distribution", {
       base: "",
       miners: [],
       blocks: [],
-      stakes: {}
+      stakes: {},
+      targetSize: 500
     };
   },
   computed: {
@@ -175,7 +176,10 @@ var PowerDistribution = Vue.component("power_distribution", {
             if (buffer.length == 0) return;
             let blocks = this.blocks.slice();
             Array.prototype.unshift.apply(blocks, buffer);
-            blocks.splice(-buffer.length, buffer.length);
+            if (blocks.length > this.targetSize) {
+              let size = blocks.length - this.targetSize;
+              blocks.splice(-size, size);
+            }
             this.blocks = blocks;
             buffer = [];
           }, 2000);
@@ -185,7 +189,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       let nr = await web3.eth.getBlockNumber();
       let batch = new web3.BatchRequest();
       let blocks = [];
-      let size = 500 > nr ? nr : 500;
+      let size = this.targetSize > nr ? nr : this.targetSize;
       let cb = (error, block) => {
         if (error) {
           console.log(error);
