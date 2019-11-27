@@ -31,6 +31,14 @@
               :disabled="!web3.utils.isAddress(deviceId)"
             >Whitelist Device</button>
           </div>
+          <li v-for="access in accesses">Device: <% access.device %>  Device2: <% access.device2 %></li>
+          <div>
+            <input type="text" v-model="deviceId2" placeholder="0x1234556..." />
+            <button
+              v-on:click="accessDevice()"
+              :disabled="!web3.utils.isAddress(deviceId) || !web3.utils.isAddress(deviceId2)"
+            >Access Device</button>
+          </div>
         </ul>
       </div>
     </div>
@@ -48,13 +56,18 @@ var FleetRegistration = Vue.component("fleet_registration", {
       contracts: undefined,
       error: undefined,
       deviceId: undefined,
-      devices: []
+      deviceId2: undefined,
+      devices: [],
+      accesses: [],
     };
   },
 
   created: function() {
     if (localStorage.devices) {
       this.devices = localStorage.devices.split(",");
+    }
+    if (localStorage.accesses) {
+      this.accesses = JSON.parse(localStorage.accesses);
     }
     setInterval(() => {
       if (!this.enabled && window.ethereum.selectedAddress != null) {
@@ -190,7 +203,79 @@ var FleetRegistration = Vue.component("fleet_registration", {
           }
         }
       );
+    },
+    accessDevice: async function() {
+      let contract = this.contracts[0];
+      let device = this.deviceId;
+      let device2 = this.deviceId2;
+      try {
+        let txHash = await this.setAccessWhitelist(device, device2);
+        console.log(txHash);
+        let existed = this.accesses.filter((a) => {
+          return a.device === device
+        });
+        if (existed.length < 1) {
+          this.accesses.push({
+            device,
+            device2
+          });
+          localStorage.accesses = JSON.stringify(this.accesses);
+        }
+        txHash = await this.setAccessWhitelist(device2, device);
+        existed = this.accesses.filter((a) => {
+          return a.device === device2
+        });
+        if (existed.length < 1) {
+          this.accesses.push({
+            device: device2,
+            device2: device
+          });
+          localStorage.accesses = JSON.stringify(this.accesses);
+        }
+        console.log(txHash);
+      } catch (err) {
+        console.log("accessDevice.error: ", err);
+      }
+    },
+    setAccessWhitelist: function(device, device2) {
+      let contract = this.contracts[0];
+      let call = web3.eth.abi.encodeFunctionCall(
+        {
+          name: "SetAccessWhitelist",
+          type: "function",
+          inputs: [
+            {
+              type: "address",
+              name: 'device'
+            },{
+              type: "address",
+              name: 'device2'
+            },{
+              type: "bool",
+              name: "allowed"
+            }
+          ]
+        },
+        [device, device2, true]
+      );
+      return new Promise((resolve, reject) => {
+        window.ethereum.sendAsync(
+          {
+            method: "eth_sendTransaction",
+            params: [
+              { from: this.account, to: contract, data: call, gasPrice: 0 }
+            ],
+            from: this.account
+          },
+          (err, result) => {
+            if (err) {
+              return reject(err);
+            }
+            return resolve(result);
+          }
+        );
+      });
     }
-  }
+  },
 });
 </script>
