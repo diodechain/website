@@ -13,6 +13,7 @@ layout: ""
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-router"></script>
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
+    <script src="./abi.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="shortcut icon" href="/images/favicon.png" title="Favicon">
     </link>
@@ -63,6 +64,7 @@ layout: ""
 
         let Registry = "0x5000000000000000000000000000000000000000"
         const FleetHash = "0x7e9d94e966d33cff302ef86e2337df8eaf9a6388d45e4744321240599d428343"
+        const NullHash = "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
         var app;
         var routes = [
@@ -108,9 +110,9 @@ layout: ""
         function resolveName(name) {
             if (!name) return "null"
             switch (name.toLowerCase()) {
-                case "0x937c492a77ae90de971986d003ffbc5f8bb2232c": return "beta"
-                case "0xceca2f8cf1983b4cf0c1ba51fd382c2bc37aba58": return "gamma"
-                case "0x68e0bafdda9ef323f692fc080d612718c941d120": return "alpha"
+                case "0x937c492a77ae90de971986d003ffbc5f8bb2232c": return "Europe1"
+                case "0xceca2f8cf1983b4cf0c1ba51fd382c2bc37aba58": return "US1"
+                case "0x68e0bafdda9ef323f692fc080d612718c941d120": return "Asia1"
                 case "0x5000000000000000000000000000000000000000": return "Registry"
                 default: return name;
             }
@@ -118,23 +120,7 @@ layout: ""
 
         function fetchStake(address, callback) {
             if (!address) return
-            let name = resolveName(address)
-            let call = web3.eth.abi.encodeFunctionCall({
-                name: 'MinerValue',
-                type: 'function',
-                inputs: [{
-                    type: 'uint8',
-                    name: 'mode'
-                }, {
-                    type: 'address',
-                    name: 'miner'
-                }]
-            }, [0, address]);
-            return web3.eth.call({
-                to: Registry,
-                data: call,
-                gasPrice: 0
-            }).then(callback)
+            CallRegistry('MinerValue', [0, address], callback)
         }
 
         function shorten(str, length) {

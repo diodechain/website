@@ -9,38 +9,72 @@
       <div v-if="error" class="error"><% error %></div>
     </div>
     <div v-else class="column">
-      <div>
-        Account:
-        <account-link :hash="account" :length="50" />
-      </div>
-      <div>Balance: <% balance %></div>
-      <div v-if="contracts == undefined">Loading...</div>
-      <div v-else-if="contracts.length == 0">
-        No contracts identified.
-        <button v-on:click="createFleet()">Create New Fleet</button>
-      </div>
-      <div v-else>
-        Found Fleet Contract:
-        <account-link :hash="contracts[0]" :length="50"></account-link>
-        <ul>
-          <li v-for="device in devices">Device: <% device %></li>
-          <div>
-            <input type="text" v-model="deviceId" placeholder="0x1234556..." />
-            <button
-              v-on:click="registerDevice()"
-              :disabled="!web3.utils.isAddress(deviceId)"
-            >Whitelist Device</button>
-          </div>
-          <li v-for="access in accesses">Device: <% access.device %>  Device2: <% access.device2 %></li>
-          <div>
-            <input type="text" v-model="deviceId2" placeholder="0x1234556..." />
-            <button
-              v-on:click="accessDevice()"
-              :disabled="!web3.utils.isAddress(deviceId) || !web3.utils.isAddress(deviceId2)"
-            >Access Device</button>
-          </div>
-        </ul>
-      </div>
+      <table class="data">
+        <tr>
+          <th>Your Account</th>
+          <td>
+            <account-link :hash="account" :length="50"></account-link>
+          </td>
+        </tr>
+        <tr>
+          <th>Your Balance</th>
+          <td><% web3.utils.fromWei(balance) %> DIO</td>
+        </tr>
+        <tr>
+          <th class="fleet">Your Fleet</th>
+          <td class="fleet">
+            <div v-if="contracts == undefined">Loading...</div>
+            <div v-else-if="contracts.length == 0">
+              No contracts identified.
+              <button v-on:click="createFleet()">Create New Fleet</button>
+            </div>
+            <div v-else>
+              <div v-for="contract in contracts">
+                Fleet Contract:
+                <account-link :hash="contract" :length="50"></account-link>
+                <hr />
+                <h3>Known Fleet Devices</h3>
+                <table class="data">
+                  <tr>
+                    <th>Device ID</th>
+                    <th>Fleet Member</th>
+                  </tr>
+                  <tr v-for="device in devices">
+                    <td><% device.id %></td>
+                    <td><% device.white %></td>
+                  </tr>
+                </table>
+                <div>
+                  <input type="text" v-model="deviceId" placeholder="0x1234556..." />
+                  <button
+                    v-on:click="addDevice(deviceId)"
+                    :disabled="!web3.utils.isAddress(deviceId)"
+                  >Add Device</button>
+                </div>
+                <hr />
+                <h3>Access List</h3>
+                <table class="data">
+                  <tr>
+                    <th>Device ID</th>
+                    <th>Access ID</th>
+                  </tr>
+                  <tr v-for="access in accesses">
+                    <td><% access.device %></td>
+                    <td><% access.device2 %></td>
+                  </tr>
+                </table>
+                <div>
+                  <input type="text" v-model="deviceId2" placeholder="0x1234556..." />
+                  <button
+                    v-on:click="accessDevice()"
+                    :disabled="!web3.utils.isAddress(deviceId) || !web3.utils.isAddress(deviceId2)"
+                  >Access Device</button>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>
@@ -53,18 +87,22 @@ var FleetRegistration = Vue.component("fleet_registration", {
       enabled: false,
       account: false,
       balance: undefined,
-      contracts: undefined,
+      codehash: undefined,
+      contracts: [],
       error: undefined,
       deviceId: undefined,
       deviceId2: undefined,
-      devices: [],
-      accesses: [],
+      devices: {},
+      accesses: []
     };
   },
 
   created: function() {
     if (localStorage.devices) {
-      this.devices = localStorage.devices.split(",");
+      let devices = localStorage.devices.split(",");
+      for (id of devices) {
+        this.addDevice(id);
+      }
     }
     if (localStorage.accesses) {
       this.accesses = JSON.parse(localStorage.accesses);
@@ -76,6 +114,27 @@ var FleetRegistration = Vue.component("fleet_registration", {
     }, 1000);
   },
   methods: {
+    addDevice: function(id) {
+      if (this.devices[id] || !web3.utils.isAddress(id)) return;
+      let dev = {
+        id,
+        white: undefined,
+        access: undefined
+      };
+      this.$set(this.devices, id, dev);
+      this.reloadDevice(id);
+      let ids = [];
+      for (dev in this.devices) {
+        ids.push(dev);
+      }
+      localStorage.devices = ids.join(",");
+    },
+    reloadDevice: function(id) {
+      this.isWhiteListed(id, white => {
+        this.devices[id].white = web3.utils.hexToNumber(white) ? true : false;
+        this.$set(this.devices, id, this.devices[id]);
+      });
+    },
     enable: function() {
       if (!window.ethereum || !window.ethereum.isMetaMask) {
         this.error =
@@ -127,6 +186,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
       ret = await Promise.all(proms);
       if (ret.indexOf(FleetHash) >= 0) {
         this.contracts = [this.generateContractAddress(ret.indexOf(FleetHash))];
+        for (id in this.devices) this.reloadDevice(id);
       } else {
         this.contracts = [];
       }
@@ -164,24 +224,19 @@ var FleetRegistration = Vue.component("fleet_registration", {
 
       console.log("createFleet: ", ret);
     },
+    isWhiteListed(device, callback) {
+      if (!this.contracts[0]) return;
+      CallFleet("deviceWhitelist", this.contracts[0], [device], callback);
+    },
+    hasAccess(device, user, callback) {
+      if (!this.contracts[0]) return;
+      CallFleet("accessWhitelist", this.contracts[0], [device, user], callback);
+    },
     registerDevice: async function() {
       let contract = this.contracts[0];
       let device = this.deviceId;
       let call = web3.eth.abi.encodeFunctionCall(
-        {
-          name: "SetDeviceWhitelist",
-          type: "function",
-          inputs: [
-            {
-              type: "address",
-              name: "device"
-            },
-            {
-              type: "bool",
-              name: "allowed"
-            }
-          ]
-        },
+        fleetMethods["SetDeviceWhitelist"],
         [device, true]
       );
       window.ethereum.sendAsync(
@@ -197,10 +252,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
             console.log("registerDevice.error: ", err);
             return;
           }
-          if (this.devices.indexOf(device) == -1) {
-            this.devices.push(device);
-            localStorage.devices = this.devices.join(",");
-          }
+          this.addDevice(device);
         }
       );
     },
@@ -211,8 +263,8 @@ var FleetRegistration = Vue.component("fleet_registration", {
       try {
         let txHash = await this.setAccessWhitelist(device, device2);
         console.log(txHash);
-        let existed = this.accesses.filter((a) => {
-          return a.device === device
+        let existed = this.accesses.filter(a => {
+          return a.device === device;
         });
         if (existed.length < 1) {
           this.accesses.push({
@@ -222,8 +274,8 @@ var FleetRegistration = Vue.component("fleet_registration", {
           localStorage.accesses = JSON.stringify(this.accesses);
         }
         txHash = await this.setAccessWhitelist(device2, device);
-        existed = this.accesses.filter((a) => {
-          return a.device === device2
+        existed = this.accesses.filter(a => {
+          return a.device === device2;
         });
         if (existed.length < 1) {
           this.accesses.push({
@@ -240,22 +292,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
     setAccessWhitelist: function(device, device2) {
       let contract = this.contracts[0];
       let call = web3.eth.abi.encodeFunctionCall(
-        {
-          name: "SetAccessWhitelist",
-          type: "function",
-          inputs: [
-            {
-              type: "address",
-              name: 'device'
-            },{
-              type: "address",
-              name: 'device2'
-            },{
-              type: "bool",
-              name: "allowed"
-            }
-          ]
-        },
+        fleetMethods["SetAccessWhitelist"],
         [device, device2, true]
       );
       return new Promise((resolve, reject) => {
@@ -276,6 +313,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
         );
       });
     }
-  },
+  }
 });
 </script>

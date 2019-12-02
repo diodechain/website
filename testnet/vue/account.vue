@@ -19,7 +19,7 @@
         </tr>
         <tr>
           <th>Balance</th>
-          <td><% balance %></td>
+          <td><% web3.utils.fromWei(balance) %> DIO</td>
         </tr>
         <tr v-if="code != '0x'">
           <th>Code Hash</th>

@@ -1,12 +1,7 @@
 @import url(ttps://fonts.googleapis.com/css?family=Titillium+Web:400);
 body {
-    /* font: 16px/1.4em "Montserrat", Arial, sans-serif; */
     font: 16px/1.4em "Titillium Web", Arial, sans-serif;
-    /* color: lightgray; */
     background-image: url(background.png);
-    /* background-size: 0%; */
-    /* background-size: contain; */
-    /* background-repeat: no-repeat */
 }
 
 #app {
@@ -75,6 +70,10 @@ ul.navbar li a.router-link-exact-active::before {
     border-color: gray;
 }
 
+td.fleet, th.fleet {
+    background-color: #ebebeb
+}
+
 table.data {
     background-color: #fbfbfb;
     width: 100%;
@@ -90,6 +89,9 @@ table.data th, table.data td {
     text-align: left;
     border: 1px solid #ddd;
     padding: 8px;
+}
+
+table.data th.big, table.data td.big {
     word-break: break-all;
 }
 
