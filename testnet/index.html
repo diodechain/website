@@ -30,6 +30,10 @@ layout: ""
             <li v-for="r in routes">
                 <router-link :to="r"><% r.name %></router-link>
             </li>
+            <li>
+                <span v-if="connected" class="good">connected</span>
+                <span v-else class="bad">trying to connect.<% '.'.repeat(ticker%3) %></span>
+            </li>
         </ul>
 
         <transition>
@@ -39,34 +43,23 @@ layout: ""
         </transition>
     </div>
 
+    
     <script>
-
-        let web3 = new Web3('wss://testnet.diode.io:8443/ws')
-        // let web3 = new Web3('ws://localhost:8545/ws')
-
-        web3.extend({
-            property: 'eth',
-            methods: [{
-                name: 'getCodeHash',
-                call: 'eth_getCodeHash',
-                params: 2,
-                inputFormatter: [web3.extend.formatters.inputAddressFormatter, web3.extend.formatters.inputDefaultBlockNumberFormatter]
-                // outputFormatter: web3.utils.hexToNumberString
-            },
-            {
-                name: 'getStorage',
-                call: 'eth_getStorage',
-                params: 2,
-                inputFormatter: [web3.extend.formatters.inputAddressFormatter, web3.extend.formatters.inputDefaultBlockNumberFormatter]
-                // outputFormatter: web3.utils.hexToNumberString
-            }]
-        });
-
         let Registry = "0x5000000000000000000000000000000000000000"
         const FleetHash = "0x7e9d94e966d33cff302ef86e2337df8eaf9a6388d45e4744321240599d428343"
         const NullHash = "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
-        var app;
+        let app;
+        let url = 'wss://testnet.diode.io:8443/ws'
+        // let url = 'ws://localhost:8545/ws'
+        let web3 = NewWeb3(url);
+        let web3_subscriptions = [];
+
+        function subscribe(event, callback) {
+            web3_subscriptions.push([event, callback])
+            if (web3._provider.connected) web3.eth.subscribe(event, callback);
+        }
+
         var routes = [
             {name: 'Power Distribution', path: '/', component: PowerDistribution},
             {name: 'Fleet Registration', path: '/fleets', component: FleetRegistration},
@@ -90,12 +83,30 @@ layout: ""
         })
         app = new Vue({
             data: {
-                routes
+                routes,
+                connected: 1,
+                ticker: 1,
             },
             router,
             delimiters: ["<%", "%>"]
         })
         app.$mount('#app')
+
+        setInterval(() => {
+            app.ticker++;
+            if (web3._provider.connected == false) {
+                app.connected = 0;
+                web3 = new Web3(url)
+            } else {
+                if (app.connected == 0) {
+                    for (i = 0; i < web3_subscriptions.length; i++) {
+                        let sub = web3_subscriptions[i];
+                        web3.eth.subscribe(sub[0], sub[1]);
+                    }
+                    app.connected = 1;
+                }
+            }
+        }, 1000)
 
         Vue.component("account-link", {
             template: '<router-link :to="\'/account/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link>',

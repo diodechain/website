@@ -163,7 +163,7 @@ var PowerDistribution = Vue.component("power_distribution", {
         this.base = base;
         this.fetchStake(base);
       });
-      let subscription = web3.eth.subscribe(
+      subscribe(
         "newBlockHeaders",
         (error, block) => {
           var buffer = [];

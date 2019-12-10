@@ -81,3 +81,24 @@ function CallFleet(name, to, args, callback) {
     call(fleetMethods[name], to, args, callback)
 }
 
+function NewWeb3(url) {
+    let obj = new Web3(url)
+    obj.extend({
+        property: 'eth',
+        methods: [{
+            name: 'getCodeHash',
+            call: 'eth_getCodeHash',
+            params: 2,
+            inputFormatter: [obj.extend.formatters.inputAddressFormatter, obj.extend.formatters.inputDefaultBlockNumberFormatter]
+            // outputFormatter: obj.utils.hexToNumberString
+        },
+        {
+            name: 'getStorage',
+            call: 'eth_getStorage',
+            params: 2,
+            inputFormatter: [obj.extend.formatters.inputAddressFormatter, obj.extend.formatters.inputDefaultBlockNumberFormatter]
+            // outputFormatter: obj.utils.hexToNumberString
+        }]
+    });
+    return obj;
+}

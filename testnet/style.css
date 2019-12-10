@@ -116,8 +116,16 @@ table.data td.big {
     box-sizing: border-box;
 }
 
-.error {
+.error, .bad {
     color: red;
+}
+
+.good, .bad {
+    font-weight: bold;
+}
+
+.good {
+    color: green;
 }
 
 .chart-text {
