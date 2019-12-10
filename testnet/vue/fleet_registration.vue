@@ -41,7 +41,14 @@
                   </tr>
                   <tr v-for="device in devices">
                     <td><% device.id %></td>
-                    <td><% device.white %></td>
+                    <td>
+                      <% device.white %>
+                      <button
+                        v-if="device.white==false"
+                        v-on:click="whitelistDevice(device.id, true)"
+                      >Whitelist!</button>
+                      <button v-else v-on:click="whitelistDevice(device.id, false)">Dewhitelist</button>
+                    </td>
                   </tr>
                 </table>
                 <div>
@@ -50,25 +57,6 @@
                     v-on:click="addDevice(deviceId)"
                     :disabled="!web3.utils.isAddress(deviceId)"
                   >Add Device</button>
-                </div>
-                <hr />
-                <h3>Access List</h3>
-                <table class="data">
-                  <tr>
-                    <th>Device ID</th>
-                    <th>Access ID</th>
-                  </tr>
-                  <tr v-for="access in accesses">
-                    <td><% access.device %></td>
-                    <td><% access.device2 %></td>
-                  </tr>
-                </table>
-                <div>
-                  <input type="text" v-model="deviceId2" placeholder="0x1234556..." />
-                  <button
-                    v-on:click="accessDevice()"
-                    :disabled="!web3.utils.isAddress(deviceId) || !web3.utils.isAddress(deviceId2)"
-                  >Access Device</button>
                 </div>
               </div>
             </div>
@@ -232,12 +220,11 @@ var FleetRegistration = Vue.component("fleet_registration", {
       if (!this.contracts[0]) return;
       CallFleet("accessWhitelist", this.contracts[0], [device, user], callback);
     },
-    registerDevice: async function() {
+    whitelistDevice: async function(device, white) {
       let contract = this.contracts[0];
-      let device = this.deviceId;
       let call = web3.eth.abi.encodeFunctionCall(
         fleetMethods["SetDeviceWhitelist"],
-        [device, true]
+        [device, white]
       );
       window.ethereum.sendAsync(
         {
@@ -252,7 +239,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
             console.log("registerDevice.error: ", err);
             return;
           }
-          this.addDevice(device);
+          this.reloadDevice(device);
         }
       );
     },
