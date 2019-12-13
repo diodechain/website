@@ -64,6 +64,36 @@ var registryMethods = {
     }
 }
 
+var dnsMethods = {
+    "Resolve": {
+        name: 'Resolve',
+        type: 'function',
+        inputs: [{
+            type: 'string',
+            name: 'name'
+        }]
+    },
+    "Register": {
+        name: 'Register',
+        type: 'function',
+        inputs: [{
+            type: 'string',
+            name: 'name'
+        }, {
+            type: 'address',
+            name: 'destination'
+        }]
+    },
+    "names": {
+        name: 'names',
+        type: 'function',
+        inputs: [{
+            type: 'string',
+            name: 'name'
+        }]
+    }
+}
+
 function call(abi, to, args, callback) {
     let call = web3.eth.abi.encodeFunctionCall(abi, args)
     web3.eth.call({
@@ -71,6 +101,10 @@ function call(abi, to, args, callback) {
         data: call,
         gasPrice: 0
     }).then(callback)
+}
+
+function CallDNS(name, args, callback) {
+    call(dnsMethods[name], DNSAddr, args, callback)
 }
 
 function CallRegistry(name, args, callback) {

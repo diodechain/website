@@ -21,6 +21,7 @@ layout: ""
 
 <body>
     {% include_relative vue/fleet_registration.vue %}
+    {% include_relative vue/dns.vue %}
     {% include_relative vue/power_distribution.vue %}
     {% include_relative vue/account.vue %}
     {% include_relative vue/block.vue %}
@@ -43,8 +44,9 @@ layout: ""
         </transition>
     </div>
 
-    
+
     <script>
+        let DNSAddr = "0xAF60FAA5CD840B724742F1AF116168276112D6A6"
         let Registry = "0x5000000000000000000000000000000000000000"
         const FleetHash = "0x7e9d94e966d33cff302ef86e2337df8eaf9a6388d45e4744321240599d428343"
         const NullHash = "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -63,6 +65,7 @@ layout: ""
         var routes = [
             {name: 'Power Distribution', path: '/', component: PowerDistribution},
             {name: 'Fleet Registration', path: '/fleets', component: FleetRegistration},
+            {name: 'DNS', path: '/dns', component: DNS},
             {name: 'Transactions', path: '/tx/:hash', params: {hash: '0x1'}, component: Transaction, props: true},
             {name: 'Blocks', path: '/block/:number', params: {number: 1}, component: Block, props: true},
             {name: 'Accounts', path: '/account/:hash', params: {hash: Registry}, component: Account, props: true}
