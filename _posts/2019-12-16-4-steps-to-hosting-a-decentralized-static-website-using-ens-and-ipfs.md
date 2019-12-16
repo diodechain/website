@@ -73,7 +73,7 @@ Designed for IoT embedded devices, Diode is an integrated blockchain implementat
 ![alt_text](/images/blog/ens-ipfs5.png "image_tooltip")
 
 
-Above is a screenshot showing a [demo website](https://rw-0xe151516bb38690c5c0a84c130ded052faf2843c8.diode.link) of Diode network. This demo website showcases the potential of streaming real-time data through the Diode network. 
+Above is a screenshot showing a [demo website](https://pi-taipei.diode.link) of Diode network. This demo website showcases the potential of streaming real-time data through the Diode network. 
 
 For Raspberry Pi makers, for example, when streaming real-time data such as videos and films, if you want to have access to your local streaming remotely or outside your local network, you will need to set up a proxy or a VPN to achieve this. Now you have another option! The Diode network allows you to have access to your local streaming data with end-to-end encrypted data transmission. It is more secure than setting up a standard proxy.
 
