@@ -7,25 +7,18 @@
  *
  **/
 
- // IIFE - Immediately Invoked Function Expression
-(function($, window, document) {
+// IIFE - Immediately Invoked Function Expression
+(function ($, window, document) {
 
   // The $ is now locally scoped
 
   // Listen for the jQuery ready event on the document
-  $(function() {
+  $(function () {
 
     // The DOM is ready!
 
     // Global Variables
     var $window = $(window);
-
-    /**
-     *  Page Loader
-     **/
-    setTimeout(function() {
-      $('.page-loader').addClass('load-complete');
-    }, 1500);
 
     /**
      *  Parallax with Scrollax.js - Initialization
@@ -42,7 +35,7 @@
     var $toggle_menu_button = $('.navTrigger');
 
     // Navigation Menu Link
-    $nav_menu_link.on('click', function() {
+    $nav_menu_link.on('click', function () {
 
       // Select Current Navigation Item
       $nav_menu_link.parent().removeClass('current-menu-item');
@@ -56,14 +49,14 @@
     });
 
     // Toggle Mobile Menu
-    $toggle_menu_button.on('click', function() {
+    $toggle_menu_button.on('click', function () {
       $nav_menu.toggleClass('active');
       $body.toggleClass('no-scroll');
       $(this).toggleClass('active');
     });
 
     // Remove all classes on window resize
-    $window.on('resize', function() {
+    $window.on('resize', function () {
       $nav_menu.removeClass('active');
       $body.removeClass('no-scroll');
       $toggle_menu_button.removeClass('active');
@@ -74,6 +67,31 @@
      */
     $('.blog-single-page .article-content a').attr("target", "_blank");
 
+    /**
+     * Main page animated text
+     */
+    var txt = 'Web2 security is broken';
+    if (document.getElementById("tagline").innerHTML == txt) {
+      let j = 0;
+      let elements = ['security', 'participation', 'monetization'];
+      let frag = '';
+      let speed = 70;
+      let nextwordspeed = 5000;
+      function typeWriter() {
+        if (frag.length < elements[j].length) {
+          frag += elements[j].charAt(frag.length)
+          document.getElementById("tagline").innerHTML = 'Web2 <span class="frag">' + frag + '</span> is broken';
+          setTimeout(typeWriter, speed);
+        } else {
+          document.getElementById("tagline").innerHTML += '<span class="frag">.</span>';
+          frag = '';
+          j = (j + 1) % elements.length;
+          setTimeout(typeWriter, nextwordspeed);
+        }
+      }
+      typeWriter();
+    }
+
 
     /**
      *  Video
@@ -82,7 +100,7 @@
     var $video_overlay = $site_header.find("#video_overlay");
     var $video_button = $site_header.find('#video_btn');
 
-    $video_button.on('click', function(e) {
+    $video_button.on('click', function (e) {
       e.preventDefault();
       //var $src = $(this).attr("href");
       var $iframe = '<iframe src="https://player.vimeo.com/video/318384993?autoplay=1" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
@@ -93,7 +111,7 @@
 
     });
     // Hide Overlay Lightbox
-    $video_overlay.on('click', function() {
+    $video_overlay.on('click', function () {
 
       // Hide Overlay Image
       $(this).fadeOut(200);
@@ -104,21 +122,21 @@
       // Unlock Body Scroll
       $body.removeClass('no-scroll');
 
-    });    
-    
+    });
+
     /**
      *  Smooth Scrolling for Links
      **/
-    $('a[href*="#"]:not([href="#"])').on('click', function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-       var target = $(this.hash);
-       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-       if (target.length) {
-        $('html, body').animate({
-           scrollTop: target.offset().top
-        }, 1000);
-        return false;
-       }
+    $('a[href*="#"]:not([href="#"])').on('click', function () {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
       }
     });
 

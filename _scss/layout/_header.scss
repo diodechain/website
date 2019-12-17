@@ -158,6 +158,11 @@ header.site-header {
 
   }
 
+  // Animated text fragment
+  .frag {
+    color: $primary;
+  }
+
   // Site Header Banner
   .header-banner {
     height: calc(100vh - 250px);

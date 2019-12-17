@@ -3,7 +3,7 @@ exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md",
 
 baseurl:
 
-plugins:
+plugins_dir:
   - jekyll-redirect-from
 
 # the base hostname & protocol for your site
@@ -33,9 +33,9 @@ description: The First Super Light Client and Blockchain Network for IoT, ARM, E
 # Website language
 lang: en-US
 # Header Title
-header-title: <strong>Make it rock solid</strong>
+header-title: <strong>Let's upgrade the Web</strong>
 # Header Tagline
-header-tagline: IoT security is broken
+header-tagline: Web2 security is broken
 
 ####################################
 ######   CTA Header Buttons   ######
@@ -51,12 +51,6 @@ header-secondary-button:
   title: BlockQuick Paper
   url: https://eprint.iacr.org/2019/579.pdf
 
-#
-# This is your email adress, contact from send here all emails from contact section
-# IMPORTANT: you can modify contact form from this static template, but now works contact form works with a free external server
-# To configure this contact form, first please send a fictive email afeter you enter below your email and verify that :)
-#
-email: your_email@example.com
 
 # Offer Banner Link
 # Default link is a link to all Sera OnePage products
@@ -136,13 +130,13 @@ mailchimp:
 #####################################
 #############   About   #############
 #####################################
-about-title: Diode<sup>sm</sup> IIoT/IoT Network
+about-title: Diode<sup>sm</sup> Web3 Network
 about-description: >-
-  PKI the system that protects web traffic since 30 years is broken for IoT. The governance structures 
+  PKI the system that protects web traffic since 30 years is broken. The governance structures 
   have failed, broken implementations and misuse are spread far beyond repair and fraud is done through it's 
   weaknesses every day. Our Diode Chain&trade; software creates a new network designed for smart
   devices. The Diode Network is the first to implement unforgable proof-of-time and network-device authentication
-  based on blockchain technology. 
+  based on blockchain technology.
   Man-In-The middle attacks become impossible and dependencies 
   on third parties to entrust security are removed. The network has higher security than PKI with
   much lower overhead and maintenance needs. Truly autonomous.
