@@ -26,7 +26,7 @@
             <div v-if="contracts == undefined">Loading...</div>
             <div v-else-if="contracts.length == 0">
               No contracts identified.
-              <button v-on:click="createFleet()">Create New Fleet</button>
+              <button v-on:click="createFleet()"><img v-show="submitFleet" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Create New Fleet</span></button>
             </div>
             <div v-else>
               <div v-for="contract in contracts">
@@ -46,8 +46,11 @@
                       <button
                         v-if="device.white==false"
                         v-on:click="whitelistDevice(device.id, true)"
-                      >Whitelist!</button>
-                      <button v-else v-on:click="whitelistDevice(device.id, false)">Dewhitelist</button>
+                      ><img v-show="isDeviceSubmited(device)" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Whitelist!</span></button>
+                      <button
+                        v-else
+                        v-on:click="whitelistDevice(device.id, false)"
+                        ><img v-show="submitDevices[device.id]" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Dewhitelist</span></button>
                     </td>
                   </tr>
                 </table>
@@ -81,7 +84,9 @@ var FleetRegistration = Vue.component("fleet_registration", {
       deviceId: undefined,
       deviceId2: undefined,
       devices: {},
-      accesses: []
+      accesses: [],
+      submitFleet: false,
+      submitDevices: {},
     };
   },
 
@@ -204,13 +209,29 @@ var FleetRegistration = Vue.component("fleet_registration", {
         args
       );
       let code = contract + constructor.substr(2);
-      let ret = await window.ethereum.sendAsync({
+      this.submitFleet = true;
+      window.ethereum.sendAsync({
         method: "eth_sendTransaction",
         params: [{ from: this.account, data: code, gasPrice: 0 }],
         from: this.account
+      }, (err, ret) => {
+        if (err) {
+          console.log("[SubmitFleet] error: ", err);
+          this.submitFleet = false;
+        }
+        if (ret.result) {
+          this.isTxConfirmed(ret.result)
+          .then(function(tx) {
+            this.submitFleet = false;
+          }.bind(this))
+          .catch(function(err) {
+            console.log("[SubmitFleet] error: ", err);
+            this.submitFleet = false;
+          }.bind(this));
+          return
+        }
+        this.submitFleet = false;
       });
-
-      console.log("createFleet: ", ret);
     },
     isWhiteListed(device, callback) {
       if (!this.contracts[0]) return;
@@ -226,6 +247,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
         fleetMethods["SetDeviceWhitelist"],
         [device, white]
       );
+      this.$set(this.submitDevices, device, true);
       window.ethereum.sendAsync(
         {
           method: "eth_sendTransaction",
@@ -234,71 +256,60 @@ var FleetRegistration = Vue.component("fleet_registration", {
           ],
           from: this.account
         },
-        (err, result) => {
+        (err, ret) => {
           if (err) {
-            console.log("registerDevice.error: ", err);
+            console.log("[WhitelistDevice] error: ", err);
+            this.$set(this.submitDevices, device, false);
             return;
           }
-          this.reloadDevice(device);
-        }
-      );
-    },
-    accessDevice: async function() {
-      let contract = this.contracts[0];
-      let device = this.deviceId;
-      let device2 = this.deviceId2;
-      try {
-        let txHash = await this.setAccessWhitelist(device, device2);
-        console.log(txHash);
-        let existed = this.accesses.filter(a => {
-          return a.device === device;
-        });
-        if (existed.length < 1) {
-          this.accesses.push({
-            device,
-            device2
-          });
-          localStorage.accesses = JSON.stringify(this.accesses);
-        }
-        txHash = await this.setAccessWhitelist(device2, device);
-        existed = this.accesses.filter(a => {
-          return a.device === device2;
-        });
-        if (existed.length < 1) {
-          this.accesses.push({
-            device: device2,
-            device2: device
-          });
-          localStorage.accesses = JSON.stringify(this.accesses);
-        }
-        console.log(txHash);
-      } catch (err) {
-        console.log("accessDevice.error: ", err);
-      }
-    },
-    setAccessWhitelist: function(device, device2) {
-      let contract = this.contracts[0];
-      let call = web3.eth.abi.encodeFunctionCall(
-        fleetMethods["SetAccessWhitelist"],
-        [device, device2, true]
-      );
-      return new Promise((resolve, reject) => {
-        window.ethereum.sendAsync(
-          {
-            method: "eth_sendTransaction",
-            params: [
-              { from: this.account, to: contract, data: call, gasPrice: 0 }
-            ],
-            from: this.account
-          },
-          (err, result) => {
-            if (err) {
-              return reject(err);
-            }
-            return resolve(result);
+          if (ret.result) {
+            let { result } = ret;
+            this.isTxConfirmed(result)
+              .then(function(tx) {
+                this.$set(this.submitDevices, device, false);
+                this.reloadDevice(device);
+              }.bind(this))
+              .catch(function(err) {
+                console.log("[WhitelistDevice] error: ", err);
+                this.$set(this.submitDevices, device, false);
+              }.bind(this));
+              return;
           }
-        );
-      });
+          this.$set(this.submitDevices, device, false);
+        }
+      );
+    },
+    execAfter: function(callback, time) {
+      return new Promise(function(resolve, reject) {
+        window.setTimeout(() => {
+          resolve(callback())
+        }, time)
+      })
+    },
+    isTxConfirmed: function(txHash) {
+      // const self = this
+      return new Promise(function(resolve, reject) {
+        if (!txHash || txHash.length != 66 || !/^0x[0-9a-f]{64}$/i.test(txHash)) {
+          reject(false)
+        }
+        web3.eth.getTransactionReceipt(txHash)
+          .then(function(tx) {
+            if (tx) {
+              if (tx.status === true) {
+                return resolve(tx)
+              }
+              return reject(new Error('tx was failed'))
+            }
+            resolve(this.execAfter(this.isTxConfirmed.bind(this, txHash), 1000))
+          }.bind(this))
+          .catch(function(err) {
+            resolve(this.execAfter(this.isTxConfirmed.bind(this, txHash), 1000))
+          }.bind(this))
+
+      }.bind(this))
+    },
+    isDeviceSubmited: function (device) {
+      return this.submitDevices[device.id]
     }
   }
 });

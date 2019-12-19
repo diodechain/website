@@ -35,7 +35,7 @@
                     <button
                       v-on:click="registerName(name.name, deviceId)"
                       :disabled="!web3.utils.isAddress(deviceId)"
-                    >Register!</button>
+                    ><img v-show="submitDns" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Register!</span></button>
                     <input type="text" v-model="deviceId" placeholder="0x1234556..." />
                   </div>
                 </td>
@@ -64,7 +64,8 @@ var DNS = Vue.component("dns", {
       error: false,
       newName: "",
       deviceId: undefined,
-      names: {}
+      names: {},
+      submitDns: false
     };
   },
 
@@ -146,6 +147,7 @@ var DNS = Vue.component("dns", {
         name,
         destination
       ]);
+      this.submitDns = true;
       window.ethereum.sendAsync(
         {
           method: "eth_sendTransaction",
@@ -154,15 +156,58 @@ var DNS = Vue.component("dns", {
           ],
           from: this.account
         },
-        (err, result) => {
+        (err, ret) => {
           if (err) {
-            console.log("registerName.error: ", name, destination, err);
+            this.submitDns = false;
+            console.log("[RegisterName] error: ", name, destination, err);
             return;
           }
-          this.reloadName(name);
+          if (ret.result) {
+            let { result } = ret;
+            this.isTxConfirmed(result)
+              .then(function(tx) {
+                this.submitDns = false;
+                this.reloadName(name);
+              }.bind(this))
+              .catch(function(err) {
+                this.submitDns = false;
+                console.log("[RegisterName] error: ", name, destination, err);
+              }.bind(this));
+              return;
+          }
+          this.submitDns = false;
         }
       );
-    }
+    },
+    execAfter: function(callback, time) {
+      return new Promise(function(resolve, reject) {
+        window.setTimeout(() => {
+          resolve(callback())
+        }, time)
+      })
+    },
+    isTxConfirmed: function(txHash) {
+      // const self = this
+      return new Promise(function(resolve, reject) {
+        if (!txHash || txHash.length != 66 || !/^0x[0-9a-f]{64}$/i.test(txHash)) {
+          reject(false)
+        }
+        web3.eth.getTransactionReceipt(txHash)
+          .then(function(tx) {
+            if (tx) {
+              if (tx.status === true) {
+                return resolve(tx)
+              }
+              return reject(new Error('tx was failed'))
+            }
+            resolve(this.execAfter(this.isTxConfirmed.bind(this, txHash), 1000))
+          }.bind(this))
+          .catch(function(err) {
+            resolve(this.execAfter(this.isTxConfirmed.bind(this, txHash), 1000))
+          }.bind(this))
+
+      }.bind(this))
+    },
   }
 });
 </script>
