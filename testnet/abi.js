@@ -1,3 +1,7 @@
+let DNSAddr = "0xAF60FAA5CD840B724742F1AF116168276112D6A6"
+let Registry = "0x5000000000000000000000000000000000000000"
+const FleetHash = "0x7e9d94e966d33cff302ef86e2337df8eaf9a6388d45e4744321240599d428343"
+const NullHash = "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 var fleetMethods = {
     "deviceWhitelist": {
@@ -117,6 +121,23 @@ function CallFleet(name, to, args, callback) {
 
 function NewWeb3(url) {
     let obj = new Web3(url)
+    obj.extend({
+        property: 'eth',
+        methods: [{
+            name: 'getNode',
+            call: 'dio_getNode',
+            params: 1,
+            inputFormatter: [obj.extend.formatters.inputAddressFormatter]
+            // outputFormatter: obj.utils.hexToNumberString
+        },
+        {
+            name: 'getObject',
+            call: 'dio_getObject',
+            params: 1,
+            inputFormatter: [obj.extend.formatters.inputAddressFormatter]
+            // outputFormatter: obj.utils.hexToNumberString
+        }]
+    })
     obj.extend({
         property: 'eth',
         methods: [{

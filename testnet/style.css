@@ -23,7 +23,9 @@ body {
 }
 
 ul.navbar {
+    padding-left: 0;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row-reverse;
 }
 
@@ -50,10 +52,10 @@ ul.navbar li a.router-link-exact-active::before {
     content: '';
     display: block;
     position: relative;
-    width: 50%;
+    width: 70%;
     height: 1px;
     left: 50%;
-    top: 150%;
+    top: 100%;
     transform: translateX(-50%);
     background-color: #F15C2E;
 }

@@ -21,13 +21,59 @@
           <th>Balance</th>
           <td><% web3.utils.fromWei(balance) %> DIO</td>
         </tr>
+        <tr v-if="object">
+          <th>Device Data</th>
+          <td>
+            <table class="data">
+              <tr>
+                <th>Miner</th>
+                <td><account-link :hash="object[1]"/></td>
+              </tr>
+              <tr>
+                <th>Last Block</th>
+                <td><% web3.utils.hexToNumber(object[2]) %></td>
+              </tr>
+              <tr>
+                <th>Fleet</th>
+                <td><account-link :hash="object[3]"/></td>
+              </tr>
+              <tr>
+                <th>Connections</th>
+                <td><% web3.utils.hexToNumber(object[4]) %></td>
+              </tr>
+              <tr>
+                <th>Bytes</th>
+                <td><% web3.utils.hexToNumber(object[5]) %></td>
+              </tr>
+              <tr>
+                <th>Address</th>
+                <td><% object[6] %></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr v-if="node">
+          <th>Miner Data</th>
+          <td>
+            <table class="data">
+              <tr>
+                <th>Host</th>
+                <td><% node[1] %></td>
+              </tr>
+              <tr>
+                <th>Edge Port</th>
+                <td><% web3.utils.hexToNumber(node[2]) %></td>
+              </tr>
+              <tr>
+                <th>Peer Port</th>
+                <td><% web3.utils.hexToNumber(node[3]) %></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
         <tr v-if="code != '0x'">
           <th>Code Hash</th>
           <td><% codehash %></td>
-        </tr>
-        <tr v-if="code != '0x'">
-          <th>Code</th>
-          <td class="big"><% code %></td>
         </tr>
         <tr v-if="code != '0x'">
           <th>Storage</th>
@@ -38,11 +84,15 @@
                 <th>Value</th>
               </tr>
               <tr :key="kv[0]" v-for="kv in storage">
-                <td><% kv[0] %></td>
-                <td><% kv[1] %></td>
+                <td><nobr :title="kv[0]"><% formatStorageKey(kv[0]) %></nobr></td>
+                <td><storage-value :value="kv[1]" /></td>
               </tr>
             </table>
           </td>
+        </tr>
+        <tr v-if="code != '0x'">
+          <th>Code</th>
+          <td class="big"><% code %></td>
         </tr>
       </table>
     </div>
@@ -59,11 +109,15 @@ var Account = Vue.component("account", {
       balance: undefined,
       code: undefined,
       codehash: undefined,
-      storage: []
+      storage: [],
+      node: undefined,
+      object: undefined
     };
   },
   computed: {
     type: function() {
+      if (this.node) return 'Miner';
+      if (this.object) return 'Device';
       if (this.code == "0x") return "User (Human or Miner or Device)";
       if (this.codehash == FleetHash) return "Fleet Contract";
       return "General Smart Contract";
@@ -79,6 +133,16 @@ var Account = Vue.component("account", {
         this.err = undefined;
         if (err) this.error = err;
         else this.balance = ret;
+      });
+      web3.eth.getNode(this.hash, (err, ret) => {
+        this.err = undefined;
+        if (err) this.error = err;
+        else this.node = ret;
+      });
+      web3.eth.getObject(this.hash, (err, ret) => {
+        this.err = undefined;
+        if (err) this.error = err;
+        else this.object = ret;
       });
       web3.eth.getCodeHash(this.hash, (err, ret) => {
         this.err = undefined;

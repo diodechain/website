@@ -47,30 +47,32 @@
           <th>Value</th>
           <td><% tx.value %> DIO</td>
         </tr>
-        <tr>
-          <th>Status</th>
-          <td><% receipt.status %></td>
-        </tr>
-        <tr v-if="receipt.contractAddress">
-          <th>New Contract Address</th>
-          <td><account-link :hash="receipt.contractAddress" :onlyAlias="false" :length="50"></account-link></td>
-        </tr>
-        <tr>
-          <th>Gas Used</th>
-          <td><% receipt.gasUsed %></td>
-        </tr>
-        <tr>
-          <th>Logs</th>
-          <td class="big"><% receipt.logs %></td>
-        </tr>
-        <tr>
-          <th>Cumulative Gas Used</th>
-          <td><% receipt.cumulativeGasUsed %></td>
-        </tr>
-        <tr>
-          <th>Transaction Index</th>
-          <td><% receipt.transactionIndex %></td>
-        </tr>
+        <tbody :if="receipt != null">
+          <tr>
+            <th>Status</th>
+            <td><% receipt.status %></td>
+          </tr>
+          <tr v-if="receipt.contractAddress">
+            <th>New Contract Address</th>
+            <td><account-link :hash="receipt.contractAddress" :onlyAlias="false" :length="50"></account-link></td>
+          </tr>
+          <tr>
+            <th>Gas Used</th>
+            <td><% receipt.gasUsed %></td>
+          </tr>
+          <tr>
+            <th>Logs</th>
+            <td class="big"><% receipt.logs %></td>
+          </tr>
+          <tr>
+            <th>Cumulative Gas Used</th>
+            <td><% receipt.cumulativeGasUsed %></td>
+          </tr>
+          <tr>
+            <th>Transaction Index</th>
+            <td><% receipt.transactionIndex %></td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>

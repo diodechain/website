@@ -46,11 +46,6 @@ layout: ""
 
 
     <script>
-        let DNSAddr = "0xAF60FAA5CD840B724742F1AF116168276112D6A6"
-        let Registry = "0x5000000000000000000000000000000000000000"
-        const FleetHash = "0x7e9d94e966d33cff302ef86e2337df8eaf9a6388d45e4744321240599d428343"
-        const NullHash = "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-
         let app;
         let url = 'wss://testnet.diode.io:8443/ws'
         // let url = 'ws://localhost:8545/ws'
@@ -63,14 +58,14 @@ layout: ""
         }
 
         var routes = [
-            {name: 'Power Distribution', path: '/', component: PowerDistribution},
-            {name: 'Fleet Registration', path: '/fleets', component: FleetRegistration},
-            {name: 'DNS', path: '/dns', component: DNS},
-            {name: 'Transactions', path: '/tx/:hash', params: {hash: '0x1'}, component: Transaction, props: true},
-            {name: 'Blocks', path: '/block/:number', params: {number: 1}, component: Block, props: true},
-            {name: 'Accounts', path: '/account/:hash', params: {hash: Registry}, component: Account, props: true}
+            { name: 'Last 500', path: '/', component: PowerDistribution },
+            { name: 'Fleets', path: '/fleets', component: FleetRegistration },
+            { name: 'DNS', path: '/dns', component: DNS },
+            { name: 'TXs', path: '/tx/:hash', params: { hash: '0x1' }, component: Transaction, props: true },
+            { name: 'Blocks', path: '/block/:number', params: { number: 1 }, component: Block, props: true },
+            { name: 'Accounts', path: '/account/:hash', params: { hash: Registry }, component: Account, props: true }
         ];
-        const router = new VueRouter({routes});
+        const router = new VueRouter({ routes });
         router.beforeEach((to, from, next) => {
             if (Object.values(to.params).length) {
                 for (i = 0; i < routes.length; i++) {
@@ -115,11 +110,56 @@ layout: ""
             template: '<router-link :to="\'/account/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link>',
             props: {
                 hash: String,
-                onlyAlias: {type: Boolean, default: false},
-                length: {type: Number, default: 50}
+                onlyAlias: { type: Boolean, default: false },
+                length: { type: Number, default: 50 }
             },
             delimiters: ["<%", "%>"]
         })
+
+        Vue.component("storage-value", {
+            template: '<account-link v-if="isAccount" :hash="formatted"/><span v-else><% formatted %></span>',
+            props: {
+                value: String
+            },
+            data: () => { return {
+                isAccount: false
+            }},
+            computed: {
+                formatted: function () {
+                    // Number detection
+                    if (this.value.startsWith('0x000000000000000000000000000000000000000000000000000'))
+                        return web3.utils.hexToNumber(this.value)
+
+                    // Money detection
+                    if (this.value.startsWith('0x0000000000000000000000000000000000000000000'))
+                        return web3.utils.fromWei(this.value) + ' DIO'
+
+                    // Address detection
+                    this.isAccount = this.value.startsWith('0x000000000000000000000000') && !this.value.startsWith('0x00000000000000000000000000000000')
+                    if (this.isAccount) {
+                        return '0x' + this.value.substr(26, 40);
+                    }
+
+                    // String detection
+                    let ret = this.value.match(/^0x(([0-9A-F][1-9A-F]|[1-9A-F][0-9A-F])+)0+([0-9A-F]{2})$/i);
+                    if (ret) {
+                        let string = ret[1]
+                        let len = web3.utils.hexToNumber('0x' + ret[3])
+                        if (string.length == len) {
+                            return web3.utils.hexToString('0x' + string)
+                        }
+                    }
+                    return this.value
+                }
+            },
+            delimiters: ["<%", "%>"]
+        })
+
+        function formatStorageKey(key) {
+            if (key.startsWith('0x000000000000000000000000000000000000000'))
+                return web3.utils.hexToNumber(key)
+            return key.substr(0, 5) + "..." + key.substr(64, 2)
+        }
 
         function resolveName(name) {
             if (!name) return "null"
