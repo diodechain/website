@@ -4,7 +4,7 @@
       <h1>Testnet Fleet Registration</h1>
     </div>
     <div v-if="!enabled" class="column">
-      <div>To use this you have to Enable MetaMask on this site.</div>
+      <div>To manage your fleets have to Enable MetaMask on this site.</div>
       <button v-on:click="enable()">Enable MetaMask</button>
       <div v-if="error" class="error"><% error %></div>
     </div>

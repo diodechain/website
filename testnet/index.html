@@ -106,8 +106,36 @@ layout: ""
             }
         }, 1000)
 
+        let DNSRefresh = () => {
+            if (!app.connected) {
+                return
+            }
+
+            web3.eth.getStorage(DNSAddr, (err, arr) => {
+                if (!arr) return
+                let ret = {}
+                arr.forEach(element => { ret[element[0].toLowerCase()] = element[1].toLowerCase() })
+                for (key in ret) {
+                    let name = valueToString(ret[key])
+                    if (name == undefined) continue
+                    let nameOff = web3.utils.toBN(key)
+                    let entry = {
+                        name,
+                        owner: ret['0x' + nameOff.sub(web3.utils.toBN('0x1')).toString(16)],
+                        destination: ret['0x' + nameOff.sub(web3.utils.toBN('0x2')).toString(16)]
+                    }
+                    DNSCache[name] = entry
+                    let addr = valueToAddress(entry.destination)
+                    if (addr) DNSCache[addr] = entry
+                }
+            })
+        }
+        DNSRefresh()
+        subscribe("newBlockHeaders", DNSRefresh)
+        setInterval(DNSRefresh, 25000)
+
         Vue.component("account-link", {
-            template: '<router-link :to="\'/account/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link>',
+            template: '<router-link v-if="isAddress(hash)" :to="\'/account/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link><span v-else><% hash %></span>',
             props: {
                 hash: String,
                 onlyAlias: { type: Boolean, default: false },
@@ -117,13 +145,15 @@ layout: ""
         })
 
         Vue.component("storage-value", {
-            template: '<account-link v-if="isAccount" :hash="formatted"/><span v-else><% formatted %></span>',
+            template: '<account-link v-if="isAccount" :hash="formatted" /><span v-else><% formatted %></span>',
             props: {
                 value: String
             },
-            data: () => { return {
-                isAccount: false
-            }},
+            data: () => {
+                return {
+                    isAccount: false
+                }
+            },
             computed: {
                 formatted: function () {
                     // Number detection
@@ -135,25 +165,47 @@ layout: ""
                         return web3.utils.fromWei(this.value) + ' DIO'
 
                     // Address detection
-                    this.isAccount = this.value.startsWith('0x000000000000000000000000') && !this.value.startsWith('0x00000000000000000000000000000000')
-                    if (this.isAccount) {
-                        return '0x' + this.value.substr(26, 40);
+                    let acc = valueToAddress(this.value)
+                    if (acc) {
+                        this.isAccount = true
+                        return acc;
                     }
 
                     // String detection
-                    let ret = this.value.match(/^0x(([0-9A-F][1-9A-F]|[1-9A-F][0-9A-F])+)0+([0-9A-F]{2})$/i);
-                    if (ret) {
-                        let string = ret[1]
-                        let len = web3.utils.hexToNumber('0x' + ret[3])
-                        if (string.length == len) {
-                            return web3.utils.hexToString('0x' + string)
-                        }
-                    }
+                    let ret = valueToString(this.value);
+                    if (ret != undefined) return ret;
+
                     return this.value
                 }
             },
             delimiters: ["<%", "%>"]
         })
+
+        function valueToAddress(value) {
+            if (!value.startsWith('0x000000000000000000000000'))
+                return undefined;
+
+            let addr = '0x' + value.substr(26, 40)
+            if (!isAddress(addr))
+                return undefined;
+            return addr
+        }
+
+        function valueToString(value) {
+            let ret = value.match(/^0x(([0-9A-F][1-9A-F]|[1-9A-F][0-9A-F])+)0+([0-9A-F]{2})$/i);
+            if (ret) {
+                let string = ret[1]
+                let len = web3.utils.hexToNumber('0x' + ret[3])
+                if (string.length == len) {
+                    return web3.utils.hexToString('0x' + string)
+                }
+            }
+            return undefined
+        }
+
+        function isAddress(value) {
+            return web3.utils.isAddress(value) && !value.startsWith('0x000000')
+        }
 
         function formatStorageKey(key) {
             if (key.startsWith('0x000000000000000000000000000000000000000'))
@@ -163,12 +215,15 @@ layout: ""
 
         function resolveName(name) {
             if (!name) return "null"
-            switch (name.toLowerCase()) {
+            let key = name.toLowerCase()
+            switch (key) {
                 case "0x937c492a77ae90de971986d003ffbc5f8bb2232c": return "Europe1"
                 case "0xceca2f8cf1983b4cf0c1ba51fd382c2bc37aba58": return "US1"
                 case "0x68e0bafdda9ef323f692fc080d612718c941d120": return "Asia1"
                 case "0x5000000000000000000000000000000000000000": return "Registry"
-                default: return name;
+                default:
+                    if (DNSCache[key]) return DNSCache[key].name
+                    return name;
             }
         }
 
@@ -186,7 +241,7 @@ layout: ""
         function formatAddr(addr, onlyAlias, length) {
             let alias = resolveName(addr);
             if (onlyAlias) return shorten(alias, length);
-            if (alias != addr) return shorten(addr, length) + ' (' + alias + ')';
+            if (alias != addr) return shorten(addr, 20) + ' (' + alias + ')';
             return shorten(addr, length);
         }
 

@@ -1,7 +1,10 @@
-let DNSAddr = "0xAF60FAA5CD840B724742F1AF116168276112D6A6"
-let Registry = "0x5000000000000000000000000000000000000000"
+let DNSCache = {}
+const DNSAddr = "0xAF60FAA5CD840B724742F1AF116168276112D6A6"
+const Registry = "0x5000000000000000000000000000000000000000"
 const FleetHash = "0x7e9d94e966d33cff302ef86e2337df8eaf9a6388d45e4744321240599d428343"
 const NullHash = "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+const NullValue = "0x0000000000000000000000000000000000000000000000000000000000000000"
+const NullAddr = "0x0000000000000000000000000000000000000000"
 
 var fleetMethods = {
     "deviceWhitelist": {
@@ -11,7 +14,7 @@ var fleetMethods = {
             type: "address",
             name: "device"
         }],
-        outputs: [{name: 'white', type: 'boolean' }]
+        outputs: [{ name: 'white', type: 'boolean' }]
     },
 
     "accessWhitelist": {
@@ -21,7 +24,7 @@ var fleetMethods = {
             type: "address",
             name: "device"
         }],
-        outputs: [{name: 'access', type: 'boolean' }]
+        outputs: [{ name: 'access', type: 'boolean' }]
     },
 
     "SetAccessWhitelist": {

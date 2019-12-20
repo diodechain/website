@@ -4,11 +4,11 @@
       <h1>Testnet DNS</h1>
     </div>
     <div v-if="!enabled" class="column">
-      <div>To use this you have to Enable MetaMask on this site.</div>
+      <div>To register a new name or change an existing registration you have to Enable MetaMask on this site.</div>
       <button v-on:click="enable()">Enable MetaMask</button>
       <div v-if="error" class="error"><% error %></div>
     </div>
-    <div v-else class="column">
+    <div class="column">
       <table class="data">
         <tr>
           <th>Your Account</th>
@@ -17,7 +17,7 @@
           </td>
         </tr>
         <tr>
-          <th class="fleet">Your Names</th>
+          <th class="fleet">Known Names</th>
           <td class="fleet">
             <table class="data">
               <tr>
@@ -25,25 +25,34 @@
                 <th>Destination</th>
                 <th>Owner</th>
               </tr>
-              <tr v-for="name in names">
+              <tr v-bind:key="name.name" v-for="name in names">
                 <td><% name.name %></td>
                 <td>
-                  <% name.destination %>
+                  <storage-value :value="name.destination"></storage-value>
                   <div
-                    v-if="name.owner==account || name.owner=='0x0000000000000000000000000000000000000000' || name.owner==undefined"
+                    v-if="enabled && (valueToAddress(name.owner)==account || valueToAddress(name.owner) == undefined)"
                   >
                     <button
-                      v-on:click="registerName(name.name, deviceId)"
-                      :disabled="!web3.utils.isAddress(deviceId)"
-                    ><img v-show="submitDns" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Register!</span></button>
-                    <input type="text" v-model="deviceId" placeholder="0x1234556..." />
+                      v-on:click="registerName(name.name, deviceId[name.name])"
+                      :disabled="!web3.utils.isAddress(deviceId[name.name])"
+                    >
+                      <img
+                        v-show="submitDns==name.name"
+                        style="height:14px;margin-right:5px;"
+                        src="{{ site.baseurl }}/images/spinning.gif"
+                      />
+                      <span>Register!</span>
+                    </button>
+                    <input type="text" v-model="deviceId[name.name]" placeholder="0x1234556..." />
                   </div>
                 </td>
-                <td>Not yet implemented<% name.owner %></td>
+                <td>
+                  <storage-value :value="name.owner" />
+                </td>
               </tr>
             </table>
-            <hr/>
-            <div>
+            <hr />
+            <div v-if="enabled">
               <input type="text" v-model="newName" placeholder="some-name" />
               <button v-on:click="addName(newName)" :disabled="newName.length <= 7">Add Name</button>
             </div>
@@ -63,7 +72,7 @@ var DNS = Vue.component("dns", {
       account: false,
       error: false,
       newName: "",
-      deviceId: undefined,
+      deviceId: {},
       names: {},
       submitDns: false
     };
@@ -76,22 +85,41 @@ var DNS = Vue.component("dns", {
         this.addName(name);
       }
     }
+    this.refreshNames();
     setInterval(() => {
       if (!this.enabled && window.ethereum.selectedAddress != null) {
         this.enable();
       }
+      this.refreshNames();
     }, 1000);
   },
   methods: {
+    refreshNames: function() {
+      for (key in DNSCache) {
+        let name = DNSCache[key].name;
+        this.names[name] = {
+          name: DNSCache[key].name,
+          destination: DNSCache[key].destination,
+          owner: DNSCache[key].owner
+        };
+        this.$set(this.names, name, this.names[name]);
+      }
+      for (key in this.names) {
+        if (this.names[key].destination == "loading") {
+          this.names[key].destination = "undefined";
+          this.names[key].owner = "undefined";
+          this.$set(this.names, key, this.names[key]);
+        }
+      }
+    },
     addName: function(name) {
-      if (this.names[name]) return;
+      if (!name || this.names[name]) return;
       let entry = {
         name,
-        destination: undefined,
-        owner: undefined
+        destination: "loading",
+        owner: "loading"
       };
       this.$set(this.names, name, entry);
-      this.reloadName(name);
       let ids = [];
       for (name in this.names) {
         ids.push(name);
@@ -147,7 +175,7 @@ var DNS = Vue.component("dns", {
         name,
         destination
       ]);
-      this.submitDns = true;
+      this.submitDns = name;
       window.ethereum.sendAsync(
         {
           method: "eth_sendTransaction",
@@ -165,15 +193,18 @@ var DNS = Vue.component("dns", {
           if (ret.result) {
             let { result } = ret;
             this.isTxConfirmed(result)
-              .then(function(tx) {
-                this.submitDns = false;
-                this.reloadName(name);
-              }.bind(this))
-              .catch(function(err) {
-                this.submitDns = false;
-                console.log("[RegisterName] error: ", name, destination, err);
-              }.bind(this));
-              return;
+              .then(
+                function(tx) {
+                  this.submitDns = false;
+                }.bind(this)
+              )
+              .catch(
+                function(err) {
+                  this.submitDns = false;
+                  console.log("[RegisterName] error: ", name, destination, err);
+                }.bind(this)
+              );
+            return;
           }
           this.submitDns = false;
         }
@@ -182,32 +213,46 @@ var DNS = Vue.component("dns", {
     execAfter: function(callback, time) {
       return new Promise(function(resolve, reject) {
         window.setTimeout(() => {
-          resolve(callback())
-        }, time)
-      })
+          resolve(callback());
+        }, time);
+      });
     },
     isTxConfirmed: function(txHash) {
       // const self = this
-      return new Promise(function(resolve, reject) {
-        if (!txHash || txHash.length != 66 || !/^0x[0-9a-f]{64}$/i.test(txHash)) {
-          reject(false)
-        }
-        web3.eth.getTransactionReceipt(txHash)
-          .then(function(tx) {
-            if (tx) {
-              if (tx.status === true) {
-                return resolve(tx)
-              }
-              return reject(new Error('tx was failed'))
-            }
-            resolve(this.execAfter(this.isTxConfirmed.bind(this, txHash), 1000))
-          }.bind(this))
-          .catch(function(err) {
-            resolve(this.execAfter(this.isTxConfirmed.bind(this, txHash), 1000))
-          }.bind(this))
-
-      }.bind(this))
-    },
+      return new Promise(
+        function(resolve, reject) {
+          if (
+            !txHash ||
+            txHash.length != 66 ||
+            !/^0x[0-9a-f]{64}$/i.test(txHash)
+          ) {
+            reject(false);
+          }
+          web3.eth
+            .getTransactionReceipt(txHash)
+            .then(
+              function(tx) {
+                if (tx) {
+                  if (tx.status === true) {
+                    return resolve(tx);
+                  }
+                  return reject(new Error("tx was failed"));
+                }
+                resolve(
+                  this.execAfter(this.isTxConfirmed.bind(this, txHash), 1000)
+                );
+              }.bind(this)
+            )
+            .catch(
+              function(err) {
+                resolve(
+                  this.execAfter(this.isTxConfirmed.bind(this, txHash), 1000)
+                );
+              }.bind(this)
+            );
+        }.bind(this)
+      );
+    }
   }
 });
 </script>

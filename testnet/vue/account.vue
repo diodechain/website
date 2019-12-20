@@ -10,7 +10,7 @@
     <div v-else class="column">
       <table class="data">
         <tr>
-          <th>Account Hash</th>
+          <th>Account</th>
           <td><% formatAddr(hash, false, 50) %></td>
         </tr>
         <tr>
@@ -26,7 +26,7 @@
           <td>
             <table class="data">
               <tr>
-                <th>Miner</th>
+                <th>Last Connected To</th>
                 <td><account-link :hash="object[1]"/></td>
               </tr>
               <tr>
