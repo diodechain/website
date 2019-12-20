@@ -26,6 +26,10 @@
           <td>
             <table class="data">
               <tr>
+                <th>Gateway link</th>
+                <td><a :href="'https://' + resolveName(hash) + '.diode.link'">https://<%resolveName(hash)%>.diode.link</a></td>
+              </tr>
+              <tr>
                 <th>Last Connected To</th>
                 <td><account-link :hash="object[1]"/></td>
               </tr>
