@@ -63,7 +63,7 @@ layout: ""
             { name: 'DNS', path: '/dns', component: DNS },
             { name: 'TXs', path: '/tx/:hash', params: { hash: '0x1' }, component: Transaction, props: true },
             { name: 'Blocks', path: '/block/:number', params: { number: 1 }, component: Block, props: true },
-            { name: 'Accounts', path: '/account/:hash', params: { hash: Registry }, component: Account, props: true }
+            { name: 'Accounts', path: '/address/:hash', params: { hash: Registry }, component: Account, props: true }
         ];
         const router = new VueRouter({ routes });
         router.beforeEach((to, from, next) => {
@@ -135,7 +135,7 @@ layout: ""
         setInterval(DNSRefresh, 25000)
 
         Vue.component("account-link", {
-            template: '<router-link v-if="isAddress(hash)" :to="\'/account/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link><span v-else><% hash %></span>',
+            template: '<router-link v-if="isAddress(hash)" :to="\'/address/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link><span v-else><% hash %></span>',
             props: {
                 hash: String,
                 onlyAlias: { type: Boolean, default: false },
