@@ -73,7 +73,7 @@
     var txt = 'Web2 security is broken';
     if (document.getElementById("tagline").innerHTML == txt) {
       let j = 0;
-      let elements = ['security', 'participation', 'monetization'];
+      let elements = ['security', 'privacy', 'participation', 'monetization'];
       let frag = '';
       let speed = 70;
       let nextwordspeed = 5000;
@@ -83,7 +83,7 @@
           document.getElementById("tagline").innerHTML = 'Web2 <span class="frag">' + frag + '</span> is broken';
           setTimeout(typeWriter, speed);
         } else {
-          document.getElementById("tagline").innerHTML += '<span class="frag">.</span>';
+          // document.getElementById("tagline").innerHTML += '<span class="frag">.</span>';
           frag = '';
           j = (j + 1) % elements.length;
           setTimeout(typeWriter, nextwordspeed);

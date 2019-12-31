@@ -67,8 +67,6 @@ navigation:
   link: /#about
 - title: Features
   link: /#features
-- title: News+Events
-  link: /#news_events
 - title: Team
   link: /#team
 # - title: Contact
