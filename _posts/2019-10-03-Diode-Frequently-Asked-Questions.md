@@ -152,3 +152,28 @@ Pro Big
 The question came from some comments from Hacker News ([https://news.ycombinator.com/item?id=20764104#20764865](https://news.ycombinator.com/item?id=20764104#20764865)) "So every DNS change is stored into the blockchain, forever? Will you have to download terabytes and terabytes of the blockchain in order to serve as a node? Why is that kind of audit history necessary?"
 
 You don’t necessarily need to store DNS changes into the blockchain. The blockchain will only keep the current state and would prune the changes. According to Diode’s blog posts, 20kb of storage is all it needs with BlockQuick, the newly developed light-client protocol. The point is less about storing the audit history, but more about preventing Man-in-the-Middle attacks and solving the timestamp-certificate chicken-egg problem.
+
+**Q: If you can https/ssh Pi through the local network, why do you need Diode network?** 
+
+SSH: If you’re not local, Diode is the only choice. (SSH is not using PKI) \
+Usually nobody is checking the remote key - so Diode is better since you don’t have to.
+
+HTTPS: Even if you’re local, there are security issues when using a self-signed certificate to accessing your Pi. 
+
+**Q: Why did you want to design edgeRPC? Why don’t you go for existing options such as  gRPC or JsonRPC?**
+
+At this stage, we use edgeRPC to allow nodes to interact with devices. We started out with ASN1 (like OpenSSL - super small binary format), and there is a chance that we would start using JsonRPC.
+
+**Q: Did you experience any “inconsistency issues” when using OpenSSL? For instance, the functions in OpenSSL could be different, such as the  function interface parameters could be different.**
+
+When choosing a secure communication channel, we looked at RLPx and TLS (OpenSSL). We decided to use OpenSSL, but forced it into using Secp256k1 to ensure both sides authenticate with their Eth wallet keys. But this means we are forcing OpenSSL to only accept Secp256k1 and self-signed certificates (self signed using the wallet key). 
+
+OpenSSL does support Secp256k1. However, not all TLS libraries and clients support Secp256k1 at this time. So this can lead to connection issues when not using OpenSSL. We will be researching other libraries such as ARMmbed, wolfSSL, and SChannel for that matter.
+
+**Q: How are you guys using websocket?**
+
+The default Go client has a built-in capability to convert any binary TCP socket into a websocket. So, the Pi in the demo is simply publishing the raw video on port, and then the Go client is converting that into websocket frames.
+
+**Q: If you are using OpenSSL, does it mean you are using a CGo compiler?**
+
+Yes, we use CGo to call C functions.
