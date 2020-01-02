@@ -10,7 +10,7 @@ image: Golang_feature01.jpg
 
 On Tuesday, December 24, we had the opportunity to present our work at [the Golang Taipei Meetup](https://www.meetup.com/golang-taipei-meetup/events/267181856/). The venue was the very cool [MaiCoin’s co-working space](https://g.page/MaiCoinHQ?share) in Taipei City, which Taipei City Mayor [Ko Wen-jen](https://english.gov.taipei/News_Content.aspx?n=A11F01CFC9F58C83&sms=DFFA119D1FD5602C&s=7FE02B7C298D43A5) had once visited last August.
 
-Thanks to [David Chang](https://www.meetup.com/golang-taipei-meetup/members/187296721/profile/), Davic Chou, [Evan Lin](https://twitter.com/Evan_Lin) and everyone who helped out with the meetup. We had a great time seeing the excitement and energy from the [Golang Taipei](https://twitter.com/GolangTW) community.
+Thanks to [David Chang](https://www.meetup.com/golang-taipei-meetup/members/187296721/profile/), David Chou, [Evan Lin](https://twitter.com/Evan_Lin) and everyone who helped out with the meetup. We had a great time seeing the excitement and energy from the [Golang Taipei](https://twitter.com/GolangTW) community.
 
 Presentations at the meetup were incredibly interesting and inspiring. First up was David Chang, the host of the event. He gave a brief overview of a popular MIT online course “[MIT 6.824](https://youtu.be/hBWfjkGKRas)” on distributed systems, an introduction of [MapReduce](https://en.wikipedia.org/wiki/MapReduce) the programming model as well as discussing the possibility of implementing MapReduce in Golang. Most of the concepts he talked about were coming from Google’s 2004 [paper](https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf).
 
