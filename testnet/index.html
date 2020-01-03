@@ -46,7 +46,7 @@ layout: ""
 
 
     <script>
-        let app;
+        let app = {};
         let url = 'wss://testnet.diode.io:8443/ws'
         // let url = 'ws://localhost:8545/ws'
         let web3 = NewWeb3(url);
@@ -54,7 +54,7 @@ layout: ""
 
         function subscribe(event, callback) {
             web3_subscriptions.push([event, callback])
-            if (web3._provider.connected) web3.eth.subscribe(event, callback);
+            if (web3._provider.connected && app.connected == 1) web3.eth.subscribe(event, callback);
         }
 
         var routes = [
@@ -82,7 +82,7 @@ layout: ""
         app = new Vue({
             data: {
                 routes,
-                connected: 1,
+                connected: 0,
                 ticker: 1,
             },
             router,
