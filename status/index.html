@@ -1,0 +1,120 @@
+---
+layout: ""
+---
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diode℠ Testnet Status</title>
+    <meta charset="utf-8">
+    <!-- From example https://vuejs.org/v2/guide/computed.html -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="/images/favicon.png" title="Favicon">
+    </link>
+</head>
+
+<body>
+    <div class="banner">
+        <h1>Diode℠ Testnet Status</h1>
+    </div>
+    <div id="app">
+        <div class="host" v-bind:class="host.status" v-for="host in hosts" v-key="host.name">
+            <div class="head">
+                <div class="title"><% host.name %></div>
+                <div class="status"><% host.status %></div>
+            </div>
+            <svg :view-box.camel="'0 0 ' + (host.data.length*4) + ' ' + 100" :transform="'scale(1 ' + Math.max(1, (host.data.length/250)) + ')'">
+                <line :x1="i*4" :x2="i*4" y1="1" y2="100" v-bind:class="status" v-for="(status, i) in host.data">
+                </line>
+            </svg>
+            <div class="body">
+                <div class="info"><% Math.round(host.uptime*100000)/1000 %>% uptime</div>
+                <div class="info"><% host.longest %> minutes since last disconnect</div>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        // let url = 'http://localhost:8080'
+        let url = 'https://monitor.testnet.diode.io'
+        let app = new Vue({
+            el: '#app',
+            data: {
+                hosts: {},
+            },
+            delimiters: ["<%", "%>"]
+        })
+
+        let opt = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+
+        function refresh() {
+            axios.get(url + "/", opt).then(response => {
+                // console.log("Got", response.data)
+                for (let k in response.data) {
+                    if (app.hosts[k]) continue;
+                    let entry = { name: k, data: [], status: 'Unknown' }
+                    // app.hosts[k] = entry
+                    app.$set(app.hosts, k, entry)
+                    refreshHost(k, response.data[k])
+                }
+                setTimeout(refresh, 25000)
+            })
+        }
+        function refreshHost(name) {
+            axios.get(url + "/" + name, opt).then(response => {
+                let up = 0;
+                let uptime = 0;
+                let start = response.data.start;
+                let end = Math.floor(Date.now() / 1000)
+                let data = []
+                let status = "Unknown"
+                for (let i = 0; start + (i * 60) < end; i++) {
+                    status = "Unknown"
+                    switch (response.data.data[i]) {
+                        default:
+                            if (start + ((i + 1) * 60) >= end) {
+                                continue;
+                            }
+                            status = "Unknown";
+                            uptime = 0;
+                            break;
+                        case 1:
+                            up++;
+                            uptime++;
+                            status = "Up";
+                            break;
+                        case 2:
+                            status = "Slow";
+                            uptime = 0;
+                            break;
+                        case 3:
+                            status = "Problem";
+                            uptime = 0;
+                            break;
+                        case 4:
+                            status = "Problem2";
+                            uptime = 0;
+                            break;
+                    }
+                    data.push(status)
+                }
+                app.$set(app.hosts[name], 'data', data);
+                app.$set(app.hosts[name], 'status', status);
+                app.$set(app.hosts[name], 'uptime', up / data.length);
+                app.$set(app.hosts[name], 'longest', uptime);
+                setTimeout(() => refreshHost(name), 60000)
+            })
+        }
+        refresh()
+    </script>
+</body>
+
+</html>
