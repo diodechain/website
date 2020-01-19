@@ -1,15 +1,17 @@
 ---
 layout: post
 title: Getting Started with Diode
-date: 2020-01-20 01:27
+date: 2020-01-20 01:39
 categories: [Diode]
 tags: [Diode, Blockchain, Demo, IoT, Raspberry Pi, P2P, Web3, Ethereum]
 author: Yahsin Huang
 image: Diode_demo_feature1.png
+imageclass: bottom
 ---
 
 Last week we released a [demo](https://youtu.be/Zibg-6CClc4) on YouTube that shows how to get started with [Diode](https://github.com/diodechain). It’s a simple guide to help you get a Raspberry Pi connected to the Diode network.
 
+<br/>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zibg-6CClc4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br/>
@@ -43,9 +45,7 @@ You can type “help” to get a list of all the environment variables. Also, yo
 
 Here comes an important step to follow. Set up our [Firefox](https://www.mozilla.org/) proxy settings under the about preferences. Type “about:preferences”. Go to Network Settings. Go to Settings, configure proxy access to the Internet. Go to Automatic proxy configuration URL. 
 
-There’s a proxy.pac file from our project’s GitHub repository; it is used to set up Firefox proxy. It allows you to redirect the matching URLs to a local proxy server. Update the information in this field. 
-
-Find out the current local IP of our Raspberry Pi. How do we do that? One way to do it is we can use the Terminal command ifconfig -- this command is used for displaying current network configuration information. At the Terminal prompt, type ifconfig | pipe grep 172.
+There’s a proxy.pac file from our project’s GitHub repository; it is used to set up Firefox proxy. It allows you to redirect the matching URLs to a local proxy server. Update the information in this field. Find out the current local IP of our Raspberry Pi. How do we do that? One way to do it is we can use the Terminal command ifconfig -- this command is used for displaying current network configuration information. At the Terminal prompt, type ifconfig | pipe grep 172.
 
 Now that we know the local server IP, back to our browser to see what our Raspberry Pi’s website looks like. Next search for a client address. Once you’ve set up everything, we want to use a proxy server to connect to the Pi address. Go back to our Firefox browser. Enter rw dash 0x7809… your Pi address. Paste the client address with dot diode. Let’s take a look at the video streaming. So, type 0x7809… the Pi address, then Port 3030, then Start. We can also use “diode.link”. 
 
