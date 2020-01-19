@@ -5,7 +5,7 @@ date: 2020-01-20 01:39
 categories: [Diode]
 tags: [Diode, Blockchain, Demo, IoT, Raspberry Pi, P2P, Web3, Ethereum]
 author: Yahsin Huang
-image: Diode_demo_feature001.png
+image: Diode_demo_feature_size.png
 imageclass: bottom
 ---
 
