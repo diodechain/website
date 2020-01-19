@@ -1,0 +1,88 @@
+@import url(ttps://fonts.googleapis.com/css?family=Titillium+Web:400);
+body {
+    font: 16px/1.4em "Titillium Web", Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 1024px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner {
+    text-align: center;
+    color: white;
+    margin: 0 0 2em;
+    padding: 2em 0;
+    width: 100%;
+    background-color: #F15C2E
+}
+
+#app {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+svg {
+    height: 70px;
+    width: 100%;
+}
+
+.host {
+    text-align: left;
+    margin: 5px;
+    padding: 0.2em 0;
+    background-color: rgb(240, 240, 240);
+    border: 2px solid gray;
+    border-radius: 0.2em;
+    width: 100%;
+}
+
+.host .body {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+}
+.host .head {
+    padding 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.Up .head .status {
+    color: green;
+}
+.Problem .head .status {
+    color: red;
+}
+.Problem2 .head .status {
+    color: red;
+}
+.Slow .head .status {
+    color: orange;
+}
+
+line {
+    stroke-width: 2;
+}
+
+line.Unknown {
+    stroke: lightgray;
+}
+line.Up {
+    stroke: green;
+}
+line.Problem {
+    stroke: red;
+}
+line.Problem2 {
+    stroke: red;
+}
+line.Slow {
+    stroke: orange;
+}

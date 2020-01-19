@@ -46,7 +46,7 @@ layout: ""
 
 
     <script>
-        let app;
+        let app = {};
         let url = 'wss://testnet.diode.io:8443/ws'
         // let url = 'ws://localhost:8545/ws'
         let web3 = NewWeb3(url);
@@ -54,7 +54,7 @@ layout: ""
 
         function subscribe(event, callback) {
             web3_subscriptions.push([event, callback])
-            if (web3._provider.connected) web3.eth.subscribe(event, callback);
+            if (web3._provider.connected && app.connected == 1) web3.eth.subscribe(event, callback);
         }
 
         var routes = [
@@ -72,7 +72,7 @@ layout: ""
                     let route = routes[i];
                     if (route.name == to.name) {
                         route.params = to.params
-                        if (app) app.$set(app.routes, i, route)
+                        if (app && app.$set) app.$set(app.routes, i, route)
                         else routes[i] = route
                     }
                 }
@@ -82,7 +82,8 @@ layout: ""
         app = new Vue({
             data: {
                 routes,
-                connected: 1,
+                initial: 0,
+                connected: 0,
                 ticker: 1,
             },
             router,
@@ -90,11 +91,11 @@ layout: ""
         })
         app.$mount('#app')
 
-        setInterval(() => {
+        let ReSubscribe = () => {
             app.ticker++;
             if (web3._provider.connected == false) {
                 app.connected = 0;
-                web3 = new Web3(url)
+                web3 = new NewWeb3(url)
             } else {
                 if (app.connected == 0) {
                     for (i = 0; i < web3_subscriptions.length; i++) {
@@ -102,9 +103,14 @@ layout: ""
                         web3.eth.subscribe(sub[0], sub[1]);
                     }
                     app.connected = 1;
+                    if (app.initial == 0) {
+                        app.initial = 1
+                        DNSRefresh()
+                    }
                 }
             }
-        }, 1000)
+        }
+        setInterval(ReSubscribe, 1000)
 
         let DNSRefresh = () => {
             if (!app.connected) {
@@ -117,6 +123,7 @@ layout: ""
                 arr.forEach(element => { ret[element[0].toLowerCase()] = element[1].toLowerCase() })
                 for (key in ret) {
                     let name = valueToString(ret[key])
+                    // if (names == undefined) name = ret[key]
                     if (name == undefined) continue
                     let nameOff = web3.utils.toBN(key)
                     let entry = {
@@ -124,6 +131,7 @@ layout: ""
                         owner: ret['0x' + nameOff.sub(web3.utils.toBN('0x1')).toString(16)],
                         destination: ret['0x' + nameOff.sub(web3.utils.toBN('0x2')).toString(16)]
                     }
+                    if (entry.owner == undefined) continue;
                     DNSCache[name] = entry
                     let addr = valueToAddress(entry.destination)
                     if (addr) DNSCache[addr] = entry
@@ -156,6 +164,9 @@ layout: ""
             },
             computed: {
                 formatted: function () {
+                    if (this.value == undefined)
+                        return undefined
+
                     // Number detection
                     if (this.value.startsWith('0x000000000000000000000000000000000000000000000000000'))
                         return web3.utils.hexToNumber(this.value)
@@ -182,7 +193,7 @@ layout: ""
         })
 
         function valueToAddress(value) {
-            if (!value.startsWith('0x000000000000000000000000'))
+            if (value == undefined || !value.startsWith('0x000000000000000000000000'))
                 return undefined;
 
             let addr = '0x' + value.substr(26, 40)

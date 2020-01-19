@@ -9,7 +9,10 @@
       <div v-if="error" class="error"><% error %></div>
     </div>
     <div class="column">
-      <table class="data">
+      <div v-if="Object.entries(names).length == 0">
+        <b style="font-size: 150%">Loading...</b>
+      </div>
+      <table v-else class="data">
         <tr>
           <th>Your Account</th>
           <td>
@@ -79,12 +82,6 @@ var DNS = Vue.component("dns", {
   },
 
   created: function() {
-    if (localStorage.names) {
-      let names = localStorage.names.split(",");
-      for (name of names) {
-        this.addName(name);
-      }
-    }
     this.refreshNames();
     setInterval(() => {
       if (!this.enabled && window.ethereum.selectedAddress != null) {
@@ -97,12 +94,12 @@ var DNS = Vue.component("dns", {
     refreshNames: function() {
       for (key in DNSCache) {
         let name = DNSCache[key].name;
-        this.names[name] = {
-          name: DNSCache[key].name,
+        let entry = {
+          name,
           destination: DNSCache[key].destination,
           owner: DNSCache[key].owner
         };
-        this.$set(this.names, name, this.names[name]);
+        this.$set(this.names, name, entry);
       }
       for (key in this.names) {
         if (this.names[key].destination == "loading") {
@@ -120,11 +117,6 @@ var DNS = Vue.component("dns", {
         owner: "loading"
       };
       this.$set(this.names, name, entry);
-      let ids = [];
-      for (name in this.names) {
-        ids.push(name);
-      }
-      localStorage.names = ids.join(",");
     },
     reloadName: function(name) {
       this.resolve(name, dest => {
