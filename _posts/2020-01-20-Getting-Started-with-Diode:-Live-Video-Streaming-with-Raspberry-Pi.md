@@ -5,13 +5,11 @@ date: 2020-01-20 01:39
 categories: [Diode]
 tags: [Diode, Blockchain, Demo, IoT, Raspberry Pi, P2P, Web3, Ethereum]
 author: Yahsin Huang
-image: Diode_demo_feature1.png
-imageclass: bottom
+image: Diode_demo_feature001.png
 ---
 
 Last week we released a [demo](https://youtu.be/Zibg-6CClc4) on YouTube that shows how to get started with [Diode](https://github.com/diodechain). It’s a simple guide to help you get a Raspberry Pi connected to the Diode network.
 
-<br/>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zibg-6CClc4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br/>
