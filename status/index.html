@@ -60,10 +60,10 @@ layout: ""
                 // console.log("Got", response.data)
                 for (let k in response.data) {
                     if (app.hosts[k]) continue;
-                    let entry = { name: k, data: [], status: 'Unknown' }
+                    let entry = { name: response.data[k], data: [], status: 'Unknown' }
                     // app.hosts[k] = entry
                     app.$set(app.hosts, k, entry)
-                    refreshHost(k, response.data[k])
+                    refreshHost(k)
                 }
                 setTimeout(refresh, 25000)
             })
