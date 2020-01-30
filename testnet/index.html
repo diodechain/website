@@ -54,7 +54,7 @@ layout: ""
 
         function subscribe(event, callback) {
             web3_subscriptions.push([event, callback])
-            if (web3._provider.connected && app.connected == 1) web3.eth.subscribe(event, callback);
+            if (web3.currentProvider.connected && app.connected == 1) web3.eth.subscribe(event, callback);
         }
 
         var routes = [
@@ -93,8 +93,13 @@ layout: ""
 
         let ReSubscribe = () => {
             app.ticker++;
-            if (web3._provider.connected == false) {
+            if (web3.currentProvider.connected == false) {
+                let conn = web3.currentProvider.connection
                 app.connected = 0;
+                if (conn) {
+                    if (conn.readyState == 0) return
+                    conn.close()
+                }
                 web3 = new NewWeb3(url)
             } else {
                 if (app.connected == 0) {
