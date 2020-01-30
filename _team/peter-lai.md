@@ -10,4 +10,4 @@ twitter: 'https://twitter.com/alk03073135'
 thandle: '@alk03073135'
 github: 'https://github.com/sc0Vu'
 ---
-Peter is a Blockchain Engineer at Diode. He has a Business Administration background before delving into programming. He is also an active opensource contributor. Currently, he is developing blockchain-based decentralized PKI (DPKI) with the Diode team.
+Peter is a Blockchain Engineer who combines his background in Business Administration with his love for programming.  He develops blockchain-based decentralized PKI (DPKI) technologies at Diode, and is also an active opensource contributor.

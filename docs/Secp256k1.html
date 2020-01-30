@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="Elixir.Diode v0.0.1">
+    <title>Secp256k1 — Elixir.Diode v0.0.1</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+    <script src="dist/sidebar_items-3004d183df.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName">
+Elixir.Diode      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">Elixir.Diode v0.0.1</small>
+Secp256k1      </h1>
+
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:compressed_public_key/0">compressed_public_key()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:full_public_key/0">full_public_key()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:private_key/0">private_key()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:public_key/0">public_key()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:signature/0">signature()</a>
+  </div>
+</div>
+  </div>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#bitcoin_to_rlp/2">bitcoin_to_rlp(signature, chain_id \\ nil)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#chain_id/1">chain_id(rec)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#compress_public/1">compress_public(public)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#decompress_public/1">decompress_public(public)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#der_encode_private/2">der_encode_private(private, public)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#erl_encode_cert/1">erl_encode_cert(public)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#erl_encode_private/2">erl_encode_private(private, public)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#generate/0">generate()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns {PublicKey, PrivKeyOut}</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#generate_public_key/1">generate_public_key(private_key)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#pem_encode_private/2">pem_encode_private(private, public)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#recover/3">recover(signature, msg, algo \\ :sha)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#recover!/3">recover!(signature, msg, algo \\ :sha)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#rlp_to_bitcoin/3">rlp_to_bitcoin(rec, r, s)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#selfsigned/2">selfsigned(private, public)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#sign/3">sign(private, msg, algo \\ :sha)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#signature_bitcoin_to_x509/1">signature_bitcoin_to_x509(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#signature_x509_to_bitcoin/1">signature_x509_to_bitcoin(signature)</a>
+  </div>
+    <div class="summary-synopsis"><p>Converts X.509 signature to bitcoin style signature</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#verify/3">verify(public, msg, signature)</a>
+  </div>
+</div>
+  </div>
+        </section>
+
+        <section id="types" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#types">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Types          </h1>
+          <div class="types-list">
+<section class="detail" id="t:compressed_public_key/0">
+  <div class="detail-header">
+    <a href="#t:compressed_public_key/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">compressed_public_key()</h1>
+      <div class="specs">
+          <pre>compressed_public_key() :: <<_::264>></pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="t:full_public_key/0">
+  <div class="detail-header">
+    <a href="#t:full_public_key/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">full_public_key()</h1>
+      <div class="specs">
+          <pre>full_public_key() :: <<_::520>></pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="t:private_key/0">
+  <div class="detail-header">
+    <a href="#t:private_key/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">private_key()</h1>
+      <div class="specs">
+          <pre>private_key() :: <<_::256>></pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="t:public_key/0">
+  <div class="detail-header">
+    <a href="#t:public_key/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">public_key()</h1>
+      <div class="specs">
+          <pre>public_key() :: <a href="#t:compressed_public_key/0">compressed_public_key</a>() | <a href="#t:full_public_key/0">full_public_key</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="t:signature/0">
+  <div class="detail-header">
+    <a href="#t:signature/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">signature()</h1>
+      <div class="specs">
+          <pre>signature() :: <<_::520>></pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+          </div>
+        </section>
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="bitcoin_to_rlp/2">
+    <span id="bitcoin_to_rlp/1"></span>
+  <div class="detail-header">
+    <a href="#bitcoin_to_rlp/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">bitcoin_to_rlp(signature, chain_id \\ nil)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="chain_id/1">
+  <div class="detail-header">
+    <a href="#chain_id/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">chain_id(rec)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="compress_public/1">
+  <div class="detail-header">
+    <a href="#compress_public/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">compress_public(public)</h1>
+      <div class="specs">
+          <pre>compress_public(<a href="#t:public_key/0">public_key</a>()) :: <a href="#t:compressed_public_key/0">compressed_public_key</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="decompress_public/1">
+  <div class="detail-header">
+    <a href="#decompress_public/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">decompress_public(public)</h1>
+      <div class="specs">
+          <pre>decompress_public(<a href="#t:compressed_public_key/0">compressed_public_key</a>()) :: <a href="#t:public_key/0">public_key</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="der_encode_private/2">
+  <div class="detail-header">
+    <a href="#der_encode_private/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">der_encode_private(private, public)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="erl_encode_cert/1">
+  <div class="detail-header">
+    <a href="#erl_encode_cert/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">erl_encode_cert(public)</h1>
+      <div class="specs">
+          <pre>erl_encode_cert(<a href="#t:public_key/0">public_key</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="erl_encode_private/2">
+  <div class="detail-header">
+    <a href="#erl_encode_private/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">erl_encode_private(private, public)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="generate/0">
+  <div class="detail-header">
+    <a href="#generate/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">generate()</h1>
+      <div class="specs">
+          <pre>generate() :: {<a href="#t:public_key/0">public_key</a>(), <a href="#t:private_key/0">private_key</a>()}</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>Returns {PublicKey, PrivKeyOut}</p>
+  </section>
+</section>
+<section class="detail" id="generate_public_key/1">
+  <div class="detail-header">
+    <a href="#generate_public_key/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">generate_public_key(private_key)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="pem_encode_private/2">
+  <div class="detail-header">
+    <a href="#pem_encode_private/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">pem_encode_private(private, public)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="recover/3">
+    <span id="recover/2"></span>
+  <div class="detail-header">
+    <a href="#recover/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">recover(signature, msg, algo \\ :sha)</h1>
+      <div class="specs">
+          <pre>recover(<a href="#t:signature/0">signature</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), :sha | :kec | :none) ::
+  {:ok, <a href="#t:public_key/0">public_key</a>()} | {:error, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="recover!/3">
+    <span id="recover!/2"></span>
+  <div class="detail-header">
+    <a href="#recover!/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">recover!(signature, msg, algo \\ :sha)</h1>
+      <div class="specs">
+          <pre>recover!(<a href="#t:signature/0">signature</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), :sha | :kec | :none) :: <a href="#t:public_key/0">public_key</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="rlp_to_bitcoin/3">
+  <div class="detail-header">
+    <a href="#rlp_to_bitcoin/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">rlp_to_bitcoin(rec, r, s)</h1>
+      <div class="specs">
+          <pre>rlp_to_bitcoin(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()) :: nil | <<_::520>></pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="selfsigned/2">
+  <div class="detail-header">
+    <a href="#selfsigned/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">selfsigned(private, public)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="sign/3">
+    <span id="sign/2"></span>
+  <div class="detail-header">
+    <a href="#sign/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sign(private, msg, algo \\ :sha)</h1>
+      <div class="specs">
+          <pre>sign(<a href="#t:private_key/0">private_key</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), :sha | :kec) :: <a href="#t:signature/0">signature</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="signature_bitcoin_to_x509/1">
+  <div class="detail-header">
+    <a href="#signature_bitcoin_to_x509/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">signature_bitcoin_to_x509(arg)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="signature_x509_to_bitcoin/1">
+  <div class="detail-header">
+    <a href="#signature_x509_to_bitcoin/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">signature_x509_to_bitcoin(signature)</h1>
+  </div>
+  <section class="docstring">
+<p>Converts X.509 signature to bitcoin style signature</p>
+  </section>
+</section>
+<section class="detail" id="verify/3">
+  <div class="detail-header">
+    <a href="#verify/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">verify(public, msg, signature)</h1>
+      <div class="specs">
+          <pre>verify(<a href="#t:public_key/0">public_key</a>() | <a href="Wallet.html#t:t/0">Wallet.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), <a href="#t:signature/0">signature</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+          </div>
+        </section>
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  </body>
+</html>

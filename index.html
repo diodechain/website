@@ -1,18 +1,66 @@
 ---
 layout: default
+
+about-title: Look mum, no server!
+about-description: >-
+    The Diode P2P network allows any device on the planet to directly serve secured content to the public Internet. 
+    We're ending the monopoly of datacenter servers and the need for static IP addresses. With Diode, your Ethereum
+    address is your static address, and, with ENS and DNS (Diode NS), your content can be accessed with a human-readable 
+    name.
+
+
+# Chinese Firewall https://news.ycombinator.com/item?id=15590912
+# https://www.electromaker.io/tutorial/blog/raspberry-pi-vpn-server:
+# 
+
+
+features-title: What can Diode do for You?
+features-description: Here are some example use cases of a decentralized P2P network. To learn more about the technical foundations, check the docs.
+features:
+
+    ### Feature 1
+    - title: Publish your Raspberry Pi Webcam to the Internet
+      description: >-
+        See above for a step-by-step guide for how to publish your Raspberry PI on the Diode P2P network. The
+        example uses Diode shared streams to broadcast the video stream through the P2P network, and supports many 
+        simultaneous viewers.  
+
+        Check out our demo streams at https://betahaus-berlin.diode.link and https://pi-taipei.diode.link, and open 
+        multiple browser windows at once so see the shared streams in action. 
+    # icon: svgs/security.svg
+
+    ### Feature 2
+    - title: SSH into your Devices from Anywhere
+      description: >-
+        Instead of using centralized servers with static IP addresses or DynDNS, you can use the static Ethereum
+        Addresses with the Diode P2P network to setup a reliable virtual private network around the globe. All 
+        existing TCP based applications are compatible with the Diode P2P network, and can be streamed through it.
+        To try this out, install the Diode P2P Client and tunnel your SSH connection to any other device on the Diode P2P
+        network: <blockquote>ssh pi@pi-taipei.diode -o 'ProxyCommand=nc -X 5 -x localhost:1080 %h %p'</blockquote>
+
+    # icon: svgs/lower_cost.svg
+    # https://www.electromaker.io/tutorial/blog/raspberry-pi-vpn-server
+
+    ### Feature 3
+    - title: Share Your Network with Your Friends
+      description: >-
+        Define a Diode Fleet to which only your invited Friends have access. You're creating an invite-only
+        private network over the Internet. You and your Friends can exclusively use this network for all types 
+        of secure digital traffic - whether that be file sharing, secure communications, or streaming private content.
+        Since all communication is E2E encrypted using Ethereum Addresses for authentication, no one can get in the middle
+        of your conversations. 
+
+    # icon: svgs/streaming.svg
+
+
 ---
 
+{% include header.html %}
 
 {% include sections/about.html %}
 
-{% include sections/offer.html offer-text="Follow us on twitter!" button-text="@diode_chain" link="https://twitter.com/diode_chain" %}
-
 {% include sections/features.html %}
 
-{% include sections/offer-subscribe.html %}
+{% include sections/offer.html offer-text="Follow us on twitter!" button-text="@diode_chain" link="https://twitter.com/diode_chain" %}
 
 {% include sections/blog.html %}
-
-{% include sections/team.html %}
-
-{% include sections/offer.html offer-text="Contact us to buy Diode Tokens, or to license the <a href=\"https://github.com/diodechain\" class=\"underline\" target=\"_blank\">Diode Chain&trade;</a> software!" button-text="Telegram" link="https://t.me/diode_chain" %}

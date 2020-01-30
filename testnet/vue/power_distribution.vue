@@ -1,7 +1,7 @@
 <template id="power_distribution">
   <div>
     <div class="title">
-      <h1>Testnet Power Distribution</h1>
+      <h1>Testnet Miner Distribution over the Last 500 Blocks</h1>
       <small>
         connected to
         <account-link :hash="base" :length="50" :only-alias="false" />

@@ -4,7 +4,8 @@
   <!-- Parallax Header Image -->
   <div class="parallax-wrapper">
     <div class="cover" data-scrollax="properties: { 'translateY': '48%' }">
-      <img src="{{ site.baseurl }}/images/header-image.jpg?{{site.time | date: '%s%N'}}" alt="Diode - The Future Of IoT Wallpaper" />
+      <img src="{{ site.baseurl }}/images/header-image2.jpg?{{site.time | date: '%s%N'}}"
+        alt="Diode - The Future Of IoT Wallpaper" />
     </div>
   </div>
 
@@ -14,12 +15,12 @@
     <div class="row site-navigation-bar parent">
 
       <!-- Logo -->
-      <div class="col-sm-2 col-xs-4 logo child-center-v">
-        <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/logo.svg?{{site.time | date: '%s%N'}}" width="170" alt="Diode - Logo"></a>
+      <div class="col-sm-2 col-xs-4 logo">
+        <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/logo.svg?{{site.time | date: '%s%N'}}" alt="Diode - Logo"></a>
       </div>
 
       <!-- Toggle Mobile Menu -->
-      <div class="col-xs-8 toggle-menu child-center-v">
+      <div class="col-xs-8 toggle-menu">
 
         <!-- Burger -->
         <div class="navTrigger">
@@ -29,18 +30,18 @@
       </div>
 
       <!-- Navigation Bar -->
-      <div class="col-sm-10 col-xs-12 navigation-bar child-center-v">
+      <div class="col-sm-10 col-xs-12 navigation-bar">
 
         <!-- Navigation Menu -->
         <nav id="navMenu" class="nav-menu">
           <ul class="menu">
-          {% for nav in site.navigation %}
+            {% for nav in site.navigation %}
             {% if nav.target %}
             <li><a href="{{ nav.link }}" target="{{ nav.target }}">{{ nav.title }}</a></li>
             {% else %}
             <li><a href="{{ site.baseurl }}{{ nav.link }}">{{ nav.title }}</a></li>
             {% endif %}
-          {% endfor %}
+            {% endfor %}
           </ul>
         </nav>
 
@@ -52,24 +53,31 @@
     <!-- Site Header Banner -->
     <div class="row header-banner parent" data-scrollax="properties: { 'translateY': '48%', 'opacity': '1.4' }">
 
-      <div class="heading-content text-center child-center-v">
+      <div class="heading-content text-center">
 
         <!-- Heading Title -->
         <div class="row heading-title">
-          <h2 id="tagline">{{ site.header-tagline }}</h2>
-          <hr class="small">
-          <h1 class="thin">{{ site.header-title }}</h1>
+          <div class="col">
+            <h2 id="tagline">Bridging Web3 connections everywhere. securely.</h2>
+            <hr class="small">
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 2em">
+          <iframe class="tutorial" src="https://www.youtube-nocookie.com/embed/Zibg-6CClc4" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
         <!-- Header Buttons -->
         <div class="row buttons-header">
           <div class="col-lg-3 col-lg-push-3 col-md-4 col-md-push-2 col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1">
-            <a id="video_btn" href="{{ site.header-focus-button.url }}" class="button-cta button-focus">{{ site.header-focus-button.title }}</a>
+            <a href="#features" class="button-cta button-focus">Learn more</a>
           </div>
           <div class="col-lg-3 col-lg-push-3 col-md-4 col-md-push-2 col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1">
-            <a target="_blank" href="{{ site.header-secondary-button.url }}" class="button-cta">{{ site.header-secondary-button.title }}</a>
+            <a target="_blank" href="https://github.com/diodechain" class="button-cta">Get the Code</a>
           </div>
         </div>
+
 
       </div>
 
@@ -78,11 +86,11 @@
     <!-- Arrow Down -->
     <div class="row arrow-down-section" data-scrollax="properties: { 'opacity': '0.6' }">
 
-        <div class="wrapper-arrow child-center">
-          <a href="#about" class="arrow-down">
-            <i class="pe-7s-angle-down"></i>
-          </a>
-        </div>
+      <div class="wrapper-arrow child-center">
+        <a href="#about" class="arrow-down">
+          <i class="pe-7s-angle-down"></i>
+        </a>
+      </div>
 
     </div>
 

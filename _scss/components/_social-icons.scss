@@ -8,9 +8,13 @@
 
 .social-icons {
   display: inline-block;
-  font-size: 1.85rem;
+  font-size: 1.75rem;
+  margin: 0.5rem 0;
 
   ul.icons {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 
     &.global-text-color-icons {
       li {
@@ -25,7 +29,6 @@
     }
 
     li {
-      float: left;
       margin-right: 10px;
 
       &:last-child {

@@ -6,7 +6,7 @@
  *
  **/
 
-.toggle-menu {
+.row > .toggle-menu {
   display: none;
 }
 
@@ -39,7 +39,6 @@
 
     // Site Navigation Bar
     .site-navigation-bar {
-      display: block;
       height: 50px;
       min-height: 50px;
       background: $primary;
@@ -47,7 +46,6 @@
 
       // Navigation Bar
       .navigation-bar {
-        display: block;
         position: fixed;
         top: 50px;
         left: 0;
@@ -138,9 +136,8 @@
 
       // Toggle Menu
       .toggle-menu {
-        display: block;
-        right: 0;
-        float: right;
+        display: flex;
+        align-items: flex-end;
         font-size: 3rem;
         color: $white;
 
@@ -149,9 +146,7 @@
           cursor: pointer;
           width: 40px;
           height: 32px;
-          margin: auto;
           position: relative;
-          float: right;
 
           i {
             background-color: #fff;

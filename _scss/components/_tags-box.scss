@@ -7,10 +7,12 @@
  **/
 
 ul.tag-cloud-box {
+  justify-content: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
 
   li {
     display: inline-block;
-    float: left;
     margin: 0 10px 10px 0;
 
     a {

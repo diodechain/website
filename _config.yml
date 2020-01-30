@@ -64,15 +64,13 @@ navigation:
 - title: Home
   link: /#home
 - title: About
-  link: /#about
-- title: Features
+  link: /about.html
+- title: Examples
   link: /#features
-- title: Team
-  link: /#team
-# - title: Contact
-#   link: /#contact
 - title: Blog
   link: /blog/
+- title: Docs
+  link: /docs.html
 - title: FAQ
   link: https://diode.io/diode/Diode-Frequently-Asked-Questions-19276/
 - title: <i class="fi flaticon-telegram"></i>
@@ -81,7 +79,7 @@ navigation:
 - title: <i class="fi flaticon-twitter"></i>
   link: https://twitter.com/diode_chain
   target: _blank
-- title: <i class="icon-github"></i>
+- title: <i class="fi flaticon-github"></i>
   link: https://github.com/diodechain
   target: _blank
 
@@ -111,76 +109,6 @@ map-lat: 44.4267674
 map-lng: 26.102538399999958
 
 # Enter your Mailchimp User ID and Campaign ID
-# @TODO: Add in a link for where to find these
-mailchimp:
-  user-id: REPLACEME
-  list-id: REPLACEME
-
-####
-#
-# Hi you now use Sera - OnePage Jekyll Template created by Gleesik™
-#
-# Below are each section from the website in order from top to bottom
-# @TODO Edit each sections with your real information and each section from Sera will autocomplete with your information
-#
-####
-
-#####################################
-#############   About   #############
-#####################################
-about-title: Diode<sup>sm</sup> Web3 Network
-about-description: >-
-  PKI the system that protects web traffic since 30 years is broken. The governance structures 
-  have failed, broken implementations and misuse are spread far beyond repair and fraud is done through it's 
-  weaknesses every day. Our Diode Chain&trade; software creates a new network designed for smart
-  devices. The Diode Network is the first to implement unforgable proof-of-time and network-device authentication
-  based on blockchain technology.
-  Man-In-The middle attacks become impossible and dependencies 
-  on third parties to entrust security are removed. The network has higher security than PKI with
-  much lower overhead and maintenance needs. Truly autonomous.
-  Diode allows developers to build new IoT applications on top of it's network or migrate existing
-  workloads for the higher security and lower operating costs.
-
-#####################################
-#############  Features  ############
-#####################################
-features-title: What can Diode do for IoT?
-features-description:
-
-#
-# Features
-#
-features:
-
-# Feature
-- title: Secure Connectivity
-  description: >-
-    The Diode Chain software uses unique blockchain authentication that allows devices to establish secure connectivity
-    to the blockchain. From there, devices have full access to the data protected by the blockchain
-    consensus. Traditional Man-In-The-Middle attacks through fake PKI certificates and DNS spoofing
-    have no chance.
-
-  icon: svgs/security.svg
-
-# Feature
-- title: Lower Cost
-  description: >-
-    The Diode Network creates an IoT resource marketplace in which providers compete for your business,
-    which leads to the lowest possible prices. The blockchain autonomously keeps the controls
-    tight and ensures correct behaviour.
-
-  icon: svgs/lower_cost.svg
-
-# Feature
-- title: Streaming Network
-  description: >-
-    Whether it is video data from a home camera to an end user or broadcasting messages to thousands of 
-    endpoints, the Diode Network is a native IoT network providing streaming and storage services for all 
-    connected devices.
-
-  icon: svgs/streaming.svg
-
-
 #####################################
 ############   About us   ###########
 #####################################
@@ -235,7 +163,7 @@ chain-features:
 ############# Our Blog ##############
 #####################################
 blog-name: The Blockchain Journal
-blog-title: News + Events
+blog-title: Newest Articles
 blog-description: >-
   As we're working on rolling out the next evolutionary steps of the Diode Network we will be 
   posting updates regularly. Also keep track of our twitter account to get all the latest news.
@@ -244,7 +172,7 @@ blog-description: >-
 #####################################
 ############### Team ################
 #####################################
-team-title: Management Team
+team-title: Team
 team-description: >-
   Our team consists of true IoT experts from both the business and the technology side. We're dedicated
   to a secure IoT future!
@@ -255,7 +183,7 @@ team-description: >-
 footer-description: 
 footer-copyright-text: DIODE
 footer-copyright-url: https://diode.io/
-footer-copyright-year: 2019
+footer-copyright-year: 2020
 
 #########################
 ######   Widgets   ######

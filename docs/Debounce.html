@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="Elixir.Diode v0.0.1">
+    <title>Debounce — Elixir.Diode v0.0.1</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+    <script src="dist/sidebar_items-3004d183df.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName">
+Elixir.Diode      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">Elixir.Diode v0.0.1</small>
+Debounce      </h1>
+
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#apply/3">apply(key, fun, timeout \\ 5000)</a>
+  </div>
+    <div class="summary-synopsis"><p>  apply executes the function after the specified timeout t0 + timeout,</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#child_spec/1">child_spec(init_arg)</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns a specification to start this module under a supervisor.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delay/3">delay(key, fun, timeout \\ 5000)</a>
+  </div>
+    <div class="summary-synopsis"><p>  delay executes the function after the specified timeout t0 + timeout,</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#immediate/3">immediate(key, fun, timeout \\ 5000)</a>
+  </div>
+    <div class="summary-synopsis"><p>  immediate executes the function immediately but blocks any further call</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#init/1">init(arg)</a>
+  </div>
+    <div class="summary-synopsis"><p>Invoked when the server is started. <code class="inline">start_link/3</code> or <code class="inline">start/3</code> will
+block until it returns.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_link/1">start_link(args)</a>
+  </div>
+</div>
+  </div>
+        </section>
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="apply/3">
+    <span id="apply/2"></span>
+  <div class="detail-header">
+    <a href="#apply/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">apply(key, fun, timeout \\ 5000)</h1>
+      <div class="specs">
+          <pre>apply(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(), (() -> <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: :ok</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  apply executes the function after the specified timeout t0 + timeout,</p>
+<pre><code class="nohighlight makeup elixir"><span class="ow">when</span><span class="w"> </span><span class="n">apply</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">called</span><span class="w"> </span><span class="n">multiple</span><span class="w"> </span><span class="n">times</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">affect</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">point</span><span class="w">
+</span><span class="ow">in</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="ow">when</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="n">call</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">happening</span><span class="w"> </span><span class="p" data-group-id="6999054148-1">(</span><span class="n">t0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">timeout</span><span class="p" data-group-id="6999054148-1">)</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">updates</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">fun</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="child_spec/1">
+  <div class="detail-header">
+    <a href="#child_spec/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">child_spec(init_arg)</h1>
+  </div>
+  <section class="docstring">
+<p>Returns a specification to start this module under a supervisor.</p>
+<p>See <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="delay/3">
+    <span id="delay/2"></span>
+  <div class="detail-header">
+    <a href="#delay/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delay(key, fun, timeout \\ 5000)</h1>
+      <div class="specs">
+          <pre>delay(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(), (() -> <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: :ok</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  delay executes the function after the specified timeout t0 + timeout,</p>
+<pre><code class="nohighlight makeup elixir"><span class="ow">when</span><span class="w"> </span><span class="n">delay</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">called</span><span class="w"> </span><span class="n">multipe</span><span class="w"> </span><span class="n">times</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">reset</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">the</span><span class="w">
+</span><span class="n">most</span><span class="w"> </span><span class="n">recent</span><span class="w"> </span><span class="n">call</span><span class="w"> </span><span class="p" data-group-id="5799697197-1">(</span><span class="n">t1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">timeout</span><span class="p">,</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">timeout</span><span class="p" data-group-id="5799697197-1">)</span><span class="w"> </span><span class="n">etc</span><span class="n">...</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">also</span><span class="w"> </span><span class="n">updated</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="immediate/3">
+    <span id="immediate/2"></span>
+  <div class="detail-header">
+    <a href="#immediate/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">immediate(key, fun, timeout \\ 5000)</h1>
+      <div class="specs">
+          <pre>immediate(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(), (() -> <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: :ok</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  immediate executes the function immediately but blocks any further call</p>
+<pre><code class="nohighlight makeup elixir"><span class="n">under</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="n">timeout</span><span class="o">.</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="init/1">
+  <div class="detail-header">
+    <a href="#init/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">init(arg)</h1>
+  </div>
+  <section class="docstring">
+<p>Invoked when the server is started. <code class="inline">start_link/3</code> or <code class="inline">start/3</code> will
+block until it returns.</p>
+<p><code class="inline">init_arg</code> is the argument term (second argument) passed to <code class="inline">start_link/3</code>.</p>
+<p>Returning <code class="inline">{:ok, state}</code> will cause <code class="inline">start_link/3</code> to return
+<code class="inline">{:ok, pid}</code> and the process to enter its loop.</p>
+<p>Returning <code class="inline">{:ok, state, timeout}</code> is similar to <code class="inline">{:ok, state}</code>,
+except that it also sets a timeout. See the &quot;Timeouts&quot; section
+in the module documentation for more information.</p>
+<p>Returning <code class="inline">{:ok, state, :hibernate}</code> is similar to <code class="inline">{:ok, state}</code>
+except the process is hibernated before entering the loop. See
+<code class="inline">c:handle_call/3</code> for more information on hibernation.</p>
+<p>Returning <code class="inline">{:ok, state, {:continue, continue}}</code> is similar to
+<code class="inline">{:ok, state}</code> except that immediately after entering the loop
+the <code class="inline">c:handle_continue/2</code> callback will be invoked with the value
+<code class="inline">continue</code> as first argument.</p>
+<p>Returning <code class="inline">:ignore</code> will cause <code class="inline">start_link/3</code> to return <code class="inline">:ignore</code> and
+the process will exit normally without entering the loop or calling
+<code class="inline">c:terminate/2</code>. If used when part of a supervision tree the parent
+supervisor will not fail to start nor immediately try to restart the
+<a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a>. The remainder of the supervision tree will be started
+and so the <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> should not be required by other processes.
+It can be started later with <a href="https://hexdocs.pm/elixir/Supervisor.html#restart_child/2"><code class="inline">Supervisor.restart_child/2</code></a> as the child
+specification is saved in the parent supervisor. The main use cases for
+this are:</p>
+<ul>
+<li>The <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> is disabled by configuration but might be enabled later.
+</li>
+<li>An error occurred and it will be handled by a different mechanism than the
+<a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>. Likely this approach involves calling <a href="https://hexdocs.pm/elixir/Supervisor.html#restart_child/2"><code class="inline">Supervisor.restart_child/2</code></a>
+after a delay to attempt a restart.
+</li>
+</ul>
+<p>Returning <code class="inline">{:stop, reason}</code> will cause <code class="inline">start_link/3</code> to return
+<code class="inline">{:error, reason}</code> and the process to exit with reason <code class="inline">reason</code> without
+entering the loop or calling <code class="inline">c:terminate/2</code>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/elixir/GenServer.html#c:init/1"><code class="inline">GenServer.init/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="start_link/1">
+  <div class="detail-header">
+    <a href="#start_link/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_link(args)</h1>
+      <div class="specs">
+          <pre>start_link(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()) :: :ignore | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()} | {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pid</a>()}</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+          </div>
+        </section>
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  </body>
+</html>

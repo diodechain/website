@@ -4,13 +4,13 @@ title: Tags
 ---
 
 {% for tag in site.tags %}
-  <div class="post-full taglist-post clearfix">
+  <div class="post-full taglist-post">
     <h2 class="category"><a id="{{ tag[0] | slugify }}"></a>#{{ tag[0] }} [{{ tag[1] | size }}]</h2>
 
 
   <!-- Blog Article -->
   {% for post in tag[1] %}
-  <article class="blog-article border-article clearfix">
+  <article class="blog-article border-article">
 
     {% include post-preview.html post=post %}
 

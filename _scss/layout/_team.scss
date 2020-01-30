@@ -12,6 +12,7 @@ section.team-section {
   // Team Members Container
   .team-members-container {
     margin-top: 80px;
+    align-items: stretch;
 
     .col-md-3 {
       @media (max-width: 600px) and (min-width: 430px) {
@@ -29,12 +30,18 @@ section.team-section {
     .team-member {
       background: $white;
       margin-bottom: 30px;
+      height: 100%;
       transition: all $transition-links $transition-links-type;
 
       .img-wrapper {
         display: block;
         position: relative;
         overflow: hidden;
+
+        img {
+          border-radius: 50%;
+          padding: 0.5em;
+        }
 
         &:before,
         &:after {

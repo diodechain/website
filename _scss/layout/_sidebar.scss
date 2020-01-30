@@ -27,57 +27,6 @@ aside.site-sidebar {
 
   }
 
-  // About Widget
-  .author-widget {
-
-    .widget-content {
-
-      .social-icons {
-        margin-top: 10px;
-
-        .icons {
-          a {
-            .fi {
-              display: inline-block;
-              font-size: 1.48rem;
-              margin-bottom: 10px;
-            }
-          }
-        }
-      }
-
-      .info {
-        display: block;
-        position: relative;
-        clear: both;
-
-        .author-name {
-          font-size: 1.25rem;
-          color: $sidebar-title;
-          text-transform: uppercase;
-          margin-bottom: 6px;
-        }
-
-        .author-info {
-          color: $simple-gray;
-        }
-
-        hr.medium {
-          float: left;
-          margin-top: 20px;
-          margin-bottom: 20px;
-        }
-
-      }
-
-      .author-text {
-        font-size: 0.8rem;
-      }
-
-    }
-
-  }
-
   // Categories Widget
   .categories-widget {
     .widget-content {
@@ -167,6 +116,51 @@ aside.site-sidebar {
       }
 
     }
+  }
+
+}
+
+// About Widget
+.author-widget {
+
+  .widget-content {
+
+    .head {
+      align-items: center;
+    }
+
+    img {
+      max-width: 150px;
+    }
+
+    .info {
+      display: block;
+      position: relative;
+      clear: both;
+
+      .author-name {
+        font-size: 1.25rem;
+        color: $sidebar-title;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+
+      .author-info {
+        color: $simple-gray;
+      }
+
+      hr.medium {
+        float: left;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+    }
+
+    .author-text {
+      font-size: 0.8rem;
+    }
+
   }
 
 }

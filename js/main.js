@@ -34,6 +34,15 @@
     var $nav_menu_link = $('#navMenu ul li a');
     var $toggle_menu_button = $('.navTrigger');
 
+    // Setting initial
+    var $current = null
+    $nav_menu_link.each(function () {
+      if (!$current && $(this).attr('href').includes(location.pathname)) {
+        $current = $(this);
+        $(this).parent().addClass('current-menu-item');
+      }
+    })
+
     // Navigation Menu Link
     $nav_menu_link.on('click', function () {
 

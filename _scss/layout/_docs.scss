@@ -1,0 +1,35 @@
+/**
+ *
+ *  Docs Section Style
+ *
+ *  @package gleesik_layout
+ *
+ **/
+
+
+section.docs-section .docs-row {
+    align-items: stretch;
+    justify-content: stretch;
+    .doc-outer {
+      // width: 100%;
+      margin-top: 1em;
+      flex-grow: 1;
+    }
+    a {
+      height: 100%;
+    }
+    .doc {
+      height: 100%;
+      padding: 1em;
+    //   box-shadow: 2px 2px 2px 4px $primary;
+      border: 1px solid gray;
+      border-style: dashed;
+
+      h3 {
+          margin-bottom: 0.5em;
+      }
+      span {
+          color: #5e5e5e;
+      }
+    }
+}

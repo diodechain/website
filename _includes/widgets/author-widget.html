@@ -25,13 +25,13 @@
             <li><a href="{{ author.linkedin }}" target="_blank"><i class="fi flaticon-linkedin"></i></a></li>
             <li><a href="{{ author.twitter }}" target="_blank"><i class="fi flaticon-twitter"></i></a></li>
             {% if author.github %}
-            <li><a class="github" href="{{ author.github }}" target="_blank">{% include svgs/github.svg %}</a></li>
+            <li><a class="github" href="{{ author.github }}" target="_blank"><i class="fi flaticon-github"></i></a></li>
             {% endif %}
           </ul>
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="info clearfix">
+        <div class="info">
           <h4 class="author-name">{{ author.name }}</h4>
           <h5 class="author-info">{{ author.jobtitle }}</h5>
           <hr class="medium">

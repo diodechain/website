@@ -1,69 +1,37 @@
-<!DOCTYPE html >
-<html lang="{{ site.lang }}">
+---
+layout: default
+---
 
-  {% include head.html %}
+{% include header-page.html %}
+<!-- Page Section -->
+<section class="site-section blog-section page-layout" id="start">
+  <div class="container">
 
-  <body>
-
-    {% include header-page.html %}
-
-    <!-- Page Section -->
-    <section class="site-section blog-section page-layout" id="start">
-      
-      <div class="container">
-
-        <!-- Page Layout -->
-        <div class="row">
-
-          <!-- Sidebar -->
-          <div class="col-md-4 hidden-xs hidden-sm">
-    
-          </div>
-    
-          <!-- Content -->
-          <div class="col-md-8 blog-articles-container">
-    
-            <h2>
-              {% if page.tagline == null %}
-                {{ page.type }}
-              {% else %}
-                {{ page.tagline }}
-              {% endif %}
-    
-            </h2>
-            <h1 class="thin">{{ page.title }}</h1>
-            <hr class="small">
-    
-          </div>
-  
-        </div>        
-
-        <!-- Page Layout -->
-        <div class="row">
-
-          <!-- Sidebar -->
-          <div class="col-md-4 hidden-xs hidden-sm">
-
-            {% include sidebar.html %}
-
-          </div>
-
-          <!-- Content -->
-          <div class="col-md-8 blog-articles-container">
-
-            {{ content }}
-
-          </div>
-
-        </div>
-
+    <!-- Page Layout -->
+    {% unless layout.skip_head == "true" %}
+    <div class="row">
+      <!-- Content -->
+      <div class="col blog-articles-container">
+        <h2>
+          {% if page.tagline == null %}
+            {{ page.type }}
+          {% else %}
+            {{ page.tagline }}
+          {% endif %}
+        </h2>
+        <h1 class="thin">{{ page.title }}</h1>
+        <hr class="small">
       </div>
-    </section>
+    </div>
+    {% endunless %}
 
-    {% include footer.html %}
+    <!-- Page Layout -->
+    <div class="row">
+      <!-- Content -->
+      <div class="col blog-articles-container">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</section>
 
-    {% include scripts.html %}
-
-  </body>
-
-</html>

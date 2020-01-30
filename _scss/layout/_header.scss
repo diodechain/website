@@ -40,7 +40,7 @@ header.site-header {
 
   // Blog Header
   &.blog-header {
-    height: 100px;
+    height: 80px;
 
     .parallax-wrapper {
       height: 600px;
@@ -74,28 +74,35 @@ header.site-header {
     max-height: 1080px;
 
     .heading-content {
+      .heading-title h2 {
+        margin: auto;
+        max-width: 1080px;
+      }
       pointer-events: all;
+      .tutorial {
+        width: calc(100vh / 900 * 560); 
+        height: calc(100vh / 900 * 315);
+      }
     }
   }
 
   // Site Navigation Bar
   .site-navigation-bar {
+    justify-content: space-between;
     pointer-events: all;
     position: relative;
     overflow: hidden;
-    height: 100px;
-    min-height: 100px;
+    height: 80px;
+    min-height: 80px;
     z-index: 2;
     text-transform: uppercase;    
     font-weight: bold;
     -webkit-transform: translate3d(0, 0, 0);
 
     // Logo
-    .logo {
-      img {
-        display: block;
-        float: left;
-      }
+    .logo img {
+      width: 120px;
+      max-width: initial;
     }
 
     // Navigation Bar
@@ -103,17 +110,17 @@ header.site-header {
 
       nav.nav-menu {
         position: relative;
-        display: block;
-        float: right;
-        line-height: 1.8em;
+        display: flex;
+        justify-content: flex-end;
 
         i.fi {
           font-size: 1.8em;
         }
 
         ul {
+          flex-direction: row;
+          align-items: center;
           li {
-            float: left;
             margin-right: 30px;
 
             &:last-child {
@@ -175,9 +182,10 @@ header.site-header {
       text-transform: uppercase;
 
       .buttons-header {
-        margin-top: 40px;
+        margin-top: 2em;
 
         .button-cta {
+          margin-top: 0.5em;
           width: 100%;
         }
 

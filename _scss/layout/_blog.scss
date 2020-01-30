@@ -8,6 +8,10 @@
 
 section.blog-section {
 
+  .row {
+    align-items: initial;
+  }
+
   hr.small {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -39,6 +43,10 @@ section.blog-section {
         padding: 50px 0;
 
         section.offer-section {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
           background-color: $light-gray;
           color: $global-text;
           .button-cta {
@@ -125,6 +133,7 @@ section.blog-section {
   // Blog Articles Container
   .blog-articles-container {
     margin-top: 80px;
+    align-items: initial;
 
     // Resonsive Media
     .col-md-4 {
@@ -136,10 +145,8 @@ section.blog-section {
 
     // Blog Article
     article.blog-article {
-      display: block;
       position: relative;
       width: 100%;
-      float: left;
       margin-bottom: 30px;
 
       &.blog-single-page {
@@ -260,7 +267,6 @@ section.blog-section {
         table {
           border: 1px solid black;
           margin: 1em 0em;
-          width: max-content;
         }
 
         td, th {
@@ -297,6 +303,17 @@ section.blog-section {
           overflow: auto;
           margin: 1em;
           font-family: monospace;
+        }
+
+        pre {
+          // This is an ugly hack, but I can't find a way right now
+          // to make scaling to small screens work for 
+          // http://localhost:3000/diode/4-steps-to-hosting-a-decentralized-static-website-using-ens-and-ipfs-19350/
+          max-width: 80vw;
+        }
+
+        iframe {
+          max-width: 100%;
         }
 
         em, i {

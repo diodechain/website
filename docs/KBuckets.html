@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="Elixir.Diode v0.0.1">
+    <title>KBuckets — Elixir.Diode v0.0.1</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+    <script src="dist/sidebar_items-3004d183df.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName">
+Elixir.Diode      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">Elixir.Diode v0.0.1</small>
+KBuckets      </h1>
+
+
+        <section id="moduledoc">
+<p>Provides 256 bits k-buckets for hashes</p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:item/0">item()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:item_id/0">item_id()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:kbuckets/0">kbuckets()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:node_id/0">node_id()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:tree/0">tree()</a>
+  </div>
+</div>
+  </div>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#bucket_count/1">bucket_count(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_item/2">delete_item(arg, item)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#distance/2">distance(a, b)</a>
+  </div>
+    <div class="summary-synopsis"><p>  Calculates the linear distance on a geometric ring from 0 to 2^256 any distance.
+  Because it&#39;s a ring the maximal distance is two points being opposite of each
+  other. In that case the distance is 2^255.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#hash/1">hash(w)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#insert_item/2">insert_item(arg, item)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#insert_items/2">insert_items(arg, items)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#is_self/1">is_self(bucket)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#item/2">item(kb, wallet)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#k/0">k()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#key/1">key(arg1)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#member?/2">member?(list, item)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#nearer_n/3">nearer_n(kbuckets, item, n)</a>
+  </div>
+    <div class="summary-synopsis"><p>  nearer_n finds the n nodes nearer or equal to the current node to the provided item.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#nearest_n/3">nearest_n(list, item, n)</a>
+  </div>
+    <div class="summary-synopsis"><p>  nearest_n finds the n nodes nearer or equal to the current node to the provided item.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#new/1">new(self_id)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#object/1">object(item)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#self/1">self(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#size/1">size(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#to_list/1">to_list(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#to_uri/1">to_uri(item)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#unique/1">unique(list)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_item/2">update_item(arg, item)</a>
+  </div>
+</div>
+  </div>
+        </section>
+
+        <section id="types" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#types">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Types          </h1>
+          <div class="types-list">
+<section class="detail" id="t:item/0">
+  <div class="detail-header">
+    <a href="#t:item/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">item()</h1>
+      <div class="specs">
+          <pre>item() :: %KBuckets.Item{
+  last_seen: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(),
+  node_id: <a href="Wallet.html#t:t/0">Wallet.t</a>(),
+  object: <a href="Object.Server.html#t:server/0">Object.Server.server</a>() | :self,
+  retries: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()
+}</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="t:item_id/0">
+  <div class="detail-header">
+    <a href="#t:item_id/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">item_id()</h1>
+      <div class="specs">
+          <pre>item_id() :: <<_::256>></pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="t:kbuckets/0">
+  <div class="detail-header">
+    <a href="#t:kbuckets/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">kbuckets()</h1>
+      <div class="specs">
+          <pre>kbuckets() :: {:kbucket, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), <a href="#t:tree/0">tree</a>() | nil}</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="t:node_id/0">
+  <div class="detail-header">
+    <a href="#t:node_id/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">node_id()</h1>
+      <div class="specs">
+          <pre>node_id() :: <a href="Wallet.html#t:t/0">Wallet.t</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="t:tree/0">
+  <div class="detail-header">
+    <a href="#t:tree/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">tree()</h1>
+      <div class="specs">
+          <pre>tree() :: {:leaf, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()} | {:node, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), <a href="#t:tree/0">tree</a>(), <a href="#t:tree/0">tree</a>()}</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+          </div>
+        </section>
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="bucket_count/1">
+  <div class="detail-header">
+    <a href="#bucket_count/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">bucket_count(arg)</h1>
+      <div class="specs">
+          <pre>bucket_count(<a href="#t:kbuckets/0">kbuckets</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="delete_item/2">
+  <div class="detail-header">
+    <a href="#delete_item/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_item(arg, item)</h1>
+      <div class="specs">
+          <pre>delete_item(<a href="#t:kbuckets/0">kbuckets</a>(), <a href="#t:item/0">item</a>() | <a href="#t:item_id/0">item_id</a>()) :: <a href="#t:kbuckets/0">kbuckets</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="distance/2">
+  <div class="detail-header">
+    <a href="#distance/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">distance(a, b)</h1>
+  </div>
+  <section class="docstring">
+<p>  Calculates the linear distance on a geometric ring from 0 to 2^256 any distance.
+  Because it&#39;s a ring the maximal distance is two points being opposite of each
+  other. In that case the distance is 2^255.</p>
+<p>  2^256 = 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  2^255 = 0x7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</p>
+  </section>
+</section>
+<section class="detail" id="hash/1">
+  <div class="detail-header">
+    <a href="#hash/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">hash(w)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="insert_item/2">
+  <div class="detail-header">
+    <a href="#insert_item/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">insert_item(arg, item)</h1>
+      <div class="specs">
+          <pre>insert_item(<a href="#t:kbuckets/0">kbuckets</a>(), <a href="#t:item/0">item</a>() | <a href="#t:item_id/0">item_id</a>()) :: <a href="#t:kbuckets/0">kbuckets</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="insert_items/2">
+  <div class="detail-header">
+    <a href="#insert_items/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">insert_items(arg, items)</h1>
+      <div class="specs">
+          <pre>insert_items(<a href="#t:kbuckets/0">kbuckets</a>(), [<a href="#t:item/0">item</a>()]) :: <a href="#t:kbuckets/0">kbuckets</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="is_self/1">
+  <div class="detail-header">
+    <a href="#is_self/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">is_self(bucket)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="item/2">
+  <div class="detail-header">
+    <a href="#item/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">item(kb, wallet)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="k/0">
+  <div class="detail-header">
+    <a href="#k/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">k()</h1>
+      <div class="specs">
+          <pre>k() :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="key/1">
+  <div class="detail-header">
+    <a href="#key/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">key(arg1)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="member?/2">
+  <div class="detail-header">
+    <a href="#member?/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">member?(list, item)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="nearer_n/3">
+  <div class="detail-header">
+    <a href="#nearer_n/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">nearer_n(kbuckets, item, n)</h1>
+      <div class="specs">
+          <pre>nearer_n(<a href="#t:kbuckets/0">kbuckets</a>() | [<a href="#t:item/0">item</a>()], <a href="#t:item/0">item</a>() | <a href="#t:item_id/0">item_id</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>()) :: [<a href="#t:item/0">item</a>()]</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  nearer_n finds the n nodes nearer or equal to the current node to the provided item.</p>
+  </section>
+</section>
+<section class="detail" id="nearest_n/3">
+  <div class="detail-header">
+    <a href="#nearest_n/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">nearest_n(list, item, n)</h1>
+      <div class="specs">
+          <pre>nearest_n(<a href="#t:kbuckets/0">kbuckets</a>() | [<a href="#t:item/0">item</a>()], <a href="#t:item/0">item</a>() | <a href="#t:item_id/0">item_id</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>()) :: [<a href="#t:item/0">item</a>()]</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  nearest_n finds the n nodes nearer or equal to the current node to the provided item.</p>
+  </section>
+</section>
+<section class="detail" id="new/1">
+  <div class="detail-header">
+    <a href="#new/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">new(self_id)</h1>
+      <div class="specs">
+          <pre>new(<a href="#t:node_id/0">node_id</a>()) :: <a href="#t:kbuckets/0">kbuckets</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="object/1">
+  <div class="detail-header">
+    <a href="#object/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">object(item)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="self/1">
+  <div class="detail-header">
+    <a href="#self/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">self(arg)</h1>
+      <div class="specs">
+          <pre>self(<a href="#t:kbuckets/0">kbuckets</a>()) :: <a href="#t:item/0">item</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="size/1">
+  <div class="detail-header">
+    <a href="#size/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">size(arg)</h1>
+      <div class="specs">
+          <pre>size(<a href="#t:kbuckets/0">kbuckets</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="to_list/1">
+  <div class="detail-header">
+    <a href="#to_list/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">to_list(arg)</h1>
+      <div class="specs">
+          <pre>to_list(<a href="#t:kbuckets/0">kbuckets</a>()) :: [<a href="#t:item/0">item</a>()]</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="to_uri/1">
+  <div class="detail-header">
+    <a href="#to_uri/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">to_uri(item)</h1>
+      <div class="specs">
+          <pre>to_uri(<a href="#t:item/0">item</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="unique/1">
+  <div class="detail-header">
+    <a href="#unique/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">unique(list)</h1>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="update_item/2">
+  <div class="detail-header">
+    <a href="#update_item/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_item(arg, item)</h1>
+      <div class="specs">
+          <pre>update_item(<a href="#t:kbuckets/0">kbuckets</a>(), <a href="#t:item/0">item</a>() | <a href="#t:item_id/0">item_id</a>()) :: <a href="#t:kbuckets/0">kbuckets</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+          </div>
+        </section>
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  </body>
+</html>

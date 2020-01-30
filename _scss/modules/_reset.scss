@@ -35,6 +35,8 @@ body {
 }
 ol, ul {
 	list-style: none;
+	display: flex;
+	flex-direction: column;
 }
 blockquote, q {
 	quotes: none;
