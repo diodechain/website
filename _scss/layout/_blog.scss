@@ -266,7 +266,7 @@ section.blog-section {
 
         table {
           border: 1px solid black;
-          margin: 1em 0em;
+          margin: 1em auto;
         }
 
         td, th {
@@ -283,6 +283,8 @@ section.blog-section {
         }
 
         th {
+          color: $secondary;
+          font-weight: normal;
           background-color: $light-gray;
         }
 
@@ -293,16 +295,6 @@ section.blog-section {
           font-size: 0.9em;
           padding: 1em;
           margin: 1em;
-        }
-
-        div.highlight {
-          background-color: black;
-          color: lightgray;
-          padding: 1em;
-          font-size: 0.8em;
-          overflow: auto;
-          margin: 1em;
-          font-family: monospace;
         }
 
         pre {

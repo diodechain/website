@@ -34,10 +34,11 @@
     var $nav_menu_link = $('#navMenu ul li a');
     var $toggle_menu_button = $('.navTrigger');
 
-    // Setting initial
+    // Setting initial active menu
     var $current = null
     $nav_menu_link.each(function () {
-      if (!$current && $(this).attr('href').includes(location.pathname)) {
+      let href = $(this).attr('href')
+      if (!$current && location.pathname.includes(href)) {
         $current = $(this);
         $(this).parent().addClass('current-menu-item');
       }
@@ -80,7 +81,8 @@
      * Main page animated text
      */
     var txt = 'Web2 security is broken';
-    if (document.getElementById("tagline").innerHTML == txt) {
+    var tagline = document.getElementById("tagline")
+    if (tagline && tagline.innerHTML == txt) {
       let j = 0;
       let elements = ['security', 'privacy', 'participation', 'monetization'];
       let frag = '';
@@ -100,7 +102,6 @@
       }
       typeWriter();
     }
-
 
     /**
      *  Video
@@ -148,6 +149,40 @@
         }
       }
     });
+
+    /**
+     * Documentation search
+     */
+    let $items = $(".toc-widget li")
+    let search = function () {
+      let term = $(this).val()
+      if (term.length < 3) {
+        $items.removeClass("matching-item")
+        $items.removeClass("non-matching-item")
+        $(this).removeClass()
+        return;
+      }
+      let found = 0
+      $items.removeClass("matching-item")
+      $items.addClass("non-matching-item")
+      for (i in idx) {
+        if (idx[i][1].includes(term)) {
+          $(idx[i][0]).addClass("matching-item")
+          $(idx[i][0]).removeClass("non-matching-item")
+          found++;
+        }
+      }
+      if (found > 0) {
+        $(this).removeClass()
+        $(this).addClass("active")
+      } else {
+        $(this).removeClass()
+        $(this).addClass("notfound")
+      }
+    }
+    $("#search").keyup(search)
+    $("#search").change(search)
+
 
   });
 

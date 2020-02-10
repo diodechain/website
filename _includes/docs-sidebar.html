@@ -1,0 +1,38 @@
+<!-- Docs Sidebar -->
+{% assign groups = site.docs | group_by: "category" %}
+<aside class="site-sidebar">
+    <div class="widget search-widget">
+        <div class="widget-content">
+            <input placeholder="Search" autocomplete="off" id="search"/>
+            <script>
+                var idx = [
+                    {% for doc in site.docs %}
+                        ["#{{ doc.url | slugify }}", "{{ doc.content | downcase | strip_html | strip_newline | replace: '"', '' | split: " " | uniq | join: "," }}"],
+                        ["#{{ doc.url | slugify }}", "{{ doc.title | downcase | strip_html | strip_newline | replace: '"', '' | split: " " | uniq | join: "," }}"],
+                    {% endfor %}
+                ];
+            </script>
+        </div>
+    </div>
+
+    <div class="widget toc-widget">
+        <div class="widget-content">
+            {% for group in groups %}
+            <p>
+                <h3>{{ group.name }}</h3>
+                <ul>
+                    {% for doc in group.items %}
+                    <li
+                        id="{{ doc.url | slugify }}"
+                        {% if doc.url == page.url %}
+                        class="current"
+                        {% endif %}
+                    ><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </p>
+            {% endfor %}
+        </div>
+    </div>
+
+</aside>

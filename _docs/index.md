@@ -1,6 +1,7 @@
 ---
 layout: docs
-title: Diode&#8480; Docs & Resources
+category: General
+title: Useful Links
 tagline: >-
   Developer and User resources will be published here. 
   Let us know any questions via <a href="https://t.me/diode_chain">Telegram</a>
@@ -14,7 +15,7 @@ docs:
 - title: 'Testnet Explorer'
   description: >-
     Explore the testnet for transactions, miner distribution and general debugging 
-  link: https://diode.io/testnet/#/
+  link: http://localhost:3000/testnet/#/
 
 - title: 'Testnet Status'
   description: >-

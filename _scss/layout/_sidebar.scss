@@ -7,10 +7,53 @@
  **/
 
 aside.site-sidebar {
+  h3 {
+    text-transform: uppercase;
+  }
+
+
+  input {
+    // transition: border-width 0.3s linear;
+    &.active {
+      outline: solid 1px green;
+      border-color: green;
+      background-color: rgb(185, 255, 185);
+    }
+
+    &.notfound {
+      outline: solid 1px orange;
+      border-color: orange;
+      background-color: rgb(255, 230, 184);
+    }
+  }
+
+  ul {
+    padding: 2px 0px;
+    li {
+      padding: 5px 0 5px 10px;
+    }
+
+    li.current {
+      line-height: 1.2em;
+      font-weight: bold;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: $primary;
+    }
+
+    li.matching-item {
+      box-shadow: 0 0 3pt 3pt  rgb(99, 212, 99);
+      border-radius: 20px;
+    }
+
+    li.non-matching-item a {
+      text-decoration: line-through red 2px;
+    }
+  }
 
   // Widget
   .widget {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 
     // Widget Header
     header.widget-header {
@@ -24,143 +67,5 @@ aside.site-sidebar {
         text-transform: uppercase;
       }
     }
-
   }
-
-  // Categories Widget
-  .categories-widget {
-    .widget-content {
-
-      ul.categories-box {
-        li {
-          a {
-            display: block;
-            padding: 20px 30px;
-            color: $global-text;
-            border-bottom: 1px solid $sidebar-header;
-
-            .cat-count {
-              float: right;
-              margin-top: -3px;
-              padding: 5px 6px;
-              border-radius: 3px;
-              background: $sidebar-header;
-              font-size: 0.6875rem;
-              transition: color, background $transition-links $transition-links-type;
-            }
-
-            &:hover {
-              color: $primary;
-
-              .cat-count {
-                color: $white;
-                background: $primary;
-              }
-            }
-
-          }
-
-          &:last-child {
-            a {
-              border-bottom: 0;
-            }
-          }
-
-        }
-      }
-
-    }
-  }
-
-  // Tags Cloud
-  .tags-cloud-widget {
-    .widget-content {
-
-    // Silence is Golden
-
-    }
-  }
-
-  // Newsletter Widget
-  .newsletter-widget {
-    .widget-content {
-
-      form.newsletter-email-signup {
-        .hs-form-required {
-          display: none;
-        }
-
-        .field-group, .hs-form-field {
-          margin-bottom: 20px;
-
-          input {
-            border-width: 2px;
-            padding: 20px;
-          }
-
-          label {
-            // padding-bottom: 1em;
-            // display: none;
-          }
-        }
-
-        .button-subscribe {
-          padding: 20px;
-          text-transform: uppercase;
-          letter-spacing: 0.08rem;
-        }
-
-        p {
-          margin-top: 10px;
-        }
-      }
-
-    }
-  }
-
-}
-
-// About Widget
-.author-widget {
-
-  .widget-content {
-
-    .head {
-      align-items: center;
-    }
-
-    img {
-      max-width: 150px;
-    }
-
-    .info {
-      display: block;
-      position: relative;
-      clear: both;
-
-      .author-name {
-        font-size: 1.25rem;
-        color: $sidebar-title;
-        text-transform: uppercase;
-        margin-bottom: 6px;
-      }
-
-      .author-info {
-        color: $simple-gray;
-      }
-
-      hr.medium {
-        float: left;
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
-
-    }
-
-    .author-text {
-      font-size: 0.8rem;
-    }
-
-  }
-
 }

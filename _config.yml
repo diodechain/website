@@ -70,9 +70,9 @@ navigation:
 - title: Blog
   link: /blog/
 - title: Docs
-  link: /docs.html
+  link: /docs/
 - title: FAQ
-  link: https://diode.io/diode/Diode-Frequently-Asked-Questions-19276/
+  link: /diode/Diode-Frequently-Asked-Questions-19276/
 - title: <i class="fi flaticon-telegram"></i>
   link: https://t.me/diode_chain
   target: _blank
@@ -180,7 +180,9 @@ team-description: >-
 #####################################
 #############   Footer   ############
 #####################################
-footer-description: 
+footer-description: >-
+  <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a><br/>
+  Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a>
 footer-copyright-text: DIODE
 footer-copyright-url: https://diode.io/
 footer-copyright-year: 2020
@@ -195,12 +197,20 @@ collections:
     permalink: /:categories/:title-:short_year:y_day/
   team:
     output: true 
+  docs:
+    output: true 
 
 defaults:
   - scope:
-      path: ""
+      path: "_team"
       type: team
     values:
       layout: postlist
       tagline: All Articles By
       type: team
+  - scope:
+      path: "_docs"
+      type: docs
+    values:
+      layout: docs
+      type: docs

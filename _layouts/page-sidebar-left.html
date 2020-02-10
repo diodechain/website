@@ -1,42 +1,30 @@
-<!DOCTYPE html >
-<html lang="{{ site.lang }}">
+---
+layout: default
+---
+{% include header-page.html %}
 
-  {% include head.html %}
+<!-- Page Section -->
+<section class="site-section blog-section page-layout" id="start">
+  <div class="container">
 
-  <body>
+    <!-- Page Layout -->
+    <div class="row">
 
-    {% include header-page.html %}
+      <!-- Sidebar -->
+      <div class="col-md-4 hidden-xs hidden-sm">
 
-    <!-- Page Section -->
-    <section class="site-section blog-section page-layout" id="start">
-      <div class="container">
-
-        <!-- Page Layout -->
-        <div class="row">
-
-          <!-- Sidebar -->
-          <div class="col-md-4 hidden-xs hidden-sm">
-
-            {% include sidebar.html %}
-
-          </div>
-
-          <!-- Content -->
-          <div class="col-md-8 blog-articles-container">
-
-            {{ content }}
-
-          </div>
-
-        </div>
+        {% include sidebar.html %}
 
       </div>
-    </section>
 
-    {% include footer.html %}
+      <!-- Content -->
+      <div class="col-md-8 blog-articles-container">
 
-    {% include scripts.html %}
+        {{ content }}
 
-  </body>
+      </div>
 
-</html>
+    </div>
+
+  </div>
+</section>

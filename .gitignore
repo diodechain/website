@@ -3,3 +3,4 @@ resources/
 .vscode/
 _site/
 .history/
+*.xcf
