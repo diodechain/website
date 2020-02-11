@@ -47,7 +47,7 @@ In a perfect economy ...
 
 
 
-![](/images/blog/V-Slide1.png)
+![](/images/blog/V-Slide1.jpg)
 
 #### The monopoly problem, hyperloop edition
 * Elon Musk wants to buy a row of 10000 farms, to use the land to build a hyperloop
@@ -55,7 +55,7 @@ In a perfect economy ...
 
 
 
-![](/images/blog/V-Slide2.png)
+![](/images/blog/V-Slide2.jpg)
 
 #### Harberger taxes
 * For any asset, the owner must specify a price at which they are willing to sell the asset

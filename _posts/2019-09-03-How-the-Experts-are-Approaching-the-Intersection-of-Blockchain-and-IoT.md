@@ -4,7 +4,7 @@ date: 2019-09-03 14:06
 categories: [Blockchain]
 tags: [Blockchain, IoT]
 author: Greg Belcher
-image: IOT-Industry1.png
+image: IOT-Industry1.jpg
 ---
 
 Blockchain and Internet of Things (IoT) technologies have each received a lot of attention from industry researchers and investors alike over the past few years. However, it is only recently that the two technologies have begun to be considered together allowing participants to reimagine the potential for both, blockchain and IoT.
