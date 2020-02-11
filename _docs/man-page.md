@@ -73,10 +73,8 @@ COMMANDS
             Publishing a local web-server through diode
             diode publish -public 80:80
 
-<!-- TODO -->
-            Publishing SSL to everyone in fleet->access[]
+            Publishing SSL to everyone in fleet->accessWhitelist[_device][_client]
             diode publish -protected 22:22
-<!-- -->
 
             Publishing SSL only to specified addresses
             diode publish -private 22:22,0xpeter,0xdominic -private 8080:8080,0xpeter,0xdominic
