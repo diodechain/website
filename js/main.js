@@ -151,6 +151,15 @@
     });
 
     /**
+     * Documentation navigation
+     */
+    let $heads = $(".toc-widget h3")
+    $heads.click(function() {
+      console.log("click")
+      $(this).parent().toggleClass("folded")
+    })
+
+    /**
      * Documentation search
      */
     let $items = $(".toc-widget li")

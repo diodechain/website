@@ -21,14 +21,15 @@ class: docs
                 <!-- Docs Section -->
                 <section class="site-section docs-section" id="docs">
                     <!-- Section Heading -->
-                    <div class="row">
-                        <header class="col section-header text-center">
-                            <h2>{{ page.title }}</h2>
+                    <div class="row header-row">
+                        <header class="col-sm-10 section-header text-center">
+                            <div class="edit">
+                                <h2>{{ page.title }}</h2>
+                                <a href="https://github.com/diodechain/website/edit/master/{{ page.path }}">Edit</a>
+                            </div>
                             <hr class="normal">
-                        </header>
-                        <div class="col text-center">
                             <p>{{ page.tagline }}</p>
-                        </div>
+                        </header>
                     </div>
                     {{ content }}
                 </section>

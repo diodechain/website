@@ -6,65 +6,96 @@
  *
  **/
 
-aside.site-sidebar {
-  h3 {
-    text-transform: uppercase;
-  }
+.col-sidebar {
+  background-color: $light-blue;
 
-
-  input {
-    // transition: border-width 0.3s linear;
-    &.active {
-      outline: solid 1px green;
-      border-color: green;
-      background-color: rgb(185, 255, 185);
+  aside.site-sidebar {
+    h3 {
+      &:hover {
+        color: black;
+      }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // font-weight: normal;
+      margin: 0.2em 0;
+      color: $secondary;
+      cursor: pointer;
+      text-transform: uppercase;
     }
 
-    &.notfound {
-      outline: solid 1px orange;
-      border-color: orange;
-      background-color: rgb(255, 230, 184);
-    }
-  }
 
-  ul {
-    padding: 2px 0px;
-    li {
-      padding: 5px 0 5px 10px;
-    }
+    input {
+      // transition: border-width 0.3s linear;
+      &.active {
+        outline: solid 1px green;
+        border-color: green;
+        background-color: rgb(185, 255, 185);
+      }
 
-    li.current {
-      line-height: 1.2em;
-      font-weight: bold;
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-decoration-color: $primary;
+      &.notfound {
+        outline: solid 1px orange;
+        border-color: orange;
+        background-color: rgb(255, 230, 184);
+      }
     }
 
-    li.matching-item {
-      box-shadow: 0 0 3pt 3pt  rgb(99, 212, 99);
-      border-radius: 20px;
+    .folded {
+      span.arrow {
+        transform: rotate(180deg)
+      }
+
+      ul {
+        display: none;
+      }
     }
 
-    li.non-matching-item a {
-      text-decoration: line-through red 2px;
+    span.arrow {
+      transition: transform .2s linear, -webkit-transform .2s linear;
     }
-  }
 
-  // Widget
-  .widget {
-    margin-bottom: 20px;
+    ul {
+      padding: 0px;
+      li {
+        a {
+          display: block;
+          height: 1.1em;
+        }
+        padding: 0 0 5px 0px;
+      }
 
-    // Widget Header
-    header.widget-header {
-      padding: 24px 30px;
-      color: $sidebar-title;
-      margin-bottom: 30px;
-      background-color: $sidebar-header;
+      li.current {
+        line-height: 1.2em;
+        font-weight: bold;
+        text-decoration-thickness: 2px;
+        text-decoration-color: $primary;
+      }
 
-      h4.widget-title {
-        font-size: 1.25rem;
-        text-transform: uppercase;
+      li.matching-item {
+        box-shadow: 0 0 3pt 3pt  rgb(99, 212, 99);
+        border-radius: 20px;
+      }
+
+      li.non-matching-item a {
+        text-decoration: line-through red 2px;
+      }
+    }
+
+    // Widget
+    .widget {
+      margin-bottom: 20px;
+
+      // Widget Header
+      header.widget-header {
+        padding: 24px 30px;
+        color: $sidebar-title;
+        margin-bottom: 30px;
+        background-color: $sidebar-header;
+
+        h4.widget-title {
+          font-size: 1.25rem;
+          text-transform: uppercase;
+        }
       }
     }
   }

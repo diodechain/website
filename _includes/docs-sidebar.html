@@ -18,8 +18,11 @@
     <div class="widget toc-widget">
         <div class="widget-content">
             {% for group in groups %}
-            <p>
-                <h3>{{ group.name }}</h3>
+            <div class="group">
+                <h3>
+                    {{ group.name }}
+                    <span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span>
+                </h3>
                 <ul>
                     {% for doc in group.items %}
                     <li
@@ -30,7 +33,7 @@
                     ><a href="{{ doc.url }}">{{ doc.title }}</a></li>
                     {% endfor %}
                 </ul>
-            </p>
+            </div>
             {% endfor %}
         </div>
     </div>
