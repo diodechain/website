@@ -33,33 +33,61 @@
                 Fleet Contract:
                 <account-link :hash="contract" :length="50"></account-link>
                 <hr />
-                <h3>Known Fleet Devices</h3>
-                <table class="data">
-                  <tr>
-                    <th>Device ID</th>
-                    <th>Fleet Member</th>
-                  </tr>
-                  <tr v-for="device in devices">
-                    <td><% device.id %></td>
-                    <td>
-                      <% device.white %>
-                      <button
-                        v-if="device.white==false"
-                        v-on:click="whitelistDevice(device.id, true)"
-                      ><img v-show="isDeviceSubmited(device)" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Whitelist!</span></button>
-                      <button
-                        v-else
-                        v-on:click="whitelistDevice(device.id, false)"
-                        ><img v-show="submitDevices[device.id]" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Dewhitelist</span></button>
-                    </td>
-                  </tr>
-                </table>
                 <div>
-                  <input type="text" v-model="deviceId" placeholder="0x1234556..." />
-                  <button
-                    v-on:click="addDevice(deviceId)"
-                    :disabled="!web3.utils.isAddress(deviceId)"
-                  >Add Device</button>
+                  <h3>Known Fleet Devices</h3>
+                  <table class="data">
+                    <tr>
+                      <th>Device ID</th>
+                      <th>Client ID</th>
+                      <th>Fleet Member</th>
+                    </tr>
+                    <tr v-for="device in devices" :key="device.id">
+                      <td>
+                        <% device.id %>
+                        <!-- force rerender due to we didn't watch the device.access deeply -->
+                        <span style="displey:hidden"><% device.rerender %></span>
+                      </td>
+                      <td>
+                        <p v-for="access in device.access" :key="access.id">
+                          <% access.id %> &nbsp;
+                          <% access.white %> &nbsp;
+                          <button
+                          v-if="access.white==false"
+                          v-on:click="accessDevice(device.id, access.id, true)"
+                          :disabled="submitDevices[device.id+access.id]"
+                          ><img v-show="submitDevices[device.id+access.id]" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Whitelist!</span></button>
+                          <button
+                            v-else
+                            v-on:click="accessDevice(device.id, access.id, false)"
+                            :disabled="submitDevices[device.id+access.id]"
+                            ><img v-show="submitDevices[device.id+access.id]" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Dewhitelist</span></button>
+                        </p>
+                        <input type="text" v-model="device.deviceId2" placeholder="0x1234556..." />
+                        <button
+                          v-on:click="addProtectedAccess(device.id, device.deviceId2)"
+                          :disabled="!web3.utils.isAddress(device.deviceId2)"
+                        >Add Protected Access</button>
+                      </td>
+                      <td>
+                        <% device.white %>
+                        <button
+                          v-if="device.white==false"
+                          v-on:click="whitelistDevice(device.id, true)"
+                        ><img v-show="isDeviceSubmited(device)" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Whitelist!</span></button>
+                        <button
+                          v-else
+                          v-on:click="whitelistDevice(device.id, false)"
+                          ><img v-show="submitDevices[device.id]" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Dewhitelist</span></button>
+                      </td>
+                    </tr>
+                  </table>
+                  <div>
+                    <input type="text" v-model="deviceId" placeholder="0x1234556..." />
+                    <button
+                      v-on:click="addDevice(deviceId)"
+                      :disabled="!web3.utils.isAddress(deviceId)"
+                    >Add Device</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -82,9 +110,10 @@ var FleetRegistration = Vue.component("fleet_registration", {
       contracts: [],
       error: undefined,
       deviceId: undefined,
-      deviceId2: undefined,
+      clientId: undefined,
       devices: {},
-      accesses: [],
+      accesses: {},
+      // accessesIds: {},
       submitFleet: false,
       submitDevices: {},
     };
@@ -99,6 +128,11 @@ var FleetRegistration = Vue.component("fleet_registration", {
     }
     if (localStorage.accesses) {
       this.accesses = JSON.parse(localStorage.accesses);
+      for (deviceId in this.accesses) {
+        for (clientId of this.accesses[deviceId]) {
+          this.addProtectedAccess(deviceId, clientId);
+        }
+      }
     }
     setInterval(() => {
       if (!this.enabled && window.ethereum.selectedAddress != null) {
@@ -111,8 +145,10 @@ var FleetRegistration = Vue.component("fleet_registration", {
       if (this.devices[id] || !web3.utils.isAddress(id)) return;
       let dev = {
         id,
+        access: {},
         white: undefined,
-        access: undefined
+        deviceId2: undefined,
+        rerender: false
       };
       this.$set(this.devices, id, dev);
       this.reloadDevice(id);
@@ -122,10 +158,41 @@ var FleetRegistration = Vue.component("fleet_registration", {
       }
       localStorage.devices = ids.join(",");
     },
+    addProtectedAccess: function(deviceId, clientId) {
+      if (!this.devices[deviceId] || !web3.utils.isAddress(deviceId) || !web3.utils.isAddress(clientId) || deviceId === clientId) return;
+      let access = {
+        id: clientId,
+        white: undefined,
+        submitted: false
+      };
+      let device = this.devices[deviceId]
+      if (device.access[clientId.toLowerCase()]) {
+        return;
+      }
+      let dev;
+      device.access[clientId.toLowerCase()] = access;;
+      device.rerender = !device.rerender;
+      this.$set(this.devices, deviceId, device);
+      this.reloadProtectedAccess(deviceId, clientId);
+      let ids = [];
+      for (dev in device.access) {
+        ids.push(dev);
+      }
+      this.accesses[deviceId] = ids;
+      localStorage.accesses = JSON.stringify(this.accesses);
+    },
     reloadDevice: function(id) {
       this.isWhiteListed(id, white => {
         this.devices[id].white = web3.utils.hexToNumber(white) ? true : false;
         this.$set(this.devices, id, this.devices[id]);
+      });
+    },
+    reloadProtectedAccess: function(deviceId, clientId) {
+      this.isAccessWhiteListed(deviceId, clientId, white => {
+        let device = this.devices[deviceId];
+        device.access[clientId].white = web3.utils.hexToNumber(white) ? true : false;
+        device.rerender = !device.rerender;
+        this.$set(this.devices, deviceId, device);
       });
     },
     enable: function() {
@@ -180,6 +247,11 @@ var FleetRegistration = Vue.component("fleet_registration", {
       if (ret.indexOf(FleetHash) >= 0) {
         this.contracts = [this.generateContractAddress(ret.indexOf(FleetHash))];
         for (id in this.devices) this.reloadDevice(id);
+        for (deviceId in this.accesses) {
+          for (clientId of this.accesses[deviceId]) {
+            this.reloadProtectedAccess(deviceId, clientId);
+          }
+        }
       } else {
         this.contracts = [];
       }
@@ -237,9 +309,9 @@ var FleetRegistration = Vue.component("fleet_registration", {
       if (!this.contracts[0]) return;
       CallFleet("deviceWhitelist", this.contracts[0], [device], callback);
     },
-    hasAccess(device, user, callback) {
+    isAccessWhiteListed(device, clientId, callback) {
       if (!this.contracts[0]) return;
-      CallFleet("accessWhitelist", this.contracts[0], [device, user], callback);
+      CallFleet("accessWhitelist", this.contracts[0], [device, clientId], callback);
     },
     whitelistDevice: async function(device, white) {
       let contract = this.contracts[0];
@@ -276,6 +348,45 @@ var FleetRegistration = Vue.component("fleet_registration", {
               return;
           }
           this.$set(this.submitDevices, device, false);
+        }
+      );
+    },
+    accessDevice: async function(device, client, white) {
+      let contract = this.contracts[0];
+      let call = web3.eth.abi.encodeFunctionCall(
+        fleetMethods["SetAccessWhitelist"],
+        [device, client, white]
+      );
+      let dev = this.devices[device];
+      this.$set(this.submitDevices, device+client, true);
+      window.ethereum.sendAsync(
+        {
+          method: "eth_sendTransaction",
+          params: [
+            { from: this.account, to: contract, data: call, gasPrice: 0 }
+          ],
+          from: this.account
+        },
+        (err, ret) => {
+          if (err) {
+            console.log("[AccessDevice] error: ", err);
+            this.$set(this.submitDevices, device+client, false);
+            return;
+          }
+          if (ret.result) {
+            let { result } = ret;
+            this.isTxConfirmed(result)
+              .then(function(tx) {
+                this.$set(this.submitDevices, device+client, false);
+                this.reloadProtectedAccess(device, client);
+              }.bind(this))
+              .catch(function(err) {
+                console.log("[AccessDevice] error: ", err);
+                this.$set(this.submitDevices, device+client, false);
+              }.bind(this));
+              return;
+          }
+          this.$set(this.submitDevices, device+client, false);
         }
       );
     },

@@ -23,6 +23,9 @@ var fleetMethods = {
         inputs: [{
             type: "address",
             name: "device"
+        }, {
+            type: "address",
+            name: "client"
         }],
         outputs: [{ name: 'access', type: 'boolean' }]
     },
