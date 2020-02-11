@@ -228,12 +228,11 @@ table {
 
 .parallax .cover img {
   position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
-  width: auto;
-  min-width: 100%;
-  min-height: 120%;
-  max-width: inherit;
-  max-height: 140%;
+  min-height: 100%;
+  top: 0px;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
       -ms-transform: translate(-50%, 0);

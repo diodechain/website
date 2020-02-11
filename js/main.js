@@ -78,7 +78,7 @@
     $('.blog-single-page .article-content a').attr("target", "_blank");
 
     /**
-     * Main page animated text
+     * About page animated text
      */
     var txt = 'Web2 security is broken';
     var tagline = document.getElementById("tagline")
