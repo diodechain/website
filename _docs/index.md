@@ -15,12 +15,12 @@ docs:
 - title: 'Testnet Explorer'
   description: >-
     Explore the testnet for transactions, miner distribution and general debugging 
-  link: http://localhost:3000/testnet/#/
+  link: /testnet/
 
 - title: 'Testnet Status'
   description: >-
     Check the current testnet uptime for two of our client devices in Berlin in Taipei
-  link: https://diode.io/status/
+  link: /status/
 
 - title: '[DEV] Diode Server Documentation'
   description: >-
