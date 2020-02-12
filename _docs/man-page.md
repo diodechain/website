@@ -1,6 +1,6 @@
 ---
-title: Synopsis
-category: Go Client
+title: Go Client
+category: References
 ---
 
 Source [here](https://hackmd.io/OEZ26_WMQZS1fa_t2yLB4Q?both)

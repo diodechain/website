@@ -2481,27 +2481,27 @@ em, i {
 }
 
 h1 {
-  font-size: 3.75rem;
+  font-size: 3.75em;
 }
 
 h2 {
-  font-size: 2.1875rem;
+  font-size: 2.1875em;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.25em;
 }
 
 h4 {
-  font-size: 1.15rem;
+  font-size: 1.15em;
 }
 
 h5 {
-  font-size: 1rem;
+  font-size: 1em;
 }
 
 h6 {
-  font-size: 0.85rem;
+  font-size: 0.85em;
 }
 
 p {
@@ -3287,12 +3287,20 @@ header.site-header .arrow-down-section .arrow-down i:before {
 }
 
 div.highlight {
-  background-color: #404040;
+  background-color: #6d6d6d;
   color: lightgray;
   padding: 0.2em;
   font-size: 0.8em;
   overflow: auto;
+  margin: 1em auto;
+  padding: 1em 0em 1em .5em;
   font-family: monospace;
+}
+
+code.highlighter-rouge {
+  font-size: 0.9em;
+  background-color: #6d6d6d;
+  color: lightgray;
 }
 
 .highlight {
@@ -3367,11 +3375,11 @@ div.highlight {
 }
 
 .highlight pre {
-  background-color: #404040;
+  background-color: #6d6d6d;
 }
 
 .highlight .hll {
-  background-color: #404040;
+  background-color: #6d6d6d;
 }
 
 .highlight .c {
@@ -3986,6 +3994,53 @@ section.docs-layout section.docs-section {
   section.docs-layout section.docs-section {
     font-size: 16px;
   }
+}
+
+section.docs-layout section.docs-section h1 {
+  font-size: 2em;
+}
+
+section.docs-layout section.docs-section h1:after, section.docs-layout section.docs-section h2:after, section.docs-layout section.docs-section h3:after {
+  content: ' ';
+  display: block;
+  background-color: #f4f8f9;
+  height: 0.075em;
+  position: relative;
+  top: 0.2em;
+}
+
+section.docs-layout section.docs-section h2 {
+  font-size: 1.8em;
+}
+
+section.docs-layout section.docs-section h3 {
+  font-size: 1.6em;
+}
+
+section.docs-layout section.docs-section h4 {
+  font-size: 1.4em;
+}
+
+section.docs-layout section.docs-section h5 {
+  font-size: 1.2em;
+}
+
+section.docs-layout section.docs-section h6 {
+  font-size: 1em;
+}
+
+section.docs-layout section.docs-section h1, section.docs-layout section.docs-section h2, section.docs-layout section.docs-section h3, section.docs-layout section.docs-section h4, section.docs-layout section.docs-section h5, section.docs-layout section.docs-section h6 {
+  margin: 0.8em 0;
+}
+
+section.docs-layout section.docs-section hr.normal {
+  margin: 5px auto;
+}
+
+section.docs-layout section.docs-section ul {
+  margin: 0em 0em 1em 2em;
+  list-style: disc;
+  font-size: 0.9em;
 }
 
 section.docs-layout section.docs-section table {

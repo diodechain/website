@@ -1,5 +1,4 @@
 <!-- Docs Sidebar -->
-{% assign groups = site.docs | group_by: "category" %}
 <aside class="site-sidebar">
     <div class="widget search-widget">
         <div class="widget-content">
@@ -17,6 +16,7 @@
 
     <div class="widget toc-widget">
         <div class="widget-content">
+            {% assign groups = site.docs | sort: "category" | group_by: "category" %}
             {% for group in groups %}
             <div class="group">
                 <h3>
@@ -24,7 +24,7 @@
                     <span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span>
                 </h3>
                 <ul>
-                    {% for doc in group.items %}
+                    {% for doc in group.items | sort: "title" %}
                     <li
                         id="{{ doc.url | slugify }}"
                         {% if doc.url == page.url %}

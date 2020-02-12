@@ -46,6 +46,36 @@
     @media (max-width: 992px) {
       font-size: 16px;
     }
+
+    h1 { font-size: 2em }
+    h1:after, h2:after, h3:after { 
+      content: ' ';
+      display: block;
+      background-color: $light-blue;
+      height: 0.075em;
+      position: relative;
+      top: 0.2em;
+
+    }
+    h2 { font-size: 1.8em }
+    h3 { font-size: 1.6em }
+    h4 { font-size: 1.4em }
+    h5 { font-size: 1.2em }
+    h6 { font-size: 1em }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0.8em 0;
+    }
+
+    hr.normal {
+      margin: 5px auto;
+    }
+
+    ul {
+      margin: 0em 0em 1em 2em;
+      list-style: disc;
+      font-size: 0.9em;
+    }
     
     table {
       border: 1px solid black;

@@ -1,16 +1,23 @@
 div.highlight {
-    background-color: #404040;
+    background-color: #6d6d6d;
     color: lightgray;
     padding: 0.2em;
     font-size: 0.8em;
     overflow: auto;
-//     margin: 1em;
+    margin: 1em auto;
+    padding: 1em 0em 1em .5em;
     font-family: monospace;
 }
 
+code.highlighter-rouge {
+    font-size: 0.9em;
+    background-color: #6d6d6d;
+    color: lightgray;
+}
+
 .highlight {
-    pre { background-color: #404040 }
-    .hll { background-color: #404040 }
+    pre { background-color: #6d6d6d }
+    .hll { background-color: #6d6d6d }
     .c { color: #999999; font-style: italic } /* Comment */
     .err { color: #a61717; background-color: #e3d2d2 } /* Error */
     .g { color: #d0d0d0 } /* Generic */

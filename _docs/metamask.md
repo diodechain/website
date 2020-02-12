@@ -1,15 +1,15 @@
 ---
 title: Configure Metamask
-category: ETH Developer
+category: Guides
 ---
 
 When you want to interact with the Diode testnet from within your browser, you can do so on the <a href="https://diode.io/testnet">testnet browser</a>. To make MetaMask recognize this testnet you have to add it to your MetaMask installation through these steps.
 
-## Get Metamask
+# Get Metamask
 
 If you're not sure head over to https://metamask.io/ and get metamask from there. 
 
-## Add Network Settings
+# Add Network Settings
 
 After install metamask let's there should be a little fox icon in the top right of your browser window. Clicking on that you should see the main metamask interface as show below.
 
