@@ -45,7 +45,7 @@
                       <td>
                         <% device.id %>
                         <!-- force rerender due to we didn't watch the device.access deeply -->
-                        <span style="displey:hidden"><% device.rerender %></span>
+                        <span style="display:none"><% device.rerender %></span>
                       </td>
                       <td>
                         <p v-for="access in device.access" :key="access.id">
