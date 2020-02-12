@@ -5,7 +5,7 @@
     </div>
     <div v-if="!enabled" class="column">
       <div>To manage your fleets have to Enable MetaMask on this site.</div>
-      <button v-on:click="enable()">Enable MetaMask</button>
+      <button class="button" v-on:click="enable()">Enable MetaMask</button>
       <div v-if="error" class="error"><% error %></div>
     </div>
     <div v-else class="column">
@@ -26,7 +26,7 @@
             <div v-if="contracts == undefined">Loading...</div>
             <div v-else-if="contracts.length == 0">
               No contracts identified.
-              <button v-on:click="createFleet()"><img v-show="submitFleet" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Create New Fleet</span></button>
+              <button class="button" v-on:click="createFleet()"><img v-show="submitFleet" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Create New Fleet</span></button>
             </div>
             <div v-else>
               <div v-for="contract in contracts">
@@ -52,11 +52,13 @@
                           <% access.id %> &nbsp;
                           <% access.white %> &nbsp;
                           <button
+                          class="button"
                           v-if="access.white==false"
                           v-on:click="accessDevice(device.id, access.id, true)"
                           :disabled="submitDevices[device.id+access.id]"
                           ><img v-show="submitDevices[device.id+access.id]" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Whitelist!</span></button>
                           <button
+                            class="button"
                             v-else
                             v-on:click="accessDevice(device.id, access.id, false)"
                             :disabled="submitDevices[device.id+access.id]"
@@ -64,17 +66,20 @@
                         </p>
                         <input type="text" v-model="device.deviceId2" placeholder="0x1234556..." />
                         <button
+                          class="button"
                           v-on:click="addProtectedAccess(device.id, device.deviceId2)"
                           :disabled="!web3.utils.isAddress(device.deviceId2)"
                         >Add Protected Access</button>
                       </td>
                       <td>
-                        <% device.white %>
+                        <% device.white %>&nbsp;
                         <button
+                          class="button"
                           v-if="device.white==false"
                           v-on:click="whitelistDevice(device.id, true)"
                         ><img v-show="isDeviceSubmited(device)" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Whitelist!</span></button>
                         <button
+                          class="button"
                           v-else
                           v-on:click="whitelistDevice(device.id, false)"
                           ><img v-show="submitDevices[device.id]" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Dewhitelist</span></button>
@@ -84,6 +89,7 @@
                   <div>
                     <input type="text" v-model="deviceId" placeholder="0x1234556..." />
                     <button
+                      class="button"
                       v-on:click="addDevice(deviceId)"
                       :disabled="!web3.utils.isAddress(deviceId)"
                     >Add Device</button>

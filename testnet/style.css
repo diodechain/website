@@ -267,3 +267,68 @@ figure {
 .list-complete-leave-active {
     position: absolute;
 }
+
+.button {
+    background-color: white;
+    border-color: #dbdbdb;
+    border-width: 1px;
+    color: #363636;
+    cursor: pointer;
+    justify-content: center;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(0.5em - 1px);
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .button strong {
+    color: inherit;
+  }
+  
+  .button .icon, .button .icon.is-small, .button .icon.is-medium, .button .icon.is-large {
+    height: 1.5em;
+    width: 1.5em;
+  }
+  
+  .button .icon:first-child:not(:last-child) {
+    margin-left: calc(-0.5em - 1px);
+    margin-right: 0.25em;
+  }
+  
+  .button .icon:last-child:not(:first-child) {
+    margin-left: 0.25em;
+    margin-right: calc(-0.5em - 1px);
+  }
+  
+  .button .icon:first-child:last-child {
+    margin-left: calc(-0.5em - 1px);
+    margin-right: calc(-0.5em - 1px);
+  }
+  
+  .button:hover, .button.is-hovered {
+    border-color: #b5b5b5;
+    color: #363636;
+  }
+  
+  .button:focus, .button.is-focused {
+    border-color: #3273dc;
+    color: #363636;
+  }
+  
+  .button:focus:not(:active), .button.is-focused:not(:active) {
+    box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+  }
+  
+  .button:active, .button.is-active {
+    border-color: #4a4a4a;
+    color: #363636;
+  }
+
+.button[disabled] {
+  background-color: white;
+  border-color: #dbdbdb;
+  box-shadow: none;
+  opacity: 0.5;
+}

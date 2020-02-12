@@ -5,7 +5,7 @@
     </div>
     <div v-if="!enabled" class="column">
       <div>To register a new name or change an existing registration you have to Enable MetaMask on this site.</div>
-      <button v-on:click="enable()">Enable MetaMask</button>
+      <button class="button" v-on:click="enable()">Enable MetaMask</button>
       <div v-if="error" class="error"><% error %></div>
     </div>
     <div class="column">
@@ -36,6 +36,7 @@
                     v-if="enabled && (valueToAddress(name.owner)==account || valueToAddress(name.owner) == undefined)"
                   >
                     <button
+                      class="button"
                       v-on:click="registerName(name.name, deviceId[name.name])"
                       :disabled="!web3.utils.isAddress(deviceId[name.name])"
                     >
@@ -57,7 +58,7 @@
             <hr />
             <div v-if="enabled">
               <input type="text" v-model="newName" placeholder="some-name" />
-              <button v-on:click="addName(newName)" :disabled="newName.length <= 7">Add Name</button>
+              <button class="button" v-on:click="addName(newName)" :disabled="newName.length <= 7">Add Name</button>
             </div>
           </td>
         </tr>
