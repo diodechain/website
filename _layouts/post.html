@@ -15,7 +15,7 @@ layout: page
         {% assign author = site.team | where: 'name', page.author | first %}
         <div class="article-author">
           <div class="avatar" style="background-image: url('images/avatars/{{ author.avatar }}'"></div>
-          by <a href="{{ author.url }}">{{ author.name }}</a> 
+          by <a href=".{{ author.url }}">{{ author.name }}</a> 
           | {{ page.date | date: "%B %d, %Y" }}
           | Category: <a href="{{ site.tagurl }}{{ page.tags | first | slugify }}" class="category">#{{ page.tags | first }}</a>
 
