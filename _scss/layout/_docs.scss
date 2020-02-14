@@ -133,8 +133,13 @@
         border-style: dashed;
 
         h3 {
-            margin-bottom: 0.5em;
-            color: $primary;
+          margin-top: 0em;
+          margin-bottom: 0.5em;
+          color: $primary;
+          font-size: 1.2em;
+        }
+        h3::after {
+          display: none;
         }
         span {
             color: #5e5e5e;

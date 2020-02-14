@@ -4125,8 +4125,14 @@ section.docs-layout section.docs-section .docs-row .doc {
 }
 
 section.docs-layout section.docs-section .docs-row .doc h3 {
+  margin-top: 0em;
   margin-bottom: 0.5em;
   color: #F15C2E;
+  font-size: 1.2em;
+}
+
+section.docs-layout section.docs-section .docs-row .doc h3::after {
+  display: none;
 }
 
 section.docs-layout section.docs-section .docs-row .doc span {
