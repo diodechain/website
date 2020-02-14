@@ -3918,6 +3918,10 @@ section.offer-section .button {
   margin-bottom: 400px;
 }
 
+.taglist-post .img-wrap a {
+  width: 100%;
+}
+
 .taglist-post .img-wrap img {
   -o-object-fit: none;
      object-fit: none;
@@ -4560,6 +4564,10 @@ section.blog-section .blog-articles-container article.blog-article header.articl
   margin-bottom: 1em;
 }
 
+section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap a {
+  width: 100%;
+}
+
 section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.preview {
   -o-object-fit: cover;
      object-fit: cover;
@@ -4775,6 +4783,10 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
 
 section.blog-section .blog-articles-container article.blog-article .article-content h1, section.blog-section .blog-articles-container article.blog-article .article-content h2, section.blog-section .blog-articles-container article.blog-article .article-content h3, section.blog-section .blog-articles-container article.blog-article .article-content h4, section.blog-section .blog-articles-container article.blog-article .article-content h5, section.blog-section .blog-articles-container article.blog-article .article-content h6 {
   margin-bottom: 1em;
+}
+
+section.blog-section .blog-articles-container article.blog-article .article-content h2, section.blog-section .blog-articles-container article.blog-article .article-content h3, section.blog-section .blog-articles-container article.blog-article .article-content h4, section.blog-section .blog-articles-container article.blog-article .article-content h5, section.blog-section .blog-articles-container article.blog-article .article-content h6 {
+  margin-top: 1em;
 }
 
 section.blog-section .view-posts hr.normal {

@@ -196,6 +196,11 @@ section.blog-section {
           max-width: 100%;
           height: auto;
           margin-bottom: 1em;
+
+          a {
+            width: 100%;
+          }
+
           img.preview {
             object-fit: cover;
             height: 200px;
@@ -401,6 +406,9 @@ section.blog-section {
 
         h1, h2, h3, h4, h5, h6 {
           margin-bottom: 1em;
+        }
+        h2, h3, h4, h5, h6 {
+          margin-top: 1em;
         }
 
       }

@@ -3,6 +3,9 @@
     margin-bottom: 400px;
 
     .img-wrap {
+        a {
+            width: 100%;
+        }
         img {
             object-fit: none;
             height: 100px;
