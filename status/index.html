@@ -10,6 +10,7 @@ layout: ""
     <title>Diode℠ Testnet Status</title>
     <meta charset="utf-8">
     <!-- From example https://vuejs.org/v2/guide/computed.html -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-router"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -28,10 +29,13 @@ layout: ""
                 <div class="title"><% host.name %></div>
                 <div class="status"><% host.status %></div>
             </div>
-            <svg :view-box.camel="'0 0 ' + (host.data.length*4) + ' ' + 100" :transform="'scale(1 ' + Math.max(1, (host.data.length/250)) + ')'">
-                <line :x1="i*4" :x2="i*4" y1="1" y2="100" v-bind:class="status" v-for="(status, i) in host.data">
-                </line>
-            </svg>
+            <div @mouseover="mouseOver(event, host)" class="svg">
+                <div :style="{ left: left, top: top }" id="hover"><% descr %></div>
+                <svg :view-box.camel="'0 0 ' + (host.data.length*4) + ' ' + 100" :transform="'scale(1 ' + Math.max(1, (host.data.length/250)) + ')'">
+                    <line :x1="i*4" :x2="i*4" y1="1" y2="100" v-bind:class="status" v-for="(status, i) in host.data"></line>
+                    <line v-for="i in host.days" :x1="i*4" :x2="i*4" y1="1" y2="100" class="day"></line>
+                </svg>
+            </div>
             <div class="body">
                 <div class="info"><% Math.round(host.uptime*100000)/1000 %>% uptime</div>
                 <div class="info"><% host.longest %> minutes since last disconnect</div>
@@ -45,8 +49,31 @@ layout: ""
             el: '#app',
             data: {
                 hosts: {},
+                descr: '',
+                left: '0px',
+                top: '0px',
             },
-            delimiters: ["<%", "%>"]
+            delimiters: ["<%", "%>"],
+            methods: {
+                mouseOver: _.throttle(function(evt, host) {
+                    let div = evt.target.parentElement;
+                    while (div.className != 'svg') {
+                        div = div.parentElement;
+                    }
+
+                    let rect = div.getBoundingClientRect();
+                    let x = (evt.clientX - rect.left + 10);
+                    if (x + rect.left + 100 > document.body.clientWidth) {
+                        x = document.body.clientWidth - 100 - rect.left;
+                    }
+                    this.left = x + 'px';
+                    this.top = (evt.clientY - rect.top - 60) + 'px';
+                    
+                    x = (host.data.length*host.interval) * evt.layerX/rect.width;
+                    let t = new Date((host.start + x) * 1000);
+                    this.descr = t.toISOString().slice(5, 16);
+                }, 100)
+            }
         })
 
         let opt = {
@@ -72,15 +99,20 @@ layout: ""
             axios.get(url + "/" + name, opt).then(response => {
                 let up = 0;
                 let uptime = 0;
+                let interval = 60;
                 let start = response.data.start;
                 let end = Math.floor(Date.now() / 1000)
                 let data = []
+                let days = []
                 let status = "Unknown"
-                for (let i = 0; start + (i * 60) < end; i++) {
+                for (let i = 0; start + (i * interval) < end; i++) {
                     status = "Unknown"
+                    if (Math.round(start/interval + i) % 1440 == 0) {
+                        days.push(i)
+                    }
                     switch (response.data.data[i]) {
                         default:
-                            if (start + ((i + 1) * 60) >= end) {
+                            if (start + ((i + 1) * interval) >= end) {
                                 continue;
                             }
                             status = "Unknown";
@@ -106,9 +138,28 @@ layout: ""
                     }
                     data.push(status)
                 }
+                up = up / data.length;
+
+                let target = 1000;
+                let sampling = data.length > target;
+                if (sampling) {
+                    let samples = []
+                    let sample_rate = data.length/target;
+                    for (let i = 0; i < data.length; i += sample_rate) {
+                        samples.push(data[Math.round(i)])
+                    }
+                    interval = interval * sample_rate
+                    data = samples;
+                    days = days.map(i => i / sample_rate)
+                }
+
+
+                app.$set(app.hosts[name], 'start', start);
                 app.$set(app.hosts[name], 'data', data);
+                app.$set(app.hosts[name], 'days', days);
+                app.$set(app.hosts[name], 'interval', interval);
                 app.$set(app.hosts[name], 'status', status);
-                app.$set(app.hosts[name], 'uptime', up / data.length);
+                app.$set(app.hosts[name], 'uptime', up);
                 app.$set(app.hosts[name], 'longest', uptime);
                 setTimeout(() => refreshHost(name), 60000)
             })

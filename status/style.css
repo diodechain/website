@@ -29,6 +29,28 @@ svg {
     width: 100%;
 }
 
+.svg {
+    position: relative;
+}
+
+.svg:hover #hover {
+    display: block;
+}
+
+#hover {
+    display: none;
+    position: absolute;
+    min-width: 100px;
+    border: 1px #aaaaaa solid;
+    border-radius: 10px;
+    background-color: #ffffcc;
+    padding: 12px;
+    color: #000000;
+    font-size: 14px;
+    z-index: 1;
+}
+
+
 .host {
     text-align: left;
     margin: 5px;
@@ -85,4 +107,8 @@ line.Problem2 {
 }
 line.Slow {
     stroke: orange;
+}
+line.day {
+    stroke: rgba(0, 0, 0, 0.452);
+    stroke-width: 40;
 }
