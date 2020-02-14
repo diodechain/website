@@ -14,17 +14,17 @@ layout: page
         {%- if page.author %}
         {% assign author = site.team | where: 'name', page.author | first %}
         <div class="article-author">
-          <div class="avatar" style="background-image: url('{{ site.baseurl }}/images/avatars/{{ author.avatar }}'"></div>
+          <div class="avatar" style="background-image: url('images/avatars/{{ author.avatar }}'"></div>
           by <a href="{{ author.url }}">{{ author.name }}</a> 
           | {{ page.date | date: "%B %d, %Y" }}
-          | Category: <a href="{{ site.baseurl }}{{ site.tagurl }}{{ page.tags | first | slugify }}" class="category">#{{ page.tags | first }}</a>
+          | Category: <a href="{{ site.tagurl }}{{ page.tags | first | slugify }}" class="category">#{{ page.tags | first }}</a>
 
         </div>
         {% endif -%}
       
       </div>
       <div class="img-wrap">
-        <img img class="full" src="{{ site.baseurl }}/images/blog/{{ page.image }}" alt="Article Blog Image">
+        <img img class="full" src="images/blog/{{ page.image }}" alt="Article Blog Image">
       </div>
     </header>
 
@@ -42,11 +42,11 @@ layout: page
           {% assign tags_list = page.tags %}
             {% if tags_list.first[0] == null %}
               {% for tag in tags_list %}
-                <li><a href="{{ site.baseurl }}{{ site.tagurl }}{{ tag | slugify }}">#{{ tag }}</a></li>
+                <li><a href="{{ site.tagurl }}{{ tag | slugify }}">#{{ tag }}</a></li>
               {% endfor %}
             {% else %}
               {% for tag in tags_list %}
-                <li><a href="{{ site.baseurl }}{{ site.tagurl }}{{ tag[0] | slugify }}">#{{ tag[0] }}</a></li>
+                <li><a href="{{ site.tagurl }}{{ tag[0] | slugify }}">#{{ tag[0] }}</a></li>
               {% endfor %}
             {% endif %}
           {% assign tags_list = nil %}
@@ -69,32 +69,32 @@ layout: page
         <div class="social-icons box-content">
           <ul class="icons global-text-color-icons">
             <li>
-		    <a href="https://twitter.com/share?url={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}&text={{ page.title | url_encode }}" target="_blank">
+		    <a href="https://twitter.com/share?url={{ site.url }}{{ page.url | url_encode }}&text={{ page.title | url_encode }}" target="_blank">
                 <i class="fi flaticon-twitter-c"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}" target="_blank">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url | url_encode }}" target="_blank">
                 <i class="fi flaticon-linkedin-c"></i>
               </a>
             </li>
             <li>
-              <a href="https://telegram.me/share/url?url={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}" target="_blank">
+              <a href="https://telegram.me/share/url?url={{ site.url }}{{ page.url | url_encode }}" target="_blank">
                 <i class="fi flaticon-telegram-c"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}" target="_blank">
+              <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url | url_encode }}" target="_blank">
                 <i class="fi flaticon-facebook-c"></i>
               </a>
             </li>
             <li>
-              <a href="https://wa.me/?text={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}" target="_blank">
+              <a href="https://wa.me/?text={{ site.url }}{{ page.url | url_encode }}" target="_blank">
                 <i class="fi flaticon-whatsapp-c"></i>
               </a>
             </li>
             <li>
-              <input style="position: absolute; top: -9999px;" id="copy" type="text" value="{{ site.url }}{{ site.baseurl }}{{ page.url }}"/>
+              <input style="position: absolute; top: -9999px;" id="copy" type="text" value="{{ site.url }}{{ page.url }}"/>
               <a onclick="$('#copy').select(); document.execCommand('copy')">
                 <i class="pe-7s-paperclip"></i>
               </a>

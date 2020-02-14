@@ -7,7 +7,7 @@ plugins_dir:
   - jekyll-redirect-from
 
 # the base hostname & protocol for your site
-url: "https://diode.io"
+url: https://diode.io
 
 ####################################
 ######   Optional Features    ######
@@ -18,7 +18,7 @@ smooth-scroll: false
 #############   Tags    ############
 ####################################
 
-tagurl: '/blog/tags.html#'
+tagurl: 'blog/tags.html#'
 
 #######################################################
 #######################################################
@@ -52,27 +52,23 @@ header-secondary-button:
   url: https://eprint.iacr.org/2019/579.pdf
 
 
-# Offer Banner Link
-# Default link is a link to all Sera OnePage products
-banner-link: /signup
-
 ####################################
 ######  Global Navigation     ######
 ####################################
 
 navigation:
 - title: Home
-  link: /#home
+  link: #home
 - title: About
-  link: /about.html
+  link: about.html
 - title: Examples
-  link: /#features
+  link: #features
 - title: Blog
-  link: /blog/
+  link: blog/
 - title: Docs
-  link: /docs/
+  link: docs/
 - title: FAQ
-  link: /diode/Diode-Frequently-Asked-Questions-19276/
+  link: diode/Diode-Frequently-Asked-Questions-19276/
 - title: <i class="fi flaticon-telegram"></i>
   link: https://t.me/diode_chain
   target: _blank
@@ -194,11 +190,13 @@ footer-copyright-year: 2020
 collections:
   posts:
     output: true 
-    permalink: /:categories/:title-:short_year:y_day/
+    permalink: :categories/:title-:short_year:y_day/
   team:
     output: true 
+    permalink: team/:name.html
   docs:
     output: true 
+    permalink: docs/:name.html
 
 defaults:
   - scope:

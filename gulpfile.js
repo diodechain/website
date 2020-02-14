@@ -15,7 +15,7 @@ var messages    = {
  */
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
-    var args = ['build'];
+    var args = ['build', '--config', '_config.yml,_local.yml'];
     if (drafts) args = ['build', '--drafts'];
     return cp.spawn( jekyll , args, {stdio: 'inherit'})
         .on('close', done);

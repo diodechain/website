@@ -38,11 +38,14 @@
     var $current = null
     $nav_menu_link.each(function () {
       let href = $(this).attr('href')
-      if (!$current && location.pathname.includes(href)) {
+      let path = location.pathname.substr(1)
+      console.log(href, path, path.includes(href));
+      if (!$current && !path || (href && path.includes(href))) {
         $current = $(this);
         $(this).parent().addClass('current-menu-item');
       }
     })
+
 
     // Navigation Menu Link
     $nav_menu_link.on('click', function () {

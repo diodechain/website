@@ -32,21 +32,21 @@ The Diode server software is written in [Elixir](https://elixir-lang.org/), a fu
 
 But running our testnet and scaling up transaction processing last month we ran into another **bigger** problem. When running blocks with ~100 transactions, we saw that the block validation times skyrocketed. Instead of a few milliseconds, it was now taking 5 seconds and more to validate a block. Running profiling, we saw that most of the time was spent in the EVM crunching numbers. Elixir itself is running on a virtual machine called [BEAM](https://en.wikipedia.org/wiki/BEAM_(Erlang_virtual_machine)) and the Ethereum VM now on top of that. Having had some experience with [performance of low-level cryptographic functions written Elixir](https://elixirforum.com/t/ex-sha3-pure-elixir-implementation-of-sha3-and-keccak-1600-f/21943/8), we conducted a closer analysis. 
 
-![alt_text](/images/blog/November3.png "Tech Stack"){: .center-block }
+![alt_text](images/blog/November3.png "Tech Stack"){: .center-block }
 
 To focus purely on the CPU bound performance of the EVM, we constructed a new smart contract with one of our favourite functions. The very slow recursive fibonacci implementation. In the fibonacci function, each number is the sum of its two predecessors, starting in our case with 1, 1 and then continuing 2, 3, 5, 8 and so forth.
 
-![alt_text](/images/blog/November1.png "Fibonacci Formula"){: .center-block }
+![alt_text](images/blog/November1.png "Fibonacci Formula"){: .center-block }
 
 Here in solidity code implemented recursively:
 
-![alt_text](/images/blog/November5.png "Solidity Code for Fibonacci"){: .center-block }
+![alt_text](images/blog/November5.png "Solidity Code for Fibonacci"){: .center-block }
 
 There are much more efficient ways to calculate Fibonacci, but in this case we wanted to measure the opposite. We wanted to measure how large the amount of function calls and calculations would perform on our EVM.
 
 Using [Elixir’s Benchee](https://github.com/bencheeorg/benchee) tool and the test code that you can still find in [this branch](https://github.com/diodechain/diode_server_ex/tree/aevm_benchmark), we ran a reference profile of the aeternityVM to calculate the Fibonacci numbers with this contract for fib(11), 23 and 27. 
 
-![alt_text](/images/blog/November7.png "aeVM Measurement"){: .center-block }
+![alt_text](images/blog/November7.png "aeVM Measurement"){: .center-block }
 
 At fib(11), a 32ms execution time seems slow but still manageable. But looking at fib(23), it’s already 10 seconds, and fib(27) takes more than a minute. The gas cost for calculating fib(27) with this would be 25,773,281, which is 2.5x more than the current block gas limit of 10 million. But taking this max of 10 million and dividing the 73 seconds total time it took by 2.5x, we concluded that in the worst case, validating a block with 10 million gas would take 73/2.5, which is 29 seconds. This is way above the 15 seconds block time goal and thus totally unacceptable. In fact, the block validation needs to take much less time ~200ms so that most of the seconds block time can be used on creating new blocks and solving the PoW problem. For that we needed 100x times faster execution times. We knew we needed a new EVM.
 
@@ -56,11 +56,11 @@ Luckily there are [plenty of Ethereum VMs](https://github.com/ethereum/wiki/wiki
 
 In Elixir there are two primary ways to communicate with C applications, Ports and Nifs. Ports are external applications that run on their own, as independent operating system processes. This ensures that crashes in those C applications can not impact the Elixir VM, but comes at a higher communication cost since the C application is running in a different OS process.
 
-![alt_text](/images/blog/November2.png "Tech Stack #2"){: .center-block }
+![alt_text](images/blog/November2.png "Tech Stack #2"){: .center-block }
 
 With this new setup, we re-ran the same benchmark to finally measure the reward of all of this effort.
 
-![alt_text](/images/blog/November6.png "Measurement Aleth"){: .center-block }
+![alt_text](images/blog/November6.png "Measurement Aleth"){: .center-block }
 
 And indeed we found that this time we were looking at very different performance numbers. While for fib(11) the difference in performance is already 11x, when running the larger computations for fib(23) and fib(27) the performance difference went up to 117x.
 
@@ -107,4 +107,4 @@ Just this week we filed an Ethereum Improvement Proposal (EIP) for a new EVM opc
 
 Last but not least, we finally enabled continuous testing for our [server implementation](https://github.com/diodechain/diode_server_ex). We initially had some problems getting Travis to run the most recent software versions until we realised that Travis does not yet support Ubuntu 18.04 for Elixir as one of their build options, and had to do some work-arounds in our [travis.yml](https://github.com/diodechain/diode_server_ex/blob/master/.travis.yml) to use a recent C++ compiler for our new AlethVM. We are full believers in continuous automated testing and will keep rolling this out to other tools as well in the future. Until then enjoy the green build flag on our repository:
 
-![alt_text](/images/blog/November4.png "CircleCI Icon"){: .center-block }
+![alt_text](images/blog/November4.png "CircleCI Icon"){: .center-block }

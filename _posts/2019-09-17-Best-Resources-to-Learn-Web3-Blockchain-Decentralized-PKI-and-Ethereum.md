@@ -12,7 +12,7 @@ Here is a curated list of readings and resources that ignited our interest in re
 
 ## **Fundamentals**
 
-![alt_text](/images/blog/Best-R2.png "image_tooltip"){: .center-block }
+![alt_text](images/blog/Best-R2.png "image_tooltip"){: .center-block }
 
 **The Future of Decentralized Trust on the Internet**
 

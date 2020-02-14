@@ -15,25 +15,25 @@ Thanks to [David Chang](https://www.meetup.com/golang-taipei-meetup/members/1872
 Presentations at the meetup were incredibly interesting and inspiring. First up was David Chang, the host of the event. He gave a brief overview of a popular MIT online course “[MIT 6.824](https://youtu.be/hBWfjkGKRas)” on distributed systems, an introduction of [MapReduce](https://en.wikipedia.org/wiki/MapReduce) the programming model as well as discussing the possibility of implementing MapReduce in Golang. Most of the concepts he talked about were coming from Google’s 2004 [paper](https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf).
 
 
-![alt_text](/images/blog/Golang_02.png "image_tooltip")
+![alt_text](images/blog/Golang_02.png "image_tooltip")
 
-![alt_text](/images/blog/Golang_speaker03.jpg "image_tooltip")
+![alt_text](images/blog/Golang_speaker03.jpg "image_tooltip")
 
 We were honored to be able to present [Diode](https://github.com/diodechain) at the event. In his presentation, blockchain engineer [Peter Lai](https://twitter.com/alk03073135) talked about why Diode client was written in Go, discussed concurrency bugs in Go, gave a live demo of Diode network using a Raspberry Pi that’d been previously set up from the Taipei office, and ended the talk with a Q&A session. 
 
 View the [presentation slides](https://github.com/diodechain/presentations/blob/master/Golang_Taipei_Meetup_2019/Golang%20Taipei%20Meetup%202019%20Peter%20Lai_%20Why%20Diode%20client%20uses%20Go%20language.pdf) on Github.
 
 
-![alt_text](/images/blog/Golang_04.png "image_tooltip")
+![alt_text](images/blog/Golang_04.png "image_tooltip")
 
 
-![alt_text](/images/blog/Golang_05.png "image_tooltip")
+![alt_text](images/blog/Golang_05.png "image_tooltip")
 
 
-![alt_text](/images/blog/Golang_06.png "image_tooltip")
+![alt_text](images/blog/Golang_06.png "image_tooltip")
 
 
-![alt_text](/images/blog/Golang_07.png "image_tooltip")
+![alt_text](images/blog/Golang_07.png "image_tooltip")
 
 
 <b>Questions posed from the audience during the Q&A session:</b>
@@ -64,10 +64,10 @@ Q: If you are using OpenSSL, does it mean you are using a CGo compiler?
 Yes, we use CGo to call C functions.
 
 
-![alt_text](/images/blog/Golang_08.jpg "image_tooltip")
+![alt_text](images/blog/Golang_08.jpg "image_tooltip")
 
 
-![alt_text](/images/blog/Golang_09.jpg "image_tooltip")
+![alt_text](images/blog/Golang_09.jpg "image_tooltip")
 
 If you're interested in being an alpha tester of the Diode network, sign up on our [Telegram](http://t.me/diode_chain) group, or reach out to us on [Github](https://github.com/diodechain/diode_go_client) or [Twitter](https://twitter.com/diode_chain).
 

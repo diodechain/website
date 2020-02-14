@@ -20,7 +20,7 @@ We will be starting a series of video tutorials and workshops teaching the basic
 
 Diode is an integrated Blockchain implementation of the Web3, the server-less internet and the decentralized web, targeted primarily at enabling IoT devices. It was designed to address the security and infrastructure needs of device-driven connected applications.
 
-![alt_text](/images/blog/Best-R2.png "image_tooltip"){: .center-block }
+![alt_text](images/blog/Best-R2.png "image_tooltip"){: .center-block }
 
 **Q: Where did the name Diode come from?**
 
@@ -28,7 +28,7 @@ Diodes are embedded components that conduct electric current primarily in one di
 
 Diode stands for Decentralized Internet of Devices in addition to the above-mentioned reference.
 
-![alt_text](/images/blog/FAQ-Diode-name.png "image_tooltip"){: .center-block }
+![alt_text](images/blog/FAQ-Diode-name.png "image_tooltip"){: .center-block }
 
 **Q: What is your biggest unique proposition that puts you ahead of the competition?**
 
@@ -112,7 +112,7 @@ In the Ethereum network, you have the option of running various types of nodes: 
 
 Below is an overview of the three node types with their storage requirements.
 
-![alt_text](/images/blog/FAQ-03.png "image_tooltip"){: .center-block }
+![alt_text](images/blog/FAQ-03.png "image_tooltip"){: .center-block }
 
 Full nodes are typically run on servers in data-centers; they are commonly used for mining purposes. Light clients require less storage, but also offer less functionality as compared to running a full node. Light clients only need to download the block headers of the blockchain, and are designed for desktop and mobile wallet applications. The amount of data they have to store is much smaller, but still grows at the same pace as the blockchain itself.
 

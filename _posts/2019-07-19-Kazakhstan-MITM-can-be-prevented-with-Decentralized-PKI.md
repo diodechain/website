@@ -11,7 +11,7 @@ __OMG! So it happens again. PKI the Public Key Infrastructure is a centrally roo
 
 Yesterday on the 18h of July 2019, the state-owned telecommunications organization of Kazakhstan started to misuse this central infrastructure in the states initiative against free speech. The now dictatorship of Kazakhstan is forcing its users to install a custom Kazakhstan root certificate. With this certificate in place the government is able to read, intercept & change all traffic send from those internet users to public websites. This is a general _Man-In-The-Middle attack on all citizens_ including destinations such as facebook.com or gmail.com giving and the government wide access to their citizens most personal data.
 
-![alt_text](/images/blog/Kazhakstan1.png "image_tooltip"){: .center-block }
+![alt_text](images/blog/Kazhakstan1.png "image_tooltip"){: .center-block }
 
 The government certificate can be obtained from [http://qca.kz](http://qca.kz/) and citizens are required to install it from their ISPs. The certificate is already valid since February 1st but to our knowledge only enforced since yesterday. The Firefox maker Mozilla already has a [new bug report to categorically deny this new state-issued certificate](https://bugzilla.mozilla.org/show_bug.cgi?id=1567114). This might either increase the pressure on the regime to cut back with their efforts to decrypt all traffic or lead to a ban of Firefox in the country.
 

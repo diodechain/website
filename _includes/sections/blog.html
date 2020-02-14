@@ -31,12 +31,12 @@
             <!-- Article Header -->
             <header class="article-header">
               <div class="img-wrap">
-                <a href="{{ site.baseurl }}{{ post.url }}">
+                <a href="{{ post.url }}">
                   <img class="preview {{ post.imageclass }}" src="images/blog/{{ post.image }}" alt="Article Blog Image">
                 </a>
               </div>
               <div class="article-title">
-                <h3 class="title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | truncate: 40 }}</a></h3>
+                <h3 class="title"><a href="{{ post.url }}">{{ post.title | truncate: 40 }}</a></h3>
                 <h4 class="category">{{ post.tags | first }}</h4>
               </div>
             </header>
@@ -56,7 +56,7 @@
                 <p>{{ post.content | strip_html | truncate: 300 }}</p>
               </div>
               <div class="show-more">
-                <a href="{{ site.baseurl }}{{ post.url }}" class="button">Read More</a>
+                <a href="{{ post.url }}" class="button">Read More</a>
               </div>
             </div>
 

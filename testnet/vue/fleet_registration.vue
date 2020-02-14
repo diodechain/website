@@ -26,7 +26,7 @@
             <div v-if="contracts == undefined">Loading...</div>
             <div v-else-if="contracts.length == 0">
               No contracts identified.
-              <button class="button" v-on:click="createFleet()"><img v-show="submitFleet" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Create New Fleet</span></button>
+              <button class="button" v-on:click="createFleet()"><img v-show="submitFleet" style="height:14px;margin-right:5px;" src="images/spinning.gif"/><span>Create New Fleet</span></button>
             </div>
             <div v-else>
               <div v-for="contract in contracts">
@@ -56,13 +56,13 @@
                           v-if="access.white==false"
                           v-on:click="accessDevice(device.id, access.id, true)"
                           :disabled="submitDevices[device.id+access.id]"
-                          ><img v-show="submitDevices[device.id+access.id]" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Whitelist!</span></button>
+                          ><img v-show="submitDevices[device.id+access.id]" style="height:14px;margin-right:5px;" src="images/spinning.gif"/><span>Whitelist!</span></button>
                           <button
                             class="button"
                             v-else
                             v-on:click="accessDevice(device.id, access.id, false)"
                             :disabled="submitDevices[device.id+access.id]"
-                            ><img v-show="submitDevices[device.id+access.id]" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Dewhitelist</span></button>
+                            ><img v-show="submitDevices[device.id+access.id]" style="height:14px;margin-right:5px;" src="images/spinning.gif"/><span>Dewhitelist</span></button>
                         </p>
                         <input type="text" v-model="device.deviceId2" placeholder="0x1234556..." />
                         <button
@@ -77,12 +77,12 @@
                           class="button"
                           v-if="device.white==false"
                           v-on:click="whitelistDevice(device.id, true)"
-                        ><img v-show="isDeviceSubmited(device)" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Whitelist!</span></button>
+                        ><img v-show="isDeviceSubmited(device)" style="height:14px;margin-right:5px;" src="images/spinning.gif"/><span>Whitelist!</span></button>
                         <button
                           class="button"
                           v-else
                           v-on:click="whitelistDevice(device.id, false)"
-                          ><img v-show="submitDevices[device.id]" style="height:14px;margin-right:5px;" src="{{ site.baseurl }}/images/spinning.gif"/><span>Dewhitelist</span></button>
+                          ><img v-show="submitDevices[device.id]" style="height:14px;margin-right:5px;" src="images/spinning.gif"/><span>Dewhitelist</span></button>
                       </td>
                     </tr>
                   </table>

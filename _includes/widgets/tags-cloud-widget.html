@@ -13,11 +13,11 @@
     {% assign tags_list = site.tags %}
       {% if tags_list.first[0] == null %}
         {% for tag in tags_list %}
-          <li><a href="{{ site.baseurl }}{{ site.tagurl }}{{ tag | slugify }}">{{ tag }}</a></li>
+          <li><a href="{{ site.tagurl }}{{ tag | slugify }}">{{ tag }}</a></li>
         {% endfor %}
       {% else %}
         {% for tag in tags_list %}
-          <li><a href="{{ site.baseurl }}{{ site.tagurl }}{{ tag[0] | slugify }}">{{ tag[0] }}</a></li>
+          <li><a href="{{ site.tagurl }}{{ tag[0] | slugify }}">{{ tag[0] }}</a></li>
         {% endfor %}
       {% endif %}
     {% assign tags_list = nil %}

@@ -43,7 +43,7 @@
                       <img
                         v-show="submitDns==name.name"
                         style="height:14px;margin-right:5px;"
-                        src="{{ site.baseurl }}/images/spinning.gif"
+                        src="images/spinning.gif"
                       />
                       <span>Register!</span>
                     </button>

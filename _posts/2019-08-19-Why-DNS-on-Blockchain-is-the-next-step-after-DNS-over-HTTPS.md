@@ -20,7 +20,7 @@ With DNS server, we don’t have to memorize IP address to connect to a website.
 
 But here is the problem. The DNS packet is unencrypted, when you send a request to DNS server, not only the DNS server knows your request and which website you want to visit, but also everyone else on the route. In a coffee shop this might be everyone else in the same shop, the Shop owner, the Internet Service Provider or any hacker who spies on internet traffic. This is why DNS-over-HTTPS was created.
 
-![alt_text](/images/blog/Why-DNS1.png "image_tooltip"){: .center-block }
+![alt_text](images/blog/Why-DNS1.png "image_tooltip"){: .center-block }
 
 ### What is DNS-over-HTTPS ?
 
@@ -28,7 +28,7 @@ But here is the problem. The DNS packet is unencrypted, when you send a request 
 
 With DNS-over-HTTPS, you send an encrypted HTTPS request to a DNS server that supports DoH when you enter a domain name of website in your browser. The HTTPS protocol is decrypted only at the DNS server where the DNS request is processed and the reply is sent back encrypted again. You don’t have to worry about anybody spying on you. Isn't this perfect? Not quite, and here are the reasons.
 
-![alt_text](/images/blog/Why-DNS2.png "image_tooltip"){: .center-block }
+![alt_text](images/blog/Why-DNS2.png "image_tooltip"){: .center-block }
 
 ### Problems with DNS-over-HTTPS
 
@@ -44,7 +44,7 @@ The core problem of DNS-over-HTTPS is the central organization and missing valid
 
 In decentralized DNS, the owner of a domain such as "youtube.com" stores his/her cryptographic signatures on a public blockchain. This allows any Web browser, Smartphone App or IoT device to check the corresponding blockchain entry and find the correct signature. This scheme allows the domain owner to self-sufficiently manage his domains, and removes the need to contact a central organization to get a certificate. It further not only federates but completely decentralizes the serving of DNS requests, because each blockchain server can now serve the DNS data.
 
-![alt_text](/images/blog/Why-DNS3.png "image_tooltip"){: .center-block }
+![alt_text](images/blog/Why-DNS3.png "image_tooltip"){: .center-block }
 
 This new technology has been coming together mostly from Blockchain enthusiasts. Bitcoin created the decentralized ledger, one that is not controlled by any single entity but grows stronger with more participants. [Ethereum](https://www.ethereum.org/) brought the smart-contracts and the ability to store arbitrary structured data on the blockchain. And [Namecoin](https://www.namecoin.org/) and the [Ethereum Name System](https://ens.domains/) were the first attempts at bringing name resolution to the Blockchain. At [Diode](https://diode.io) we’re going the next step and are moving PKI & DNS into the Blockchain and critically allow the smallest devices such as micro controllers to connect securely to the Blockchain.
 
@@ -56,10 +56,10 @@ Step1: Go to Firefox menu and choose Preferences, or you can type about:preferen
 
 Step2: In General section, go to Network Setting panel, and click the Settings button.
 
-![alt_text](/images/blog/Why-DNS4.png "image_tooltip"){: .center-block }
+![alt_text](images/blog/Why-DNS4.png "image_tooltip"){: .center-block }
 
 Step3: In the pop, scroll down and Check Enable DNS over HTTPS. You can setup another DoH providers or use Cloudflare (default). Mozilla has a strong [Trusted Recursive Resolver (TRR) policy](https://wiki.mozilla.org/Security/DOH-resolver-policy) in place that forbids DoH partners from collecting personal identifying information.
 
-![alt_text](/images/blog/Why-DNS5.png "image_tooltip"){: .center-block }
+![alt_text](images/blog/Why-DNS5.png "image_tooltip"){: .center-block }
 
 Happy Browsing!

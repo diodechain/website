@@ -13,19 +13,19 @@ If you're not sure head over to https://metamask.io/ and get metamask from there
 
 After install metamask let's there should be a little fox icon in the top right of your browser window. Clicking on that you should see the main metamask interface as show below.
 
-!["MetaMask network start"](/images/docs/metamask_start.png)
+!["MetaMask network start"](images/docs/metamask_start.png)
 
 Clicking on the top right circle you should see the MetaMask "My Accounts" page where you can find the 'Settings' at the very bottom.
 
-!["MetaMask network settings"](/images/docs/metamask_settings.png)
+!["MetaMask network settings"](images/docs/metamask_settings.png)
 
 Click on the 'Settings' entry and scroll to the very bottom again. There you will fine the 'Networks' entry and click that.
 
-!["MetaMask networks"](/images/docs/metamask_networks.png)
+!["MetaMask networks"](images/docs/metamask_networks.png)
 
 Finally at the bottom of the Networks settings there is big blue button called 'Add Network' click that and enter the Diode Testnet values there as below:
 
-!["MetaMask diode settings"](/images/docs/metamask_diode.png)
+!["MetaMask diode settings"](images/docs/metamask_diode.png)
 
 <table>
   <tr>

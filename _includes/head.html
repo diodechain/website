@@ -75,13 +75,13 @@
   <meta property="og:image"    content="{{ site.url }}/images/blog/{{ page.image }}">  
   {% endif -%}
 
+  <base href="{{ site.github.url }}/" target="_self"></base>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="{{ site.baseurl }}/images/favicon.png" title="Favicon" />
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
   <!-- Importing Styles -->
   <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css?{{site.time | date: '%s%N'}}">
-
   {% if jekyll.environment != "development" %}
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135255804-1"></script>

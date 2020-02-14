@@ -67,7 +67,7 @@ When HTC announced that their new Handheld [Exodus 1s will be running a full Bit
 # Enter BlockQuick
 Just 20kb to validate the blockchain.
 
-[![BlockQuick](/images/blog/blockquick.png "BlockQuick Paper"){: .center-block }](https://eprint.iacr.org/2019/579.pdf)
+[![BlockQuick](images/blog/blockquick.png "BlockQuick Paper"){: .center-block }](https://eprint.iacr.org/2019/579.pdf)
 
 We started developing [BlockQuick](https://eprint.iacr.org/2019/579.pdf) with these goals in mind. BlockQuick is a super-light-client, meaning the amount of data that it needs to fetch from the blockchain is sublinear to the total size of the blockchain. BlockQuick is using a consensus-based reputation scheme to accept blocks. During development, [Benedikt Bünz](https://twitter.com/benediktbuenz) released [FlyClient](https://eprint.iacr.org/2019/226.pdf), another super-light-client which inspired a better solution to do Block-Inclusion-Proofs in BlockQuick. To our knowledge these two forms currently the only two entrants in the new class of super-light-clients for decentralized blockchain validation on resource-constrained devices.
 

@@ -14,7 +14,7 @@ On Tuesday (7/16), Vitalik Buterin, the creator of Ethereum, gave a 30-minute pr
 [Diode](https://twitter.com/diode_chain), a developer of blockchains for IoT devices, believes in the vision of [decentralized PKI](https://diode.io/burning-platform-pki/decentralized-pki-in-a-nutshell-19079/). We think highly of decentralized alternatives to DNS, such as [the Ethereum Name Service (ENS)](https://ens.domains) and [Handshake](https://handshake.org). This write-up of Vitalik’s latest take on the topic is to show our support to the growing blockchain community; we look forward to having further discussions! Our CTO [Dominic Letz](https://twitter.com/dominicletz) published a [paper](https://eprint.iacr.org/2019/579.pdf) recently to introduce [BlockQuick](https://diode.io/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/), a super light client protocol for blockchain validation on constrained devices. Would love to hear your thoughts and feedback!
 
 
-![](/images/blog/V-Taipei-event2.jpg)
+![](images/blog/V-Taipei-event2.jpg)
 
 ### Highlights of Vitalik’s presentation at the Taipei event
 
@@ -47,7 +47,7 @@ In a perfect economy ...
 
 
 
-![](/images/blog/V-Slide1.jpg)
+![](images/blog/V-Slide1.jpg)
 
 #### The monopoly problem, hyperloop edition
 * Elon Musk wants to buy a row of 10000 farms, to use the land to build a hyperloop
@@ -55,7 +55,7 @@ In a perfect economy ...
 
 
 
-![](/images/blog/V-Slide2.jpg)
+![](images/blog/V-Slide2.jpg)
 
 #### Harberger taxes
 * For any asset, the owner must specify a price at which they are willing to sell the asset
@@ -65,7 +65,7 @@ In a perfect economy ...
 
 
 
-![](/images/blog/V-Slide3.png)
+![](images/blog/V-Slide3.png)
 
 #### ENS domains
 
@@ -139,7 +139,7 @@ In a perfect economy ...
 
 
 
-![](/images/blog/V-Slide4.png)
+![](images/blog/V-Slide4.png)
 
 
 
