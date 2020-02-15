@@ -25,7 +25,7 @@ body {
 }
 
 svg {
-    height: 70px;
+    height: 80px;
     width: 100%;
 }
 
@@ -67,7 +67,7 @@ svg {
     justify-content:space-evenly;
 }
 .host .head {
-    padding 1em;
+    padding: 1em;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -90,7 +90,7 @@ svg {
 }
 
 line {
-    stroke-width: 2;
+    stroke-width: 4;
 }
 
 line.Unknown {
@@ -110,5 +110,5 @@ line.Slow {
 }
 line.day {
     stroke: rgba(0, 0, 0, 0.452);
-    stroke-width: 40;
+    stroke-width: 20;
 }

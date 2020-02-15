@@ -29,16 +29,16 @@ layout: ""
                 <div class="title"><% host.name %></div>
                 <div class="status"><% host.status %></div>
             </div>
-            <div @mouseover="mouseOver(event, host)" class="svg">
-                <div :style="{ left: left, top: top }" id="hover"><% descr %></div>
-                <svg :view-box.camel="'0 0 ' + (host.data.length*4) + ' ' + 100" :transform="'scale(1 ' + Math.max(1, (host.data.length/250)) + ')'">
-                    <line :x1="i*4" :x2="i*4" y1="1" y2="100" v-bind:class="status" v-for="(status, i) in host.data"></line>
+            <div class="svg">
+                <div :style="{ left: left, top: top }" id="hover" v-html="descr"></div>
+                <svg :view-box.camel="'0 0 ' + (host.data.length*4) + ' ' + 100" :transform="'scale(1 ' + Math.max(1, (host.data.length/250)) + ')'" @mouseOver="mouseOver(event, host)">
+                    <line :x1="i*4" :x2="i*4" y1="1" y2="100" v-bind:class="status" :key="i" v-for="(status, i) in host.data"></line>
                     <line v-for="i in host.days" :x1="i*4" :x2="i*4" y1="1" y2="100" class="day"></line>
                 </svg>
             </div>
             <div class="body">
-                <div class="info"><% Math.round(host.uptime*100000)/1000 %>% uptime</div>
-                <div class="info"><% host.longest %> minutes since last disconnect</div>
+                <div class="info" v-show="host.uptime"><% Math.round(host.uptime*100000)/1000 %>% uptime</div>
+                <div class="info" v-show="host.longest"><% host.longest %> minutes since last disconnect</div>
             </div>
         </div>
     </div>
@@ -60,18 +60,23 @@ layout: ""
                     while (div.className != 'svg') {
                         div = div.parentElement;
                     }
-
                     let rect = div.getBoundingClientRect();
+                    let target = evt.target;
+                    let desc = '';
+                    if (target.tagName === 'line') {
+                        desc += `${target.classList[0]}<br />`;
+                    }
                     let x = (evt.clientX - rect.left + 10);
                     if (x + rect.left + 100 > document.body.clientWidth) {
                         x = document.body.clientWidth - 100 - rect.left;
                     }
                     this.left = x + 'px';
                     this.top = (evt.clientY - rect.top - 60) + 'px';
-                    
                     x = (host.data.length*host.interval) * evt.layerX/rect.width;
+
                     let t = new Date((host.start + x) * 1000);
-                    this.descr = t.toISOString().slice(5, 16);
+                    desc += t.toISOString().slice(5, 16);
+                    this.descr = desc;
                 }, 100)
             }
         })
