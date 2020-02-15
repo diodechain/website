@@ -30,7 +30,7 @@ layout: ""
                 <div class="status"><% host.status %></div>
             </div>
             <div class="svg">
-                <div :style="{ left: left, top: top }" id="hover" v-html="descr"></div>
+                <div :style="{ left: left, top: top }" id="hover" v-html="descr" v-show="descr.length > 0"></div>
                 <svg :view-box.camel="'0 0 ' + (host.data.length*4) + ' ' + 100" :transform="'scale(1 ' + Math.max(1, (host.data.length/250)) + ')'" @mouseOver="mouseOver(event, host)">
                     <line :x1="i*4" :x2="i*4" y1="1" y2="100" v-bind:class="status" :key="i" v-for="(status, i) in host.data"></line>
                     <line v-for="i in host.days" :x1="i*4" :x2="i*4" y1="1" y2="100" class="day"></line>
@@ -56,6 +56,8 @@ layout: ""
             delimiters: ["<%", "%>"],
             methods: {
                 mouseOver: _.throttle(function(evt, host) {
+                    evt.preventDefault();
+                    evt.stopPropagation();
                     let div = evt.target.parentElement;
                     while (div.className != 'svg') {
                         div = div.parentElement;
@@ -65,10 +67,13 @@ layout: ""
                     let desc = '';
                     if (target.tagName === 'line') {
                         desc += `${target.classList[0]}<br />`;
+                    } else {
+                        this.descr = '';
+                        return;
                     }
                     let x = (evt.clientX - rect.left + 10);
-                    if (x + rect.left + 100 > document.body.clientWidth) {
-                        x = document.body.clientWidth - 100 - rect.left;
+                    if (x + rect.left + 150 > document.documentElement.clientWidth) {
+                        x = document.body.clientWidth - 150 - rect.left;
                     }
                     this.left = x + 'px';
                     this.top = (evt.clientY - rect.top - 60) + 'px';
