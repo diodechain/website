@@ -8,7 +8,7 @@ author: Dominic Letz
 image: feb_head.jpg
 ---
 
-It's time again for an update on our progress over the last quarter. While last September and October were busy with Events, the recent couple of month we spend in some focused engineering on our Testnet. We're preparing to face the community again in the next events at:
+It's time again for an update on our progress over the last quarter. While last September and October were busy with events, the recent couple of months we spent some time working on our Testnet. We're getting ready to engage with the community again in several up-coming events:
 * [ETH-Denver](https://www.ethdenver.com/) running [right now...](https://twitter.com/diode_chain/status/1228155750846873600)
 * [Stanford Blockchain Conference](https://cbr.stanford.edu/sbc20/)
 * [Vienna ECDON](https://edcon.io/) 
