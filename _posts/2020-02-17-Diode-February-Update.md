@@ -1,7 +1,7 @@
 ---
 layout: post
 title: February 2020 Update
-date: 2020-02-14 12:10
+date: 2020-02-17 12:10
 categories: [Diode]
 tags: [Diode, Development, Blockchain, IoT, Ethereum]
 author: Dominic Letz
@@ -11,6 +11,7 @@ image: feb_head.jpg
 It's time again for an update on our progress over the last quarter. While last September and October were busy with events, the recent couple of months we spent some time working on our Testnet. We're getting ready to engage with the community again in several up-coming events:
 * [ETH-Denver](https://www.ethdenver.com/) running [right now...](https://twitter.com/diode_chain/status/1228155750846873600)
 * [Stanford Blockchain Conference](https://cbr.stanford.edu/sbc20/)
+* [EthCC Paris](https://ethcc.io/)
 * [Vienna ECDON](https://edcon.io/) 
 
 But let's have a look what happened so far. 
