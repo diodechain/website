@@ -4381,6 +4381,7 @@ section.blog-section.page-layout {
 }
 
 section.blog-section.page-layout .blog-articles-container {
+  width: 100%;
   margin-top: 0;
 }
 
@@ -4503,6 +4504,7 @@ section.blog-section.page-layout article.blog-article .article-boxes .tags-artic
 }
 
 section.blog-section .blog-articles-container {
+  width: 100%;
   margin-top: 80px;
   -webkit-box-align: initial;
   -webkit-align-items: initial;
