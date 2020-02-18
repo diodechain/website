@@ -41,4 +41,4 @@ Finally at the bottom of the Networks settings there is big blue button called '
   </tr>
 </table>
 
-When everything worked out well you should now be able to [register a DNS name](/testnet/#/dns) or deploy your own fleet contract via the testnet explorer. 
+When everything worked out well you should now be able to [register a BNS name](/testnet/#/dns) or deploy your own fleet contract via the testnet explorer. 

@@ -61,14 +61,14 @@ navigation:
   link: #home
 - title: About
   link: about.html
-- title: Examples
-  link: #features
 - title: Blog
   link: blog/
 - title: Docs
   link: docs/
 - title: FAQ
   link: diode/Diode-Frequently-Asked-Questions-19276/
+- title: Testnet
+  link: testnet/
 - title: <i class="fi flaticon-telegram"></i>
   link: https://t.me/diode_chain
   target: _blank

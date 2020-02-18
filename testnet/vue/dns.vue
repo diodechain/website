@@ -1,7 +1,7 @@
 <template id="dns">
   <div>
     <div class="title">
-      <h1>Testnet DNS</h1>
+      <h1>Testnet Blockchain Name System (BNS)</h1>
     </div>
     <div v-if="!enabled" class="column">
       <div>To register a new name or change an existing registration you have to Enable MetaMask on this site.</div>

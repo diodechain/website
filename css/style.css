@@ -3759,6 +3759,10 @@ section.site-section.next-section-indicator:after {
   color: black;
 }
 
+.col-sidebar aside.site-sidebar .group {
+  margin-bottom: 2em;
+}
+
 .col-sidebar aside.site-sidebar input.active {
   outline: solid 1px green;
   border-color: green;
@@ -3952,6 +3956,27 @@ body.docs .container {
   width: 100%;
 }
 
+body.docs .nav-sidebar {
+  text-align: center;
+  margin-top: 0.8em;
+  padding: 0.2em;
+  border: 1px solid #F15C2E;
+  width: 80%;
+  cursor: pointer;
+}
+
+body.docs .nav-sidebar:hover {
+  background-color: #f7a78e;
+  -webkit-transition: background-color 300ms ease-in-out;
+  -o-transition: background-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
+}
+
+body.docs .nav-sidebar.folded {
+  background-color: #202020;
+  color: #F15C2E;
+}
+
 body.docs .col-sidebar {
   top: 0px;
   height: 100vh;
@@ -3968,9 +3993,23 @@ body.docs .col-content {
 }
 
 @media (max-width: 991px) {
+  body.docs .col-sidebar {
+    display: none;
+    position: relative;
+    z-index: 999;
+    top: 0em;
+    width: 80%;
+  }
   body.docs .col-content {
     width: 100% !important;
   }
+}
+
+body.docs section.docs-layout .docs-row {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body.docs section.site-section {
@@ -4091,10 +4130,19 @@ section.docs-layout section.docs-section .header-row div.edit {
 }
 
 section.docs-layout section.docs-section .header-row div.edit h2 {
-  padding-top: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0;
 }
 
-section.docs-layout section.docs-section .docs-row {
+section.docs-layout section.docs-section .header-row div.edit h2 a {
+  padding: 0 0.1em;
+  font-size: 0.5em;
+}
+
+section.docs-layout section.docs-section .docets {
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
@@ -4105,7 +4153,7 @@ section.docs-layout section.docs-section .docs-row {
           justify-content: stretch;
 }
 
-section.docs-layout section.docs-section .docs-row .doc-outer {
+section.docs-layout section.docs-section .docets .doc-outer {
   margin-top: 1em;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4113,29 +4161,29 @@ section.docs-layout section.docs-section .docs-row .doc-outer {
           flex-grow: 1;
 }
 
-section.docs-layout section.docs-section .docs-row a {
+section.docs-layout section.docs-section .docets a {
   height: 100%;
 }
 
-section.docs-layout section.docs-section .docs-row .doc {
+section.docs-layout section.docs-section .docets .doc {
   height: 100%;
   padding: 1em;
   border: 1px solid gray;
   border-style: dashed;
 }
 
-section.docs-layout section.docs-section .docs-row .doc h3 {
+section.docs-layout section.docs-section .docets .doc h3 {
   margin-top: 0em;
   margin-bottom: 0.5em;
   color: #F15C2E;
   font-size: 1.2em;
 }
 
-section.docs-layout section.docs-section .docs-row .doc h3::after {
+section.docs-layout section.docs-section .docets .doc h3::after {
   display: none;
 }
 
-section.docs-layout section.docs-section .docs-row .doc span {
+section.docs-layout section.docs-section .docets .doc span {
   color: #5e5e5e;
 }
 

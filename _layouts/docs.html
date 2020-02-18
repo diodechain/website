@@ -11,8 +11,13 @@ class: docs
 
         <!-- Page Layout -->
         <div class="row docs-row">
+            <!-- Small sidebar -->
+            <div class="nav-sidebar hidden-lg hidden-md">
+                TOC
+            </div>
+
             <!-- Sidebar -->
-            <div class="col col-sidebar hidden-xs hidden-sm">
+            <div class="col col-sidebar">
                 {% include docs-sidebar.html %}
             </div>
 
@@ -24,8 +29,8 @@ class: docs
                     <div class="row header-row">
                         <header class="col-sm-10 section-header text-center">
                             <div class="edit">
-                                <h2>{{ page.title }}</h2>
-                                <a href="https://github.com/diodechain/website/edit/master/{{ page.path }}">Edit</a>
+                                <h2>{{ page.title }}
+                                <a href="https://github.com/diodechain/website/edit/master/{{ page.path }}">Edit</a></h2>
                             </div>
                             <hr class="normal">
                             <p>{{ page.tagline }}</p>

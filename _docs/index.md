@@ -1,6 +1,6 @@
 ---
 layout: docs
-category: General
+category: Introduction
 title: Useful Links
 tagline: >-
   Developer and User resources will be published here. 
@@ -40,7 +40,7 @@ docs:
 ---
 
 
-<div class="docs-row row">
+<div class="docets row">
     <!-- Section Content -->
     {% for doc in page.docs %}
     <div class="doc-outer col-md-4 col-sm-6">

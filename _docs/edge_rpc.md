@@ -1,6 +1,6 @@
 ---
 title: Edge RPC
-category: References
+category: Documentation
 ---
 
 For diodechain binaries data are encoded with hex within json arrays. Each RPC call should begin with the two bytes of the length of the RPC payload. The RPC payload should be json array, first element is RPC method:

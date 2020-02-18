@@ -58,9 +58,9 @@ layout: ""
         }
 
         var routes = [
-            { name: 'Last 500', path: '/', component: PowerDistribution },
+            { name: 'Home', path: '/', component: PowerDistribution },
             { name: 'Fleets', path: '/fleets', component: FleetRegistration },
-            { name: 'DNS', path: '/dns', component: DNS },
+            { name: 'BNS', path: '/dns', component: DNS },
             { name: 'TXs', path: '/tx/:hash', params: { hash: '0x1' }, component: Transaction, props: true },
             { name: 'Blocks', path: '/block/:number', params: { number: 1 }, component: Block, props: true },
             { name: 'Accounts', path: '/address/:hash', params: { hash: Registry }, component: Account, props: true }

@@ -71,11 +71,11 @@ As part of our Testnet Explorer we have also launched a [Fleet Development Inter
 
 ![alt_text](images/blog/feb_fleet2.png "Fleet Management"){: .center-block }
 
-## Simple DNS Contract
+## Simple Blockchain Name System (BNS) Contract
 
-For creating easier links that then above hex based addresses we deployed a simple [DNS Contract](https://github.com/diodechain/diode_contract/blob/master/contracts/DNS.sol) on the Diode testnet. This is also exposed in the Explorer via the DNS tab and can be used to register short domain names such as for our webcam, that is also reachable via [https://betahaus-berlin.diode.link/](https://betahaus-berlin.diode.link/) 
+For creating human readable links instead of above hex based addresses we deployed a simple [BNS Contract](https://github.com/diodechain/diode_contract/blob/master/contracts/DNS.sol) on the Diode testnet. This is also exposed in the Explorer via the BNS tab and can be used to register short domain names such as for our webcam, that is also reachable via [https://betahaus-berlin.diode.link/](https://betahaus-berlin.diode.link/) 
 
-![alt_text](images/blog/feb_dns.png "Testnet DNS"){: .center-block }
+![alt_text](images/blog/feb_dns.png "Testnet BNS"){: .center-block }
 
 If you feel curious about trying it yourself checkout our [tutorial on how to setup Metamask](/docs/metamask.html).
 

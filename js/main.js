@@ -157,9 +157,19 @@
      */
     let $heads = $(".toc-widget h3")
     $heads.click(function() {
-      console.log("click")
       $(this).parent().toggleClass("folded")
     })
+
+    /**
+     * Documentation secondary navigation
+     */
+    let $shortcut = $(".nav-sidebar")
+    $shortcut.click(function() {
+      $(".col-sidebar").toggle()
+      $shortcut.toggleClass("folded")
+    })
+
+
 
     /**
      * Documentation search
