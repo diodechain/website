@@ -3963,18 +3963,18 @@ body.docs .nav-sidebar {
   border: 1px solid #F15C2E;
   width: 80%;
   cursor: pointer;
-}
-
-body.docs .nav-sidebar:hover {
-  background-color: #f7a78e;
   -webkit-transition: background-color 300ms ease-in-out;
   -o-transition: background-color 300ms ease-in-out;
   transition: background-color 300ms ease-in-out;
 }
 
+body.docs .nav-sidebar:hover {
+  background-color: #f7a78e;
+}
+
 body.docs .nav-sidebar.folded {
-  background-color: #202020;
-  color: #F15C2E;
+  background-color: #F15C2E;
+  color: white;
 }
 
 body.docs .col-sidebar {

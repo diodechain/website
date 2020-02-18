@@ -19,13 +19,13 @@
     width: 80%;
     
     cursor: pointer;
+    transition: background-color $transition-links $transition-links-type;
     &:hover {
       background-color: lighten($primary, 20%);
-      transition: background-color $transition-links $transition-links-type;
     }
     &.folded {
-      background-color: $dark-gray;
-      color: $primary;
+      background-color: $primary;
+      color: white;
     }
   }
 
