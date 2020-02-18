@@ -176,7 +176,7 @@
      */
     let $items = $(".toc-widget li")
     let search = function () {
-      let term = $(this).val()
+      let term = $(this).val().toLowerCase()
       if (term.length < 3) {
         $items.removeClass("matching-item")
         $items.removeClass("non-matching-item")
