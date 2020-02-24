@@ -6,6 +6,7 @@ categories: [Diode]
 tags: [Diode, Development, Blockchain, IoT, Ethereum]
 author: Dominic Letz
 image: feb_head.jpg
+imageclass: top
 ---
 
 It's time again for an update on our progress over the last quarter. While last September and October were busy with events, the recent couple of months we spent some time working on our Testnet. We're getting ready to engage with the community again in several up-coming events:

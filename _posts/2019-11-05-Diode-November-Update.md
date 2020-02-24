@@ -6,6 +6,7 @@ categories: [Diode]
 tags: [Diode, Development, Blockchain, IoT, Ethereum]
 author: Dominic Letz
 image: NovemberT.jpg
+imageclass: top
 ---
 
 [Diode](https://diode.io/), at its core, is a finality gadget with an [Ethereum](https://www.ethereum.org/) block header change. It’s enabled by a [super-light protocol and client](https://diode.io/blockchain/how-blockquick-super-light-client-protocol-can-help-mitigate-eclipse-attacks-19161/) for [constrained devices](https://diode.io/iot/hardware-requirements-of-blockchain-clients-19196/), allowing them to read contract state data and validate the corresponding merkle proofs. The finality gadget and algorithm are based on [BlockQuick](https://eprint.iacr.org/2019/579.pdf). View the Diode project on [Github](https://github.com/diodechain). In this blog post, we take a look back at the past few months and a look ahead to the plans for the coming months.

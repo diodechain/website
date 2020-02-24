@@ -4627,8 +4627,16 @@ section.blog-section .blog-articles-container article.blog-article header.articl
 section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.preview {
   -o-object-fit: cover;
      object-fit: cover;
-  height: 200px;
+  max-height: 400px;
   width: 100%;
+}
+
+@media (max-width: 992px) {
+  section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.preview {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 200px;
+  }
 }
 
 section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.top {

@@ -205,8 +205,13 @@ section.blog-section {
 
           img.preview {
             object-fit: cover;
-            height: 200px;
+            max-height: 400px;
             width: 100%;
+
+            @media (max-width: 992px) {
+              object-fit: cover;
+              height: 200px;
+            }    
           }
           img.top {
             object-position: top;
