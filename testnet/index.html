@@ -9,13 +9,16 @@ layout: ""
 <head>
     <title>Diode℠ Testnet</title>
     <meta charset="utf-8">
-    <base href="{{ site.github.url }}/" target="_self"></base>
+    <base href="{{ site.github.url }}/" target="_self">
+    </base>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-router"></script>
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
     <script src="testnet/abi.js"></script>
-    <link rel="stylesheet" type="text/css" href="testnet/style.css"></link>
-    <link rel="shortcut icon" href="images/favicon.png" title="Favicon"></link>
+    <link rel="stylesheet" type="text/css" href="testnet/style.css">
+    </link>
+    <link rel="shortcut icon" href="images/favicon.png" title="Favicon">
+    </link>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 </head>
 
@@ -254,6 +257,10 @@ layout: ""
             return str;
         }
 
+        function formatNumber(num) {
+            return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+        }
+
         function formatAddr(addr, onlyAlias, length) {
             let alias = resolveName(addr);
             if (onlyAlias) return shorten(alias, length);
@@ -276,5 +283,4 @@ layout: ""
         }
     </script>
 </body>
-
 </html>

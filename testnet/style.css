@@ -332,3 +332,21 @@ figure {
   box-shadow: none;
   opacity: 0.5;
 }
+
+.headtable {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.headtable .doclet {
+    flex-grow: 1;
+    margin: 3px;
+    padding: 5px;
+    background-color: gainsboro;
+}
+
+.headtable .doclet h2 {
+    margin: 0px;
+    font-size: 1.2em;
+}

@@ -8,77 +8,99 @@
       </small>
     </div>
     <div style="display: flex; flex-direction: row; align-items: flex-start;">
-      <!-- https://medium.com/@heyoka/scratch-made-svg-donut-pie-charts-in-html5-2c587e935d72 -->
-      <figure>
-        <div class="figure-content">
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 42 42"
-            class="donut"
-            aria-labelledby="beers-title beers-desc"
-            role="img"
-          >
-            <title id="beers-title">Block Stats</title>
-            <desc id="beers-desc">Donut chart of the last <% blocks.length %> blocks.</desc>
-            <circle
-              class="donut-hole"
-              cx="21"
-              cy="21"
-              r="15.91549430918954"
-              fill="#fff"
-              role="presentation"
-            />
-            <circle
-              class="donut-ring"
-              cx="21"
-              cy="21"
-              r="15.91549430918954"
-              fill="transparent"
-              stroke="#d2d3d4"
-              stroke-width="3"
-              role="presentation"
-            />
-
-            <circle
-              v-for="miner in shares"
-              :key="miner.name"
-              class="donut-segment"
-              cx="21"
-              cy="21"
-              r="15.91549430918954"
-              fill="transparent"
-              v-bind:stroke="miner.color"
-              stroke-width="3"
-              v-bind:stroke-dasharray="miner.stroke"
-              v-bind:stroke-dashoffset="miner.offset"
-              aria-labelledby="donut-segment-1-title donut-segment-1-desc"
-            >
-              <title id="donut-segment-1-title"><% miner.name %></title>
-              <desc id="donut-segment-1-desc">Segment spanning <% miner.percent %>% of the whole</desc>
-            </circle>
-            <!-- unused 10% -->
-            <g class="chart-text">
-              <text x="50%" y="50%" class="chart-number"><% blocks.length %></text>
-              <text x="50%" y="50%" class="chart-label">Last Blocks</text>
-            </g>
-          </svg>
+      <div style="display: flex; flex-direction: column">
+        <div class="headtable">
+          <div class="doclet">
+            <h2>DIO Free Flow</h2>
+            <span><% totalSupply %></span>
+          </div>
+          <div class="doclet">
+            <h2>Fleets</h2>
+            <span><% totalFleets %></span>
+          </div>
+          <div class="doclet">
+            <h2>Accounts</h2>
+            <span><% totalAccounts %></span>
+          </div>
+          <div class="doclet">
+            <h2>Miners</h2>
+            <span><% totalMiners %></span>
+          </div>
         </div>
-        <figcaption class="figure-key">
-          <p class="sr-only">Donut chart showing <% blocks.length %> most recent blocks.</p>
+        <!-- https://medium.com/@heyoka/scratch-made-svg-donut-pie-charts-in-html5-2c587e935d72 -->
+        <figure>
+          <div class="figure-content">
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 42 42"
+              class="donut"
+              aria-labelledby="beers-title beers-desc"
+              role="img"
+            >
+              <title id="beers-title">Block Stats</title>
+              <desc id="beers-desc">Donut chart of the last <% blocks.length %> blocks.</desc>
+              <circle
+                class="donut-hole"
+                cx="21"
+                cy="21"
+                r="15.91549430918954"
+                fill="#fff"
+                role="presentation"
+              />
+              <circle
+                class="donut-ring"
+                cx="21"
+                cy="21"
+                r="15.91549430918954"
+                fill="transparent"
+                stroke="#d2d3d4"
+                stroke-width="3"
+                role="presentation"
+              />
 
-          <ul class="figure-key-list" aria-hidden="true" role="presentation">
-            <li v-for="miner in shares" :key="miner.name">
-              <span class="shape-circle" v-bind:style="{ backgroundColor: miner.color }"></span>
-              <div style="flow: flex; flex-layout: column;">
-                <div class="figure-title"><account-link :hash="miner.name" :only-alias="true" :length="10"></account-link> <% miner.percent %>%</div>
-                <div><% miner.count %> Blocks</div>
-                <div v-if="stakes[miner.name]"><% stakes[miner.name].value %> DIO</div>
-              </div>
-            </li>
-          </ul>
-        </figcaption>
-      </figure>
+              <circle
+                v-for="miner in shares"
+                :key="miner.name"
+                class="donut-segment"
+                cx="21"
+                cy="21"
+                r="15.91549430918954"
+                fill="transparent"
+                v-bind:stroke="miner.color"
+                stroke-width="3"
+                v-bind:stroke-dasharray="miner.stroke"
+                v-bind:stroke-dashoffset="miner.offset"
+                aria-labelledby="donut-segment-1-title donut-segment-1-desc"
+              >
+                <title id="donut-segment-1-title"><% miner.name %></title>
+                <desc id="donut-segment-1-desc">Segment spanning <% miner.percent %>% of the whole</desc>
+              </circle>
+              <!-- unused 10% -->
+              <g class="chart-text">
+                <text x="50%" y="50%" class="chart-number"><% blocks.length %></text>
+                <text x="50%" y="50%" class="chart-label">Last Blocks</text>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="figure-key">
+            <p class="sr-only">Donut chart showing <% blocks.length %> most recent blocks.</p>
+
+            <ul class="figure-key-list" aria-hidden="true" role="presentation">
+              <li v-for="miner in shares" :key="miner.name">
+                <span class="shape-circle" v-bind:style="{ backgroundColor: miner.color }"></span>
+                <div style="flow: flex; flex-layout: column;">
+                  <div class="figure-title">
+                    <account-link :hash="miner.name" :only-alias="true" :length="10"></account-link><% miner.percent %>%
+                  </div>
+                  <div><% miner.count %> Blocks</div>
+                  <div v-if="stakes[miner.name]"><% stakes[miner.name].value %> DIO</div>
+                </div>
+              </li>
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
       <table class="data" style="width: auto">
         <tr>
           <th>Block</th>
@@ -112,7 +134,11 @@ var PowerDistribution = Vue.component("power_distribution", {
       miners: [],
       blocks: [],
       stakes: {},
-      targetSize: 500
+      targetSize: 500,
+      totalFleets: "loading",
+      totalMiners: "loading",
+      totalAccounts: "loading",
+      totalSupply: "loading"
     };
   },
   computed: {
@@ -143,6 +169,7 @@ var PowerDistribution = Vue.component("power_distribution", {
         miner.stroke = "" + miner.percent + " " + (100 - miner.percent);
         this.fetchStake(miner.address);
       });
+      this.totalMiners = groups.length;
       return groups.sort((a, b) => a.count - b.count);
     }
   },
@@ -150,11 +177,22 @@ var PowerDistribution = Vue.component("power_distribution", {
     this.loader();
   },
   methods: {
+    refresh: function() {
+      web3.eth.totalSupply().then(supply => {
+        let totalSupply = web3.utils.fromWei(web3.utils.toBN(supply)).toString();
+        totalSupply -= 100000000;
+        this.totalSupply = formatNumber(totalSupply) + ' DIO';
+      });
+      web3.eth.codeGroups().then(groups => {
+        this.totalFleets = web3.utils.hexToNumber(groups[FleetHash]);
+        this.totalAccounts = web3.utils.hexToNumber(groups[NullHash]);
+      });
+    },
     fetchStake: function(addr) {
       fetchStake(addr, value => {
         this.$set(this.stakes, addr, {
           name: addr,
-          value: web3.utils.fromWei(web3.utils.toBN(value)).toString()
+          value: formatNumber(web3.utils.fromWei(web3.utils.toBN(value)))
         });
       });
     },
@@ -163,28 +201,27 @@ var PowerDistribution = Vue.component("power_distribution", {
         this.base = base;
         this.fetchStake(base);
       });
-      subscribe(
-        "newBlockHeaders",
-        (error, block) => {
-          var buffer = [];
-          if (!error) {
-            buffer.push(block);
-          } else {
-            console.log("newBlockHeaders.subscription.error", error);
-          }
-          setInterval(() => {
-            if (buffer.length == 0) return;
-            let blocks = this.blocks.slice();
-            Array.prototype.unshift.apply(blocks, buffer);
-            if (blocks.length > this.targetSize) {
-              let size = blocks.length - this.targetSize;
-              blocks.splice(-size, size);
-            }
-            this.blocks = blocks;
-            buffer = [];
-          }, 2000);
+      let buffer = [];
+      this.refresh();
+      subscribe("newBlockHeaders", (error, block) => {
+        if (error) {
+          console.log("newBlockHeaders.subscription.error", error);
+          return;
         }
-      );
+        this.refresh();
+        buffer.push(block);
+      });
+      setInterval(() => {
+        if (buffer.length == 0) return;
+        let blocks = this.blocks.slice();
+        Array.prototype.unshift.apply(blocks, buffer);
+        if (blocks.length > this.targetSize) {
+          let size = blocks.length - this.targetSize;
+          blocks.splice(-size, size);
+        }
+        this.blocks = blocks;
+        buffer = [];
+      }, 2000);
 
       let nr = await web3.eth.getBlockNumber();
       let batch = new web3.BatchRequest();

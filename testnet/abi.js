@@ -142,6 +142,27 @@ function NewWeb3(url) {
             params: 1,
             inputFormatter: [obj.extend.formatters.inputAddressFormatter]
             // outputFormatter: obj.utils.hexToNumberString
+        },
+        {
+            name: 'codeCount',
+            call: 'dio_codeCount',
+            params: 1,
+            // inputFormatter: [obj.extend.formatters.inputAddressFormatter]
+            // outputFormatter: obj.utils.hexToNumberString
+        },
+        {
+            name: 'codeGroups',
+            call: 'dio_codeGroups',
+            params: 0,
+            // inputFormatter: [obj.extend.formatters.inputAddressFormatter]
+            // outputFormatter: obj.utils.hexToNumberString
+        },
+        {
+            name: 'totalSupply',
+            call: 'dio_supply',
+            params: 0,
+            // inputFormatter: [obj.extend.formatters.inputAddressFormatter]
+            // outputFormatter: obj.utils.hexToNumberString
         }]
     })
     obj.extend({
