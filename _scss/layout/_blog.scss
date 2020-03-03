@@ -149,14 +149,16 @@ section.blog-section {
     article.blog-article {
       position: relative;
       width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      @media (max-width: 992px) {
+        max-width: 100%;
+      }
       margin-bottom: 30px;
 
       img {
-        max-width: 80%;
+        max-width: 100%;
         margin: 0 auto;
-        @media (max-width: 992px) {
-          max-width: 100%;
-        }
       }
 
       &.blog-single-page {

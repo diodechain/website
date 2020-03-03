@@ -4570,18 +4570,20 @@ section.blog-section .blog-articles-container {
 section.blog-section .blog-articles-container article.blog-article {
   position: relative;
   width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
   margin-bottom: 30px;
 }
 
-section.blog-section .blog-articles-container article.blog-article img {
-  max-width: 80%;
-  margin: 0 auto;
-}
-
 @media (max-width: 992px) {
-  section.blog-section .blog-articles-container article.blog-article img {
+  section.blog-section .blog-articles-container article.blog-article {
     max-width: 100%;
   }
+}
+
+section.blog-section .blog-articles-container article.blog-article img {
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 section.blog-section .blog-articles-container article.blog-article.blog-single-page header.article-header .article-title h3.title {
