@@ -151,6 +151,14 @@ section.blog-section {
       width: 100%;
       margin-bottom: 30px;
 
+      img {
+        max-width: 80%;
+        margin: 0 auto;
+        @media (max-width: 992px) {
+          max-width: 100%;
+        }
+      }
+
       &.blog-single-page {
         header.article-header {
           .article-title {

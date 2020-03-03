@@ -4573,6 +4573,17 @@ section.blog-section .blog-articles-container article.blog-article {
   margin-bottom: 30px;
 }
 
+section.blog-section .blog-articles-container article.blog-article img {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  section.blog-section .blog-articles-container article.blog-article img {
+    max-width: 100%;
+  }
+}
+
 section.blog-section .blog-articles-container article.blog-article.blog-single-page header.article-header .article-title h3.title {
   color: #2d3e50;
   font-size: 2rem;
