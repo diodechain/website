@@ -9,8 +9,6 @@ image: StanfordBC_01.jpg
 imageclass: middle
 ---
 
-![alt_text](images/blog/StanfordBC_01.jpg "image_tooltip")
-
 [The 4th Stanford Blockchain Conference (SBC)](https://cbr.stanford.edu/sbc20/) continues to educate attendees about the research and current issues around blockchain protocol development, cryptography, distributed systems, and crypto-economics.
 
 
