@@ -2,7 +2,7 @@
 layout: post
 date: 2019-10-03 10:30
 categories: [Diode]
-tags: [Diode, FAQ, Diode Network, Diode Chain, Blockchain, BlockQuick, DPKI, Ethereum]
+tags: [Diode, FAQ, Blockchain, BlockQuick, DPKI, Ethereum]
 author: Yahsin Huang
 image: FAQ-1.jpg
 ---

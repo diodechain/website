@@ -3,7 +3,7 @@ layout: post
 title: "The impact of decentralized infrastructure on wireless communications"
 date: 2019-05-20 09:19
 categories: [Distributed-Infrastructure]
-tags: [Distributed Infrastructure, PKI, Blockchain, Security, Wireless Communications, IoT]
+tags: [Distributed Infrastructure, PKI, Blockchain, Security, IoT]
 image: Decentralized-Wireless0.jpg
 author: Hans Rempel
 ---

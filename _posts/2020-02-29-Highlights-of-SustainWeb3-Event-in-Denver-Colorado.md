@@ -3,7 +3,7 @@ layout: post
 title: Highlights of SustainWeb3 Event in Denver Colorado
 date: 2020-02-29 01:09
 categories: [Diode]
-tags: [Diode, Blockchain, Events, SustainWeb3, EthDenver]
+tags: [Diode, Blockchain, Events]
 author: Yahsin Huang
 image: SustainWeb3_Denver_01.jpg
 imageclass: middle
