@@ -2332,13 +2332,15 @@ ul.tag-cloud-box {
 
 ul.tag-cloud-box li {
   display: inline-block;
-  margin: 0 10px 10px 0;
+  margin: 0px 1px;
 }
 
 ul.tag-cloud-box li a {
   display: block;
   padding: 8px 12px;
   border: 1px solid #F15C2E;
+  line-height: 0.8em;
+  height: auto !important;
 }
 
 ul.tag-cloud-box li a:hover {
@@ -3734,6 +3736,13 @@ section.site-section.next-section-indicator:after {
  **/
 .col-sidebar {
   background-color: #f4f8f9;
+  top: 0px;
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  padding-top: 20px;
+  width: 15em;
+  overflow-y: scroll;
 }
 
 .col-sidebar aside.site-sidebar h3 {
@@ -4429,7 +4438,6 @@ section.blog-section.page-layout {
 }
 
 section.blog-section.page-layout .blog-articles-container {
-  width: 100%;
   margin-top: 0;
 }
 
@@ -4552,7 +4560,6 @@ section.blog-section.page-layout article.blog-article .article-boxes .tags-artic
 }
 
 section.blog-section .blog-articles-container {
-  width: 100%;
   margin-top: 80px;
   -webkit-box-align: initial;
   -webkit-align-items: initial;

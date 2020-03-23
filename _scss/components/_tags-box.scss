@@ -13,13 +13,15 @@ ul.tag-cloud-box {
 
   li {
     display: inline-block;
-    margin: 0 10px 10px 0;
+    margin: 0px 1px;
 
     a {
       display: block;
       padding: 8px 12px;
       // color: $simple-gray;
       border: 1px solid $primary;
+      line-height: 0.8em;
+      height: auto !important;
 
       &:hover {
         color: $white;
