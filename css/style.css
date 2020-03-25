@@ -3289,7 +3289,10 @@ header.site-header .arrow-down-section .arrow-down i:before {
 }
 
 div.highlight {
-  background-color: #6d6d6d;
+  border: 1px solid black;
+  -webkit-border-radius: .4em;
+          border-radius: .4em;
+  background-color: #2e0a23;
   color: lightgray;
   padding: 0.2em;
   font-size: 0.8em;
@@ -3301,7 +3304,7 @@ div.highlight {
 
 code.highlighter-rouge {
   font-size: 0.9em;
-  background-color: #6d6d6d;
+  background-color: #2e0a23;
   color: lightgray;
 }
 
@@ -3377,11 +3380,11 @@ code.highlighter-rouge {
 }
 
 .highlight pre {
-  background-color: #6d6d6d;
+  background-color: #2e0a23;
 }
 
 .highlight .hll {
-  background-color: #6d6d6d;
+  background-color: #2e0a23;
 }
 
 .highlight .c {
@@ -3963,6 +3966,12 @@ section.offer-section .button {
  **/
 body.docs .container {
   width: 100%;
+}
+
+body.docs div.highlighter-rouge {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 100%;
 }
 
 body.docs .nav-sidebar {
