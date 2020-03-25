@@ -1,5 +1,5 @@
 ---
-title: Edge RPC
+title: EdgeV1 (Deprecated)
 category: Documentation
 ---
 
@@ -7,7 +7,7 @@ For diodechain binaries data are encoded with hex within json arrays. Each RPC c
 
 ```
 [<Two bytes of lenth>][<RPC method>, <value_1>, <value_2>, …, <value_n>]
-|       Length       ||                     RPC Payload                    |  
+|       Length       ||                     RPC Payload                |  
 ``` 
 
 For example, if I want to get block header of 0x0123456789, the RPC should be `"["getblockheader", "0x0123456789"]`. Because the length of RPC payload `["getblockheader", "0x0123456789"]` is 34 (in ascii code 34 is "), you should send `"["getblockheader", "0x0123456789"]` to diodechain.
