@@ -14,12 +14,13 @@ layout: ""
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-router@3.1.5/dist/vue-router.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/v-tooltip"></script>
     <script src="testnet/abi.js"></script>
-    <link rel="stylesheet" type="text/css" href="testnet/style.css">
-    </link>
-    <link rel="shortcut icon" href="images/favicon.png" title="Favicon">
-    </link>
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <script src="testnet/geo.js"></script>
+    <link rel="stylesheet" type="text/css" href="testnet/style.css"></link>
+    <link rel="shortcut icon" href="images/favicon.png" title="Favicon"></link>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet"></link>
 </head>
 
 <body>
@@ -29,6 +30,7 @@ layout: ""
     {% include_relative vue/account.vue %}
     {% include_relative vue/block.vue %}
     {% include_relative vue/transaction.vue %}
+    {% include_relative vue/network.vue %}
     <div id="app">
         <ul class="navbar">
             <li v-for="r in routes">
@@ -66,7 +68,8 @@ layout: ""
             { name: 'BNS', path: '/dns', component: DNS },
             { name: 'TXs', path: '/tx/:hash', params: { hash: '0x1' }, component: Transaction, props: true },
             { name: 'Blocks', path: '/block/:number', params: { number: 1 }, component: Block, props: true },
-            { name: 'Accounts', path: '/address/:hash', params: { hash: Registry }, component: Account, props: true }
+            { name: 'Accounts', path: '/address/:hash', params: { hash: Registry }, component: Account, props: true },
+            { name: 'Network', path: '/network', component: Network }
         ];
         const router = new VueRouter({ routes });
         router.beforeEach((to, from, next) => {
@@ -236,9 +239,12 @@ layout: ""
             if (!name) return "null"
             let key = name.toLowerCase()
             switch (key) {
-                case "0x937c492a77ae90de971986d003ffbc5f8bb2232c": return "Europe1"
+                case "0x937c492a77ae90de971986d003ffbc5f8bb2232c": return "EU1"
+                case "0xae699211c62156b8f29ce17be47d2f069a27f2a6": return "EU2"
                 case "0xceca2f8cf1983b4cf0c1ba51fd382c2bc37aba58": return "US1"
-                case "0x68e0bafdda9ef323f692fc080d612718c941d120": return "Asia1"
+                case "0x7e4cd38d266902444dc9c8f7c0aa716a32497d0b": return "US2"
+                case "0x68e0bafdda9ef323f692fc080d612718c941d120": return "AS1"
+                case "0x1350d3b501d6842ed881b59de4b95b27372bfae8": return "AS2"
                 case "0x5000000000000000000000000000000000000000": return "Registry"
                 default:
                     if (DNSCache[key]) return DNSCache[key].name
@@ -281,6 +287,8 @@ layout: ""
             // Will display time in 10:30:23 format
             return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
         }
+
     </script>
 </body>
+
 </html>
