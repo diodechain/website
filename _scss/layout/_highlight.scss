@@ -1,5 +1,9 @@
+
+
 div.highlight {
-    background-color: #6d6d6d;
+    border: 1px solid black;
+    border-radius: .4em;
+    background-color: $background-code;
     color: lightgray;
     padding: 0.2em;
     font-size: 0.8em;
@@ -11,13 +15,13 @@ div.highlight {
 
 code.highlighter-rouge {
     font-size: 0.9em;
-    background-color: #6d6d6d;
+    background-color: $background-code;
     color: lightgray;
 }
 
 .highlight {
-    pre { background-color: #6d6d6d }
-    .hll { background-color: #6d6d6d }
+    pre { background-color: $background-code }
+    .hll { background-color: $background-code }
     .c { color: #999999; font-style: italic } /* Comment */
     .err { color: #a61717; background-color: #e3d2d2 } /* Error */
     .g { color: #d0d0d0 } /* Generic */

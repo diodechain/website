@@ -9,6 +9,13 @@
 .col-sidebar {
   background-color: $light-blue;
 
+  top: 0px;
+  height: 100vh;
+  position: sticky;
+  padding-top: 20px;
+  width: 15em;
+  overflow-y: scroll;
+
   aside.site-sidebar {
     h3 {
       &:hover {

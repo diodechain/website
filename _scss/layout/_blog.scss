@@ -22,7 +22,7 @@ section.blog-section {
     padding-top: 30px;
 
     .blog-articles-container {
-      width: 100%;
+      // width: 100%;
       margin-top: 0;
     }
 
@@ -133,7 +133,7 @@ section.blog-section {
 
   // Blog Articles Container
   .blog-articles-container {
-    width: 100%;
+    // width: 100%;
     margin-top: 80px;
     align-items: initial;
 
@@ -203,8 +203,6 @@ section.blog-section {
         }
 
         .img-wrap {
-          display: flex;
-          justify-content: center;
           max-width: 100%;
           height: auto;
           margin-bottom: 1em;

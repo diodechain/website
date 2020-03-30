@@ -2332,13 +2332,15 @@ ul.tag-cloud-box {
 
 ul.tag-cloud-box li {
   display: inline-block;
-  margin: 0 10px 10px 0;
+  margin: 0px 1px;
 }
 
 ul.tag-cloud-box li a {
   display: block;
   padding: 8px 12px;
   border: 1px solid #F15C2E;
+  line-height: 0.8em;
+  height: auto !important;
 }
 
 ul.tag-cloud-box li a:hover {
@@ -3287,7 +3289,10 @@ header.site-header .arrow-down-section .arrow-down i:before {
 }
 
 div.highlight {
-  background-color: #6d6d6d;
+  border: 1px solid black;
+  -webkit-border-radius: .4em;
+          border-radius: .4em;
+  background-color: #2e0a23;
   color: lightgray;
   padding: 0.2em;
   font-size: 0.8em;
@@ -3299,7 +3304,7 @@ div.highlight {
 
 code.highlighter-rouge {
   font-size: 0.9em;
-  background-color: #6d6d6d;
+  background-color: #2e0a23;
   color: lightgray;
 }
 
@@ -3375,11 +3380,11 @@ code.highlighter-rouge {
 }
 
 .highlight pre {
-  background-color: #6d6d6d;
+  background-color: #2e0a23;
 }
 
 .highlight .hll {
-  background-color: #6d6d6d;
+  background-color: #2e0a23;
 }
 
 .highlight .c {
@@ -3734,6 +3739,13 @@ section.site-section.next-section-indicator:after {
  **/
 .col-sidebar {
   background-color: #f4f8f9;
+  top: 0px;
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  padding-top: 20px;
+  width: 15em;
+  overflow-y: scroll;
 }
 
 .col-sidebar aside.site-sidebar h3 {
@@ -3954,6 +3966,12 @@ section.offer-section .button {
  **/
 body.docs .container {
   width: 100%;
+}
+
+body.docs div.highlighter-rouge {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 100%;
 }
 
 body.docs .nav-sidebar {
@@ -4429,7 +4447,6 @@ section.blog-section.page-layout {
 }
 
 section.blog-section.page-layout .blog-articles-container {
-  width: 100%;
   margin-top: 0;
 }
 
@@ -4552,7 +4569,6 @@ section.blog-section.page-layout article.blog-article .article-boxes .tags-artic
 }
 
 section.blog-section .blog-articles-container {
-  width: 100%;
   margin-top: 80px;
   -webkit-box-align: initial;
   -webkit-align-items: initial;
@@ -4620,14 +4636,6 @@ section.blog-section .blog-articles-container article.blog-article header.articl
 }
 
 section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   max-width: 100%;
   height: auto;
   margin-bottom: 1em;
