@@ -357,12 +357,10 @@ figure {
 }
 
 .network text {
-    dominant-baseline: middle;
     font-size: 120%;
 }
 
 .network circle {
-    r: 8px;
     fill: #3437e2;
     stroke: black;
     stroke-width: 2px;
