@@ -137,6 +137,13 @@ function NewWeb3(url) {
             // outputFormatter: obj.utils.hexToNumberString
         },
         {
+            name: 'getAllAccounts',
+            call: 'dio_accounts',
+            params: 0,
+            // inputFormatter: [obj.extend.formatters.inputAddressFormatter]
+            // outputFormatter: obj.utils.hexToNumberString
+        },
+        {
             name: 'network',
             call: 'dio_network',
             params: 0,

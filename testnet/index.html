@@ -28,12 +28,13 @@ layout: ""
     {% include_relative vue/dns.vue %}
     {% include_relative vue/power_distribution.vue %}
     {% include_relative vue/account.vue %}
+    {% include_relative vue/accounts.vue %}
     {% include_relative vue/block.vue %}
     {% include_relative vue/transaction.vue %}
     {% include_relative vue/network.vue %}
     <div id="app">
         <ul class="navbar">
-            <li v-for="r in routes">
+            <li v-for="r in routes" v-if="r.name">
                 <router-link :to="r"><% r.name %></router-link>
             </li>
             <li>
@@ -63,13 +64,14 @@ layout: ""
         }
 
         var routes = [
-            { name: 'Home', path: '/', component: PowerDistribution },
+            { name: 'TXs', path: '/tx/:hash', params: { hash: '0x1' }, component: Transaction, props: true },
+            { name: 'Network', path: '/network', component: Network },
             { name: 'Fleets', path: '/fleets', component: FleetRegistration },
             { name: 'BNS', path: '/dns', component: DNS },
-            { name: 'TXs', path: '/tx/:hash', params: { hash: '0x1' }, component: Transaction, props: true },
             { name: 'Blocks', path: '/block/:number', params: { number: 1 }, component: Block, props: true },
-            { name: 'Accounts', path: '/address/:hash', params: { hash: Registry }, component: Account, props: true },
-            { name: 'Network', path: '/network', component: Network }
+            { name: 'Accounts', path: '/address/', component: Accounts },
+            { name: false, path: '/address/:hash', params: { hash: Registry }, component: Account, props: true},
+            { name: 'Home', path: '/', component: PowerDistribution },
         ];
         const router = new VueRouter({ routes });
         router.beforeEach((to, from, next) => {
@@ -157,7 +159,7 @@ layout: ""
             template: '<router-link v-if="isAddress(hash)" :to="\'/address/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link><span v-else><% hash %></span>',
             props: {
                 hash: String,
-                onlyAlias: { type: Boolean, default: false },
+                onlyAlias: { type: Boolean, default: true },
                 length: { type: Number, default: 50 }
             },
             delimiters: ["<%", "%>"]
@@ -184,7 +186,7 @@ layout: ""
 
                     // Money detection
                     if (this.value.startsWith('0x0000000000000000000000000000000000000000000'))
-                        return web3.utils.fromWei(this.value) + ' DIO'
+                        return valueToBalance(this.value)
 
                     // Address detection
                     let acc = valueToAddress(this.value)
@@ -225,6 +227,20 @@ layout: ""
             return undefined
         }
 
+        function valueToBalance(balance) {
+            let value = web3.utils.fromWei(balance)
+            let unit = ' DIO'
+
+            // if (value == 0) {
+            //     value = web3.utils.hexToNumber(balance)
+            //     unit = ' WEI'
+            // }
+
+            // Adding thousands separators
+            value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return value + unit
+        }
+
         function isAddress(value) {
             return web3.utils.isAddress(value) && !value.startsWith('0x000000')
         }
@@ -246,6 +262,12 @@ layout: ""
                 case "0x68e0bafdda9ef323f692fc080d612718c941d120": return "AS1"
                 case "0x1350d3b501d6842ed881b59de4b95b27372bfae8": return "AS2"
                 case "0x5000000000000000000000000000000000000000": return "Registry"
+                case "0xaf60faa5cd840b724742f1af116168276112d6a6": return "BNS"
+                case "0xbada81fae68925fec725790c34b68b5faca90d45": return "Faucet 1"
+                case "0x34e3961098de3348b465cc82791bd0f7ebce3ecd": return "Faucet 2"
+                case "0xc0c416b326133d74335e6828d558efe315bd597e": return "Faucet 3"
+                case "0x58cc80f5526594f07f33fd4be4aef153bab602b2": return "Faucet 4"
+                case "0x45aa0730cf4216f7195fc1f5903a171a1faa5209": return "Faucet 5"
                 default:
                     if (DNSCache[key]) return DNSCache[key].name
                     return name;

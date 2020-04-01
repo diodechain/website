@@ -19,7 +19,7 @@
         </tr>
         <tr>
           <th>Balance</th>
-          <td><% web3.utils.fromWei(balance) %> DIO</td>
+          <td><% valueToBalance(balance) %></td>
         </tr>
         <tr v-if="object">
           <th>Device Data</th>
