@@ -26,6 +26,15 @@ section.blog-section {
       margin-top: 0;
     }
 
+    .blog-articles-container > .title {
+      text-align: center;
+    }
+
+    .blog-articles-container > .subtitle {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
     article.border-article {
 
       border: 1px solid gray;

@@ -4450,6 +4450,15 @@ section.blog-section.page-layout .blog-articles-container {
   margin-top: 0;
 }
 
+section.blog-section.page-layout .blog-articles-container > .title {
+  text-align: center;
+}
+
+section.blog-section.page-layout .blog-articles-container > .subtitle {
+  text-align: center;
+  margin-top: 1rem;
+}
+
 section.blog-section.page-layout article.border-article {
   border: 1px solid gray;
   padding: 1em;
@@ -5091,6 +5100,72 @@ section.contact-section .form-container form.contact-form .form-action .send-but
     display: block;
     width: 100%;
   }
+}
+
+/**
+ *
+ *  Download Section Style
+ *
+ *  @package gleesik_layout
+ *
+ **/
+section.download-section .row {
+  -webkit-box-align: initial;
+  -webkit-align-items: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  margin-bottom: 1em;
+}
+
+section.download-section hr.small {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+section.download-section .download-header {
+  margin-bottom: 1em;
+}
+
+section.download-section .download-header .title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+section.download-section .download-header p {
+  font-size: 1.5em;
+}
+
+section.download-section .download-box .download-content {
+  padding: 1em 1em;
+  margin-top: 0;
+  border: 2px solid #e3e9ed;
+}
+
+section.download-section .download-box .download-content p {
+  margin: 1em 0;
+}
+
+section.download-section .download-box .download-content .download-link {
+  font-weight: bold;
+  padding: 5px;
+  border: 1px solid #e3e9ed;
+  background-color: #e3e9ed;
+  color: #2d3e50;
+}
+
+section.download-section .download-box .download-content .download-link:hover, section.download-section .download-box .download-content .download-link:active {
+  color: #F15C2E;
+  background-color: #2d3e50;
+  border-color: #2d3e50;
+}
+
+section.download-section .download-content {
+  padding: 0;
+  margin-top: 0;
+}
+
+section.download-section .download-content p {
+  margin: 1em 0;
 }
 
 /**

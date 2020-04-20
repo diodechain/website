@@ -19,7 +19,12 @@ layout: default
             {{ page.tagline }}
           {% endif %}
         </h2>
-        <h1 class="thin">{{ page.title }}</h1>
+        <h1 class="thin title">{{ page.title }}</h1>
+        {% if page.subtitle != null %}
+          <h4 class="subtitle">
+            {{ page.subtitle }}
+          </h4>
+        {% endif %}
         <hr class="small">
       </div>
     </div>
