@@ -101,16 +101,16 @@ telegram: 'https://t.me/diode_chain'
 download-base: https://github.com/diodechain/diode_go_client/releases/download/
 downloads:
 - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (32-bit)
-  link: v0.3.0/linux_arm.zip
+  link: v0.3.2/diode_linux_arm6.zip
   id: Raspberry Pi
 - title: <i class="fab fa-apple"></i> MacOS X
-  link: v0.3.0/macos_amd64.zip
+  link: v0.3.2/diode_macos_amd64.zip
   id: MacOS
 - title: <i class="fab fa-windows"></i> Windows (64-bit)
-  link: v0.3.0/windows_amd64.zip
+  link: v0.3.2/diode_windows_amd64.zip
   id: Windows
 - title: <i class="fab fa-linux"></i> Linux (64-bit)
-  link: v0.3.0/linux_amd64.zip
+  link: v0.3.2/diode_linux_amd64.zip
   id: Linux
 
 #########################
