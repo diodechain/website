@@ -11,7 +11,7 @@ subtitle: Get started with diode in just few seconds!
 <section class="download-section" id="download">
   <div class="container">
 
-    <!-- Doload Builded Binaries -->
+    <!-- Download Pre-Built Binaries -->
     <div class="row">
       <div class="col-md-12 col-md-push-0 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
         <div class="download-header">
@@ -22,11 +22,18 @@ subtitle: Get started with diode in just few seconds!
       <div class="col-md-4 col-md-push-0 col-sm-4 col-sm-push-0 col-xs-4 col-xs-push-0">
         <div class="download-box">
           <div class="download-content">
-            <p>Download the latest diode for linux.</p>
-            <a class="download-link" href="" target="_blank">
-              <i class="fab fa-linux"></i>
-              Linux binary
+            <h4>Download diode cli</h4>
+            <p>Download the binary for your operating system</p>
+            {% for item in site.downloads %}            
+            <a id="{{ item.id }}" class="button-cta button-focus" href="{{ site.download-base }}{{ item.link }}">
+              {{ item.title }}
             </a>
+            {% endfor %}
+            {% for item in site.downloads %}            
+            <a href="{{ site.download-base }}{{ item.link }}" class="download-link">
+              {{ item.title }}
+            </a>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -34,11 +41,17 @@ subtitle: Get started with diode in just few seconds!
       <div class="col-md-4 col-md-push-0 col-sm-4 col-sm-push-0 col-xs-4 col-xs-push-0">
         <div class="download-box">
           <div class="download-content">
-            <p>Download the latest diode for macos.</p>
-            <a class="download-link" href="" target="_blank">
-              <i class="fab fa-apple"></i>
-              Macos binary
-            </a>
+            <h4>Unzip and install</h4>
+            <p>On Linux and OSX you can use the unzip terminal tool. On Windows
+              you can double click it.</p>
+
+            <code>
+              $ unzip Downloads/<span id="filename">diode.zip</span>
+            </code>
+            
+            We recommend to move it into a $PATH directoy such as /usr/local/bin or
+            ~/bin if used.
+
           </div>
         </div>
       </div>
@@ -46,25 +59,28 @@ subtitle: Get started with diode in just few seconds!
       <div class="col-md-4 col-md-push-0 col-sm-4 col-sm-push-0 col-xs-4 col-xs-push-0">
         <div class="download-box">
           <div class="download-content">
-            <p>Download the latest diode for windows.</p>
-            <a class="download-link" href="" target="_blank">
-              <i class="fab fa-windows"></i>
-              Windows binary
-            </a>
+            <h4>Setup your fleet</h4>
+            <p>To use diode you have to specify which fleet you're running on.</p>
+
+            <code>
+              $ diode config -set fleet=&lt;YOUR_FLEET&gt;
+            </code>
+            
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Get started -->
-    <div class="row">
-      <div class="col-md-12 col-md-push-0 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
-        <div class="download-header">
-          <h5 class="title">Get Started with diode</h5>
-        </div>
+      <div class="col-md-4 col-md-push-0 col-sm-4 col-sm-push-0 col-xs-4 col-xs-push-0">
+        <div class="download-box">
+          <div class="download-content">
+            <h4>Publish ports</h4>
+            <p>To publish e.g. your local http ports to the diode gateway call:</p>
 
-        <div class="download-content">
-          <p>To be continued......</p>
+            <code>
+              $ diode publish -public 80:80
+            </code>           
+            
+          </div>
         </div>
       </div>
   </div>

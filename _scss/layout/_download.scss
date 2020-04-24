@@ -8,6 +8,30 @@
 
  section.download-section {
 
+  .row > [class*="col-"] {
+    justify-content: stretch;
+  }
+
+  .button-cta {
+    display: none;
+    margin-bottom: 0.4em;
+  }
+
+  code {
+    white-space: nowrap;
+    border: 1px solid black;
+    border-radius: .4em;
+    background-color: #2e0a23;
+    color: lightgray;    
+    font-size: 0.8em;
+    display: inline-block;
+    overflow: auto;
+    width: 100%;
+    text-align: center;
+    padding: 1em .5em 1em .5em;
+    font-family: monospace;    
+  }
+
   .row {
     align-items: initial;
     margin-bottom: 1em;
@@ -31,29 +55,41 @@
     }
   }
 
+  counter-reset: boxes;
+
   .download-box {
+    text-align: center;
+    height: 100%;
+    margin-bottom: 1em;
+
+    h4::before {
+      counter-increment: boxes;
+      content: counter(boxes);
+      padding: 3px 8px;
+      margin-right: .5em;
+      color: white;
+      font-weight: bold;
+      font-family: monospace;
+      background-color: $primary;
+      border: .1em solid $primary;
+      border-radius: 2em;      
+    }
+
     .download-content {
-      padding: 1em 1em;
+      padding: 1em 0.7em;
       margin-top: 0;
       border: 2px solid $light-gray;
+      height: inherit;
 
       p {
         margin: 1em 0;
       }
 
       .download-link {
-        font-weight: bold;
-        padding: 5px;
-        border: 1px solid $light-gray;
-        background-color: $light-gray;
-        color: $secondary;
-
-        &:hover,
-        &:active {
-          color: $primary;
-          background-color: $secondary;
-          border-color: $secondary;
-        }
+        font-size: 90%;
+        // font-weight: bold;
+        display: inline-block;
+        margin: 0.3em;
       }
     }
   }

@@ -5109,6 +5109,38 @@ section.contact-section .form-container form.contact-form .form-action .send-but
  *  @package gleesik_layout
  *
  **/
+section.download-section {
+  counter-reset: boxes;
+}
+
+section.download-section .row > [class*="col-"] {
+  -webkit-box-pack: stretch;
+  -webkit-justify-content: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+}
+
+section.download-section .button-cta {
+  display: none;
+  margin-bottom: 0.4em;
+}
+
+section.download-section code {
+  white-space: nowrap;
+  border: 1px solid black;
+  -webkit-border-radius: .4em;
+          border-radius: .4em;
+  background-color: #2e0a23;
+  color: lightgray;
+  font-size: 0.8em;
+  display: inline-block;
+  overflow: auto;
+  width: 100%;
+  text-align: center;
+  padding: 1em .5em 1em .5em;
+  font-family: monospace;
+}
+
 section.download-section .row {
   -webkit-box-align: initial;
   -webkit-align-items: initial;
@@ -5135,10 +5167,31 @@ section.download-section .download-header p {
   font-size: 1.5em;
 }
 
+section.download-section .download-box {
+  text-align: center;
+  height: 100%;
+  margin-bottom: 1em;
+}
+
+section.download-section .download-box h4::before {
+  counter-increment: boxes;
+  content: counter(boxes);
+  padding: 3px 8px;
+  margin-right: .5em;
+  color: white;
+  font-weight: bold;
+  font-family: monospace;
+  background-color: #F15C2E;
+  border: 0.1em solid #F15C2E;
+  -webkit-border-radius: 2em;
+          border-radius: 2em;
+}
+
 section.download-section .download-box .download-content {
-  padding: 1em 1em;
+  padding: 1em 0.7em;
   margin-top: 0;
   border: 2px solid #e3e9ed;
+  height: inherit;
 }
 
 section.download-section .download-box .download-content p {
@@ -5146,17 +5199,9 @@ section.download-section .download-box .download-content p {
 }
 
 section.download-section .download-box .download-content .download-link {
-  font-weight: bold;
-  padding: 5px;
-  border: 1px solid #e3e9ed;
-  background-color: #e3e9ed;
-  color: #2d3e50;
-}
-
-section.download-section .download-box .download-content .download-link:hover, section.download-section .download-box .download-content .download-link:active {
-  color: #F15C2E;
-  background-color: #2d3e50;
-  border-color: #2d3e50;
+  font-size: 90%;
+  display: inline-block;
+  margin: 0.3em;
 }
 
 section.download-section .download-content {

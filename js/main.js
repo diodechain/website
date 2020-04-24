@@ -156,7 +156,7 @@
      * Documentation navigation
      */
     let $heads = $(".toc-widget h3")
-    $heads.click(function() {
+    $heads.click(function () {
       $(this).parent().toggleClass("folded")
     })
 
@@ -164,7 +164,7 @@
      * Documentation secondary navigation
      */
     let $shortcut = $(".nav-sidebar")
-    $shortcut.click(function() {
+    $shortcut.click(function () {
       $(".col-sidebar").toggle()
       $shortcut.toggleClass("folded")
     })
@@ -205,6 +205,23 @@
     $("#search").change(search)
 
 
+    /**
+     * Downloads
+     */
+    let OSName = "Unknown OS";
+    if (navigator.userAgent.indexOf("Win") != -1) OSName = "Windows";
+    if (navigator.userAgent.indexOf("Mac") != -1) OSName = "MacOS";
+    if (navigator.userAgent.indexOf("Linux") != -1) {
+      if (navigator.userAgent.indexOf("armv") != -1) OSName = "Raspberry Pi";
+      else OSName = "Linux";
+    }
+    let downloadLink = $("#" + OSName)
+    if (downloadLink.length > 0) {
+      downloadLink.css("display", "block")
+      let file = downloadLink.attr("href")
+      file = file.substring(file.lastIndexOf('/') + 1)
+      $("#filename").text(file)
+    }
   });
 
 }(window.jQuery, window, document));
