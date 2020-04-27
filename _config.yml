@@ -104,13 +104,13 @@ downloads:
   link: v0.3.2/diode_linux_arm6.zip
   id: Raspberry Pi
 - title: <i class="fab fa-apple"></i> MacOS X
-  link: v0.3.2/diode_macos_amd64.zip
+  link: v0.3.3/diode_macos_amd64.zip
   id: MacOS
 - title: <i class="fab fa-windows"></i> Windows (64-bit)
-  link: v0.3.2/diode_windows_amd64.zip
+  link: v0.3.3/diode_windows_amd64.zip
   id: Windows
 - title: <i class="fab fa-linux"></i> Linux (64-bit)
-  link: v0.3.2/diode_linux_amd64.zip
+  link: v0.3.3/diode_linux_amd64.zip
   id: Linux
 
 #########################
