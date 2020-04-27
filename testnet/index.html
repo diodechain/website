@@ -31,6 +31,7 @@ layout: ""
     {% include_relative vue/accounts.vue %}
     {% include_relative vue/block.vue %}
     {% include_relative vue/transaction.vue %}
+    {% include_relative vue/transactions.vue %}
     {% include_relative vue/network.vue %}
     <div id="app">
         <ul class="navbar">
@@ -64,13 +65,17 @@ layout: ""
         }
 
         var routes = [
-            { name: 'TXs', path: '/tx/:hash', params: { hash: '0x1' }, component: Transaction, props: true },
+            { name: 'TXs', path: '/tx/', component: Transactions },
+            { name: false, path: '/tx/:hash', params: { hash: '0x1' }, component: Transaction, props: true },
+
             { name: 'Network', path: '/network', component: Network },
             { name: 'Fleets', path: '/fleets', component: FleetRegistration },
             { name: 'BNS', path: '/dns', component: DNS },
             { name: 'Blocks', path: '/block/:number', params: { number: 1 }, component: Block, props: true },
+
             { name: 'Accounts', path: '/address/', component: Accounts },
             { name: false, path: '/address/:hash', params: { hash: Registry }, component: Account, props: true},
+
             { name: 'Home', path: '/', component: PowerDistribution },
         ];
         const router = new VueRouter({ routes });
