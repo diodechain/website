@@ -106,6 +106,9 @@ downloads:
 - title: <i class="fab fa-apple"></i> MacOS X
   link: v0.3.3/diode_macos_amd64.zip
   id: MacOS
+- title: <i class="fas fa-cube"></i> MacOS Package
+  link: v0.3.3/diode_darwin.pkg
+  id: MacOS
 - title: <i class="fab fa-windows"></i> Windows (64-bit)
   link: v0.3.3/diode_windows_amd64.zip
   id: Windows
