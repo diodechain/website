@@ -280,7 +280,8 @@ layout: ""
         }
 
         function formatNumber(num) {
-            return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+            // return Math.floor(num).toString()
+            return Math.floor(num).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
         }
 
         function formatAddr(addr, onlyAlias, length) {
