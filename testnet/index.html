@@ -143,11 +143,11 @@ layout: ""
                     let name = valueToString(ret[key])
                     // if (names == undefined) name = ret[key]
                     if (name == undefined) continue
-                    let nameOff = web3.utils.toBN(key)
+                    let nameOffset = web3.utils.toBN(key)
                     let entry = {
                         name,
-                        owner: ret['0x' + nameOff.sub(web3.utils.toBN('0x1')).toString(16)],
-                        destination: ret['0x' + nameOff.sub(web3.utils.toBN('0x2')).toString(16)]
+                        owner: ret[addressAdd(nameOffset, -1)],
+                        destination: ret[addressAdd(nameOffset, -2)]
                     }
                     if (entry.owner == undefined) continue;
                     DNSCache[name] = entry
@@ -218,6 +218,10 @@ layout: ""
             if (!isAddress(addr))
                 return undefined;
             return addr
+        }
+
+        function addressAdd(bn, num) {
+            return '0x' + bn.add(web3.utils.toBN(num)).toString(16).padStart(64, '0')
         }
 
         function valueToString(value) {
