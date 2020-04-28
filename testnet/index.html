@@ -263,24 +263,9 @@ layout: ""
         function resolveName(name) {
             if (!name) return "null"
             let key = name.toLowerCase()
-            switch (key) {
-                case "0x937c492a77ae90de971986d003ffbc5f8bb2232c": return "EU1"
-                case "0xae699211c62156b8f29ce17be47d2f069a27f2a6": return "EU2"
-                case "0xceca2f8cf1983b4cf0c1ba51fd382c2bc37aba58": return "US1"
-                case "0x7e4cd38d266902444dc9c8f7c0aa716a32497d0b": return "US2"
-                case "0x68e0bafdda9ef323f692fc080d612718c941d120": return "AS1"
-                case "0x1350d3b501d6842ed881b59de4b95b27372bfae8": return "AS2"
-                case "0x5000000000000000000000000000000000000000": return "Registry"
-                case "0xaf60faa5cd840b724742f1af116168276112d6a6": return "BNS"
-                case "0xbada81fae68925fec725790c34b68b5faca90d45": return "Faucet 1"
-                case "0x34e3961098de3348b465cc82791bd0f7ebce3ecd": return "Faucet 2"
-                case "0xc0c416b326133d74335e6828d558efe315bd597e": return "Faucet 3"
-                case "0x58cc80f5526594f07f33fd4be4aef153bab602b2": return "Faucet 4"
-                case "0x45aa0730cf4216f7195fc1f5903a171a1faa5209": return "Faucet 5"
-                default:
-                    if (DNSCache[key]) return DNSCache[key].name
-                    return name;
-            }
+            if (DNSAlias[key]) return DNSAlias[key]
+            if (DNSCache[key]) return DNSCache[key].name
+            return name;
         }
 
         function fetchStake(address, callback) {
