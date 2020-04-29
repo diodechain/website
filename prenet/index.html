@@ -18,9 +18,12 @@ layout: ""
     <script src="https://unpkg.com/v-tooltip"></script>
     <script src="prenet/abi.js"></script>
     <script src="prenet/geo.js"></script>
-    <link rel="stylesheet" type="text/css" href="prenet/style.css"></link>
-    <link rel="shortcut icon" href="images/favicon.png" title="Favicon"></link>
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet"></link>
+    <link rel="stylesheet" type="text/css" href="prenet/style.css">
+    </link>
+    <link rel="shortcut icon" href="images/favicon.png" title="Favicon">
+    </link>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    </link>
 </head>
 
 <body>
@@ -34,15 +37,20 @@ layout: ""
     {% include_relative vue/transactions.vue %}
     {% include_relative vue/network.vue %}
     <div id="app">
-        <ul class="navbar">
-            <li v-for="r in routes" v-if="r.name">
-                <router-link :to="r"><% r.name %></router-link>
-            </li>
-            <li>
-                <span v-if="connected" class="good">connected</span>
-                <span v-else class="bad">trying to connect.<% '.'.repeat(ticker%3) %></span>
-            </li>
-        </ul>
+        <div class="header">
+            <div class="logo">
+                <a href="{{ site.github.url }}"><img src="prenet/diode.png" /></a>
+            </div>
+            <ul class="navbar">
+                <li v-for="r in routes" v-if="r.name">
+                    <router-link :to="r"><% r.name %></router-link>
+                </li>
+                <li>
+                    <span v-if="connected" class="good">connected</span>
+                    <span v-else class="bad">trying to connect.<% '.'.repeat(ticker%3) %></span>
+                </li>
+            </ul>
+        </div>
 
         <transition>
             <keep-alive>
@@ -74,7 +82,7 @@ layout: ""
             { name: 'Blocks', path: '/block/:number', params: { number: 1 }, component: Block, props: true },
 
             { name: 'Accounts', path: '/address/', component: Accounts },
-            { name: false, path: '/address/:hash', params: { hash: Registry }, component: Account, props: true},
+            { name: false, path: '/address/:hash', params: { hash: Registry }, component: Account, props: true },
 
             { name: 'Home', path: '/', component: PowerDistribution },
         ];
