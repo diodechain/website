@@ -40,7 +40,7 @@ Then, you want to create a simple static website. It can be as simple as an inde
     </head>
     <body>
         <h1>Hello! Welcome to IPFS</h1>
-        <p>And this frame below is from the Diode Testnet</p>
+        <p>And this frame below is from the Diode Prenet</p>
         <iframe src="https://rw-0x780980bfc0aa56ceb1417e87912e54b759463090.diode.link"></iframe>
     </body>
 </html>
@@ -63,7 +63,7 @@ View my ENS+IPFS decentralized website: [https://yahsin.eth.link/](https://yahsi
 
 ![alt_text](images/blog/ens-ipfs4.png "image_tooltip")
 
-Above is a screenshot showcasing the IPFS deployment of the Diode Testnet example website.
+Above is a screenshot showcasing the IPFS deployment of the Diode Prenet example website.
 
 **The Diode Network**
 

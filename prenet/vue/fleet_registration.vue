@@ -1,7 +1,7 @@
 <template id="fleet_registration">
   <div>
     <div class="title">
-      <h1>Testnet Fleet Registration</h1>
+      <h1>Prenet Fleet Registration</h1>
     </div>
     <div v-if="!enabled" class="column">
       <div>To manage your fleets have to Enable MetaMask on this site.</div>

@@ -46,7 +46,7 @@ Towards the end of the presentation, Vitalik stressed that the community should 
 
 We recently made a [demo video](https://youtu.be/Zibg-6CClc4) where our engineers demonstrated how to use Diode’s Go client do a live video streaming. Check out our [Github repository](https://github.com/diodechain), give it a try, and let us know how it turns out for you! 
 
-Also, CTO [Dominic Letz](https://twitter.com/dominicletz) put out a development update this month in a [blog post](https://diode.io/diode/Diode-February-Update-20048/). Some of the key updates included in the blog post are: we recently launched a MetaMask compatible Testnet Explorer, launched a Web3 gateway that allows proxying traffic directly into the Diode-Mesh-Network without the need to locally install a client, launched a feelt development interface as part of our efforts in pushing forward our Testnet Explorer, as well as deployed a simple Blockchain Name System (BNS) contract on the Diode Testnet.
+Also, CTO [Dominic Letz](https://twitter.com/dominicletz) put out a development update this month in a [blog post](https://diode.io/diode/Diode-February-Update-20048/). Some of the key updates included in the blog post are: we recently launched a MetaMask compatible Prenet Explorer, launched a Web3 gateway that allows proxying traffic directly into the Diode-Mesh-Network without the need to locally install a client, launched a feelt development interface as part of our efforts in pushing forward our Prenet Explorer, as well as deployed a simple Blockchain Name System (BNS) contract on the Diode Prenet.
 
 If you believe in the vast potential of a decentralized web, I invite you to join the Diode Telegram group. Follow our Twitter to get the latest development updates.
 

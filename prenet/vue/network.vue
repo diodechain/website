@@ -1,7 +1,7 @@
 <template id="network">
   <div class="network">
     <div class="title">
-      <h1>Testnet Network</h1>
+      <h1>Prenet Network</h1>
     </div>
     <div class="column">
       <div

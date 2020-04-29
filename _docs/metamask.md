@@ -3,7 +3,7 @@ title: Configure Metamask
 category: Guides
 ---
 
-When you want to interact with the Diode testnet from within your browser, you can do so on the <a href="https://diode.io/testnet">testnet browser</a>. To make MetaMask recognize this testnet you have to add it to your MetaMask installation through these steps.
+When you want to interact with the Diode prenet from within your browser, you can do so on the <a href="https://diode.io/prenet">prenet browser</a>. To make MetaMask recognize this prenet you have to add it to your MetaMask installation through these steps.
 
 # Get Metamask
 
@@ -23,7 +23,7 @@ Click on the 'Settings' entry and scroll to the very bottom again. There you wil
 
 !["MetaMask networks"](images/docs/metamask_networks.png)
 
-Finally at the bottom of the Networks settings there is big blue button called 'Add Network' click that and enter the Diode Testnet values there as below:
+Finally at the bottom of the Networks settings there is big blue button called 'Add Network' click that and enter the Diode Prenet values there as below:
 
 !["MetaMask diode settings"](images/docs/metamask_diode.png)
 
@@ -37,8 +37,8 @@ Finally at the bottom of the Networks settings there is big blue button called '
   </tr><tr>
     <th>Symbol</th><td>DIO</td>
   </tr><tr>
-    <th>Block Explorer URL</th><td>https://diode.io/testnet/#</td>
+    <th>Block Explorer URL</th><td>https://diode.io/prenet/#</td>
   </tr>
 </table>
 
-When everything worked out well you should now be able to [register a BNS name](/testnet/#/dns) or deploy your own fleet contract via the testnet explorer. 
+When everything worked out well you should now be able to [register a BNS name](/prenet/#/dns) or deploy your own fleet contract via the prenet explorer. 

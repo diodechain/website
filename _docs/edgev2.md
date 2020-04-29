@@ -40,7 +40,7 @@ iex(3)> message = <<size :: unsigned-size(16), rlp::binary>>
 
 # Client Implementation
 
-The reference implementation used in the testnet is the open source [Diode GO Client](https://github.com/diodechain/diode_go_client).
+The reference implementation used in the prenet is the open source [Diode GO Client](https://github.com/diodechain/diode_go_client).
 
 ## Data types
 

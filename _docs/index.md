@@ -12,14 +12,14 @@ docs:
     Review some of our recent presentation decks. We will keep publishing new ones from time to time.
   link: https://github.com/diodechain/presentations
 
-- title: 'Testnet Explorer'
+- title: 'Prenet Explorer'
   description: >-
-    Explore the testnet for transactions, miner distribution and general debugging 
-  link: /testnet/
+    Explore the prenet for transactions, miner distribution and general debugging 
+  link: /prenet/
 
-- title: 'Testnet Status'
+- title: 'Prenet Status'
   description: >-
-    Check the current testnet uptime for two of our client devices in Berlin in Taipei
+    Check the current prenet uptime for two of our client devices in Berlin in Taipei
   link: /status/
 
 - title: '[DEV] Diode Server Documentation'

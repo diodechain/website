@@ -18,7 +18,7 @@ To get started, here are the steps to follow:
 
 1. Install Diode go client
 
-2. Register a fleet contract with the Diode testnet website
+2. Register a fleet contract with the Diode prenet website
 
 3. Add device to the Whitelist
 
@@ -31,7 +31,7 @@ To get started, here are the steps to follow:
 
 ![alt_text](images/blog/Diode_demo_00.png "image_tooltip")
 
-Go to Diode’s [Github page](https://github.com/diodechain); install the [Diode go client](https://github.com/diodechain/diode_go_client). You need to have the [Go](https://golang.org/) programming language installed on your computer. It would be best to use the newer versions of Go. Go to Diode’s [testnet website](https://diode.io/testnet/); register your fleet contract. To run the diode_go_client, use the command: make build.
+Go to Diode’s [Github page](https://github.com/diodechain); install the [Diode go client](https://github.com/diodechain/diode_go_client). You need to have the [Go](https://golang.org/) programming language installed on your computer. It would be best to use the newer versions of Go. Go to Diode’s [prenet website](https://diode.io/prenet/); register your fleet contract. To run the diode_go_client, use the command: make build.
 
 Add your device to the Whitelist. Confirm the [Metamask](https://metamask.io/) transaction. It takes about 40 seconds or less for the new block to be added to the Diode Chain. What goes behind is the [Blockquick](https://eprint.iacr.org/2019/579.pdf) algorithm doing its work in finalizing a block.
 

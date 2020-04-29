@@ -70,8 +70,8 @@ navigation:
   link: diode/Diode-Frequently-Asked-Questions-19276/
 - title: Download
   link: download/
-- title: Testnet
-  link: testnet/
+- title: Prenet
+  link: prenet/
 - title: <i class="fi flaticon-telegram"></i>
   link: https://t.me/diode_chain
   target: _blank
