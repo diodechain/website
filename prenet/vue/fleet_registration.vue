@@ -4,7 +4,7 @@
       <h1>Prenet Fleet Registration</h1>
     </div>
     <div v-if="!enabled" class="column">
-      <div>To manage your fleets enable MetaMask.</div>
+      <div>To manage your fleets, enable MetaMask.</div>
       <button class="button" v-on:click="enable()">Enable MetaMask</button>
       <div v-if="error" class="error"><% error %></div>
     </div>
