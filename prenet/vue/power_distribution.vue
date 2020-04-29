@@ -1,7 +1,7 @@
 <template id="power_distribution">
   <div>
     <div class="title">
-      <h1>Prenet Miner Distribution over the Last 500 Blocks</h1>
+      <h1>Prenet miner distribution over the last 100 Blocks</h1>
       <small>
         connected to
         <account-link :hash="base" :length="50" :only-alias="false" />
@@ -134,7 +134,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       miners: [],
       blocks: [],
       stakes: {},
-      targetSize: 500,
+      targetSize: 100,
       totalFleets: "loading",
       totalMiners: "loading",
       totalAccounts: "loading",

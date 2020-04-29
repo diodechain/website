@@ -84,7 +84,7 @@ layout: ""
             { name: 'Accounts', path: '/address/', component: Accounts },
             { name: false, path: '/address/:hash', params: { hash: Registry }, component: Account, props: true },
 
-            { name: 'Home', path: '/', component: PowerDistribution },
+            { name: 'Overview', path: '/', component: PowerDistribution },
         ];
         const router = new VueRouter({ routes });
         router.beforeEach((to, from, next) => {
