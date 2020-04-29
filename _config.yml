@@ -4,7 +4,7 @@ include: ["install.sh"]
 
 baseurl:
 
-plugins_dir:
+plugins:
   - jekyll-redirect-from
 
 # the base hostname & protocol for your site
