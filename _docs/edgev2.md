@@ -394,7 +394,7 @@ RPC call: `["getobject", key | device_id]`
 
 Parameters:
 
-*   key: binary- address of the object that should be fetched
+*   key: binary - address of the object that should be fetched
 
 Response
 
@@ -412,8 +412,31 @@ Example:
   0x0121e822492399ff06fa8855b249747c306e38b7d81205a8c1d223bb29f03697c064315b69af7c836fdf3875e1d389d04c63b871fdbb5cdde11bd62bda7cd3b1df,
   0x0017f28e0e4a881fea9c29da99a62f5d29f8b0919dad75bf09a94b44cad4f27f74560a37a4ec3badb3c09efd7c508e2fdc430225c93cf6ab1c20447fb587e640f6
 ]]
-
 ```
+
+## sendtransaction(tx)
+
+Submit a transaction to the network.
+
+RPC call: `["sendtransaction", tx]`
+
+Parameters:
+
+*   tx: binary - RLP encoded signed transactions that is to be submitted
+
+Response
+
+*   `["response", "ok"]`
+
+Example:
+
+```elixir
+<< ["sendtransaction", 0x0808db74162847051c30084f316ef482954ec224]
+
+>> ["response", "ok"]
+```
+
+
 
 ## portopen(device, port, flags = "rw")
 
