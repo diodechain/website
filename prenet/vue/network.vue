@@ -1090,7 +1090,7 @@
             <circle
               v-for="point in points"
               v-bind:class="point.type"
-              v-tooltip="point.name + '</br>' + point.ip"
+              v-tooltip="point.name + '</br>' + point.ip + '</br>' + point.retries + ' retries'"
               :key="point.ip"
               v-bind:cx="point.x"
               v-bind:cy="point.y"
@@ -1140,7 +1140,7 @@ var Network = Vue.component("network", {
         return;
       }
       this.baseIp = ret[1]
-      this.putPoint(base, ret[1], "self");
+      this.putPoint(base, ret[1], "self", 0);
       try {
         ret = await web3.eth.network();
         // console.log("network: ", ret)
@@ -1151,11 +1151,11 @@ var Network = Vue.component("network", {
       for (entry of ret) {
         let type = entry.connected ? "connected" : "notConnected";
         let ip = entry.node[1];
-        this.putPoint(entry.node_id, ip, type);
+        this.putPoint(entry.node_id, ip, type, entry.retries);
       }
     },
 
-    putPoint: function(node_id, ip, type) {
+    putPoint: function(node_id, ip, type, retries) {
       resolveIP(ip, location => {
         let lat = Math.round(location.latitude * 1000) / 1000;
         let lon = Math.round(location.longitude * 1000) / 1000;
@@ -1164,6 +1164,7 @@ var Network = Vue.component("network", {
         point.ip = ip;
         point.type = type;
         point.name = resolveName(node_id);
+        point.retries = retries;
 
         let dist = 15;
         let key = Math.floor(point.x / dist) + "+" + Math.floor(point.y / dist);
