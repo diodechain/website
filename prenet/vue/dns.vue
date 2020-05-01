@@ -85,7 +85,7 @@ var DNS = Vue.component("dns", {
   created: function() {
     this.refreshNames();
     setInterval(() => {
-      if (!this.enabled && window.ethereum.selectedAddress != null) {
+      if (!this.enabled && window.ethereum && window.ethereum.selectedAddress != null) {
         this.enable();
       }
       this.refreshNames();
