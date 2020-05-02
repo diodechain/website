@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-10-03 10:30
+date: 2020-05-03 01:02
 categories: [Diode]
 tags: [Diode, FAQ, Blockchain, BlockQuick, DPKI, Ethereum]
 author: Yahsin Huang
@@ -53,9 +53,9 @@ As a Consumer, you can get full transparency on how your IoT devices are control
 As an Independent Journalist or a Free Speech Activist, you can broadcast your video streams through the Web3 uninterruptible to your audience no matter what country on the planet.
 
 
-**Q: What are some of the interesting applications that can be created on Diode Chain?**
+**Q: What are some of the interesting applications that can be created on Diode?**
 
-You can build all kinds of Web3 applications on Diode Chain. Here are some examples:
+You can build all kinds of Web3 applications on Diode. Here are some examples:
 
 *   Decentralized IoT services such as video cameras that can stream or broadcast video data without the need for a central server.
 *   Server-less IoT fleets that would not have any administrators that can spy on the IoT devices, but they would only be managed by transparent and auditable smart contracts.
@@ -63,6 +63,23 @@ You can build all kinds of Web3 applications on Diode Chain. Here are some examp
 *   Uncensorable websites that live in the Diode Network and are always reachable from everywhere.
 *   Decentralized Friend to Friend File sharing services
 *   Secure Network bridges and Blockchain controlled VPN, ([Blockchain Defined Networks BDN](https://diode.io/distributed-infrastructure/from-software-defined-networking-to-blockchain-defined-networking-19142/))
+
+
+**Q: What are some of the possible applications for small-scale agriculture projects?**
+
+There are lots of things you can do with agriculture. The most straightforward application would be monitoring connected devices over the Diode Network. So, if you setup greenhouse monitoring on your Pi, then you can use the Diode Network to monitor and control your device securely anywhere in the world. You can even use the Diode gateway at "yourname" .diode.link to showcase your solution to everybody, without needing a server.
+
+
+**Q: Would it be something that runs on the router or on the person's computer in the future?**
+
+Absolutely, it could be routers in the future. In fact, that is one of our use cases that we are currently developing.
+
+
+**Q: How are we different from other existing blockchain protocols in the Web3 ecosystem?**
+
+We are seeing a number of players in the ecosystem doing some great work developing frameworks to build blockchains. But Diode has a different approach. Diode is a blockchain which empowers developers to build data applications on top and build a better Internet. If you want to compare Diode with other existing projects, the closest would be dat-protocol, Ethereum-Swarm, and IPFS.
+
+The difference is, for instance, IPFS only works with pre-hashed files, so live-streaming and web conferencing for example, would not work. Diode, on the other hand, is a general network layer. It is designed to work for all kind of network applications.
 
 
 **Q: How do I get started with Diode Chain?**
