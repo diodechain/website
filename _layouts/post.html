@@ -23,9 +23,11 @@ layout: page
         {% endif -%}
       
       </div>
+      {% if page.image %}
       <div class="img-wrap">
         <img img class="full" src="images/blog/{{ page.image }}" alt="Article Blog Image">
       </div>
+      {% endif %}
     </header>
 
     <!-- Article Content -->

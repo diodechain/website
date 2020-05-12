@@ -222,6 +222,15 @@
       file = file.substring(file.lastIndexOf('/') + 1)
       $("#filename").text(file)
     }
+
+    // FAQ TOC
+    let toc = $("#auto-table-of-contents")
+    if (toc) {
+      toc.nextAll("h3").each((e, v) => {
+        let url = window.location.pathname + "#" + v.id
+        toc.append("<li><a href='" + url + "'>" +  $(v).html() + "</a></li>")
+      })
+    }
   });
 
 }(window.jQuery, window, document));
