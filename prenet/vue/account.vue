@@ -21,6 +21,14 @@
           <th>Balance</th>
           <td><% valueToBalance(balance) %></td>
         </tr>
+        <tr>
+          <th>Stake</th>
+          <td><% valueToBalance(stake) %></td>
+        </tr>
+        <tr>
+          <th>Nonce</th>
+          <td><% nonce %></td>
+        </tr>
         <tr v-if="object">
           <th>Device Data</th>
           <td>
@@ -111,11 +119,13 @@ var Account = Vue.component("account", {
     return {
       error: undefined,
       balance: undefined,
+      stake: undefined,
       code: undefined,
       codehash: undefined,
       storage: [],
       node: undefined,
-      object: undefined
+      object: undefined,
+      nonce: undefined
     };
   },
   computed: {
@@ -163,6 +173,14 @@ var Account = Vue.component("account", {
         if (err) this.error = err;
         else this.storage = ret;
       });
+      web3.eth.getTransactionCount(this.hash, (err, ret) => {
+        this.err = undefined;
+        if (err) this.error = err;
+        else this.nonce = ret;
+      });
+      fetchStake(this.hash, stake => {
+        this.stake = stake;
+      })
     }
   },
   watch: {
