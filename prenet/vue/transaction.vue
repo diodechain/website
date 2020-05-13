@@ -45,7 +45,7 @@
         </tr>
         <tr>
           <th>Value</th>
-          <td><% tx.value %> DIO</td>
+          <td><% valueToBalance(tx.value) %></td>
         </tr>
         <tbody :if="receipt != null">
           <tr>
