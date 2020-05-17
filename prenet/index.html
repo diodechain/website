@@ -86,7 +86,7 @@ layout: ""
 
             { name: 'Prenet', path: '/', component: PowerDistribution },
         ];
-        const router = new VueRouter({ routes });
+        const router = new VueRouter({ routes, base: '/prenet/' });
         router.beforeEach((to, from, next) => {
             if (Object.values(to.params).length) {
                 for (i = 0; i < routes.length; i++) {
