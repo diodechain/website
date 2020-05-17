@@ -79,7 +79,7 @@ layout: ""
             { name: 'Network', path: '/network', component: Network },
             { name: 'Fleets', path: '/fleets', component: FleetRegistration },
             { name: 'BNS', path: '/dns', component: DNS },
-            { name: 'Blocks', path: '/block/:number', params: { number: 1 }, component: Block, props: true },
+            { name: 'Blocks', path: '/block/:number', params: { number: 'latest' }, component: Block, props: true },
 
             { name: 'Accounts', path: '/address/', component: Accounts },
             { name: false, path: '/address/:hash', params: { hash: Registry }, component: Account, props: true },

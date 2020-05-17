@@ -15,8 +15,8 @@
         </tr>
         <tr>
           <th>Parent</th>
-          <td v-if="number > 0">
-            <router-link :to="'/block/' + (number-1)"><% number-1 %></router-link>
+          <td v-if="validNumber">
+            <router-link :to="`/block/${parentBlockNumber}`"><% parentBlockNumber %></router-link>
           </td>
           <td v-else>Genesis</td>
         </tr>
@@ -68,11 +68,34 @@ var Block = Vue.component("block", {
   template: document.getElementById("block").innerHTML,
   props: { number: Number },
   delimiters: ["<%", "%>"],
+  computed: {
+    validNumber () {
+      // see: https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_getblockbynumber
+      return this.number > 0 || this.number === 'latest';
+    },
+    parentBlockNumber() {
+      if (this.number === 'latest') {
+        return this.block.number - 1;
+      } else {
+        return this.number - 1;
+      }
+    },
+  },
   data: () => {
     return { block: undefined, error: undefined };
   },
   created: function() {
-    this.update();
+    if (this.validNumber) {
+      this.update();
+    } else {
+      this.$router.push('/')
+    }
+  },
+  beforeRouteEnter (to, from, next) {
+    if (to.params.number > 0 || to.params.number === 'latest') {
+      return next();
+    }
+    return  next(false);
   },
   methods: {
     update: function() {
