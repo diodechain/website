@@ -3,6 +3,7 @@ layout: post
 date: 2020-05-03 01:02
 categories: [Diode]
 tags: [Diode, FAQ, Blockchain, BlockQuick, DPKI, Ethereum]
+image: FAQ-1.jpg
 author: Yahsin Huang
 ---
 
