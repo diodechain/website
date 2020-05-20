@@ -17,9 +17,9 @@ jobs:
     
       # run: curl -Ssf https://diode.io/install.sh | sudo sh
     - if: runner.os == 'Windows'      
-      run: cat install.sh | sh
+      run: cat install.sh | sh -s v0.3.3
       shell: bash
     - if: runner.os != 'Windows'      
-      run: cat install.sh | sudo sh
+      run: cat install.sh | sudo sh -s v0.3.3
       shell: bash
     - run: diode config -list
