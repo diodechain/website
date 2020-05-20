@@ -1,0 +1,17 @@
+name: "CI"
+on: ["push", "pull_request"]
+
+jobs:
+  install_test:
+    name: "Install and run app"
+    strategy:
+      matrix:
+        os: ["windows-latest", "ubuntu-latest", "macOS-latest"]
+        go: ["1.14.x"]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - if: runner.os == 'macOS'
+      run: brew remove openssl
+    - run: curl -Ssf https://diode.io/install.sh | sudo sh
+      shell: bash
+    - run: diode config -list
