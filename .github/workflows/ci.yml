@@ -12,10 +12,14 @@ jobs:
     steps:
     - if: runner.os == 'macOS'
       run: brew remove openssl
+      
+    - uses: actions/checkout@v2
+    
+      # run: curl -Ssf https://diode.io/install.sh | sudo sh
     - if: runner.os == 'Windows'      
-      run: curl -Ssf https://diode.io/install.sh | sh
+      run: cat install.sh | sh
       shell: bash
     - if: runner.os != 'Windows'      
-      run: curl -Ssf https://diode.io/install.sh | sudo sh
+      run: cat install.sh | sudo sh
       shell: bash
     - run: diode config -list
