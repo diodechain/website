@@ -8,10 +8,10 @@ image: Diode_FAQ_Image.png
 author: Yahsin Huang
 ---
 
-### Contents
-
 <ul id="auto-table-of-contents">
 </ul>
+
+## General Questions
 
 ### What is Diode?
 
@@ -44,16 +44,6 @@ IPFS is about static file storage - it does that really well. Diode is more of a
 IPFS and Diode are both needed for a decentralized web3. IPFS is a distributed file system that allows storing static content, while Diode network enables secure real-time end2end encrypted communication. What makes Diode unique is there are lots of interesting things you can do with Diode. In addition to files, Diode allows you to do live video streaming, chat applications, office applications where users get to modify their contents,... are some of the good examples illustrating real-time data streams possible applications.
 
 
-### What is your biggest unique proposition that puts you ahead of the competition?
-
-The Diode Network is an implementation of a truly decentralized internet replacement. It builds on top of Ethereum as base technology but melds BlockQuick and Swarm like capabilities natively into the chain. 
-
-*   Diode is the only Blockchain with super-light clients that:
-    *   Works in Browsers
-    *   Works on Mobile
-    *   Works on Embedded Devices (RaspberryPi, Arduino, ESP32...)
-*   Diode has an incentive model for Data traffic built-in
-    
 ### What can I do with Diode?
 
 Diode is a new decentralized Internet for connected devices, also known as the Web 3. We are building upon the Web3 movement. Currently we are looking at serving a number of groups of users: makers, corporates, consumers, independent journalists/free speech activists.
@@ -91,6 +81,25 @@ Because the tech is fully decentralized, it also has benefits for privacy.  If a
 The persuasion of software engineers and business leaders will be a road we have to travel. The word “blockchain”, frankly speaking, scares some people from industry. However, there are a growing number of developers who are not blockchain developers, but who are interested in blockchain. Because we can support the tech these people are used to working with blockchain, we believe these people will be early adopters and be one of the paths to mainstream adoption. We're very excited about bringing the blockchain and non-blockchain development worlds together - we have a way to go in terms of UX, but the fundamentals are there and will get stronger over time.
 
 
+### What is your biggest unique proposition that puts you ahead of the competition?
+
+The Diode Network is an implementation of a truly decentralized internet replacement. It builds on top of Ethereum as base technology but melds BlockQuick and Swarm like capabilities natively into the chain. 
+
+*   Diode is the only Blockchain with super-light clients that:
+    *   Works in Browsers
+    *   Works on Mobile
+    *   Works on Embedded Devices (RaspberryPi, Arduino, ESP32...)
+*   Diode has an incentive model for Data traffic built-in
+
+
+
+### How are we different from other existing blockchain protocols in the Web3 ecosystem?
+
+We are seeing a number of players in the ecosystem doing some great work developing frameworks to build blockchains. But Diode has a different approach. Diode is a blockchain which empowers developers to build data applications on top and build a better Internet. If you want to compare Diode with other existing projects, the closest would be dat-protocol, Ethereum-Swarm, and IPFS.
+
+The difference is, for instance, IPFS only works with pre-hashed files, so live-streaming and web conferencing for example, would not work. Diode, on the other hand, is a general network layer. It is designed to work for all kind of network applications.
+
+
 ### What are some of the possible applications for small-scale agriculture projects?
 
 There are lots of things you can do with agriculture. The most straightforward application would be monitoring connected devices over the Diode Network. So, if you setup greenhouse monitoring on your Pi, then you can use the Diode Network to monitor and control your device securely anywhere in the world. You can even use the Diode gateway at "yourname" .diode.link to showcase your solution to everybody, without needing a server.
@@ -99,13 +108,6 @@ There are lots of things you can do with agriculture. The most straightforward a
 ### Would it be something that runs on the router or on the person's computer in the future?
 
 Absolutely, it could be routers in the future. In fact, that is one of our use cases that we are currently developing.
-
-
-### How are we different from other existing blockchain protocols in the Web3 ecosystem?
-
-We are seeing a number of players in the ecosystem doing some great work developing frameworks to build blockchains. But Diode has a different approach. Diode is a blockchain which empowers developers to build data applications on top and build a better Internet. If you want to compare Diode with other existing projects, the closest would be dat-protocol, Ethereum-Swarm, and IPFS.
-
-The difference is, for instance, IPFS only works with pre-hashed files, so live-streaming and web conferencing for example, would not work. Diode, on the other hand, is a general network layer. It is designed to work for all kind of network applications.
 
 
 ### How do I get started with Diode Chain?
@@ -136,6 +138,10 @@ IOTA is non-functional for IoT use cases apart from Demos and prototypes. It has
 
 And one new problem: The old algorithm didn’t scale decentralized; it was centralized. IOTA is now in the middle of changing the core Consensus to “Coordicide”. This will mean any production deployments will have to wait until at least 2022.
 
+
+
+
+## Technology
 
 ### Is Diode Chain a permissioned or permissionless blockchain?
 
