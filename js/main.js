@@ -226,9 +226,15 @@
     // FAQ TOC
     let toc = $("#auto-table-of-contents")
     if (toc) {
-      toc.nextAll("h3").each((e, v) => {
-        let url = window.location.pathname + "#" + v.id
-        toc.append("<li><a href='" + url + "'>" +  $(v).html() + "</a></li>")
+      toc.nextAll("h2").each((e, h2) => {
+        let url = window.location.pathname + "#" + h2.id
+        toc.append("<li><a href='" + url + "'>" + $(h2).html() + "</a></li>")
+        let ul = $("<ul></ul>")
+        toc.append(ul)
+        $(h2).nextUntil("h2", "h3").each((e, h3) => {
+          let url = window.location.pathname + "#" + h3.id
+          ul.append("<li><a href='" + url + "'>" + $(h3).html() + "</a></li>")
+        })
       })
     }
   });
