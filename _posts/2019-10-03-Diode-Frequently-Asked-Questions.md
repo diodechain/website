@@ -8,7 +8,7 @@ image: Diode_FAQ_Image.png
 author: Yahsin Huang
 ---
 
-### Table Of Contents
+### Contents
 
 <ul id="auto-table-of-contents">
 </ul>
@@ -19,11 +19,23 @@ Diode is an integrated Blockchain implementation of the Web3, the server-less in
 
 ![alt_text](images/blog/Best-R2.png "image_tooltip"){: .center-block }
 
+
+
 ### Where did the name "Diode" come from?
 
 We went back and forth with a ton of different potential names. We wanted the name of the technology and network etc… to connote something that really small things could interact with, and something that was secure. We wanted it to have some sort of face value to both Blockchain and IoT folks. It was a small electrical component that is fundamental to all electrical systems, and the use of the letters in the word kind of made a acronym for “Distributed Interent Of DEvices”
 
 With the Diode tech, now all sorts of apps/devices/systems can interact directly with a public blockchain - cell phones, laptops, Raspberry Pis, Arduinos, etc… can all interact as part of a decentralized Web3 ecosystem.
+
+
+### What is a fleet contract?
+
+A fleet contract is a smart contract that stores the identidies of clients (public keys) that have permissions to communicate. What is a smart contract? When we talk about smart contracts, we are not referring to legally binding contracts. A fleet contract is a smart contract; a smart contract is essentailly a set of instructions written in computer code that is stored on a blockchain.
+
+A smart contract is a computer program, and smart contracts store data. The logic of smart contract is enforced by the full nodes involved; the data is kept by the full nodes. So in our context, this means that the full nodes running on Diode blockchain are storing all the data.
+
+### What does a Diode's fleet contract do?
+What a Diode’s fleet contract does is it manages the whitelist of idendities (public keys) of clients who can communicate with each other. It provides a number of functions to facilitate secure communications, including client registration, client deregistration, protected or private connections, and other functions.
 
 ### Is Diode something similar to IPFS?
 
