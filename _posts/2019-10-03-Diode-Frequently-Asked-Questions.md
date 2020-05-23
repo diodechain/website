@@ -1,9 +1,10 @@
 ---
 layout: post
-date: 2020-05-03 01:02
+title: Diode FAQ
+date: 2020-05-23 16:00
 categories: [Diode]
-tags: [Diode, FAQ, Blockchain, BlockQuick, DPKI, Ethereum]
-image: FAQ-1.jpg
+tags: [Diode, FAQ, Blockchain]
+image: Diode_FAQ_Image.png
 author: Yahsin Huang
 ---
 
@@ -18,13 +19,18 @@ Diode is an integrated Blockchain implementation of the Web3, the server-less in
 
 ![alt_text](images/blog/Best-R2.png "image_tooltip"){: .center-block }
 
-### Where did the name Diode come from?
+### Where did the name "Diode" come from?
 
-Diodes are embedded components that conduct electric current primarily in one direction. This one-directionality we think matches the immutability of the blockchain technology. Things that get written can never be changed. It is a kind of one way as well. At the same time, “Diode” reminds us of the fact that this Blockchain Network we built is primarily targeting deployment on small embedded IoT devices. A diode is a minimalistic yet hugely important component, in the same way the Diode Network needs to stay lean and minimalistics to work on tiny devices.
+We went back and forth with a ton of different potential names. We wanted the name of the technology and network etc… to connote something that really small things could interact with, and something that was secure. We wanted it to have some sort of face value to both Blockchain and IoT folks. It was a small electrical component that is fundamental to all electrical systems, and the use of the letters in the word kind of made a acronym for “Distributed Interent Of DEvices”
 
-Diode stands for Decentralized Internet of Devices in addition to the above-mentioned reference.
+With the Diode tech, now all sorts of apps/devices/systems can interact directly with a public blockchain - cell phones, laptops, Raspberry Pis, Arduinos, etc… can all interact as part of a decentralized Web3 ecosystem.
 
-![alt_text](images/blog/FAQ-Diode-name.png "image_tooltip"){: .center-block }
+### Is Diode something similar to IPFS?
+
+IPFS is about static file storage - it does that really well. Diode is more of a streaming network - the Diode network doesn’t store information, it makes it available. One of the great things that Diode brings that we believe is unique is the ability for distributing dynamic content. One of our first proof of concepts was a Raspberry Pi streaming real-time video peer-to-peer over the Diode network with no centralized components. The Pi did the work to create the content and “source” the video, but the network handled the routing, permissions, and distribution.
+
+IPFS and Diode are both needed for a decentralized web3. IPFS is a distributed file system that allows storing static content, while Diode network enables secure real-time end2end encrypted communication. What makes Diode unique is there are lots of interesting things you can do with Diode. In addition to files, Diode allows you to do live video streaming, chat applications, office applications where users get to modify their contents,... are some of the good examples illustrating real-time data streams possible applications.
+
 
 ### What is your biggest unique proposition that puts you ahead of the competition?
 
@@ -59,6 +65,18 @@ You can build all kinds of Web3 applications on Diode. Here are some examples:
 *   Uncensorable websites that live in the Diode Network and are always reachable from everywhere.
 *   Decentralized Friend to Friend File sharing services
 *   Secure Network bridges and Blockchain controlled VPN, ([Blockchain Defined Networks BDN](https://diode.io/distributed-infrastructure/from-software-defined-networking-to-blockchain-defined-networking-19142/))
+
+
+### There are several existing tools already pretty available to developers, helping them achieve the task of “demoing websites without deploying,” is it really necessary to do it with blockchain technology?
+
+It is certainly not necessary, but there are advantages that we think will make this specific use case more attractive than the ones on the market today. Three of the immediate feature adds vs. other solutions are: you can publish content to a globally unique “domain” name of your choice, it's free, and if you want to limit access to just a few viewers, you can do that regardless of the IP they are on.
+
+Because the tech is fully decentralized, it also has benefits for privacy.  If a person wanted to publish a website - as a dev tool for localhost development, or as a long term site - they can do so with the only information about the website (other than its content) being the Diode address (just like an ETH public address).  No ICANN registration, personal details, etc…. The fact that Web3/decentralized tech can stand toe-to-toe now with centralized tech in this, and other use cases, is a first. We wanted to prove this, and doing this as a proof-of-concept was so simple! The barrier to creating decentralized apps of this type is lower (in many ways) than centralized methods, and we believe will be much cheaper over time.
+
+
+### How would you persuade software engineers and business leaders to assess the potential of Diode blockchain for their businesses?
+
+The persuasion of software engineers and business leaders will be a road we have to travel. The word “blockchain”, frankly speaking, scares some people from industry. However, there are a growing number of developers who are not blockchain developers, but who are interested in blockchain. Because we can support the tech these people are used to working with blockchain, we believe these people will be early adopters and be one of the paths to mainstream adoption. We're very excited about bringing the blockchain and non-blockchain development worlds together - we have a way to go in terms of UX, but the fundamentals are there and will get stronger over time.
 
 
 ### What are some of the possible applications for small-scale agriculture projects?
