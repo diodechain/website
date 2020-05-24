@@ -9,15 +9,17 @@ image: Diode_May_Image.png
 imageclass: middle
 ---
 
-On Tuesday (May 19), Diode’s highly anticipated live streaming event went live on YouTube. The 30-minute online meetup event drew more than 35 engineers, developers, makers, and community leaders across the globe. CEO Hans Rempel, CTO Dominic Letz, blockchain engineer Peter Lai, marketing manager Yahsin Huang gathered together remotely to discuss some current and potential applications of the Diode's peer-to-peer network. 
+On Tuesday (May 19), Diode’s highly anticipated live streaming event went live. The 30-minute online meetup event drew more than 35 engineers, developers, makers, and community leaders across the globe. CEO Hans Rempel, CTO Dominic Letz, blockchain engineer Peter Lai, marketing manager Yahsin Huang gathered together remotely to discuss some current and potential applications of the Diode's peer-to-peer network. 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B-YzxaKpEJQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br/>
 We gave a demo of Diode client showcasing how to easily publish a local webserver to Web3 with Diode. We wanted to talk about this specific use case in part because we believe privacy and freedom of speech are core values. The Web3 ecosystem is growing; we hope content creators will benefit from being able to publish website content to Web3 without having to provide personal information.
 
 
 ![alt_text](images/blog/Diode_May_Event_Demo_Steps.png "image_tooltip")
 
 
-Presentation slides are now publicly available on [Github](https://github.com/diodechain/presentations/blob/master/Diode_Online_Event_May_2020/Diode%20Tuesday%20Online%20Event_%20Publish%20Your%20Local%20Web%20Server%20to%20Web3%20with%20Diode%20May%2019%202020.pdf). Download Diode Client on our [website](https://diode.io/download/).
+Watch Diode Tuesday online meetup on [YouTube](https://youtu.be/B-YzxaKpEJQ). Presentation slides are now publicly available on [Github](https://github.com/diodechain/presentations/blob/master/Diode_Online_Event_May_2020/Diode%20Tuesday%20Online%20Event_%20Publish%20Your%20Local%20Web%20Server%20to%20Web3%20with%20Diode%20May%2019%202020.pdf). Download Diode Client on our [website](https://diode.io/download/).
 
 
 In the demo, we used a Ghost website as an example. [Ghost](https://ghost.org/) is a popular modern open-source publishing platform. It’s beautifully designed and easy to use. So, we've got a Ghost blog running on a local computer; the audience could access the blog via the Diode network. 
