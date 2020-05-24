@@ -68,9 +68,9 @@ You can also register your Blockchain Name System (BNS) custom domain using a co
 `diode bns -register [name]=[address]`
 
 
-A few questions were asked from the audience. One asked if it was really necessary to do it with blockchain technology with existing tools that are already pretty available to developers today. 
+One question asked whether it was really necessary to do it with blockchain technology when the existing tools already pretty available to developers today. Founder and CEO Hans Rempel suggested that it was certainly not necessary, "but there are advantages that we think will make this specific use case more attractive than the ones on the market today". 
 
-To that question, Founder and CEO Hans Rempel suggested that it was certainly not necessary, "but there are advantages that we think will make this specific use case more attractive than the ones on the market today". Three of the immediate feature adds vs. other solutions are: you can publish content to a globally unique “domain” name of your choice, it's free, and if you want to limit access to just a few viewers, you can do that regardless of the IP they are on. 
+Three of the immediate feature adds vs. other solutions are: you can publish content to a globally unique “domain” name of your choice, it's free, and if you want to limit access to just a few viewers, you can do that regardless of the IP they are on. 
 
 Furthermore, because the tech is fully decentralized, it also has benefits for privacy. If a person wanted to publish a website - as a dev tool for localhost development, or as a long term site - they can do so with the only information about the website (other than its content) being the Diode address (just like an ETH public address).  No ICANN registration, personal details, etc….
 
@@ -78,7 +78,7 @@ Diode’s vision is to see a world wide network operating on fully decentralized
 
 Hans recently wrote a simple guide showing how to join the growing number of content creators who are publishing their content on Web3 without any centralized technology on Medium. Check out his [Medium story](https://medium.com/@hansr77/publish-your-localhost-website-to-the-internet-without-centralized-tech-16ea9e15f8ba). 
 
-We recently released pre-built downloads for Linux (including one for Raspberry Pi), MacOS, and Windows. The latest version 0.3.4 was released this week. We invite you to give it a try! We'd be thrilled to hear your thoughts and comments.
+Finally, the pre-built downloads for Linux (including one for Raspberry Pi), MacOS, and Windows are here! The latest version 0.3.4 was released this week. We invite you to give it a try! We'd be thrilled to hear your thoughts and comments.
 
 
 
