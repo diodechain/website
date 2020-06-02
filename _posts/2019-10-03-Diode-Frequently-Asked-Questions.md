@@ -8,6 +8,18 @@ image: Diode_FAQ_Image.png
 author: Yahsin Huang
 ---
 
+<script>
+    window.location.replace("https://github.com/diodechain/wiki/wiki/FAQs");
+</script>
+
+
+# This page was moved
+
+## [Please click here for the most recent FAQ](https://github.com/diodechain/wiki/wiki/FAQs)
+
+Below is the old version of the FAQ
+
+
 <ul id="auto-table-of-contents">
 </ul>
 
