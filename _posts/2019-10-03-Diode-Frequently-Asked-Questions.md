@@ -8,17 +8,11 @@ image: Diode_FAQ_Image.png
 author: Yahsin Huang
 ---
 
-<script>
-    window.location.replace("https://github.com/diodechain/wiki/wiki/FAQs");
-</script>
-
-
 # This page was moved
 
 ## [Please click here for the most recent FAQ](https://github.com/diodechain/wiki/wiki/FAQs)
 
 Below is the old version of the FAQ
-
 
 <ul id="auto-table-of-contents">
 </ul>
@@ -238,3 +232,7 @@ The default Go client has a built-in capability to convert any binary TCP socket
 ### If you are using OpenSSL, does it mean you are using a CGo compiler?
 
 Yes, we use CGo to call C functions.
+
+<script>
+    window.location.replace("https://github.com/diodechain/wiki/wiki/FAQs");
+</script>
