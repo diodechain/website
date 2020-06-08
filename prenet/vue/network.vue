@@ -1090,7 +1090,7 @@
             <circle
               v-for="point in points"
               v-bind:class="point.type"
-              v-tooltip="point.name + '</br>' + point.ip + '</br>' + point.retries + ' retries'"
+              v-tooltip="{ content: tooltip(point), autoHide: false, delay: { show: 500, hide: 3000 } }"
               :key="point.ip"
               v-bind:cx="point.x"
               v-bind:cy="point.y"
@@ -1128,6 +1128,11 @@ var Network = Vue.component("network", {
     this.load();
   },
   methods: {
+    tooltip(point) {
+      return "<a href='/prenet#/address/" + point.node_id + "'>" + point.name + "</a><br/>" +
+        point.ip + '</br>' +
+        point.retries + ' retries';
+    },
     load: async function() {
       let ret = undefined;
       let base = await web3.eth.getCoinbase();
@@ -1163,6 +1168,7 @@ var Network = Vue.component("network", {
         let point = this.mapLatLon(lat, lon);
         point.ip = ip;
         point.type = type;
+        point.node_id = node_id;
         point.name = resolveName(node_id);
         point.retries = retries;
 

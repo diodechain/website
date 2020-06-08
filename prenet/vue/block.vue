@@ -69,17 +69,17 @@ var Block = Vue.component("block", {
   props: { number: Number },
   delimiters: ["<%", "%>"],
   computed: {
-    validNumber () {
+    validNumber() {
       // see: https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_getblockbynumber
-      return this.number > 0 || this.number === 'latest';
+      return this.number > 0 || this.number === "latest";
     },
     parentBlockNumber() {
-      if (this.number === 'latest') {
+      if (this.number === "latest") {
         return this.block.number - 1;
       } else {
         return this.number - 1;
       }
-    },
+    }
   },
   data: () => {
     return { block: undefined, error: undefined };
@@ -88,14 +88,14 @@ var Block = Vue.component("block", {
     if (this.validNumber) {
       this.update();
     } else {
-      this.$router.push('/')
+      this.$router.push("/");
     }
   },
-  beforeRouteEnter (to, from, next) {
-    if (to.params.number > 0 || to.params.number === 'latest') {
+  beforeRouteEnter(to, from, next) {
+    if (to.params.number > 0 || to.params.number === "latest") {
       return next();
     }
-    return  next(false);
+    return next(false);
   },
   methods: {
     update: function() {
