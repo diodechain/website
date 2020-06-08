@@ -1090,7 +1090,7 @@
             <circle
               v-for="point in points"
               v-bind:class="point.type"
-              v-tooltip="{ content: tooltip(point), autoHide: false, delay: { show: 500, hide: 3000 } }"
+              v-tooltip="{ content: tooltip(point), autoHide: false, delay: { show: 0, hide: 3000 } }"
               :key="point.ip"
               v-bind:cx="point.x"
               v-bind:cy="point.y"
