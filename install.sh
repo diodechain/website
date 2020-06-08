@@ -40,6 +40,11 @@ execute() {
   (cd "${TMPDIR}" && untar "${TARBALL}")
   install -d "${BINDIR}"
   install "${TMPDIR}/${BINARY}" "${BINDIR}/"
+  # Install libssl/libcrypto to @loader_path
+  if [ "$OS" = "darwin" ]; then
+    install "${TMPDIR}/libssl.1.0.0.dylib" "${BINDIR}/"
+    install "${TMPDIR}/libcrypto.1.0.0.dylib" "${BINDIR}/"
+  fi
   echo "$PREFIX: installed as ${BINDIR}/${BINARY}"
 }
 is_supported_platform() {
