@@ -1,34 +1,58 @@
 <template id="power_distribution">
   <div>
     <div class="title">
-      <h1>Prenet miner distribution over the last 100 Blocks</h1>
-      <small>
+      <h1>Diode Prenet Statistics, Last 100 Blocks</h1>
+      <p>
         connected to
         <account-link :hash="base" :length="50" :only-alias="false" />
-      </small>
+      </p>
     </div>
-    <div style="display: flex; flex-direction: row; align-items: flex-start;">
-      <div style="display: flex; flex-direction: column">
+    
+    <!-- Search Code -->
+    <form class="example">
+    <p style="color:white;">Prenet Blockchain Explorer</p>
+  <input type="text" placeholder="Search by Address/Txn Hash/Block/Token/Ens" name="search">
+  <button type="submit">Search</i></button>
+</form>    
+    <div style=" flex-direction: row; align-items: flex-start;">
+      <div style="display: flex; /* flex-direction: column */">
         <div class="headtable">
           <div class="doclet">
             <h2>DIO Free Flow</h2>
-            <span><% totalSupply %></span>
-          </div>
+            <span class="colorchange"><% totalSupply %></span>
+            </div>
           <div class="doclet">
             <h2>Fleets</h2>
-            <span><% totalFleets %></span>
+            <span class="colorchange"><% totalFleets %></span>
           </div>
           <div class="doclet">
             <h2>Accounts</h2>
-            <span><% totalAccounts %></span>
+            <span class="colorchange"><% totalAccounts %></span>
           </div>
           <div class="doclet">
             <h2>Miners</h2>
-            <span><% totalMiners %></span>
+            <span class="colorchange"><% totalMiners %></span>
           </div>
         </div>
         <!-- https://medium.com/@heyoka/scratch-made-svg-donut-pie-charts-in-html5-2c587e935d72 -->
         <figure>
+          
+          <figcaption class="figure-key">
+            <p class="sr-only">Donut chart showing <% blocks.length %> most recent blocks.</p>
+
+            <ul class="figure-key-list" aria-hidden="true" role="presentation">
+              <li v-for="miner in shares" :key="miner.name">
+                <span class="shape-circle" v-bind:style="{ backgroundColor: miner.color }"></span>
+                <div style="flow: flex; flex-layout: column;">
+                  <div class="figure-title">
+                    <account-link :hash="miner.name" :only-alias="true" :length="10"></account-link> <% miner.percent %>%
+                  </div>
+                  <div class="ul1"><% miner.count %> Blocks</div>
+                  <div class="ul2" v-if="stakes[miner.name]"><% stakes[miner.name].value %> DIO</div>
+                </div>
+              </li>
+            </ul>
+          </figcaption>
           <div class="figure-content">
             <svg
               width="100%"
@@ -83,22 +107,6 @@
               </g>
             </svg>
           </div>
-          <figcaption class="figure-key">
-            <p class="sr-only">Donut chart showing <% blocks.length %> most recent blocks.</p>
-
-            <ul class="figure-key-list" aria-hidden="true" role="presentation">
-              <li v-for="miner in shares" :key="miner.name">
-                <span class="shape-circle" v-bind:style="{ backgroundColor: miner.color }"></span>
-                <div style="flow: flex; flex-layout: column;">
-                  <div class="figure-title">
-                    <account-link :hash="miner.name" :only-alias="true" :length="10"></account-link> <% miner.percent %>%
-                  </div>
-                  <div><% miner.count %> Blocks</div>
-                  <div v-if="stakes[miner.name]"><% stakes[miner.name].value %> DIO</div>
-                </div>
-              </li>
-            </ul>
-          </figcaption>
         </figure>
       </div>
       <table class="data" style="width: auto">
@@ -252,3 +260,5 @@ var PowerDistribution = Vue.component("power_distribution", {
   }
 });
 </script>
+
+

@@ -2,6 +2,8 @@
 body {
     font: 16px/1.4em "Titillium Web", Arial, sans-serif;
     background-image: url(background.png);
+    background:#F8F9FB;
+    
 }
 
 #app {
@@ -11,6 +13,9 @@ body {
 }
 
 .header {
+    padding: 18px;
+    box-shadow: 0px 10px 8px -15px #111;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,12 +50,14 @@ ul.navbar li {
 }
 
 ul.navbar li a {
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
     color: #111111;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 0.08rem;
     text-decoration: none;
     white-space: nowrap;
-    font-weight: bold;
     transition: all 300ms ease-in-out;
 }
 
@@ -75,15 +82,27 @@ a {
 }
 
 .title {
+    
+    content: "";
+    display: table;
+    clear: both;
+    width: 100%;
     text-align: left;
+    margin-top: 10px;
 }
-
+.title p {
+    color: green;
+    text-align: right;
+    margin-top: 14px;
+    font-size: 1.1em;
+    text-transform: capitalize;
+}
 .title h1 {
-    margin: 0.2em;
+    float: left;
+    width: 50%;
     font-weight: normal;
-    font-size: 1.3em;
-    border-bottom: 1px solid;
-    border-color: gray;
+    font-size: 1.1em;
+   
 }
 
 td.fleet, th.fleet {
@@ -91,8 +110,10 @@ td.fleet, th.fleet {
 }
 
 table.data {
-    background-color: #fbfbfb;
-    width: 100%;
+    margin-top: 45px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    width: 100% !important;
     border-collapse: collapse;
     border-spacing: 0;
 }
@@ -110,8 +131,10 @@ table.data tr:nth-child(2n) {
 }
 
 table.data th, table.data td {
+   
+    height: 70px;
     text-align: left;
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     padding: 8px;
 }
 
@@ -123,8 +146,10 @@ table.data th.big, table.data td.big {
 }
 
 table.data th {
+    font-size: 16px;
     white-space: nowrap;
     vertical-align: top;
+    padding-top: 20px;
 }
 
 
@@ -185,11 +210,14 @@ table.data td.big {
 }
 
 figure {
+    
+    border: 1px solid #ddd;
+    margin:0px 0px 0px 10px;
+    width:50%;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    margin-left: -15px;
-    margin-right: -15px;
+    background:white;
 }
 
 @media (min-width: 768px) {
@@ -199,6 +227,8 @@ figure {
 }
 
 .figure-title {
+    padding-right: 10px;
+    float: left;
     font-weight: bold;
     text-transform: capitalize;
 }
@@ -216,8 +246,16 @@ figure {
     padding-right: 15px;
     align-self: center;
 }
-
+.ul1{
+ float:left;  
+ padding-right: 10px;
+}
+.ul2{
+ float:left; 
+    padding-right: 10px;
+}
 .figure-content svg {
+    
     height: auto;
 }
 
@@ -230,7 +268,9 @@ figure {
 }
 
 .figure-key-list {
+    font-size: 13px;
     margin: 0;
+    width: 254px;
     padding: 0;
     list-style: none;
 }
@@ -359,21 +399,31 @@ figure {
 }
 
 .headtable {
-    display: flex;
-    flex-direction: row;
+    background: white;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    width: 50%;
+    display: inline-flex;
+    flex-direction: inherit;
     flex-wrap: wrap;
+    
 }
 
 .headtable .doclet {
+    width: 33%;
     flex-grow: 1;
     margin: 3px;
-    padding: 5px;
-    background-color: gainsboro;
+    padding: 5px 5px 5px 24px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ececec;
+    border-left: 1px solid #ececec;
 }
 
 .headtable .doclet h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
     margin: 0px;
-    font-size: 1.2em;
+    font-size: 0.9em;
 }
 
 .network path {
@@ -519,3 +569,58 @@ figure {
     opacity: 1;
     transition: opacity .15s;
   }
+form.example input[type=text] {
+  padding: 10px;
+    font-size: 17px;
+    border: 1px solid #e4e4e4;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+form.example button {
+  float: left;
+    width: 20%;
+    padding: 10px;
+    background: #D6442E;
+    color: white;
+    font-size: 17px;
+    border: 1px solid #D6442E;
+    border-left: none;
+    cursor: pointer;
+}
+
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+form.example {
+    display:none;
+        margin-bottom: 40px;
+    background: #EB5B33;
+    padding: 2px 30px 21px 30px;
+}
+span.colorchange {
+    color: #eb5b33;
+    font-size: 24px;
+    line-height: 3;
+}
+
+.title a {
+    color: #eb5b33;
+}
+
+@media screen and (min-width: 1440px), {(max-width: 1600px){
+    .headtable{
+     width:60%;   
+    }
+    
+}
+    @media screen and (min-width: 1620px), {(max-width: 1900px){
+    .headtable{
+     width:85%;   
+    }
+    
+}

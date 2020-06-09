@@ -23,7 +23,9 @@ layout: ""
     <link rel="shortcut icon" href="images/favicon.png" title="Favicon">
     </link>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+
     </link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -45,12 +47,13 @@ layout: ""
                 <li v-for="r in routes" v-if="r.name">
                     <router-link :to="r"><% r.name %></router-link>
                 </li>
-                <li>
+              <!--  <li>
                     <span v-if="connected" class="good">connected</span>
                     <span v-else class="bad">trying to connect.<% '.'.repeat(ticker%3) %></span>
-                </li>
+                </li> -->
             </ul>
         </div>
+    
 
         <transition>
             <keep-alive>
