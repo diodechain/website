@@ -16,10 +16,22 @@ let DNSAlias = {
     "0x58cc80f5526594f07f33fd4be4aef153bab602b2": "Faucet 4",
     "0x45aa0730cf4216f7195fc1f5903a171a1faa5209": "Faucet 5"
 }
+
+const PredefinedGraphicColors = ['#F15C2E', '#0272FF', "#38AB66", "#161C2A", "#969FA8",
+                                '#D15B2E', '#9279FF', "#88AA76", "#1952AA", "#00445B"];
 const FleetHash = "0x7e9d94e966d33cff302ef86e2337df8eaf9a6388d45e4744321240599d428343"
 const NullHash = "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 const NullValue = "0x0000000000000000000000000000000000000000000000000000000000000000"
 const NullAddr = "0x0000000000000000000000000000000000000000"
+const NOT_FOUND_INDEX = -1
+
+const ACCOUNTS_FILTER_MAP = {
+    "fleets": "Fleet",
+    "contracts": "Contract",
+    "wallets": "Wallet"
+}
+
+const ACCOUNTS_ALL_FILTER = "All"
 
 var fleetMethods = {
     "deviceWhitelist": {

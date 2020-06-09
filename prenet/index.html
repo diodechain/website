@@ -15,27 +15,31 @@ layout: ""
     <script src="https://cdn.jsdelivr.net/npm/vue-router@3.1.5/dist/vue-router.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/v-tooltip"></script>
     <script src="prenet/abi.js"></script>
     <script src="prenet/geo.js"></script>
-    <link rel="stylesheet" type="text/css" href="prenet/style.css">
+    <script src="prenet/storage.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     </link>
     <link rel="shortcut icon" href="images/favicon.png" title="Favicon">
     </link>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+
     </link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body class="prenet">
     {% include_relative vue/fleet_registration.vue %}
     {% include_relative vue/dns.vue %}
     {% include_relative vue/power_distribution.vue %}
     {% include_relative vue/account.vue %}
     {% include_relative vue/accounts.vue %}
+    {% include_relative vue/blocks.vue %}
     {% include_relative vue/block.vue %}
     {% include_relative vue/transaction.vue %}
     {% include_relative vue/transactions.vue %}
     {% include_relative vue/network.vue %}
+    {% include_relative vue/search.vue %}
     <div id="app">
         <div class="header">
             <div class="logo">
@@ -43,14 +47,13 @@ layout: ""
             </div>
             <ul class="navbar">
                 <li v-for="r in routes" v-if="r.name">
-                    <router-link :to="r"><% r.name %></router-link>
-                </li>
-                <li>
-                    <span v-if="connected" class="good">connected</span>
-                    <span v-else class="bad">trying to connect.<% '.'.repeat(ticker%3) %></span>
+                    <!-- this is kind of workaround since the base path - '/' is matched partially always -->
+                    <router-link v-if="r.path==='/'" :to="r" exact><% r.name %></router-link>
+                    <router-link v-else :to="r"><% r.name %></router-link>
                 </li>
             </ul>
         </div>
+
 
         <transition>
             <keep-alive>
@@ -73,20 +76,27 @@ layout: ""
         }
 
         var routes = [
-            { name: 'TXs', path: '/tx/', component: Transactions },
+            { name: 'Map', path: '/network', component: Network },
+
+            { name: 'Transactions', path: '/tx/', component: Transactions },
             { name: false, path: '/tx/:hash', params: { hash: '0x1' }, component: Transaction, props: true },
 
-            { name: 'Network', path: '/network', component: Network },
-            { name: 'Fleets', path: '/fleets', component: FleetRegistration },
-            { name: 'BNS', path: '/dns', component: DNS },
-            { name: 'Blocks', path: '/block/:number', params: { number: 'latest' }, component: Block, props: true },
+            { name: 'Blocks', path: '/block', component: Blocks },
+            { name: false, path: '/block/:number', params: { number: 'latest' }, component: Block, props: true },
 
-            { name: 'Accounts', path: '/address/', component: Accounts },
+            { name: 'Accounts', path: '/address', component: Accounts },
             { name: false, path: '/address/:hash', params: { hash: Registry }, component: Account, props: true },
 
-            { name: 'Prenet', path: '/', component: PowerDistribution },
+            { name: 'BNS', path: '/dns', component: DNS },
+            { name: 'Fleets', path: '/fleets', component: FleetRegistration },
+            { name: 'Overview', path: '/', component: PowerDistribution },
         ];
-        const router = new VueRouter({ routes, base: '/prenet/' });
+        const router = new VueRouter({
+            routes,
+            base: '/prenet/',
+            duplicateNavigationPolicy: 'reload'
+        });
+
         router.beforeEach((to, from, next) => {
             if (Object.values(to.params).length) {
                 for (i = 0; i < routes.length; i++) {
@@ -244,6 +254,20 @@ layout: ""
             return undefined
         }
 
+        function getBase(callback) {
+            web3.eth.getCoinbase().then((base) => {
+                callback(base);
+            });
+        }
+
+        function balanceStringToValue(balance) {
+            return web3.utils.fromWei(balance);
+        }
+
+        function getRandomColor() {
+            return "#"+((1<<24)*Math.random()|0).toString(16);
+        }
+
         function valueToBalance(balance) {
             if (balance == undefined) return 'error loading';
             let value = web3.utils.fromWei(balance)
@@ -269,7 +293,7 @@ layout: ""
                 back = "";
             }
 
-            // value = value.toString()
+            // value = value.toString()h
             return front + back + unit
         }
 
@@ -311,8 +335,12 @@ layout: ""
         function formatAddr(addr, onlyAlias, length) {
             let alias = resolveName(addr);
             if (onlyAlias) return shorten(alias, length);
-            if (alias != addr) return shorten(addr, 20) + ' (' + alias + ')';
+            if (alias != addr) return shorten(addr, length) + ' (' + alias + ')';
             return shorten(addr, length);
+        }
+
+        function dateFormat(unix_timestamp) {
+            return new Date(unix_timestamp * 1000).toUTCString();
         }
 
         function formatUnix(unix_timestamp) {
@@ -330,6 +358,7 @@ layout: ""
         }
 
     </script>
+
 </body>
 
 </html>
