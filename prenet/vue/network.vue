@@ -1130,6 +1130,7 @@ var Network = Vue.component("network", {
   methods: {
     tooltip(point) {
       return "<a href='/prenet#/address/" + point.node_id + "'>" + point.name + "</a><br/>" +
+        point.city + '</br>' +
         point.ip + '</br>' +
         point.retries + ' retries';
     },
@@ -1168,6 +1169,7 @@ var Network = Vue.component("network", {
         let point = this.mapLatLon(lat, lon);
         point.ip = ip;
         point.type = type;
+        point.city = location.city;
         point.node_id = node_id;
         point.name = resolveName(node_id);
         point.retries = retries;

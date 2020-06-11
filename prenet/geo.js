@@ -79,6 +79,19 @@ let IPCache = {
         "latitude": 40.738731384277344,
         "longitude": -74.19452667236328,
     },
+    "45.79.58.5": {
+        "type": "ipv4",
+        "continent_code": "NA",
+        "continent_name": "North America",
+        "country_code": "US",
+        "country_name": "United States",
+        "region_code": "TX",
+        "region_name": "Texas",
+        "city": "Dallas",
+        "zip": "75080",
+        "latitude": 32.94818,
+        "longitude": -96.72972
+    },
     "172.105.85.69": {
         "type": "ipv4",
         "continent_code": "EU",
@@ -100,11 +113,51 @@ let IPCache = {
         "country_name": "United Kingdom",
         "region_code": "ENG",
         "region_name": "England",
-        "city": "Orpington",
+        "city": "London",
         "zip": "BR1",
         "latitude": 51.383758544921875,
         "longitude": 0.04083999991416931,
+    },
+    "172.105.105.84": {
+        "type": "ipv4",
+        "continent_code": "NA",
+        "continent_name": "North America",
+        "country_code": "CA",
+        "country_name": "Canada",
+        "region_code": "ON",
+        "region_name": "Ontario",
+        "city": "Toronto",
+        "zip": "",
+        "latitude": 43.741667,
+        "longitude": -79.373333,
+    },
+    "172.105.186.136": {
+        "type": "ipv4",
+        "continent_code": "AU",
+        "continent_name": "Australia",
+        "country_code": "AU",
+        "country_name": "Australia",
+        "region_code": "NSW",
+        "region_name": "New South Wales",
+        "city": "Sydney",
+        "zip": "",
+        "latitude": -33.865,
+        "longitude": 151.209444,
+    },
+    "45.79.126.86": {
+        "type": "ipv4",
+        "continent_code": "AS",
+        "continent_name": "Asia",
+        "country_code": "IN",
+        "country_name": "India",
+        "region_code": "MA",
+        "region_name": "Maharashtra",
+        "city": "Mumbai",
+        "zip": "400099",
+        "latitude": 19.01441,
+        "longitude": 72.84794,
     }
+
 };
 function resolveIP(ip, callback) {
     if (isLocal(ip)) {
@@ -124,7 +177,7 @@ function resolveIP(ip, callback) {
 function isLocal(ip) {
     if (ip.startsWith("127") || ip.startsWith("10.") || ip.startsWith("192.168")) return true;
     if (ip.startsWith("172.")) {
-        let [a,b,c,d] = ip.split(".")
+        let [a, b, c, d] = ip.split(".")
         if (b >= 16 && b < 32) {
             return true;
         }
