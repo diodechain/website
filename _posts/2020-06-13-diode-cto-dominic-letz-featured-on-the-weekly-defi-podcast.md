@@ -5,6 +5,7 @@ date: 2020-06-13 14:31
 categories: [Diode]
 tags: [Diode, Blockchain]
 author: Yahsin Huang
+image: Letz_podcast.png
 imageclass: middle
 ---
 
