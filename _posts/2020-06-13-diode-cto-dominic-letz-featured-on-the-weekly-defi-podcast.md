@@ -8,8 +8,9 @@ author: Yahsin Huang
 imageclass: middle
 ---
 
-Our CTO [Dominic Letz](https://github.com/dominicletz) was invited to go on the [Weekly DeFi](https://soundcloud.com/weekly-defi/defi-3-diode-cto-dominic-letz) podcast as a guest recently. Dominic and the Boston-based podcast host [Thomas](https://hchsueh.com/), did the interview over the Internet, talked about the future of the Internet, what is the Web3 revolution, how time is a fundamental problem with Internet security, what is the Diode Network, and more importantly, how you can make a positive impact in the Web3 ecosystem. Have a listen [here](https://soundcloud.com/weekly-defi/defi-3-diode-cto-dominic-letz).
+Our CTO [Dominic Letz](https://github.com/dominicletz) was invited to go on the [Weekly DeFi](https://soundcloud.com/weekly-defi/defi-3-diode-cto-dominic-letz) podcast as a guest recently. Dominic and the Boston-based podcast host [Thomas](https://hchsueh.com/), did the interview over the Internet, talked about the future of the Internet, what is the Web3 revolution, how time is a fundamental problem with Internet security, what is the Diode Network, and more importantly, how you can make a positive impact in the Web3 ecosystem. 
 
+Have a listen [here](https://soundcloud.com/weekly-defi/defi-3-diode-cto-dominic-letz). A summary of some of the key points discussed in the podcast can be viewed [here](https://defi.substack.com/p/defi-week-1) (in Mandarin).
 
 "If we can establish a secure way of knowing - no matter where we are - the current time, then we have solved a big problem in terms of resolving PKI securely," said Dominic. "We see Diode being a fundamental protocol for all kinds of decentralized applications in the future"
 
