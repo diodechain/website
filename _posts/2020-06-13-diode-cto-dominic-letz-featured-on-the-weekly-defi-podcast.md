@@ -8,9 +8,10 @@ author: Yahsin Huang
 imageclass: middle
 ---
 
-Our CTO [Dominic Letz](https://github.com/dominicletz) was invited to go on the [Weekly DeFi](https://soundcloud.com/weekly-defi/defi-3-diode-cto-dominic-letz) podcast as a guest recently. Dominic and the Boston-based podcast host [Thomas](https://hchsueh.com/), did the interview over the Internet, talked about the future of the Internet, what is the Web3 revolution, how time is a fundamental problem with Internet security, what is the Diode Network, and more importantly, how you can make a positive impact in the Web3 ecosystem.
+Our CTO [Dominic Letz](https://github.com/dominicletz) was invited to go on the [Weekly DeFi](https://soundcloud.com/weekly-defi/defi-3-diode-cto-dominic-letz) podcast as a guest recently. Dominic and the Boston-based podcast host [Thomas](https://hchsueh.com/), did the interview over the Internet, talked about the future of the Internet, what is the Web3 revolution, how time is a fundamental problem with Internet security, what is the Diode Network, and more importantly, how you can make a positive impact in the Web3 ecosystem. Have a listen [here](https://soundcloud.com/weekly-defi/defi-3-diode-cto-dominic-letz).
 
-Have a listen [here](https://soundcloud.com/weekly-defi/defi-3-diode-cto-dominic-letz).
+
+"If we can establish a secure way of knowing - no matter where we are - the current time, then we have solved a big problem in terms of resolving PKI securely," said Dominic. "We see Diode being a fundamental protocol for all kinds of decentralized applications in the future"
 
 Some of the topics that Dominic talked about in the interview were also explored at the [presentation](https://youtu.be/KeIwchX_C40) he gave at Raspberry Pi Taipei Meetup event in April, the [talk](https://github.com/diodechain/presentations/blob/master/Elixir_Berlin_Meetup_2019/Elixir%20Berlin%20Meetup%202019_%20Dominic%20Letz%20on%20Doing%20Blockchain%20with%20Elixir.pdf) he gave at Elixir Berlin Meetup in Berlin, Germany in October, as well as another [talk](https://github.com/diodechain/presentations/blob/master/COSCUP_2019/Why%20blockchain%20is%20the%20solution%20to%20IoT%20security.pdf) at COSCUP, Taiwan's biggest open source conference last summer. Diode's presentation slides are publicly available on [Github](https://github.com/diodechain/presentations). 
 
