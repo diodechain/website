@@ -4745,6 +4745,10 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
   }
 }
 
+section.blog-section .blog-articles-container article.blog-article .article-content strong {
+  color: black;
+}
+
 section.blog-section .blog-articles-container article.blog-article .article-content table {
   border: 1px solid black;
   margin: 1em auto;
