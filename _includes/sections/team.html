@@ -25,9 +25,12 @@
       <!-- Member -->
       <div class="col-md-2 col-md-push-0 col-sm-3 col-sm-push-0 col-xs-3 col-xs-push-0">
         <div class="team-member">
-          <div class="img-wrapper">
-            <img src="images/avatars/{{ member.avatar }}?{{site.time | date: '%s%N'}}" alt="Avatar {{ member.name }}" />
-          </div>
+          <a href="{{ member.url }}">
+            <div class="img-wrapper">
+              <img src="images/avatars/{{ member.avatar }}?{{site.time | date: '%s%N'}}"
+                alt="Avatar {{ member.name }}" />
+            </div>
+          </a>
           <div class="team-member-content">
             <h3 class="name">{{ member.name }}</h3>
             <h4 class="tagline">{{ member.jobtitle }}</h4>
