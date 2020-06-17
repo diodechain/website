@@ -1079,6 +1079,7 @@
               id="FR"
             />
             <line
+              v-if="points[baseIp] != undefined"
               v-for="point in points"
               v-bind:class="point.type"
               :key="point.ip"
@@ -1129,10 +1130,16 @@ var Network = Vue.component("network", {
   },
   methods: {
     tooltip(point) {
-      return "<a href='/prenet#/address/" + point.node_id + "'>" + point.name + "</a><br/>" +
-        point.city + '</br>' +
-        point.ip + '</br>' +
-        point.retries + ' retries';
+      let text = "<a href='/prenet#/address/" + point.node_id + "'>" + point.name + "</a><br/>";
+        
+      text += point.city + ' (' + point.ip + ')</br>';
+      text += point.version + ' </br>';
+
+      if (point.tickets) text += point.tickets + ' tickets collected</br>';
+      if (point.uptime) text += point.uptime + ' uptime / ';
+      
+      text += point.retries + ' reconnects </br>';
+      return text;
     },
     load: async function() {
       let ret = undefined;
@@ -1146,7 +1153,7 @@ var Network = Vue.component("network", {
         return;
       }
       this.baseIp = ret[1]
-      this.putPoint(base, ret[1], "self", 0);
+      this.putPoint(base, ret, "self", 0);
       try {
         ret = await web3.eth.network();
         // console.log("network: ", ret)
@@ -1156,23 +1163,37 @@ var Network = Vue.component("network", {
       }
       for (entry of ret) {
         let type = entry.connected ? "connected" : "notConnected";
-        let ip = entry.node[1];
-        this.putPoint(entry.node_id, ip, type, entry.retries);
+        this.putPoint(entry.node_id, entry.node, type, entry.retries);
       }
     },
 
-    putPoint: function(node_id, ip, type, retries) {
+    putPoint: function(node_id, serverObj, type, retries) {
+      let = ip = serverObj[1]
       resolveIP(ip, location => {
         let lat = Math.round(location.latitude * 1000) / 1000;
         let lon = Math.round(location.longitude * 1000) / 1000;
 
         let point = this.mapLatLon(lat, lon);
         point.ip = ip;
+        if (serverObj.length > 5) {
+          point.version = serverObj[4]
+          let extra = {}
+          for (let [key, value] of serverObj[5]) {
+            extra[key] = value
+          }
+          point.tickets = extra["tickets"]
+          point.uptime = extra["uptime"]
+        }
+        else {
+          point.version = "ExDiode <= 2.3"
+          point.tickets = false
+          point.uptime = false
+        }
         point.type = type;
         point.city = location.city;
         point.node_id = node_id;
         point.name = resolveName(node_id);
-        point.retries = retries;
+        point.retries = web3.utils.hexToNumber(retries);
 
         let dist = 15;
         let key = Math.floor(point.x / dist) + "+" + Math.floor(point.y / dist);
