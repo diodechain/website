@@ -1136,7 +1136,7 @@ var Network = Vue.component("network", {
       text += point.version + ' </br>';
 
       if (point.tickets) text += point.tickets + ' tickets collected</br>';
-      if (point.uptime) text += point.uptime + ' uptime / ';
+      if (point.uptime) text += point.uptime + 's uptime / ';
       
       text += point.retries + ' reconnects </br>';
       return text;
@@ -1181,8 +1181,8 @@ var Network = Vue.component("network", {
           for (let [key, value] of serverObj[5]) {
             extra[key] = value
           }
-          point.tickets = extra["tickets"]
-          point.uptime = extra["uptime"]
+          point.tickets = web3.utils.hexToNumber(extra["tickets"])
+          point.uptime = web3.utils.hexToNumber(extra["uptime"])
         }
         else {
           point.version = "ExDiode <= 2.3"
