@@ -37,7 +37,7 @@ var Accounts = Vue.component("accounts", {
       if (this.node) return "Miner";
       if (this.object) return "Device";
       if (this.code == "0x") return "User (Human or Miner or Device)";
-      return "General Smart Contract";
+      return "Contract";
     }
   },
   created: function() {
@@ -48,9 +48,9 @@ var Accounts = Vue.component("accounts", {
       let accounts = await web3.eth.getAllAccounts();
       for (let id in accounts) {
           hash = accounts[id].codehash
-          if (hash == FleetHash) accounts[id].type = 'Fleet Contract';
+          if (hash == FleetHash) accounts[id].type = 'Fleet';
           else if (hash == NullHash) accounts[id].type = 'Wallet';
-          else accounts[id].type = 'Custom Contract';
+          else accounts[id].type = 'Contract';
 
           accounts[id].stake = 'pending';
       }

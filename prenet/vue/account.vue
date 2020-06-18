@@ -145,8 +145,8 @@ var Account = Vue.component("account", {
       if (this.node) return "Miner";
       if (this.object) return "Device";
       if (this.rawcode == "0x") return "User (Human or Miner or Device)";
-      if (this.codehash == FleetHash) return "Fleet Contract";
-      return "General Smart Contract";
+      if (this.codehash == FleetHash) return "Fleet";
+      return "Contract";
     },
     code: function() {
       if (this.rawcode != '0x') return this.rawcode

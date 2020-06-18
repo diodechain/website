@@ -255,8 +255,22 @@ layout: ""
             // }
 
             // Adding thousands separators
-            value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            return value + unit
+            value = value.toString()
+
+            let [front, back] = value.split(".")
+
+            front = front.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+            if (back != undefined) {
+                back =  back.split("").reverse().join("");
+                back  = back.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                back =  "." + back.split("").reverse().join("");
+            } else {
+                back = "";
+            }
+
+            // value = value.toString()
+            return front + back + unit
         }
 
         function isAddress(value) {
