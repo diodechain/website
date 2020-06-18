@@ -29,7 +29,7 @@
           <th>Nonce</th>
           <td><% nonce %></td>
         </tr>
-        <tr v-if="object && object[0] == 'device'">
+        <tr v-if="object && object[0] == 'ticket'">
           <th>Device Data</th>
           <td>
             <table class="data">
