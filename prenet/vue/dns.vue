@@ -47,7 +47,7 @@
                       />
                       <span>Register!</span>
                     </button>
-                    <input type="text" v-model="deviceId[name.name]" placeholder="0x1234556..." />
+                    <input type="text" v-model.trim="deviceId[name.name]" placeholder="0x1234556..." />
                   </div>
                 </td>
                 <td>
@@ -57,7 +57,7 @@
             </table>
             <hr />
             <div v-if="enabled">
-              <input type="text" v-model="newName" placeholder="some-name" />
+              <input type="text" v-model.trim="newName" placeholder="some-name" />
               <button class="button" v-on:click="addName(newName)" :disabled="newName.length <= 7">Add Name</button>
             </div>
           </td>
