@@ -62,7 +62,7 @@
           </tr>
           <tr>
             <th>Logs</th>
-            <td class="big"><% receipt.logs %></td>
+            <td class="big"><pre><% receipt.logs %></pre></td>
           </tr>
           <tr>
             <th>Cumulative Gas Used</th>

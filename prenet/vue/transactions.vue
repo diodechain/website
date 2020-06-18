@@ -6,21 +6,27 @@
     <div class="column">
       <table class="data">
         <tr>
-          <th>Hash</th>
-          <th>From Account</th>
-          <th>To Account</th>
+          <th>&nbsp;</th>
           <th>Value</th>
           <th>Gas Price</th>
           <th>Data</th>
           <th>Nonce</th>
         </tr>
         <tr :key="tx['hash']" v-for="tx in transactions">
-          <td><% tx["hash"] %></td>
-          <td><account-link :hash="tx['from']" /></td>
-          <td><account-link :hash="tx['to']" /></td>
+          <td>
+            <table class="inner">
+              <tr>
+                <th>Hash</th><td><% tx["hash"] %></td>
+              </tr><tr>
+                <th>From</th><td><account-link :hash="tx['from']" /></td>
+              </tr><tr>
+                <th>To</th><td><account-link :hash="tx['to']" /></td>
+              </tr>
+            </table>
+          </td>
           <td><% tx["value"] %></td>
           <td><% tx["gasPrice"] %></td>
-          <td><% tx["input"] %></td>
+          <td class="big"><% tx["input"] %></td>
           <td><% tx["nonce"] %></td>
         </tr>
       </table>

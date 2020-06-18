@@ -262,9 +262,9 @@ layout: ""
             front = front.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
             if (back != undefined) {
-                back =  back.split("").reverse().join("");
-                back  = back.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                back =  "." + back.split("").reverse().join("");
+                back = back.split("").reverse().join("");
+                back = back.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                back = "." + back.split("").reverse().join("");
             } else {
                 back = "";
             }
@@ -274,7 +274,8 @@ layout: ""
         }
 
         function isAddress(value) {
-            return web3.utils.isAddress(value) && !value.startsWith('0x000000')
+            return value == '0x0000000000000000000000000000000000000000' ||
+                (web3.utils.isAddress(value) && !value.startsWith('0x000000'))
         }
 
         function formatStorageKey(key) {
