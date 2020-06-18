@@ -42,7 +42,7 @@
                 </td>
               </tr>
               <tr>
-                <th>Last Connected To</th>
+                <th>Last Relay</th>
                 <td>
                   <account-link :hash="object[1]" />
                 </td>
