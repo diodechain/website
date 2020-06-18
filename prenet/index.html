@@ -245,6 +245,7 @@ layout: ""
         }
 
         function valueToBalance(balance) {
+            if (balance == undefined) return 'error loading';
             let value = web3.utils.fromWei(balance)
             let unit = ' DIO'
 
