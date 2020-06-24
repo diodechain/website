@@ -12,8 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-          cat install.sh | sh -s v0.3.3
-          DIR=~/opt/diode
-          echo "::add-path::$DIR"
+        cat install.sh | sh -s v0.3.3
+        DIR=~/opt/diode
+        echo "::add-path::$DIR"
       shell: bash
     - run: diode config -list
+      shell: bash
