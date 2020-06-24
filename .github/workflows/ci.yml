@@ -10,16 +10,11 @@ jobs:
         go: ["1.14.x"]
     runs-on: ${{ matrix.os }}
     steps:
-    - if: runner.os == 'macOS'
-      run: brew remove openssl
-      
+    # Ensuring this is a 'pure' environment
+    # - if: runner.os == 'macOS'
+    #   run: brew remove openssl
     - uses: actions/checkout@v2
-    
-      # run: curl -Ssf https://diode.io/install.sh | sudo sh
-    - if: runner.os == 'Windows'      
-      run: cat install.sh | sh -s v0.3.3
-      shell: bash
-    - if: runner.os != 'Windows'      
-      run: cat install.sh | sudo sh -s v0.3.3
+    # run: curl -Ssf https://diode.io/install.sh | sudo sh
+    - run: cat install.sh | sh -s v0.3.3
       shell: bash
     - run: diode config -list
