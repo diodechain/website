@@ -123,7 +123,7 @@ uname_os() {
     msys*) os="windows" ;;
     mingw*) os="windows" ;;
   esac
-  echo "${os}"  
+  echo "${os}"
 }
 uname_arch() {
   arch=$(uname -m)

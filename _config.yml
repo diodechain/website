@@ -104,7 +104,7 @@ downloads:
   link: diode_linux_arm.zip
   id: Raspberry Pi
 - title: <i class="fab fa-apple"></i> MacOS X
-  link: diode_macos_amd64.zip
+  link: diode_darwin_amd64.zip
   id: MacOS
 - title: <i class="fas fa-cube"></i> MacOS Package
   link: diode_darwin.pkg
