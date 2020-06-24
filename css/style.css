@@ -5161,6 +5161,7 @@ section.download-section hr.small {
 
 section.download-section .download-header {
   margin-bottom: 1em;
+  text-align: center;
 }
 
 section.download-section .download-header .title {

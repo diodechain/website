@@ -6,7 +6,7 @@ usage() {
   cat <<EOF
 $this: download go binaries for diodechain/diode_go_client
 Usage: $this [-b] bindir [version]
-  -b sets bindir or installation directory, default "/usr/local/bin"
+  -b sets bindir or installation directory, default "~/opt/diode"
    [version] is a version number from
    https://github.com/diodechain/diode_go_client/releases
    If version is missing, then an attempt to find the latest will be found.
@@ -15,10 +15,10 @@ EOF
 }
 
 parse_args() {
-  #BINDIR is /usr/local/bin unless set be ENV
+  #BINDIR is ~/opt/diode unless set be ENV
   # over-ridden by flag below
 
-  BINDIR=${BINDIR:-/usr/local/bin}
+  BINDIR=${BINDIR:-~/opt/diode}
   while getopts "b:h?" arg; do
     case "$arg" in
       b) BINDIR="$OPTARG" ;;
@@ -40,12 +40,21 @@ execute() {
   (cd "${TMPDIR}" && untar "${TARBALL}")
   install -d "${BINDIR}"
   install "${TMPDIR}/${BINARY}" "${BINDIR}/"
-  # Install libssl/libcrypto to @loader_path
-  if [ "$OS" = "darwin" ]; then
-    install "${TMPDIR}/libssl.1.0.0.dylib" "${BINDIR}/"
-    install "${TMPDIR}/libcrypto.1.0.0.dylib" "${BINDIR}/"
-  fi
   echo "$PREFIX: installed as ${BINDIR}/${BINARY}"
+
+  # installing path into .bashrc and .bash_profile for macOS
+  TERM="export PATH=${BINDIR}:\$PATH"
+  for FILE in ~/.bashrc ~/.bash_profile; do
+    if test -f "$FILE"; then
+      grep -qxF "$TERM" "$FILE" || echo "$TERM" >> "$FILE"
+    else
+      echo "$TERM" >> "$FILE"
+    fi
+    echo "$PREFIX: installed path into $FILE"
+  done
+  echo
+  echo "Restart your terminal to use or run below line right now:"
+  echo "export PATH=${BINDIR}:\$PATH"
 }
 is_supported_platform() {
   platform=$1
@@ -110,7 +119,11 @@ is_command() {
 }
 uname_os() {
   os=$(uname -s | tr '[:upper:]' '[:lower:]')
-  echo "$os"
+  case $os in
+    msys*) os="windows" ;;
+    mingw*) os="windows" ;;
+  esac
+  echo "${os}"  
 }
 uname_arch() {
   arch=$(uname -m)

@@ -29,7 +29,7 @@ As the Diode overlay network becomes more mature we have started making the netw
 
 ![alt_text](images/blog/dev-june/image5.png "Github Releases"){: .center-block }
 
-*   Secondly there is an easy setup **installer script** for Linux and macOS, and Windows installations with a bash terminal. `curl -Ssf https://diode.io/install.sh | sudo sh` will install the client into your machine
+*   Secondly there is an easy setup **installer script** for Linux and macOS, and Windows installations with a bash terminal. `curl -Ssf https://diode.io/install.sh | sh` will install the client into your machine
 *   Third, we have changed the compilation of openssl so that the **application is packaged into a single file**. This makes updating the application easier and removes problems users had with missing or misplaced dependencies. This change will be rolled out with version v0.3.6
 *   Fourth, the command line **flag documentation** has been updated to fit on a single page and be easier consumable. 
 
