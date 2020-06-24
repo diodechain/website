@@ -16,5 +16,7 @@ jobs:
         DIR=~/opt/diode
         echo "::add-path::$DIR"
       shell: bash
-    - run: diode config -list
+    # On windows the self-update does not fail but kills the client
+    - if: runner.os != 'Windows' 
+      run: diode config -list
       shell: bash
