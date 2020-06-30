@@ -36,7 +36,7 @@ docs:
   description: >-
     Diode is Ethereum RPC API compatible and hosts listen by default on port :8443. 
     Try any of them against testnet.diode.io:8443
-  link: https://github.com/ethereum/wiki/wiki/json-rpc
+  link: https://eth.wiki/json-rpc/API
 ---
 
 
