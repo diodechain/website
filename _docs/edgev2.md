@@ -69,14 +69,25 @@ RPC: `["location", <s>, <peak_block>, <device_signature>, <server_signature>]`
 *   **device_signature**: binary - Bert encoded list: `[<server_id>, <peak_block>]`
 *   **server_signature**: binary - Bert encoded list: `[<server_id>, <peak_block>, <device_signature>]` 
 
-### Server Object
+### Server Object v1
 
 RPC: `["server", <host>, <edge_port>, <server_port>, <signature>]`
 
 *   **host**: binary - name or ip address of the host
 *   **edge_port**: integer - port for IoT devices to connect
 *   **server_port**: integer - port for other cloud software to connect
-*   **signature**: binary - Bert encoded list: `[<host>, <edge_port>, <server_port>]`
+*   **signature**: binary - Signature of the bert encoded list: `[<host>, <edge_port>, <server_port>]`
+
+### Server Object v2
+
+RPC: `["server", <host>, <edge_port>, <server_port>, <version>, <extra>, <signature>]`
+
+*   **host**: binary - name or ip address of the host
+*   **edge_port**: integer - port for IoT devices to connect
+*   **server_port**: integer - port for other cloud software to connect
+*   **version**: binary - string represnting a server version identification
+*   **extra**: list - `[[<key>, <value>]]` key value list with key being a binary string and value being an integer
+*   **signature**: binary - Signature of the bert encoded list: `[<host>, <edge_port>, <server_port>, <version>, <extra>]`
 
 # Edge RPC API Reference
 

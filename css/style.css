@@ -4188,6 +4188,12 @@ section.docs-layout section.docs-section .docets .doc {
   padding: 1em;
   border: 1px solid gray;
   border-style: dashed;
+  -webkit-transition: -webkit-box-shadow 300ms ease-in-out;
+  transition: -webkit-box-shadow 300ms ease-in-out;
+  -o-transition: box-shadow 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
+  background-color: #f4f8f9;
 }
 
 section.docs-layout section.docs-section .docets .doc h3 {
@@ -4203,6 +4209,11 @@ section.docs-layout section.docs-section .docets .doc h3::after {
 
 section.docs-layout section.docs-section .docets .doc span {
   color: #5e5e5e;
+}
+
+section.docs-layout section.docs-section .docets .doc:hover {
+  -webkit-box-shadow: 0px 0px 15px 0px #F15C2E;
+          box-shadow: 0px 0px 15px 0px #F15C2E;
 }
 
 /**

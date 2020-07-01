@@ -185,6 +185,12 @@
         span {
             color: #5e5e5e;
         }
+
+        transition: box-shadow $transition-links $transition-links-type;
+        background-color: $sidebar-header;
+        &:hover {
+          box-shadow: 0px 0px 15px 0px $primary;
+        }
       }
     }
   }
