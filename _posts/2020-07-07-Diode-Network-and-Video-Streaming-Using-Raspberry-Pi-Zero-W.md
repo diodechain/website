@@ -17,7 +17,7 @@ The meetup topic was about how to perform video streaming using Raspberry Pi Zer
 
 Peter started his presentation by giving a quick demo. We’ve got a Raspberry Pi set up at our office in Berlin, Germany (where Dominic is currently based), and another Raspberry Pi set up at our office in Taipei, Taiwan. 
 
-![alt_text](images/blog/June_Meetup_Demo.png "image_tooltip")
+![alt_text](images/blog/June_Meetup_demo.png "image_tooltip")
 
 The demo we showed was about how you can get to see the pi-taipei real-time camera video streams served via Diode network anywhere in the world. With Diode, you are able to broadcast it to multiple clients. The real-time data streaming and buffering are done over the Diode network.
 
