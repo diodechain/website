@@ -5,7 +5,7 @@ date: 2020-07-14 01:30
 categories: [Diode]
 tags: [Diode, Blockchain, Use case]
 author: Yahsin Huang
-image: diode_ngrok_alternative.png
+image: diode_ngrok_al_feature.png
 imageclass: top
 ---
 
