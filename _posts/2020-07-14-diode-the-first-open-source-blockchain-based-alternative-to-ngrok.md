@@ -5,7 +5,7 @@ date: 2020-07-14 01:30
 categories: [Diode]
 tags: [Diode, Blockchain, Use case]
 author: Yahsin Huang
-image: diode_ngrok_al_feature.png
+image: diode_ngrok_alt_f.png
 imageclass: top
 ---
 
@@ -29,6 +29,9 @@ Before we had a diode init command, at the moment we’ve made some changes and 
 If you visit Diode’s [prenet website](https://diode.io/prenet/#/dns), you can see a list of Diode fleet contracts that are already created. Fleet contracts are strings of letters and numbers. Protected resources are set in Diode’s fleet contracts (“protected” is governed by the fleet contract whitelist); private resources are set in your local machines (“private” is setup by the command). 
 
 Then, you want to publish your local port to the Diode Network. In your terminal window, type: `$ diode publish -public 3030:3030`  
+
+Here’s what the output looks like:
+![alt_text](images/blog/gif_diode_publish.gif "image_tooltip")
 
 This binds your local port to a Diode port. We are publishing as “public” so anyone can view it (can also use “protected” or “private”) 
 
