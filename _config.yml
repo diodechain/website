@@ -60,17 +60,13 @@ header-secondary-button:
 navigation:
 - title: Home
   link: #home
-- title: About
-  link: about.html
 - title: Blog
   link: blog/
 - title: Docs
   link: docs/
-- title: FAQ
-  link: https://github.com/diodechain/wiki/wiki/FAQs
 - title: Download
   link: download/
-- title: Prenet
+- title: Explorer
   link: prenet/
 - title: <i class="fi flaticon-telegram"></i>
   link: https://t.me/diode_chain
