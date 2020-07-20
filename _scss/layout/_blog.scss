@@ -22,8 +22,13 @@ section.blog-section {
     padding-top: 30px;
 
     .blog-articles-container {
-      width: 100%;
       margin-top: 0;
+    }
+
+    &.no-sidebar {
+      .blog-articles-container {
+        width: 100%;
+      }
     }
 
     .blog-articles-container > .title {
