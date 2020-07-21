@@ -13,13 +13,13 @@ At [Diode](https://diode.io) we're have deployed a couple of long-running Raspbe
 
 ![alt_text](images/blog/watchdog/image3.png "Diode.io status page")
 
-Eventually we have run into a problem not related to our software. From to time one of our Raspberry Pis freezes in the field either because of a kernel or a hardware issue. In that case there is nothing that can be done with software anymore. You can't connect to it, can't ping the Pi -- It becomes impossible to send it a restart command in any way to bring it back to normal operation. Debugging into these events you might find indications of such as freeze in the `/var/log/kernel.log` file. Below an example of a freeze that first shows a kernel exception and then just garbage `^@^@^@^@^@`
+Eventually we have run into a problem not related to our software. From to time one of our Raspberry Pis freezes in the field either because of a kernel or a hardware issue. In that case there is nothing that can be done with software anymore. You can't connect to it, can't ping the Pi -- It becomes impossible to send it a restart command in any way to bring it back to normal operation. Debugging into these events you might find indications of such as freeze in the _/var/log/kernel.log_ file. Below an example of a freeze that first shows a kernel exception and then just garbage _^@^@^@^@^@_
 
 ![alt_text](images/blog/watchdog/image4.png "Kernel log at freeze")
 
 That's the point the Pi froze, and only manual powering down, and powering up again brought it back to live.
 
-# Enter Watchdog
+## Enter Watchdog
 
 But the Pis are very resourcefull tools. And one of their underdocumented features is a builtin hardware watchdog. This little hardware service will _once enabled_ watch the system activity and automatically power cycle the Raspberry Pi once it gets stuck. 
 
@@ -74,6 +74,20 @@ sudo bash -c ':(){ :|:& };:'
 ```
 __WARNING__ _Running this code will render your Raspberry Pi unaccessible until it's reset by the watchdog._ __/WARNING__
 
+
 If you got any troubles with your Pi or running Diode on the Pi feel free to reach out to us on [Telegram and ask questions directly there.](https://t.me/diode_chain)
 
 And if you want to learn more about Diode be sure to check out the [Diode FAQs](https://github.com/diodechain/wiki/wiki/FAQs).
+
+### Update: July 21st 
+
+In some cases our [_Raspberry Pi Zero W_](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) would crash it's wifi driver but not completely go down. This wouldn't trigger the watchdog, because the device is still running - just not communicating anymore... To handle this case we added one more line to the _watchdog.conf_ configuration file. Like this:
+
+```
+sudo su
+echo 'interface = wlan0' >> /etc/watchdog.conf
+```
+
+With this additional configuration line, the watchdog will also power cycle the Raspberry Pi when the wifi interface _wlan0_ gets into trouble.
+
+glhf.
