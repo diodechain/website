@@ -27,7 +27,11 @@
       .heading-content {
         padding: 0 40px;
       }
+    }
 
+    // Cover
+    .cover::before {
+      height: 50px;
     }
 
     &.blog-header {
@@ -198,6 +202,7 @@
 
     // Header Banner
     .header-banner {
+      margin-top: 0em;
       .heading-title {
         h1 {
           font-size: 3rem;
@@ -254,6 +259,7 @@
   // Site Header on small devices
   header.site-header {
     .header-banner {
+      margin-top: 0em;
 
       .heading-title {
         h1 {

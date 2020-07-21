@@ -296,7 +296,7 @@ section.blog-section {
         width: 100%;
 
         @media (max-width: 992px) {
-          font-size: 16px;
+          font-size: $global-font-size;
         }
 
         strong {

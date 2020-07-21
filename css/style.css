@@ -226,6 +226,16 @@ table {
   z-index: -999999;
 }
 
+.parallax .cover:before {
+  content: '';
+  background-color: #2d3e50;
+  height: 80px;
+  display: block;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+}
+
 .parallax .cover img {
   position: absolute;
   -o-object-fit: cover;
@@ -2424,7 +2434,7 @@ button.button-block,
  **/
 body {
   font-family: "Titillium Web", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: normal;
   letter-spacing: 0.08rem;
   color: #5e5e5e;
@@ -2860,6 +2870,7 @@ header.site-header .frag {
 }
 
 header.site-header .header-banner {
+  margin-top: 2em;
   height: -webkit-calc(100vh - 250px);
   height: calc(100vh - 250px);
   max-height: -webkit-calc(1080px - 250px);
@@ -2982,6 +2993,9 @@ header.site-header .arrow-down-section .arrow-down i:before {
   }
   header.site-header .header-banner .heading-content {
     padding: 0 40px;
+  }
+  header.site-header .cover::before {
+    height: 50px;
   }
   header.site-header.blog-header {
     height: 50px;
@@ -3245,6 +3259,9 @@ header.site-header .arrow-down-section .arrow-down i:before {
 }
 
 @media (max-width: 992px) and (min-width: 550px) {
+  header.site-header .header-banner {
+    margin-top: 0em;
+  }
   header.site-header .header-banner .heading-title h1 {
     font-size: 3rem;
   }
@@ -3277,6 +3294,9 @@ header.site-header .arrow-down-section .arrow-down i:before {
 }
 
 @media (max-width: 550px) {
+  header.site-header .header-banner {
+    margin-top: 0em;
+  }
   header.site-header .header-banner .heading-title h1 {
     font-size: 2.4rem;
   }
@@ -4053,7 +4073,7 @@ section.docs-layout section.docs-section {
 
 @media (max-width: 992px) {
   section.docs-layout section.docs-section {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 
@@ -4755,7 +4775,7 @@ section.blog-section .blog-articles-container article.blog-article .article-cont
 
 @media (max-width: 992px) {
   section.blog-section .blog-articles-container article.blog-article .article-content {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 

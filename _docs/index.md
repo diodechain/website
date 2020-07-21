@@ -12,15 +12,20 @@ docs:
     Our list of frequently asked questions is steadily beeing updated and a good resource for all common questions regarding Diode.
   link: https://github.com/diodechain/wiki/wiki/FAQs
 
-- title: 'Presentations'
+- title: 'Blockquick Paper'
   description: >-
-    Review some of our recent presentation decks. We will keep publishing new ones from time to time.
-  link: https://github.com/diodechain/presentations
+    The blockquick paper - our flux compensator that made connecting small devices to the blockchain possible.
+  link: https://eprint.iacr.org/2019/579.pdf
 
 - title: 'Network Status'
   description: >-
     Check the current prenet uptime for two of our client devices in Berlin in Taipei
   link: https://status.diode.io
+
+- title: 'Presentations'
+  description: >-
+    Review some of our recent presentation decks. We will keep publishing new ones from time to time.
+  link: https://github.com/diodechain/presentations
 
 - title: '[Developer] Diode Server Documentation'
   description: >-

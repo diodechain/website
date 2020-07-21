@@ -80,7 +80,17 @@
 	display: block;
 	width: 100%;
 	height: 100%;
-	z-index: -999999;
+  z-index: -999999;
+  
+  &:before {
+    content: '';
+    background-color: $secondary;
+    height: 80px;
+    display: block;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+  }
 
   img {
     position: absolute;
