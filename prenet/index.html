@@ -18,7 +18,7 @@ layout: ""
     <script src="https://unpkg.com/v-tooltip"></script>
     <script src="prenet/abi.js"></script>
     <script src="prenet/geo.js"></script>
-    <link rel="stylesheet" type="text/css" href="prenet/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     </link>
     <link rel="shortcut icon" href="images/favicon.png" title="Favicon">
     </link>
@@ -47,19 +47,17 @@ layout: ""
                 <li v-for="r in routes" v-if="r.name">
                     <router-link :to="r"><% r.name %></router-link>
                 </li>
-              <!--  <li>
-                    <span v-if="connected" class="good">connected</span>
-                    <span v-else class="bad">trying to connect.<% '.'.repeat(ticker%3) %></span>
-                </li> -->
             </ul>
         </div>
     
 
-        <transition>
-            <keep-alive>
-                <router-view></router-view>
-            </keep-alive>
-        </transition>
+        <div id="page-wrapper">
+            <transition>
+                <keep-alive>
+                    <router-view></router-view>
+                </keep-alive>
+            </transition>
+        </div>
     </div>
 
 
