@@ -3,11 +3,11 @@
     <div class="title">
       <h1>Block Details <% number %></h1>
     </div>
-    <div v-if="!block" class="column">
+    <div v-if="!block" class="column page-content">
       <div v-if="error" class="error"><% error %></div>
       <div v-else>Loading Block....</div>
     </div>
-    <div v-else class="column">
+    <div v-else class="column page-content">
       <table class="data">
         <tr>
           <th>Block Hash</th>

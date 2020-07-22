@@ -1,26 +1,31 @@
 <template id="power_distribution">
   <div>
-    <div class="title">
-      <h1>Diode Prenet Statistics, Last 100 Blocks</h1>
-      <p>
-        connected to
-        <account-link :hash="base" :length="50" :only-alias="false" />
-      </p>
+    <div class="title row">
+      <div class="col-md-2">
+        <h1>Prenet Overview</h1>
+      </div>
+      <div class="col-md-6">
+        
+        <form class="search">
+          <i class="fa fa-search search-icon"></i>
+          <input type="text" placeholder="Search for accounts, blocks, etc." name="search" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <p>
+          connected to
+          <account-link :hash="base" :length="50" :only-alias="false" />
+        </p>
+      </div>
     </div>
-    
-    <!-- Search Code -->
-    <form class="example">
-    <p style="color:white;">Prenet Blockchain Explorer</p>
-  <input type="text" placeholder="Search by Address/Txn Hash/Block/Token/Ens" name="search">
-  <button type="submit">Search</i></button>
-</form>    
-    <div style=" flex-direction: row; align-items: flex-start;">
+    <div class="page-content" style=" flex-direction: row; align-items: flex-start;">
       <div style="display: flex; /* flex-direction: column */">
         <div class="headtable">
           <div class="doclet">
             <h2>DIO Free Flow</h2>
             <span class="colorchange"><% totalSupply %></span>
-            </div>
+          </div>
           <div class="doclet">
             <h2>Fleets</h2>
             <span class="colorchange"><% totalFleets %></span>
@@ -36,7 +41,6 @@
         </div>
         <!-- https://medium.com/@heyoka/scratch-made-svg-donut-pie-charts-in-html5-2c587e935d72 -->
         <figure>
-          
           <figcaption class="figure-key">
             <p class="sr-only">Donut chart showing <% blocks.length %> most recent blocks.</p>
 
@@ -45,7 +49,7 @@
                 <span class="shape-circle" v-bind:style="{ backgroundColor: miner.color }"></span>
                 <div style="flow: flex; flex-layout: column;">
                   <div class="figure-title">
-                    <account-link :hash="miner.name" :only-alias="true" :length="10"></account-link> <% miner.percent %>%
+                    <account-link :hash="miner.name" :only-alias="true" :length="10"></account-link><% miner.percent %>%
                   </div>
                   <div class="ul1"><% miner.count %> Blocks</div>
                   <div class="ul2" v-if="stakes[miner.name]"><% stakes[miner.name].value %> DIO</div>
@@ -146,14 +150,14 @@ var PowerDistribution = Vue.component("power_distribution", {
       totalFleets: "loading",
       totalMiners: "loading",
       totalAccounts: "loading",
-      totalSupply: "loading"
+      totalSupply: "loading",
     };
   },
   computed: {
-    shares: function() {
+    shares: function () {
       let groups = {};
       let size = this.blocks.length;
-      this.blocks.forEach(block => {
+      this.blocks.forEach((block) => {
         if (groups[block.miner]) {
           groups[block.miner].count++;
         } else {
@@ -162,14 +166,14 @@ var PowerDistribution = Vue.component("power_distribution", {
             address: block.miner,
             name: block.miner,
             color: "#" + block.miner.substr(3, 6),
-            shape: "background-color(#" + block.miner.substr(3, 6) + ")"
+            shape: "background-color(#" + block.miner.substr(3, 6) + ")",
           };
         }
       });
 
       let total = 0;
       groups = Object.values(groups);
-      groups.forEach(miner => {
+      groups.forEach((miner) => {
         if (total == 0) miner.offset = 25;
         else miner.offset = 100 - total + 25;
         miner.percent = Math.round((100 * miner.count) / this.blocks.length);
@@ -179,33 +183,37 @@ var PowerDistribution = Vue.component("power_distribution", {
       });
       this.totalMiners = groups.length;
       return groups.sort((a, b) => a.count - b.count);
-    }
+    },
   },
-  created: function() {
+  created: function () {
     this.loader();
   },
   methods: {
-    refresh: function() {
-      web3.eth.totalSupply().then(supply => {
-        let totalSupply = web3.utils.fromWei(web3.utils.toBN(supply)).toString();
+    refresh: function () {
+      web3.eth.totalSupply().then((supply) => {
+        let totalSupply = web3.utils
+          .fromWei(web3.utils.toBN(supply))
+          .toString();
         totalSupply -= 100000000;
-        this.totalSupply = formatNumber(totalSupply) + ' DIO';
+        this.totalSupply = formatNumber(totalSupply) + " DIO";
       });
-      web3.eth.codeGroups().then(groups => {
+      web3.eth.codeGroups().then((groups) => {
         this.totalFleets = web3.utils.hexToNumber(groups[FleetHash]);
         this.totalAccounts = web3.utils.hexToNumber(groups[NullHash]);
       });
     },
-    fetchStake: function(addr) {
-      fetchStake(addr, value => {
+    fetchStake: function (addr) {
+      fetchStake(addr, (value) => {
+        console.log(value);
         this.$set(this.stakes, addr, {
           name: addr,
-          value: formatNumber(web3.utils.fromWei(web3.utils.toBN(value)))
+          value: formatNumber(web3.utils.fromWei(web3.utils.toBN(value))),
         });
       });
     },
-    loader: async function() {
-      web3.eth.getCoinbase().then(base => {
+    loader: async function () {
+      web3.eth.getCoinbase().then((base) => {
+        console.log(base);
         this.base = base;
         this.fetchStake(base);
       });
@@ -247,7 +255,7 @@ var PowerDistribution = Vue.component("power_distribution", {
         if (!this.stakes[block.miner]) {
           this.$set(this.stakes, block.miner, {
             name: block.miner,
-            value: "fetching.."
+            value: "fetching..",
           });
           this.fetchStake(block.miner);
         }
@@ -256,8 +264,8 @@ var PowerDistribution = Vue.component("power_distribution", {
         batch.add(web3.eth.getBlock.request(nr - i, false, cb));
       }
       batch.execute();
-    }
-  }
+    },
+  },
 });
 </script>
 

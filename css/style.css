@@ -5330,8 +5330,16 @@ body {
   margin-right: auto;
 }
 
-#page-wrapper {
+.page-content {
   margin: 0% 7%;
+}
+
+#home .site-navigation-bar {
+  padding: 0% 7% 0% 7%;
+}
+
+#home .header-banner {
+  margin-top: 5%;
 }
 
 .header {
@@ -5353,11 +5361,11 @@ body {
           justify-content: space-between;
 }
 
-.logo {
-  margin-left: 7%;
+.header .logo {
+  padding-left: 7%;
 }
 
-.logo img {
+.header .logo img {
   width: 100px;
 }
 
@@ -5427,27 +5435,86 @@ a {
 }
 
 .title {
-  content: "";
-  display: table;
-  clear: both;
   width: 100%;
+  height: 80px;
   text-align: left;
-  margin-top: 10px;
+  background-color: #F15C2E;
+  padding: 1% 7%;
+  margin: 0;
 }
 
 .title p {
-  color: green;
+  color: #38AB66;
   text-align: right;
-  margin-top: 14px;
   font-size: 1.1em;
+  font-weight: bold;
   text-transform: capitalize;
+  float: right;
+}
+
+.title p a {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: #FFFFFF;
 }
 
 .title h1 {
-  float: left;
-  width: 50%;
-  font-weight: normal;
+  color: #FFFFFF;
+  font-weight: bold;
   font-size: 1.1em;
+}
+
+.title i.search-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  z-index: 99;
+  width: 20px;
+}
+
+.title form.search {
+  display: block;
+  position: relative;
+  width: 50%;
+  height: 40px;
+  border: 1.3px solid white;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  background-color: #F15C2E;
+}
+
+.title form.search input[type=text] {
+  padding: 5px;
+  float: left;
+  width: 80%;
+  background-color: #F15C2E;
+  border: 0;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  padding-left: 12%;
+}
+
+.title form.search button {
+  float: right;
+  width: 15%;
+  height: 25px;
+  background: #FFFFFF;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin: 5px 5px 0 0;
+  font-weight: normal;
+  font-size: 14px;
+  border: 1px solid #D6442E;
+  border-left: none;
+  padding: 0 8px;
+  color: #000000;
+}
+
+.title form.search::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 td.fleet, th.fleet {
@@ -5982,47 +6049,10 @@ figure {
   transition: opacity .15s;
 }
 
-form.example {
-  margin-bottom: 40px;
-  background: #EB5B33;
-  padding: 2px 30px 21px 30px;
-}
-
-form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid #e4e4e4;
-  float: left;
-  width: 80%;
-  background: white;
-}
-
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #D6442E;
-  color: white;
-  font-size: 17px;
-  border: 1px solid #D6442E;
-  border-left: none;
-  cursor: pointer;
-}
-
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 span.colorchange {
   color: #eb5b33;
   font-size: 24px;
   line-height: 3;
-}
-
-.title a {
-  color: #eb5b33;
 }
 
 /* @media screen and (min-width: 1440px) {(max-width: 1600px){

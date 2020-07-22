@@ -3,7 +3,7 @@
     <div class="title">
       <h1>Account Overview</h1>
     </div>
-    <div class="column">
+    <div class="column page-content">
       <table class="data">
         <tr>
           <th>Account</th>

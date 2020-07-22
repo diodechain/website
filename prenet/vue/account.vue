@@ -3,11 +3,11 @@
     <div class="title">
       <h1>Account Details <% hash %></h1>
     </div>
-    <div v-if="!balance" class="column">
+    <div v-if="!balance" class="column page-content">
       <div v-if="error" class="error"><% error %></div>
       <div v-else>Loading Account....</div>
     </div>
-    <div v-else class="column">
+    <div v-else class="column page-content">
       <table class="data">
         <tr>
           <th>Account</th>
