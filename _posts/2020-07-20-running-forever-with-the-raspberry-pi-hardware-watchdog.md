@@ -25,7 +25,7 @@ But the Pis are very resourcefull tools. And one of their underdocumented featur
 
 So if you're running your Raspberry Pi as a remote sensor reachable remotely from any place in the world with Diode network, then we recommend to enable this hardware watchdog for your devices as well. 
 
-It's done in in few steps directly on a _terminal_ on your Pi:
+It's done in few steps directly on a _terminal_ on your Pi:
 
 1) Enable the hardware watchdog on your Pi and reboot
 
