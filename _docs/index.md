@@ -7,6 +7,11 @@ tagline: >-
   Let us know any questions via <a href="https://t.me/diode_chain">Telegram</a>
 
 docs:
+- title: 'Getting Started'
+  description: >-
+    Quickly dive into using diode to publish a local web server or service.
+  link: docs/getting-started.html
+
 - title: 'FAQ'
   description: >-
     Our list of frequently asked questions is steadily beeing updated and a good resource for all common questions regarding Diode.
