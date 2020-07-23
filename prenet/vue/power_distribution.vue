@@ -5,7 +5,6 @@
         <h1>Prenet Overview</h1>
       </div>
       <div class="col-md-6">
-        
         <form class="search">
           <i class="fa fa-search search-icon"></i>
           <input type="text" placeholder="Search for accounts, blocks, etc." name="search" />
@@ -20,105 +19,113 @@
       </div>
     </div>
     <div class="page-content" style=" flex-direction: row; align-items: flex-start;">
-      <div style="display: flex; /* flex-direction: column */">
+      <div style="display: flex;">
         <div class="headtable">
           <div class="doclet">
-            <h2>DIO Free Flow</h2>
-            <span class="colorchange"><% totalSupply %></span>
+            <h2>Free Flow</h2>
+            <div class="link">
+              <a class="colorchange" href="/prenet/#/address"><% totalSupply %></a>
+            </div>
           </div>
           <div class="doclet">
             <h2>Fleets</h2>
-            <span class="colorchange"><% totalFleets %></span>
+            <div class="link">
+              <a class="colorchange" href="/prenet/#/fleets"><% totalFleets %></a>
+            </div>
           </div>
           <div class="doclet">
             <h2>Accounts</h2>
-            <span class="colorchange"><% totalAccounts %></span>
+            <div class="link">
+              <a class="colorchange" href="/prenet/#/address?filter=all"><% totalAccounts %></a>
+            </div>
           </div>
           <div class="doclet">
             <h2>Miners</h2>
-            <span class="colorchange"><% totalMiners %></span>
+            <div class="link">
+              <a class="colorchange" href="/prenet/#/address?filter=contracts"><% totalMiners %></a>
+            </div>
           </div>
         </div>
-        <!-- https://medium.com/@heyoka/scratch-made-svg-donut-pie-charts-in-html5-2c587e935d72 -->
-        <figure>
-          <figcaption class="figure-key">
-            <p class="sr-only">Donut chart showing <% blocks.length %> most recent blocks.</p>
 
-            <ul class="figure-key-list" aria-hidden="true" role="presentation">
-              <li v-for="miner in shares" :key="miner.name">
-                <span class="shape-circle" v-bind:style="{ backgroundColor: miner.color }"></span>
-                <div style="flow: flex; flex-layout: column;">
-                  <div class="figure-title">
-                    <account-link :hash="miner.name" :only-alias="true" :length="10"></account-link><% miner.percent %>%
-                  </div>
-                  <div class="ul1"><% miner.count %> Blocks</div>
-                  <div class="ul2" v-if="stakes[miner.name]"><% stakes[miner.name].value %> DIO</div>
-                </div>
-              </li>
-            </ul>
-          </figcaption>
-          <div class="figure-content">
-            <svg
-              width="100%"
-              height="100%"
-              viewBox="0 0 42 42"
-              class="donut"
-              aria-labelledby="beers-title beers-desc"
-              role="img"
-            >
-              <title id="beers-title">Block Stats</title>
-              <desc id="beers-desc">Donut chart of the last <% blocks.length %> blocks.</desc>
-              <circle
-                class="donut-hole"
-                cx="21"
-                cy="21"
-                r="15.91549430918954"
-                fill="#fff"
-                role="presentation"
-              />
-              <circle
-                class="donut-ring"
-                cx="21"
-                cy="21"
-                r="15.91549430918954"
-                fill="transparent"
-                stroke="#d2d3d4"
-                stroke-width="3"
-                role="presentation"
-              />
-
-              <circle
-                v-for="miner in shares"
-                :key="miner.name"
-                class="donut-segment"
-                cx="21"
-                cy="21"
-                r="15.91549430918954"
-                fill="transparent"
-                v-bind:stroke="miner.color"
-                stroke-width="3"
-                v-bind:stroke-dasharray="miner.stroke"
-                v-bind:stroke-dashoffset="miner.offset"
-                aria-labelledby="donut-segment-1-title donut-segment-1-desc"
-              >
-                <title id="donut-segment-1-title"><% miner.name %></title>
-                <desc id="donut-segment-1-desc">Segment spanning <% miner.percent %>% of the whole</desc>
-              </circle>
-              <!-- unused 10% -->
-              <g class="chart-text">
-                <text x="50%" y="50%" class="chart-number"><% blocks.length %></text>
-                <text x="50%" y="50%" class="chart-label">Last Blocks</text>
-              </g>
-            </svg>
-          </div>
-        </figure>
+        <div class="headtable">
+          <figure>
+            <div class="row">
+              <div class="col-md-12">
+                <h2>Top Miners over Last 100 Blocks</h2>
+              </div>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+              <figcaption class="figure-key">
+                <ul class="figure-key-list" aria-hidden="true" role="presentation">
+                  <li v-for="miner in shares" :key="miner.name">
+                    <span class="shape-square" v-bind:style="{ backgroundColor: miner.color }"></span>
+                    <div style="flow: flex; flex-layout: column;">
+                      <div class="figure-title">
+                        <account-link :hash="miner.name" :only-alias="true" :length="10"></account-link>
+                      </div>
+                      <div class="ul1"><% miner.count %> Blocks</div>
+                    </div>
+                  </li>
+                </ul>
+              </figcaption>
+            </div>
+            <div class="col-md-7">
+              <div class="figure-content" v-if="totalMiners">
+                <svg width="400" height="140">
+                  <g transform="translate(40,20)">
+                    <g class="x axis" transform="translate(0,100)">
+                      <g
+                        v-for="(miner, index) in shares"
+                        :key="miner.name"
+                        class="tick"
+                        :transform="'translate(' + (27 + (index * 70)) + ',0)'"
+                        style="opacity: 1;"
+                      >
+                        <line y2="6" x2="0" />
+                        <text
+                          fill="#F15C2E"
+                          dy=".71em"
+                          y="9"
+                          x="10"
+                          style="text-anchor: middle;"
+                        ><% formatAddr(miner.name, true, 10) %></text>
+                      </g>
+                      <path class="domain" d="M0,2V0H350V2" />
+                    </g>
+                    <g class="y axis">
+                      <path class="domain" d="M-2,0H0V102H-2" />
+                    </g>
+                    <g v-for="(miner, index) in shares" :key="miner.name">
+                      <rect
+                        class="bar"
+                        :x="(10 + (index * 70))"
+                        width="45"
+                        :y="100 - miner.scaledCount"
+                        :height="miner.scaledCount"
+                        :style="'fill:' + miner.color"
+                      />
+                      <text
+                        dy=".71em"
+                        :y="100 - miner.scaledCount - 15"
+                        :x="(27 + (index * 70))"
+                        style="text-anchor: middle;"
+                      ><% miner.count %></text>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </figure>
+        </div>
       </div>
+
       <table class="data" style="width: auto">
+        <caption>Last 100 Blocks</caption>
         <tr>
           <th>Block</th>
-          <th>Timestamp</th>
+          <th>Timestamp (UTC)</th>
           <th>Miner</th>
-          <th>Tx</th>
+          <th>Transactions</th>
         </tr>
         <tbody is="transition-group" name="list-complete">
           <tr v-for="block in blocks" v-bind:key="block" class="list-complete-item">
@@ -182,7 +189,18 @@ var PowerDistribution = Vue.component("power_distribution", {
         this.fetchStake(miner.address);
       });
       this.totalMiners = groups.length;
-      return groups.sort((a, b) => a.count - b.count);
+      var result = groups.sort((b, a) => a.count - b.count);
+
+      if (this.totalMiners) {
+        var topMiner = groups[0];
+        var scaleFactor = 100 / topMiner.count;
+
+        groups.forEach((miner) => {
+          miner.scaledCount = miner.count * scaleFactor;
+        });
+      }
+
+      return result;
     },
   },
   created: function () {
