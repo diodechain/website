@@ -128,7 +128,7 @@
 
         #home {
           .site-navigation-bar {
-            padding:0% 7% 0% 7%;
+            padding:0% 13% 0% 13%;
           }
           
 
@@ -234,16 +234,17 @@
             font-size: 1.1em;
           }
 
-          i.search-icon {
+          i.fa {
             position: absolute;
             top: 10px;
             left: 10px;
             color: white;
             z-index: 99;
             width: 20px;
+            cursor: pointer;
           }
 
-          form.search {      
+          div.search {      
             display: block;
             position: relative;
             width: 50%;
@@ -257,9 +258,34 @@
               float: left;
               width: 80%;
               background-color: #F15C2E;
+              color:white;
+              
               border:0;
               border-radius: 5px;
               padding-left: 12%;
+
+              &:focus {
+                text-decoration: underline;
+              }
+
+              &::-webkit-input-placeholder { /* Edge */
+                color: #C0C5CB;
+              }
+              
+              &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: #C0C5CB;
+              }
+              
+              &::placeholder {
+                color: #C0C5CB;
+              }
+
+              &:-webkit-autofill {
+                  -webkit-box-shadow: 0 0 0 30px #F15C2E inset !important;
+                  -webkit-text-fill-color: white;
+                  caret-color: white;
+                  // background-color: #F15C2E;
+              }
             }
           
             button {
@@ -301,12 +327,16 @@
             color: #000000;
           }
 
+          .empty-search {
+            color:#EB411D;
+            padding: 20px 45px 45px 45px;
+          }
 
           &.data {
             margin-top: 45px;
             border: 1px solid #ddd;
             background-color: #ffffff;
-            width: 100% !important;
+            width: 99.5% !important;
             border-collapse: collapse;
             border-spacing: 0;
           }
@@ -326,6 +356,8 @@
                 width: 100%;
                 margin: 0;
               }
+
+              
             }
           }
         
@@ -420,7 +452,7 @@
           justify-content: space-around;
           flex-direction: column;
           background: white;
-          padding: 5px 5px 5px 24px;
+          padding: 5px 31px 5px 24px;
 
           h2 {
             font-family: 'Open Sans', sans-serif;

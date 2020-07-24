@@ -5335,7 +5335,7 @@ body {
 }
 
 #home .site-navigation-bar {
-  padding: 0% 7% 0% 7%;
+  padding: 0% 13% 0% 13%;
 }
 
 #home .header-banner {
@@ -5465,16 +5465,17 @@ a {
   font-size: 1.1em;
 }
 
-.title i.search-icon {
+.title i.fa {
   position: absolute;
   top: 10px;
   left: 10px;
   color: white;
   z-index: 99;
   width: 20px;
+  cursor: pointer;
 }
 
-.title form.search {
+.title div.search {
   display: block;
   position: relative;
   width: 50%;
@@ -5485,18 +5486,51 @@ a {
   background-color: #F15C2E;
 }
 
-.title form.search input[type=text] {
+.title div.search input[type=text] {
   padding: 5px;
   float: left;
   width: 80%;
   background-color: #F15C2E;
+  color: white;
   border: 0;
   -webkit-border-radius: 5px;
           border-radius: 5px;
   padding-left: 12%;
 }
 
-.title form.search button {
+.title div.search input[type=text]:focus {
+  text-decoration: underline;
+}
+
+.title div.search input[type=text]::-webkit-input-placeholder {
+  /* Edge */
+  color: #C0C5CB;
+}
+
+.title div.search input[type=text]:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #C0C5CB;
+}
+
+.title div.search input[type=text]::-moz-placeholder {
+  color: #C0C5CB;
+}
+
+.title div.search input[type=text]::-ms-input-placeholder {
+  color: #C0C5CB;
+}
+
+.title div.search input[type=text]::placeholder {
+  color: #C0C5CB;
+}
+
+.title div.search input[type=text]:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #F15C2E inset !important;
+  -webkit-text-fill-color: white;
+  caret-color: white;
+}
+
+.title div.search button {
   float: right;
   width: 15%;
   height: 25px;
@@ -5512,7 +5546,7 @@ a {
   color: #000000;
 }
 
-.title form.search::after {
+.title div.search::after {
   content: "";
   clear: both;
   display: table;
@@ -5535,11 +5569,16 @@ table caption {
   color: #000000;
 }
 
+table .empty-search {
+  color: #EB411D;
+  padding: 20px 45px 45px 45px;
+}
+
 table.data {
   margin-top: 45px;
   border: 1px solid #ddd;
   background-color: #ffffff;
-  width: 100% !important;
+  width: 99.5% !important;
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -5650,7 +5689,7 @@ figure {
       -ms-flex-direction: column;
           flex-direction: column;
   background: white;
-  padding: 5px 5px 5px 24px;
+  padding: 5px 31px 5px 24px;
 }
 
 figure h2 {

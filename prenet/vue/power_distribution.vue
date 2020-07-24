@@ -5,11 +5,18 @@
         <h1>Prenet Overview</h1>
       </div>
       <div class="col-md-6">
-        <form class="search">
-          <i class="fa fa-search search-icon"></i>
-          <input type="text" placeholder="Search for accounts, blocks, etc." name="search" />
-          <button type="submit">Search</button>
-        </form>
+        <div class="search">
+          <i v-on:click="selectInput" v-if="!searchTerm" class="fa fa-search search-icon"></i>
+          <i v-on:click="clearSearch" v-else class="fa fa-times-circle"></i>
+          <input
+            type="text"
+            v-model="searchTerm"
+            ref="searchInput"
+            placeholder="Search for accounts, blocks, etc."
+            name="search"
+          />
+          <button type="submit" v-on:click="search">Search</button>
+        </div>
       </div>
       <div class="col-md-4">
         <p>
@@ -19,127 +26,156 @@
       </div>
     </div>
     <div class="page-content" style=" flex-direction: row; align-items: flex-start;">
-      <div style="display: flex;">
-        <div class="headtable">
-          <div class="doclet">
-            <h2>Free Flow</h2>
-            <div class="link">
-              <a class="colorchange" href="/prenet/#/address"><% totalSupply %></a>
-            </div>
-          </div>
-          <div class="doclet">
-            <h2>Fleets</h2>
-            <div class="link">
-              <a class="colorchange" href="/prenet/#/fleets"><% totalFleets %></a>
-            </div>
-          </div>
-          <div class="doclet">
-            <h2>Accounts</h2>
-            <div class="link">
-              <a class="colorchange" href="/prenet/#/address?filter=all"><% totalAccounts %></a>
-            </div>
-          </div>
-          <div class="doclet">
-            <h2>Miners</h2>
-            <div class="link">
-              <a class="colorchange" href="/prenet/#/address?filter=contracts"><% totalMiners %></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="headtable">
-          <figure>
-            <div class="row">
-              <div class="col-md-12">
-                <h2>Top Miners over Last 100 Blocks</h2>
-              </div>
-            </div>
-            <div class="col-md-3 col-md-offset-1">
-              <figcaption class="figure-key">
-                <ul class="figure-key-list" aria-hidden="true" role="presentation">
-                  <li v-for="miner in shares" :key="miner.name">
-                    <span class="shape-square" v-bind:style="{ backgroundColor: miner.color }"></span>
-                    <div style="flow: flex; flex-layout: column;">
-                      <div class="figure-title">
-                        <account-link :hash="miner.name" :only-alias="true" :length="10"></account-link>
-                      </div>
-                      <div class="ul1"><% miner.count %> Blocks</div>
-                    </div>
-                  </li>
-                </ul>
-              </figcaption>
-            </div>
-            <div class="col-md-7">
-              <div class="figure-content" v-if="totalMiners">
-                <svg width="400" height="140">
-                  <g transform="translate(40,20)">
-                    <g class="x axis" transform="translate(0,100)">
-                      <g
-                        v-for="(miner, index) in shares"
-                        :key="miner.name"
-                        class="tick"
-                        :transform="'translate(' + (27 + (index * 70)) + ',0)'"
-                        style="opacity: 1;"
-                      >
-                        <line y2="6" x2="0" />
-                        <text
-                          fill="#F15C2E"
-                          dy=".71em"
-                          y="9"
-                          x="10"
-                          style="text-anchor: middle;"
-                        ><% formatAddr(miner.name, true, 10) %></text>
-                      </g>
-                      <path class="domain" d="M0,2V0H350V2" />
-                    </g>
-                    <g class="y axis">
-                      <path class="domain" d="M-2,0H0V102H-2" />
-                    </g>
-                    <g v-for="(miner, index) in shares" :key="miner.name">
-                      <rect
-                        class="bar"
-                        :x="(10 + (index * 70))"
-                        width="45"
-                        :y="100 - miner.scaledCount"
-                        :height="miner.scaledCount"
-                        :style="'fill:' + miner.color"
-                      />
-                      <text
-                        dy=".71em"
-                        :y="100 - miner.scaledCount - 15"
-                        :x="(27 + (index * 70))"
-                        style="text-anchor: middle;"
-                      ><% miner.count %></text>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </div>
-          </figure>
-        </div>
-      </div>
-
-      <table class="data" style="width: auto">
-        <caption>Last 100 Blocks</caption>
-        <tr>
-          <th>Block</th>
-          <th>Timestamp (UTC)</th>
-          <th>Miner</th>
-          <th>Transactions</th>
-        </tr>
-        <tbody is="transition-group" name="list-complete">
-          <tr v-for="block in blocks" v-bind:key="block" class="list-complete-item">
-            <td>
-              <router-link :to="'/block/' + block.number"><% block.number %></router-link>
-            </td>
-            <td><% formatUnix(block.timestamp) %></td>
-            <td>
-              <account-link :hash="block.miner" :only-alias="true" :length="10"></account-link>
-            </td>
-            <td><% block.transactions.length %></td>
+      <div v-if="searchTerm && searchActivated">
+        <table class="data" style="width: auto">
+          <caption><% searchResults.length %> Search Results</caption>
+          <tr v-if="searchResults.length">
+            <th>Page</th>
+            <th>Match Term</th>
           </tr>
-        </tbody>
-      </table>
+          <tr v-else-if="searchFinished">
+            <td>
+              <div class="empty-search">
+               
+              Sorry, no results were found. The Diode Network explorer search function can search on full or parital matches on account addresses, 
+              block numbers, BNS names, and stake amounts. Please check your search term and try again!
+               </div>
+            </td>
+          </tr>
+          <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
+            <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
+              <td>
+                <% result.type %>
+                <!-- <router-link :to="'/block/' + block.number"><% block.number %></router-link> -->
+              </td>
+              <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div v-else>
+        <div style="display: flex;">
+          <div class="headtable">
+            <div class="doclet">
+              <h2>Free Flow</h2>
+              <div class="link">
+                <a class="colorchange" href="/prenet/#/address"><% totalSupply %></a>
+              </div>
+            </div>
+            <div class="doclet">
+              <h2>Fleets</h2>
+              <div class="link">
+                <a class="colorchange" href="/prenet/#/fleets"><% totalFleets %></a>
+              </div>
+            </div>
+            <div class="doclet">
+              <h2>Accounts</h2>
+              <div class="link">
+                <a class="colorchange" href="/prenet/#/address?filter=all"><% totalAccounts %></a>
+              </div>
+            </div>
+            <div class="doclet">
+              <h2>Miners</h2>
+              <div class="link">
+                <a class="colorchange" href="/prenet/#/address?filter=contracts"><% totalMiners %></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="headtable">
+            <figure>
+              <div class="row">
+                <div class="col-md-12">
+                  <h2>Top Miners over Last 100 Blocks</h2>
+                </div>
+              </div>
+              <div class="col-md-3 col-md-offset-1">
+                <figcaption class="figure-key">
+                  <ul class="figure-key-list" aria-hidden="true" role="presentation">
+                    <li v-for="miner in shares" :key="miner.name">
+                      <span class="shape-square" v-bind:style="{ backgroundColor: miner.color }"></span>
+                      <div style="flow: flex; flex-layout: column;">
+                        <div class="figure-title">
+                          <account-link :hash="miner.name" :only-alias="true" :length="10"></account-link>
+                        </div>
+                        <div class="ul1"><% miner.count %> Blocks</div>
+                      </div>
+                    </li>
+                  </ul>
+                </figcaption>
+              </div>
+              <div class="col-md-7">
+                <div class="figure-content" v-if="totalMiners">
+                  <svg width="400" height="140">
+                    <g transform="translate(40,20)">
+                      <g class="x axis" transform="translate(0,100)">
+                        <g
+                          v-for="(miner, index) in shares"
+                          :key="miner.name"
+                          class="tick"
+                          :transform="'translate(' + (27 + (index * 70)) + ',0)'"
+                          style="opacity: 1;"
+                        >
+                          <line y2="6" x2="0" />
+                          <text
+                            fill="#F15C2E"
+                            dy=".71em"
+                            y="9"
+                            x="10"
+                            style="text-anchor: middle;"
+                          ><% formatAddr(miner.name, true, 10) %></text>
+                        </g>
+                        <path class="domain" d="M0,2V0H350V2" />
+                      </g>
+                      <g class="y axis">
+                        <path class="domain" d="M-2,0H0V102H-2" />
+                      </g>
+                      <g v-for="(miner, index) in shares" :key="miner.name">
+                        <rect
+                          class="bar"
+                          :x="(10 + (index * 70))"
+                          width="45"
+                          :y="100 - miner.scaledCount"
+                          :height="miner.scaledCount"
+                          :style="'fill:' + miner.color"
+                        />
+                        <text
+                          dy=".71em"
+                          :y="100 - miner.scaledCount - 15"
+                          :x="(27 + (index * 70))"
+                          style="text-anchor: middle;"
+                        ><% miner.count %></text>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+
+        <table class="data" style="width: auto">
+          <caption>Last 100 Blocks</caption>
+          <tr>
+            <th>Block</th>
+            <th>Timestamp (UTC)</th>
+            <th>Miner</th>
+            <th>Transactions</th>
+          </tr>
+          <tbody is="transition-group" name="list-complete">
+            <tr v-for="block in blocks" v-bind:key="block" class="list-complete-item">
+              <td>
+                <router-link :to="'/block/' + block.number"><% block.number %></router-link>
+              </td>
+              <td><% formatUnix(block.timestamp) %></td>
+              <td>
+                <account-link :hash="block.miner" :only-alias="true" :length="10"></account-link>
+              </td>
+              <td><% block.transactions.length %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -158,7 +194,18 @@ var PowerDistribution = Vue.component("power_distribution", {
       totalMiners: "loading",
       totalAccounts: "loading",
       totalSupply: "loading",
+      searchTerm: "",
+      searchActivated: false,
+      searchFinished: false,
+      searchResults: [],
     };
+  },
+  watch: {
+    searchTerm: function(value, oldValue) {
+      if (!value) {
+        this.searchActivated = false;
+      }
+    }
   },
   computed: {
     shares: function () {
@@ -178,16 +225,24 @@ var PowerDistribution = Vue.component("power_distribution", {
         }
       });
 
-      let total = 0;
+      this.miners.splice(0, this.miners.length);
+
       groups = Object.values(groups);
+
+      let total = 0;
       groups.forEach((miner) => {
+        this.miners.push(miner);
+
         if (total == 0) miner.offset = 25;
         else miner.offset = 100 - total + 25;
+
         miner.percent = Math.round((100 * miner.count) / this.blocks.length);
         total += miner.percent;
         miner.stroke = "" + miner.percent + " " + (100 - miner.percent);
+
         this.fetchStake(miner.address);
       });
+
       this.totalMiners = groups.length;
       var result = groups.sort((b, a) => a.count - b.count);
 
@@ -207,13 +262,53 @@ var PowerDistribution = Vue.component("power_distribution", {
     this.loader();
   },
   methods: {
+    search: async function () {
+      this.searchFinished = false;
+      console.log("**************8");
+      this.searchActivated = true;
+      console.log(this.miners);
+      console.log(this.blocks);
+      console.log(this.stakes);
+      console.log(DNSCache);
+
+      this.searchResults.splice(0, this.searchResults.length);
+
+      let accounts = await web3.eth.getAllAccounts();
+
+      for (let id in accounts) {
+        let matchId = id.indexOf(this.searchTerm);
+
+        if (matchId === -1) continue;
+        let hash = accounts[id].codehash;
+        this.selectSearchItem(id, hash);
+      }
+
+      for (let block in this.blocks) {
+        let matchId = block.indexOf(this.searchTerm);
+
+        if (matchId === -1) continue;
+        let hash = accounts[id].codehash;
+        this.selectSearchItem(id, hash);
+      }
+
+      this.searchResults.sort(function(a, b){ return b.matchCompleteness - a.matchCompleteness });
+      this.searchFinished = true;
+    },
+    selectInput: function () {
+      this.$refs.searchInput.focus();
+    },
+    clearSearch: function (params) {
+      this.searchTerm = "";
+      this.searchActivated = false;
+      this.searchResults.splice(0, this.searchResults.length);
+    },
     refresh: function () {
       web3.eth.totalSupply().then((supply) => {
         let totalSupply = web3.utils
           .fromWei(web3.utils.toBN(supply))
           .toString();
         totalSupply -= 100000000;
-        this.totalSupply = formatNumber(totalSupply) + " DIO";
+        this.totalSupply = formatNumber(totalSupply);
       });
       web3.eth.codeGroups().then((groups) => {
         this.totalFleets = web3.utils.hexToNumber(groups[FleetHash]);
@@ -222,7 +317,6 @@ var PowerDistribution = Vue.component("power_distribution", {
     },
     fetchStake: function (addr) {
       fetchStake(addr, (value) => {
-        console.log(value);
         this.$set(this.stakes, addr, {
           name: addr,
           value: formatNumber(web3.utils.fromWei(web3.utils.toBN(value))),
@@ -231,7 +325,6 @@ var PowerDistribution = Vue.component("power_distribution", {
     },
     loader: async function () {
       web3.eth.getCoinbase().then((base) => {
-        console.log(base);
         this.base = base;
         this.fetchStake(base);
       });
@@ -283,6 +376,31 @@ var PowerDistribution = Vue.component("power_distribution", {
       }
       batch.execute();
     },
+    selectSearchItem(id, hash, type) {
+        let result = {};
+        result.id = id;
+
+        result.matchCompleteness = (this.searchTerm.length / id.length) * 100;
+
+        result.type = type;
+
+        if (hash) {
+          if (hash == FleetHash) { result.type = "Fleet"; }
+          else if (hash == NullHash) { result.type = "Wallet"; }
+          else { result.type = "Contract"; }
+        }
+        
+        result.stake = "";
+        result.BNS = DNSCache[id] ? DNSCache[id].name : undefined;
+
+        fetchStake(id, (stake) => {
+          this.$set(result, "stake", valueToBalance(stake));
+        });
+
+        result.text = `${result.BNS ? result.BNS + "-" : ""}${id}`;
+
+        this.searchResults.push(result);
+    }
   },
 });
 </script>
