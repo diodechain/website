@@ -264,12 +264,7 @@ var PowerDistribution = Vue.component("power_distribution", {
   methods: {
     search: async function () {
       this.searchFinished = false;
-      console.log("**************8");
       this.searchActivated = true;
-      console.log(this.miners);
-      console.log(this.blocks);
-      console.log(this.stakes);
-      console.log(DNSCache);
 
       this.searchResults.splice(0, this.searchResults.length);
 
@@ -279,6 +274,7 @@ var PowerDistribution = Vue.component("power_distribution", {
         let matchId = id.indexOf(this.searchTerm);
 
         if (matchId === -1) continue;
+
         let hash = accounts[id].codehash;
         this.selectSearchItem(id, hash);
       }
@@ -296,6 +292,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       }
 
       let exactBlockNumber = parseInt(this.searchTerm);
+
       if (!blockFound && exactBlockNumber !== NaN) {
         let self = this;
 
@@ -306,8 +303,7 @@ var PowerDistribution = Vue.component("power_distribution", {
         });
       }
       
-
-      this.searchResults.sort(function(a, b){ return b.matchCompleteness - a.matchCompleteness });
+      this.searchResults.sort(function(a, b){ return b.matchCompleteness - a.matchCompleteness; });
       this.searchFinished = true;
     },
     selectInput: function () {
