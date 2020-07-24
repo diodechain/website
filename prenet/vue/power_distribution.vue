@@ -45,8 +45,8 @@
           <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
             <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
               <td>
-                <% result.type %>
-                <!-- <router-link :to="'/block/' + block.number"><% block.number %></router-link> -->
+                <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Blocks</router-link>
+                <router-link v-if="result.isAddress" :to="'/address/' + result.id"><% result.type %></router-link>
               </td>
               <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
             </tr>
@@ -283,13 +283,29 @@ var PowerDistribution = Vue.component("power_distribution", {
         this.selectSearchItem(id, hash);
       }
 
-      for (let block in this.blocks) {
-        let matchId = block.indexOf(this.searchTerm);
+      let blockFound = false;
+
+      for (let i in this.blocks) {
+        let blockNumber = this.blocks[i].number.toString();
+        let matchId = blockNumber.indexOf(this.searchTerm);
 
         if (matchId === -1) continue;
-        let hash = accounts[id].codehash;
-        this.selectSearchItem(id, hash);
+
+        blockFound = true;
+        this.selectSearchItem(blockNumber, null, 'Block');
       }
+
+      let exactBlockNumber = parseInt(this.searchTerm);
+      if (!blockFound && exactBlockNumber !== NaN) {
+        let self = this;
+
+        let block = await web3.eth.getBlock(exactBlockNumber, false, function(error, block) {
+          if (!error) {
+            self.selectSearchItem(block.number, null, 'Block');
+          }
+        });
+      }
+      
 
       this.searchResults.sort(function(a, b){ return b.matchCompleteness - a.matchCompleteness });
       this.searchFinished = true;
@@ -388,14 +404,19 @@ var PowerDistribution = Vue.component("power_distribution", {
           if (hash == FleetHash) { result.type = "Fleet"; }
           else if (hash == NullHash) { result.type = "Wallet"; }
           else { result.type = "Contract"; }
+
+          result.isAddress = true;
         }
         
         result.stake = "";
         result.BNS = DNSCache[id] ? DNSCache[id].name : undefined;
 
-        fetchStake(id, (stake) => {
-          this.$set(result, "stake", valueToBalance(stake));
-        });
+        try {
+          fetchStake(id, (stake) => {
+            this.$set(result, "stake", valueToBalance(stake));
+          });
+        } catch (error) {}
+        
 
         result.text = `${result.BNS ? result.BNS + "-" : ""}${id}`;
 
