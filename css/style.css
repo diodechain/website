@@ -4126,6 +4126,10 @@ section.docs-layout section.docs-section hr.normal {
   margin: 5px auto;
 }
 
+section.docs-layout section.docs-section em {
+  background-color: #f5e2dd;
+}
+
 section.docs-layout section.docs-section ul {
   margin: 0em 0em 1em 2em;
   list-style: disc;
