@@ -27,11 +27,11 @@ WantedBy=multi-user.target
 
 **!ATTENTION** The example file assumes that diode is installed for the _pi_ user on a Raspberry Pi. When running on Ubuntu or another distribution ensure that the username matches the user who installed diode:
 
-ExecStart=/home/**user**/opt/diode/diode publish -public 22:22,80:80,3030:3030
+ExecStart=/home/_username_/opt/diode/diode publish -public 22:22,80:80,3030:3030
 
 and here:
 
-User=**user**
+User=_username_
 
 And if you haven't installed diode yet run:
 
@@ -54,7 +54,7 @@ Now all left to do is to start and check the service:
 
 ```bash
 sudo systemctl start diode
-sudo systemctl status diode
+systemctl status diode
 ```
 
 After the second call you should see something like:
@@ -81,7 +81,7 @@ Jul 27 13:30:12 betahaus-berlin diode[259]: 07/27/2020 13:30:12 [INFO] Port     
 Finally if everything worked well be sure to enable the service for good, so that on the next start it will be automatically launched:
 
 ```bash
-  sudo systemctl enable diode
+sudo systemctl enable diode
 ```
 
 You're all set! Diode will now run on every system start!
