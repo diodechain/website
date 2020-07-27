@@ -2464,6 +2464,14 @@ body .site-header .container:before {
   z-index: 99;
 }
 
+body .noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 body.no-scroll {
   height: 100vh;
   overflow-y: hidden;

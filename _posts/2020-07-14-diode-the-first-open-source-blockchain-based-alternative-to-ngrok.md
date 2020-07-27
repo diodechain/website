@@ -11,7 +11,11 @@ imageclass: top
 
 [Diode](https://github.com/diodechain/diode_go_client) is an open-source blockchain-based peer-to-peer network that enables developers to create applications for various decentralized projects. One of the popular applications that is being developed recently is using Diode as a blockchain implementation of [Ngrok](https://ngrok.com/).
 
-To use Diode, the first open-source, blockchain-based Ngrok alternative, written in Go, install the Diode Client using the curl command: `$ curl -Ssf https://diode.io/install.sh | sh` . Go to [https://diode.io/download/](https://diode.io/download/). 
+To use Diode, the first open-source, blockchain-based Ngrok alternative, written in Go, install the Diode Client using the curl command: 
+
+<code class="highlighter-rouge"><span class="noselect">$ </span>curl -Ssf https://diode.io/install.sh | sh</code>
+
+Go to [https://diode.io/download/](https://diode.io/download/). 
 
 Open a terminal window and run the curl command so that it installs the Diode Client. 
 
@@ -24,11 +28,13 @@ Here’s what it looks like after you installing the Diode Client:
 
 ![alt_text](images/blog/diode_install_ngrok.gif "image_tooltip")
 
-Before we had a diode init command, at the moment we’ve made some changes and you no longer need the init command in client. Now you can simply publish or browse resources through the Diode network without any initialization. If you’re more of a geek, you can setup fleet/whitelist on Diode website or type `$ diode reset` in your terminal.
+Before we had a diode init command, at the moment we’ve made some changes and you no longer need the init command in client. Now you can simply publish or browse resources through the Diode network without any initialization.
 
 If you visit Diode’s [prenet website](https://diode.io/prenet/#/dns), you can see a list of Diode fleet contracts that are already created. Fleet contracts are strings of letters and numbers. Protected resources are set in Diode’s fleet contracts (“protected” is governed by the fleet contract whitelist); private resources are set in your local machines (“private” is setup by the command). 
 
-Then, you want to publish your local port to the Diode Network. In your terminal window, type: `$ diode publish -public 3030:3030`  
+Then, you want to publish your local port to the Diode Network. In your terminal window, type: 
+
+<code class="highlighter-rouge"><span class="noselect">$ </span>diode publish -public 3030:3030</code>
 
 Here’s what the output looks like:
 ![alt_text](images/blog/gif_diode_publish.gif "image_tooltip")
