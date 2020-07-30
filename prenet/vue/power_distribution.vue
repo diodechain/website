@@ -59,25 +59,25 @@
             <div class="doclet">
               <h2>Free Flow</h2>
               <div class="link">
-                <a class="colorchange" href="/prenet/#/address"><% totalSupply %></a>
+                <a class="colorchange no-decoration" href="/prenet/#/address"><% totalSupply %></a>
               </div>
             </div>
             <div class="doclet">
               <h2>Fleets</h2>
               <div class="link">
-                <a class="colorchange" href="/prenet/#/fleets"><% totalFleets %></a>
+                <a class="colorchange no-decoration" href="/prenet/#/fleets"><% totalFleets %></a>
               </div>
             </div>
             <div class="doclet">
               <h2>Accounts</h2>
               <div class="link">
-                <a class="colorchange" href="/prenet/#/address?filter=all"><% totalAccounts %></a>
+                <a class="colorchange no-decoration" href="/prenet/#/address?filter=all"><% totalAccounts %></a>
               </div>
             </div>
             <div class="doclet">
               <h2>Miners</h2>
               <div class="link">
-                <a class="colorchange" href="/prenet/#/address?filter=contracts"><% totalMiners %></a>
+                <a class="colorchange no-decoration" href="/prenet/#/address?filter=contracts"><% totalMiners %></a>
               </div>
             </div>
           </div>

@@ -5435,6 +5435,10 @@ ul.navbar li a.router-link-exact-active {
   text-decoration: underline;
 }
 
+.prenet a.no-decoration {
+  text-decoration: none;
+}
+
 .prenet .title {
   width: 100%;
   height: 80px;
@@ -5484,6 +5488,7 @@ ul.navbar li a.router-link-exact-active {
   -webkit-border-radius: 5px;
           border-radius: 5px;
   background-color: #F15C2E;
+  min-width: 308px;
 }
 
 .prenet .title div.search input[type=text] {
@@ -5531,7 +5536,7 @@ ul.navbar li a.router-link-exact-active {
 }
 
 .prenet .title div.search button {
-  float: right;
+  position: absolute;
   width: 15%;
   height: 25px;
   background: #FFFFFF;
@@ -5544,6 +5549,7 @@ ul.navbar li a.router-link-exact-active {
   border-left: none;
   padding: 0 8px;
   color: #000000;
+  min-width: 58px;
 }
 
 .prenet .title div.search::after {

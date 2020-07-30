@@ -206,6 +206,10 @@
           color: #F15C2E;
           text-decoration: underline;
         }
+
+        a.no-decoration {
+          text-decoration: none;
+        }
         
         .title {
           width: 100%;
@@ -253,6 +257,7 @@
             border: 1.3px solid white;
             border-radius: 5px;
             background-color: #F15C2E;
+            min-width: 308px;
 
             input[type=text] {
               padding: 5px;
@@ -290,7 +295,7 @@
             }
           
             button {
-              float: right;
+              position: absolute;
               width: 15%;
               height: 25px;
               background: #FFFFFF;
@@ -303,6 +308,7 @@
               border-left: none;
               padding: 0 8px;
               color: #000000;
+              min-width: 58px;
             }
           
             &::after {
