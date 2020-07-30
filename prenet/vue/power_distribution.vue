@@ -1,5 +1,5 @@
 <template id="power_distribution">
-  <div>
+  <div class="prenet">
     <div class="title row">
       <div class="col-md-2">
         <h1>Prenet Overview</h1>
