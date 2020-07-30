@@ -1,5 +1,5 @@
 <template id="fleet_registration">
-  <div>
+  <div class="prenet">
     <div class="title">
       <h1>Prenet Fleet Registration</h1>
     </div>

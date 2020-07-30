@@ -1,5 +1,5 @@
 <template id="transactions">
-  <div>
+  <div class="prenet">
     <div class="title">
       <h1>Transaction Pool</h1>
     </div>

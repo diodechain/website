@@ -1,5 +1,5 @@
 <template id="accounts">
-  <div>
+  <div class="prenet">
     <div class="title">
       <h1>Account Overview</h1>
     </div>

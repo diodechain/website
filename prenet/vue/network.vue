@@ -1,5 +1,5 @@
 <template id="network">
-  <div class="network">
+  <div class="network prenet">
     <div class="title">
       <h1>Prenet Network</h1>
     </div>
