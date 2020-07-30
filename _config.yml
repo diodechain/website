@@ -1,6 +1,6 @@
 # Information for compile
 exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md", "resources", "run"]
-include: ["install.sh"]
+include: ["install.sh", "msa.pdf"]
 
 baseurl:
 
