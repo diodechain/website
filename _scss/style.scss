@@ -205,6 +205,8 @@
         a {
           color: #F15C2E;
           text-decoration: underline;
+          cursor: pointer;
+          z-index: 100;
         }
 
         a.no-decoration {
@@ -222,7 +224,7 @@
           p {
             color: #38AB66;
             text-align: right;
-            font-size: 1.1em;
+            font-size: 14px;
             font-weight: bold;
             text-transform: capitalize;
             float: right;
@@ -685,7 +687,8 @@
               a {
                 font-weight: bold;
                 font-size: 24px;
-                line-height: 28px;                
+                line-height: 28px;
+                letter-spacing: 1px;                
               }
             }
 
@@ -838,12 +841,6 @@
             opacity: 1;
             transition: opacity .15s;
           }
-        }
-        
-        span.colorchange {
-          color: #eb5b33;
-          font-size: 24px;
-          line-height: 3;
         }
       }
                 

@@ -59,25 +59,25 @@
             <div class="doclet">
               <h2>Free Flow</h2>
               <div class="link">
-                <a class="colorchange no-decoration" href="/prenet/#/address"><% totalSupply %></a>
+                <router-link :class="'no-decoration'" :to="'/address/'"><% totalSupply %></router-link>
               </div>
             </div>
             <div class="doclet">
               <h2>Fleets</h2>
               <div class="link">
-                <a class="colorchange no-decoration" href="/prenet/#/fleets"><% totalFleets %></a>
+                <router-link :class="'no-decoration'"  :to="'/fleets/'"><% totalFleets %></router-link>
               </div>
             </div>
             <div class="doclet">
               <h2>Accounts</h2>
               <div class="link">
-                <a class="colorchange no-decoration" href="/prenet/#/address?filter=all"><% totalAccounts %></a>
+                <router-link :class="'no-decoration'" :to="'/address?filter=all'"><% totalAccounts %></router-link>
               </div>
             </div>
             <div class="doclet">
               <h2>Miners</h2>
               <div class="link">
-                <a class="colorchange no-decoration" href="/prenet/#/address?filter=contracts"><% totalMiners %></a>
+                <router-link :class="'no-decoration'" :to="'/address?filter=contracts'"><% totalMiners %></router-link>
               </div>
             </div>
           </div>
@@ -211,17 +211,25 @@ var PowerDistribution = Vue.component("power_distribution", {
     shares: function () {
       let groups = {};
       let size = this.blocks.length;
+      let minerIndex = 0;
+
       this.blocks.forEach((block) => {
         if (groups[block.miner]) {
           groups[block.miner].count++;
         } else {
+          let color = PredefinedMinersColors[minerIndex];
+          
+          if (!color) { color = "#"+((1<<24)*Math.random()|0).toString(16); }
+
           groups[block.miner] = {
             count: 1,
             address: block.miner,
             name: block.miner,
-            color: "#" + block.miner.substr(3, 6),
-            shape: "background-color(#" + block.miner.substr(3, 6) + ")",
+            color: color,
+            shape: "background-color(" + color + ")",
           };
+
+          minerIndex += 1;
         }
       });
 
@@ -293,7 +301,7 @@ var PowerDistribution = Vue.component("power_distribution", {
 
       let exactBlockNumber = parseInt(this.searchTerm);
 
-      if (!blockFound && exactBlockNumber !== NaN) {
+      if (!blockFound && !isNaN(exactBlockNumber)) {
         let self = this;
 
         let block = await web3.eth.getBlock(exactBlockNumber, false, function(error, block) {

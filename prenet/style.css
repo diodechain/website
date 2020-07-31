@@ -5433,6 +5433,8 @@ ul.navbar li a.router-link-exact-active {
 .prenet a {
   color: #F15C2E;
   text-decoration: underline;
+  cursor: pointer;
+  z-index: 100;
 }
 
 .prenet a.no-decoration {
@@ -5451,7 +5453,7 @@ ul.navbar li a.router-link-exact-active {
 .prenet .title p {
   color: #38AB66;
   text-align: right;
-  font-size: 1.1em;
+  font-size: 14px;
   font-weight: bold;
   text-transform: capitalize;
   float: right;
@@ -5972,6 +5974,7 @@ ul.navbar li a.router-link-exact-active {
   font-weight: bold;
   font-size: 24px;
   line-height: 28px;
+  letter-spacing: 1px;
 }
 
 .prenet .network path {
@@ -6127,12 +6130,6 @@ ul.navbar li a.router-link-exact-active {
   -webkit-transition: opacity .15s;
   -o-transition: opacity .15s;
   transition: opacity .15s;
-}
-
-.prenet span.colorchange {
-  color: #eb5b33;
-  font-size: 24px;
-  line-height: 3;
 }
 
 /* @media screen and (min-width: 1440px) {(max-width: 1600px){
