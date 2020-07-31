@@ -1,5 +1,5 @@
 <template id="account">
-  <div class="prenet">
+  <div >
     <div class="title">
       <h1>Account Details <% hash %></h1>
     </div>

@@ -1,5 +1,5 @@
 <template id="block">
-  <div class="prenet">
+  <div >
     <div class="title">
       <h1>Block Details <% number %></h1>
     </div>

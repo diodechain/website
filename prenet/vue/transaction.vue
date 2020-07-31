@@ -1,5 +1,5 @@
 <template id="transaction">
-  <div class="prenet">
+  <div >
     <div class="title">
       <h1>Transaction Details <% hash %></h1>
     </div>

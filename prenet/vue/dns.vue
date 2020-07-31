@@ -1,5 +1,5 @@
 <template id="dns">
-  <div class="prenet">
+  <div >
     <div class="title">
       <h1>Prenet Blockchain Name System (BNS)</h1>
     </div>
