@@ -45,7 +45,7 @@
             <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
               <td>
                 <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
-                <router-link v-if="result.isAddress" :to="'/address/' + result.id"><% result.type %></router-link>
+                <router-link v-if="result.type==='Address' || result.isAddress" :to="'/address/' + result.id"><% result.type %></router-link>
                 <router-link v-if="result.type==='Transaction'" :to="'/tx/' + result.id"><% result.type %></router-link>
               </td>
               <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
@@ -198,6 +198,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       searchActivated: false,
       searchFinished: false,
       searchResults: [],
+      dnsNames:[]
     };
   },
   watch: {
@@ -271,10 +272,26 @@ var PowerDistribution = Vue.component("power_distribution", {
   },
   methods: {
     search: async function () {
+      this.searchTerm = this.searchTerm.trim();
+      if (this.searchTerm.length === 0) { return; }
+
       this.searchFinished = false;
       this.searchActivated = true;
 
       this.searchResults.splice(0, this.searchResults.length);
+
+      if (this.dnsNames.length === 0) { this.loadDnsNames(); }
+
+      for (let i in this.dnsNames) {
+        let matchId = this.dnsNames[i]['key'].indexOf(this.searchTerm);
+
+        if (matchId === -1) continue;
+
+        let hash = valueToAddress(this.dnsNames[i]['value'].owner);
+        this.selectSearchItem(hash, this.dnsNames[i]['key'], null, 'Address');
+      }
+
+      
 
       let accounts = await web3.eth.getAllAccounts();
 
@@ -419,17 +436,30 @@ var PowerDistribution = Vue.component("power_distribution", {
       }
       batch.execute();
     },
-    selectSearchItem(id, matchedTerm, hash, type) {
-        if (!matchedTerm) {
-          matchedTerm = id;
+    loadDnsNames() {
+      for (const key in DNSCache) {
+        if (DNSCache.hasOwnProperty(key)) {
+          const element = DNSCache[key];
+          
+          let item = {};
+          item['value'] = element;
+
+          if (isAddress(key)) {
+            item['key'] = element.name;
+          } else {
+            item['key'] = key;
+          }
+
+          this.dnsNames.push(item);
         }
+      }
+    },
+    selectSearchItem(id, matchedTerm, hash, type) {
+        if (!matchedTerm) { matchedTerm = id; }
 
         let result = {};
-        
         result.id = id;
-
         result.matchCompleteness = (this.searchTerm.length / matchedTerm.length) * 100;
-
         result.type = type;
 
         if (hash) {
@@ -442,6 +472,8 @@ var PowerDistribution = Vue.component("power_distribution", {
         
         result.stake = "";
         result.BNS = DNSCache[id] ? DNSCache[id].name : undefined;
+
+        if (matchedTerm === result.BNS) { result.BNS = ""; }
 
         try {
           fetchStake(id, (stake) => {
