@@ -5583,10 +5583,10 @@ body.prenet table .empty-search {
 }
 
 body.prenet table.data {
-  margin-top: 45px;
+  margin-top: 43px;
   border: 1px solid #ddd;
   background-color: #ffffff;
-  width: 99.5% !important;
+  width: 99% !important;
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -5687,7 +5687,7 @@ body.prenet .chart-label {
 
 body.prenet figure {
   border: 1px solid #dbdbdb;
-  margin: 5% 0px 0px 10px;
+  margin: 5% 0px 0px 0px;
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
@@ -5923,7 +5923,6 @@ body.prenet .button[disabled] {
 }
 
 body.prenet .headtable {
-  margin-right: 10px;
   width: 50%;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -5945,7 +5944,7 @@ body.prenet .headtable .doclet {
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin: 5% 5% 0 0;
+  margin: 45px 45px 0 0;
   padding: 5px 5px 5px 24px;
   background-color: #ffffff;
   border: 1px solid #C0C5CB;
@@ -5968,6 +5967,7 @@ body.prenet .headtable .doclet div.link {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  margin-top: 5px;
 }
 
 body.prenet .headtable .doclet div.link a {

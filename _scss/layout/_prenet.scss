@@ -227,10 +227,10 @@ table {
   }
 
   &.data {
-    margin-top: 45px;
+    margin-top: 43px;
     border: 1px solid #ddd;
     background-color: #ffffff;
-    width: 99.5% !important;
+    width: 99% !important;
     border-collapse: collapse;
     border-spacing: 0;
   }
@@ -342,7 +342,7 @@ table {
 
 figure {
   border:1px solid #dbdbdb;
-  margin: 5% 0px 0px 10px;
+  margin: 5% 0px 0px 0px;
   justify-content: space-around;
   flex-direction: column;
   background: white;
@@ -537,7 +537,6 @@ figure {
 }
 
 .headtable {
-  margin-right: 10px;
   width: 50%;
   display: inline-flex;
   flex-direction: inherit;
@@ -549,7 +548,7 @@ figure {
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    margin: 5% 5% 0 0;
+    margin: 45px 45px 0 0;
     padding: 5px 5px 5px 24px;
     background-color: #ffffff;
     border: 1px solid #C0C5CB;
@@ -568,6 +567,7 @@ figure {
     div.link {
       align-items: center;
       text-align: center;
+      margin-top: 5px;
 
       a {
         font-weight: bold;

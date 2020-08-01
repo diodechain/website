@@ -10,7 +10,7 @@
     <div v-else class="column">
       <table class="data">
         <tr>
-          <th>Transaction Hash</th>
+          <th>Block Hash</th>
           <td><% tx.blockHash %></td>
         </tr>
         <tr>

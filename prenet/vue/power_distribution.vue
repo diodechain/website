@@ -36,9 +36,8 @@
           <tr v-else-if="searchFinished">
             <td>
               <div class="empty-search">
-               
-              Sorry, no results were found. The Diode Network explorer search function can search on full or parital matches on account addresses, 
-              block numbers, BNS names, and stake amounts. Please check your search term and try again!
+              Sorry, no results were found. The Diode Network explorer search function can search on full or parital matches on account addresses/hashes, block numbers, 
+              BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
                </div>
             </td>
           </tr>
@@ -47,6 +46,7 @@
               <td>
                 <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Blocks</router-link>
                 <router-link v-if="result.isAddress" :to="'/address/' + result.id"><% result.type %></router-link>
+                <router-link v-if="result.type" :to="'/tx/' + result.id"><% result.type %></router-link>
               </td>
               <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
             </tr>
@@ -284,32 +284,61 @@ var PowerDistribution = Vue.component("power_distribution", {
         if (matchId === -1) continue;
 
         let hash = accounts[id].codehash;
-        this.selectSearchItem(id, hash);
+        this.selectSearchItem(id, null, hash);
       }
 
       let blockFound = false;
 
       for (let i in this.blocks) {
+
         let blockNumber = this.blocks[i].number.toString();
         let matchId = blockNumber.indexOf(this.searchTerm);
+        let matchedTerm = this.blocks[i].number;
 
-        if (matchId === -1) continue;
+        if (matchId === NOT_FOUND_INDEX) {
+          matchId = this.blocks[i].hash.indexOf(this.searchTerm);
+          matchedTerm = this.blocks[i].hash;
+
+          if (matchId === NOT_FOUND_INDEX) { continue; }
+        }
 
         blockFound = true;
-        this.selectSearchItem(blockNumber, null, 'Block');
+        this.selectSearchItem(blockNumber, matchedTerm, null, 'Block');
       }
 
-      let exactBlockNumber = parseInt(this.searchTerm);
+      
 
-      if (!blockFound && !isNaN(exactBlockNumber)) {
+      let blockSearchTerm = parseInt(this.searchTerm);
+
+      if (!blockFound && !isNaN(blockSearchTerm)) {
         let self = this;
 
-        let block = await web3.eth.getBlock(exactBlockNumber, false, function(error, block) {
+        if (self.searchTerm.startsWith("0x")) {
+          blockSearchTerm = valueToString(self.searchTerm);
+        }
+        
+        try {
+          let block = await web3.eth.getBlock(blockSearchTerm, false, function(error, block) {
           if (!error) {
-            self.selectSearchItem(block.number, null, 'Block');
+            let matchedTerm = self.searchTerm.startsWith("0x") ? block.hash : null;
+            self.selectSearchItem(block.number, matchedTerm, null, 'Block');
           }
         });
+        } catch (err) { }
+        
       }
+
+      if (this.searchTerm.startsWith("0x")) {
+        let self = this;
+
+        web3.eth.getTransaction(this.searchTerm, function(error, tran){
+          if (!error) {
+            console.log(tran);
+            self.selectSearchItem(tran.hash, tran.hash, null, 'Transaction');
+          }
+        })
+      }
+      
       
       this.searchResults.sort(function(a, b){ return b.matchCompleteness - a.matchCompleteness; });
       this.searchFinished = true;
@@ -396,11 +425,16 @@ var PowerDistribution = Vue.component("power_distribution", {
       }
       batch.execute();
     },
-    selectSearchItem(id, hash, type) {
+    selectSearchItem(id, matchedTerm, hash, type) {
+        if (!matchedTerm) {
+          matchedTerm = id;
+        }
+
         let result = {};
+        
         result.id = id;
 
-        result.matchCompleteness = (this.searchTerm.length / id.length) * 100;
+        result.matchCompleteness = (this.searchTerm.length / matchedTerm.length) * 100;
 
         result.type = type;
 
@@ -422,7 +456,7 @@ var PowerDistribution = Vue.component("power_distribution", {
         } catch (error) {}
         
 
-        result.text = `${result.BNS ? result.BNS + "-" : ""}${id}`;
+        result.text = `${result.BNS ? result.BNS + "-" : ""}${matchedTerm}`;
 
         this.searchResults.push(result);
     }
