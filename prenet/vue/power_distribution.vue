@@ -37,16 +37,16 @@
             <td>
               <div class="empty-search">
               Sorry, no results were found. The Diode Network explorer search function can search on full or parital matches on account addresses/hashes, block numbers, 
-              BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
+              BNS names, and stake amounts, and full matches on transaction hashes. Please check your search term and try again!
                </div>
             </td>
           </tr>
           <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
             <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
               <td>
-                <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Blocks</router-link>
+                <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
                 <router-link v-if="result.isAddress" :to="'/address/' + result.id"><% result.type %></router-link>
-                <router-link v-if="result.type" :to="'/tx/' + result.id"><% result.type %></router-link>
+                <router-link v-if="result.type==='Transaction'" :to="'/tx/' + result.id"><% result.type %></router-link>
               </td>
               <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
             </tr>
@@ -312,16 +312,10 @@ var PowerDistribution = Vue.component("power_distribution", {
 
       if (!blockFound && !isNaN(blockSearchTerm)) {
         let self = this;
-
-        if (self.searchTerm.startsWith("0x")) {
-          blockSearchTerm = valueToString(self.searchTerm);
-        }
-        
         try {
           let block = await web3.eth.getBlock(blockSearchTerm, false, function(error, block) {
           if (!error) {
-            let matchedTerm = self.searchTerm.startsWith("0x") ? block.hash : null;
-            self.selectSearchItem(block.number, matchedTerm, null, 'Block');
+            self.selectSearchItem(block.number, null, null, 'Block');
           }
         });
         } catch (err) { }
