@@ -5697,7 +5697,7 @@ body.prenet figure {
       -ms-flex-direction: column;
           flex-direction: column;
   background: white;
-  padding: 5px 31px 5px 24px;
+  padding: 8px 40px 5px 12px;
 }
 
 body.prenet figure h2 {
@@ -5945,7 +5945,7 @@ body.prenet .headtable .doclet {
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin: 45px 45px 0 0;
-  padding: 5px 5px 5px 24px;
+  padding: 8px 5px 5px 12px;
   background-color: #ffffff;
   border: 1px solid #C0C5CB;
   -webkit-border-radius: 3px;
@@ -5967,7 +5967,7 @@ body.prenet .headtable .doclet div.link {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  margin-top: 5px;
+  margin-top: 11px;
 }
 
 body.prenet .headtable .doclet div.link a {
