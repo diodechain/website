@@ -329,12 +329,18 @@ var PowerDistribution = Vue.component("power_distribution", {
 
       if (!blockFound && !isNaN(blockSearchTerm)) {
         let self = this;
+
+        if (self.searchTerm.startsWith("0x")) {	
+          blockSearchTerm = self.searchTerm;	
+        }
+
         try {
-          let block = await web3.eth.getBlock(blockSearchTerm, false, function(error, block) {
-          if (!error) {
-            self.selectSearchItem(block.number, null, null, 'Block');
-          }
-        });
+          await web3.eth.getBlock(blockSearchTerm, false, function(error, block) {
+            if (!error) {
+              let matchedTerm = self.searchTerm.startsWith("0x") ? block.hash : null;
+              self.selectSearchItem(block.number, matchedTerm, null, 'Block');
+            }
+          });
         } catch (err) { }
         
       }
