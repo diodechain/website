@@ -37,7 +37,7 @@
             <td>
               <div class="empty-search">
               Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers, 
-              BNS names, and stake amounts, and full matches on transaction hashes. Please check your search term and try again!
+              BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
                </div>
             </td>
           </tr>
