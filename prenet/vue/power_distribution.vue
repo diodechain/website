@@ -1,22 +1,16 @@
 <template id="power_distribution">
-  <div >
+  <div>
     <div class="title row">
       <div class="col-md-2">
         <h1>Prenet Overview</h1>
       </div>
+      <button type="submit" v-on:click="search2">Search</button>
       <div class="col-md-6">
-        <div class="search">
-          <i v-on:click="selectInput" v-if="!searchTerm" class="fa fa-search search-icon"></i>
-          <i v-on:click="clearSearch" v-else class="fa fa-times-circle"></i>
-          <input
-            type="text"
-            v-model="searchTerm"
-            ref="searchInput"
-            placeholder="Search for accounts, blocks, etc."
-            name="search"
-          />
-          <button type="submit" v-on:click="search">Search</button>
-        </div>
+
+        searchResults <% searchdata.searchResults%>
+        searchActivated <% searchdata.searchActivated %>
+        searchFinished <% searchdata.searchFinished %>
+        <search-bar v-bind:searchdata.sync="searchdata" />
       </div>
       <div class="col-md-4">
         <p>
@@ -26,27 +20,33 @@
       </div>
     </div>
     <div class="page-content" style=" flex-direction: row; align-items: flex-start;">
-      <div v-if="searchTerm && searchActivated">
+      <div v-if="searchdata.searchTerm && searchdata.searchActivated">
         <table class="data" style="width: auto">
           <caption><% searchResults.length %> Search Results</caption>
           <tr v-if="searchResults.length">
             <th>Page</th>
             <th>Match Term</th>
           </tr>
-          <tr v-else-if="searchFinished">
+          <tr v-else-if="searchdata.searchFinished">
             <td>
               <div class="empty-search">
-              Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers, 
-              BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
-               </div>
+                Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers,
+                BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
+              </div>
             </td>
           </tr>
-          <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
-            <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
+          <tbody v-if="searchdata.searchResults.length" is="transition-group" name="list-complete">
+            <tr v-for="result in searchdata.searchResults" v-bind:key="result" class="list-complete-item">
               <td>
                 <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
-                <router-link v-if="result.type==='Address' || result.isAddress" :to="'/address/' + result.id"><% result.type %></router-link>
-                <router-link v-if="result.type==='Transaction'" :to="'/tx/' + result.id"><% result.type %></router-link>
+                <router-link
+                  v-if="result.type==='Address' || result.isAddress"
+                  :to="'/address/' + result.id"
+                ><% result.type %></router-link>
+                <router-link
+                  v-if="result.type==='Transaction'"
+                  :to="'/tx/' + result.id"
+                ><% result.type %></router-link>
               </td>
               <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
             </tr>
@@ -65,19 +65,25 @@
             <div class="doclet">
               <h2>Fleets</h2>
               <div class="link">
-                <router-link :class="'no-decoration'"  :to="'/fleets/'"><% totalFleets %></router-link>
+                <router-link :class="'no-decoration'" :to="'/fleets/'"><% totalFleets %></router-link>
               </div>
             </div>
             <div class="doclet">
               <h2>Accounts</h2>
               <div class="link">
-                <router-link :class="'no-decoration'" :to="'/address?filter=all'"><% totalAccounts %></router-link>
+                <router-link
+                  :class="'no-decoration'"
+                  :to="'/address?filter=all'"
+                ><% totalAccounts %></router-link>
               </div>
             </div>
             <div class="doclet">
               <h2>Miners</h2>
               <div class="link">
-                <router-link :class="'no-decoration'" :to="'/address?filter=contracts'"><% totalMiners %></router-link>
+                <router-link
+                  :class="'no-decoration'"
+                  :to="'/address?filter=contracts'"
+                ><% totalMiners %></router-link>
               </div>
             </div>
           </div>
@@ -194,19 +200,15 @@ var PowerDistribution = Vue.component("power_distribution", {
       totalMiners: "loading",
       totalAccounts: "loading",
       totalSupply: "loading",
-      searchTerm: "",
-      searchActivated: false,
-      searchFinished: false,
-      searchResults: [],
-      dnsNames:[]
-    };
-  },
-  watch: {
-    searchTerm: function(value, oldValue) {
-      if (!value) {
-        this.searchActivated = false;
+      searchdata: {
+        searchTerm: "",
+        searchActivated: false,
+        searchFinished: false,
+        searchResults: ['test'],
+        blocks: this.blocks
       }
-    }
+
+    };
   },
   computed: {
     shares: function () {
@@ -219,8 +221,10 @@ var PowerDistribution = Vue.component("power_distribution", {
           groups[block.miner].count++;
         } else {
           let color = PredefinedGraphicColors[minerIndex];
-          
-          if (!color) { color = getRandomColor(); }
+
+          if (!color) {
+            color = getRandomColor();
+          }
 
           groups[block.miner] = {
             count: 1,
@@ -271,103 +275,6 @@ var PowerDistribution = Vue.component("power_distribution", {
     this.loader();
   },
   methods: {
-    search: async function () {
-      this.searchTerm = this.searchTerm.trim();
-      if (this.searchTerm.length === 0) { return; }
-
-      this.searchFinished = false;
-      this.searchActivated = true;
-
-      this.searchResults.splice(0, this.searchResults.length);
-
-      if (this.dnsNames.length === 0) { this.loadDnsNames(); }
-
-      for (let i in this.dnsNames) {
-        let matchId = this.dnsNames[i]['key'].indexOf(this.searchTerm);
-
-        if (matchId === -1) continue;
-
-        let hash = valueToAddress(this.dnsNames[i]['value'].owner);
-        this.selectSearchItem(hash, this.dnsNames[i]['key'], null, 'Address');
-      }
-
-      
-
-      let accounts = await web3.eth.getAllAccounts();
-
-      for (let id in accounts) {
-        let matchId = id.indexOf(this.searchTerm);
-
-        if (matchId === -1) continue;
-
-        let hash = accounts[id].codehash;
-        this.selectSearchItem(id, null, hash);
-      }
-
-      let blockFound = false;
-
-      for (let i in this.blocks) {
-
-        let blockNumber = this.blocks[i].number.toString();
-        let matchId = blockNumber.indexOf(this.searchTerm);
-        let matchedTerm = this.blocks[i].number;
-
-        if (matchId === NOT_FOUND_INDEX) {
-          matchId = this.blocks[i].hash.indexOf(this.searchTerm);
-          matchedTerm = this.blocks[i].hash;
-
-          if (matchId === NOT_FOUND_INDEX) { continue; }
-        }
-
-        blockFound = true;
-        this.selectSearchItem(blockNumber, matchedTerm, null, 'Block');
-      }
-
-      
-
-      let blockSearchTerm = parseInt(this.searchTerm);
-
-      if (!blockFound && !isNaN(blockSearchTerm)) {
-        let self = this;
-
-        if (self.searchTerm.startsWith("0x")) {	
-          blockSearchTerm = self.searchTerm;	
-        }
-
-        try {
-          await web3.eth.getBlock(blockSearchTerm, false, function(error, block) {
-            if (!error) {
-              let matchedTerm = self.searchTerm.startsWith("0x") ? block.hash : null;
-              self.selectSearchItem(block.number, matchedTerm, null, 'Block');
-            }
-          });
-        } catch (err) { }
-        
-      }
-
-      if (this.searchTerm.startsWith("0x")) {
-        let self = this;
-
-        web3.eth.getTransaction(this.searchTerm, function(error, tran){
-          if (!error) {
-            console.log(tran);
-            self.selectSearchItem(tran.hash, tran.hash, null, 'Transaction');
-          }
-        })
-      }
-      
-      
-      this.searchResults.sort(function(a, b){ return b.matchCompleteness - a.matchCompleteness; });
-      this.searchFinished = true;
-    },
-    selectInput: function () {
-      this.$refs.searchInput.focus();
-    },
-    clearSearch: function (params) {
-      this.searchTerm = "";
-      this.searchActivated = false;
-      this.searchResults.splice(0, this.searchResults.length);
-    },
     refresh: function () {
       web3.eth.totalSupply().then((supply) => {
         let totalSupply = web3.utils
@@ -442,57 +349,11 @@ var PowerDistribution = Vue.component("power_distribution", {
       }
       batch.execute();
     },
-    loadDnsNames() {
-      for (const key in DNSCache) {
-        if (DNSCache.hasOwnProperty(key)) {
-          const element = DNSCache[key];
-          
-          let item = {};
-          item['value'] = element;
-
-          if (isAddress(key)) {
-            item['key'] = element.name;
-          } else {
-            item['key'] = key;
-          }
-
-          this.dnsNames.push(item);
-        }
-      }
-    },
-    selectSearchItem(id, matchedTerm, hash, type) {
-        if (!matchedTerm) { matchedTerm = id; }
-
-        let result = {};
-        result.id = id;
-        result.matchCompleteness = (this.searchTerm.length / matchedTerm.length) * 100;
-        result.type = type;
-
-        if (hash) {
-          if (hash == FleetHash) { result.type = "Fleet"; }
-          else if (hash == NullHash) { result.type = "Wallet"; }
-          else { result.type = "Contract"; }
-
-          result.isAddress = true;
-        }
-        
-        result.stake = "";
-        result.BNS = DNSCache[id] ? DNSCache[id].name : undefined;
-
-        if (matchedTerm === result.BNS) { result.BNS = ""; }
-
-        try {
-          fetchStake(id, (stake) => {
-            this.$set(result, "stake", valueToBalance(stake));
-          });
-        } catch (error) {}
-        
-
-        result.text = `${result.BNS ? result.BNS + "-" : ""}${matchedTerm}`;
-
-        this.searchResults.push(result);
-    }
+    search2: function() {
+    debugger;
+  }
   },
+
 });
 </script>
 
