@@ -25,6 +25,12 @@ const NullValue = "0x00000000000000000000000000000000000000000000000000000000000
 const NullAddr = "0x0000000000000000000000000000000000000000"
 const NOT_FOUND_INDEX = -1
 
+const ACCOUNTS_FILTER_MAP = {
+    "fleets": "Fleet",
+    "contracts": "Contract",
+    "wallets": "Wallet"
+}
+
 var fleetMethods = {
     "deviceWhitelist": {
         name: "deviceWhitelist",

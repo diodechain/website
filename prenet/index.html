@@ -245,6 +245,12 @@ layout: ""
             return undefined
         }
 
+        function getBase(callback) {
+            web3.eth.getCoinbase().then((base) => {
+                callback(base);
+            });
+        }
+
         function balanceStringToValue(balance) {
             return web3.utils.fromWei(balance);
         }

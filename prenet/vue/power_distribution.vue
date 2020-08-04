@@ -201,7 +201,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       searchTerm: "",
       searchActivated: false,
       searchFinished: false,
-      searchResults: ['test']
+      searchResults: []
     };
   },
   computed: {
@@ -291,10 +291,11 @@ var PowerDistribution = Vue.component("power_distribution", {
       });
     },
     loader: async function () {
-      web3.eth.getCoinbase().then((base) => {
-        this.base = base;
-        this.fetchStake(base);
+      let self = this;
+      getBase(function(base) {
+        self.base = base;
       });
+
       let buffer = [];
       this.refresh();
       subscribe("newBlockHeaders", (error, block) => {

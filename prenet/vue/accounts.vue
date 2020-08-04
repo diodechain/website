@@ -1,10 +1,24 @@
 <template id="accounts">
   <div>
-    <div class="title">
-      <h1>Account Browser</h1>
+    <div class="title row">
+      <div class="col-md-2">
+        <h1>Account Browser</h1>
+      </div>
+      <div class="col-md-6">
+        <search-bar v-bind:results.sync="searchResults" v-model="searchTerm"
+                    v-bind:activated.sync="searchActivated"
+                    v-bind:finished.sync="searchFinished"
+        />
+      </div>
+      <div class="col-md-4">
+        <p>
+          connected to
+          <account-link :hash="base" :length="50" :only-alias="false" />
+        </p>
+      </div>
     </div>
     <div class="column page-content">
-      <div class="graphs">
+      <div v-if="!filter" class="graphs">
         <figure>
           <div class="row">
             <div class="col-md-12">
@@ -143,9 +157,15 @@ var Accounts = Vue.component("accounts", {
   delimiters: ["<%", "%>"],
   data: () => {
     return {
+      base: "",
       accounts: {},
       accountsByBalance: [],
       accountsByStake: [],
+      searchTerm: "",
+      searchActivated: false,
+      searchFinished: false,
+      searchResults: [],
+      filter: ''
     };
   },
   computed: {
@@ -156,8 +176,15 @@ var Accounts = Vue.component("accounts", {
       return "Contract";
     },
   },
+
   created: function () {
+    this.filter = ACCOUNTS_FILTER_MAP[this.$route.query.filter];
     this.update();
+
+    let self = this;
+    getBase(function(base) {
+      self.base = base;
+    });
   },
   methods: {
     update: async function () {
@@ -169,6 +196,11 @@ var Accounts = Vue.component("accounts", {
         if (hash == FleetHash) accounts[id].type = "Fleet";
         else if (hash == NullHash) accounts[id].type = "Wallet";
         else accounts[id].type = "Contract";
+
+        if (this.filter && this.filter !== accounts[id].type) {
+          delete  accounts[id];
+          continue;
+        }
 
         accounts[id].stake = "pending";
         accounts[id].balanceFormatted = valueToBalance(accounts[id].balance);
