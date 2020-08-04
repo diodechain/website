@@ -1,10 +1,11 @@
 <template id="search-bar">
   <div class="search">
-    <i v-on:click="selectInput" v-if="!searchdata.searchTerm" class="fa fa-search search-icon"></i>
+    <i v-on:click="selectInput" v-if="!value" class="fa fa-search search-icon"></i>
     <i v-on:click="clearSearch" v-else class="fa fa-times-circle"></i>
     <input
       type="text"
-      v-model="searchdata.searchTerm"
+      v-bind:value="value"
+      v-on:input="$emit('input', $event.target.value)"
       ref="searchInput"
       placeholder="Search for accounts, blocks, etc."
       name="search"
@@ -17,54 +18,52 @@ var Search = Vue.component("search-bar", {
   template: document.getElementById("search-bar").innerHTML,
   delimiters: ["<%", "%>"],
   props: {
-    // blocks: [],
-    // // searchResults: Array,
-    // searchTerm: String,
-    // searchActivated: Boolean,
-    // searchFinished: Boolean,
-    // searchdata: Object
+    blocks: [],
+    results: Array,
+    value: String,
+    activated: Boolean,
+    finished: Boolean,
   },
   data: () => {
     return {
-      searchdata: {
-        searchTerm: "",
-        searchActivated: false,
-        searchFinished: false,
-        blocks: [],
-        searchResults: []
-      },
+      value: "",
+      activated: false,
+      finished: false,
       dnsNames: [],
+      blocks: [],
+      results: []
     };
   },
   watch: {
-    searchTerm: function (value, oldValue) {
+    value: function (value, oldValue) {
       if (!value) {
-        this.searchActivated = false;
+        this.activated = false;
       }
     },
   },
   methods: {
     search: async function () {
-      if (!this.searchdata.searchTerm) { return; }
+      if (!this.value) { return; }
 
-      this.searchdata.searchTerm = this.searchdata.searchTerm.trim();
-      if (this.searchdata.searchTerm.length === 0) {
+      this.value = this.value.trim();
+      if (this.value.length === 0) {
         return;
       }
 
-      this.searchdata.searchFinished = false;
-      this.searchdata.searchActivated = true;
+      this.finished = false;
+      this.activated = true;
 
-      this.$emit('update:searchdata', this.searchdata);
+      this.$emit('update:finished', this.finished);
+      this.$emit('update:activated', this.activated);
 
-      this.searchdata.searchResults.splice(0, this.searchdata.searchResults.length);
+      this.results.splice(0, this.results.length);
 
       if (this.dnsNames.length === 0) {
         this.loadDnsNames();
       }
 
       for (let i in this.dnsNames) {
-        let matchId = this.dnsNames[i]["key"].indexOf(this.searchTerm);
+        let matchId = this.dnsNames[i]["key"].indexOf(this.value);
 
         if (matchId === -1) continue;
 
@@ -75,7 +74,7 @@ var Search = Vue.component("search-bar", {
       let accounts = await web3.eth.getAllAccounts();
 
       for (let id in accounts) {
-        let matchId = id.indexOf(this.searchdata.searchTerm);
+        let matchId = id.indexOf(this.value);
 
         if (matchId === -1) continue;
 
@@ -85,14 +84,14 @@ var Search = Vue.component("search-bar", {
 
       let blockFound = false;
 
-      for (let i in this.searchdata.blocks) {
-        let blockNumber = this.searchdata.blocks[i].number.toString();
-        let matchId = blockNumber.indexOf(this.searchdata.searchTerm);
-        let matchedTerm = this.searchdata.blocks[i].number;
+      for (let i in this.blocks) {
+        let blockNumber = this.blocks[i].number.toString();
+        let matchId = blockNumber.indexOf(this.value);
+        let matchedvalue = this.blocks[i].number;
 
         if (matchId === NOT_FOUND_INDEX) {
-          matchId = this.searchdata.blocks[i].hash.indexOf(this.searchdata.searchTerm);
-          matchedTerm = this.blocks[i].hash;
+          matchId = this.blocks[i].hash.indexOf(this.value);
+          matchedvalue = this.blocks[i].hash;
 
           if (matchId === NOT_FOUND_INDEX) {
             continue;
@@ -100,37 +99,37 @@ var Search = Vue.component("search-bar", {
         }
 
         blockFound = true;
-        this.selectSearchItem(blockNumber, matchedTerm, null, "Block");
+        this.selectSearchItem(blockNumber, matchedvalue, null, "Block");
       }
 
-      let blockSearchTerm = parseInt(this.searchdata.searchTerm);
+      let blockvalue = parseInt(this.value);
 
-      if (!blockFound && !isNaN(blockSearchTerm)) {
+      if (!blockFound && !isNaN(blockvalue)) {
         let self = this;
 
-        if (self.searchdata.searchTerm.startsWith("0x")) {
-          blockSearchTerm = self.searchdata.searchTerm;
+        if (self.value.startsWith("0x")) {
+          blockvalue = self.value;
         }
 
         try {
-          await web3.eth.getBlock(blockSearchTerm, false, function (
+          await web3.eth.getBlock(blockvalue, false, function (
             error,
             block
           ) {
             if (!error) {
-              let matchedTerm = self.searchdata.searchTerm.startsWith("0x")
+              let matchedvalue = self.value.startsWith("0x")
                 ? block.hash
                 : null;
-              self.selectSearchItem(block.number, matchedTerm, null, "Block");
+              self.selectSearchItem(block.number, matchedvalue, null, "Block");
             }
           });
         } catch (err) {}
       }
 
-      if (this.searchdata.searchTerm.startsWith("0x")) {
+      if (this.value.startsWith("0x")) {
         let self = this;
 
-        web3.eth.getTransaction(this.searchdata.searchTerm, function (error, tran) {
+        web3.eth.getTransaction(this.value, function (error, tran) {
           if (!error) {
             console.log(tran);
             self.selectSearchItem(tran.hash, tran.hash, null, "Transaction");
@@ -138,21 +137,24 @@ var Search = Vue.component("search-bar", {
         });
       }
 
-      this.searchdata.searchResults.sort(function (a, b) {
+      this.results.sort(function (a, b) {
         return b.matchCompleteness - a.matchCompleteness;
       });
 
-      this.searchdata.searchFinished = true;
+      this.finished = true;
 
-      this.$emit('update:searchdata', this.searchdata);
+      this.$emit('update:finished', this.finished);
     },
     selectInput: function () {
       this.$refs.searchInput.focus();
     },
     clearSearch: function (params) {
-      this.searchTerm = "";
-      this.searchActivated = false;
-      this.searchResults.splice(0, this.searchResults.length);
+      this.value = "";
+      this.activated = false;
+      this.results.splice(0, this.results.length);
+
+      this.$emit('update:activated', this.activated);
+      this.$emit('input', this.value);
     },
     loadDnsNames() {
       for (const key in DNSCache) {
@@ -172,15 +174,15 @@ var Search = Vue.component("search-bar", {
         }
       }
     },
-    selectSearchItem(id, matchedTerm, hash, type) {
-      if (!matchedTerm) {
-        matchedTerm = id;
+    selectSearchItem(id, matchedvalue, hash, type) {
+      if (!matchedvalue) {
+        matchedvalue = id;
       }
 
       let result = {};
       result.id = id;
       result.matchCompleteness =
-        (this.searchTerm.length / matchedTerm.length) * 100;
+        (this.value.length / matchedvalue.length) * 100;
       result.type = type;
 
       if (hash) {
@@ -198,7 +200,7 @@ var Search = Vue.component("search-bar", {
       result.stake = "";
       result.BNS = DNSCache[id] ? DNSCache[id].name : undefined;
 
-      if (matchedTerm === result.BNS) {
+      if (matchedvalue === result.BNS) {
         result.BNS = "";
       }
 
@@ -208,9 +210,9 @@ var Search = Vue.component("search-bar", {
         });
       } catch (error) {}
 
-      result.text = `${result.BNS ? result.BNS + "-" : ""}${matchedTerm}`;
+      result.text = `${result.BNS ? result.BNS + "-" : ""}${matchedvalue}`;
 
-      this.searchResults.push(result);
+      this.results.push(result);
     },
   },
 });

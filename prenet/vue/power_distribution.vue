@@ -4,13 +4,11 @@
       <div class="col-md-2">
         <h1>Prenet Overview</h1>
       </div>
-      <button type="submit" v-on:click="search2">Search</button>
       <div class="col-md-6">
-
-        searchResults <% searchdata.searchResults%>
-        searchActivated <% searchdata.searchActivated %>
-        searchFinished <% searchdata.searchFinished %>
-        <search-bar v-bind:searchdata.sync="searchdata" />
+        <search-bar v-bind:blocks.sync="blocks" v-bind:results.sync="searchResults" v-model="searchTerm"
+                    v-bind:activated.sync="searchActivated"
+                    v-bind:finished.sync="searchFinished"
+        />
       </div>
       <div class="col-md-4">
         <p>
@@ -20,14 +18,14 @@
       </div>
     </div>
     <div class="page-content" style=" flex-direction: row; align-items: flex-start;">
-      <div v-if="searchdata.searchTerm && searchdata.searchActivated">
+      <div v-if="searchTerm && searchActivated">
         <table class="data" style="width: auto">
           <caption><% searchResults.length %> Search Results</caption>
           <tr v-if="searchResults.length">
             <th>Page</th>
             <th>Match Term</th>
           </tr>
-          <tr v-else-if="searchdata.searchFinished">
+          <tr v-else-if="searchFinished">
             <td>
               <div class="empty-search">
                 Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers,
@@ -35,8 +33,8 @@
               </div>
             </td>
           </tr>
-          <tbody v-if="searchdata.searchResults.length" is="transition-group" name="list-complete">
-            <tr v-for="result in searchdata.searchResults" v-bind:key="result" class="list-complete-item">
+          <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
+            <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
               <td>
                 <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
                 <router-link
@@ -200,14 +198,10 @@ var PowerDistribution = Vue.component("power_distribution", {
       totalMiners: "loading",
       totalAccounts: "loading",
       totalSupply: "loading",
-      searchdata: {
-        searchTerm: "",
-        searchActivated: false,
-        searchFinished: false,
-        searchResults: ['test'],
-        blocks: this.blocks
-      }
-
+      searchTerm: "",
+      searchActivated: false,
+      searchFinished: false,
+      searchResults: ['test']
     };
   },
   computed: {
@@ -348,10 +342,7 @@ var PowerDistribution = Vue.component("power_distribution", {
         batch.add(web3.eth.getBlock.request(nr - i, false, cb));
       }
       batch.execute();
-    },
-    search2: function() {
-    debugger;
-  }
+    }
   },
 
 });
