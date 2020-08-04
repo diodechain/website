@@ -23,7 +23,7 @@ body.prenet {
     img {
       width: 100px;
     }
-    
+
   }
 
   // .navigation-bar {
@@ -74,13 +74,13 @@ ul.navbar {
   .site-navigation-bar {
     padding:0% 13% 0% 13%;
   }
-  
+
 
   .header-banner {
     margin-top:5%;
   }
 }
-  
+
 .column {
   display: flex;
   flex-direction: column;
@@ -136,7 +136,7 @@ a.no-decoration {
     cursor: pointer;
   }
 
-  div.search {      
+  div.search {
     display: block;
     position: relative;
     width: 50%;
@@ -152,7 +152,7 @@ a.no-decoration {
       width: 80%;
       background-color: #F15C2E;
       color:white;
-      
+
       border:0;
       border-radius: 5px;
       padding-left: 12%;
@@ -164,11 +164,11 @@ a.no-decoration {
       &::-webkit-input-placeholder { /* Edge */
         color: #C0C5CB;
       }
-      
+
       &:-ms-input-placeholder { /* Internet Explorer 10-11 */
         color: #C0C5CB;
       }
-      
+
       &::placeholder {
         color: #C0C5CB;
       }
@@ -180,7 +180,7 @@ a.no-decoration {
           // background-color: #F15C2E;
       }
     }
-  
+
     button {
       position: absolute;
       width: 15%;
@@ -197,7 +197,7 @@ a.no-decoration {
       color: #000000;
       min-width: 58px;
     }
-  
+
     &::after {
       content: "";
       clear: both;
@@ -251,7 +251,7 @@ table {
         margin: 0;
       }
 
-      
+
     }
   }
 
@@ -383,11 +383,6 @@ figure {
   align-self: center;
 }
 
-.figure-key {
-  flex: 1;
-  align-self: center;
-}
-
 .ul1, .ul2 {
   float: left;
   padding-right: 10px;
@@ -405,12 +400,41 @@ figure {
   }
 }
 
+.graphs {
+  width: 100%;
+  display: flex;
+  figure {
+    width: 49%;
+    margin-right: 25px;
+
+    .donut {
+      border-radius: 50%;
+    }
+  }
+
+  .headline {
+    margin: 8px 0 0 6px;
+  }
+
+  .figure-legend {
+    display: flex;
+
+    div {
+      margin-right: 5px;
+    }
+  }
+}
+
 .figure-key-list {
   font-size: 13px;
   margin: 0;
   width: 254px;
   padding: 0;
   list-style: none;
+
+  &.long {
+    width: 100%;
+  }
 
   li {
     margin: 0 0 8px;
@@ -573,7 +597,7 @@ figure {
         font-weight: bold;
         font-size: 24px;
         line-height: 28px;
-        letter-spacing: 1px;                
+        letter-spacing: 1px;
       }
     }
 
@@ -730,13 +754,13 @@ figure {
 }
 /* @media screen and (min-width: 1440px) {(max-width: 1600px){
     .headtable{
-     width:60%;   
+     width:60%;
     }
-    
+
 }
     @media screen and (min-width: 1620px) {(max-width: 1900px){
     .headtable{
-     width:85%;   
+     width:85%;
     }
-    
+
 } */

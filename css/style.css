@@ -5742,16 +5742,6 @@ body.prenet .figure-content {
           align-self: center;
 }
 
-body.prenet .figure-key {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-          align-self: center;
-}
-
 body.prenet .ul1, body.prenet .ul2 {
   float: left;
   padding-right: 10px;
@@ -5770,12 +5760,49 @@ body.prenet .figure-key [class*="shape-"] {
   margin-right: 6px;
 }
 
+body.prenet .graphs {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body.prenet .graphs figure {
+  width: 49%;
+  margin-right: 25px;
+}
+
+body.prenet .graphs figure .donut {
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+}
+
+body.prenet .graphs .headline {
+  margin: 8px 0 0 6px;
+}
+
+body.prenet .graphs .figure-legend {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body.prenet .graphs .figure-legend div {
+  margin-right: 5px;
+}
+
 body.prenet .figure-key-list {
   font-size: 13px;
   margin: 0;
   width: 254px;
   padding: 0;
   list-style: none;
+}
+
+body.prenet .figure-key-list.long {
+  width: 100%;
 }
 
 body.prenet .figure-key-list li {
@@ -6134,13 +6161,13 @@ body.prenet .tooltip[aria-hidden='false'] {
 
 /* @media screen and (min-width: 1440px) {(max-width: 1600px){
     .headtable{
-     width:60%;   
+     width:60%;
     }
-    
+
 }
     @media screen and (min-width: 1620px) {(max-width: 1900px){
     .headtable{
-     width:85%;   
+     width:85%;
     }
-    
+
 } */

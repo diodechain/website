@@ -218,9 +218,9 @@ var PowerDistribution = Vue.component("power_distribution", {
         if (groups[block.miner]) {
           groups[block.miner].count++;
         } else {
-          let color = PredefinedMinersColors[minerIndex];
+          let color = PredefinedGraphicColors[minerIndex];
           
-          if (!color) { color = "#"+((1<<24)*Math.random()|0).toString(16); }
+          if (!color) { color = getRandomColor(); }
 
           groups[block.miner] = {
             count: 1,

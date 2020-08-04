@@ -17,7 +17,8 @@ let DNSAlias = {
     "0x45aa0730cf4216f7195fc1f5903a171a1faa5209": "Faucet 5"
 }
 
-const PredefinedMinersColors = ['#F15C2E', '#0272FF', "#38AB66", "#161C2A", "#969FA8"];
+const PredefinedGraphicColors = ['#F15C2E', '#0272FF', "#38AB66", "#161C2A", "#969FA8",
+                                '#D15B2E', '#9279FF', "#88AA76", "#1952AA", "#00445B"];
 const FleetHash = "0x7e9d94e966d33cff302ef86e2337df8eaf9a6388d45e4744321240599d428343"
 const NullHash = "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 const NullValue = "0x0000000000000000000000000000000000000000000000000000000000000000"

@@ -244,6 +244,14 @@ layout: ""
             return undefined
         }
 
+        function balanceStringToValue(balance) {
+            return web3.utils.fromWei(balance);
+        }
+
+        function getRandomColor() {
+            return "#"+((1<<24)*Math.random()|0).toString(16);
+        }
+
         function valueToBalance(balance) {
             if (balance == undefined) return 'error loading';
             let value = web3.utils.fromWei(balance)
@@ -269,7 +277,7 @@ layout: ""
                 back = "";
             }
 
-            // value = value.toString()
+            // value = value.toString()h
             return front + back + unit
         }
 
