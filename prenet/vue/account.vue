@@ -1,17 +1,63 @@
 <template id="account">
-  <div >
-    <div class="title">
-      <h1>Account Details <% hash %></h1>
+  <div>
+    <div class="title row">
+      <div class="col-md-2">
+        <h1>Account Detail</h1>
+      </div>
+      <div class="col-md-6">
+        <search-bar
+          v-bind:results.sync="searchResults"
+          v-model="searchTerm"
+          v-bind:activated.sync="searchActivated"
+          v-bind:finished.sync="searchFinished"
+        />
+      </div>
+      <div class="col-md-4">
+        <p>
+          connected to
+          <account-link :hash="base" :length="50" :only-alias="false" />
+        </p>
+      </div>
     </div>
     <div v-if="!balance" class="column page-content">
       <div v-if="error" class="error"><% error %></div>
       <div v-else>Loading Account....</div>
     </div>
     <div v-else class="column page-content">
-      <table class="data">
+      <table class="data" style="width: auto" v-if="searchTerm && searchActivated">
+        <caption><% searchResults.length %> Search Results</caption>
+        <tr v-if="searchResults.length">
+          <th>Page</th>
+          <th>Match Term</th>
+        </tr>
+        <tr v-else-if="searchFinished">
+          <td>
+            <div class="empty-search">
+              Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers,
+              BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
+            </div>
+          </td>
+        </tr>
+        <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
+          <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
+            <td>
+              <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
+              <router-link
+                v-if="result.type==='Address' || result.isAddress"
+                :to="'/address/' + result.id"
+              ><% result.type %></router-link>
+              <router-link
+                v-if="result.type==='Transaction'"
+                :to="'/tx/' + result.id"
+              ><% result.type %></router-link>
+            </td>
+            <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
+          </tr>
+        </tbody>
+      </table>
+      <table v-else class="data transposed">
         <tr>
-          <th>Account</th>
-          <td><% formatAddr(hash, false, 50) %></td>
+          <th colspan="2">Account: <% formatAddr(hash, false, 50) %> </th>
         </tr>
         <tr>
           <th>Type</th>
@@ -29,10 +75,14 @@
           <th>Nonce</th>
           <td><% nonce %></td>
         </tr>
+        <!-- <tr>
+          <th>Last Transaction (UTC)</th>
+          <td><% JSON.stringify(transaction) %></td>
+        </tr> -->
         <tr v-if="object && object[0] == 'ticket'">
           <th>Device Data</th>
-          <td>
-            <table class="data">
+          <td class="big">
+            <table class="data nested">
               <tr>
                 <th>Gateway link</th>
                 <td>
@@ -74,8 +124,8 @@
         </tr>
         <tr v-if="node">
           <th>Miner Data</th>
-          <td>
-            <table class="data">
+          <td class="big">
+            <table class="data nested">
               <tr>
                 <th>Host</th>
                 <td><% node[1] %></td>
@@ -97,8 +147,8 @@
         </tr>
         <tr v-if="code">
           <th>Storage</th>
-          <td class="big">
-            <table class="data">
+          <td class="big" :style="{ height : ((storage.length * 50) + 140) + 'px' }">
+            <table class="data nested">
               <tr>
                 <th>Address</th>
                 <th>Value</th>
@@ -129,6 +179,7 @@ var Account = Vue.component("account", {
   delimiters: ["<%", "%>"],
   data: () => {
     return {
+      base: "",
       error: undefined,
       balance: undefined,
       stake: undefined,
@@ -137,39 +188,49 @@ var Account = Vue.component("account", {
       storage: [],
       node: undefined,
       object: undefined,
-      nonce: undefined
+      nonce: undefined,
+      transaction: undefined,
+      searchTerm: "",
+      searchActivated: false,
+      searchFinished: false,
+      searchResults: [],
     };
   },
   computed: {
-    type: function() {
+    type: function () {
       if (this.node) return "Miner";
       if (this.object) return "Device";
       if (this.rawcode == "0x") return "User (Human or Miner or Device)";
       if (this.codehash == FleetHash) return "Fleet";
       return "Contract";
     },
-    code: function() {
-      if (this.rawcode != '0x') return this.rawcode
-      return undefined
-    }
+    code: function () {
+      if (this.rawcode != "0x") return this.rawcode;
+      return undefined;
+    },
   },
-  created: function() {
+  created: function () {
+    let self = this;
+    getBase(function (base) {
+      self.base = base;
+    });
+
     this.update();
   },
   methods: {
-    update: function() {
+    update: function () {
       this.acc = undefined;
       web3.eth.getBalance(this.hash, (err, ret) => {
         this.err = undefined;
         if (err) this.error = err;
         else this.balance = ret;
       });
-      web3.eth.getNode(this.hash, (err, ret) => {
+      web3.eth.getNode(this.hash, true, (err, ret) => {
         this.err = undefined;
         if (err) this.error = err;
         else this.node = ret;
       });
-      web3.eth.getObject(this.hash, (err, ret) => {
+      web3.eth.getObject(this.hash, true, (err, ret) => {
         this.err = undefined;
         if (err) this.error = err;
         else this.object = ret;
@@ -178,6 +239,12 @@ var Account = Vue.component("account", {
         this.err = undefined;
         if (err) this.error = err;
         else this.codehash = ret;
+
+        //  web3.eth.getBlock(this.hash, 0, (err, ret) => {
+        //   this.err = undefined;
+        //   if (err) this.error = err;
+        //   else this.transaction = ret;
+        // });
       });
       web3.eth.getCode(this.hash, (err, ret) => {
         this.err = undefined;
@@ -195,15 +262,20 @@ var Account = Vue.component("account", {
         if (err) this.error = err;
         else this.nonce = ret;
       });
-      fetchStake(this.hash, stake => {
+      fetchStake(this.hash, (stake) => {
         this.stake = stake;
       });
-    }
+    },
   },
   watch: {
-    hash: function() {
+    hash: function () {
+      this.searchTerm = "";
+      this.searchActivated = false;
+      this.searchFinished = false;
+      this.searchResults = [];
+
       this.update();
-    }
-  }
+    },
+  },
 });
 </script>

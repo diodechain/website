@@ -58,7 +58,7 @@ ul.navbar {
       }
 
 
-      &.router-link-exact-active {
+      &.router-link-exact-active, &.router-link-active {
           padding-bottom: 3px;
           border-bottom:1px solid #F15C2E;
         }
@@ -235,6 +235,28 @@ table {
     border-spacing: 0;
   }
 
+  &.transposed {
+    border-top: 1px solid #ddd!important;
+    color: #000;
+
+    tr {
+      th {
+        width: 20%;
+        font-weight: normal;
+        border-right: 1px solid #ddd;
+      }
+
+      td {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  &.nested {
+    margin: 5px;
+    border-top: 1px solid #ddd!important;
+  }
+
   &.small-margin {
     margin-top: 25px;
     margin-left: -18px;
@@ -275,7 +297,8 @@ table {
 
     th.big, td.big {
       word-break: break-all;
-      max-height: 200px;
+      min-height: 220px;
+      max-height: 640px;
       overflow: scroll;
       display: block;
     }
@@ -290,6 +313,8 @@ table {
 
     td.big {
       overflow-wrap: anywhere;
+      overflow-x: hidden;
+
     }
   }
 }

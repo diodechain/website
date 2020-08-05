@@ -46,7 +46,9 @@ layout: ""
             </div>
             <ul class="navbar">
                 <li v-for="r in routes" v-if="r.name">
-                    <router-link :to="r"><% r.name %></router-link>
+                    <!-- this is kind of workaround since the base path - '/' is matched partially always -->
+                    <router-link v-if="r.path==='/'" :to="r" exact><% r.name %></router-link>
+                    <router-link v-else :to="r"><% r.name %></router-link>
                 </li>
             </ul>
         </div>
@@ -88,7 +90,10 @@ layout: ""
             { name: 'Overview', path: '/', component: PowerDistribution },
         ];
         const router = new VueRouter({ routes, base: '/prenet/' });
+
         router.beforeEach((to, from, next) => {
+            removeWrongActiveClass();
+
             if (Object.values(to.params).length) {
                 for (i = 0; i < routes.length; i++) {
                     let route = routes[i];
@@ -168,6 +173,7 @@ layout: ""
         DNSRefresh()
         subscribe("newBlockHeaders", DNSRefresh)
         setInterval(DNSRefresh, 25000)
+        removeWrongActiveClass()
 
         Vue.component("account-link", {
             template: '<router-link v-if="isAddress(hash)" :to="\'/address/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link><span v-else><% hash %></span>',
@@ -326,7 +332,7 @@ layout: ""
         function formatAddr(addr, onlyAlias, length) {
             let alias = resolveName(addr);
             if (onlyAlias) return shorten(alias, length);
-            if (alias != addr) return shorten(addr, 20) + ' (' + alias + ')';
+            if (alias != addr) return shorten(addr, length) + ' (' + alias + ')';
             return shorten(addr, length);
         }
 
@@ -342,6 +348,13 @@ layout: ""
 
             // Will display time in 10:30:23 format
             return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        }
+
+        function removeWrongActiveClass() {
+            // let overviewPageLink = document.querySelector(".navbar li:last-child a");
+            // if (overviewPageLink) {
+            //     overviewPageLink.classList.remove("router-link-active");
+            // }
         }
 
     </script>

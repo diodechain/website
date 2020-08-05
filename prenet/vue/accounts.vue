@@ -133,46 +133,52 @@
           </div>
         </figure>
       </div>
-        <table class="data" style="width: auto" v-if="searchTerm && searchActivated">
-          <caption><% searchResults.length %> Search Results</caption>
-          <tr v-if="searchResults.length">
-            <th>Page</th>
-            <th>Match Term</th>
-          </tr>
-          <tr v-else-if="searchFinished">
+      <table class="data" style="width: auto" v-if="searchTerm && searchActivated">
+        <caption><% searchResults.length %> Search Results</caption>
+        <tr v-if="searchResults.length">
+          <th>Page</th>
+          <th>Match Term</th>
+        </tr>
+        <tr v-else-if="searchFinished">
+          <td>
+            <div class="empty-search">
+              Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers,
+              BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
+            </div>
+          </td>
+        </tr>
+        <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
+          <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
             <td>
-              <div class="empty-search">
-                Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers,
-                BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
-              </div>
+              <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
+              <router-link
+                v-if="result.type==='Address' || result.isAddress"
+                :to="'/address/' + result.id"
+              ><% result.type %></router-link>
+              <router-link
+                v-if="result.type==='Transaction'"
+                :to="'/tx/' + result.id"
+              ><% result.type %></router-link>
             </td>
+            <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
           </tr>
-          <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
-            <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
-              <td>
-                <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
-                <router-link
-                  v-if="result.type==='Address' || result.isAddress"
-                  :to="'/address/' + result.id"
-                ><% result.type %></router-link>
-                <router-link
-                  v-if="result.type==='Transaction'"
-                  :to="'/tx/' + result.id"
-                ><% result.type %></router-link>
-              </td>
-              <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
-            </tr>
-          </tbody>
-        </table>
+        </tbody>
+      </table>
       <table v-else class="data small-margin">
         <caption>
-          Accounts <br/>
-          <select name="filterType" @change="onFilterChange($event)" class="form-control" v-model="filter">
+          Accounts
+          <br />
+          <select
+            name="filterType"
+            @change="onFilterChange($event)"
+            class="form-control"
+            v-model="filter"
+          >
             <option value="All">All accounts</option>
             <option value="Fleet">Fleets</option>
             <option value="Contract">Contracts</option>
             <option value="Wallet">Wallets</option>
-        </select>
+          </select>
         </caption>
 
         <tr>
@@ -220,7 +226,10 @@ var Accounts = Vue.component("accounts", {
   },
 
   created: function () {
-    this.filter = ACCOUNTS_FILTER_MAP[this.$route.query.filter] || ACCOUNTS_ALL_FILTER;
+    removeWrongActiveClass();
+
+    this.filter =
+      ACCOUNTS_FILTER_MAP[this.$route.query.filter] || ACCOUNTS_ALL_FILTER;
 
     this.update();
 
@@ -242,7 +251,10 @@ var Accounts = Vue.component("accounts", {
         else if (hash == NullHash) accounts[id].type = "Wallet";
         else accounts[id].type = "Contract";
 
-        if (this.filter !== ACCOUNTS_ALL_FILTER && this.filter !== accounts[id].type) {
+        if (
+          this.filter !== ACCOUNTS_ALL_FILTER &&
+          this.filter !== accounts[id].type
+        ) {
           delete accounts[id];
           continue;
         }
@@ -349,9 +361,9 @@ var Accounts = Vue.component("accounts", {
         return b[property] - a[property];
       });
     },
-    onFilterChange: function(event) {
+    onFilterChange: function (event) {
       this.update();
-    }
+    },
   },
 });
 </script>
