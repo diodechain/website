@@ -1,7 +1,23 @@
 <template id="dns">
-  <div >
-    <div class="title">
-      <h1>Prenet Blockchain Name System (BNS)</h1>
+  <div>
+    <div class="title row">
+      <div class="col-md-2">
+        <h1>Account Detail</h1>
+      </div>
+      <div class="col-md-6">
+        <search-bar
+          v-bind:results.sync="searchResults"
+          v-model="searchTerm"
+          v-bind:activated.sync="searchActivated"
+          v-bind:finished.sync="searchFinished"
+        />
+      </div>
+      <div class="col-md-4">
+        <p>
+          connected to
+          <account-link :hash="base" :length="50" :only-alias="false" />
+        </p>
+      </div>
     </div>
     <div v-if="!enabled" class="column">
       <div>To register a new name or change an existing registration you have to Enable MetaMask on this site.</div>
@@ -12,6 +28,37 @@
       <div v-if="Object.entries(names).length == 0">
         <b style="font-size: 150%">Loading...</b>
       </div>
+      <table class="data" style="width: auto" v-else-if="searchTerm && searchActivated">
+        <caption><% searchResults.length %> Search Results</caption>
+        <tr v-if="searchResults.length">
+          <th>Page</th>
+          <th>Match Term</th>
+        </tr>
+        <tr v-else-if="searchFinished">
+          <td>
+            <div class="empty-search">
+              Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers,
+              BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
+            </div>
+          </td>
+        </tr>
+        <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
+          <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
+            <td>
+              <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
+              <router-link
+                v-if="result.type==='Address' || result.isAddress"
+                :to="'/address/' + result.id"
+              ><% result.type %></router-link>
+              <router-link
+                v-if="result.type==='Transaction'"
+                :to="'/tx/' + result.id"
+              ><% result.type %></router-link>
+            </td>
+            <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
+          </tr>
+        </tbody>
+      </table>
       <table v-else class="data">
         <tr>
           <th>Your Account</th>
@@ -47,7 +94,11 @@
                       />
                       <span>Register!</span>
                     </button>
-                    <input type="text" v-model.trim="deviceId[name.name]" placeholder="0x1234556..." />
+                    <input
+                      type="text"
+                      v-model.trim="deviceId[name.name]"
+                      placeholder="0x1234556..."
+                    />
                   </div>
                 </td>
                 <td>
@@ -58,7 +109,11 @@
             <hr />
             <div v-if="enabled">
               <input type="text" v-model.trim="newName" placeholder="some-name" />
-              <button class="button" v-on:click="addName(newName)" :disabled="newName.length <= 7">Add Name</button>
+              <button
+                class="button"
+                v-on:click="addName(newName)"
+                :disabled="newName.length <= 7"
+              >Add Name</button>
             </div>
           </td>
         </tr>
@@ -72,33 +127,42 @@ var DNS = Vue.component("dns", {
   delimiters: ["<%", "%>"],
   data: () => {
     return {
+      base: "",
       enabled: false,
       account: false,
       error: false,
       newName: "",
       deviceId: {},
       names: {},
-      submitDns: false
+      submitDns: false,
+      searchTerm: "",
+      searchActivated: false,
+      searchFinished: false,
+      searchResults: [],
     };
   },
 
-  created: function() {
+  created: function () {
     this.refreshNames();
     setInterval(() => {
-      if (!this.enabled && window.ethereum && window.ethereum.selectedAddress != null) {
+      if (
+        !this.enabled &&
+        window.ethereum &&
+        window.ethereum.selectedAddress != null
+      ) {
         this.enable();
       }
       this.refreshNames();
     }, 1000);
   },
   methods: {
-    refreshNames: function() {
+    refreshNames: function () {
       for (key in DNSCache) {
         let name = DNSCache[key].name;
         let entry = {
           name,
           destination: DNSCache[key].destination,
-          owner: DNSCache[key].owner
+          owner: DNSCache[key].owner,
         };
         this.$set(this.names, name, entry);
       }
@@ -110,22 +174,22 @@ var DNS = Vue.component("dns", {
         }
       }
     },
-    addName: function(name) {
+    addName: function (name) {
       if (!name || this.names[name]) return;
       let entry = {
         name,
         destination: "loading",
-        owner: "loading"
+        owner: "loading",
       };
       this.$set(this.names, name, entry);
     },
-    reloadName: function(name) {
-      this.resolve(name, dest => {
+    reloadName: function (name) {
+      this.resolve(name, (dest) => {
         this.names[name].destination = "0x" + dest.substring(dest.length - 40);
         this.$set(this.names, name, this.names[name]);
       });
     },
-    enable: function() {
+    enable: function () {
       if (!window.ethereum || !window.ethereum.isMetaMask) {
         this.error =
           "Please install <a href='https://metamask.io/'>MetaMask</a>";
@@ -141,7 +205,7 @@ var DNS = Vue.component("dns", {
         // let currentChainId = null
         this.enabled = true;
         this.account = accounts[0];
-        window.ethereum.on("chainChanged", chainId =>
+        window.ethereum.on("chainChanged", (chainId) =>
           this.handleChainChanged(chainId)
         );
         // Until eth_chainId calls actually works...
@@ -152,7 +216,7 @@ var DNS = Vue.component("dns", {
         //   .catch(err => console.error(err))
       });
     },
-    handleChainChanged: function(chainId) {
+    handleChainChanged: function (chainId) {
       if (chainId != "41043") {
         this.error = "MetaMask is not connected to the Diode Network";
         this.enabled = false;
@@ -163,19 +227,19 @@ var DNS = Vue.component("dns", {
     resolve(name, callback) {
       CallDNS("Resolve", [name], callback);
     },
-    registerName: async function(name, destination) {
+    registerName: async function (name, destination) {
       let call = web3.eth.abi.encodeFunctionCall(dnsMethods["Register"], [
         name,
-        destination
+        destination,
       ]);
       this.submitDns = name;
       window.ethereum.sendAsync(
         {
           method: "eth_sendTransaction",
           params: [
-            { from: this.account, to: DNSAddr, data: call, gasPrice: 0 }
+            { from: this.account, to: DNSAddr, data: call, gasPrice: 0 },
           ],
-          from: this.account
+          from: this.account,
         },
         (err, ret) => {
           if (err) {
@@ -187,12 +251,12 @@ var DNS = Vue.component("dns", {
             let { result } = ret;
             this.isTxConfirmed(result)
               .then(
-                function(tx) {
+                function (tx) {
                   this.submitDns = false;
                 }.bind(this)
               )
               .catch(
-                function(err) {
+                function (err) {
                   this.submitDns = false;
                   console.log("[RegisterName] error: ", name, destination, err);
                 }.bind(this)
@@ -203,17 +267,17 @@ var DNS = Vue.component("dns", {
         }
       );
     },
-    execAfter: function(callback, time) {
-      return new Promise(function(resolve, reject) {
+    execAfter: function (callback, time) {
+      return new Promise(function (resolve, reject) {
         window.setTimeout(() => {
           resolve(callback());
         }, time);
       });
     },
-    isTxConfirmed: function(txHash) {
+    isTxConfirmed: function (txHash) {
       // const self = this
       return new Promise(
-        function(resolve, reject) {
+        function (resolve, reject) {
           if (
             !txHash ||
             txHash.length != 66 ||
@@ -224,7 +288,7 @@ var DNS = Vue.component("dns", {
           web3.eth
             .getTransactionReceipt(txHash)
             .then(
-              function(tx) {
+              function (tx) {
                 if (tx) {
                   if (tx.status === true) {
                     return resolve(tx);
@@ -237,7 +301,7 @@ var DNS = Vue.component("dns", {
               }.bind(this)
             )
             .catch(
-              function(err) {
+              function (err) {
                 resolve(
                   this.execAfter(this.isTxConfirmed.bind(this, txHash), 1000)
                 );
@@ -245,7 +309,7 @@ var DNS = Vue.component("dns", {
             );
         }.bind(this)
       );
-    }
-  }
+    },
+  },
 });
 </script>
