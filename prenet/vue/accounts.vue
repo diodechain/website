@@ -226,8 +226,6 @@ var Accounts = Vue.component("accounts", {
   },
 
   created: function () {
-    removeWrongActiveClass();
-
     this.filter =
       ACCOUNTS_FILTER_MAP[this.$route.query.filter] || ACCOUNTS_ALL_FILTER;
 
