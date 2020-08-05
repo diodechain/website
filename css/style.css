@@ -6208,6 +6208,20 @@ select:focus {
   outline: none;
 }
 
+.loading {
+  position: fixed;
+  top: 45%;
+  left: 48%;
+  font-size: 1.5em;
+}
+
+.align-start {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 /* @media screen and (min-width: 1440px) {(max-width: 1600px){
     .headtable{
      width:60%;

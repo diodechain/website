@@ -23,7 +23,7 @@
         <tr>
           <th class="fleet">Your Fleet</th>
           <td class="fleet">
-            <div v-if="contracts == undefined">Loading...</div>
+            <div v-if="contracts == undefined" class="loading">Loading...</div>
             <div v-else-if="contracts.length == 0">
               No contracts identified.
               <button class="button" v-on:click="createFleet()"><img v-show="submitFleet" style="height:14px;margin-right:5px;" src="images/spinning.gif"/><span>Create New Fleet</span></button>

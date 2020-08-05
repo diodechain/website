@@ -1,8 +1,9 @@
 <template id="dns">
   <div>
+    <% account %>
     <div class="title row">
       <div class="col-md-2">
-        <h1>Account Detail</h1>
+        <h1>Blockchain names system</h1>
       </div>
       <div class="col-md-6">
         <search-bar
@@ -24,9 +25,9 @@
       <button class="button" v-on:click="enable()">Enable MetaMask</button>
       <div v-if="error" class="error"><% error %></div>
     </div>
-    <div class="column">
+    <div v-else class="page-content">
       <div v-if="Object.entries(names).length == 0">
-        <b style="font-size: 150%">Loading...</b>
+        <b class="loading">Loading...</b>
       </div>
       <table class="data" style="width: auto" v-else-if="searchTerm && searchActivated">
         <caption><% searchResults.length %> Search Results</caption>
@@ -59,65 +60,69 @@
           </tr>
         </tbody>
       </table>
-      <table v-else class="data">
-        <tr>
-          <th>Your Account</th>
-          <td>
-            <account-link :hash="account" :length="50"></account-link>
-          </td>
-        </tr>
-        <tr>
-          <th class="fleet">Known Names</th>
-          <td class="fleet">
-            <table class="data">
+      <div v-else class="row align-start">
+        <div class="col-md-3 doclet">
+          <table class="data" style="width: auto">
+            <caption>Your account</caption>
+            <tbody>
               <tr>
-                <th>Name</th>
-                <th>Destination</th>
-                <th>Owner</th>
-              </tr>
-              <tr v-bind:key="name.name" v-for="name in names">
-                <td><% name.name %></td>
                 <td>
-                  <storage-value :value="name.destination"></storage-value>
-                  <div
-                    v-if="enabled && (valueToAddress(name.owner)==account || valueToAddress(name.owner) == undefined)"
-                  >
-                    <button
-                      class="button"
-                      v-on:click="registerName(name.name, deviceId[name.name])"
-                      :disabled="!web3.utils.isAddress(deviceId[name.name])"
-                    >
-                      <img
-                        v-show="submitDns==name.name"
-                        style="height:14px;margin-right:5px;"
-                        src="images/spinning.gif"
-                      />
-                      <span>Register!</span>
-                    </button>
-                    <input
-                      type="text"
-                      v-model.trim="deviceId[name.name]"
-                      placeholder="0x1234556..."
-                    />
+                  <div>
+                    Name:
+                    <account-link :hash="account" :length="20"></account-link>
                   </div>
-                </td>
-                <td>
-                  <storage-value :value="name.owner" />
+                  <div>Balance: <% balance %> DIO</div>
                 </td>
               </tr>
-            </table>
-            <hr />
-            <div v-if="enabled">
-              <input type="text" v-model.trim="newName" placeholder="some-name" />
-              <button
-                class="button"
-                v-on:click="addName(newName)"
-                :disabled="newName.length <= 7"
-              >Add Name</button>
-            </div>
-          </td>
-        </tr>
-      </table>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-9">
+          <table class="data">
+            <caption>
+              <div v-if="enabled">
+                <input type="text" v-model.trim="newName" placeholder="some-name" />
+                <button
+                  class="button"
+                  v-on:click="addName(newName)"
+                  :disabled="newName.length <= 7"
+                >Add Name</button>
+              </div>
+            </caption>
+            <tr>
+              <th>Name</th>
+              <th>Destination</th>
+              <th>Owner</th>
+            </tr>
+            <tr v-bind:key="name.name" v-for="name in names">
+              <td><% name.name %></td>
+              <td>
+                <storage-value :value="name.destination"></storage-value>
+                <div
+                  v-if="enabled && (valueToAddress(name.owner)==account || valueToAddress(name.owner) == undefined)"
+                >
+                  <button
+                    class="button"
+                    v-on:click="registerName(name.name, deviceId[name.name])"
+                    :disabled="!web3.utils.isAddress(deviceId[name.name])"
+                  >
+                    <img
+                      v-show="submitDns==name.name"
+                      style="height:14px;margin-right:5px;"
+                      src="images/spinning.gif"
+                    />
+                    <span>Register!</span>
+                  </button>
+                  <input type="text" v-model.trim="deviceId[name.name]" placeholder="0x1234556..." />
+                </div>
+              </td>
+              <td>
+                <storage-value :value="name.owner" />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -129,7 +134,7 @@ var DNS = Vue.component("dns", {
     return {
       base: "",
       enabled: false,
-      account: false,
+      account: "",
       error: false,
       newName: "",
       deviceId: {},
@@ -139,10 +144,16 @@ var DNS = Vue.component("dns", {
       searchActivated: false,
       searchFinished: false,
       searchResults: [],
+      balance: 0,
     };
   },
 
   created: function () {
+    let self = this;
+    getBase(function (base) {
+      self.base = base;
+    });
+
     this.refreshNames();
     setInterval(() => {
       if (
@@ -166,6 +177,7 @@ var DNS = Vue.component("dns", {
         };
         this.$set(this.names, name, entry);
       }
+
       for (key in this.names) {
         if (this.names[key].destination == "loading") {
           this.names[key].destination = "undefined";
@@ -205,6 +217,13 @@ var DNS = Vue.component("dns", {
         // let currentChainId = null
         this.enabled = true;
         this.account = accounts[0];
+
+        web3.eth.getBalance(this.account, (err, ret) => {
+          this.err = undefined;
+          if (err) this.error = err;
+          else this.balance = ret;
+        });
+
         window.ethereum.on("chainChanged", (chainId) =>
           this.handleChainChanged(chainId)
         );
