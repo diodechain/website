@@ -5,9 +5,11 @@
         <h1>Account Browser</h1>
       </div>
       <div class="col-md-6">
-        <search-bar v-bind:results.sync="searchResults" v-model="searchTerm"
-                    v-bind:activated.sync="searchActivated"
-                    v-bind:finished.sync="searchFinished"
+        <search-bar
+          v-bind:results.sync="searchResults"
+          v-model="searchTerm"
+          v-bind:activated.sync="searchActivated"
+          v-bind:finished.sync="searchFinished"
         />
       </div>
       <div class="col-md-4">
@@ -18,7 +20,7 @@
       </div>
     </div>
     <div class="column page-content">
-      <div v-if="!filter" class="graphs">
+      <div v-if="filter === ACCOUNTS_ALL_FILTER" class="graphs">
         <figure>
           <div class="row">
             <div class="col-md-12">
@@ -83,20 +85,20 @@
 
           <div class="row">
             <div class="col-md-6 col-md-offset-1">
-            <figcaption class="figure-key">
-              <ul class="figure-key-list long" aria-hidden="true" role="presentation">
-                <li v-for="acc in accountsByStake" :key="acc.stakeValue">
-                  <span class="shape-square" v-bind:style="{ backgroundColor: acc.color }"></span>
-                  <div class="figure-legend">
-                    <div class v-if="acc.id">
-                      <account-link :hash="acc.id" :only-alias="true" :length="10"></account-link>
+              <figcaption class="figure-key">
+                <ul class="figure-key-list long" aria-hidden="true" role="presentation">
+                  <li v-for="acc in accountsByStake" :key="acc.stakeValue">
+                    <span class="shape-square" v-bind:style="{ backgroundColor: acc.color }"></span>
+                    <div class="figure-legend">
+                      <div class v-if="acc.id">
+                        <account-link :hash="acc.id" :only-alias="true" :length="10"></account-link>
+                      </div>
+                      <span class="ul1" v-if="acc.name"><% acc.name %></span>
+                      <span class="ul2"><% Math.round(acc.stakeValue) %> DIO</span>
                     </div>
-                    <span class="ul1" v-if="acc.name"><% acc.name %></span>
-                    <span class="ul2"><% Math.round(acc.stakeValue) %> DIO</span>
-                  </div>
-                </li>
-              </ul>
-            </figcaption>
+                  </li>
+                </ul>
+              </figcaption>
             </div>
             <div class="figure-content col-md-5">
               <svg
@@ -131,8 +133,48 @@
           </div>
         </figure>
       </div>
+        <table class="data" style="width: auto" v-if="searchTerm && searchActivated">
+          <caption><% searchResults.length %> Search Results</caption>
+          <tr v-if="searchResults.length">
+            <th>Page</th>
+            <th>Match Term</th>
+          </tr>
+          <tr v-else-if="searchFinished">
+            <td>
+              <div class="empty-search">
+                Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers,
+                BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
+              </div>
+            </td>
+          </tr>
+          <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
+            <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
+              <td>
+                <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
+                <router-link
+                  v-if="result.type==='Address' || result.isAddress"
+                  :to="'/address/' + result.id"
+                ><% result.type %></router-link>
+                <router-link
+                  v-if="result.type==='Transaction'"
+                  :to="'/tx/' + result.id"
+                ><% result.type %></router-link>
+              </td>
+              <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
+            </tr>
+          </tbody>
+        </table>
+      <table v-else class="data small-margin">
+        <caption>
+          Accounts <br/>
+          <select name="filterType" @change="onFilterChange($event)" class="form-control" v-model="filter">
+            <option value="All">All accounts</option>
+            <option value="Fleet">Fleets</option>
+            <option value="Contract">Contracts</option>
+            <option value="Wallet">Wallets</option>
+        </select>
+        </caption>
 
-      <table class="data">
         <tr>
           <th>Account</th>
           <th>Type</th>
@@ -165,7 +207,7 @@ var Accounts = Vue.component("accounts", {
       searchActivated: false,
       searchFinished: false,
       searchResults: [],
-      filter: ''
+      filter: "",
     };
   },
   computed: {
@@ -178,11 +220,12 @@ var Accounts = Vue.component("accounts", {
   },
 
   created: function () {
-    this.filter = ACCOUNTS_FILTER_MAP[this.$route.query.filter];
+    this.filter = ACCOUNTS_FILTER_MAP[this.$route.query.filter] || ACCOUNTS_ALL_FILTER;
+
     this.update();
 
     let self = this;
-    getBase(function(base) {
+    getBase(function (base) {
       self.base = base;
     });
   },
@@ -190,6 +233,8 @@ var Accounts = Vue.component("accounts", {
     update: async function () {
       let accounts = await web3.eth.getAllAccounts();
       let accountsCopy = [];
+      this.accountsByBalance = [];
+      this.accountsByStake = [];
 
       for (let id in accounts) {
         hash = accounts[id].codehash;
@@ -197,8 +242,8 @@ var Accounts = Vue.component("accounts", {
         else if (hash == NullHash) accounts[id].type = "Wallet";
         else accounts[id].type = "Contract";
 
-        if (this.filter && this.filter !== accounts[id].type) {
-          delete  accounts[id];
+        if (this.filter !== ACCOUNTS_ALL_FILTER && this.filter !== accounts[id].type) {
+          delete accounts[id];
           continue;
         }
 
@@ -226,6 +271,7 @@ var Accounts = Vue.component("accounts", {
       );
 
       let lazyLoadIndex = 0;
+
       for (let id in accounts) {
         fetchStake(id, (stake) => {
           this.$set(this.accounts[id], "stake", valueToBalance(stake));
@@ -303,6 +349,9 @@ var Accounts = Vue.component("accounts", {
         return b[property] - a[property];
       });
     },
+    onFilterChange: function(event) {
+      this.update();
+    }
   },
 });
 </script>

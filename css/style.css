@@ -5591,6 +5591,11 @@ body.prenet table.data {
   border-spacing: 0;
 }
 
+body.prenet table.small-margin {
+  margin-top: 25px;
+  margin-left: -18px;
+}
+
 body.prenet table.inner {
   border-collapse: collapse;
   border-spacing: 0;
@@ -5631,6 +5636,7 @@ body.prenet table.data th {
   white-space: nowrap;
   vertical-align: top;
   padding-top: 20px;
+  color: #000000;
 }
 
 body.prenet table.data td.big {
@@ -5687,7 +5693,7 @@ body.prenet .chart-label {
 
 body.prenet figure {
   border: 1px solid #dbdbdb;
-  margin: 5% 0px 0px 0px;
+  margin: 25px 0px 0px 0px;
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
@@ -5965,6 +5971,10 @@ body.prenet .headtable {
           flex-wrap: wrap;
 }
 
+body.prenet .headtable figure {
+  margin-top: 5%;
+}
+
 body.prenet .headtable .doclet {
   width: 30%;
   -webkit-box-flex: 1;
@@ -6157,6 +6167,23 @@ body.prenet .tooltip[aria-hidden='false'] {
   -webkit-transition: opacity .15s;
   -o-transition: opacity .15s;
   transition: opacity .15s;
+}
+
+select {
+  width: 132px;
+  height: 25px;
+  margin-top: 10px;
+  background: #F15C2E;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  color: white;
+  padding-left: 7px;
+  font-size: 14px;
+  border-color: #F15C2E;
+}
+
+select:focus {
+  outline: none;
 }
 
 /* @media screen and (min-width: 1440px) {(max-width: 1600px){

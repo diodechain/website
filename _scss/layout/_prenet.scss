@@ -235,6 +235,11 @@ table {
     border-spacing: 0;
   }
 
+  &.small-margin {
+    margin-top: 25px;
+    margin-left: -18px;
+  }
+
   &.inner {
     border-collapse: collapse;
     border-spacing: 0;
@@ -280,6 +285,7 @@ table {
       white-space: nowrap;
       vertical-align: top;
       padding-top: 20px;
+      color: #000000;
     }
 
     td.big {
@@ -342,7 +348,7 @@ table {
 
 figure {
   border:1px solid #dbdbdb;
-  margin: 5% 0px 0px 0px;
+  margin: 25px 0px 0px 0px;
   justify-content: space-around;
   flex-direction: column;
   background: white;
@@ -566,6 +572,10 @@ figure {
   flex-direction: inherit;
   flex-wrap: wrap;
 
+  figure {
+    margin-top: 5%;
+  }
+
   .doclet {
     width: 30%;
     -webkit-box-flex: 1;
@@ -751,6 +761,22 @@ figure {
     transition: opacity .15s;
   }
 }
+}
+
+select {
+  width: 132px;
+  height: 25px;
+  margin-top:10px;
+  background: #F15C2E;
+  border-radius: 3px;
+  color: white;
+  padding-left: 7px;
+  font-size: 14px;
+  border-color:#F15C2E;
+
+  &:focus{
+    outline: none;
+  }
 }
 /* @media screen and (min-width: 1440px) {(max-width: 1600px){
     .headtable{

@@ -31,6 +31,8 @@ const ACCOUNTS_FILTER_MAP = {
     "wallets": "Wallet"
 }
 
+const ACCOUNTS_ALL_FILTER = "All"
+
 var fleetMethods = {
     "deviceWhitelist": {
         name: "deviceWhitelist",
