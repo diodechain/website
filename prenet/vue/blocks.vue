@@ -5,9 +5,12 @@
         <h1>Prenet Overview</h1>
       </div>
       <div class="col-md-3">
-        <search-bar v-bind:blocks.sync="blocks" v-bind:results.sync="searchResults" v-model="searchTerm"
-                    v-bind:activated.sync="searchActivated"
-                    v-bind:finished.sync="searchFinished"
+        <search-bar
+          v-bind:blocks.sync="blocks"
+          v-bind:results.sync="searchResults"
+          v-model="searchTerm"
+          v-bind:activated.sync="searchActivated"
+          v-bind:finished.sync="searchFinished"
         />
       </div>
       <div class="col-md-4 col-md-offset-3">
@@ -19,7 +22,7 @@
     </div>
     <div class="page-content" style=" flex-direction: row; align-items: flex-start;">
       <div v-if="searchTerm && searchActivated">
-        <table class="data" style="width: auto">
+        <table class="data">
           <caption><% searchResults.length %> Search Results</caption>
           <tr v-if="searchResults.length">
             <th>Page</th>
@@ -52,83 +55,49 @@
         </table>
       </div>
       <div v-else>
-        <div style="display: flex;">
-          <div class="headtable">
-            <!-- TODO
+        <div class="graphs headtable full-width">
+          <!-- TODO
             https://codepen.io/team/css-tricks/pen/Zbervy
-            https://codepen.io/team/css-tricks/pen/cb00290fb3ee28378498eca296d7c395 -->
-            <figure>
-              <div class="row">
-                <div class="col-md-12">
-                  <h2>Top Miners over Last 100 Blocks</h2>
-                </div>
+          https://codepen.io/team/css-tricks/pen/cb00290fb3ee28378498eca296d7c395
+
+          -->
+          <figure>
+            <div class="row">
+              <div class="col-md-12">
+                <h2>Transactions count - Last 100 Blocks</h2>
               </div>
-              <div class="col-md-3 col-md-offset-1">
-                <figcaption class="figure-key">
-                  <ul class="figure-key-list" aria-hidden="true" role="presentation">
-                    <li v-for="miner in shares" :key="miner.name">
-                      <span class="shape-square" v-bind:style="{ backgroundColor: miner.color }"></span>
-                      <div style="flow: flex; flex-layout: column;">
-                        <div class="figure-title">
-                          <account-link :hash="miner.name" :only-alias="true" :length="10"></account-link>
-                        </div>
-                        <div class="ul1"><% miner.count %> Blocks</div>
-                      </div>
-                    </li>
-                  </ul>
-                </figcaption>
+              <div class="col-md-12">
+                <svg viewBox="-30 -10 800 181" class="line-chart">
+                  <g class="grid x-grid" id="xGrid">
+                    <line x1="0" x2="0" y1="0" y2="151" />
+                  </g>
+                  <g class="grid y-grid" id="yGrid">
+                    <line x1="0" x2="900" y1="150" y2="150" />
+                  </g>
+                  <g class="labels x-labels">
+                    <text
+                      v-for="time in lineTimes"
+                      v-bind:key="time"
+                      v-bind:x="time.x"
+                      y="165"
+                    ><% time.value %></text>
+                  </g>
+                  <g class="labels y-labels">
+                    <text
+                      v-for="item in lineYValues"
+                      v-bind:key="item"
+                      v-bind:y="item.y"
+                      x="-5"
+                    ><% item.value %></text>
+                  </g>
+                  <polyline fill="none" stroke="#3498db" stroke-width="1" v-bind:points="points" />
+                </svg>
               </div>
-              <div class="col-md-7">
-                <div class="figure-content" v-if="totalMiners">
-                  <svg width="400" height="140">
-                    <g transform="translate(40,20)">
-                      <g class="x axis" transform="translate(0,100)">
-                        <g
-                          v-for="(miner, index) in shares"
-                          :key="miner.name"
-                          class="tick"
-                          :transform="'translate(' + (27 + (index * 70)) + ',0)'"
-                          style="opacity: 1;"
-                        >
-                          <line y2="6" x2="0" />
-                          <text
-                            fill="#F15C2E"
-                            dy=".71em"
-                            y="9"
-                            x="10"
-                            style="text-anchor: middle;"
-                          ><% formatAddr(miner.name, true, 10) %></text>
-                        </g>
-                        <path class="domain" d="M0,2V0H350V2" />
-                      </g>
-                      <g class="y axis">
-                        <path class="domain" d="M-2,0H0V102H-2" />
-                      </g>
-                      <g v-for="(miner, index) in shares" :key="miner.name">
-                        <rect
-                          class="bar"
-                          :x="(10 + (index * 70))"
-                          width="45"
-                          :y="100 - miner.scaledCount"
-                          :height="miner.scaledCount"
-                          :style="'fill:' + miner.color"
-                        />
-                        <text
-                          dy=".71em"
-                          :y="100 - miner.scaledCount - 15"
-                          :x="(27 + (index * 70))"
-                          style="text-anchor: middle;"
-                        ><% miner.count %></text>
-                      </g>
-                    </g>
-                  </svg>
-                </div>
-              </div>
-            </figure>
-          </div>
+            </div>
+          </figure>
         </div>
 
-        <table class="data" style="width: auto">
+        <table class="data">
           <caption>Last 100 Blocks</caption>
           <tr>
             <th>Block</th>
@@ -141,7 +110,7 @@
               <td>
                 <router-link :to="'/block/' + block.number"><% block.number %></router-link>
               </td>
-              <td><% formatUnix(block.timestamp) %></td>
+              <td><% dateFormat(block.timestamp) %></td>
               <td>
                 <account-link :hash="block.miner" :only-alias="true" :length="10"></account-link>
               </td>
@@ -160,7 +129,6 @@ var Blocks = Vue.component("blocks", {
   data: () => {
     return {
       base: "",
-      miners: [],
       blocks: [],
       stakes: {},
       targetSize: 100,
@@ -168,68 +136,85 @@ var Blocks = Vue.component("blocks", {
       searchTerm: "",
       searchActivated: false,
       searchFinished: false,
-      searchResults: []
+      searchResults: [],
+      lineTimes: [],
+      lineYValues: [],
     };
   },
   computed: {
-    shares: function () {
+    points: function () {
       let groups = {};
-      let size = this.blocks.length;
-      let minerIndex = 0;
+      if (!this.blocks.length) {
+        return "";
+      }
 
       this.blocks.forEach((block) => {
-        if (groups[block.miner]) {
-          groups[block.miner].count++;
+        let timeStamp = Math.round(block.timestamp / 40);
+
+        if (groups[timeStamp]) {
+          groups[timeStamp] += block.transactions.length;
         } else {
-          let color = PredefinedGraphicColors[minerIndex];
-
-          if (!color) {
-            color = getRandomColor();
-          }
-
-          groups[block.miner] = {
-            count: 1,
-            address: block.miner,
-            name: block.miner,
-            color: color,
-            shape: "background-color(" + color + ")",
-          };
-
-          minerIndex += 1;
+          groups[timeStamp] = block.transactions.length;
         }
       });
 
-      this.miners.splice(0, this.miners.length);
+      let lineChartData = Object.values(groups);
 
-      groups = Object.values(groups);
+      let lineChartDataKeys = Object.keys(groups);
 
-      let total = 0;
-      groups.forEach((miner) => {
-        this.miners.push(miner);
+      this.lineTimes = [];
 
-        if (total == 0) miner.offset = 25;
-        else miner.offset = 100 - total + 25;
-
-        miner.percent = Math.round((100 * miner.count) / this.blocks.length);
-        total += miner.percent;
-        miner.stroke = "" + miner.percent + " " + (100 - miner.percent);
-
-        this.fetchStake(miner.address);
-      });
-
-      this.totalMiners = groups.length;
-      var result = groups.sort((b, a) => a.count - b.count);
-
-      if (this.totalMiners) {
-        var topMiner = groups[0];
-        var scaleFactor = 100 / topMiner.count;
-
-        groups.forEach((miner) => {
-          miner.scaledCount = miner.count * scaleFactor;
-        });
+      for (let i = 0; i < lineChartDataKeys.length; i++) {
+        if (
+          i === 0 ||
+          i === lineChartDataKeys.length - 1 ||
+          i === Math.round(lineChartDataKeys.length / 2)
+        ) {
+          this.lineTimes.push({
+            value: formatUnix(lineChartDataKeys[i]),
+            x: this.lineTimes.length * 360 + 20,
+          });
+        }
       }
 
-      return result;
+      let maxValue = Math.max(...lineChartData);
+
+      let yMiddleValue = 3;
+      let yHeight = 150;
+
+      this.lineYValues = [{ value: 0, y: yHeight }];
+
+      let diff = Math.round(maxValue / yMiddleValue);
+      let diffHeight = yHeight / (yMiddleValue + 1);
+
+      let maxAdded = false;
+
+      for (let i = 0; i < yMiddleValue; i++) {
+        let value = i * diff + diff;
+        let item = { value: value, y: yHeight - (i + 1) * diffHeight };
+        this.lineYValues.push(item);
+
+        if (value === maxValue) {
+          maxAdded = true;
+        }
+      }
+
+      if (!maxAdded) {
+        this.lineYValues.push({ value: maxValue, y: 0 });
+      }
+
+      console.log(this.lineYValues);
+
+      var points = "";
+      for (let i = 0; i < lineChartData.length; i++) {
+        points +=
+          (i * 20).toString().padStart(2, "0") +
+          "," +
+          (150 - lineChartData[i] * 20).toString().padStart(2, "0") +
+          " ";
+      }
+
+      return points.trim();
     },
   },
   created: function () {
@@ -246,7 +231,7 @@ var Blocks = Vue.component("blocks", {
     },
     loader: async function () {
       let self = this;
-      getBase(function(base) {
+      getBase(function (base) {
         self.base = base;
       });
 
@@ -293,12 +278,11 @@ var Blocks = Vue.component("blocks", {
         }
       };
       for (let i = 0; i < size; i++) {
-        batch.add(web3.eth.getBlock.request(nr - i, true, cb));
+        batch.add(web3.eth.getBlock.request(nr - i, false, cb));
       }
       batch.execute();
-    }
+    },
   },
-
 });
 </script>
 

@@ -24,7 +24,7 @@
       <div v-else>Loading Block....</div>
     </div>
     <div v-else class="column page-content">
-      <table class="data" style="width: auto" v-if="searchTerm && searchActivated">
+      <table class="data" v-if="searchTerm && searchActivated">
         <caption><% searchResults.length %> Search Results</caption>
         <tr v-if="searchResults.length">
           <th>Page</th>

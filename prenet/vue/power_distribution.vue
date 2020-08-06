@@ -19,7 +19,7 @@
     </div>
     <div class="page-content" style=" flex-direction: row; align-items: flex-start;">
       <div v-if="searchTerm && searchActivated">
-        <table class="data" style="width: auto">
+        <table class="data">
           <caption><% searchResults.length %> Search Results</caption>
           <tr v-if="searchResults.length">
             <th>Page</th>
@@ -158,7 +158,7 @@
           </div>
         </div>
 
-        <table class="data" style="width: auto">
+        <table class="data">
           <caption>Last 100 Blocks</caption>
           <tr>
             <th>Block</th>

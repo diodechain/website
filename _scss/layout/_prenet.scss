@@ -258,6 +258,7 @@ body.prenet {
     &.data {
       margin-top: 43px;
       border: 1px solid #ddd;
+      width:100%;
       background-color: #ffffff;
       border-collapse: collapse;
       border-spacing: 0;
@@ -485,6 +486,33 @@ body.prenet {
         margin-right: 5px;
       }
     }
+
+    .line-chart {
+      background: white;
+      width: 100%;
+      height: 100%;
+      // border-left: 1px dotted #555;
+      // border-bottom: 1px dotted #555;
+      padding: 20px 20px 20px 0;
+
+      .labels.x-labels {
+        text-anchor: middle;
+        font-size: 0.7em;
+      }
+
+      .labels.y-labels {
+        text-anchor: end;
+        font-size: 0.7em;
+      }
+
+      .grid {
+        stroke: #ccc;
+        stroke-dasharray: 0;
+        stroke-width: 2;
+      }
+    }
+
+
   }
 
   .figure-key-list {
@@ -658,8 +686,13 @@ body.prenet {
     flex-direction: inherit;
     flex-wrap: wrap;
 
+    &.full-width {
+      width: 100%;
+    }
+
     figure {
-      margin-top: 5%;
+      margin-top: 45px;
+      width: 100%;
     }
 
     .doclet {

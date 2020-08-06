@@ -335,6 +335,10 @@ layout: ""
             return shorten(addr, length);
         }
 
+        function dateFormat(unix_timestamp) {
+            return new Date(unix_timestamp * 1000).toUTCString();
+        }
+
         function formatUnix(unix_timestamp) {
             // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
             let date = new Date(unix_timestamp * 1000);

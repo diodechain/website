@@ -133,7 +133,7 @@
           </div>
         </figure>
       </div>
-      <table class="data" style="width: auto" v-if="searchTerm && searchActivated">
+      <table class="data" v-if="searchTerm && searchActivated">
         <caption><% searchResults.length %> Search Results</caption>
         <tr v-if="searchResults.length">
           <th>Page</th>
