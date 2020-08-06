@@ -4,13 +4,13 @@
       <div class="col-md-2">
         <h1>Prenet Overview</h1>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-3">
         <search-bar v-bind:blocks.sync="blocks" v-bind:results.sync="searchResults" v-model="searchTerm"
                     v-bind:activated.sync="searchActivated"
                     v-bind:finished.sync="searchFinished"
         />
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-md-offset-3">
         <p>
           connected to
           <account-link :hash="base" :length="50" :only-alias="false" />

@@ -1,5 +1,5 @@
 <template id="search-bar">
-  <div class="search">
+  <div class="input-button">
     <i v-on:click="selectInput" v-if="!value" class="fa fa-search search-icon"></i>
     <i v-on:click="clearSearch" v-else class="fa fa-times-circle"></i>
     <input
@@ -31,7 +31,7 @@ var Search = Vue.component("search-bar", {
       finished: false,
       dnsNames: [],
       blocks: [],
-      results: []
+      results: [],
     };
   },
   watch: {
@@ -43,7 +43,9 @@ var Search = Vue.component("search-bar", {
   },
   methods: {
     search: async function () {
-      if (!this.value) { return; }
+      if (!this.value) {
+        return;
+      }
 
       this.value = this.value.trim();
       if (this.value.length === 0) {
@@ -53,8 +55,8 @@ var Search = Vue.component("search-bar", {
       this.finished = false;
       this.activated = true;
 
-      this.$emit('update:finished', this.finished);
-      this.$emit('update:activated', this.activated);
+      this.$emit("update:finished", this.finished);
+      this.$emit("update:activated", this.activated);
 
       this.results.splice(0, this.results.length);
 
@@ -112,10 +114,7 @@ var Search = Vue.component("search-bar", {
         }
 
         try {
-          await web3.eth.getBlock(blockvalue, false, function (
-            error,
-            block
-          ) {
+          await web3.eth.getBlock(blockvalue, false, function (error, block) {
             if (!error) {
               let matchedvalue = self.value.startsWith("0x")
                 ? block.hash
@@ -143,7 +142,7 @@ var Search = Vue.component("search-bar", {
 
       this.finished = true;
 
-      this.$emit('update:finished', this.finished);
+      this.$emit("update:finished", this.finished);
     },
     selectInput: function () {
       this.$refs.searchInput.focus();
@@ -153,8 +152,8 @@ var Search = Vue.component("search-bar", {
       this.activated = false;
       this.results.splice(0, this.results.length);
 
-      this.$emit('update:activated', this.activated);
-      this.$emit('input', this.value);
+      this.$emit("update:activated", this.activated);
+      this.$emit("input", this.value);
     },
     loadDnsNames() {
       for (const key in DNSCache) {

@@ -1,10 +1,10 @@
 <template id="account">
   <div>
     <div class="title row">
-      <div class="col-md-2">
+      <div class="col-md-2  ">
         <h1>Account Detail</h1>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-3">
         <search-bar
           v-bind:results.sync="searchResults"
           v-model="searchTerm"
@@ -12,7 +12,7 @@
           v-bind:finished.sync="searchFinished"
         />
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4  col-md-offset-3">
         <p>
           connected to
           <account-link :hash="base" :length="50" :only-alias="false" />

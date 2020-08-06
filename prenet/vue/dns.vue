@@ -1,11 +1,10 @@
 <template id="dns">
   <div>
-    <% account %>
     <div class="title row">
       <div class="col-md-2">
         <h1>Blockchain names system</h1>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-3">
         <search-bar
           v-bind:results.sync="searchResults"
           v-model="searchTerm"
@@ -13,19 +12,14 @@
           v-bind:finished.sync="searchFinished"
         />
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-md-offset-3">
         <p>
           connected to
           <account-link :hash="base" :length="50" :only-alias="false" />
         </p>
       </div>
     </div>
-    <div v-if="!enabled" class="column">
-      <div>To register a new name or change an existing registration you have to Enable MetaMask on this site.</div>
-      <button class="button" v-on:click="enable()">Enable MetaMask</button>
-      <div v-if="error" class="error"><% error %></div>
-    </div>
-    <div v-else class="page-content">
+    <div class="page-content">
       <div v-if="Object.entries(names).length == 0">
         <b class="loading">Loading...</b>
       </div>
@@ -61,32 +55,58 @@
         </tbody>
       </table>
       <div v-else class="row align-start">
-        <div class="col-md-3 doclet">
-          <table class="data" style="width: auto">
-            <caption>Your account</caption>
+        <div class="col-md-3">
+          <table class="data" :style="'width: 100%;min-height:' + tableHeight + 'px'">
+            <caption>
+              Your account
+              <br />
+              <br />
+
+              <div v-if="enabled">
+                <div>
+                  &nbsp;&nbsp;  Name:
+                  <account-link :hash="account" :length="20"></account-link>
+                </div>
+                <div>&nbsp;&nbsp;  Balance: <% balance %> DIO</div>
+              </div>
+              <div class="not-enabled" v-else>
+                    <button class="button" v-on:click="enable()">Enable MetaMask</button>
+                    <div v-if="error" v-html="error" class="error"></div>
+                    <div class="message">
+                      The Diode Network Explorer uses MetaMask to authenticate your account. Please enable MetaMask to manage your Fleets.
+                      If you don’t have MetaMask installed, follow instructions at https://diode.io/docs/metamask.html to get started.
+                    </div>
+                  </div>
+            </caption>
             <tbody>
               <tr>
-                <td>
-                  <div>
-                    Name:
-                    <account-link :hash="account" :length="20"></account-link>
-                  </div>
-                  <div>Balance: <% balance %> DIO</div>
-                </td>
+                <td></td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="col-md-9">
-          <table class="data">
+          <table class="data" v-if="enabled" id="blockchain-names">
             <caption>
-              <div v-if="enabled">
-                <input type="text" v-model.trim="newName" placeholder="some-name" />
-                <button
-                  class="button"
-                  v-on:click="addName(newName)"
-                  :disabled="newName.length <= 7"
-                >Add Name</button>
+              <div class="col-md-12">
+                Registered Blockchain Names
+                <br />
+                <br />
+              </div>
+              <div v-if="enabled" class="col-md-4">
+                <div class="input-button">
+                  <input
+                    type="text"
+                    v-model.trim="newName"
+                    placeholder="Enter Name to Register"
+                    class="no-icon"
+                  />
+                  <button
+                    class="button"
+                    v-on:click="addName(newName)"
+                    :disabled="newName.length <= 7"
+                  >Add</button>
+                </div>
               </div>
             </caption>
             <tr>
@@ -97,29 +117,43 @@
             <tr v-bind:key="name.name" v-for="name in names">
               <td><% name.name %></td>
               <td>
-                <storage-value :value="name.destination"></storage-value>
+                <span v-if="name.destination !== 'undefined' && name.destination !== 'loading'">
+                  <storage-value :value="name.destination"></storage-value>
+                </span>
+                <span v-else>Loading</span>
+
                 <div
                   v-if="enabled && (valueToAddress(name.owner)==account || valueToAddress(name.owner) == undefined)"
                 >
-                  <button
-                    class="button"
-                    v-on:click="registerName(name.name, deviceId[name.name])"
-                    :disabled="!web3.utils.isAddress(deviceId[name.name])"
-                  >
-                    <img
-                      v-show="submitDns==name.name"
-                      style="height:14px;margin-right:5px;"
-                      src="images/spinning.gif"
+                  <div class="input-button white">
+                    <input
+                      class="no-icon"
+                      type="text"
+                      v-model.trim="deviceId[name.name]"
+                      placeholder="0x1234556..."
                     />
-                    <span>Register!</span>
-                  </button>
-                  <input type="text" v-model.trim="deviceId[name.name]" placeholder="0x1234556..." />
+                    <button
+                      v-on:click="registerName(name.name, deviceId[name.name])"
+                      :disabled="!web3.utils.isAddress(deviceId[name.name])"
+                    >Register</button>
+                  </div>
                 </div>
               </td>
               <td>
-                <storage-value :value="name.owner" />
+                <span v-if="name.owner !== 'undefined' && name.owner !== 'loading'">
+                  <storage-value v-if="name.owner" :value="name.owner" />
+                </span>
+                <span v-else>Loading</span>
               </td>
             </tr>
+          </table>
+          <table class="data" v-else style="width: 100%">
+            <caption>No BNS available</caption>
+            <tbody>
+              <tr>
+                <td></td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
@@ -145,6 +179,7 @@ var DNS = Vue.component("dns", {
       searchFinished: false,
       searchResults: [],
       balance: 0,
+      tableHeight: 300,
     };
   },
 
@@ -176,6 +211,11 @@ var DNS = Vue.component("dns", {
           owner: DNSCache[key].owner,
         };
         this.$set(this.names, name, entry);
+      }
+
+      let mainTable = document.getElementById("blockchain-names");
+      if (mainTable) {
+        this.tableHeight = mainTable.clientHeight - mainTable.offsetTop;
       }
 
       for (key in this.names) {

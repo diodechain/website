@@ -2367,64 +2367,6 @@ ul.tag-cloud-box li a:hover {
  *  @package gleesik_components
  *
  **/
-.button, button {
-  display: inline-block;
-  width: auto;
-  max-width: 100%;
-  color: #F15C2E;
-  border: 2px solid #F15C2E;
-  padding: 0.8em 2em;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-.button.button-focus, button.button-focus {
-  color: #fff;
-  background-color: #F15C2E;
-}
-
-.button:hover, .button:active, button:hover, button:active {
-  color: #fff;
-  border-color: #f7a78e;
-  background-color: #f7a78e;
-}
-
-.button-cta {
-  display: inline-block;
-  max-width: 100%;
-  color: #fff;
-  border: 2px solid #fff;
-  padding: 1em 1.5em;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.button-cta.button-focus {
-  border-color: #F15C2E;
-  background-color: #F15C2E;
-}
-
-.button-cta.button-blue {
-  color: #F15C2E;
-  border-color: #F15C2E;
-}
-
-.button-cta:hover, .button-cta:active {
-  color: #fff;
-  border-color: #f7a78e;
-  background-color: #f7a78e;
-}
-
-button.button-block,
-.button.button-block,
-.button-cta.button-block {
-  display: block;
-  width: 100%;
-}
 
 /**
  *
@@ -6134,13 +6076,13 @@ body.prenet .tooltip[aria-hidden='false'] {
 
 /* @media screen and (min-width: 1440px) {(max-width: 1600px){
     .headtable{
-     width:60%;   
+     width:60%;
     }
-    
+
 }
     @media screen and (min-width: 1620px) {(max-width: 1900px){
     .headtable{
-     width:85%;   
+     width:85%;
     }
-    
+
 } */
