@@ -771,15 +771,22 @@ body.prenet {
   }
 
   .tooltip {
-    display: block !important;
+    display: none;
     z-index: 10000;
+    min-width: 350px;
+    height: 82px;
+    position: absolute;
+    will-change: transform;
+    top: 0px;
+    left: 0px;
 
     .tooltip-inner {
-      background: lightgray;
-      border: 1px solid black;
+      background: white;
+      border: 2px solid #F15C2E;
       color: black;
-      border-radius: 6px;
-      padding: 5px 10px 4px;
+      border-radius: 5px;
+      padding: 5px 8px;
+      line-height: 20px;
     }
 
     .tooltip-arrow {
@@ -790,6 +797,7 @@ body.prenet {
       margin: 5px;
       border-color: black;
       z-index: 1;
+      display: none;
     }
 
     &[x-placement^="top"] {
@@ -917,6 +925,15 @@ select {
     color: #eb411d;
     margin-top: 25px;
   }
+}
+
+.map {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  vertical-align: middle;
+  overflow: hidden;
 }
 /* @media screen and (min-width: 1440px) {(max-width: 1600px){
     .headtable{
