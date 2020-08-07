@@ -203,8 +203,6 @@ var Blocks = Vue.component("blocks", {
         this.lineYValues.push({ value: maxValue, y: 0 });
       }
 
-      console.log(this.lineYValues);
-
       var points = "";
       for (let i = 0; i < lineChartData.length; i++) {
         points +=

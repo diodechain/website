@@ -648,29 +648,6 @@ body.prenet {
       }
     }
 
-    // &:hover,
-    // &.is-hovered {
-    //   border-color: #b5b5b5;
-    //   color: #363636;
-    // }
-
-    // &:focus,
-    // &.is-focused {
-    //   border-color: #3273dc;
-    //   color: #363636;
-    // }
-
-    // &:focus:not(:active),
-    // &.is-focused:not(:active) {
-    //   box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
-    // }
-
-    // &:active,
-    // &.is-active {
-    //   border-color: #4a4a4a;
-    //   color: #363636;
-    // }
-
     &[disabled] {
       background-color: white;
       border-color: #dbdbdb;
@@ -685,10 +662,6 @@ body.prenet {
     display: inline-flex;
     flex-direction: inherit;
     flex-wrap: wrap;
-
-    &.full-width {
-      width: 100%;
-    }
 
     figure {
       margin-top: 45px;
@@ -729,6 +702,26 @@ body.prenet {
         }
       }
     }
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .marginized {
+    margin:10px 5px;
+  }
+
+  .marginized-top {
+    margin-top: 15px;
+  }
+
+  .btn-loading {
+    height: 14px;
+    margin-right: 5px;
+    position:absolute;
+    top: 5px;
+    left: 40%;
   }
 
   .network {
@@ -925,6 +918,10 @@ select {
     color: #eb411d;
     margin-top: 25px;
   }
+}
+
+.text-centered {
+  text-align: center;
 }
 
 .map {

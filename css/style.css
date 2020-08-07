@@ -6026,10 +6026,6 @@ body.prenet .headtable {
           flex-wrap: wrap;
 }
 
-body.prenet .headtable.full-width {
-  width: 100%;
-}
-
 body.prenet .headtable figure {
   margin-top: 45px;
   width: 100%;
@@ -6072,6 +6068,26 @@ body.prenet .headtable .doclet div.link a {
   font-size: 24px;
   line-height: 28px;
   letter-spacing: 1px;
+}
+
+body.prenet .full-width {
+  width: 100%;
+}
+
+body.prenet .marginized {
+  margin: 10px 5px;
+}
+
+body.prenet .marginized-top {
+  margin-top: 15px;
+}
+
+body.prenet .btn-loading {
+  height: 14px;
+  margin-right: 5px;
+  position: absolute;
+  top: 5px;
+  left: 40%;
 }
 
 body.prenet .network path {
@@ -6278,6 +6294,10 @@ select:focus {
   text-align: center;
   color: #eb411d;
   margin-top: 25px;
+}
+
+.text-centered {
+  text-align: center;
 }
 
 .map {
