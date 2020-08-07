@@ -79,11 +79,7 @@
                 </div>
                 <div class="text-centered">
                   <button class="button" v-on:click="createFleet()">
-                    <img
-                      v-show="submitFleet"
-                      class="btn-loading"
-                      src="images/spinning.gif"
-                    />
+                    <img v-show="submitFleet" class="btn-loading" src="images/spinning.gif" />
                     <span>Create New Fleet</span>
                   </button>
                 </div>
@@ -109,17 +105,22 @@
             <caption>
               <span v-if="contracts && contracts.length > 0">
                 <div class="col-md-12">
-                Fleet:
-                <account-link :hash="contract" :length="50"></account-link>
+                  Fleet:
+                  <account-link :hash="contract" :length="50"></account-link>
                 </div>
                 <div class="col-md-5">
                   <div class="input-button marginized-top">
-                    <input type="text" class="no-icon" v-model="deviceId" placeholder="0x1234556..." />
+                    <input
+                      type="text"
+                      class="no-icon"
+                      v-model="deviceId"
+                      placeholder="Enter Device ID"
+                    />
                     <button
                       class="button"
-                      v-on:click="addDevice(deviceId)"
+                      v-on:click="addDevice(deviceId, true)"
                       :disabled="!web3.utils.isAddress(deviceId)"
-                    >Add Device</button>
+                    >Add</button>
                   </div>
                 </div>
               </span>
@@ -131,7 +132,9 @@
             </tr>
 
             <tr v-for="device in devices" :key="device.id">
-              <td><account-link :hash="device.id" :length="50"></account-link></td>
+              <td>
+                <account-link :hash="device.id" :length="50"></account-link>
+              </td>
               <td>
                 &nbsp;&nbsp;
                 <% device.allowed ? 'Yes' : 'No' %>&nbsp;
@@ -156,6 +159,9 @@
                   <span>Remove</span>
                 </button>
               </td>
+            </tr>
+            <tr v-if="Object.keys(devices).length === 0">
+              <td colspan="2">No devices. Add devices above.</td>
             </tr>
           </table>
           <table class="data" v-else>
@@ -195,6 +201,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
       searchFinished: false,
       searchResults: [],
       tableHeight: 300,
+      contractsCount: localStorage.fleetsCount || 10,
     };
   },
 
@@ -204,12 +211,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
       self.base = base;
     });
 
-    if (localStorage.devices) {
-      let devices = localStorage.devices.split(",");
-      for (id of devices) {
-        this.addDevice(id);
-      }
-    }
     setInterval(() => {
       if (!this.enabled && window.ethereum.selectedAddress != null) {
         this.enable();
@@ -218,23 +219,30 @@ var FleetRegistration = Vue.component("fleet_registration", {
   },
   methods: {
     onContractChange: function (event) {
-      console.log(event);
+      this.loadDevivesInMemory();
     },
-    addDevice: function (id) {
+    addDevice: function (id, saveInStorage) {
       if (this.devices[id] || !web3.utils.isAddress(id)) return;
+
       let dev = {
         id,
         allowed: undefined,
         deviceId2: undefined,
         rerender: false,
       };
+
       this.$set(this.devices, id, dev);
       this.reloadDevice(id);
+
       let ids = [];
+
       for (dev in this.devices) {
         ids.push(dev);
       }
-      localStorage.devices = ids.join(",");
+
+      if (saveInStorage) {
+        this.setDeviceInStorage(id);
+      }
     },
     reloadDevice: function (id) {
       this.isWhiteListed(id, (allowed) => {
@@ -281,32 +289,67 @@ var FleetRegistration = Vue.component("fleet_registration", {
       this.getBalance();
       this.getContracts();
     },
+    loadDevivesInMemory: function() {
+      this.devices = {};
+
+      let devicesIds = localStorage.getObject(this.contract);
+
+      if (!devicesIds) { return; }
+
+      for (id of devicesIds) {
+        this.addDevice(id, false);
+      }
+    },
+    setDeviceInStorage: function(id) {
+      let devices = localStorage.getObject(this.contract);
+
+      if (!devices) {
+        devices = [id]
+      } else {
+        devices.push(id);
+      }
+
+      localStorage.setObject(this.contract, devices);
+    },
     getBalance: async function () {
       this.balance = await web3.eth.getBalance(this.account);
     },
     getContracts: async function () {
+      this.contracts = [];
       let proms = [];
-      let candidates = [];
 
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < this.contractsCount; i++) {
         let addr = this.generateContractAddress(i);
         proms.push(web3.eth.getCodeHash(addr));
-        candidates.push(addr);
       }
 
-      ret = await Promise.all(proms);
+      let fleets = await Promise.all(proms);
+      let indexDefaultHash = fleets.indexOf(FleetHash);
 
-      if (ret.indexOf(FleetHash) >= 0) {
-        this.contracts = [this.generateContractAddress(ret.indexOf(FleetHash))];
 
-        for (id in this.devices) {
-          this.reloadDevice(id);
-        }
 
-        this.contract = this.contracts[0];
-      } else {
-        this.contracts = [];
+      for (let i = 0; i < fleets.length; i++) {
+        this.contracts.push(this.generateContractAddress(i));
       }
+
+      // for (id in this.devices) {
+      //   this.reloadDevice(id);
+      // }
+
+      this.contract = this.contracts[indexDefaultHash];
+
+      this.loadDevivesInMemory()
+      // if (ret.indexOf(FleetHash) >= 0) {
+      //   this.contracts = [this.generateContractAddress(ret.indexOf(FleetHash))];
+
+      //   for (id in this.devices) {
+      //     this.reloadDevice(id);
+      //   }
+
+      //   this.contract = this.contracts[0];
+      // } else {
+      //   this.contracts = [];
+      // }
     },
     generateContractAddress: function (nonce) {
       // This hack only works for nonces <= 16
@@ -344,6 +387,8 @@ var FleetRegistration = Vue.component("fleet_registration", {
             this.isTxConfirmed(ret.result)
               .then(
                 function (tx) {
+                  this.loadNewFleet();
+
                   this.submitFleet = false;
                 }.bind(this)
               )
@@ -358,6 +403,19 @@ var FleetRegistration = Vue.component("fleet_registration", {
           this.submitFleet = false;
         }
       );
+    },
+    loadNewFleet: async function() {
+      let addr = this.generateContractAddress(this.contractsCount);
+      let promise = web3.eth.getCodeHash(addr);
+
+      let fleet = await Promise.resolve(promise);
+
+      this.contracts.push(this.generateContractAddress(this.contractsCount));
+
+      this.contract = this.contracts[this.contractsCount];
+      this.loadDevivesInMemory();
+      this.contractsCount+=1;
+      localStorage.fleetsCount = this.contractsCount;
     },
     isWhiteListed(device, callback) {
       if (!this.contracts[0]) return;
