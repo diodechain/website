@@ -1,10 +1,57 @@
 <template id="network">
   <div class="network prenet">
-    <div class="title">
-      <h1>Prenet Network</h1>
+        <div class="title row">
+      <div class="col-md-2  ">
+        <h1>Network map</h1>
+      </div>
+      <div class="col-md-3">
+        <search-bar
+          v-bind:results.sync="searchResults"
+          v-model="searchTerm"
+          v-bind:activated.sync="searchActivated"
+          v-bind:finished.sync="searchFinished"
+        />
+      </div>
+      <div class="col-md-4  col-md-offset-3">
+        <p>
+          connected to
+          <account-link :hash="base" :length="50" :only-alias="false" />
+        </p>
+      </div>
     </div>
     <div class="page-content">
-      <div class="map">
+      <table class="data" v-if="searchTerm && searchActivated">
+        <caption><% searchResults.length %> Search Results</caption>
+        <tr v-if="searchResults.length">
+          <th>Page</th>
+          <th>Match Term</th>
+        </tr>
+        <tr v-else-if="searchFinished">
+          <td>
+            <div class="empty-search">
+              Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers,
+              BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
+            </div>
+          </td>
+        </tr>
+        <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
+          <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
+            <td>
+              <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
+              <router-link
+                v-if="result.type==='Address' || result.isAddress"
+                :to="'/address/' + result.id"
+              ><% result.type %></router-link>
+              <router-link
+                v-if="result.type==='Transaction'"
+                :to="'/tx/' + result.id"
+              ><% result.type %></router-link>
+            </td>
+            <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
+          </tr>
+        </tbody>
+      </table>
+      <div v-else class="map">
         <svg
           version="1.1"
           viewBox="0 0 1000 647"
@@ -1117,16 +1164,26 @@ var Network = Vue.component("network", {
   delimiters: ["<%", "%>"],
   data: () => {
     return {
+      base: "",
       nodes: {},
       points: {},
       collisionMap: {},
       base: undefined,
       baseIp: undefined,
-      timeoutId: null
+      timeoutId: null,
+      searchTerm: "",
+      searchActivated: false,
+      searchFinished: false,
+      searchResults: [],
     };
   },
 
   created: function () {
+    let self = this;
+    getBase(function (base) {
+      self.base = base;
+    });
+
     this.load();
   },
   methods: {
