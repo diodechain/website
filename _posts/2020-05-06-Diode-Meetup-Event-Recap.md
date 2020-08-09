@@ -12,7 +12,7 @@ imageclass: middle
 
 Diode’s first livestream event went live on Monday, April 27, in Taipei, Taiwan. The 2.5-hour online meetup drew more than 30 engineers, developers, makers, and community leaders. Below are some highlights from the event, which was moderated by Raspberry Pi Taiwan group leader Hsu, the featured speaker was Dominic Letz, CTO of Diode. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KeIwchX_C40" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/KeIwchX_C40" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 Watch Dominic’s talk on [YouTube](https://youtu.be/KeIwchX_C40). Diode's presentations slides are now publicly available on [Github](https://github.com/diodechain/presentations/tree/master/Raspberrypi_Taipei_Meetup_2020).
 

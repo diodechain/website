@@ -11,7 +11,7 @@ imageclass: middle
 
 Last week we released a [demo](https://youtu.be/Zibg-6CClc4) on YouTube that shows how to get started with [Diode](https://github.com/diodechain). It’s a simple guide to help you get a Raspberry Pi connected to the Diode network.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Zibg-6CClc4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/Zibg-6CClc4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 <br/>
 To get started, here are the steps to follow:

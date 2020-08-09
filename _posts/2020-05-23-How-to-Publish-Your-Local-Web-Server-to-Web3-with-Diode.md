@@ -11,7 +11,7 @@ imageclass: middle
 
 On Tuesday (May 19), Diode’s highly anticipated live streaming event went live. The 30-minute online meetup event drew more than 35 engineers, developers, makers, and community leaders across the globe. CEO Hans Rempel, CTO Dominic Letz, blockchain engineer Peter Lai, marketing manager Yahsin Huang gathered together remotely to discuss some current and potential applications of the Diode's peer-to-peer network. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/B-YzxaKpEJQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/B-YzxaKpEJQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <br/>
 We gave a demo of Diode client showcasing how to easily publish a local webserver to Web3 with Diode. We wanted to talk about this specific use case in part because we believe privacy and freedom of speech are core values. The Web3 ecosystem is growing; we hope content creators will benefit from being able to publish website content to Web3 without having to provide personal information.
 
