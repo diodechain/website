@@ -24,7 +24,9 @@ Check out Diode’s Bangkok meetup presentation slides on [Github](https://githu
 
 Dominic discussed issues concerning IoT security, and how Diode can play a key role in giving IoT security the upgrade it needed. At Diode, we’ve set up an integrated enterprise solution that is unique to upgrade the security. We’re using smart contracts instead of relying on a single admin.
 
-The future of enterprise in terms of security, we think that the direction should be getting rid of the admin, in particular, the IT admin people who have full control of data. Recently, we saw a lot of social engineering attacks. We saw what happened to Twitter, for example -- how Twitter was having social engineering attacks which led to crypto scam tweets. We saw what happened to Garmin. It was down, and it is still in the process of getting up again. We saw all of these attacks. There’s a better way to do it. That is why we wanted to build Diode. 
+The future of enterprise in terms of security, we think that the direction should be getting rid of the admin, in particular, the IT admin people who have full control of data. 
+
+Recently, we saw a lot of social engineering attacks. Look at what happened to Twitter, for example -- how Twitter was having social engineering attacks which led to crypto scam tweets. Also, what happened to Garmin. It was down, and it is still in the process of getting up again. We saw all of these attacks. There’s a better way to do it. That is part of the reasons why we wanted to build Diode.
 
 ![alt_text](images/blog/Bangkok_03.png "image_tooltip")
 
