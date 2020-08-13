@@ -142,7 +142,11 @@ var txDefault = {
   ethereumNodes : [
     {
       url : "https://testnet.diode.io:8443",
-      name: "Remote Diode Prenet"
+      name: "Diode Prenet"
+    },
+    {
+      url : "https://staging.diode.io:8443",
+      name: "Diode Staging"
     },
     {
       url : "http://localhost:8545",
