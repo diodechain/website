@@ -1,0 +1,335 @@
+---
+layout: ""
+---
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diode℠ Prenet</title>
+    <meta charset="utf-8">
+    <base href="{{ site.github.url }}/" target="_self">
+    </base>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3.1.5/dist/vue-router.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/v-tooltip"></script>
+    <script src="staging/abi.js"></script>
+    <script src="staging/geo.js"></script>
+    <link rel="stylesheet" type="text/css" href="staging/style.css">
+    </link>
+    <link rel="shortcut icon" href="images/favicon.png" title="Favicon">
+    </link>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    </link>
+</head>
+
+<body>
+    {% include_relative vue/fleet_registration.vue %}
+    {% include_relative vue/dns.vue %}
+    {% include_relative vue/power_distribution.vue %}
+    {% include_relative vue/account.vue %}
+    {% include_relative vue/accounts.vue %}
+    {% include_relative vue/block.vue %}
+    {% include_relative vue/transaction.vue %}
+    {% include_relative vue/transactions.vue %}
+    {% include_relative vue/network.vue %}
+    <div id="app">
+        <div class="header">
+            <div class="logo">
+                <a href="{{ site.github.url }}"><img src="staging/diode.png" /></a>
+            </div>
+            <ul class="navbar">
+                <li v-for="r in routes" v-if="r.name">
+                    <router-link :to="r"><% r.name %></router-link>
+                </li>
+                <li>
+                    <span v-if="connected" class="good">connected</span>
+                    <span v-else class="bad">trying to connect.<% '.'.repeat(ticker%3) %></span>
+                </li>
+            </ul>
+        </div>
+
+        <transition>
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
+        </transition>
+    </div>
+
+
+    <script>
+        let app = {};
+        let url = 'wss://staging.diode.io:8443/ws'
+        // let url = 'ws://localhost:8545/ws'
+        let web3 = NewWeb3(url);
+        let web3_subscriptions = [];
+
+        function subscribe(event, callback) {
+            web3_subscriptions.push([event, callback])
+            if (web3.currentProvider.connected && app.connected == 1) web3.eth.subscribe(event, callback);
+        }
+
+        var routes = [
+            { name: 'TXs', path: '/tx/', component: Transactions },
+            { name: false, path: '/tx/:hash', params: { hash: '0x1' }, component: Transaction, props: true },
+
+            { name: 'Network', path: '/network', component: Network },
+            { name: 'Fleets', path: '/fleets', component: FleetRegistration },
+            { name: 'BNS', path: '/dns', component: DNS },
+            { name: 'Blocks', path: '/block/:number', params: { number: 'latest' }, component: Block, props: true },
+
+            { name: 'Accounts', path: '/address/', component: Accounts },
+            { name: false, path: '/address/:hash', params: { hash: Registry }, component: Account, props: true },
+
+            { name: 'Prenet', path: '/', component: PowerDistribution },
+        ];
+        const router = new VueRouter({ routes, base: '/staging/' });
+        router.beforeEach((to, from, next) => {
+            if (Object.values(to.params).length) {
+                for (i = 0; i < routes.length; i++) {
+                    let route = routes[i];
+                    if (route.name == to.name) {
+                        route.params = to.params
+                        if (app && app.$set) app.$set(app.routes, i, route)
+                        else routes[i] = route
+                    }
+                }
+            }
+            next()
+        })
+        app = new Vue({
+            data: {
+                routes,
+                initial: 0,
+                connected: 0,
+                ticker: 1,
+            },
+            router,
+            delimiters: ["<%", "%>"]
+        })
+        app.$mount('#app')
+
+        let ReSubscribe = () => {
+            app.ticker++;
+            if (web3.currentProvider.connected == false) {
+                let conn = web3.currentProvider.connection
+                app.connected = 0;
+                if (conn) {
+                    if (conn.readyState == 0) return
+                    conn.close()
+                }
+                web3 = new NewWeb3(url)
+            } else {
+                if (app.connected == 0) {
+                    for (i = 0; i < web3_subscriptions.length; i++) {
+                        let sub = web3_subscriptions[i];
+                        web3.eth.subscribe(sub[0], sub[1]);
+                    }
+                    app.connected = 1;
+                    if (app.initial == 0) {
+                        app.initial = 1
+                        DNSRefresh()
+                    }
+                }
+            }
+        }
+        setInterval(ReSubscribe, 1000)
+
+        let DNSRefresh = () => {
+            if (!app.connected) {
+                return
+            }
+
+            web3.eth.getStorage(DNSAddr, (err, arr) => {
+                if (!arr) return
+                let ret = {}
+                arr.forEach(element => { ret[element[0].toLowerCase()] = element[1].toLowerCase() })
+                for (key in ret) {
+                    let name = valueToString(ret[key])
+                    // if (names == undefined) name = ret[key]
+                    if (name == undefined) continue
+                    let nameOffset = web3.utils.toBN(key)
+                    let entry = {
+                        name,
+                        owner: ret[addressAdd(nameOffset, -1)],
+                        destination: ret[addressAdd(nameOffset, -2)]
+                    }
+                    if (entry.owner == undefined) continue;
+                    DNSCache[name] = entry
+                    let addr = valueToAddress(entry.destination)
+                    if (addr) DNSCache[addr] = entry
+                }
+            })
+        }
+        DNSRefresh()
+        subscribe("newBlockHeaders", DNSRefresh)
+        setInterval(DNSRefresh, 25000)
+
+        Vue.component("account-link", {
+            template: '<router-link v-if="isAddress(hash)" :to="\'/address/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link><span v-else><% hash %></span>',
+            props: {
+                hash: String,
+                onlyAlias: { type: Boolean, default: true },
+                length: { type: Number, default: 50 }
+            },
+            delimiters: ["<%", "%>"]
+        })
+
+        Vue.component("storage-value", {
+            template: '<account-link v-if="isAccount" :hash="formatted" /><span v-else><% formatted %></span>',
+            props: {
+                value: String
+            },
+            data: () => {
+                return {
+                    isAccount: false
+                }
+            },
+            computed: {
+                formatted: function () {
+                    if (this.value == undefined)
+                        return undefined
+
+                    // Number detection
+                    if (this.value.startsWith('0x000000000000000000000000000000000000000000000000000'))
+                        return web3.utils.hexToNumber(this.value)
+
+                    // Money detection
+                    if (this.value.startsWith('0x0000000000000000000000000000000000000000000'))
+                        return valueToBalance(this.value)
+
+                    // Address detection
+                    let acc = valueToAddress(this.value)
+                    if (acc) {
+                        this.isAccount = true
+                        return acc;
+                    }
+
+                    // String detection
+                    let ret = valueToString(this.value);
+                    if (ret != undefined) return ret;
+
+                    return this.value
+                }
+            },
+            delimiters: ["<%", "%>"]
+        })
+
+        function valueToAddress(value) {
+            if (value == undefined || !value.startsWith('0x000000000000000000000000'))
+                return undefined;
+
+            let addr = '0x' + value.substr(26, 40)
+            if (!isAddress(addr))
+                return undefined;
+            return addr
+        }
+
+        function addressAdd(bn, num) {
+            return '0x' + bn.add(web3.utils.toBN(num)).toString(16).padStart(64, '0')
+        }
+
+        function valueToString(value) {
+            let ret = value.match(/^0x(([0-9A-F][1-9A-F]|[1-9A-F][0-9A-F])+)0+([0-9A-F]{2})$/i);
+            if (ret) {
+                let string = ret[1]
+                let len = web3.utils.hexToNumber('0x' + ret[3])
+                if (string.length == len) {
+                    return web3.utils.hexToString('0x' + string)
+                }
+            }
+            return undefined
+        }
+
+        function valueToBalance(balance) {
+            if (balance == undefined) return 'error loading';
+            let value = web3.utils.fromWei(balance)
+            let unit = ' DIO'
+
+            // if (value == 0) {
+            //     value = web3.utils.hexToNumber(balance)
+            //     unit = ' WEI'
+            // }
+
+            // Adding thousands separators
+            value = value.toString()
+
+            let [front, back] = value.split(".")
+
+            front = front.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+            if (back != undefined) {
+                back = back.split("").reverse().join("");
+                back = back.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                back = "." + back.split("").reverse().join("");
+            } else {
+                back = "";
+            }
+
+            // value = value.toString()
+            return front + back + unit
+        }
+
+        function isAddress(value) {
+            return value == '0x0000000000000000000000000000000000000000' ||
+                (web3.utils.isAddress(value) && !value.startsWith('0x000000'))
+        }
+
+        function formatStorageKey(key) {
+            if (key.startsWith('0x000000000000000000000000000000000000000'))
+                return web3.utils.hexToNumber(key)
+            return key.substr(0, 5) + "..." + key.substr(64, 2)
+        }
+
+        function resolveName(name) {
+            if (!name) return "null"
+            let key = name.toLowerCase()
+            if (DNSAlias[key]) return DNSAlias[key]
+            if (DNSCache[key]) return DNSCache[key].name
+            return name;
+        }
+
+        function fetchStake(address, callback) {
+            if (!address) return
+            CallRegistry('MinerValue', [0, address], callback)
+        }
+
+        function shorten(str, length) {
+            if (!length) length = 10;
+            if (str.length > length) return str.substr(0, length - 3) + '...';
+            return str;
+        }
+
+        function formatNumber(num) {
+            // return Math.floor(num).toString()
+            return Math.floor(num).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+        }
+
+        function formatAddr(addr, onlyAlias, length) {
+            let alias = resolveName(addr);
+            if (onlyAlias) return shorten(alias, length);
+            if (alias != addr) return shorten(addr, 20) + ' (' + alias + ')';
+            return shorten(addr, length);
+        }
+
+        function formatUnix(unix_timestamp) {
+            // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
+            let date = new Date(unix_timestamp * 1000);
+            // Hours part from the timestamp
+            let hours = date.getHours();
+            // Minutes part from the timestamp
+            let minutes = "0" + date.getMinutes();
+            // Seconds part from the timestamp
+            let seconds = "0" + date.getSeconds();
+
+            // Will display time in 10:30:23 format
+            return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        }
+
+    </script>
+</body>
+
+</html>
