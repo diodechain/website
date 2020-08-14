@@ -947,6 +947,26 @@ select {
   width: 25%;
 }
 
+.tran-logs {
+  // overflow-wrap: anywhere;
+  //   overflow-x: hidden;
+    overflow-y: scroll;
+    display: revert !important;
+    white-space:nowrap;
+}
+
+.side-bordered {
+  caption {
+    border-bottom: 1px solid #ddd !important;
+  }
+
+  td,th {
+    border-right: 1px solid #ddd;
+  }
+
+}
+
+
 /* @media screen and (min-width: 1440px) {(max-width: 1600px){
     .headtable{
      width:60%;
