@@ -1326,8 +1326,8 @@ var Network = Vue.component("network", {
       };
     },
     getAddressLink(point) {
-      if (this.$router.options.base) {
-             return `${this.$router.options.base}#/address/${point.node_id}`;
+      if (window.location.pathname !== '/') {
+             return `${window.location.pathname}#/address/${point.node_id}`;
       } else {
         return `/#/address/${point.node_id}`;
       }
