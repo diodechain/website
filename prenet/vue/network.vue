@@ -1196,7 +1196,8 @@ var Network = Vue.component("network", {
       text += point.retries + " reconnects";
 
       let tooltipContent = `<div class="tooltip-inner">
-                                <a href="/prenet#/address/${point.node_id}">${point.name}</a><br>${text}<br>
+                                <a href="${this.getAddressLink(point)}">${point.name}</a>
+                                <br>${text}<br>
                               </div>`;
 
       let tooltipLayout = document.getElementById("map-tooltip");
@@ -1324,6 +1325,13 @@ var Network = Vue.component("network", {
         y,
       };
     },
+    getAddressLink(point) {
+      if (this.$router.options.base) {
+             return `${this.$router.options.base}#/address/${point.node_id}`;
+      } else {
+        return `/#/address/${point.node_id}`;
+      }
+    }
   },
 });
 </script>
