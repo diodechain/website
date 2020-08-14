@@ -1,0 +1,17 @@
+{
+  "main.css": "/vesting/static/css/main.aff25f0b.chunk.css",
+  "main.js": "/vesting/static/js/main.cbe5e75b.chunk.js",
+  "main.js.map": "/vesting/static/js/main.cbe5e75b.chunk.js.map",
+  "runtime~main.js": "/vesting/static/js/runtime~main.233538e0.js",
+  "runtime~main.js.map": "/vesting/static/js/runtime~main.233538e0.js.map",
+  "static/css/2.a117f4d4.chunk.css": "/vesting/static/css/2.a117f4d4.chunk.css",
+  "static/js/2.45458b6b.chunk.js": "/vesting/static/js/2.45458b6b.chunk.js",
+  "static/js/2.45458b6b.chunk.js.map": "/vesting/static/js/2.45458b6b.chunk.js.map",
+  "index.html": "/vesting/index.html",
+  "precache-manifest.f22bddc5ab658156f5979f326ace6b3e.js": "/vesting/precache-manifest.f22bddc5ab658156f5979f326ace6b3e.js",
+  "service-worker.js": "/vesting/service-worker.js",
+  "static/css/2.a117f4d4.chunk.css.map": "/vesting/static/css/2.a117f4d4.chunk.css.map",
+  "static/css/main.aff25f0b.chunk.css.map": "/vesting/static/css/main.aff25f0b.chunk.css.map",
+  "static/media/TokenVestingApp.css": "/vesting/static/media/background.4dc41852.png",
+  "static/media/bootstrap.css": "/vesting/static/media/glyphicons-halflings-regular.fa277232.woff"
+}
