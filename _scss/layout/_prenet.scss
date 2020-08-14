@@ -290,7 +290,6 @@ body.prenet {
 
     &.small-margin {
       margin-top: 25px;
-      margin-left: -18px;
     }
 
     &.inner {
@@ -469,11 +468,18 @@ body.prenet {
     width: 100%;
     display: flex;
     figure {
-      width: 49%;
-      margin-right: 25px;
+      width: 50%;
+
 
       .donut {
         border-radius: 50%;
+      }
+
+      &.left {
+        margin-right: 12.5px;
+      }
+      &.right {
+        margin-left: 12.5px;
       }
     }
 

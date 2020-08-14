@@ -21,7 +21,7 @@
     </div>
     <div class="column page-content">
       <div v-if="filter === ACCOUNTS_ALL_FILTER" class="graphs">
-        <figure>
+        <figure class="left">
           <div class="row">
             <div class="col-md-12">
               <h2 class="headline">Top Accounts by Balance</h2>
@@ -76,7 +76,7 @@
             </div>
           </div>
         </figure>
-        <figure>
+        <figure class="right">
           <div class="row">
             <div class="col-md-12">
               <h2 class="headline">Top Accounts by Stake</h2>

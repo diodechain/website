@@ -5628,7 +5628,6 @@ body.prenet table.nested {
 
 body.prenet table.small-margin {
   margin-top: 25px;
-  margin-left: -18px;
 }
 
 body.prenet table.inner {
@@ -5819,13 +5818,20 @@ body.prenet .graphs {
 }
 
 body.prenet .graphs figure {
-  width: 49%;
-  margin-right: 25px;
+  width: 50%;
 }
 
 body.prenet .graphs figure .donut {
   -webkit-border-radius: 50%;
           border-radius: 50%;
+}
+
+body.prenet .graphs figure.left {
+  margin-right: 12.5px;
+}
+
+body.prenet .graphs figure.right {
+  margin-left: 12.5px;
 }
 
 body.prenet .graphs .headline {
