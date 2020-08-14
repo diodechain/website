@@ -932,6 +932,21 @@ select {
   vertical-align: middle;
   overflow: hidden;
 }
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.one-third {
+  width: 33%;
+}
+
+.one-forth {
+  width: 25%;
+}
+
 /* @media screen and (min-width: 1440px) {(max-width: 1600px){
     .headtable{
      width:60%;
