@@ -5542,6 +5542,8 @@ body.prenet .input-button input[type="text"].no-icon {
 
 body.prenet .input-button button {
   position: absolute;
+  top: 1px;
+  margin-left: 2%;
   border: 1px solid #d6442e;
   border-left: none;
   color: #000000;
@@ -6075,11 +6077,19 @@ body.prenet .full-width {
 }
 
 body.prenet .marginized {
-  margin: 10px 5px;
+  margin: 10px 15px;
 }
 
 body.prenet .marginized-top {
   margin-top: 15px;
+}
+
+body.prenet .marginized-top-2 {
+  margin-top: 30px;
+}
+
+body.prenet .marginized-bottom {
+  margin-bottom: 10px;
 }
 
 body.prenet .btn-loading {

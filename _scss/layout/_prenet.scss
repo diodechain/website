@@ -199,6 +199,8 @@ body.prenet {
 
     button {
       position: absolute;
+      top: 1px;
+      margin-left: 2%;
       border: 1px solid #d6442e;
       border-left: none;
       color: #000000;
@@ -709,11 +711,19 @@ body.prenet {
   }
 
   .marginized {
-    margin:10px 5px;
+    margin:10px 15px;
   }
 
   .marginized-top {
     margin-top: 15px;
+  }
+
+  .marginized-top-2 {
+    margin-top: 30px;
+  }
+
+  .marginized-bottom {
+    margin-bottom: 10px;
   }
 
   .btn-loading {

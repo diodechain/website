@@ -58,14 +58,13 @@
         <div class="col-md-3">
           <table class="data" :style="'width: 100%;min-height:' + tableHeight + 'px'">
             <caption>
-              Your Account
-              <br />
+              <div class="marginized-bottom">Your Account</div>
               <div v-if="enabled">
-                <div>
-                  &nbsp;&nbsp;  Name:
+                <div class="marginized">
+                   Name:
                   <account-link :hash="account" :length="20"></account-link>
-                </div>
-                <div>&nbsp;&nbsp;  Balance: <% balance %> DIO</div>
+                </div >
+                <div class="marginized">Balance: <% valueToBalance(balance) %></div>
               </div>
               <div class="not-enabled" v-else>
                     <button class="button" v-on:click="enable()">Enable MetaMask</button>

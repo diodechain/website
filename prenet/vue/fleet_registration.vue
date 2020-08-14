@@ -55,16 +55,13 @@
         <div class="col-md-3">
           <table class="data" :style="'min-height:' + tableHeight + 'px'">
             <caption>
-              Your account
-              <br />
-              <br />
-
+              <div class="marginized-bottom">Your Account</div>
               <div v-if="enabled">
                 <div class="marginized">
                   Name:
                   <account-link :hash="account" :length="20"></account-link>
                 </div>
-                <div class="marginized">Balance: <% balance %> DIO</div>
+                <div class="marginized">Balance: <% valueToBalance(balance) %></div>
                 <div v-if="contracts" class="marginized">
                   Select Fleet:
                   <br />
@@ -77,7 +74,7 @@
                     <option v-for="c in contracts" v-bind:key="c" :value="c"><% c %></option>
                   </select>
                 </div>
-                <div class="text-centered">
+                <div class="text-centered marginized-top-2">
                   <button class="button" v-on:click="createFleet()">
                     <img v-show="submitFleet" class="btn-loading" src="images/spinning.gif" />
                     <span>Create New Fleet</span>
@@ -104,11 +101,11 @@
           <table class="data" v-if="enabled">
             <caption>
               <span v-if="contracts && contracts.length > 0">
-                <div class="col-md-12">
+                <div class="col-md-12 no-padding">
                   Fleet:
                   <account-link :hash="contract" :length="50"></account-link>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4 no-padding">
                   <div class="input-button marginized-top">
                     <input
                       type="text"
