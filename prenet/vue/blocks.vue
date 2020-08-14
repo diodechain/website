@@ -110,7 +110,7 @@
               <td>
                 <router-link :to="'/block/' + block.number"><% block.number %></router-link>
               </td>
-              <td><% dateFormat(block.timestamp) %></td>
+              <td><% formatUnix(block.timestamp) %></td>
               <td>
                 <account-link :hash="block.miner" :only-alias="true" :length="10"></account-link>
               </td>
@@ -149,7 +149,7 @@ var Blocks = Vue.component("blocks", {
       }
 
       this.blocks.forEach((block) => {
-        let timeStamp = Math.round(block.timestamp / 40);
+        let timeStamp = Math.round((block.timestamp / 1000) * 1000);
 
         if (groups[timeStamp]) {
           groups[timeStamp] += block.transactions.length;
