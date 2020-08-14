@@ -1,8 +1,8 @@
 <template id="dns">
   <div>
     <div class="title row">
-      <div class="col-md-2">
-        <h1>Blockchain names system</h1>
+      <div class="col-md-3 no-padding">
+        <h1>Blockchain Names System</h1>
       </div>
       <div class="col-md-3">
         <search-bar
@@ -12,7 +12,7 @@
           v-bind:finished.sync="searchFinished"
         />
       </div>
-      <div class="col-md-4 col-md-offset-3">
+      <div class="col-md-4 col-md-offset-2">
         <p>
           connected to
           <account-link :hash="base" :length="50" :only-alias="false" />
@@ -58,10 +58,8 @@
         <div class="col-md-3">
           <table class="data" :style="'width: 100%;min-height:' + tableHeight + 'px'">
             <caption>
-              Your account
+              Your Account
               <br />
-              <br />
-
               <div v-if="enabled">
                 <div>
                   &nbsp;&nbsp;  Name:
@@ -88,12 +86,12 @@
         <div class="col-md-9">
           <table class="data" v-if="enabled" id="blockchain-names">
             <caption>
-              <div class="col-md-12">
+              <div class="col-md-12 no-padding">
                 Registered Blockchain Names
                 <br />
                 <br />
               </div>
-              <div v-if="enabled" class="col-md-4">
+              <div v-if="enabled" class="col-md-4 no-padding">
                 <div class="input-button">
                   <input
                     type="text"

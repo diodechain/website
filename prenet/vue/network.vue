@@ -2,7 +2,7 @@
   <div class="network prenet">
         <div class="title row">
       <div class="col-md-2  ">
-        <h1>Network map</h1>
+        <h1>Network Map</h1>
       </div>
       <div class="col-md-3">
         <search-bar

@@ -1,7 +1,7 @@
 <template id="power_distribution">
   <div>
     <div class="title row">
-      <div class="col-md-2">
+      <div class="col-md-3 no-padding">
         <h1>Prenet Overview</h1>
       </div>
       <div class="col-md-3">
@@ -10,7 +10,7 @@
                     v-bind:finished.sync="searchFinished"
         />
       </div>
-      <div class="col-md-4 col-md-offset-3">
+      <div class="col-md-4 col-md-offset-2">
         <p>
           connected to
           <account-link :hash="base" :length="50" :only-alias="false" />
