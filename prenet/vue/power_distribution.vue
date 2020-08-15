@@ -63,7 +63,7 @@
             <div class="doclet">
               <h2>Fleets</h2>
               <div class="link">
-                <router-link :class="'no-decoration'" :to="'/fleets/'"><% totalFleets %></router-link>
+                <router-link :class="'no-decoration'" :to="'/address?filter=fleets'"><% totalFleets %></router-link>
               </div>
             </div>
             <div class="doclet">

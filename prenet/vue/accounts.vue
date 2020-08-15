@@ -224,7 +224,6 @@ var Accounts = Vue.component("accounts", {
       return "Contract";
     },
   },
-
   created: function () {
     this.filter =
       ACCOUNTS_FILTER_MAP[this.$route.query.filter] || ACCOUNTS_ALL_FILTER;
@@ -235,6 +234,14 @@ var Accounts = Vue.component("accounts", {
     getBase(function (base) {
       self.base = base;
     });
+  },
+  watch: {
+    $route(to, from) {
+      if (to.path.indexOf('address') === -1) { return; }
+      this.filter = ACCOUNTS_FILTER_MAP[this.$route.query.filter] || ACCOUNTS_ALL_FILTER;
+
+      this.update();
+      },
   },
   methods: {
     update: async function () {
@@ -362,14 +369,6 @@ var Accounts = Vue.component("accounts", {
     onFilterChange: function (event) {
       this.update();
     },
-    // watch: {
-    //   $route(to, from) {
-    //     this.filter =
-    //       ACCOUNTS_FILTER_MAP[this.$route.query.filter] || ACCOUNTS_ALL_FILTER;
-
-    //     this.update();
-    //   },
-    // },
   },
 });
 </script>
