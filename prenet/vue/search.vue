@@ -10,7 +10,7 @@
       placeholder="Search for accounts, blocks, etc."
       name="search"
     />
-    <button type="submit" v-on:click="search">Search</button>
+    <button type="submit" name="search" v-on:click="search">Search</button>
   </div>
 </template>
 <script>

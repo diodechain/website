@@ -13,9 +13,12 @@
         />
       </div>
       <div class="col-md-4 col-md-offset-2">
-        <p>
+        <p v-if="base">
           connected to
-          <account-link :hash="base" :length="50" :only-alias="false" />
+          <account-link :hash="base" :length="15" :only-alias="true" />
+        </p>
+        <p v-else>
+          Reconnecting...
         </p>
       </div>
     </div>
@@ -122,7 +125,7 @@
                 <div
                   v-if="enabled && (valueToAddress(name.owner)==account || valueToAddress(name.owner) == undefined)"
                 >
-                  <div class="input-button white">
+                  <div class="input-button white marginized-top">
                     <input
                       class="no-icon"
                       type="text"
@@ -131,8 +134,9 @@
                     />
                     <button
                       v-on:click="registerName(name.name, deviceId[name.name])"
-                      :disabled="!web3.utils.isAddress(deviceId[name.name])"
-                    >Register</button>
+                      :disabled="!web3.utils.isAddress(deviceId[name.name])">
+                      Update
+                    </button>
                   </div>
                 </div>
               </td>

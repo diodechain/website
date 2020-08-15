@@ -2,7 +2,7 @@
   <div>
     <div class="title row">
       <div class="col-md-3 no-padding">
-        <h1>Prenet Overview</h1>
+        <h1>Network Overview</h1>
       </div>
       <div class="col-md-3">
         <search-bar v-bind:blocks.sync="blocks" v-bind:results.sync="searchResults" v-model="searchTerm"
@@ -76,12 +76,12 @@
               </div>
             </div>
             <div class="doclet">
-              <h2>Miners</h2>
+              <h2>Contracts</h2>
               <div class="link">
                 <router-link
                   :class="'no-decoration'"
                   :to="'/address?filter=contracts'"
-                ><% totalMiners %></router-link>
+                ><% totalContracts %></router-link>
               </div>
             </div>
           </div>
@@ -196,6 +196,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       targetSize: 100,
       totalFleets: "loading",
       totalMiners: "loading",
+      totalContracts: "loading",
       totalAccounts: "loading",
       totalSupply: "loading",
       searchTerm: "",

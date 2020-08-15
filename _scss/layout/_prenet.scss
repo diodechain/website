@@ -105,10 +105,9 @@ body.prenet {
     margin: 0;
 
     p {
-      color: #38ab66;
+      color: white;
       text-align: right;
       font-size: 14px;
-      font-weight: bold;
       text-transform: capitalize;
       float: right;
 
@@ -120,8 +119,8 @@ body.prenet {
 
     h1 {
       color: #ffffff;
-      font-weight: bold;
-      font-size: 1.1em;
+      font-weight: normal;
+      font-size: 1.2em;
     }
 
     i.fa {
@@ -197,6 +196,10 @@ body.prenet {
       }
     }
 
+    input[name="search"] {
+      width: 350px;
+    }
+
     button {
       position: absolute;
       top: 1px;
@@ -207,6 +210,10 @@ body.prenet {
       min-width: 58px;
       background: #ffffff;
 
+    }
+
+    button[name="search"] {
+      margin-left: -52px;
     }
 
     &::after {
@@ -228,7 +235,7 @@ body.prenet {
         border: 1px solid #d6442e;
         border-left: none;
         color: white;
-        background: #d6442e;
+        background: #F15E40;
 
       }
     }
@@ -435,7 +442,6 @@ body.prenet {
   .figure-title {
     padding-right: 10px;
     float: left;
-    font-weight: bold;
     text-transform: capitalize;
   }
 
