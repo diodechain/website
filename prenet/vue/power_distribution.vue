@@ -281,6 +281,15 @@ var PowerDistribution = Vue.component("power_distribution", {
       web3.eth.codeGroups().then((groups) => {
         this.totalFleets = web3.utils.hexToNumber(groups[FleetHash]);
         this.totalAccounts = web3.utils.hexToNumber(groups[NullHash]);
+
+        this.totalContracts = 0;
+        for (const id in groups) {
+          if (id !== FleetHash && id !== NullHash) {
+            this.totalContracts += 1;
+          }
+        }
+
+
       });
     },
     fetchStake: function (addr) {
