@@ -2,7 +2,7 @@
   <div>
     <div class="title row">
       <div class="col-md-3 no-padding">
-        <h1>Prenet Overview</h1>
+        <h1>Block Detail</h1>
       </div>
       <div class="col-md-3">
         <search-bar
@@ -27,8 +27,8 @@
       <table class="data" v-if="searchTerm && searchActivated">
         <caption><% searchResults.length %> Search Results</caption>
         <tr v-if="searchResults.length">
-          <th>Page</th>
-          <th>Match Term</th>
+          <td>Page</td>
+          <td>Match Term</td>
         </tr>
         <tr v-else-if="searchFinished">
           <td>
@@ -55,30 +55,33 @@
           </tr>
         </tbody>
       </table>
-      <table class="data" v-else>
+      <table class="data side-bordered" v-else>
+        <caption>
+          Block: <% block.number %>
+        </caption>
         <tr>
-          <th>Block Hash</th>
+          <td>Block Hash</td>
           <td><% block.hash %></td>
         </tr>
         <tr>
-          <th>Parent</th>
+          <td>Parent</td>
           <td v-if="validNumber">
             <router-link :to="`/block/${parentBlockNumber}`"><% parentBlockNumber %></router-link>
           </td>
           <td v-else>Genesis</td>
         </tr>
         <tr>
-          <th>Timestamp</th>
+          <td>Timestamp</td>
           <td><% formatUnix(block.timestamp) %></td>
         </tr>
         <tr>
-          <th>Miner</th>
+          <td>Miner</td>
           <td>
             <account-link :hash="block.miner" :length="50" :only-alias="false" />
           </td>
         </tr>
         <tr>
-          <th>Transactions</th>
+          <td>Transactions</td>
           <td v-if="block.transactions.length > 0">
             <div :key="tx" v-for="tx in block.transactions">
               <router-link :key="tx" :to="'/tx/' + tx"><% tx %></router-link>
@@ -87,23 +90,23 @@
           <td v-else>None</td>
         </tr>
         <tr>
-          <th>Size</th>
+          <td>Size</td>
           <td><% block.size %></td>
         </tr>
         <tr>
-          <th>Gas Used</th>
+          <td>Gas Used</td>
           <td><% block.gasUsed %></td>
         </tr>
         <tr>
-          <th>Gas Limit</th>
+          <td>Gas Limit</td>
           <td><% block.gasLimit %></td>
         </tr>
         <tr>
-          <th>Difficulty</th>
+          <td>Difficulty</td>
           <td><% block.difficulty %></td>
         </tr>
         <tr>
-          <th>Total Difficulty</th>
+          <td>Total Difficulty</td>
           <td><% block.totalDifficulty %></td>
         </tr>
       </table>

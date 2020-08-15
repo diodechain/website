@@ -323,6 +323,7 @@ body.prenet {
         border-bottom: 1px solid #ddd;
         padding: 8px;
         vertical-align: middle;
+        color: #000000;
       }
 
       th.big,
@@ -974,6 +975,7 @@ select {
 .side-bordered {
   caption {
     border-bottom: 1px solid #ddd !important;
+    padding: 12px!important;
   }
 
   td,th {

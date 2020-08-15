@@ -5658,6 +5658,7 @@ body.prenet table.data td {
   border-bottom: 1px solid #ddd;
   padding: 8px;
   vertical-align: middle;
+  color: #000000;
 }
 
 body.prenet table.data th.big,
@@ -6348,6 +6349,7 @@ select:focus {
 
 .side-bordered caption {
   border-bottom: 1px solid #ddd !important;
+  padding: 12px !important;
 }
 
 .side-bordered td, .side-bordered th {
