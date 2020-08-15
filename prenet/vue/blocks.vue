@@ -2,7 +2,7 @@
   <div>
     <div class="title row">
       <div class="col-md-3 no-padding">
-        <h1>Prenet Overview</h1>
+        <h1>Block Explorer</h1>
       </div>
       <div class="col-md-3">
         <search-bar
@@ -16,7 +16,7 @@
       <div class="col-md-4 col-md-offset-2">
         <p>
           connected to
-          <account-link :hash="base" :length="50" :only-alias="false" />
+          <account-link :hash="base" :length="50" Overview:only-alias="false" />
         </p>
       </div>
     </div>

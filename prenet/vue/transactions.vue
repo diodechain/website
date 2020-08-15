@@ -15,7 +15,7 @@
       <div class="col-md-4 col-md-offset-2">
         <p>
           connected to
-          <account-link :hash="base" :length="50" :only-alias="false" />
+          <account-link :hash="base" :length="15" :only-alias="true" />
         </p>
       </div>
     </div>

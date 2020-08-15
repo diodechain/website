@@ -15,7 +15,7 @@
       <div class="col-md-4 col-md-offset-2">
         <p>
           connected to
-          <account-link :hash="base" :length="50" :only-alias="false" />
+          <account-link :hash="base" :length="15" :only-alias="true" />
         </p>
       </div>
     </div>
@@ -362,6 +362,14 @@ var Accounts = Vue.component("accounts", {
     onFilterChange: function (event) {
       this.update();
     },
+    // watch: {
+    //   $route(to, from) {
+    //     this.filter =
+    //       ACCOUNTS_FILTER_MAP[this.$route.query.filter] || ACCOUNTS_ALL_FILTER;
+
+    //     this.update();
+    //   },
+    // },
   },
 });
 </script>
