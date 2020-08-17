@@ -149,7 +149,7 @@ var Blocks = Vue.component("blocks", {
       }
 
       this.blocks.forEach((block) => {
-        let timeStamp = Math.round((block.timestamp / 1000) * 1000);
+        let timeStamp = Math.round((block.timestamp / 100)) * 100;
 
         if (groups[timeStamp]) {
           groups[timeStamp] += block.transactions.length;
@@ -206,9 +206,9 @@ var Blocks = Vue.component("blocks", {
       var points = "";
       for (let i = 0; i < lineChartData.length; i++) {
         points +=
-          (i * 20).toString().padStart(2, "0") +
+          (i * 45).toString().padStart(2, "0") +
           "," +
-          (150 - lineChartData[i] * 20).toString().padStart(2, "0") +
+          (170 - lineChartData[i] * 20).toString().padStart(2, "0") +
           " ";
       }
 
