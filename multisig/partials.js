@@ -1313,13 +1313,6 @@ angular.module('multiSigWeb').run(['$templateCache', function($templateCache) {
     "      For using the application, you have to agree with our <a href=\"#\" ng-click=\"openTerms()\">Terms of Use</a> and <a href=\"#\" ng-click=\"openPolicy()\">Privacy Policy</a>.\n" +
     "  </p>\n" +
     "  <p>\n" +
-    "    Don't use the wallet hosted at\n" +
-    "    <a href=\"{{ websites.wallet }}\" class=\"prevent-focus\" target=\"_blank\">{{ websites.wallet }}</a> to sign transactions.\n" +
-    "    Use <a href=\"{{ websites.wallet }}\" target=\"_blank\">{{ websites.wallet }}</a> only to\n" +
-    "    check the status of your wallet. Use a locally installed version for signing.\n" +
-    "    A version can be obtained <a href=\"https://github.com/gnosis/MultiSigWallet/releases\" target=\"_blank\">here</a>.\n" +
-    "  </p>\n" +
-    "  <p>\n" +
     "    All smart contracts have been audited carefully multiple times.\n" +
     "    However, all contracts are <strong>WITHOUT ANY WARRANTY;</strong> without even\n" +
     "    the implied warranty of <strong>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE</strong>.\n" +
