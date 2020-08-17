@@ -1,5 +1,5 @@
 <template id="search-bar">
-  <div class="input-button">
+  <div class="input-button search-bar">
     <i v-on:click="selectInput" v-if="!value" class="fa fa-search search-icon"></i>
     <i v-on:click="clearSearch" v-else class="fa fa-times-circle"></i>
     <input

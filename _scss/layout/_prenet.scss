@@ -155,13 +155,16 @@ body.prenet {
     background-color: #f15c2e;
     min-width: 308px;
 
+    &.search-bar {
+      width: 350px;
+    }
+
     input[type="text"] {
       padding: 5px;
       float: left;
       width: 80%;
       background-color: #f15c2e;
       color: white;
-
       border: 0;
       border-radius: 5px;
       padding-left: 12%;
@@ -196,14 +199,10 @@ body.prenet {
       }
     }
 
-    input[name="search"] {
-      width: 350px;
-    }
-
     button {
       position: absolute;
       top: 1px;
-      margin-left: 2%;
+      right: 0.6%;
       border: 1px solid #d6442e;
       border-left: none;
       color: #000000;
@@ -213,7 +212,7 @@ body.prenet {
     }
 
     button[name="search"] {
-      margin-left: -52px;
+      right: 0.6%;
     }
 
     &::after {

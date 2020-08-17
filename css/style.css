@@ -5491,6 +5491,10 @@ body.prenet .input-button {
   min-width: 308px;
 }
 
+body.prenet .input-button.search-bar {
+  width: 350px;
+}
+
 body.prenet .input-button input[type="text"] {
   padding: 5px;
   float: left;
@@ -5539,14 +5543,10 @@ body.prenet .input-button input[type="text"].no-icon {
   padding-left: 3%;
 }
 
-body.prenet .input-button input[name="search"] {
-  width: 350px;
-}
-
 body.prenet .input-button button {
   position: absolute;
   top: 1px;
-  margin-left: 2%;
+  right: 0.6%;
   border: 1px solid #d6442e;
   border-left: none;
   color: #000000;
@@ -5555,7 +5555,7 @@ body.prenet .input-button button {
 }
 
 body.prenet .input-button button[name="search"] {
-  margin-left: -52px;
+  right: 0.6%;
 }
 
 body.prenet .input-button::after {
