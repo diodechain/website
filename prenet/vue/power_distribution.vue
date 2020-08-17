@@ -269,6 +269,14 @@ var PowerDistribution = Vue.component("power_distribution", {
   created: function () {
     this.loader();
   },
+  watch: {
+    $route(to, from) {
+      this.searchTerm = "";
+      this.searchActivated = false;
+      this.searchFinished = false;
+      this.searchResults = [];
+    }
+  },
   methods: {
     refresh: function () {
       web3.eth.totalSupply().then((supply) => {

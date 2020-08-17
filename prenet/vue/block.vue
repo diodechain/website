@@ -41,7 +41,7 @@
         <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
           <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
             <td>
-              <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
+              <router-link v-if="result.type==='Block'" :to="'/block/' + result.id" @mousedown.native="clearSearch">Block</router-link>
               <router-link
                 v-if="result.type==='Address' || result.isAddress"
                 :to="'/address/' + result.id"
@@ -169,6 +169,10 @@ var Block = Vue.component("block", {
         if (err) this.error = err;
         else this.block = block;
       });
+    },
+    clearSearch() {
+      this.searchTerm = "";
+      this.searchActivated = false;
     },
   },
   watch: {

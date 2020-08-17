@@ -237,11 +237,15 @@ var Accounts = Vue.component("accounts", {
   },
   watch: {
     $route(to, from) {
-      if (to.path.indexOf('address') === -1) { return; }
-      this.filter = ACCOUNTS_FILTER_MAP[this.$route.query.filter] || ACCOUNTS_ALL_FILTER;
+      this.searchTerm = "";
+      this.searchActivated = false;
+      this.searchFinished = false;
+      this.searchResults = [];
 
-      this.update();
-      },
+      if (to.path.indexOf('address') === -1) { return; }
+        this.filter = ACCOUNTS_FILTER_MAP[this.$route.query.filter] || ACCOUNTS_ALL_FILTER;
+        this.update();
+      }
   },
   methods: {
     update: async function () {
