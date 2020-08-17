@@ -85,8 +85,10 @@
                 <button class="button" v-on:click="enable()">Enable MetaMask</button>
                 <div v-if="error" v-html="error" class="error"></div>
                 <div class="message">
-                  The Diode Network Explorer uses MetaMask to authenticate your account. Please enable MetaMask to manage your Fleets.
-                  If you don’t have MetaMask installed, follow instructions at https://diode.io/docs/metamask.html to get started.
+                   The Diode Network Explorer uses <a target="_blank" href="https://metamask.io">MetaMask</a> to authenticate your account.
+                   Please enable MetaMask to manage your settings. <br><br>
+                   If you don’t have MetaMask installed, follow <a target="_blank" href="https://diode.io/docs/metamask.html">these instructions</a>
+                   to get started.
                 </div>
               </div>
             </caption>
