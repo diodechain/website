@@ -5581,6 +5581,13 @@ body.prenet .input-button.white button {
   background: #F15E40;
 }
 
+body.prenet .logs-data {
+  font-size: 10px;
+  line-height: 12px;
+  max-height: 700px;
+  max-width: 500px;
+}
+
 body.prenet td.fleet,
 body.prenet th.fleet {
   background-color: #ebebeb;
@@ -6351,6 +6358,7 @@ select:focus {
   overflow-y: scroll;
   display: revert !important;
   white-space: nowrap;
+  vertical-align: top !important;
 }
 
 .side-bordered caption {

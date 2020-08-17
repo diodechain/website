@@ -240,6 +240,12 @@ body.prenet {
     }
   }
 
+  .logs-data {
+    font-size: 10px;
+    line-height: 12px;
+    max-height:700px;
+    max-width: 500px;
+  }
 
 
   td.fleet,
@@ -975,6 +981,7 @@ select {
     overflow-y: scroll;
     display: revert !important;
     white-space:nowrap;
+    vertical-align: top !important;
 }
 
 .side-bordered {

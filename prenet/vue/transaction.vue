@@ -2,7 +2,7 @@
   <div>
     <div class="title row">
       <div class="col-md-3 no-padding">
-        <h1>Pending Transactions</h1>
+        <h1>Transaction Detail</h1>
       </div>
       <div class="col-md-3">
         <search-bar
@@ -66,8 +66,8 @@
             <td v-else>Not yet Mined</td>
             <td rowspan="12" class="tran-logs">
               Logs:
-              <br />
-              <pre v-if="receipt != null" style="max-height:700px"><% receipt.logs %></pre>
+              <br /><br />
+              <pre v-if="receipt != null" class="logs-data"><% receipt.logs %></pre>
               <span v-else>NA</span>
             </td>
           </tr>
