@@ -108,9 +108,9 @@
                   </ul>
                 </figcaption>
               </div>
-              <div class="col-md-7">
+              <div class="col-md-8">
                 <div class="figure-content" v-if="totalMiners">
-                  <svg width="400" height="140">
+                  <svg width="100%" height="140">
                     <g transform="translate(40,20)">
                       <g class="x axis" transform="translate(0,100)">
                         <g
