@@ -2658,10 +2658,10 @@ th {
   border-bottom-width: 2px;
 }
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #1c313f;
+  background-color: #e2e2e2;
 }
 .table-hover > tbody > tr:hover {
-  background-color: #2d3e50;
+  background-color: #f8b9a6;
 }
 table col[class*="col-"] {
   position: static;
