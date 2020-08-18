@@ -5431,7 +5431,6 @@ body.prenet .column {
 
 body.prenet a {
   color: #f15c2e;
-  text-decoration: underline;
   cursor: pointer;
   z-index: 100;
 }
@@ -6323,7 +6322,6 @@ select:focus {
   font-size: 14px;
   line-height: 16px;
   text-align: center;
-  color: #eb411d;
   margin-top: 25px;
 }
 
