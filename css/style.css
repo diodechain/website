@@ -5585,8 +5585,8 @@ body.prenet .logs-data {
   font-size: 10px;
   line-height: 12px;
   max-height: 700px;
-  max-width: 500px;
-  overflow-x: scroll;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 body.prenet td.fleet,
@@ -6360,6 +6360,7 @@ select:focus {
   display: revert !important;
   white-space: nowrap;
   vertical-align: top !important;
+  max-width: 510px;
 }
 
 .side-bordered caption {
