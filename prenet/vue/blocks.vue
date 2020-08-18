@@ -203,13 +203,15 @@ var Blocks = Vue.component("blocks", {
         this.lineYValues.push({ value: maxValue, y: 0 });
       }
 
-      var points = "";
+      let points = "";
+      let scaleFactorY = 150 / maxValue;
+      let scaleFactorX = 45;
+
       for (let i = 0; i < lineChartData.length; i++) {
-        points +=
-          (i * 45).toString().padStart(2, "0") +
-          "," +
-          (170 - lineChartData[i] * 20).toString().padStart(2, "0") +
-          " ";
+        let x = (i * scaleFactorX).toString().padStart(2, "0");
+        let y = 165 - lineChartData[i] * scaleFactorY;
+
+        points += x + "," + (y < 0 ? 0 : y).toString().padStart(2, "0") + " ";
       }
 
       return points.trim();

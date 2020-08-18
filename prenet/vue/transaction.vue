@@ -169,7 +169,6 @@ var Transaction = Vue.component("transaction", {
         if (err) this.error = err;
         else this.receipt = ret;
       });
-      // 0xd8e3e2e81319f6af36533bee63bc9b129ba6b0d7d607560f76fc291e2507a405
     },
   },
   watch: {
