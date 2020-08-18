@@ -64,7 +64,7 @@
           <figure>
             <div class="row">
               <div class="col-md-12">
-                <h2>Transactions count - Last 100 Blocks</h2>
+                <h2>Transactions per Minute</h2>
               </div>
               <div class="col-md-12">
                 <svg viewBox="-30 -10 800 181" class="line-chart">
