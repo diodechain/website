@@ -279,7 +279,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
       });
     },
     handleChainChanged: function (chainId) {
-      if (chainId != "41043") {
+      if (chainId != CHAIN_ID) {
         this.error = "MetaMask is not connected to the Diode Network";
         this.enabled = false;
         return;
