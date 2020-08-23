@@ -25,7 +25,7 @@ var txDefaultOrig =
     checkInterval: 15000
   },
   wallet: "injected",
-  defaultChainID: 41043,
+  defaultChainID: 0,
   // Mainnet
   walletFactoryAddress: "0x6e95c8e8557abc08b46f3c347ba06f8dc012763f",
   tokens: [
@@ -142,7 +142,11 @@ var txDefault = {
   ethereumNodes : [
     {
       url : "https://testnet.diode.io:8443",
-      name: "Remote Diode Prenet"
+      name: "Diode Prenet"
+    },
+    {
+      url : "https://staging.diode.io:8443",
+      name: "Diode Staging"
     },
     {
       url : "http://localhost:8545",

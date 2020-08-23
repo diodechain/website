@@ -400,7 +400,6 @@
                     if (e || accounts == 500) {
                       // reject(e);
                       // TODO Show error message
-
                     } else {
                       // Convert to Checksummed addresses
                       accounts = factory.toChecksumAddress(accounts);

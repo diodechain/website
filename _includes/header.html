@@ -9,45 +9,44 @@
   </div>
 
   <div class="container">
+  <!-- Site Navigation Bar -->
+  <div class="row site-navigation-bar parent">
 
-    <!-- Site Navigation Bar -->
-    <div class="row site-navigation-bar parent">
+    <!-- Logo -->
+    <div class="col-md-2 col-xs-4 logo">
+      <a href=""><img src="images/logo.svg?{{site.time | date: '%s%N'}}" alt="Diode - Logo"></a>
+    </div>
 
-      <!-- Logo -->
-      <div class="col-md-2 col-xs-4 logo">
-        <a href=""><img src="images/logo.svg?{{site.time | date: '%s%N'}}" alt="Diode - Logo"></a>
+    <!-- Toggle Mobile Menu -->
+    <div class="col-xs-8 toggle-menu">
+
+      <!-- Burger -->
+      <div class="navTrigger">
+        <i></i><i></i><i></i>
       </div>
-
-      <!-- Toggle Mobile Menu -->
-      <div class="col-xs-8 toggle-menu">
-
-        <!-- Burger -->
-        <div class="navTrigger">
-          <i></i><i></i><i></i>
-        </div>
-
-      </div>
-
-      <!-- Navigation Bar -->
-      <div class="col-sm-10 col-xs-12 navigation-bar">
-
-        <!-- Navigation Menu -->
-        <nav id="navMenu" class="nav-menu">
-          <ul class="menu">
-            {% for nav in site.navigation %}
-            {% if nav.target %}
-            <li><a href="{{ nav.link }}" target="{{ nav.target }}">{{ nav.title }}</a></li>
-            {% else %}
-            <li><a href="{{ nav.link }}">{{ nav.title }}</a></li>
-            {% endif %}
-            {% endfor %}
-          </ul>
-        </nav>
-
-      </div>
-
 
     </div>
+
+    <!-- Navigation Bar -->
+    <div class="col-sm-10 col-xs-8 navigation-bar">
+
+      <!-- Navigation Menu -->
+      <nav id="navMenu" class="nav-menu">
+        <ul class="menu">
+          {% for nav in site.navigation %}
+          {% if nav.target %}
+          <li><a href="{{ nav.link }}" target="{{ nav.target }}">{{ nav.title }}</a></li>
+          {% else %}
+          <li><a href="{{ nav.link }}">{{ nav.title }}</a></li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+
+    </div>
+
+
+  </div>
 
     <!-- Site Header Banner -->
     <div class="row header-banner parent" data-scrollax="properties: { 'translateY': '48%', 'opacity': '1.4' }">

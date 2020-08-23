@@ -13,7 +13,7 @@ Diode’s second livestream meetup event went live on Tuesday (June 30). The 30-
 
 The meetup topic was about how to perform video streaming using Raspberry Pi Zero W via Diode network. Check out the Diode meetup presentation slides on [Github](https://github.com/diodechain/presentations/blob/master/Diode_Online_Event_June_2020/Diode%20Tuesday%20online%20event%20%232_%20Diode%20Network%20and%20Video%20Streaming%20Using%20Raspberry%20Pi%20Zero%20W.pdf). Watch the livestream-ed meetup on[ YouTube](https://youtu.be/4VnDFfqQl3w).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4VnDFfqQl3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/4VnDFfqQl3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 Peter started his presentation by giving a quick demo. We’ve got a Raspberry Pi set up at our office in Berlin, Germany (where Dominic is currently based), and another Raspberry Pi set up at our office in Taipei, Taiwan. 
 

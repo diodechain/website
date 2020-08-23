@@ -1,12 +1,57 @@
 <template id="network">
-  <div class="network">
-    <div class="title">
-      <h1>Prenet Network</h1>
+  <div class="network prenet">
+        <div class="title row">
+      <div class="col-md-2  ">
+        <h1>Network Map</h1>
+      </div>
+      <div class="col-md-3">
+        <search-bar
+          v-bind:results.sync="searchResults"
+          v-model="searchTerm"
+          v-bind:activated.sync="searchActivated"
+          v-bind:finished.sync="searchFinished"
+        />
+      </div>
+      <div class="col-md-4  col-md-offset-3">
+        <p>
+          connected to
+          <account-link :hash="base" :length="15" :only-alias="true" />
+        </p>
+      </div>
     </div>
-    <div class="column">
-      <div
-        style="display: inline-block; position: relative; width: 100%; padding-bottom: 64.7%; vertical-align: middle; overflow: hidden;"
-      >
+    <div class="page-content">
+      <table class="data" v-if="searchTerm && searchActivated">
+        <caption><% searchResults.length %> Search Results</caption>
+        <tr v-if="searchResults.length">
+          <th>Page</th>
+          <th>Match Term</th>
+        </tr>
+        <tr v-else-if="searchFinished">
+          <td>
+            <div class="empty-search">
+              Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers,
+              BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
+            </div>
+          </td>
+        </tr>
+        <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
+          <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
+            <td>
+              <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
+              <router-link
+                v-if="result.type==='Address' || result.isAddress"
+                :to="'/address/' + result.id"
+              ><% result.type %></router-link>
+              <router-link
+                v-if="result.type==='Transaction'"
+                :to="'/tx/' + result.id"
+              ><% result.type %></router-link>
+            </td>
+            <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
+          </tr>
+        </tbody>
+      </table>
+      <div v-else class="map">
         <svg
           version="1.1"
           viewBox="0 0 1000 647"
@@ -1091,7 +1136,8 @@
             <circle
               v-for="point in points"
               v-bind:class="point.type"
-              v-tooltip="{ content: tooltip(point), autoHide: false, delay: { show: 0, hide: 3000 } }"
+              @mouseover="tooltip(point, event, true)"
+              @click="tooltip(point, event, false)"
               :key="point.ip"
               v-bind:cx="point.x"
               v-bind:cy="point.y"
@@ -1099,16 +1145,17 @@
             />
           </g>
           <g transform="translate(100, 500)" id="labels">
-            <circle class="self" r="8" cy="10"/>
+            <circle class="self" r="8" cy="10" />
             <text dominant-baseline="middle" y="10" x="10">Current node</text>
-            <circle class="connected" r="8" cy="30"/>
+            <circle class="connected" r="8" cy="30" />
             <text dominant-baseline="middle" y="30" x="10">Connected nodes</text>
-            <circle class="notConnected" r="8" cy="50"/>
+            <circle class="notConnected" r="8" cy="50" />
             <text dominant-baseline="middle" y="50" x="10">Not connected nodes</text>
           </g>
         </svg>
       </div>
     </div>
+    <div class="tooltip vue-tooltip-theme" id="map-tooltip"></div>
   </div>
 </template>
 <script>
@@ -1117,31 +1164,63 @@ var Network = Vue.component("network", {
   delimiters: ["<%", "%>"],
   data: () => {
     return {
+      base: "",
       nodes: {},
       points: {},
       collisionMap: {},
       base: undefined,
-      baseIp: undefined
+      baseIp: undefined,
+      timeoutId: null,
+      searchTerm: "",
+      searchActivated: false,
+      searchFinished: false,
+      searchResults: [],
     };
   },
 
-  created: function() {
+  created: function () {
+    let self = this;
+    getBase(function (base) {
+      self.base = base;
+    });
+
     this.load();
   },
   methods: {
-    tooltip(point) {
-      let text = "<a href='/prenet#/address/" + point.node_id + "'>" + point.name + "</a><br/>";
-        
-      text += point.city + ' (' + point.ip + ')</br>';
-      text += point.version + ' </br>';
+    tooltip(point, event, hovered) {
+      let text = "Location: " + point.city + " (" + point.ip + ")</br>";
+      text += "Version: " + point.version + " </br>";
 
-      if (point.tickets) text += point.tickets + ' tickets collected</br>';
-      if (point.uptime) text += point.uptime + 's uptime / ';
-      
-      text += point.retries + ' reconnects </br>';
-      return text;
+      if (point.uptime) text += "Uptime: " + point.uptime + "s uptime / ";
+
+      text += point.retries + " reconnects";
+
+      let tooltipContent = `<div class="tooltip-inner">
+                                <a href="${this.getAddressLink(point)}">${point.name}</a>
+                                <br>${text}<br>
+                              </div>`;
+
+      let tooltipLayout = document.getElementById("map-tooltip");
+
+      if (tooltipLayout.innerHTML !== tooltipContent) {
+        tooltipLayout.innerHTML = tooltipContent;
+        let offsetLeft = tooltipLayout.clientWidth > 350 ? 80 : 40;
+        tooltipLayout.style.transform = `translate3d(${event.layerX - offsetLeft}px, ${event.layerY + 80}px, 0px)`;
+      }
+
+      tooltipLayout.style.display = 'block';
+
+      if (this.timeoutId) { clearTimeout(this.timeoutId); }
+
+      if (hovered) {
+        this.timeoutId = setTimeout(function() {
+          document.getElementById("map-tooltip").style.display = "none";
+        }, 3000);
+      }
+
+      console.log(event);
     },
-    load: async function() {
+    load: async function () {
       let ret = undefined;
       let base = await web3.eth.getCoinbase();
       this.base = base;
@@ -1152,7 +1231,7 @@ var Network = Vue.component("network", {
         console.log("getNode error:", node, err);
         return;
       }
-      this.baseIp = ret[1]
+      this.baseIp = ret[1];
       this.putPoint(base, ret, "self", 0);
       try {
         ret = await web3.eth.network();
@@ -1167,27 +1246,28 @@ var Network = Vue.component("network", {
       }
     },
 
-    putPoint: function(node_id, serverObj, type, retries) {
-      let = ip = serverObj[1]
-      resolveIP(ip, location => {
+    putPoint: function (node_id, serverObj, type, retries) {
+      let = ip = serverObj[1];
+      resolveIP(ip, (location) => {
         let lat = Math.round(location.latitude * 1000) / 1000;
         let lon = Math.round(location.longitude * 1000) / 1000;
 
         let point = this.mapLatLon(lat, lon);
         point.ip = ip;
         if (serverObj.length > 5) {
-          point.version = serverObj[4]
-          let extra = {}
+          point.version = serverObj[4];
+          let extra = {};
           for (let [key, value] of serverObj[5]) {
-            extra[key] = value
+            extra[key] = value;
           }
-          point.tickets = web3.utils.hexToNumber(extra["tickets"])
-          point.uptime = Math.round(web3.utils.hexToNumber(extra["uptime"])/1000)
-        }
-        else {
-          point.version = "ExDiode <= 2.3"
-          point.tickets = false
-          point.uptime = false
+          point.tickets = web3.utils.hexToNumber(extra["tickets"]);
+          point.uptime = Math.round(
+            web3.utils.hexToNumber(extra["uptime"]) / 1000
+          );
+        } else {
+          point.version = "ExDiode <= 2.3";
+          point.tickets = false;
+          point.uptime = false;
         }
         point.type = type;
         point.city = location.city;
@@ -1210,7 +1290,7 @@ var Network = Vue.component("network", {
         this.$set(this.points, ip, point);
       });
     },
-    mapLatLon: function(lat, lon) {
+    mapLatLon: function (lat, lon) {
       // <metadata>
       //   <views>
       //     <view h="647.825177808" padding="0" w="1000">
@@ -1242,9 +1322,16 @@ var Network = Vue.component("network", {
 
       return {
         x,
-        y
+        y,
       };
+    },
+    getAddressLink(point) {
+      if (window.location.pathname !== '/') {
+             return `${window.location.pathname}#/address/${point.node_id}`;
+      } else {
+        return `/#/address/${point.node_id}`;
+      }
     }
-  }
+  },
 });
 </script>

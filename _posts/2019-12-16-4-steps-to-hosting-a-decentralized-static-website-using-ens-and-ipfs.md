@@ -11,7 +11,7 @@ imageclass: bottom
 
 In this article, we will outline the steps required to deploy a static website under your ens name. One example is my personal website hosting on IPFS using “yahsin.eth” my ENS custom domain. What it does is that anyone can visit [https://yahsin.eth.link/](https://yahsin.eth.link/), the browser would return an introduction of myself. It will work faster if the viewer has MetaMask readily installed. View a list of ENS+IPFS websites compiled by Almonit here: [https://almonit.eth.link/](https://almonit.eth.link/)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oA4oOY5zgU0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/oA4oOY5zgU0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 <br/>
 So, how can you do that? Let’s dive right in!
