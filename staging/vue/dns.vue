@@ -2,7 +2,7 @@
   <div>
     <div class="title row">
       <div class="col-md-3 no-padding">
-        <h1>Blockchain Name System</h1>
+        <h1>Blockchain Name System v<% version %></h1>
       </div>
       <div class="col-md-3">
         <search-bar
@@ -183,6 +183,7 @@ var DNS = Vue.component("dns", {
       searchResults: [],
       balance: 0,
       tableHeight: 300,
+      version: 0,
     };
   },
 
@@ -190,6 +191,10 @@ var DNS = Vue.component("dns", {
     let self = this;
     getBase(function (base) {
       self.base = base;
+    });
+
+    CallDNS("Version", [], (vsn) => {
+      this.version = web3.utils.hexToNumber(vsn);
     });
 
     this.refreshNames();

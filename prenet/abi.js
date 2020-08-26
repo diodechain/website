@@ -121,6 +121,11 @@ var dnsMethods = {
             name: 'destination'
         }]
     },
+    "Version": {
+        name: 'Version',
+        type: 'function',
+        inputs: []
+    },
     "names": {
         name: 'names',
         type: 'function',
