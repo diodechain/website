@@ -1,6 +1,6 @@
 ---
 title: EdgeV2 RPC
-category: Documentation
+category: Reference
 ---
 
 The Edge V2 protocol uses [Ethereums Recursive Length Prefix encoding (RLP)](https://github.com/ethereum/wiki/wiki/RLP) over secure [TLS1.3 channels](https://en.wikipedia.org/wiki/Transport_Layer_Security). Each message in the protocol prefixed with two bytes, a 16-bit length field of the RLP payload. Number encodings is always big-endian. Requests in the protocol look like this:

@@ -1,6 +1,6 @@
 ---
 title: Go Client
-category: Documentation
+category: Reference
 ---
 
 Source [here](https://hackmd.io/OEZ26_WMQZS1fa_t2yLB4Q?both)

@@ -1,6 +1,6 @@
 ---
 title: Run a local gateway
-category: Guides
+category: Desktop
 ---
 
 We are providing a public web gateway into the diode network under https://<address>.diode.link

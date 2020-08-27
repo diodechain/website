@@ -16,7 +16,7 @@
 
     <div class="widget toc-widget">
         <div class="widget-content">
-            {% assign groups = site.docs | sort: "category" | reverse | group_by: "category" %}
+            {% assign groups = site.docs | sort: "category" | group_by: "category" %}
             {% for group in groups %}
             <div class="group">
                 <h3>

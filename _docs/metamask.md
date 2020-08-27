@@ -1,6 +1,6 @@
 ---
 title: Configure Metamask
-category: Guides
+category: Desktop
 ---
 
 When you want to interact with the Diode prenet from within your browser, you can do so on the <a href="https://diode.io/prenet">prenet browser</a>. To make MetaMask recognize this prenet you have to add it to your MetaMask installation through these steps.

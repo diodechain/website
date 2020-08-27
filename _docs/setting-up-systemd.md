@@ -1,5 +1,5 @@
 ---
-category: Introduction
+category: Raspbery PI
 title: Start on boot
 ---
 
