@@ -5333,7 +5333,7 @@ body.prenet .header {
   padding: 25px 0px;
   -webkit-box-shadow: 0px 10px 8px -15px #111;
           box-shadow: 0px 10px 8px -15px #111;
-  background: white;
+  background-color: #2d3e50;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5382,8 +5382,8 @@ body.prenet ul.navbar li a {
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  color: #111111;
-  text-transform: capitalize;
+  color: #fff;
+  text-transform: uppercase;
   letter-spacing: 0.08rem;
   text-decoration: none;
   white-space: nowrap;

@@ -26,11 +26,6 @@ layout: ""
         body.prenet {
             background-image: url(../staging/staging.png);
         }
-
-        body.prenet div.header ul.navbar li a {
-            color: #fff; 
-            text-transform: uppercase;
-        }
     </style>
 </head>
 
@@ -47,7 +42,7 @@ layout: ""
     {% include_relative vue/network.vue %}
     {% include_relative vue/search.vue %}
     <div id="app">
-        <div class="header" style="background-color: #2d3e50;">
+        <div class="header">
             <div class="logo">
                 <a href="{{ site.github.url }}"><img src="images/logo.svg" /></a>
             </div>
@@ -351,17 +346,19 @@ layout: ""
         }
 
         function formatUnix(unix_timestamp) {
+            let format = (str) => {return ("0" + str).substr(-2)}
+
             // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
             let date = new Date(unix_timestamp * 1000);
-            // Hours part from the timestamp
-            let hours = date.getHours();
-            // Minutes part from the timestamp
-            let minutes = "0" + date.getMinutes();
-            // Seconds part from the timestamp
-            let seconds = "0" + date.getSeconds();
+            let year = date.getFullYear();
+            let month = format(date.getMonth() + 1);
+            let day = format(date.getDate());
+            let hours = format(date.getHours());
+            let minutes = format(date.getMinutes());
+            let seconds = format(date.getSeconds());
 
             // Will display time in 10:30:23 format
-            return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+            return day + '.' + month + '.' + year + ' ' + hours + ':' + minutes + ':' + seconds;
         }
 
     </script>
