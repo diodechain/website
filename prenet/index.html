@@ -238,6 +238,20 @@ layout: ""
             return addr
         }
 
+        function getUnixTime(unix_timestamp) {
+            // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
+            let date = new Date(unix_timestamp * 1000);
+            // Hours part from the timestamp
+            let hours = date.getHours();
+            // Minutes part from the timestamp
+            let minutes = "0" + date.getMinutes();
+            // Seconds part from the timestamp
+            let seconds = "0" + date.getSeconds();
+
+            // Will display time in 10:30:23 format
+            return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        }
+
         function addressAdd(bn, num) {
             return '0x' + bn.add(web3.utils.toBN(num)).toString(16).padStart(64, '0')
         }
