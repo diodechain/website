@@ -5601,7 +5601,7 @@ body.prenet table caption {
   text-align: left;
   border: 1px solid #ddd;
   border-bottom: 0;
-  padding: 12px 0 5px 10px;
+  padding: 12px 10px 5px 10px;
   background: white;
   color: #000000;
 }
