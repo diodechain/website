@@ -33,7 +33,7 @@ Finally at the bottom of the Networks settings there is big blue button called '
   </tr><tr>
     <th>New RPC URL</th><td>https://testnet.diode.io:8443</td>
   </tr><tr>
-    <th>ChainID</th><td>41043</td>
+    <th>ChainID</th><td>15</td>
   </tr><tr>
     <th>Symbol</th><td>DIO</td>
   </tr><tr>
