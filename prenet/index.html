@@ -15,9 +15,11 @@ layout: ""
     <script src="https://cdn.jsdelivr.net/npm/vue-router@3.1.5/dist/vue-router.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="prenet/abi.js"></script>
     <script src="prenet/geo.js"></script>
     <script src="prenet/storage.js"></script>
+    <script src="prenet/donut.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css"></link>
     <link rel="shortcut icon" href="images/favicon.png" title="Favicon"></link>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet"></link>
@@ -72,21 +74,72 @@ layout: ""
             if (web3.currentProvider.connected && app.connected == 1) web3.eth.subscribe(event, callback);
         }
 
-        var routes = [
-            { name: 'Map', path: '/network', component: Network },
+        var routes = [{
+                name: 'Map',
+                path: '/network',
+                component: Network
+            },
 
-            { name: 'Transactions', path: '/tx/', component: Transactions },
-            { name: false, path: '/tx/:hash', params: { hash: '0x1' }, component: Transaction, props: true },
+            {
+                name: 'Transactions',
+                path: '/tx/',
+                component: Transactions
+            },
+            {
+                name: false,
+                path: '/tx/:hash',
+                params: {
+                    hash: '0x1'
+                },
+                component: Transaction,
+                props: true
+            },
 
-            { name: 'Blocks', path: '/block', component: Blocks },
-            { name: false, path: '/block/:number', params: { number: 'latest' }, component: Block, props: true },
+            {
+                name: 'Blocks',
+                path: '/block',
+                component: Blocks
+            },
+            {
+                name: false,
+                path: '/block/:number',
+                params: {
+                    number: 'latest'
+                },
+                component: Block,
+                props: true
+            },
 
-            { name: 'Accounts', path: '/address', component: Accounts },
-            { name: false, path: '/address/:hash', params: { hash: Registry }, component: Account, props: true },
+            {
+                name: 'Accounts',
+                path: '/address',
+                component: Accounts
+            },
+            {
+                name: false,
+                path: '/address/:hash',
+                params: {
+                    hash: Registry
+                },
+                component: Account,
+                props: true
+            },
 
-            { name: 'BNS', path: '/dns', component: DNS },
-            { name: 'Fleets', path: '/fleets', component: FleetRegistration },
-            { name: 'Overview', path: '/', component: PowerDistribution },
+            {
+                name: 'BNS',
+                path: '/dns',
+                component: DNS
+            },
+            {
+                name: 'Fleets',
+                path: '/fleets',
+                component: FleetRegistration
+            },
+            {
+                name: 'Overview',
+                path: '/',
+                component: PowerDistribution
+            },
         ];
         const router = new VueRouter({
             routes,
@@ -150,24 +203,39 @@ layout: ""
                 return
             }
 
+
+
             web3.eth.getStorage(DNSAddr, (err, arr) => {
+
                 if (!arr) return
                 let ret = {}
-                arr.forEach(element => { ret[element[0].toLowerCase()] = element[1].toLowerCase() })
+
+                arr.forEach(element => {
+                    ret[element[0].toLowerCase()] = element[1].toLowerCase()
+                })
+
                 for (key in ret) {
                     let name = valueToString(ret[key])
-                    // if (names == undefined) name = ret[key]
-                    if (name == undefined) continue
+
+                    if (name == undefined) continue;
+
                     let nameOffset = web3.utils.toBN(key)
                     let entry = {
                         name,
                         owner: ret[addressAdd(nameOffset, -1)],
                         destination: ret[addressAdd(nameOffset, -2)]
                     }
+
                     if (entry.owner == undefined) continue;
+
                     DNSCache[name] = entry
-                    let addr = valueToAddress(entry.destination)
-                    if (addr) DNSCache[addr] = entry
+
+                    let addr = valueToAddress(entry.destination);
+
+                    if (addr) {
+                        entry.address = addr;
+                        DNSCache[addr] = entry;
+                    }
                 }
             })
         }
@@ -179,8 +247,14 @@ layout: ""
             template: '<router-link v-if="isAddress(hash)" :to="\'/address/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link><span v-else><% hash %></span>',
             props: {
                 hash: String,
-                onlyAlias: { type: Boolean, default: true },
-                length: { type: Number, default: 50 }
+                onlyAlias: {
+                    type: Boolean,
+                    default: true
+                },
+                length: {
+                    type: Number,
+                    default: 50
+                }
             },
             delimiters: ["<%", "%>"]
         })
@@ -225,6 +299,14 @@ layout: ""
             delimiters: ["<%", "%>"]
         })
 
+        function getAddressLink(address) {
+            if (window.location.pathname !== '/') {
+                return `${window.location.pathname}#/address/${address}`;
+            } else {
+                return `/#/address/${address}`;
+            }
+        }
+
         function valueToAddress(value) {
             if (value == undefined || !value.startsWith('0x000000000000000000000000'))
                 return undefined;
@@ -233,6 +315,20 @@ layout: ""
             if (!isAddress(addr))
                 return undefined;
             return addr
+        }
+
+        function getUnixTime(unix_timestamp) {
+            // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
+            let date = new Date(unix_timestamp * 1000);
+            // Hours part from the timestamp
+            let hours = date.getHours();
+            // Minutes part from the timestamp
+            let minutes = "0" + date.getMinutes();
+            // Seconds part from the timestamp
+            let seconds = "0" + date.getSeconds();
+
+            // Will display time in 10:30:23 format
+            return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
         }
 
         function addressAdd(bn, num) {
@@ -262,7 +358,7 @@ layout: ""
         }
 
         function getRandomColor() {
-            return "#"+((1<<24)*Math.random()|0).toString(16);
+            return "#" + ((1 << 24) * Math.random() | 0).toString(16);
         }
 
         function valueToBalance(balance) {
@@ -341,7 +437,9 @@ layout: ""
         }
 
         function formatUnix(unix_timestamp) {
-            let format = (str) => {return ("0" + str).substr(-2)}
+            let format = (str) => {
+                return ("0" + str).substr(-2)
+            }
 
             // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
             let date = new Date(unix_timestamp * 1000);
@@ -352,10 +450,8 @@ layout: ""
             let minutes = format(date.getMinutes());
             let seconds = format(date.getSeconds());
 
-            // Will display time in 10:30:23 format
-            return day + '.' + month + '.' + year + ' ' + hours + ':' + minutes + ':' + seconds;
+            return hours + ':' + minutes + ':' + seconds + ' ' + year + '/' + month + '/' + day;
         }
-
     </script>
 
 </body>

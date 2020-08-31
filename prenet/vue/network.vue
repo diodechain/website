@@ -1196,7 +1196,7 @@ var Network = Vue.component("network", {
       text += point.retries + " reconnects";
 
       let tooltipContent = `<div class="tooltip-inner">
-                                <a href="${this.getAddressLink(point)}">${point.name}</a>
+                                <a href="${getAddressLink(point.node_id)}">${point.name}</a>
                                 <br>${text}<br>
                               </div>`;
 
@@ -1324,13 +1324,6 @@ var Network = Vue.component("network", {
         x,
         y,
       };
-    },
-    getAddressLink(point) {
-      if (window.location.pathname !== '/') {
-             return `${window.location.pathname}#/address/${point.node_id}`;
-      } else {
-        return `/#/address/${point.node_id}`;
-      }
     }
   },
 });

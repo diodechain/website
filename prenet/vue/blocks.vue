@@ -63,10 +63,10 @@
           -->
           <figure>
             <div class="row">
-              <div class="col-md-12">
-                <h2>Transactions per Minute</h2>
+              <div class="col-md-12 col-sm-12">
+                <h6>Transactions per Minute</h2>
               </div>
-              <div class="col-md-12">
+              <div class="col-md-12 col-sm-12">
                 <svg viewBox="-30 -10 800 181" class="line-chart">
                   <g class="grid x-grid" id="xGrid">
                     <line x1="0" x2="0" y1="0" y2="151" />
@@ -171,7 +171,7 @@ var Blocks = Vue.component("blocks", {
           i === Math.round(lineChartDataKeys.length / 2)
         ) {
           this.lineTimes.push({
-            value: formatUnix(lineChartDataKeys[i]),
+            value: getUnixTime(lineChartDataKeys[i]),
             x: this.lineTimes.length * 360 + 20,
           });
         }

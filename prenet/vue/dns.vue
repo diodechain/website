@@ -58,7 +58,7 @@
         </tbody>
       </table>
       <div v-else class="row align-start">
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3 padding-right-10">
           <table class="data" :style="'width: 100%;min-height:' + tableHeight + 'px'">
             <caption>
               <div class="marginized-bottom">Your Account</div>
@@ -87,7 +87,7 @@
             </tbody>
           </table>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 col-sm-9">
           <table class="data" v-if="Object.entries(names).length !== 0" id="blockchain-names">
             <caption>
               <div class="col-md-12 no-padding">
@@ -208,6 +208,8 @@ var DNS = Vue.component("dns", {
       }
       this.refreshNames();
     }, 1000);
+
+    //if (this.$route.query.enableMetaMask) { this.enable(); }
   },
   methods: {
     refreshNames: function () {
@@ -236,6 +238,7 @@ var DNS = Vue.component("dns", {
     },
     addName: function (name) {
       if (!name || this.names[name]) return;
+
       let entry = {
         name,
         destination: "loading",

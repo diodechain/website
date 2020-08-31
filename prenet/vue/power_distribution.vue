@@ -5,9 +5,12 @@
         <h1>Network Overview</h1>
       </div>
       <div class="col-md-3">
-        <search-bar v-bind:blocks.sync="blocks" v-bind:results.sync="searchResults" v-model="searchTerm"
-                    v-bind:activated.sync="searchActivated"
-                    v-bind:finished.sync="searchFinished"
+        <search-bar
+          v-bind:blocks.sync="blocks"
+          v-bind:results.sync="searchResults"
+          v-model="searchTerm"
+          v-bind:activated.sync="searchActivated"
+          v-bind:finished.sync="searchFinished"
         />
       </div>
       <div class="col-md-4 col-md-offset-2">
@@ -53,7 +56,7 @@
       </div>
       <div v-else>
         <div style="display: flex;">
-          <div class="headtable">
+          <div class="headtable" style="width: 45%">
             <div class="doclet">
               <h2>Free Flow</h2>
               <div class="link">
@@ -63,7 +66,10 @@
             <div class="doclet">
               <h2>Fleets</h2>
               <div class="link">
-                <router-link :class="'no-decoration'" :to="'/address?filter=fleets'"><% totalFleets %></router-link>
+                <router-link
+                  :class="'no-decoration'"
+                  :to="'/address?filter=fleets'"
+                ><% totalFleets %></router-link>
               </div>
             </div>
             <div class="doclet">
@@ -84,75 +90,32 @@
                 ><% totalContracts %></router-link>
               </div>
             </div>
+            <div class="doclet">
+              <h2>BNS (Active)</h2>
+              <div class="link">
+                <router-link
+                  :class="'no-decoration'"
+                  :to="'/dns'"
+                ><% (Object.keys(names).length || '...') + ' (' + activeDNSCount + ')' %></router-link>
+              </div>
+            </div>
+            <div class="doclet">
+              <h2>Active Miners</h2>
+              <div class="link">
+                <router-link :class="'no-decoration'" :to="'/network'"><% totalMiners %></router-link>
+              </div>
+            </div>
           </div>
 
-          <div class="headtable">
+          <div class="headtable" style="width: 55%">
             <figure>
               <div class="row">
                 <div class="col-md-12">
                   <h2>Top Miners over Last 100 Blocks</h2>
                 </div>
               </div>
-              <div class="col-md-3 col-md-offset-1">
-                <figcaption class="figure-key">
-                  <ul class="figure-key-list" aria-hidden="true" role="presentation">
-                    <li v-for="miner in shares" :key="miner.name">
-                      <span class="shape-square" v-bind:style="{ backgroundColor: miner.color }"></span>
-                      <div style="flow: flex; flex-layout: column;">
-                        <div class="figure-title">
-                          <account-link :hash="miner.name" :only-alias="true" :length="10"></account-link>
-                        </div>
-                        <div class="ul1"><% miner.count %> Blocks</div>
-                      </div>
-                    </li>
-                  </ul>
-                </figcaption>
-              </div>
-              <div class="col-md-8">
-                <div class="figure-content" v-if="totalMiners">
-                  <svg width="100%" height="140">
-                    <g transform="translate(40,20)">
-                      <g class="x axis" transform="translate(0,100)">
-                        <g
-                          v-for="(miner, index) in shares"
-                          :key="miner.name"
-                          class="tick"
-                          :transform="'translate(' + (27 + (index * 70)) + ',0)'"
-                          style="opacity: 1;"
-                        >
-                          <line y2="6" x2="0" />
-                          <text
-                            fill="#F15C2E"
-                            dy=".71em"
-                            y="9"
-                            x="10"
-                            style="text-anchor: middle;"
-                          ><% formatAddr(miner.name, true, 10) %></text>
-                        </g>
-                        <path class="domain" d="M0,2V0H350V2" />
-                      </g>
-                      <g class="y axis">
-                        <path class="domain" d="M-2,0H0V102H-2" />
-                      </g>
-                      <g v-for="(miner, index) in shares" :key="miner.name">
-                        <rect
-                          class="bar"
-                          :x="(10 + (index * 70))"
-                          width="45"
-                          :y="100 - miner.scaledCount"
-                          :height="miner.scaledCount"
-                          :style="'fill:' + miner.color"
-                        />
-                        <text
-                          dy=".71em"
-                          :y="100 - miner.scaledCount - 15"
-                          :x="(27 + (index * 70))"
-                          style="text-anchor: middle;"
-                        ><% miner.count %></text>
-                      </g>
-                    </g>
-                  </svg>
-                </div>
+              <div class="col-md-12 col-sm-12 col-md-offset-2 col-sm-offset-0" id="pie-chart">
+                <span v-if="shares"></span>
               </div>
             </figure>
           </div>
@@ -193,16 +156,19 @@ var PowerDistribution = Vue.component("power_distribution", {
       miners: [],
       blocks: [],
       stakes: {},
+      names: {},
       targetSize: 100,
       totalFleets: "loading",
-      totalMiners: "loading",
+      totalMiners: "...",
       totalContracts: "loading",
       totalAccounts: "loading",
       totalSupply: "loading",
       searchTerm: "",
       searchActivated: false,
       searchFinished: false,
-      searchResults: []
+      searchResults: [],
+      lastBlockNumber: null,
+      activeDNSCount: '...',
     };
   },
   computed: {
@@ -213,7 +179,8 @@ var PowerDistribution = Vue.component("power_distribution", {
 
       this.blocks.forEach((block) => {
         if (groups[block.miner]) {
-          groups[block.miner].count++;
+          groups[block.miner].value++;
+          groups[block.miner].percent = " (" + groups[block.miner].value + "%)";
         } else {
           let color = PredefinedGraphicColors[minerIndex];
 
@@ -222,11 +189,10 @@ var PowerDistribution = Vue.component("power_distribution", {
           }
 
           groups[block.miner] = {
-            count: 1,
-            address: block.miner,
-            name: block.miner,
+            value: 1,
+            href: getAddressLink(block.miner),
+            label: formatAddr(block.miner, true, 5),
             color: color,
-            shape: "background-color(" + color + ")",
           };
 
           minerIndex += 1;
@@ -237,37 +203,44 @@ var PowerDistribution = Vue.component("power_distribution", {
 
       groups = Object.values(groups);
 
-      let total = 0;
-      groups.forEach((miner) => {
-        this.miners.push(miner);
+      if (!document.getElementById("pie-chart")) {
+        return;
+      }
 
-        if (total == 0) miner.offset = 25;
-        else miner.offset = 100 - total + 25;
+      if (!document.getElementById("pie-chart-svg")) {
+        DonutItem.create("pie-chart", groups, 360, 225);
+      } else {
+        DonutItem.redraw("pie-chart", groups);
+      }
 
-        miner.percent = Math.round((100 * miner.count) / this.blocks.length);
-        total += miner.percent;
-        miner.stroke = "" + miner.percent + " " + (100 - miner.percent);
-
-        this.fetchStake(miner.address);
-      });
-
-      this.totalMiners = groups.length;
-      var result = groups.sort((b, a) => a.count - b.count);
-
-      if (this.totalMiners) {
-        var topMiner = groups[0];
-        var scaleFactor = 100 / topMiner.count;
-
-        groups.forEach((miner) => {
-          miner.scaledCount = miner.count * scaleFactor;
+      function randomData() {
+        return salesData.map(function (d) {
+          return {
+            label: d.label,
+            value: 1000 * Math.random(),
+            color: d.color,
+          };
         });
       }
 
-      return result;
+      this.totalMiners = groups.length;
+
+      return groups;
     },
   },
+
   created: function () {
     this.loader();
+
+    this.refreshNames();
+
+    setInterval(() => {
+      this.refreshNames();
+    }, 1000);
+
+    setTimeout(() => {
+      this.activeDNS();
+    }, 10000);
   },
   watch: {
     $route(to, from) {
@@ -275,9 +248,70 @@ var PowerDistribution = Vue.component("power_distribution", {
       this.searchActivated = false;
       this.searchFinished = false;
       this.searchResults = [];
-    }
+    },
   },
   methods: {
+    activeDNS: function () {
+      if (this.activeDNSCount !== '...') {
+        return;
+      }
+
+      if (!Object.keys(this.names).length) {
+        return;
+      }
+
+      let self = this;
+      let activeBlocksBatch = new web3.BatchRequest();
+
+      for (key in this.names) {
+        let callback = (error, block) => {
+          if (error) {
+            console.log(error);
+            return;
+          }
+
+          if (self.activeDNSCount === '...') {
+            self.activeDNSCount = 0;
+          }
+
+          if (block && block[0] === "ticket") {
+            let blockNumber = web3.utils.hexToNumber(block[2]);
+
+            if (blockNumber > self.lastBlockNumber - 40320) {
+              this.activeDNSCount += 1;
+            }
+          }
+        };
+
+        if (this.names[key].addr) {
+          activeBlocksBatch.add(
+            web3.eth.getObject.request(this.names[key].addr, true, callback)
+          );
+        }
+      }
+
+      activeBlocksBatch.execute();
+    },
+    refreshNames: function () {
+      for (key in DNSCache) {
+        let name = DNSCache[key].name;
+        let entry = {
+          name,
+          destination: DNSCache[key].destination,
+          owner: DNSCache[key].owner,
+          addr: DNSCache[key].address,
+        };
+        this.$set(this.names, name, entry);
+      }
+
+      for (key in this.names) {
+        if (this.names[key].destination == "loading") {
+          this.names[key].destination = "undefined";
+          this.names[key].owner = "undefined";
+          this.$set(this.names, key, this.names[key]);
+        }
+      }
+    },
     refresh: function () {
       web3.eth.totalSupply().then((supply) => {
         let totalSupply = web3.utils
@@ -296,8 +330,6 @@ var PowerDistribution = Vue.component("power_distribution", {
             this.totalContracts += 1;
           }
         }
-
-
       });
     },
     fetchStake: function (addr) {
@@ -310,7 +342,7 @@ var PowerDistribution = Vue.component("power_distribution", {
     },
     loader: async function () {
       let self = this;
-      getBase(function(base) {
+      getBase(function (base) {
         self.base = base;
       });
 
@@ -336,19 +368,26 @@ var PowerDistribution = Vue.component("power_distribution", {
         buffer = [];
       }, 2000);
 
-      let nr = await web3.eth.getBlockNumber();
+      this.lastBlockNumber = await web3.eth.getBlockNumber();
       let batch = new web3.BatchRequest();
       let blocks = [];
-      let size = this.targetSize > nr ? nr : this.targetSize;
+      let size =
+        this.targetSize > this.lastBlockNumber
+          ? this.lastBlockNumber
+          : this.targetSize;
+
       let cb = (error, block) => {
         if (error) {
           console.log(error);
           return;
         }
+
         blocks.push(block);
+
         if (blocks.length == size) {
           this.blocks = blocks;
         }
+
         if (!this.stakes[block.miner]) {
           this.$set(this.stakes, block.miner, {
             name: block.miner,
@@ -357,13 +396,16 @@ var PowerDistribution = Vue.component("power_distribution", {
           this.fetchStake(block.miner);
         }
       };
-      for (let i = 0; i < size; i++) {
-        batch.add(web3.eth.getBlock.request(nr - i, false, cb));
-      }
-      batch.execute();
-    }
-  },
 
+      for (let i = 0; i < size; i++) {
+        batch.add(
+          web3.eth.getBlock.request(this.lastBlockNumber - i, false, cb)
+        );
+      }
+
+      batch.execute();
+    },
+  },
 });
 </script>
 
