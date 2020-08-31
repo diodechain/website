@@ -366,8 +366,7 @@ layout: ""
             let minutes = format(date.getMinutes());
             let seconds = format(date.getSeconds());
 
-            // Will display time in 10:30:23 format
-            return day + '.' + month + '.' + year + ' ' + hours + ':' + minutes + ':' + seconds;
+            return hours + ':' + minutes + ':' + seconds + ' ' + year + '/' + month + '/' + day;
         }
 
     </script>
