@@ -5613,7 +5613,7 @@ body.prenet table .empty-search {
 }
 
 body.prenet table.data {
-  margin-top: 43px;
+  margin-top: 25px;
   border: 1px solid #ddd;
   width: 100%;
   background-color: #ffffff;
@@ -6050,7 +6050,6 @@ body.prenet .headtable {
 }
 
 body.prenet .headtable figure {
-  margin-top: 45px;
   width: 100%;
 }
 
@@ -6060,7 +6059,7 @@ body.prenet .headtable .doclet {
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin: 45px 45px 0 0;
+  margin: 25px 45px 0 0;
   padding: 8px 5px 5px 12px;
   background-color: #ffffff;
   border: 1px solid #c0c5cb;
@@ -6335,7 +6334,7 @@ select:focus {
   display: inline-block;
   position: relative;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 25px;
   vertical-align: middle;
   overflow: hidden;
 }
