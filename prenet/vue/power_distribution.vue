@@ -93,66 +93,8 @@
                   <h2>Top Miners over Last 100 Blocks</h2>
                 </div>
               </div>
-              <div class="col-md-3 col-md-offset-1">
-                <figcaption class="figure-key">
-                  <ul class="figure-key-list" aria-hidden="true" role="presentation">
-                    <li v-for="miner in shares" :key="miner.name">
-                      <span class="shape-square" v-bind:style="{ backgroundColor: miner.color }"></span>
-                      <div style="flow: flex; flex-layout: column;">
-                        <div class="figure-title">
-                          <account-link :hash="miner.name" :only-alias="true" :length="10"></account-link>
-                        </div>
-                        <div class="ul1"><% miner.count %> Blocks</div>
-                      </div>
-                    </li>
-                  </ul>
-                </figcaption>
-              </div>
-              <div class="col-md-8">
-                <div class="figure-content" v-if="totalMiners">
-                  <svg width="100%" height="140">
-                    <g transform="translate(40,20)">
-                      <g class="x axis" transform="translate(0,100)">
-                        <g
-                          v-for="(miner, index) in shares"
-                          :key="miner.name"
-                          class="tick"
-                          :transform="'translate(' + (27 + (index * 70)) + ',0)'"
-                          style="opacity: 1;"
-                        >
-                          <line y2="6" x2="0" />
-                          <text
-                            fill="#F15C2E"
-                            dy=".71em"
-                            y="9"
-                            x="10"
-                            style="text-anchor: middle;"
-                          ><% formatAddr(miner.name, true, 10) %></text>
-                        </g>
-                        <path class="domain" d="M0,2V0H350V2" />
-                      </g>
-                      <g class="y axis">
-                        <path class="domain" d="M-2,0H0V102H-2" />
-                      </g>
-                      <g v-for="(miner, index) in shares" :key="miner.name">
-                        <rect
-                          class="bar"
-                          :x="(10 + (index * 70))"
-                          width="45"
-                          :y="100 - miner.scaledCount"
-                          :height="miner.scaledCount"
-                          :style="'fill:' + miner.color"
-                        />
-                        <text
-                          dy=".71em"
-                          :y="100 - miner.scaledCount - 15"
-                          :x="(27 + (index * 70))"
-                          style="text-anchor: middle;"
-                        ><% miner.count %></text>
-                      </g>
-                    </g>
-                  </svg>
-                </div>
+              <div class="col-md-12" id='pie-chart'>
+                <span v-if="shares"></span>
               </div>
             </figure>
           </div>
@@ -213,7 +155,7 @@ var PowerDistribution = Vue.component("power_distribution", {
 
       this.blocks.forEach((block) => {
         if (groups[block.miner]) {
-          groups[block.miner].count++;
+          groups[block.miner].value++;
         } else {
           let color = PredefinedGraphicColors[minerIndex];
 
@@ -222,9 +164,9 @@ var PowerDistribution = Vue.component("power_distribution", {
           }
 
           groups[block.miner] = {
-            count: 1,
+            value: 1,
             address: block.miner,
-            name: block.miner,
+            label: block.miner,
             color: color,
             shape: "background-color(" + color + ")",
           };
@@ -237,33 +179,51 @@ var PowerDistribution = Vue.component("power_distribution", {
 
       groups = Object.values(groups);
 
-      let total = 0;
-      groups.forEach((miner) => {
-        this.miners.push(miner);
+      // let total = 0;
+      // groups.forEach((miner) => {
+      //   this.miners.push(miner);
 
-        if (total == 0) miner.offset = 25;
-        else miner.offset = 100 - total + 25;
+      //   if (total == 0) miner.offset = 25;
+      //   else miner.offset = 100 - total + 25;
 
-        miner.percent = Math.round((100 * miner.count) / this.blocks.length);
-        total += miner.percent;
-        miner.stroke = "" + miner.percent + " " + (100 - miner.percent);
+      //   miner.percent = Math.round((100 * miner.count) / this.blocks.length);
+      //   total += miner.percent;
+      //   miner.stroke = "" + miner.percent + " " + (100 - miner.percent);
 
-        this.fetchStake(miner.address);
-      });
+      //   this.fetchStake(miner.address);
+      // });
 
-      this.totalMiners = groups.length;
-      var result = groups.sort((b, a) => a.count - b.count);
+      if (!document.getElementById("pie-chart")) { return; }
 
-      if (this.totalMiners) {
-        var topMiner = groups[0];
-        var scaleFactor = 100 / topMiner.count;
+      var svg = d3.select("#pie-chart").append("svg").attr("width",700).attr("height",300);
 
-        groups.forEach((miner) => {
-          miner.scaledCount = miner.count * scaleFactor;
-        });
+
+      svg.append("g").attr("id","minersDonut");
+
+      Donut3D.draw("minersDonut", groups, 150, 150, 130, 100, 30, 0.4);
+
+      // function changeData(){
+        // Donut3D.transition("minersDonut", randomData(), 130, 100, 30, 0.4);
+      // }
+
+      function randomData(){
+        return salesData.map(function(d){
+          return {label:d.label, value:1000*Math.random(), color:d.color};});
       }
 
-      return result;
+      this.totalMiners = groups.length;
+      // var result = groups.sort((b, a) => a.count - b.count);
+
+      // if (this.totalMiners) {
+      //   var topMiner = groups[0];
+      //   var scaleFactor = 100 / topMiner.count;
+
+      //   groups.forEach((miner) => {
+      //     miner.scaledCount = miner.count * scaleFactor;
+      //   });
+      // }
+
+      return groups;
     },
   },
   created: function () {
