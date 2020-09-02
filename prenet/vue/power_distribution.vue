@@ -195,16 +195,18 @@ var PowerDistribution = Vue.component("power_distribution", {
 
       if (!document.getElementById("pie-chart")) { return; }
 
-      var svg = d3.select("#pie-chart").append("svg").attr("width",700).attr("height",300);
 
+      if (!document.getElementById("minersDonut")) {
+          var svg = d3.select("#pie-chart").append("svg").attr("width",700).attr("height",300);
 
-      svg.append("g").attr("id","minersDonut");
+          svg.append("g").attr("id","minersDonut");
+          svg.append("g").attr("class", "labels");
+          svg.append("g").attr("class", "lines");
 
-      Donut3D.draw("minersDonut", groups, 150, 150, 130, 100, 30, 0.4);
-
-      // function changeData(){
-        // Donut3D.transition("minersDonut", randomData(), 130, 100, 30, 0.4);
-      // }
+          Donut3D.draw("minersDonut", groups, 150, 150, 130, 100, 30, 0.4);
+      } else {
+          Donut3D.transition("minersDonut", groups, 130, 100, 30, 0.4);
+      }
 
       function randomData(){
         return salesData.map(function(d){
