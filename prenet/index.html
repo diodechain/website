@@ -15,11 +15,11 @@ layout: ""
     <script src="https://cdn.jsdelivr.net/npm/vue-router@3.1.5/dist/vue-router.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="prenet/abi.js"></script>
     <script src="prenet/geo.js"></script>
     <script src="prenet/storage.js"></script>
-    <script src="prenet/donut3d.js"></script>
+    <script src="prenet/donut.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     </link>
     <link rel="shortcut icon" href="images/favicon.png" title="Favicon">
@@ -77,21 +77,72 @@ layout: ""
             if (web3.currentProvider.connected && app.connected == 1) web3.eth.subscribe(event, callback);
         }
 
-        var routes = [
-            { name: 'Map', path: '/network', component: Network },
+        var routes = [{
+                name: 'Map',
+                path: '/network',
+                component: Network
+            },
 
-            { name: 'Transactions', path: '/tx/', component: Transactions },
-            { name: false, path: '/tx/:hash', params: { hash: '0x1' }, component: Transaction, props: true },
+            {
+                name: 'Transactions',
+                path: '/tx/',
+                component: Transactions
+            },
+            {
+                name: false,
+                path: '/tx/:hash',
+                params: {
+                    hash: '0x1'
+                },
+                component: Transaction,
+                props: true
+            },
 
-            { name: 'Blocks', path: '/block', component: Blocks },
-            { name: false, path: '/block/:number', params: { number: 'latest' }, component: Block, props: true },
+            {
+                name: 'Blocks',
+                path: '/block',
+                component: Blocks
+            },
+            {
+                name: false,
+                path: '/block/:number',
+                params: {
+                    number: 'latest'
+                },
+                component: Block,
+                props: true
+            },
 
-            { name: 'Accounts', path: '/address', component: Accounts },
-            { name: false, path: '/address/:hash', params: { hash: Registry }, component: Account, props: true },
+            {
+                name: 'Accounts',
+                path: '/address',
+                component: Accounts
+            },
+            {
+                name: false,
+                path: '/address/:hash',
+                params: {
+                    hash: Registry
+                },
+                component: Account,
+                props: true
+            },
 
-            { name: 'BNS', path: '/dns', component: DNS },
-            { name: 'Fleets', path: '/fleets', component: FleetRegistration },
-            { name: 'Overview', path: '/', component: PowerDistribution },
+            {
+                name: 'BNS',
+                path: '/dns',
+                component: DNS
+            },
+            {
+                name: 'Fleets',
+                path: '/fleets',
+                component: FleetRegistration
+            },
+            {
+                name: 'Overview',
+                path: '/',
+                component: PowerDistribution
+            },
         ];
         const router = new VueRouter({
             routes,
@@ -158,7 +209,9 @@ layout: ""
             web3.eth.getStorage(DNSAddr, (err, arr) => {
                 if (!arr) return
                 let ret = {}
-                arr.forEach(element => { ret[element[0].toLowerCase()] = element[1].toLowerCase() })
+                arr.forEach(element => {
+                    ret[element[0].toLowerCase()] = element[1].toLowerCase()
+                })
                 for (key in ret) {
                     let name = valueToString(ret[key])
                     // if (names == undefined) name = ret[key]
@@ -184,8 +237,14 @@ layout: ""
             template: '<router-link v-if="isAddress(hash)" :to="\'/address/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link><span v-else><% hash %></span>',
             props: {
                 hash: String,
-                onlyAlias: { type: Boolean, default: true },
-                length: { type: Number, default: 50 }
+                onlyAlias: {
+                    type: Boolean,
+                    default: true
+                },
+                length: {
+                    type: Number,
+                    default: 50
+                }
             },
             delimiters: ["<%", "%>"]
         })
@@ -229,6 +288,14 @@ layout: ""
             },
             delimiters: ["<%", "%>"]
         })
+
+        function getAddressLink(address) {
+            if (window.location.pathname !== '/') {
+                return `${window.location.pathname}#/address/${address}`;
+            } else {
+                return `/#/address/${address}`;
+            }
+        }
 
         function valueToAddress(value) {
             if (value == undefined || !value.startsWith('0x000000000000000000000000'))
@@ -281,7 +348,7 @@ layout: ""
         }
 
         function getRandomColor() {
-            return "#"+((1<<24)*Math.random()|0).toString(16);
+            return "#" + ((1 << 24) * Math.random() | 0).toString(16);
         }
 
         function valueToBalance(balance) {
@@ -360,7 +427,9 @@ layout: ""
         }
 
         function formatUnix(unix_timestamp) {
-            let format = (str) => {return ("0" + str).substr(-2)}
+            let format = (str) => {
+                return ("0" + str).substr(-2)
+            }
 
             // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
             let date = new Date(unix_timestamp * 1000);
@@ -373,7 +442,6 @@ layout: ""
 
             return hours + ':' + minutes + ':' + seconds + ' ' + year + '/' + month + '/' + day;
         }
-
     </script>
 
 </body>

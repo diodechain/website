@@ -156,6 +156,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       this.blocks.forEach((block) => {
         if (groups[block.miner]) {
           groups[block.miner].value++;
+          groups[block.miner].percent = ' (' + groups[block.miner].value + '%)';
         } else {
           let color = PredefinedGraphicColors[minerIndex];
 
@@ -165,10 +166,9 @@ var PowerDistribution = Vue.component("power_distribution", {
 
           groups[block.miner] = {
             value: 1,
-            address: block.miner,
-            label: block.miner,
-            color: color,
-            shape: "background-color(" + color + ")",
+            href: getAddressLink(block.miner),
+            label: formatAddr(block.miner, true, 5),
+            color: color
           };
 
           minerIndex += 1;
@@ -179,33 +179,21 @@ var PowerDistribution = Vue.component("power_distribution", {
 
       groups = Object.values(groups);
 
-      // let total = 0;
-      // groups.forEach((miner) => {
-      //   this.miners.push(miner);
-
-      //   if (total == 0) miner.offset = 25;
-      //   else miner.offset = 100 - total + 25;
-
-      //   miner.percent = Math.round((100 * miner.count) / this.blocks.length);
-      //   total += miner.percent;
-      //   miner.stroke = "" + miner.percent + " " + (100 - miner.percent);
-
-      //   this.fetchStake(miner.address);
-      // });
-
       if (!document.getElementById("pie-chart")) { return; }
 
 
-      if (!document.getElementById("minersDonut")) {
-          var svg = d3.select("#pie-chart").append("svg").attr("width",700).attr("height",300);
+      if (!document.getElementById("pie-chart-svg")) {
+          // var svg = d3.select("#pie-chart").append("svg").attr("width",700).attr("height",300);
 
-          svg.append("g").attr("id","minersDonut");
-          svg.append("g").attr("class", "labels");
-          svg.append("g").attr("class", "lines");
+          // svg.append("g").attr("id","minersDonut");
+          // svg.append("g").attr("class", "labels");
+          // svg.append("g").attr("class", "lines");
 
-          Donut3D.draw("minersDonut", groups, 150, 150, 130, 100, 30, 0.4);
+          // Donut3D.draw("minersDonut", groups, 150, 150, 130, 100, 30, 0.4);
+          DonutItem.create('pie-chart', groups, 480, 225);
       } else {
-          Donut3D.transition("minersDonut", groups, 130, 100, 30, 0.4);
+        DonutItem.redraw('pie-chart', groups);
+          // Donut3D.transition("minersDonut", groups, 130, 100, 30, 0.4);
       }
 
       function randomData(){
