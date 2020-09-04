@@ -47,10 +47,7 @@
 		var slice = svg.select(".slices").selectAll("path.slice")
 			.data(pie(data), key);
 
-		slice.enter().insert("path").style("fill", function (d) {
-			console.log(d.data);
-			return d.data.color;
-		})
+		slice.enter().insert("path").style("fill", function (d) { return d.data.color; })
 			.attr("class", "slice");
 
 		slice.transition().duration(1000).attrTween("d", function (d) {

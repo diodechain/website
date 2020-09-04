@@ -5,9 +5,12 @@
         <h1>Network Overview</h1>
       </div>
       <div class="col-md-3">
-        <search-bar v-bind:blocks.sync="blocks" v-bind:results.sync="searchResults" v-model="searchTerm"
-                    v-bind:activated.sync="searchActivated"
-                    v-bind:finished.sync="searchFinished"
+        <search-bar
+          v-bind:blocks.sync="blocks"
+          v-bind:results.sync="searchResults"
+          v-model="searchTerm"
+          v-bind:activated.sync="searchActivated"
+          v-bind:finished.sync="searchFinished"
         />
       </div>
       <div class="col-md-4 col-md-offset-2">
@@ -63,7 +66,10 @@
             <div class="doclet">
               <h2>Fleets</h2>
               <div class="link">
-                <router-link :class="'no-decoration'" :to="'/address?filter=fleets'"><% totalFleets %></router-link>
+                <router-link
+                  :class="'no-decoration'"
+                  :to="'/address?filter=fleets'"
+                ><% totalFleets %></router-link>
               </div>
             </div>
             <div class="doclet">
@@ -84,6 +90,21 @@
                 ><% totalContracts %></router-link>
               </div>
             </div>
+            <div class="doclet">
+              <h2>BNS (Total / Active)</h2>
+              <div class="link">
+                <router-link
+                  :class="'no-decoration'"
+                  :to="'/address?filter=contracts'"
+                ><% Object.keys(DNSCache).length + ' / ' + Object.keys(DNSActive).length %></router-link>
+              </div>
+            </div>
+            <div class="doclet">
+              <h2>Active Miners</h2>
+              <div class="link">
+                <router-link :class="'no-decoration'" :to="'/network'"><% totalMiners %></router-link>
+              </div>
+            </div>
           </div>
 
           <div class="headtable">
@@ -93,7 +114,7 @@
                   <h2>Top Miners over Last 100 Blocks</h2>
                 </div>
               </div>
-              <div class="col-md-12" id='pie-chart'>
+              <div class="col-md-12" id="pie-chart">
                 <span v-if="shares"></span>
               </div>
             </figure>
@@ -144,7 +165,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       searchTerm: "",
       searchActivated: false,
       searchFinished: false,
-      searchResults: []
+      searchResults: [],
     };
   },
   computed: {
@@ -156,7 +177,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       this.blocks.forEach((block) => {
         if (groups[block.miner]) {
           groups[block.miner].value++;
-          groups[block.miner].percent = ' (' + groups[block.miner].value + '%)';
+          groups[block.miner].percent = " (" + groups[block.miner].value + "%)";
         } else {
           let color = PredefinedGraphicColors[minerIndex];
 
@@ -168,7 +189,7 @@ var PowerDistribution = Vue.component("power_distribution", {
             value: 1,
             href: getAddressLink(block.miner),
             label: formatAddr(block.miner, true, 5),
-            color: color
+            color: color,
           };
 
           minerIndex += 1;
@@ -179,39 +200,27 @@ var PowerDistribution = Vue.component("power_distribution", {
 
       groups = Object.values(groups);
 
-      if (!document.getElementById("pie-chart")) { return; }
-
-
-      if (!document.getElementById("pie-chart-svg")) {
-          // var svg = d3.select("#pie-chart").append("svg").attr("width",700).attr("height",300);
-
-          // svg.append("g").attr("id","minersDonut");
-          // svg.append("g").attr("class", "labels");
-          // svg.append("g").attr("class", "lines");
-
-          // Donut3D.draw("minersDonut", groups, 150, 150, 130, 100, 30, 0.4);
-          DonutItem.create('pie-chart', groups, 480, 225);
-      } else {
-        DonutItem.redraw('pie-chart', groups);
-          // Donut3D.transition("minersDonut", groups, 130, 100, 30, 0.4);
+      if (!document.getElementById("pie-chart")) {
+        return;
       }
 
-      function randomData(){
-        return salesData.map(function(d){
-          return {label:d.label, value:1000*Math.random(), color:d.color};});
+      if (!document.getElementById("pie-chart-svg")) {
+        DonutItem.create("pie-chart", groups, 480, 225);
+      } else {
+        DonutItem.redraw("pie-chart", groups);
+      }
+
+      function randomData() {
+        return salesData.map(function (d) {
+          return {
+            label: d.label,
+            value: 1000 * Math.random(),
+            color: d.color,
+          };
+        });
       }
 
       this.totalMiners = groups.length;
-      // var result = groups.sort((b, a) => a.count - b.count);
-
-      // if (this.totalMiners) {
-      //   var topMiner = groups[0];
-      //   var scaleFactor = 100 / topMiner.count;
-
-      //   groups.forEach((miner) => {
-      //     miner.scaledCount = miner.count * scaleFactor;
-      //   });
-      // }
 
       return groups;
     },
@@ -225,7 +234,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       this.searchActivated = false;
       this.searchFinished = false;
       this.searchResults = [];
-    }
+    },
   },
   methods: {
     refresh: function () {
@@ -246,8 +255,6 @@ var PowerDistribution = Vue.component("power_distribution", {
             this.totalContracts += 1;
           }
         }
-
-
       });
     },
     fetchStake: function (addr) {
@@ -260,7 +267,7 @@ var PowerDistribution = Vue.component("power_distribution", {
     },
     loader: async function () {
       let self = this;
-      getBase(function(base) {
+      getBase(function (base) {
         self.base = base;
       });
 
@@ -286,19 +293,24 @@ var PowerDistribution = Vue.component("power_distribution", {
         buffer = [];
       }, 2000);
 
-      let nr = await web3.eth.getBlockNumber();
+      let lastBlockNumber = await web3.eth.getBlockNumber();
       let batch = new web3.BatchRequest();
       let blocks = [];
-      let size = this.targetSize > nr ? nr : this.targetSize;
+      let size =
+        this.targetSize > lastBlockNumber ? lastBlockNumber : this.targetSize;
+
       let cb = (error, block) => {
         if (error) {
           console.log(error);
           return;
         }
+
         blocks.push(block);
+
         if (blocks.length == size) {
           this.blocks = blocks;
         }
+
         if (!this.stakes[block.miner]) {
           this.$set(this.stakes, block.miner, {
             name: block.miner,
@@ -307,13 +319,14 @@ var PowerDistribution = Vue.component("power_distribution", {
           this.fetchStake(block.miner);
         }
       };
-      for (let i = 0; i < size; i++) {
-        batch.add(web3.eth.getBlock.request(nr - i, false, cb));
-      }
-      batch.execute();
-    }
-  },
 
+      for (let i = 0; i < size; i++) {
+        batch.add(web3.eth.getBlock.request(lastBlockNumber - i, false, cb));
+      }
+
+      batch.execute();
+    },
+  },
 });
 </script>
 
