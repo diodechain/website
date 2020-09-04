@@ -1,5 +1,6 @@
 const DNSAddr = "0xaf60faa5cd840b724742f1af116168276112d6a6"
 const Registry = "0x5000000000000000000000000000000000000000"
+let DNSActive = {};
 let DNSCache = {}
 let DNSAlias = {
     "0x937c492a77ae90de971986d003ffbc5f8bb2232c": "EU1",
