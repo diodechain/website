@@ -85,10 +85,13 @@
                 <button class="button" v-on:click="enable()">Enable MetaMask</button>
                 <div v-if="error" v-html="error" class="error"></div>
                 <div class="message">
-                   The Diode Network Explorer uses <a target="_blank" href="https://metamask.io">MetaMask</a> to authenticate your account.
-                   Please enable MetaMask to manage your settings. <br><br>
-                   If you don’t have MetaMask installed, follow <a target="_blank" href="https://diode.io/docs/metamask.html">these instructions</a>
-                   to get started.
+                  The Diode Network Explorer uses
+                  <a target="_blank" href="https://metamask.io">MetaMask</a> to authenticate your account.
+                  Please enable MetaMask to manage your settings.
+                  <br />
+                  <br />If you don’t have MetaMask installed, follow
+                  <a target="_blank" href="https://diode.io/docs/metamask.html">these instructions</a>
+                  to get started.
                 </div>
               </div>
             </caption>
@@ -215,6 +218,8 @@ var FleetRegistration = Vue.component("fleet_registration", {
         this.enable();
       }
     }, 1000);
+
+    if (this.$route.query.enableMetaMask) { this.enable(); }
   },
   methods: {
     onContractChange: function (event) {
@@ -258,25 +263,32 @@ var FleetRegistration = Vue.component("fleet_registration", {
         return;
       }
       window.ethereum.on("chainChanged", this.handleChainChanged);
-      window.ethereum.enable().then((accounts, error) => {
-        if (!accounts || error) {
-          console.log("Enable error: ", error);
-          this.error = "Enable error: " + error.toString();
-          return;
-        }
-        // let currentChainId = null
-        this.enabled = true;
-        this.account = accounts[0];
-        window.ethereum.on("chainChanged", (chainId) =>
-          this.handleChainChanged(chainId)
-        );
-        // Until eth_chainId calls actually works...
-        this.handleChainChanged(window.ethereum.networkVersion);
-        // window.ethereum
-        //   .send({ method: "eth_chainId" })
-        //   .then((chainId) => this.handleChainChanged(chainId))
-        //   .catch(err => console.error(err))
-      });
+
+
+        window.ethereum
+          .request({ method: "eth_requestAccounts" })
+          .then((accounts, error) => {
+            if (!accounts || error) {
+              this.error = "Enable error: " + error.toString();
+              return;
+            }
+            this.enabled = true;
+            this.account = accounts[0];
+
+            window.ethereum.on("chainChanged", (chainId) => {
+              this.handleChainChanged(chainId)
+            });
+
+            this.handleChainChanged(window.ethereum.networkVersion);
+          })
+          .catch((error) => {
+            if (document.location.href.indexOf('enableMetaMask') === -1) {
+                window.location.href = document.location.href + '?enableMetaMask=true';
+            }
+
+            window.location.reload();
+            // window.alert('Pleast login to MetaMask first');
+          });
     },
     handleChainChanged: function (chainId) {
       if (chainId != CHAIN_ID) {
@@ -288,22 +300,24 @@ var FleetRegistration = Vue.component("fleet_registration", {
       this.getBalance();
       this.getContracts();
     },
-    loadDevivesInMemory: function() {
+    loadDevivesInMemory: function () {
       this.devices = {};
 
       let devicesIds = localStorage.getObject(this.contract);
 
-      if (!devicesIds) { return; }
+      if (!devicesIds) {
+        return;
+      }
 
       for (id of devicesIds) {
         this.addDevice(id, false);
       }
     },
-    setDeviceInStorage: function(id) {
+    setDeviceInStorage: function (id) {
       let devices = localStorage.getObject(this.contract);
 
       if (!devices) {
-        devices = [id]
+        devices = [id];
       } else {
         devices.push(id);
       }
@@ -325,8 +339,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
       let fleets = await Promise.all(proms);
       let indexDefaultHash = fleets.indexOf(FleetHash);
 
-
-
       for (let i = 0; i < fleets.length; i++) {
         this.contracts.push(this.generateContractAddress(i));
       }
@@ -337,7 +349,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
 
       this.contract = this.contracts[indexDefaultHash];
 
-      this.loadDevivesInMemory()
+      this.loadDevivesInMemory();
       // if (ret.indexOf(FleetHash) >= 0) {
       //   this.contracts = [this.generateContractAddress(ret.indexOf(FleetHash))];
 
@@ -403,7 +415,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
         }
       );
     },
-    loadNewFleet: async function() {
+    loadNewFleet: async function () {
       let addr = this.generateContractAddress(this.contractsCount);
       let promise = web3.eth.getCodeHash(addr);
 
@@ -413,7 +425,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
 
       this.contract = this.contracts[this.contractsCount];
       this.loadDevivesInMemory();
-      this.contractsCount+=1;
+      this.contractsCount += 1;
       localStorage.fleetsCount = this.contractsCount;
     },
     isWhiteListed(device, callback) {
