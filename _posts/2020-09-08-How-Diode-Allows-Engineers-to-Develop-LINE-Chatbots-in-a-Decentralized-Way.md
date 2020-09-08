@@ -26,7 +26,7 @@ The second important reason to use Diode is it allows you to create your unlimit
 
 We’d like to give everyone a better, more secure, fully decentralized option. Diode is the best tool in connecting LINE’s webhook. Your chatbot development experience would never be the same. Diode allows you to connect LINE’s message API through Diode’s peer-to-peer network and establish your LINE’s webhook within a few minutes.
 
-We’ve been getting quite a lot of technical questions these past few months, and one of the key questions asked is how is it that the data transmitted through Diode wouldn’t be intercepted by others? So it is possible because TLS 1.2 and Bitcoin’s secp2561’s elliptic curve asymmetric encryption are used by default in Diode for a secure, privacy-preserving network connection between the client and the node.
+We’ve been getting quite a lot of technical questions these past few months, and one of the key questions asked is how is it that the data transmitted through Diode wouldn’t be intercepted by others? So it is possible because TLS 1.2 and Bitcoin’s secp256k1’s elliptic curve asymmetric encryption are used by default in Diode for a secure, privacy-preserving network connection between the client and the node.
 
 To build your LINE chatbot with Diode, first you need to set up a LINE developer account. Once you’ve got it all set up, including setting up the LINE message API, what we’re going to do is to set up the LINE webhook with Diode using Diode’s LINE bot template [Github repo](https://github.com/diodechain/line-bot-template) that is written in Go programming language.
 
