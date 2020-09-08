@@ -5,7 +5,7 @@ date: 2020-09-08 03:06
 categories: [Diode]
 tags: [Diode]
 author: Yahsin Huang
-image: diode_line_bot_01.png
+image: diode_client_flow.png
 imageclass: top
 ---
 
