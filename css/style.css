@@ -5618,6 +5618,11 @@ body.prenet table.data {
   background-color: #ffffff;
   border-collapse: collapse;
   border-spacing: 0;
+  table-layout: fixed;
+}
+
+body.prenet table.data td {
+  word-wrap: break-word;
 }
 
 body.prenet table.transposed {

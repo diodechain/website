@@ -58,7 +58,7 @@
         </tbody>
       </table>
       <div v-else class="row align-start">
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3">
           <table class="data" :style="'width: 100%;min-height:' + tableHeight + 'px'">
             <caption>
               <div class="marginized-bottom">Your Account</div>
@@ -87,7 +87,7 @@
             </tbody>
           </table>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 col-sm-9">
           <table class="data" v-if="Object.entries(names).length !== 0" id="blockchain-names">
             <caption>
               <div class="col-md-12 no-padding">

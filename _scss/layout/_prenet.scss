@@ -45,7 +45,7 @@ body.prenet {
         font-weight: 400;
         font-family: "Open Sans", sans-serif;
         font-size: 14px;
-        color: #fff; 
+        color: #fff;
         text-transform: uppercase;
         letter-spacing: 0.08rem;
         text-decoration: none;
@@ -277,6 +277,11 @@ body.prenet {
       background-color: #ffffff;
       border-collapse: collapse;
       border-spacing: 0;
+      table-layout: fixed;
+
+      td {
+        word-wrap: break-word;
+      }
     }
 
     &.transposed {

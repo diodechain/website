@@ -52,7 +52,7 @@
         </tbody>
       </table>
       <div v-else class="row align-start">
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3">
           <table class="data" :style="'min-height:' + tableHeight + 'px'">
             <caption>
               <div class="marginized-bottom">Your Account</div>
@@ -102,7 +102,7 @@
             </tbody>
           </table>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 col-sm-9">
           <table class="data" v-if="enabled">
             <caption>
               <span v-if="contracts && contracts.length > 0">
