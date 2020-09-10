@@ -56,7 +56,7 @@
       </div>
       <div v-else>
         <div style="display: flex;">
-          <div class="headtable">
+          <div class="headtable" style="width: 45%">
             <div class="doclet">
               <h2>Free Flow</h2>
               <div class="link">
@@ -107,14 +107,14 @@
             </div>
           </div>
 
-          <div class="headtable">
+          <div class="headtable" style="width: 55%">
             <figure>
               <div class="row">
                 <div class="col-md-12">
                   <h2>Top Miners over Last 100 Blocks</h2>
                 </div>
               </div>
-              <div class="col-md-12" id="pie-chart">
+              <div class="col-md-12 col-sm-12 col-md-offset-2 col-sm-offset-0" id="pie-chart">
                 <span v-if="shares"></span>
               </div>
             </figure>
@@ -205,7 +205,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       }
 
       if (!document.getElementById("pie-chart-svg")) {
-        DonutItem.create("pie-chart", groups, 480, 225);
+        DonutItem.create("pie-chart", groups, 360, 225);
       } else {
         DonutItem.redraw("pie-chart", groups);
       }

@@ -120,12 +120,3 @@
 
 	this.DonutItem = DonutItem;
 }();
-
-
-// chart.selectAll("a")
-//     .data(rangeData)
-//   .enter()
-//     .append("a")
-//     .attr("xlink:href", function(d) { return d.href; })
-//     .append("text")
-//     .text(function (d) { return d.label; });

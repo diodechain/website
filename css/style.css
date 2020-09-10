@@ -6335,7 +6335,6 @@ select:focus {
 
 #pie-chart {
   height: 222px;
-  padding-left: 15%;
 }
 
 #pie-chart svg {
@@ -6401,6 +6400,12 @@ select:focus {
 
 .no-padding {
   padding: 0 !important;
+}
+
+@media screen and (min-width: 1360px) {
+  #pie-chart-svg {
+    padding-left: 10%;
+  }
 }
 
 /* @media screen and (min-width: 1440px) {(max-width: 1600px){
