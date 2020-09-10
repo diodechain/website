@@ -58,7 +58,7 @@
         </tbody>
       </table>
       <div v-else class="row align-start">
-        <div class="col-md-3 col-sm-3">
+        <div class="col-md-3 col-sm-3 padding-right-10">
           <table class="data" :style="'width: 100%;min-height:' + tableHeight + 'px'">
             <caption>
               <div class="marginized-bottom">Your Account</div>
