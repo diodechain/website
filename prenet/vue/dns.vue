@@ -209,7 +209,7 @@ var DNS = Vue.component("dns", {
       this.refreshNames();
     }, 1000);
 
-    if (this.$route.query.enableMetaMask) { this.enable(); }
+    //if (this.$route.query.enableMetaMask) { this.enable(); }
   },
   methods: {
     refreshNames: function () {
@@ -238,6 +238,7 @@ var DNS = Vue.component("dns", {
     },
     addName: function (name) {
       if (!name || this.names[name]) return;
+
       let entry = {
         name,
         destination: "loading",
@@ -258,31 +259,32 @@ var DNS = Vue.component("dns", {
         return;
       }
       window.ethereum.on("chainChanged", this.handleChainChanged);
+      window.ethereum.enable().then((accounts, error) => {
+        if (!accounts || error) {
+          console.log("Enable error: ", error);
+          this.error = "Enable error: " + error.toString();
+          return;
+        }
+        // let currentChainId = null
+        this.enabled = true;
+        this.account = accounts[0];
 
-        window.ethereum
-          .request({ method: "eth_requestAccounts" })
-          .then((accounts, error) => {
-            if (!accounts || error) {
-              this.error = "Enable error: " + error.toString();
-              return;
-            }
-            this.enabled = true;
-            this.account = accounts[0];
+        web3.eth.getBalance(this.account, (err, ret) => {
+          this.err = undefined;
+          if (err) this.error = err;
+          else this.balance = ret;
+        });
 
-            window.ethereum.on("chainChanged", (chainId) => {
-              this.handleChainChanged(chainId)
-            });
-
-            this.handleChainChanged(window.ethereum.networkVersion);
-          })
-          .catch((error) => {
-            if (document.location.href.indexOf('enableMetaMask') === -1) {
-                window.location.href = document.location.href + '?enableMetaMask=true';
-            }
-
-            window.location.reload();
-            // window.alert('Pleast login to MetaMask first');
-          });
+        window.ethereum.on("chainChanged", (chainId) =>
+          this.handleChainChanged(chainId)
+        );
+        // Until eth_chainId calls actually works...
+        this.handleChainChanged(window.ethereum.networkVersion);
+        // window.ethereum
+        //   .send({ method: "eth_chainId" })
+        //   .then((chainId) => this.handleChainChanged(chainId))
+        //   .catch(err => console.error(err))
+      });
     },
     handleChainChanged: function (chainId) {
       if (chainId != CHAIN_ID) {
