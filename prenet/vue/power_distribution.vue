@@ -96,9 +96,8 @@
                 <router-link
                   :class="'no-decoration'"
                   :to="'/dns'"
-                ><% Object.keys(names).length + ' / ' + active %></router-link>
+                ><% Object.keys(names).length + ' / ' + activeDNSCount %></router-link>
               </div>
-              <span v-if="activeDNS"></span>
             </div>
             <div class="doclet">
               <h2>Active Miners</h2>
@@ -169,101 +168,64 @@ var PowerDistribution = Vue.component("power_distribution", {
       searchFinished: false,
       searchResults: [],
       lastBlockNumber: null,
-      active: 0
+      activeDNSCount: 0,
     };
   },
   computed: {
     shares: function () {
-        let groups = {};
-        let size = this.blocks.length;
-        let minerIndex = 0;
+      let groups = {};
+      let size = this.blocks.length;
+      let minerIndex = 0;
 
-        this.blocks.forEach((block) => {
-          if (groups[block.miner]) {
-            groups[block.miner].value++;
-            groups[block.miner].percent = " (" + groups[block.miner].value + "%)";
-          } else {
-            let color = PredefinedGraphicColors[minerIndex];
-
-            if (!color) {
-              color = getRandomColor();
-            }
-
-            groups[block.miner] = {
-              value: 1,
-              href: getAddressLink(block.miner),
-              label: formatAddr(block.miner, true, 5),
-              color: color,
-            };
-
-            minerIndex += 1;
-          }
-        });
-
-        this.miners.splice(0, this.miners.length);
-
-        groups = Object.values(groups);
-
-        if (!document.getElementById("pie-chart")) {
-          return;
-        }
-
-        if (!document.getElementById("pie-chart-svg")) {
-          DonutItem.create("pie-chart", groups, 360, 225);
+      this.blocks.forEach((block) => {
+        if (groups[block.miner]) {
+          groups[block.miner].value++;
+          groups[block.miner].percent = " (" + groups[block.miner].value + "%)";
         } else {
-          DonutItem.redraw("pie-chart", groups);
-        }
+          let color = PredefinedGraphicColors[minerIndex];
 
-        function randomData() {
-          return salesData.map(function (d) {
-            return {
-              label: d.label,
-              value: 1000 * Math.random(),
-              color: d.color,
-            };
-          });
-        }
-
-        this.totalMiners = groups.length;
-
-        return groups;
-      },
-    activeDNS: function(params) {
-      if (this.active !== 0) { return; }
-      if (!Object.keys(this.names).length) { return; }
-
-      let self = this;
-
-      this.active = 0;
-      let activeBlocksBatch = new web3.BatchRequest();
-
-      for (key in this.names) {
-
-        let callback = (error, block) => {
-          if (error) {
-              console.log(error);
-              return;
+          if (!color) {
+            color = getRandomColor();
           }
 
-          if (block && block[0] === 'ticket')
-          {
-              let blockNumber = web3.utils.hexToNumber(block[2]);
-              console.log(this.names[key].addr);
-              if (blockNumber > self.lastBlockNumber - 40320) {
-                  self.active+=1;
-              }
-          }
-        };
-                    console.log(this.names[key].addr);
+          groups[block.miner] = {
+            value: 1,
+            href: getAddressLink(block.miner),
+            label: formatAddr(block.miner, true, 5),
+            color: color,
+          };
 
-        if (this.names[key].addr) {
-          activeBlocksBatch.add(
-                web3.eth.getObject.request(this.names[key].addr, true, callback)
-            );
-           }
+          minerIndex += 1;
         }
+      });
 
-      activeBlocksBatch.execute();
+      this.miners.splice(0, this.miners.length);
+
+      groups = Object.values(groups);
+
+      if (!document.getElementById("pie-chart")) {
+        return;
+      }
+
+      if (!document.getElementById("pie-chart-svg")) {
+        DonutItem.create("pie-chart", groups, 360, 225);
+      } else {
+        DonutItem.redraw("pie-chart", groups);
+      }
+
+      function randomData() {
+        return salesData.map(function (d) {
+          return {
+            label: d.label,
+            value: 1000 * Math.random(),
+            color: d.color,
+          };
+        });
+      }
+
+      this.totalMiners = groups.length;
+
+      return groups;
     },
   },
 
@@ -271,9 +233,14 @@ var PowerDistribution = Vue.component("power_distribution", {
     this.loader();
 
     this.refreshNames();
-  setInterval(() => {
+
+    setInterval(() => {
       this.refreshNames();
     }, 1000);
+
+    setTimeout(() => {
+      this.activeDNS();
+    }, 10000);
   },
   watch: {
     $route(to, from) {
@@ -284,6 +251,45 @@ var PowerDistribution = Vue.component("power_distribution", {
     },
   },
   methods: {
+    activeDNS: function () {
+      if (this.activeDNSCount !== 0) {
+        return;
+      }
+
+      if (!Object.keys(this.names).length) {
+        return;
+      }
+
+      let self = this;
+
+      this.activeDNSCount = 0;
+      let activeBlocksBatch = new web3.BatchRequest();
+
+      for (key in this.names) {
+        let callback = (error, block) => {
+          if (error) {
+            console.log(error);
+            return;
+          }
+
+          if (block && block[0] === "ticket") {
+            let blockNumber = web3.utils.hexToNumber(block[2]);
+
+            if (blockNumber > self.lastBlockNumber - 40320) {
+              this.activeDNSCount += 1;
+            }
+          }
+        };
+
+        if (this.names[key].addr) {
+          activeBlocksBatch.add(
+            web3.eth.getObject.request(this.names[key].addr, true, callback)
+          );
+        }
+      }
+
+      activeBlocksBatch.execute();
+    },
     refreshNames: function () {
       for (key in DNSCache) {
         let name = DNSCache[key].name;
@@ -291,11 +297,9 @@ var PowerDistribution = Vue.component("power_distribution", {
           name,
           destination: DNSCache[key].destination,
           owner: DNSCache[key].owner,
-          addr: DNSCache[key].address
+          addr: DNSCache[key].address,
         };
         this.$set(this.names, name, entry);
-
-
       }
 
       for (key in this.names) {
@@ -366,7 +370,9 @@ var PowerDistribution = Vue.component("power_distribution", {
       let batch = new web3.BatchRequest();
       let blocks = [];
       let size =
-        this.targetSize > this.lastBlockNumber ? this.lastBlockNumber : this.targetSize;
+        this.targetSize > this.lastBlockNumber
+          ? this.lastBlockNumber
+          : this.targetSize;
 
       let cb = (error, block) => {
         if (error) {
@@ -390,7 +396,9 @@ var PowerDistribution = Vue.component("power_distribution", {
       };
 
       for (let i = 0; i < size; i++) {
-        batch.add(web3.eth.getBlock.request(this.lastBlockNumber - i, false, cb));
+        batch.add(
+          web3.eth.getBlock.request(this.lastBlockNumber - i, false, cb)
+        );
       }
 
       batch.execute();
