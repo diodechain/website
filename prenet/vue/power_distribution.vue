@@ -168,7 +168,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       searchFinished: false,
       searchResults: [],
       lastBlockNumber: null,
-      activeDNSCount: 0,
+      activeDNSCount: '...',
     };
   },
   computed: {
@@ -252,7 +252,7 @@ var PowerDistribution = Vue.component("power_distribution", {
   },
   methods: {
     activeDNS: function () {
-      if (this.activeDNSCount !== 0) {
+      if (this.activeDNSCount !== '...') {
         return;
       }
 
@@ -261,8 +261,6 @@ var PowerDistribution = Vue.component("power_distribution", {
       }
 
       let self = this;
-
-      this.activeDNSCount = 0;
       let activeBlocksBatch = new web3.BatchRequest();
 
       for (key in this.names) {
@@ -270,6 +268,10 @@ var PowerDistribution = Vue.component("power_distribution", {
           if (error) {
             console.log(error);
             return;
+          }
+
+          if (self.activeDNSCount === '...') {
+            self.activeDNSCount = 0;
           }
 
           if (block && block[0] === "ticket") {
