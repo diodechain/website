@@ -70,7 +70,7 @@
 			.append("text")
 			.attr("dy", ".35em")
 			.html(function (d) {
-				 return '<a href="' + d.data.href +  '" >' +  d.data.label + d.data.percent + " </a>";
+				 return '<a style="fill: #f15c2e" href="' + d.data.href +  '" >' +  d.data.label + d.data.percent + " </a>";
 			});
 
 			text.transition().duration(1000).attrTween("transform", function (d) {
