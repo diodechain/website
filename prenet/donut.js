@@ -14,13 +14,13 @@
 
 		var svg = d3.select('#' + id)
 			.append("svg").attr('id', id + '-svg')
-			.append("g")
+			.append("g");
 
 		svg.append("g").attr("class", "slices");
 		svg.append("g").attr("class", "labels");
 		svg.append("g").attr("class", "lines");
 
-		svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+		svg.attr("transform", "translate(" + (width / 2 + 10) + "," + height / 2 + ")");
 
 		DonutConfig[id]['pie'] = d3.layout.pie().sort(null).value(function (d) {
 			return d.value;

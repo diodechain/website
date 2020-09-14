@@ -182,8 +182,8 @@
         </caption>
 
         <tr>
-          <th>Account</th>
-          <th>Type</th>
+          <th style="width:500px">Account</th>
+          <th >Type</th>
           <th>Balance</th>
           <th>Stake</th>
         </tr>

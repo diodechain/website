@@ -91,7 +91,7 @@
               </div>
             </div>
             <div class="doclet">
-              <h2>BNS (Total / Active)</h2>
+              <h2>BNS (Active)</h2>
               <div class="link">
                 <router-link
                   :class="'no-decoration'"
