@@ -96,7 +96,7 @@
                 <router-link
                   :class="'no-decoration'"
                   :to="'/dns'"
-                ><% Object.keys(names).length + ' (' + activeDNSCount + ')' %></router-link>
+                ><% (Object.keys(names).length || '...') + ' (' + activeDNSCount + ')' %></router-link>
               </div>
             </div>
             <div class="doclet">
@@ -159,7 +159,7 @@ var PowerDistribution = Vue.component("power_distribution", {
       names: {},
       targetSize: 100,
       totalFleets: "loading",
-      totalMiners: "loading",
+      totalMiners: "...",
       totalContracts: "loading",
       totalAccounts: "loading",
       totalSupply: "loading",
