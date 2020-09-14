@@ -67,6 +67,10 @@ var Search = Vue.component("search-bar", {
       for (let i in this.dnsNames) {
         let matchId = this.dnsNames[i]["key"].indexOf(this.value);
 
+        if (matchId === -1) {
+          matchId = this.dnsNames[i]["value"]["address"].indexOf(this.value);
+        }
+
         if (matchId === -1) continue;
 
         let hash = valueToAddress(this.dnsNames[i]["value"].owner);
@@ -79,6 +83,7 @@ var Search = Vue.component("search-bar", {
         let matchId = id.indexOf(this.value);
 
         if (matchId === -1) continue;
+
 
         let hash = accounts[id].codehash;
         this.selectSearchItem(id, null, hash);

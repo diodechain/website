@@ -96,7 +96,7 @@
                 <router-link
                   :class="'no-decoration'"
                   :to="'/dns'"
-                ><% Object.keys(names).length + ' / ' + activeDNSCount %></router-link>
+                ><% Object.keys(names).length + ' (' + activeDNSCount + ')' %></router-link>
               </div>
             </div>
             <div class="doclet">
