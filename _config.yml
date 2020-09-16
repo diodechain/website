@@ -63,7 +63,7 @@ navigation:
 - title: Blog
   link: blog/
 - title: Docs
-  link: docs/
+  link: https://support.diode.io
 - title: Download
   link: download/
 - title: Explorer
@@ -214,9 +214,6 @@ collections:
   team:
     output: true 
     permalink: team/:name.html
-  docs:
-    output: true 
-    permalink: docs/:name.html
 
 defaults:
   - scope:
@@ -226,9 +223,4 @@ defaults:
       layout: postlist
       tagline: All Articles By
       type: team
-  - scope:
-      path: "_docs"
-      type: docs
-    values:
-      layout: docs
-      type: docs
+    

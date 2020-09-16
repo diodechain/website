@@ -78,7 +78,7 @@ For creating human readable links instead of above hex based addresses we deploy
 
 ![alt_text](images/blog/feb_dns.png "Prenet BNS"){: .center-block }
 
-If you feel curious about trying it yourself checkout our [tutorial on how to setup Metamask](/docs/metamask.html).
+If you feel curious about trying it yourself checkout our [tutorial on how to setup Metamask](https://support.diode.io/article/uec3mloh9z-metamask).
 
 ## Client Updates
 
@@ -90,7 +90,7 @@ The client now supports three different permission levels for network ports:
 * _Protected_: Accessible by all members of the same Fleet
 * _Public_: Accessible by anyone.
 
-You can checkout the full list of command line parameters [here in our new docs](docs/man-page.html).
+You can checkout the full list of command line parameters [here in our new docs](https://support.diode.io/article/josr6wwh5e-go-client-commands).
 
 ## Uptime Monitor
 
