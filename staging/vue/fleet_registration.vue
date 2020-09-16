@@ -87,7 +87,7 @@
                 <div class="message">
                    The Diode Network Explorer uses <a target="_blank" href="https://metamask.io">MetaMask</a> to authenticate your account.
                    Please enable MetaMask to manage your settings. <br><br>
-                   If you don’t have MetaMask installed, follow <a target="_blank" href="https://diode.io/docs/metamask.html">these instructions</a>
+                   If you don’t have MetaMask installed, follow <a target="_blank" href="https://support.diode.io/article/uec3mloh9z-metamask">these instructions</a>
                    to get started.
                 </div>
               </div>
