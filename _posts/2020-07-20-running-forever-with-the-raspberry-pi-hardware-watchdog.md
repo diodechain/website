@@ -9,7 +9,7 @@ image: watchdog/image1.png
 imageclass: top
 ---
 
-At [Diode](https://diode.io) we're have deployed a couple of long-running Raspberry Pi with cameras and sensors up and reporting into our network. All these are under uptime monitoring for us to debug network availability. Every time there is a software problem we want to know it. For that we're using some external and internal tools. 
+At [Diode](https://diode.io) we have deployed a couple of long-running Raspberry Pis equipped with cameras and sensors reporting into our network 24/7. All these are under uptime monitoring for us to keep track of the network availability. Every time there is a software problem we want to know it. For that we're using some external and internal tools. 
 
 ![alt_text](images/blog/watchdog/image3.png "Diode.io status page")
 
