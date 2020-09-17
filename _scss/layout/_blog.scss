@@ -235,6 +235,19 @@ section.blog-section {
               height: 200px;
             }    
           }
+
+          img.vertical-preview {
+            object-fit: contain;
+            object-position: center;
+            height: 250px;
+            width: 100%;
+
+            @media (max-width: 992px) {
+              height: 200px;
+            }    
+          }
+
+
           img.top {
             object-position: top;
           }

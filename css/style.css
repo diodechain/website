@@ -4453,6 +4453,21 @@ section.blog-section .blog-articles-container article.blog-article header.articl
   }
 }
 
+section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.vertical-preview {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  height: 250px;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.vertical-preview {
+    height: 200px;
+  }
+}
+
 section.blog-section .blog-articles-container article.blog-article header.article-header .img-wrap img.top {
   -o-object-position: top;
      object-position: top;
