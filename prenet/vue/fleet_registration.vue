@@ -324,17 +324,20 @@ var FleetRegistration = Vue.component("fleet_registration", {
     getContracts: async function () {
       this.contracts = [];
       let proms = [];
+      let addrs = [];
 
       for (let i = 0; i < this.contractsCount; i++) {
         let addr = this.generateContractAddress(i);
         proms.push(web3.eth.getCodeHash(addr));
+        addrs.push(addr);
       }
 
       let fleets = await Promise.all(proms);
       let indexDefaultHash = fleets.indexOf(FleetHash);
 
       for (let i = 0; i < fleets.length; i++) {
-        this.contracts.push(this.generateContractAddress(i));
+        if (fleets[i] == NullHash) continue;
+        this.contracts.push(addrs[i]);
       }
 
       // for (id in this.devices) {
