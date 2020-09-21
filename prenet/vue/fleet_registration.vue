@@ -334,6 +334,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
       let indexDefaultHash = fleets.indexOf(FleetHash);
 
       for (let i = 0; i < fleets.length; i++) {
+        if (fleets[i] == NullHash) continue;
         this.contracts.push(this.generateContractAddress(i));
       }
 
