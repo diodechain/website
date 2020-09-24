@@ -255,7 +255,7 @@ var Accounts = Vue.component("accounts", {
       this.accountsByStake = [];
 
       for (let id in accounts) {
-        if (id === "0x000000000000000000000000000000000000dead") { continue; }
+        if (id === Registry || id === "0x000000000000000000000000000000000000dead") { continue; }
         hash = accounts[id].codehash;
         if (hash == FleetHash) accounts[id].type = "Fleet";
         else if (hash == NullHash) accounts[id].type = "Wallet";
