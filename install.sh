@@ -42,9 +42,9 @@ execute() {
   install "${TMPDIR}/${BINARY}" "${BINDIR}/"
   echo "$PREFIX: installed as ${BINDIR}/${BINARY}"
 
-  # installing path into .bashrc and .bash_profile for macOS
+  # installing path into .bashrc and .bash_profile and .zshrc for macOS
   TERM="export PATH=${BINDIR}:\$PATH"
-  for FILE in ~/.bashrc ~/.bash_profile; do
+  for FILE in ~/.bashrc ~/.bash_profile ~/.zshrc; do
     if test -f "$FILE"; then
       grep -qxF "$TERM" "$FILE" || echo "$TERM" >> "$FILE"
     else
