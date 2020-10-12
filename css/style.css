@@ -5305,6 +5305,10 @@ body.prenet .input-button button {
   background: #ffffff;
 }
 
+body.prenet .input-button button[disabled] {
+  cursor: not-allowed !important;
+}
+
 body.prenet .input-button button[name="search"] {
   right: 0.6%;
 }

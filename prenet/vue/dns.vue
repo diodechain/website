@@ -116,7 +116,7 @@
               <th>Destination</th>
               <th>Owner</th>
             </tr>
-            <tr v-bind:key="name.name" v-for="name in names">
+            <tr v-bind:key="name.name" v-for="name in sortedNames">
               <td><% name.name %></td>
               <td>
                 <span v-if="name.destination !== 'undefined' && name.destination !== 'loading'">
@@ -187,6 +187,24 @@ var DNS = Vue.component("dns", {
     };
   },
 
+  computed: {
+    sortedNames () {
+      let sortedNames = []
+      let currentNames = Object.keys(this.names)
+      let names = {}
+      sortedNames = currentNames.filter((name) => {
+        return this.names[name].added
+      })
+      sortedNames = sortedNames.concat(currentNames.filter((name) => {
+        return !this.names[name].added
+      }))
+      sortedNames.forEach((name) => {
+        names[name] = this.names[name]
+      })
+      return names
+    }
+  },
+
   created: function () {
     let self = this;
     getBase(function (base) {
@@ -243,6 +261,7 @@ var DNS = Vue.component("dns", {
         name,
         destination: "loading",
         owner: "loading",
+        added: true
       };
       this.$set(this.names, name, entry);
     },

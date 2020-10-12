@@ -211,6 +211,10 @@ body.prenet {
 
     }
 
+    button[disabled] {
+      cursor: not-allowed !important;
+    }
+
     button[name="search"] {
       right: 0.6%;
     }
