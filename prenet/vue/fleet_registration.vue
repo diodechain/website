@@ -21,7 +21,9 @@
     </div>
     <div class="page-content">
       <table class="data" v-if="searchTerm && searchActivated">
-        <caption><% searchResults.length %> Search Results</caption>
+        <caption>
+          <% searchResults.length %> Search Results
+        </caption>
         <tr v-if="searchResults.length">
           <th>Page</th>
           <th>Match Term</th>
@@ -29,79 +31,74 @@
         <tr v-else-if="searchFinished">
           <td>
             <div class="empty-search">
-              Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers,
-              BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
+              Sorry, no results were found. The Diode Network explorer search
+              function can search on full or partial matches on account
+              addresses/hashes, block numbers, BNS names, and stake amounts, and
+              full matches on transaction hashes and block hashes. Please check
+              your search term and try again!
             </div>
           </td>
         </tr>
-        <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
-          <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
+        <tbody
+          v-if="searchResults.length"
+          is="transition-group"
+          name="list-complete"
+        >
+          <tr
+            v-for="result in searchResults"
+            v-bind:key="result"
+            class="list-complete-item"
+          >
             <td>
-              <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
               <router-link
-                v-if="result.type==='Address' || result.isAddress"
+                v-if="result.type === 'Block'"
+                :to="'/block/' + result.id"
+                >Block</router-link
+              >
+              <router-link
+                v-if="result.type === 'Address' || result.isAddress"
                 :to="'/address/' + result.id"
-              ><% result.type %></router-link>
+                ><% result.type %></router-link
+              >
               <router-link
-                v-if="result.type==='Transaction'"
+                v-if="result.type === 'Transaction'"
                 :to="'/tx/' + result.id"
-              ><% result.type %></router-link>
+                ><% result.type %></router-link
+              >
             </td>
-            <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
+            <td>
+              <% result.text %> <% result.stake ? '- ' + result.stake : ''%>
+            </td>
           </tr>
         </tbody>
       </table>
       <div v-else class="row align-start">
-        <div class="col-md-3 col-sm-3 padding-right-10">
-          <table class="data" :style="'min-height:' + tableHeight + 'px'">
-            <caption>
-              <div class="marginized-bottom">Your Account</div>
-              <div v-if="enabled">
-                <div class="marginized">
-                  Name:
-                  <account-link :hash="account" :length="20"></account-link>
-                </div>
-                <div class="marginized">Balance: <% valueToBalance(balance) %></div>
-                <div v-if="contracts" class="marginized">
-                  Select Fleet:
-                  <br />
-                  <select
-                    name="contracts-select"
-                    @change="onContractChange($event)"
-                    class="full-width"
-                    v-model="contract"
-                  >
-                    <option v-for="c in contracts" v-bind:key="c" :value="c"><% c %></option>
-                  </select>
-                </div>
-                <div class="text-centered marginized-top-2">
-                  <button class="button" v-on:click="createFleet()">
-                    <img v-show="submitFleet" class="btn-loading" src="images/spinning.gif" />
-                    <span>Create New Fleet</span>
-                  </button>
-                </div>
-              </div>
-              <div class="not-enabled" v-else>
-                <button class="button" v-on:click="enable()">Enable MetaMask</button>
-                <div v-if="error" v-html="error" class="error"></div>
-                <div class="message">
-                  The Diode Network Explorer uses
-                  <a target="_blank" href="https://metamask.io">MetaMask</a> to authenticate your account.
-                  Please enable MetaMask to manage your settings.
-                  <br />
-                  <br />If you don’t have MetaMask installed, follow
-                  <a target="_blank" href="https://support.diode.io/article/uec3mloh9z-metamask">these instructions</a>
-                  to get started.
-                </div>
-              </div>
-            </caption>
-            <tbody>
-              <tr>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <account-info>
+          <div v-if="contracts" class="marginized">
+            Select Fleet:
+            <br />
+            <select
+              name="contracts-select"
+              @change="onContractChange($event)"
+              class="full-width"
+              v-model="contract"
+            >
+              <option v-for="c in contracts" v-bind:key="c" :value="c">
+                <% c %>
+              </option>
+            </select>
+          </div>
+          <div class="text-centered marginized-top-2">
+            <button class="button" v-on:click="createFleet()">
+              <img
+                v-show="submitFleet"
+                class="btn-loading"
+                src="images/spinning.gif"
+              />
+              <span>Create New Fleet</span>
+            </button>
+          </div>
+        </account-info>
         <div class="col-md-9 col-sm-9">
           <table class="data" v-if="enabled">
             <caption>
@@ -122,7 +119,9 @@
                       class="button"
                       v-on:click="addDevice(deviceId, true)"
                       :disabled="!web3.utils.isAddress(deviceId)"
-                    >Add</button>
+                    >
+                      Add
+                    </button>
                   </div>
                 </div>
               </span>
@@ -138,11 +137,10 @@
                 <account-link :hash="device.id" :length="50"></account-link>
               </td>
               <td>
-                &nbsp;&nbsp;
-                <% device.allowed ? 'Yes' : 'No' %>&nbsp;
+                &nbsp;&nbsp; <% device.allowed ? 'Yes' : 'No' %>&nbsp;
                 <button
                   class="button"
-                  v-if="device.allowed==false"
+                  v-if="device.allowed == false"
                   v-on:click="whitelistDevice(device.id, true)"
                 >
                   <img
@@ -152,7 +150,11 @@
                   />
                   <span>Add</span>
                 </button>
-                <button class="button" v-else v-on:click="whitelistDevice(device.id, false)">
+                <button
+                  class="button"
+                  v-else
+                  v-on:click="whitelistDevice(device.id, false)"
+                >
                   <img
                     v-show="submitDevices[device.id]"
                     class="btn-loading"
@@ -167,7 +169,9 @@
             </tr>
           </table>
           <table class="data" v-else>
-            <caption>No Fleets available</caption>
+            <caption>
+              No Fleets available
+            </caption>
             <tbody>
               <tr>
                 <td></td>
@@ -212,14 +216,12 @@ var FleetRegistration = Vue.component("fleet_registration", {
     getBase(function (base) {
       self.base = base;
     });
-
-    setInterval(() => {
-      if (!this.enabled && window.ethereum.selectedAddress != null) {
-        this.enable();
-      }
-    }, 1000);
-
-    //if (this.$route.query.enableMetaMask) { this.enable(); }
+    Wallet.subscribe(this);
+  },
+  watch: {
+    account: function () {
+      this.getContracts();
+    },
   },
   methods: {
     onContractChange: function (event) {
@@ -256,44 +258,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
         this.$set(this.devices, id, this.devices[id]);
       });
     },
-    enable: function () {
-      if (!window.ethereum || !window.ethereum.isMetaMask) {
-        this.error =
-          "Please install <a href='https://metamask.io/'>MetaMask</a>";
-        return;
-      }
-      window.ethereum.on("chainChanged", this.handleChainChanged);
-
-      window.ethereum.enable().then((accounts, error) => {
-        if (!accounts || error) {
-          console.log("Enable error: ", error);
-          this.error = "Enable error: " + error.toString();
-          return;
-        }
-        // let currentChainId = null
-        this.enabled = true;
-        this.account = accounts[0];
-        window.ethereum.on("chainChanged", (chainId) =>
-          this.handleChainChanged(chainId)
-        );
-        // Until eth_chainId calls actually works...
-        this.handleChainChanged(window.ethereum.networkVersion);
-        // window.ethereum
-        //   .send({ method: "eth_chainId" })
-        //   .then((chainId) => this.handleChainChanged(chainId))
-        //   .catch(err => console.error(err))
-      });
-    },
-    handleChainChanged: function (chainId) {
-      if (chainId != CHAIN_ID) {
-        this.error = "MetaMask is not connected to the Diode Network";
-        this.enabled = false;
-        return;
-      }
-      this.enabled = true;
-      this.getBalance();
-      this.getContracts();
-    },
     loadDevivesInMemory: function () {
       this.devices = {};
 
@@ -318,11 +282,9 @@ var FleetRegistration = Vue.component("fleet_registration", {
 
       localStorage.setObject(this.contract, devices);
     },
-    getBalance: async function () {
-      this.balance = await web3.eth.getBalance(this.account);
-    },
     getContracts: async function () {
       this.contracts = [];
+      if (!this.account) return;
       let proms = [];
       let addrs = [];
 

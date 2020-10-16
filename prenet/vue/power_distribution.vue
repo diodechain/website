@@ -134,7 +134,7 @@
               <td>
                 <router-link :to="'/block/' + block.number"><% block.number %></router-link>
               </td>
-              <td><% formatUnix(block.timestamp) %></td>
+              <td><% formatDateTime(block.timestamp) %></td>
               <td>
                 <account-link :hash="block.miner" :only-alias="true" :length="10"></account-link>
               </td>

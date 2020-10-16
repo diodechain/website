@@ -110,7 +110,7 @@
               <td>
                 <router-link :to="'/block/' + block.number"><% block.number %></router-link>
               </td>
-              <td><% formatUnix(block.timestamp) %></td>
+              <td><% formatDateTime(block.timestamp) %></td>
               <td>
                 <account-link :hash="block.miner" :only-alias="true" :length="10"></account-link>
               </td>
@@ -171,7 +171,7 @@ var Blocks = Vue.component("blocks", {
           i === Math.round(lineChartDataKeys.length / 2)
         ) {
           this.lineTimes.push({
-            value: getUnixTime(lineChartDataKeys[i]),
+            value: formatTime(lineChartDataKeys[i]),
             x: this.lineTimes.length * 360 + 20,
           });
         }

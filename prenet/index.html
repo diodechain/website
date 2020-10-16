@@ -17,18 +17,27 @@ layout: ""
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="prenet/abi.js"></script>
+    <script src="prenet/wallet.js"></script>
     <script src="prenet/geo.js"></script>
     <script src="prenet/storage.js"></script>
     <script src="prenet/donut.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css"></link>
-    <link rel="shortcut icon" href="images/favicon.png" title="Favicon"></link>
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    </link>
+    <link rel="shortcut icon" href="images/favicon.png" title="Favicon">
+    </link>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    </link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </link>
 </head>
 
 <body class="prenet">
+    {% include_relative vue/account_info.vue %}
+    {% include_relative vue/bns_update.vue %}
+
     {% include_relative vue/fleet_registration.vue %}
     {% include_relative vue/dns.vue %}
+    {% include_relative vue/dns_list.vue %}
     {% include_relative vue/power_distribution.vue %}
     {% include_relative vue/account.vue %}
     {% include_relative vue/accounts.vue %}
@@ -63,9 +72,8 @@ layout: ""
 
     <script>
         let app = {};
-        const CHAIN_ID = 15
-        let url = 'wss://prenet.diode.io:8443/ws'
-        // let url = 'ws://localhost:8545/ws'
+        // let url = 'wss://prenet.diode.io:8443/ws'
+        let url = 'ws://localhost:8545/ws'
         let web3 = NewWeb3(url);
         let web3_subscriptions = [];
 
@@ -75,71 +83,79 @@ layout: ""
         }
 
         var routes = [{
-                name: 'Map',
-                path: '/network',
-                component: Network
-            },
+            name: 'Map',
+            path: '/network',
+            component: Network
+        },
 
-            {
-                name: 'Transactions',
-                path: '/tx/',
-                component: Transactions
+        {
+            name: 'Transactions',
+            path: '/tx/',
+            component: Transactions
+        },
+        {
+            name: false,
+            path: '/tx/:hash',
+            params: {
+                hash: '0x1'
             },
-            {
-                name: false,
-                path: '/tx/:hash',
-                params: {
-                    hash: '0x1'
-                },
-                component: Transaction,
-                props: true
-            },
+            component: Transaction,
+            props: true
+        },
 
-            {
-                name: 'Blocks',
-                path: '/block',
-                component: Blocks
+        {
+            name: 'Blocks',
+            path: '/block',
+            component: Blocks
+        },
+        {
+            name: false,
+            path: '/block/:number',
+            params: {
+                number: 'latest'
             },
-            {
-                name: false,
-                path: '/block/:number',
-                params: {
-                    number: 'latest'
-                },
-                component: Block,
-                props: true
-            },
+            component: Block,
+            props: true
+        },
 
-            {
-                name: 'Accounts',
-                path: '/address',
-                component: Accounts
+        {
+            name: 'Accounts',
+            path: '/address',
+            component: VAccounts
+        },
+        {
+            name: false,
+            path: '/address/:hash',
+            params: {
+                hash: Registry
             },
-            {
-                name: false,
-                path: '/address/:hash',
-                params: {
-                    hash: Registry
-                },
-                component: Account,
-                props: true
-            },
-
-            {
-                name: 'BNS',
-                path: '/dns',
-                component: DNS
-            },
-            {
-                name: 'Fleets',
-                path: '/fleets',
-                component: FleetRegistration
-            },
-            {
-                name: 'Overview',
-                path: '/',
-                component: PowerDistribution
-            },
+            component: VAccount,
+            props: true
+        },
+        {
+            name: 'BNS',
+            path: '/dns',
+            component: DNSList,
+        },
+        {
+            name: false,
+            path: '/dns/:name',
+            // params: {
+            //     name: ''
+            // },
+            component: DNS,
+            props: true
+        },
+        {
+            name: 'Fleets',
+            path: '/fleets',
+            component: FleetRegistration
+        },
+        {
+            name: 'Overview',
+            path: '/',
+            component: PowerDistribution
+        },
         ];
         const router = new VueRouter({
             routes,
@@ -203,8 +219,6 @@ layout: ""
                 return
             }
 
-
-
             web3.eth.getStorage(DNSAddr, (err, arr) => {
 
                 if (!arr) return
@@ -244,13 +258,10 @@ layout: ""
         setInterval(DNSRefresh, 25000)
 
         Vue.component("account-link", {
-            template: '<router-link v-if="isAddress(hash)" :to="\'/address/\' + hash"><% formatAddr(hash, onlyAlias, length) %></router-link><span v-else><% hash %></span>',
+            template: '<router-link v-if="isAddress(hash)" :to="\'/address/\' + hash"><% formatAddr(hash, mode, length) %></router-link><span v-else><% hash %></span>',
             props: {
                 hash: String,
-                onlyAlias: {
-                    type: Boolean,
-                    default: true
-                },
+                mode: 'alias',
                 length: {
                     type: Number,
                     default: 50
@@ -308,27 +319,30 @@ layout: ""
         }
 
         function valueToAddress(value) {
-            if (value == undefined || !value.startsWith('0x000000000000000000000000'))
+            if (value == undefined) return undefined
+            let addr
+            if (value.length == 42)
+                addr = value;
+            else if (!value.startsWith('0x000000000000000000000000'))
                 return undefined;
+            else
+                addr = '0x' + value.substr(26, 40)
 
-            let addr = '0x' + value.substr(26, 40)
             if (!isAddress(addr))
                 return undefined;
-            return addr
+
+            return Web3.utils.toChecksumAddress(addr)
         }
 
-        function getUnixTime(unix_timestamp) {
-            // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
-            let date = new Date(unix_timestamp * 1000);
-            // Hours part from the timestamp
-            let hours = date.getHours();
-            // Minutes part from the timestamp
-            let minutes = "0" + date.getMinutes();
-            // Seconds part from the timestamp
-            let seconds = "0" + date.getSeconds();
+        function guessBlocktime(blocknum) {
+            let block_1000 = 1583541395;
+            let block_801_000 = 1600638391;
 
-            // Will display time in 10:30:23 format
-            return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+            let delta_block = 800000;
+            let delta_time = block_801_000 - block_1000;
+
+            let delta = blocknum - 1000;
+            return block_1000 + ((delta / delta_block) * delta_time);
         }
 
         function addressAdd(bn, num) {
@@ -425,18 +439,25 @@ layout: ""
             return Math.floor(num).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
         }
 
-        function formatAddr(addr, onlyAlias, length) {
+        function formatAddr(addr, mode, length) {
+            if (mode == 'address')
+                return shorten(addr, length);
+
             let alias = resolveName(addr);
-            if (onlyAlias) return shorten(alias, length);
-            if (alias != addr) return shorten(addr, length) + ' (' + alias + ')';
-            return shorten(addr, length);
+            if (mode == 'full' && alias != addr)
+                return shorten(addr, length) + ' (' + alias + ')';
+            return shorten(alias, length);
         }
 
-        function dateFormat(unix_timestamp) {
-            return new Date(unix_timestamp * 1000).toUTCString();
+        function formatTime(unix_timestamp) {
+            return formatDateTime(unix_timestamp, 'time')
         }
 
-        function formatUnix(unix_timestamp) {
+        function formatDate(unix_timestamp) {
+            return formatDateTime(unix_timestamp, 'date')
+        }
+
+        function formatDateTime(unix_timestamp, mode) {
             let format = (str) => {
                 return ("0" + str).substr(-2)
             }
@@ -450,7 +471,15 @@ layout: ""
             let minutes = format(date.getMinutes());
             let seconds = format(date.getSeconds());
 
-            return hours + ':' + minutes + ':' + seconds + ' ' + year + '/' + month + '/' + day;
+            switch (mode) {
+                case 'date':
+                    return year + '/' + month + '/' + day;
+                case 'time':
+                    return hours + ':' + minutes + ':' + seconds;
+                case 'datetime':
+                default:
+                    return hours + ':' + minutes + ':' + seconds + ' ' + year + '/' + month + '/' + day;
+            }
         }
     </script>
 

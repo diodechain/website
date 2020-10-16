@@ -1,4 +1,4 @@
-<template id="account">
+<template id="vaccount">
   <div>
     <div class="title row">
       <div class="col-md-2  ">
@@ -173,8 +173,8 @@
   </div>
 </template>
 <script>
-var Account = Vue.component("account", {
-  template: document.getElementById("account").innerHTML,
+var VAccount = Vue.component("account", {
+  template: document.getElementById("vaccount").innerHTML,
   props: { hash: String },
   delimiters: ["<%", "%>"],
   data: () => {

@@ -5307,6 +5307,8 @@ body.prenet .input-button button {
 
 body.prenet .input-button button[disabled] {
   cursor: not-allowed !important;
+  border: none;
+  background-color: #b4b4b4;
 }
 
 body.prenet .input-button button[name="search"] {
@@ -5336,6 +5338,12 @@ body.prenet .input-button.white button {
   background: #F15E40;
 }
 
+body.prenet .input-button.white button[disabled] {
+  cursor: not-allowed !important;
+  border: none;
+  background-color: #b4b4b4;
+}
+
 body.prenet .logs-data {
   font-size: 10px;
   line-height: 12px;
@@ -5356,7 +5364,6 @@ body.prenet table {
 body.prenet table caption {
   text-align: left;
   border: 1px solid #ddd;
-  border-bottom: 0;
   padding: 12px 10px 5px 10px;
   background: white;
   color: #000000;
@@ -5374,7 +5381,6 @@ body.prenet table.data {
   background-color: #ffffff;
   border-collapse: collapse;
   border-spacing: 0;
-  table-layout: fixed;
 }
 
 body.prenet table.data td {

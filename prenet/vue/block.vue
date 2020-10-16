@@ -72,7 +72,7 @@
         </tr>
         <tr>
           <td>Timestamp</td>
-          <td><% formatUnix(block.timestamp) %></td>
+          <td><% formatDateTime(block.timestamp) %></td>
         </tr>
         <tr>
           <td>Miner</td>

@@ -2,7 +2,7 @@
   <div>
     <div class="title row">
       <div class="col-md-3 no-padding">
-        <h1>Blockchain Name System v<% version %></h1>
+        <h1>Name Detail</h1>
       </div>
       <div class="col-md-3">
         <search-bar
@@ -17,17 +17,17 @@
           connected to
           <account-link :hash="base" :length="15" :only-alias="true" />
         </p>
-        <p v-else>
-          Reconnecting...
-        </p>
+        <p v-else>Reconnecting...</p>
       </div>
     </div>
     <div class="page-content">
-      <div v-if="Object.entries(names).length == 0">
+      <div v-if="data == undefined">
         <b class="loading">Loading...</b>
       </div>
       <table class="data" v-else-if="searchTerm && searchActivated">
-        <caption><% searchResults.length %> Search Results</caption>
+        <caption>
+          <% searchResults.length %> Search Results
+        </caption>
         <tr v-if="searchResults.length">
           <th>Page</th>
           <th>Match Term</th>
@@ -35,128 +35,109 @@
         <tr v-else-if="searchFinished">
           <td>
             <div class="empty-search">
-              Sorry, no results were found. The Diode Network explorer search function can search on full or partial matches on account addresses/hashes, block numbers,
-              BNS names, and stake amounts, and full matches on transaction hashes and block hashes. Please check your search term and try again!
+              Sorry, no results were found. The Diode Network explorer search
+              function can search on full or partial matches on account
+              addresses/hashes, block numbers, BNS names, and stake amounts, and
+              full matches on transaction hashes and block hashes. Please check
+              your search term and try again!
             </div>
           </td>
         </tr>
-        <tbody v-if="searchResults.length" is="transition-group" name="list-complete">
-          <tr v-for="result in searchResults" v-bind:key="result" class="list-complete-item">
+        <tbody
+          v-if="searchResults.length"
+          is="transition-group"
+          name="list-complete"
+        >
+          <tr
+            v-for="result in searchResults"
+            v-bind:key="result"
+            class="list-complete-item"
+          >
             <td>
-              <router-link v-if="result.type==='Block'" :to="'/block/' + result.id">Block</router-link>
               <router-link
-                v-if="result.type==='Address' || result.isAddress"
+                v-if="result.type === 'Block'"
+                :to="'/block/' + result.id"
+                >Block</router-link
+              >
+              <router-link
+                v-if="result.type === 'Address' || result.isAddress"
                 :to="'/address/' + result.id"
-              ><% result.type %></router-link>
+                ><% result.type %></router-link
+              >
               <router-link
-                v-if="result.type==='Transaction'"
+                v-if="result.type === 'Transaction'"
                 :to="'/tx/' + result.id"
-              ><% result.type %></router-link>
+                ><% result.type %></router-link
+              >
             </td>
-            <td><% result.text %> <% result.stake ? '- ' + result.stake : ''%></td>
+            <td>
+              <% result.text %> <% result.stake ? '- ' + result.stake : ''%>
+            </td>
           </tr>
         </tbody>
       </table>
       <div v-else class="row align-start">
-        <div class="col-md-3 col-sm-3 padding-right-10">
-          <table class="data" :style="'width: 100%;min-height:' + tableHeight + 'px'">
-            <caption>
-              <div class="marginized-bottom">Your Account</div>
-              <div v-if="enabled">
-                <div class="marginized">
-                   Name:
-                  <account-link :hash="account" :length="20"></account-link>
-                </div >
-                <div class="marginized">Balance: <% valueToBalance(balance) %></div>
-              </div>
-              <div class="not-enabled" v-else>
-                    <button class="button" v-on:click="enable()">Enable MetaMask</button>
-                    <div v-if="error" v-html="error" class="error"></div>
-                    <div class="message">
-                     The Diode Network Explorer uses <a target="_blank" href="https://metamask.io">MetaMask</a> to authenticate your account.
-                    Please enable MetaMask to manage your settings. <br><br>
-                   If you don’t have MetaMask installed, follow <a target="_blank" href="https://support.diode.io/article/uec3mloh9z-metamask">these instructions</a>
-                   to get started.
-                     </div>
-                  </div>
-            </caption>
-            <tbody>
-              <tr>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <account-info></account-info>
         <div class="col-md-9 col-sm-9">
-          <table class="data" v-if="Object.entries(names).length !== 0" id="blockchain-names">
+          <table class="data" id="blockchain-names">
             <caption>
               <div class="col-md-12 no-padding">
-                Registered Blockchain Names
-                <br />
-                <br />
-              </div>
-              <div v-if="enabled" class="col-md-4 no-padding">
-                <div class="input-button">
-                  <input
-                    type="text"
-                    v-model.trim="newName"
-                    placeholder="Enter Name to Register"
-                    class="no-icon"
-                  />
-                  <button
-                    class="button"
-                    v-on:click="addName(newName)"
-                    :disabled="newName.length <= 7"
-                  >Add</button>
-                </div>
+                <h2><% this.name %>.diode</h2>
               </div>
             </caption>
             <tr>
-              <th>Name</th>
-              <th>Destination</th>
-              <th>Owner</th>
+              <th>Domain</th>
+              <td>.diode</td>
             </tr>
-            <tr v-bind:key="name.name" v-for="name in sortedNames">
-              <td><% name.name %></td>
+            <tr>
+              <th>Target(s)</th>
               <td>
-                <span v-if="name.destination !== 'undefined' && name.destination !== 'loading'">
-                  <storage-value :value="name.destination"></storage-value>
-                </span>
-                <span v-else>Loading</span>
-
-                <div
-                  v-if="enabled && (valueToAddress(name.owner)==account || valueToAddress(name.owner) == undefined)"
+                <table class="data">
+                  <td v-for="dest in destinations">
+                    <account-link :hash="dest" mode="address"></account-link>
+                  </td>
+                </table>
+                <bns-update :name="name" :owner="data.owner" :on_update="refresh"></bns-update>
+              </td>
+            </tr>
+            <tr>
+              <th>HTTP Gateway</th>
+              <td>
+                <a
+                  target="_blank"
+                  :href="'https://' + this.name + '.diode.link/'"
+                  >https://<% this.name %>.diode.link/</a
                 >
-                  <div class="input-button white marginized-top">
-                    <input
-                      class="no-icon"
-                      type="text"
-                      v-model.trim="deviceId[name.name]"
-                      placeholder="0x1234556..."
-                    />
-                    <button
-                      v-on:click="registerName(name.name, deviceId[name.name])"
-                      :disabled="!web3.utils.isAddress(deviceId[name.name])">
-                      Update
-                    </button>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <span v-if="name.owner !== 'undefined' && name.owner !== 'loading'">
-                  <storage-value v-if="name.owner" :value="name.owner" />
-                </span>
-                <span v-else>Loading</span>
               </td>
             </tr>
-          </table>
-          <table class="data" v-else style="width: 100%">
-            <caption>No BNS available</caption>
-            <tbody>
-              <tr>
-                <td></td>
-              </tr>
-            </tbody>
+            <tr>
+              <th>WS Gateway</th>
+              <td>wss://<% this.name %>.diode.ws/</td>
+            </tr>
+            <tr>
+              <th>Lease End</th>
+              <td><% formatEnd(data.leaseEnd) %></td>
+            </tr>
+            <tr>
+              <th>Lock End</th>
+              <td><% formatEnd(data.lockEnd) %></td>
+            </tr>
+            <tr>
+              <th>Owner</th>
+              <td>
+                <account-link :hash="data.owner"></account-link>
+                <bns-update operation="transfer" :name="name" :owner="data.owner" :on_update="refresh"></bns-update>
+              </td>
+            </tr>
+            <tr>
+              <th>Properties</th>
+              <td>
+                <table v-if="data.properties.length" class="data">
+                  <td v-for="prop in data.properties"><% prop %></td>
+                </table>
+                <span v-else>Empty</span>
+              </td>
+            </tr>
           </table>
         </div>
       </div>
@@ -166,238 +147,47 @@
 <script>
 var DNS = Vue.component("dns", {
   template: document.getElementById("dns").innerHTML,
+  props: { name: String },
   delimiters: ["<%", "%>"],
   data: () => {
     return {
+      account: undefined,
       base: "",
+      balance: 0,
+      data: undefined,
       enabled: false,
-      account: "",
       error: false,
-      newName: "",
-      deviceId: {},
-      names: {},
-      submitDns: false,
       searchTerm: "",
       searchActivated: false,
       searchFinished: false,
       searchResults: [],
-      balance: 0,
       tableHeight: 300,
-      version: 0,
     };
   },
-
-  computed: {
-    sortedNames () {
-      let sortedNames = []
-      let currentNames = Object.keys(this.names)
-      let names = {}
-      sortedNames = currentNames.filter((name) => {
-        return this.names[name].added
-      })
-      sortedNames = sortedNames.concat(currentNames.filter((name) => {
-        return !this.names[name].added
-      }))
-      sortedNames.forEach((name) => {
-        names[name] = this.names[name]
-      })
-      return names
-    }
-  },
-
   created: function () {
     let self = this;
     getBase(function (base) {
       self.base = base;
     });
-
-    CallDNS("Version", [], (vsn) => {
-      this.version = web3.utils.hexToNumber(vsn);
-    });
-
-    this.refreshNames();
-    setInterval(() => {
-      if (
-        !this.enabled &&
-        window.ethereum &&
-        window.ethereum.selectedAddress != null
-      ) {
-        this.enable();
-      }
-      this.refreshNames();
-    }, 1000);
-
-    //if (this.$route.query.enableMetaMask) { this.enable(); }
+    this.refresh();
+    Wallet.subscribe(this);
+  },
+  computed: {
+    destinations: function () {
+      if (this.data.destinations.length == 0) return [this.data.destination];
+      return this.data.destinations;
+    },
   },
   methods: {
-    refreshNames: function () {
-      for (key in DNSCache) {
-        let name = DNSCache[key].name;
-        let entry = {
-          name,
-          destination: DNSCache[key].destination,
-          owner: DNSCache[key].owner,
-        };
-        this.$set(this.names, name, entry);
-      }
-
-      let mainTable = document.getElementById("blockchain-names");
-      if (mainTable) {
-        this.tableHeight = mainTable.clientHeight - mainTable.offsetTop;
-      }
-
-      for (key in this.names) {
-        if (this.names[key].destination == "loading") {
-          this.names[key].destination = "undefined";
-          this.names[key].owner = "undefined";
-          this.$set(this.names, key, this.names[key]);
-        }
-      }
+    formatEnd: function (block) {
+      if (block == 0) return "Never";
+      let date = formatDate(guessBlocktime(block));
+      return "Block " + block + " (~" + date + ")";
     },
-    addName: function (name) {
-      if (!name || this.names[name]) return;
-
-      let entry = {
-        name,
-        destination: "loading",
-        owner: "loading",
-        added: true
-      };
-      this.$set(this.names, name, entry);
-    },
-    reloadName: function (name) {
-      this.resolve(name, (dest) => {
-        this.names[name].destination = "0x" + dest.substring(dest.length - 40);
-        this.$set(this.names, name, this.names[name]);
+    refresh: function () {
+      CallDNS("ResolveEntry", [this.name], (data, bla) => {
+        this.data = data;
       });
-    },
-    enable: function () {
-      if (!window.ethereum || !window.ethereum.isMetaMask) {
-        this.error =
-          "Please install <a href='https://metamask.io/'>MetaMask</a>";
-        return;
-      }
-      window.ethereum.on("chainChanged", this.handleChainChanged);
-      window.ethereum.enable().then((accounts, error) => {
-        if (!accounts || error) {
-          console.log("Enable error: ", error);
-          this.error = "Enable error: " + error.toString();
-          return;
-        }
-        // let currentChainId = null
-        this.enabled = true;
-        this.account = accounts[0];
-
-        web3.eth.getBalance(this.account, (err, ret) => {
-          this.err = undefined;
-          if (err) this.error = err;
-          else this.balance = ret;
-        });
-
-        window.ethereum.on("chainChanged", (chainId) =>
-          this.handleChainChanged(chainId)
-        );
-        // Until eth_chainId calls actually works...
-        this.handleChainChanged(window.ethereum.networkVersion);
-        // window.ethereum
-        //   .send({ method: "eth_chainId" })
-        //   .then((chainId) => this.handleChainChanged(chainId))
-        //   .catch(err => console.error(err))
-      });
-    },
-    handleChainChanged: function (chainId) {
-      if (chainId != CHAIN_ID) {
-        this.error = "MetaMask is not connected to the Diode Network";
-        this.enabled = false;
-        return;
-      }
-      this.enabled = true;
-    },
-    resolve(name, callback) {
-      CallDNS("Resolve", [name], callback);
-    },
-    registerName: async function (name, destination) {
-      let call = web3.eth.abi.encodeFunctionCall(dnsMethods["Register"], [
-        name,
-        destination,
-      ]);
-      this.submitDns = name;
-      window.ethereum.sendAsync(
-        {
-          method: "eth_sendTransaction",
-          params: [
-            { from: this.account, to: DNSAddr, data: call, gasPrice: 0 },
-          ],
-          from: this.account,
-        },
-        (err, ret) => {
-          if (err) {
-            this.submitDns = false;
-            console.log("[RegisterName] error: ", name, destination, err);
-            return;
-          }
-          if (ret.result) {
-            let { result } = ret;
-            this.isTxConfirmed(result)
-              .then(
-                function (tx) {
-                  this.submitDns = false;
-                }.bind(this)
-              )
-              .catch(
-                function (err) {
-                  this.submitDns = false;
-                  console.log("[RegisterName] error: ", name, destination, err);
-                }.bind(this)
-              );
-            return;
-          }
-          this.submitDns = false;
-        }
-      );
-    },
-    execAfter: function (callback, time) {
-      return new Promise(function (resolve, reject) {
-        window.setTimeout(() => {
-          resolve(callback());
-        }, time);
-      });
-    },
-    isTxConfirmed: function (txHash) {
-      // const self = this
-      return new Promise(
-        function (resolve, reject) {
-          if (
-            !txHash ||
-            txHash.length != 66 ||
-            !/^0x[0-9a-f]{64}$/i.test(txHash)
-          ) {
-            reject(false);
-          }
-          web3.eth
-            .getTransactionReceipt(txHash)
-            .then(
-              function (tx) {
-                if (tx) {
-                  if (tx.status === true) {
-                    return resolve(tx);
-                  }
-                  return reject(new Error("tx was failed"));
-                }
-                resolve(
-                  this.execAfter(this.isTxConfirmed.bind(this, txHash), 1000)
-                );
-              }.bind(this)
-            )
-            .catch(
-              function (err) {
-                resolve(
-                  this.execAfter(this.isTxConfirmed.bind(this, txHash), 1000)
-                );
-              }.bind(this)
-            );
-        }.bind(this)
-      );
     },
   },
 });

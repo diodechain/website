@@ -200,7 +200,7 @@
   </div>
 </template>
 <script>
-var Accounts = Vue.component("accounts", {
+var VAccounts = Vue.component("accounts", {
   template: document.getElementById("accounts").innerHTML,
   delimiters: ["<%", "%>"],
   data: () => {

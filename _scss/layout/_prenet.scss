@@ -209,10 +209,12 @@ body.prenet {
       min-width: 58px;
       background: #ffffff;
 
-    }
-
-    button[disabled] {
-      cursor: not-allowed !important;
+      
+      &[disabled] {
+        cursor: not-allowed !important;
+        border: none;
+        background-color: #b4b4b4;
+      }
     }
 
     button[name="search"] {
@@ -240,6 +242,12 @@ body.prenet {
         color: white;
         background: #F15E40;
 
+        &[disabled] {
+          cursor: not-allowed !important;
+          border: none;
+          background-color: #b4b4b4;
+        }
+  
       }
     }
   }
@@ -263,7 +271,7 @@ body.prenet {
     caption {
       text-align: left;
       border: 1px solid #ddd;
-      border-bottom: 0;
+      // border-bottom: 0;
       padding: 12px 10px 5px 10px;
       background: white;
       color: #000000;
@@ -281,7 +289,7 @@ body.prenet {
       background-color: #ffffff;
       border-collapse: collapse;
       border-spacing: 0;
-      table-layout: fixed;
+      // table-layout: fixed;
 
       td {
         word-wrap: break-word;

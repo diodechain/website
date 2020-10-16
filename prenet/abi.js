@@ -19,7 +19,7 @@ let DNSAlias = {
 }
 
 const PredefinedGraphicColors = ['#F15C2E', '#0272FF', "#38AB66", "#161C2A", "#969FA8",
-                                '#D15B2E', '#9279FF', "#88AA76", "#1952AA", "#00445B"];
+    '#D15B2E', '#9279FF', "#88AA76", "#1952AA", "#00445B"];
 const FleetHash = "0x7e9d94e966d33cff302ef86e2337df8eaf9a6388d45e4744321240599d428343"
 const NullHash = "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 const NullValue = "0x0000000000000000000000000000000000000000000000000000000000000000"
@@ -42,7 +42,6 @@ var fleetMethods = {
             type: "address",
             name: "device"
         }],
-        outputs: [{ name: 'white', type: 'boolean' }]
     },
 
     "accessWhitelist": {
@@ -55,7 +54,6 @@ var fleetMethods = {
             type: "address",
             name: "client"
         }],
-        outputs: [{ name: 'access', type: 'boolean' }]
     },
 
     "SetAccessWhitelist": {
@@ -111,6 +109,56 @@ var dnsMethods = {
             name: 'name'
         }]
     },
+    "ResolveEntry": {
+        name: 'ResolveEntry',
+        type: 'function',
+        inputs: [{
+            type: 'string',
+            name: 'name'
+        }],
+        outputs: [{
+            components: [
+                {
+                    internalType: "address",
+                    name: "destination",
+                    type: "address"
+                },
+                {
+                    internalType: "address",
+                    name: "owner",
+                    type: "address"
+                },
+                {
+                    internalType: "string",
+                    name: "name",
+                    type: "string"
+                },
+                {
+                    internalType: "address[]",
+                    name: "destinations",
+                    type: "address[]"
+                },
+                {
+                    internalType: "string[]",
+                    name: "properties",
+                    type: "string[]"
+                },
+                {
+                    internalType: "uint256",
+                    name: "lockEnd",
+                    type: "uint256"
+                },
+                {
+                    internalType: "uint256",
+                    name: "leaseEnd",
+                    type: "uint256"
+                }
+            ],
+            internalType: "struct IBNS.BNSEntry",
+            name: "",
+            type: "tuple"
+        }],
+    },
     "Register": {
         name: 'Register',
         type: 'function',
@@ -120,6 +168,17 @@ var dnsMethods = {
         }, {
             type: 'address',
             name: 'destination'
+        }]
+    },
+    "TransferOwner": {
+        name: 'TransferOwner',
+        type: 'function',
+        inputs: [{
+            type: 'string',
+            name: 'name'
+        }, {
+            type: 'address',
+            name: 'new_owner'
         }]
     },
     "Version": {
@@ -143,7 +202,12 @@ function call(abi, to, args, callback) {
         to: to,
         data: call,
         gasPrice: 0
-    }).then(callback)
+    }).then((data) => {
+        if (abi.outputs) {
+            data = web3.eth.abi.decodeParameter(abi.outputs[0], data)
+        }
+        callback(data)
+    })
 }
 
 function CallDNS(name, args, callback) {
