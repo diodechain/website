@@ -22,6 +22,7 @@ Vue.component("bns-update", {
   template: document.getElementById("bns_update").innerHTML,
   delimiters: ["<%", "%>"],
   props: {
+    destination: { default: "" },
     name: { required: true },
     owner: { required: true },
     operation: { default: "update" },
@@ -34,14 +35,15 @@ Vue.component("bns-update", {
       balance: 0,
       error: undefined,
       spinning: false,
-      destination: undefined,
     };
   },
   computed: {
     editable: function () {
       let owner = valueToAddress(this.owner);
       let account = valueToAddress(this.account);
-      return account == owner || owner == undefined;
+      if (account == owner) return true
+      if (this.operation == "update" && (owner == undefined || owner == NullAddr)) return true
+      return false
     },
     label: function () {
       let op = this.operation 

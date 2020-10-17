@@ -97,7 +97,7 @@
                     <account-link :hash="dest" mode="address"></account-link>
                   </td>
                 </table>
-                <bns-update :name="name" :owner="data.owner" :on_update="refresh"></bns-update>
+                <bns-update :name="name" :owner="data.owner" :destination="this.$route.query.new_target" :on_update="refresh"></bns-update>
               </td>
             </tr>
             <tr>
@@ -125,7 +125,8 @@
             <tr>
               <th>Owner</th>
               <td>
-                <account-link :hash="data.owner"></account-link>
+                <account-link v-if="data.owner != NullAddr" :hash="data.owner"></account-link>
+                <span v-else>Nobody</span>
                 <bns-update operation="transfer" :name="name" :owner="data.owner" :on_update="refresh"></bns-update>
               </td>
             </tr>
@@ -171,6 +172,9 @@ var DNS = Vue.component("dns", {
     });
     this.refresh();
     Wallet.subscribe(this);
+  },
+  watch: {
+    name: function() { this.refresh() }
   },
   computed: {
     destinations: function () {
