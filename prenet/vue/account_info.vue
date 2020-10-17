@@ -12,7 +12,7 @@
           <slot></slot>
         </div>
         <div class="not-enabled" v-else>
-          <button class="button" v-on:click="enable()">Enable MetaMask</button>
+          <button class="button" v-on:click="Wallet.enable()">Enable MetaMask</button>
           <div v-if="error" v-html="error" class="error"></div>
           <div class="message">
             The Diode Network Explorer uses
