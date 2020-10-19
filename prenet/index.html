@@ -220,7 +220,6 @@ layout: ""
             }
 
             web3.eth.getStorage(DNSAddr, (err, arr) => {
-
                 if (!arr) return
                 let ret = {}
 
@@ -229,24 +228,22 @@ layout: ""
                 })
 
                 for (key in ret) {
-                    let name = valueToString(ret[key])
-
+                    let name = valueToString(ret[key]);
                     if (name == undefined) continue;
+                    name = name.toLowerCase();
 
                     let nameOffset = web3.utils.toBN(key)
                     let entry = {
                         name,
-                        owner: ret[addressAdd(nameOffset, -1)],
-                        destination: ret[addressAdd(nameOffset, -2)]
+                        owner: valueToAddress(ret[addressAdd(nameOffset, -1)]),
+                        destination: valueToAddress(ret[addressAdd(nameOffset, -2)])
                     }
 
                     if (entry.owner == undefined) continue;
 
                     DNSCache[name] = entry
-
-                    let addr = valueToAddress(entry.destination);
-
-                    if (addr) {
+                    if (entry.destination) {
+                        let addr = entry.destination.toLowerCase();
                         entry.address = addr;
                         DNSCache[addr] = entry;
                     }

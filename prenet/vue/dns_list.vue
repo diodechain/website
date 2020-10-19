@@ -93,18 +93,20 @@
                   <router-link :to="'/dns/' + name.name"><% name.name %></router-link>
                 </td>
               <td>
-                <span v-if="name.destination !== 'undefined' && name.destination !== 'loading'">
+                <span v-if="isAddress(name.destination)">
                   <account-link :hash="valueToAddress(name.destination)" mode="address"></account-link>
                 </span>
-                <span v-else>Loading</span>
+                <span v-else-if="!name.destination">Loading</span>
+                <span v-else><% name.destination %></span>
 
                 <bns-update :name="name.name" :owner="name.owner"></bns-update>
               </td>
               <td>
-                <span v-if="name.owner !== 'undefined' && name.owner !== 'loading'">
+                <span v-if="isAddress(name.owner)">
                   <storage-value v-if="name.owner" :value="name.owner" />
                 </span>
-                <span v-else>Loading</span>
+                <span v-else-if="!name.owner">Loading</span>
+                <span v-else><% name.owner %></span>
               </td>
             </tr>
           </table>
@@ -186,8 +188,8 @@ var DNSList = Vue.component("dns_list", {
         let name = DNSCache[key].name;
         let entry = {
           name,
-          destination: DNSCache[key].destination,
-          owner: DNSCache[key].owner,
+          destination: valueToAddress(DNSCache[key].destination),
+          owner: valueToAddress(DNSCache[key].owner),
         };
         this.$set(this.names, name, entry);
       }
@@ -196,29 +198,22 @@ var DNSList = Vue.component("dns_list", {
       if (mainTable) {
         this.tableHeight = mainTable.clientHeight - mainTable.offsetTop;
       }
-
-      for (key in this.names) {
-        if (this.names[key].destination == "loading") {
-          this.names[key].destination = "undefined";
-          this.names[key].owner = "undefined";
-          this.$set(this.names, key, this.names[key]);
-        }
-      }
     },
     addName: function (name) {
       if (!name || this.names[name]) return;
+      name = name.toLowerCase();
 
       let entry = {
         name,
-        destination: "loading",
-        owner: "loading",
+        destination: "Not set yet",
+        owner: "Not set yet",
         added: true
       };
       this.$set(this.names, name, entry);
     },
     reloadName: function (name) {
       this.resolve(name, (dest) => {
-        this.names[name].destination = "0x" + dest.substring(dest.length - 40);
+        this.names[name].destination = valueToAddress(dest);
         this.$set(this.names, name, this.names[name]);
       });
     },
