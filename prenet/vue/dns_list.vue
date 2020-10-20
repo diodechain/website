@@ -90,8 +90,9 @@
             </tr>
             <tr v-bind:key="name.name" v-for="name in sortedNames">
               <td>
-                  <router-link :to="'/dns/' + name.name"><% name.name %></router-link>
-                </td>
+                <router-link :to="'/dns/' + name.name"><% name.name %></router-link>
+                <bns-update operation="unregister" :name="name" :owner="name.owner" :on_update="unregister.bind(this, name)"></bns-update>
+              </td>
               <td>
                 <span v-if="isAddress(name.destination)">
                   <account-link :hash="valueToAddress(name.destination)" mode="address"></account-link>
@@ -149,6 +150,9 @@ var DNSList = Vue.component("dns_list", {
   computed: {
     sortedNames () {
       let ret = Object.entries(this.names).sort(([key1, value1], [key2, value2]) => {
+          if (!value2 || !value1) {
+            return false
+          }
           if (value2.added != value1.added) {
               return value2.added
           }
@@ -220,6 +224,10 @@ var DNSList = Vue.component("dns_list", {
     resolve(name, callback) {
       CallDNS("Resolve", [name], callback);
     },
+    unregister(name) {
+      if (!this.names[name.name]) return;
+      this.$delete(this.names, name.name);
+    }
   },
 });
 </script>

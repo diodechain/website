@@ -1,6 +1,6 @@
 <template id="bns_update">
   <div v-if="enabled && editable">
-    <div class="input-button white marginized-top">
+    <div v-if="notUnregister" class="input-button white marginized-top">
       <input
         class="no-icon"
         type="text"
@@ -10,6 +10,16 @@
       <button
         v-on:click="click(destination)"
         :disabled="!web3.utils.isAddress(destination) || spinning"
+      >
+        <img v-show="spinning" class="btn-loading" src="images/spinning.gif" />
+        <span><% label %></span>
+      </button>
+    </div>
+    <div v-else>
+      <button
+        v-on:click="click()"
+        :disabled="spinning"
+        class="button"
       >
         <img v-show="spinning" class="btn-loading" src="images/spinning.gif" />
         <span><% label %></span>
@@ -49,6 +59,10 @@ Vue.component("bns-update", {
       let op = this.operation 
       return op.charAt(0).toUpperCase() + op.slice(1);
     },
+    notUnregister: function () {
+      let op = this.operation.toLowerCase()
+      return op !== 'unregister'
+    }
   },
   created: function () {
     Wallet.subscribe(this);
@@ -68,6 +82,8 @@ Vue.component("bns-update", {
           return Wallet.runDNS("Register", [this.name, address]);
         case "transfer":
           return Wallet.runDNS("TransferOwner", [this.name, address]);
+        case "unregister":
+          return Wallet.runDNS("Unregister", [this.name.name]);
         default:
           throw "invalid operation '" + this.operation + "'"
       }

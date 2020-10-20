@@ -170,6 +170,14 @@ var dnsMethods = {
             name: 'destination'
         }]
     },
+    "Unregister": {
+        name: 'Unregister',
+        type: 'function',
+        inputs: [{
+            type: 'string',
+            name: 'name'
+        }]
+    },
     "TransferOwner": {
         name: 'TransferOwner',
         type: 'function',
