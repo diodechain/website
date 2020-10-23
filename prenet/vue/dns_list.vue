@@ -91,7 +91,6 @@
             <tr v-bind:key="name.name" v-for="name in sortedNames">
               <td>
                 <router-link :to="'/dns/' + name.name"><% name.name %></router-link>
-                <bns-update operation="unregister" :name="name" :owner="name.owner" :on_update="unregister.bind(this, name)"></bns-update>
               </td>
               <td>
                 <span v-if="isAddress(name.destination)">

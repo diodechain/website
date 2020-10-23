@@ -130,6 +130,14 @@
                 <bns-update operation="transfer" :name="name" :owner="data.owner" :on_update="refresh"></bns-update>
               </td>
             </tr>
+            <tr v-if="editable">
+              <th>
+                Unregister
+              </th>
+              <td>
+                <bns-update operation="unregister" :name="name" :owner="data.owner" :on_update="unregister.bind(this)"></bns-update>
+              </td>
+            </tr>
             <tr>
               <th>Properties</th>
               <td>
@@ -177,6 +185,12 @@ var DNS = Vue.component("dns", {
     name: function() { this.refresh() }
   },
   computed: {
+    editable: function () {
+      let owner = valueToAddress(this.data.owner);
+      let account = valueToAddress(this.account);
+      if (account == owner) return true
+      return false
+    },
     destinations: function () {
       if (this.data.destinations.length == 0) return [this.data.destination];
       return this.data.destinations;
@@ -193,6 +207,9 @@ var DNS = Vue.component("dns", {
         this.data = data;
       });
     },
+    unregister() {
+      this.$router.push('/dns');
+    }
   },
 });
 </script>

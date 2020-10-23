@@ -83,7 +83,8 @@ Vue.component("bns-update", {
         case "transfer":
           return Wallet.runDNS("TransferOwner", [this.name, address]);
         case "unregister":
-          return Wallet.runDNS("Unregister", [this.name.name]);
+          let name = (typeof this.name === 'string') ? this.name : this.name.name
+          return Wallet.runDNS("Unregister", [name]);
         default:
           throw "invalid operation '" + this.operation + "'"
       }
