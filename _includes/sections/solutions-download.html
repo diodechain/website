@@ -1,0 +1,50 @@
+<!-- Solutions Download Section -->
+<section class="site-section section-focus solutions-download-section" id="solutions-download">
+  <div class="downloads">
+    <div class="container">
+      <!-- Desktop layout -->
+      <div class="row hidden-xs">
+        {% for download in page.downloads %}
+        <div class="download col-sm-6 col-xs-12">
+          <div class="download-title-container">
+            <img src="{{ download.icon }}">
+            <h2 class="download-title">
+              {{ download.title }}
+            </h2>
+          </div>
+          <p class="download-description">
+            {{ download.description }}
+          </p>
+          <a class="button" href="{{ download.link }}">{{ download.button }}</a>
+        </div>
+        {% endfor %}
+      </div>
+      <!-- Mobile layout (this design has bid diff from desktop) -->
+      <div class="row hidden-sm hidden-md hidden-lg">
+        {% for download in page.downloads %}
+        <div class="col-xs-12 download--xs">
+          <h3 class="download-title">Product {{ forloop.index }} Highlight:</h3>
+          <a
+            class="download-link link"
+            href="{{ download.link }}">
+            {{ download.xs-title }}
+          </a>
+          <p class="download-description">
+            {{ download.description }}
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-us">
+    <div class="contact-us__card">
+      <div class="description">
+        {{ layout.contact_us }}
+      </div>
+      <a class="button button--outline hidden-xs" href="{{ site.links.contact_us }}">Contact Us</a>
+      <a class="button hidden-sm hidden-md hidden-lg" href="{{ site.links.contact_us }}">Contact Us</a>
+    </div>
+  </div>
+</section>

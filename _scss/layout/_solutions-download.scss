@@ -1,0 +1,124 @@
+/**
+ *
+ *  Solutions Download Section Style
+ *
+ *  @package gleesik_layout
+ *
+ **/
+
+section.solutions-download-section {
+  padding: 0;
+  position: relative;
+  .downloads {
+    width: 100%;
+    padding: 50px 0 120px;
+    background-color: $web-blue !important;
+    .container {
+      // Solutions Download
+      .download {
+        padding: 0 60px;
+
+        &:first-child {
+          border-right: 2px solid $white;
+        }
+
+        &-title-container {
+          display: flex;
+          align-items: center;
+          margin-bottom: 30px;
+        }
+        &-title {
+          color: $orange;
+          font-weight: 400;
+          margin-left: 20px;
+          font-size: $title-font-size-1;
+        }
+        &-description {
+          color: $white;
+          font-weight: 400;
+          line-height: 1.5;
+          font-size: $text-font-size-1;
+          margin-bottom: 50px;
+        }
+        .button {
+          margin: 0 auto;
+          width: 250px;
+          justify-content: center;
+          margin-left: 0;
+        }
+
+        &--xs {
+          &:first-child {
+            position: relative;
+            margin-bottom: 50px;
+            &::after {
+              content: '';
+              position: absolute;
+              width: 36px;
+              height: 2px;
+              background-color: $white;
+              bottom: 0;
+              left: calc(50% - 18px);
+            }
+          }
+          .download-title {
+            color: $white;
+            font-size: $text-font-size-2;
+            margin-left: 0;
+            margin-bottom: 25px;
+          }
+          .download-link {
+            margin-bottom: 30px;
+            font-weight: 400;
+            // font-family: 'Abel';
+          }
+          .download-description {
+            color: $white;
+            font-size: $text-font-size-1;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-us {
+    background-color: $white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__card {
+      border-radius: 5px;
+      background-color: $white;
+      margin-top: -60px;
+      max-width: 814px;
+      padding: 45px 30px 50px;
+      text-align: center;
+
+      .description {
+        font-size: $text-font-size-1;
+        line-height: 1.8;
+        text-align: left;
+        margin-bottom: 50px;
+      }
+
+      .button {
+        margin: 0 auto;
+        width: 230px;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 768px) {
+        margin-top: -90px;
+        width: 90%;
+        .button {
+          width: fit-content;
+        }
+      }
+    }
+
+  }
+}
+
+

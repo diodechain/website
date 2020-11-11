@@ -2,45 +2,62 @@
 <section class="site-section section-focus features-section" id="features">
   <div class="container">
 
-    <!-- Section Heading -->
-    <div class="row text-center">
-
-      <!-- Section Header -->
-      <header class="col-md-8 col-md-push-2 col-sm-12 section-header">
-        <h2>{{ page.features-title }}</h2>
-        <hr class="normal">
-      </header>
-
-      <!-- Section Content -->
-      <div class="col-md-8 col-md-push-2 col-sm-12 section-content">
-        <p>{{ page.features-description }}</p>
+    <!-- Features -->
+    {% for feature in page.features %}
+    <div
+      class="row feature"
+    >
+      <div class="feature-content col-xs-12 col-sm-7 col-md-8">
+        <h3 class="feature-title">
+          {{ feature.title }}
+        </h3>
+        <h3 class="feature-title--xs">
+          {{ feature.xs-title }}
+        </h3>
+        <p class="feature-description">
+          {{ feature.description }}
+        </p>
+        <p class="feature-description--xs">
+          {{ feature.xs-description }}
+        </p>
+        <a class="feature-link link link--arrow" href="{{ feature.link-url }}">
+          {{ feature.link-text }}
+        </a>
+        <a class="feature-link--xs link link--arrow" href="{{ feature.link-url }}">
+          SHOW MORE
+        </a>
       </div>
+      <div
+        class="feature-icon feature-icon--{{ forloop.index }} col-xs-0 col-sm-5 col-md-4"
+      >
+        {% include {{ feature.icon }} %}
+      </div>
+    </div>
+    {% endfor %}
 
+    <!-- CONTACT US and LEARN MORE -->
+
+    <div class="feature-more row">
+      <div class="col-sm-6">
+        <a class="contact-button button button--outline" alt="Contact Us" href="{{ site.links.contact_us }}">
+          CONTACT US
+        </a>
+      </div>
+      <div class="col-sm-6">
+        <a class="link link--arrow" alt="Learn More" href="{{ site.links.learn_more }}">
+          LEARN MORE
+        </a>
+      </div>
     </div>
 
-    <!-- Features -->
-    <div class="row features">
 
-      {% for feature in page.features %}
-
-      <div class="col-md-4 col-md-push-0 col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1 feature">
-        {% if feature.icon %}
-        <div class="icon parent">
-          <div class="circle parent">
-            <div class="circle child-center">
-              {% include {{ feature.icon }} %}
-            </div>
-          </div>
-        </div>
-        {% endif %}
-        <div class="content">
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.description }}</p>
-        </div>
-      </div>
-
-      {% endfor %}
-
+    <div class="feature-more--xs">
+      <a class="contact-button button button--outline" alt="Contact Us" href="{{ site.links.contact_us }}">
+        CONTACT US
+      </a>
+      <a class="button" alt="Get Started" href="{{ site.links.learn_more }}">
+        LEARN MORE
+      </a>
     </div>
 
   </div>

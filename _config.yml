@@ -1,5 +1,7 @@
 # Information for compile
-exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md", "resources", "run"]
+# exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md", "resources", "run"]
+exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md", "run"]
+
 include: ["install.sh", "msa.pdf"]
 
 baseurl:
@@ -58,59 +60,211 @@ header-secondary-button:
 ####################################
 
 navigation:
-- title: Home
-  link: #home
+- title: Solutions
+  link: solutions/
+  ft_order: 1
+  subs:
+    - title: Private Collaboration
+      ft_title: Private Collaboration
+      link: solutions/private-collaboration
+    - title: File Sharing
+      ft_title: File Sharing
+      link: solutions/file-sharing
+    - title: Backup
+      ft_title: Backup
+      link: solutions/backup
+    - title: Remote Work
+      ft_title: Remote Work
+      link: solutions/remote-work
+    - title: Asset Management
+      ft_title: Asset Management
+      link: solutions/asset-management
+    - title: Serverless Communications
+      ft_title: Serverless Communications
+      link: solutions/serverless-communications
+- title: Products
+  link: products/
+  ft_order: 2
+  subs:
+    - title: dDrive
+      ft_title: dDrive
+      link: products/d-drive
+    - title: Diode CLI
+      ft_title: CLI
+      link: products/diode-cli
+    - title: Diode Network
+      ft_title: Network
+      link: products/diode-network
+- title: Pricing
+  link: pricing/
+  ft_order: 4
 - title: Blog
   link: blog/
-- title: Docs
-  link: https://support.diode.io
-- title: Download
-  link: download/
-- title: Explorer
-  link: prenet/
-- title: <i class="fi flaticon-telegram"></i>
+  ft_order: 5
+- title: Resources
+  link: resources/
+  ft_order: 3
+  subs:
+    - title: How It Works
+      ft_title: How It Works
+      link: resources/how-it-works
+    - title: About
+      ft_title: About
+      link: resources/about
+    - title: Docs
+      ft_title: Docs
+      link: https://support.diode.io/
+      target: _blank
+    - title: Download
+      ft_title: Download
+      link: resources/download
+    - title: Explorer
+      ft_title: Explorer
+      link: prenet
+- title: <i class="fab fa-telegram-plane"></i>
   link: https://t.me/diode_chain
   target: _blank
-- title: <i class="fi flaticon-twitter"></i>
-  link: https://twitter.com/diode_chain
-  target: _blank
-- title: <i class="fi flaticon-github"></i>
-  link: https://github.com/diodechain
+- title: Download
+  link: resources/download/
+  is_button: true
   target: _blank
 
 
+#################################
+######  Breadcrumbs label  ######
+#################################
+breadcrumbs:
+  solutions: Solutions
+  remote-work: Remote Work
+  private-storage: Private Storage
+  streaming-video: Streaming Video
+  healthcare-and-compliance: Healthcare & Compliance
+  internet-of-things: Internet of Things
+  it-and-developers: IT and Developers
+  serverless-communications: Serverless Communications
+
+  products: Products
+  d-drive: dDrive
+  diode-cli: Diode CLI
+  diode-network: Diode Network
+  pricing: Pricing
+
+  blog: Blog
+
+  resources: Resources
+  how-it-works: How it Works
+  about: About
+  download: Download
+  explorer: Explorer
+  docs: Docs
+
+
 ####################################
-######  Global Social Links   ######
+######  Quick links of footer ######
 ####################################
-youtube: 'https://www.youtube.com/channel/UC3b5voADiipUmq1Q-vtPKsA'
-# pinterest: '#'
-# facebook: '#'
-twitter: 'https://twitter.com/diode_chain'
-twitter_username: 'diode_chain'
-telegram: 'https://t.me/diode_chain'
-# google-plus: '#'
-# vimeo: '#'
+quick_links:
+- title: Solutions
+  link: solutions/
+- title: Products
+  link: products/
+- title: Pricing
+  link: pricing/
+- title: Blog
+  link: blog/
+- title: Resources
+  link: resources/
+- title: Privacy Policy
+  link: privacy-policy/
+
+#############################
+######  Global Links   ######
+#############################
+links:
+  # Common Links
+  learn_more: 'resources/how-it-works/'
+  contact_us: 'https://t.me/diode_chain'
+  get_a_demo: 'products/pricing/'
+  try_it_out: 'products/pricing/'
+  download: 'resources/download/'
+
+  # Social Links
+  youtube: 'https://www.youtube.com/channel/UC3b5voADiipUmq1Q-vtPKsA'
+  # pinterest: '#'
+  # facebook: '#'
+  twitter: 'https://twitter.com/diode_chain'
+  twitter_username: 'diode_chain'
+  telegram: 'https://t.me/diode_chain'
+  # google-plus: '#'
+  # vimeo: '#'
 
 #########################
 ######  Downloads  ######
 #########################
-download-base: https://github.com/diodechain/diode_go_client/releases/download/v0.8.0/
-downloads:
-- title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM)
-  link: diode_linux_arm.zip
-  id: Raspberry Pi
-- title: <i class="fab fa-apple"></i> MacOS X
-  link: diode_darwin_amd64.zip
-  id: MacOS
-- title: <i class="fas fa-cube"></i> MacOS Package
-  link: diode_darwin.pkg
-  id: MacOS
-- title: <i class="fab fa-windows"></i> Windows (64-bit)
-  link: diode_windows_amd64.zip
-  id: Windows
-- title: <i class="fab fa-linux"></i> Linux (64-bit)
-  link: diode_linux_amd64.zip
-  id: Linux
+d-drive:
+  title: dDrive
+  title-1: Diode Drive
+  description: A cloud experience for your local storage - install on your computer, server, or device and start collaborating!
+  # for solutions page(desktop)
+  description-1: dDrive combines the privacy and compliance benefits of local storage with the benefits and efficiency of remote access.
+  # for solutions page(mobile)
+  description-2: Existing file servers and new Diode-enabled NAS systems can use Diode Drive to combine the privacy and compliance benefits of local storage with the benefits and efficiency of remote access.
+  icon: images/diode-drive.png
+  learn-more: 'products/d-drive/'
+  download-base: https://github.com/diodechain/diode_go_client/releases/download/v0.8.0/
+  downloads:
+  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM)
+    link: diode_linux_arm.zip
+    name: Raspberry Pi
+    id: raspberry-pi
+  - title: <i class="fab fa-apple"></i> MacOS X
+    link: diode_darwin_amd64.zip
+    name: MacOS
+    id: macos
+  - title: <i class="fab fa-windows"></i> Windows (64-bit)
+    link: diode_windows_amd64.zip
+    name: Windows
+    id: windows
+  - title: <i class="fab fa-linux"></i> Linux (64-bit)
+    link: diode_linux_amd64.zip
+    name: Linux
+    id: linux
+diode-cli:
+  title: Diode CLI
+  description: Serverless remote access for your IT assets, localhost websites / webservices, and data/video streams.
+  # for solution page(desktop)
+  description-1: The Diode CLI is used to maintain systems in hard-to-access facilities and to securely publish data streams and web properties.
+  icon: images/diode-client.png
+  learn-more: 'products/diode-cli/'
+  download-command: 'curl -Ssf https://diode.io/install.sh | sh'
+  download-base: https://github.com/diodechain/diode_go_client/releases/download/v0.8.0/
+  downloads:
+  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM)
+    link: diode_linux_arm.zip
+    name: Raspberry Pi
+    id: raspberry-pi
+  - title: <i class="fab fa-apple"></i> MacOS X
+    link: diode_darwin_amd64.zip
+    name: MacOS
+    id: macos
+  - title: <i class="fas fa-cube"></i> MacOS Package
+    link: diode_darwin.pkg
+    name: MacOS Package
+    id: macos-package
+  - title: <i class="fab fa-windows"></i> Windows (64-bit)
+    link: diode_windows_amd64.zip
+    name: Windows
+    id: windows
+  - title: <i class="fab fa-linux"></i> Linux (64-bit)
+    link: diode_linux_amd64.zip
+    name: Linux
+    id: linux
+# for only solution pages (mobile)
+diode-network:
+  title: Diode Network
+  learn-more: 'products/diode-network/'
+  description: The Diode Network is the world’s only fully decentralized communications network capable of supporting the needs of private, secure communications for the enterprise.
+  link: 'https://support.diode.io/category/cck0x29491'
+
 
 #########################
 ######   Widgets   ######

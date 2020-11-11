@@ -1,0 +1,130 @@
+<!-- Download Section -->
+<section class="site-section download-section" id="download">
+    <div class="container hidden-sm hidden-md hidden-lg">
+        <!-- Download Page Title -->
+        <h2 class="site-section__title">{{ page.header-title }}</h2>
+        <!-- Download Description -->
+        <h3 class="site-section__description">{{ page.header-description }}</h3>
+    </div>
+    <!-- Download dDrive -->
+    <div class="download">
+        <div class="container">
+            <div class="row">
+                <div class="download__left col-sm-6 col-md-4">
+                    <div class="download-title">
+                        <img class="icon" src="{{ site.d-drive.icon }}" />
+                        <h2 class="title">{{ site.d-drive.title }} </h2>
+                    </div>
+                    <p class="hidden-sm hidden-md hidden-lg">{{ site.d-drive.description }}</p>
+                    <div class="download-action">
+                        <a class="button" href="https://forms.gle/9yNDgmTdy2KhjKHE8">Join the Alpha Program</a>
+                        <!--
+                        {% for download in site.d-drive.downloads %}
+                        <a class="button hide {{ download.id }}" href="{{ site.d-drive.download-base }}{{ download.link }}">Download dDrive for {{ download.name }}</a>
+                        {% endfor %}
+                        <div class="action-description">
+                            Available for
+                            <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[2].link }}">{{ site.d-drive.downloads[2].name }}</a>, 
+                            <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[1].link }}">{{ site.d-drive.downloads[1].name }}</a>, and 
+                            <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[3].link }}">{{ site.d-drive.downloads[3].name }}</a> 
+                            (<a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[0].link }}">{{ site.d-drive.downloads[0].name }}</a>)
+                        </div>
+                        -->
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-8 hidden-xs">
+                    <div class="download-content">
+                        <div class="download-description">
+                            {{ site.d-drive.description }}
+                        </div>
+                        <a class="link link--arrow " href="{{ site.d-drive.learn-more }}">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Download Diode CLI -->
+    <div class="download">
+        <div class="container">
+            <div class="row">
+                <div class="download__left col-sm-6 col-md-4">
+                    <div class="download-title">
+                        <img class="icon" src="{{ site.diode-cli.icon }}" />
+                        <h2 class="title">{{ site.diode-cli.title }} </h2>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-8 hidden-xs">
+                    <div class="download-content">
+                        <div class="download-description">
+                            {{ site.diode-cli.description }}
+                        </div>
+                        <a class="link link--arrow" href="{{ site.diode-cli.learn-more }}">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row download-command">
+                <div class="col-xs-12">
+                    <p class="hidden-xs">
+                        Copy & paste the line below into a terminal:
+                    </p>
+                    <p class="hidden-sm hidden-md hidden-lg">
+                        Copy & paste below line into a terminal to install the Diode client for your current user on macOS, Linux, Raspberry Pi (or Windows if you have curl).
+                    </p>
+                    <div class="download-action">
+                        <code>
+                            <span class="noselect">$ </span>
+                            {{ site.diode-cli.download-command }}
+                        </code>
+                        <div class="action-description hidden-xs">
+                            Supported on macOS, Linux, Raspberry Pi (or Windows if you have curl)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="orange" />
+            <p>Or manually install in location of your choice</p>
+            <div class="row download-choices">
+                {% for choice in page.choices %}
+                    <div class="col-md-4 col-sm-12">
+                        <div class="choice">
+                            <div class="choice-title">
+                                <div class="circle">
+                                    {{forloop.index}}
+                                </div>
+                                {{choice.title}}
+                            </div>
+                            <div class="choice-description">
+                                {{choice.description}}
+                            </div>
+                            {% if choice.downloads %}
+
+                            {% for item in site.diode-cli.downloads %}
+                            <a class="choice-action hide {{ item.id }}" href="{{ site.download-base }}{{ item.link }}">
+                                {{ item.title }}
+                            </a>
+                            {% endfor %}
+
+                            <div class="choice-downloads">
+                                {% for item in site.diode-cli.downloads %}
+                                    <a class="download-item" href="{{ site.download-base }}{{ item.link }}">
+                                        {{ item.title }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            <code>
+                                <span class="noselect">$&nbsp;</span>
+                                {{ choice.command }}
+                            </code>
+                            <div class="choice-hint">
+                                {{ choice.hint }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

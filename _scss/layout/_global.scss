@@ -11,7 +11,7 @@ body {
   // Typography
   font: {
     family: $font-family, Arial, sans-serif;
-    size: $global-font-size;
+    size: $text-font-size-1;
     weight: normal;
   }
 
@@ -56,7 +56,7 @@ body {
     height: 100vh;
     overflow-y: hidden;
 
-    .site-header .container {
+    .site-header>.container {
       &:before {
         width: auto;
         height: auto;

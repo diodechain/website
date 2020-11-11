@@ -1,0 +1,99 @@
+/**
+ *
+ *  Solutions Section Style
+ *
+ *  @package gleesik_layout
+ *
+ **/
+
+section.solutions-section {
+  background-color: $white !important;
+  padding: 10px 0 60px;
+  .container {
+    position: relative;
+  }
+  .site-section__title {
+    margin-bottom: 100px;
+    @media (max-width: 993px) {
+      margin-top: 0px;
+    }
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 30px;
+      width: 90%;
+    }
+  }
+
+  .solution-section__description {
+    margin: 0 0 60px;
+    font-size: $title-font-size-1;
+    line-height: 1.5;
+    font-weight: 400;
+    @media (max-width: 993px) {
+      font-size: $text-font-size-2;
+    }
+    @media (max-width: 768px) {
+      font-size: $text-font-size-1;
+      padding-top: 120px;
+      text-align: center;
+    }
+  }
+
+  .row {
+    align-items: flex-start;
+    .button {
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  // Solution
+  .solution {
+    background-color: $web-gray;
+    font-weight: 400;
+    min-height: 320px;
+    padding: 25px;
+    @media (max-width: 993px) {
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      padding: 50px 25px;
+    }
+
+    &-title {
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      margin: 20px auto;
+      text-align: center;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 1px;
+        background-color: $orange;
+        bottom: -15px;
+        left: calc(50% - 50px);
+      }
+      @media (max-width: 768px) {
+        font-size: 1.3rem;
+        color: $black-blue;
+        &::after {
+            width: 36px;
+            left: calc(50% - 18px);
+            bottom: -25px;
+        }
+      }
+    }
+    &-description {
+      padding: 25px 10px 0;
+      font-size: $text-font-size-1;
+      @media (max-width: 768px) {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+

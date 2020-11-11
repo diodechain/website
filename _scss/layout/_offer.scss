@@ -9,65 +9,48 @@
 section.offer-section {
   padding: 40px 0;
   color: $white;
-  background-color: $primary;
+  background-color: $web-blue;
+  padding: 100px 0;
 
-  .hs-form-required {
-    display: none;
-  }
-
-  a {
+  .offer-link {
     color: $white;
-    &:hover,
-    &:active {
-      background-color: lighten($primary, 20%);
-    }
-  }
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
 
-  .underline {
-    text-decoration: none;
-    border-bottom: 7px solid $white;    
-  }
-
-  .newsletter-email-signup {
-    input {
-      border-color: white;
-      border-width: 2px;
-      color: white;
-      height: 4em;
+    &:hover {
+      color: $orange;
     }
 
-    input::placeholder {
-      color: white;
-    }
-
-  }
-
-  h2 {
-    text-transform: uppercase;
-    font-size: 1.75rem;
-    padding: 1.125rem 0;
-  }
-
-  @media (max-width: 991px) {
     h2 {
-      text-align: center;
-      line-height: 1.2;
-      padding: 0;
+      font-size: $title-font-size-1;
+      text-transform: uppercase;
     }
-
-    .mc_embed_signup_scroll {
-      margin-top: 10px;
+    i {
+      font-size: $title-font-size-1;
+      font-weight: 700;
     }
-
-    .newsletter-email-signup {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 226px;
+      height: 1px;
+      background-color: $orange;
+      bottom: -30px;
+      left: calc(50% - 113px);
+    }
+    @media (max-width: 768px) {
       text-align: center;
-      input {
-        height: 3em;
+      h2 {
+        font-size: $text-font-size-2;
+        font-weight: 400;
+        text-transform: inherit;
+      }
+      i {
+        display: none;
       }
     }
-  }
-
-  .button {
-    padding: 0em 3em;
   }
 }

@@ -1,0 +1,176 @@
+/**
+ *
+ *  Hero Section Style
+ *
+ *  @package gleesik_layout
+ *
+ **/
+
+// Silence is golden.
+
+section.site-section.hero-section {
+    background-color: $web-blue;
+    color: $white;
+    background-image: url('../images/cloud.png');
+    background-repeat: no-repeat;
+    background-position: right -500px center;
+    background-size: 1311px 913px;
+
+    @media (max-width: 1500px) {
+        background-position: right -600px center;
+    }
+    @media (max-width: 1300px) {
+        background-position: right -650px center;
+    }
+    @media (max-width: 1199px) {
+        background-position: right -720px center;
+    }
+    @media (max-width: 993px) {
+        background-position: right -560px center;
+        background-size: 900px;
+    }
+
+    @media (max-width: 768px) {
+        background-size: inherit;
+        background-position: right 20px;
+        background-image: url('../images/hero-right-mobile.png');
+        padding-bottom: 60px;
+    }
+
+    .container .row {
+        justify-content: left;
+
+        position: relative;
+
+        .hero-title {
+            font-size: $title-font-size-2;
+            line-height: 1.2;
+            position: relative;
+            margin-bottom: 30px;
+            font-weight: 400;
+            max-width: 500px;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 400px;
+                background-color: $orange;
+                height: 1px;
+                bottom: -7px;
+                left: 0;
+            }
+
+            &--xs {
+                display: none;
+                font-size: 1.8rem;
+                line-height: 1.2;
+                position: relative;
+                margin-bottom: 30px;
+                font-weight: 400;
+                max-width: 400px;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 68px;
+                    background-color: $orange;
+                    height: 1px;
+                    bottom: -12px;
+                    left: 0;
+                }
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+                &--xs {
+                    display: block;
+                }
+            }
+        }
+        .hero-subtitle {
+            font-size: $title-font-size-1;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            font-weight: 400;
+            max-width: 500px;
+
+            &--xs {
+                display: none;
+                font-size: 1.3rem;
+                line-height: 1.3;
+                margin-bottom: 40px;
+                font-weight: 400;
+                max-width: 80%;
+    
+            }
+            @media (max-width: 768px) {
+                display: none;
+                &--xs {
+                    display: block;
+                }
+            }
+        }
+        .hero-description {
+            margin-bottom: 80px;
+            font-weight: 400;
+            font-size: $text-font-size-1;
+            max-width: 500px;
+            &--xs {
+                max-width: 70%;
+                display: none;
+                font-size: $text-font-size-2-xs;
+            }
+            @media (max-width: 768px) {
+                display: none;
+                &--xs {
+                    display: block;
+                }
+            }
+        }
+
+
+        .company-name {
+            position: relative;
+            margin-right: 20px;
+            span {
+                position: absolute;
+                font-size: .6em;
+            }
+        }
+        .action-container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 600px;
+
+            .action-descriptoin {
+                position: absolute;
+                bottom: -1.8em;
+                font-size: 12px;
+            }
+            .text-xs { 
+                display: none;
+            }
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                align-items: flex-start;
+                .text-sm {
+                    display: none;
+                }
+                .text-xs { 
+                    display: block;
+                }
+                .action-descriptoin {
+                    display: none;
+                }
+                .action-button {
+                    margin-bottom: 50px;
+                }
+                .link {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+}

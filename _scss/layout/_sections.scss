@@ -6,9 +6,61 @@
  *
  **/
 
-section.site-section {
+.site-section {
   padding: 100px 0;
   background: $section-bg;
+
+  &__title {
+    font-size: $title-font-size-2;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+    color: $web-blue;
+    margin-bottom: 50px;
+    font-weight: 400;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 1px;
+      bottom: -20px;
+      left: calc(50% - 75px);
+      background-color: $orange;
+    }
+
+    @media (max-width: 993px) {
+      font-size: $text-font-size-5-xs;
+      margin-top: 50px;
+      margin-bottom: 40px;
+      &:after {
+        width: 36px;
+        left: calc(50% - 18px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      font-size: $text-font-size-4-xs;
+    }
+  }
+
+  &__description {
+    margin: 0 0 60px;
+    font-size: $title-font-size-1;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $gray;
+    text-align: center;
+    @media (max-width: 993px) {
+      font-size: $text-font-size-4-xs;
+    }
+    @media (max-width: 768px) {
+      font-size: $text-font-size-1;
+    }
+
+  }
+
   // z-index: 1;
 
   // Section Header

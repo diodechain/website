@@ -1,71 +1,48 @@
 ---
 layout: default
 
-about-title: Look mum, no server!
-about-description: >-
-    The Diode P2P network allows any device on the planet to directly serve secured content to the public Internet. 
-    We're ending the monopoly of datacenter servers and the need for static IP addresses. With Diode, your Ethereum
-    address is your static address, and, with ENS (Ethereum Name System) and BNS (Blockchain Name System), your content
-    can be accessed with a human-readable names.
+### Hero Section
+hero-title: Reclaim your digital sovereignity
+hero-subtitle: Privately share and manage files and connected assets.
+hero-description: <span class="company-name">Diode<span>TM</span></span> lets you retain the security and privacy of a local area network while enabling the convenience of remote accessibility - all without IT admins.
 
+hero-xs-title: Reclaim your digital sovereignity
+hero-xs-subtitle: Privately share and manage files and connected assets.
+hero-xs-description: <span class="company-name">Diode<span>TM</span></span> lets you retain the security and privacy of a local area network while enabling the convenience of remote accessibility - all without IT admins.
 
-# Chinese Firewall https://news.ycombinator.com/item?id=15590912
-# https://www.electromaker.io/tutorial/blog/raspberry-pi-vpn-server:
-# 
-
-
-features-title: What can Diode do for You?
-features-description: Here are some example use cases of a decentralized P2P network. To learn more about the technical foundations, check the docs.
+### Feature Section
 features:
+  ### Feature 1
+  - title: Private File Sharing
+    description: >-
+      Diode Drive enables businesses and individuals to keep files on local systems while unlocking the efficiencies that come with remote collaboration and sharing.  Files are synchronized with authenticated peers, and can be shared publicly or privately without requiring an account.  Collaboration is totally private (no user identity required) and file sharing does not require uploading the file to an intermediate storage environment.
+    xs-title: Private File Sharing
+    xs-description: Diode Drive enables businesses and individuals to keep files on local systems while unlocking the efficiencies that come with remote collaboration and sharing.  Files are synchronized with authenticated peers, and can be shared publicly or privately without requiring an account.  Collaboration is totally private (no user identity required) and file sharing does not require uploading the file to an intermediate storage environment.
+    icon: svgs/remote-work.svg
+    link-text: Learn More About Diode Drive
+    link-url: products/d-drive/
 
-    ### Feature 1
-    - title: Publish your Raspberry Pi Webcam to the Internet
-      description: >-
-        See above for a step-by-step guide for how to publish your Raspberry PI on the Diode P2P network. The
-        example uses Diode shared streams to broadcast the video stream through the P2P network, and supports many 
-        simultaneous viewers.  
+  ### Feature 2
+  - title: Remote Device Management
+    description: >-
+      The Diode CLI is a small terminal client application that enables a secure remote connection to IoT devices and IT assets.  It is more secure, lighter weight, and easier to manage than a VPN, and removes common attack vectors by reducing the attack surface and eliminating custom IT administration.  Because connectivity is established via the decentralized Diode Network, communications appear like any other secure Internet transmission and remain robust even in hostile environments.
+    xs-title: Remote Device Management
+    xs-description: The Diode CLI is a small terminal client application that enables a secure remote connection to IoT devices and IT assets.  It is more secure, lighter weight, and easier to manage than a VPN, and removes common attack vectors by reducing the attack surface and eliminating custom IT administration.  Because connectivity is established via the decentralized Diode Network, communications appear like any other secure Internet transmission and remain robust even in hostile environments.
+    icon: svgs/data-sovereignity.svg
+    link-text: Learn more About Diode CLI
+    link-url: products/diode-cli/
 
-        Check out our demo streams at https://betahaus-berlin.diode.link and https://pi-taipei.diode.link, and open 
-        multiple browser windows at once so see the shared streams in action. <blockquote>curl -Ssf https://diode.io/install.sh | sh</blockquote>
-
-    # icon: svgs/security.svg
-
-    ### Feature 2
-    - title: SSH into your Devices from Anywhere
-      description: >-
-        Instead of using centralized servers with static IP addresses or DynDNS, you can use the static Ethereum
-        Addresses with the Diode P2P network to setup a reliable virtual private network around the globe. All 
-        existing TCP based applications are compatible with the Diode P2P network, and can be streamed through it.
-        To try this out, install the Diode P2P Client and tunnel your SSH connection to any other device on the Diode P2P
-        network: <blockquote>ssh pi@pi-taipei.diode -o 'ProxyCommand=nc -X 5 -x localhost:1080 %h %p'</blockquote>
-
-    # icon: svgs/lower_cost.svg
-    # https://www.electromaker.io/tutorial/blog/raspberry-pi-vpn-server
-
-    ### Feature 3
-    - title: Share Your Network with Your Friends
-      description: >-
-        Define a Diode Fleet to which only your invited Friends have access. You're creating an invite-only
-        private network over the Internet. You and your Friends can exclusively use this network for all types 
-        of secure digital traffic - whether that be file sharing, secure communications, or streaming private content.
-        Since all communication is E2E encrypted using Ethereum Addresses for authentication, no one can get in the middle
-        of your conversations. 
-
-    # icon: svgs/streaming.svg
-
-
+  ### Feature 3
+  - title: Web3 Hosting and Decentralization
+    description: >-
+      The Diode Network is the world’s only fully trustless communications network.  It is made possible by the fundamental innovation of the BlockQuick algorithm which enables trustless authentication without large memory or bandwidth requirements.  The Diode Network is enabling next-generation decentralized technologies that are more secure, private, and reliable than today’s brittle, costly, and/or insecure cloud environments.  Our Web2.0 to Web3 bridging technology allows fully decentralized web hosting and services to power today’s Web2.0 top level domains.
+    xs-title: Web3 Hosting and Decentralization
+    xs-description: The Diode Network is the world’s only fully trustless communications network.  It is made possible by the fundamental innovation of the BlockQuick algorithm which enables trustless authentication without large memory or bandwidth requirements.  The Diode Network is enabling next-generation decentralized technologies that are more secure, private, and reliable than today’s brittle, costly, and/or insecure cloud environments.  Our Web2.0 to Web3 bridging technology allows fully decentralized web hosting and services to power today’s Web2.0 top level domains.
+    icon: svgs/no-it-administration.svg
+    link-text: See How the Diode Network Can Upgrade the Internet
+    link-url: products/diode-network/
 ---
 
-{% include header.html %}
-
-{% include sections/about.html %}
-
-{% include sections/features.html %}
-
-{% include sections/offer.html offer-text="Follow us on twitter!" button-text="@diode_chain" link="https://twitter.com/diode_chain" %}
-
-{% include sections/blog.html %}
-
-{% include sections/offer.html offer-text="Chat with us on telegram!" button-text="@diode_chain" link="https://t.me/diode_chain" %}
-
-{% include sections/team.html %}
+{% include header.html %} {% include sections/hero.html %} {% include
+sections/features.html %} {% include sections/offer.html offer-text="Join the
+conversation on Telegram" %} {% include sections/blog.html %}

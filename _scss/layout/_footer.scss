@@ -9,49 +9,170 @@
 footer.site-footer {
   position: relative;
   color: $footer-color;
-  background-color: $footer-background-color;
+  background-color: $black-blue;
   width: 100%;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  .container {
+    position: relative;
 
-  // Footer Information
-  .footer-info {
-    padding: 60px 0 0 0;
+    // Scrollup button
+    .scrollup-container {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      .footer-logo {
+        display: none;
+      }
+      .scrollup {
+        width: 48px;
+        height: 48px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 50;
 
-    .footer-logo {
-      position: relative;
+        i {
+          font-size: 38px;
+          font-weight: bold;
+          color: $web-blue;
+        }
+      }
+    }
+  }
+  .row {
+    align-items: flex-start;
+    // Footer menus
+    .footer-menu {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 30px;
 
-      img {
-        margin: 0 auto;
+      &__col {
+        &.quick-menu {
+          display: none;
+        }
+        .footer-link {
+          font-size: $text-font-size-2;
+          color: $white;
+          font-weight: 600;
+          text-decoration: underline;
+          line-height: 2.5;
+          &:hover {
+            color: $orange;
+          }
+        }
+        ul {
+          li {
+            a {
+              font-size: $text-font-size-1;
+              color: $white;
+              font-weight: 400;
+              line-height: 2.5;
+              &:hover {
+                color: $orange;
+              }
+            }
+          }
+        }
       }
     }
 
-    .footer-info-text {
-      font-size: 0.875rem;
-      padding: 35px 0;
+    // Footer socials
+    .footer-socials {
+      display: flex;
+      justify-content: space-between;
+      max-width: 250px;
+      min-width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+      a {
+        font-size: 1.8em;
+        color: $white;
+        line-height: 1.5;
+        &:hover {
+          color: $orange;
+        }
+      }
     }
 
-    // Social Media Icons
-    .social-icons {
-      padding-top: .5em;
-      a  {
-        color: $global-text;
+    .footer-text {
+      display: flex;
+      justify-content: space-between;
+      height: 35px;
+      align-items: center;
+      font-size: 1em;
+      color: $light-gray;
+      flex-wrap: wrap;
 
-        &:hover,
-        &:active {
-          color: $primary;
+      .v-cross {
+        width: 1px;
+        height: 20px;
+        background: $light-gray;
+      }
+    }
+
+    &.footer-bottom-1 {
+      align-items: center;
+    }
+
+    &.footer-bottom-2 {
+      display: none;
+    }
+  }
+
+  // Footer texts
+  .footer-logo {
+    img {
+      width: 120px;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .container {
+      .scrollup-container {
+        position: inherit;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .footer-logo {
+          display: block;
+        }
+      }
+      .row.footer-bottom-1 {
+        display: none;
+      }
+      .row.footer-bottom-2 {
+        display: flex;
+        .footer-text {
+          justify-content: center;
+          line-height: 1.5;
         }
       }
     }
   }
 
-  // Footer Copyright
-  .footer-copyright {
-    font-size: 0.8125rem;
-    border-top: 1px solid $normal-gray;
-    padding: 30px 0;
-
-    .footer-text {
-      width: 100%;
+  @media (max-width: 720px) {
+    .row {
+      .footer-menu {
+        justify-content: center;
+        &__col {
+          &.quick-menu {
+            display: block;
+            .footer-link {
+              text-decoration: none;
+              line-height: 3.5;
+            }
+          }
+          &.full-menu {
+            display: none;
+          }
+        }
+      }
     }
   }
-
 }

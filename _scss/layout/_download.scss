@@ -32,101 +32,330 @@
     }      
  }
 
- section.download-section {
+section.download-section {
+  padding: 0;
+  font-size: $text-font-size-1;
 
-  .row > [class*="col-"] {
-    justify-content: stretch;
+  .site-section__description {
+    text-transform: uppercase;
   }
 
-  .button-cta {
-    display: none;
-    margin-bottom: 0.4em;
-  }
-
-  code {
-    white-space: nowrap;
-    border: 1px solid black;
-    border-radius: .4em;
-    background-color: #2e0a23;
-    color: lightgray;    
-    font-size: 0.8em;
-    display: inline-block;
-    overflow: auto;
-    width: 100%;
-    text-align: center;
-    padding: 1em .5em 1em .5em;
-    font-family: monospace;    
-  }
-
-  .row {
-    align-items: initial;
-    margin-bottom: 1em;
-  }
-
-  hr.small {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
-  .download-header {
-    margin-bottom: 1em;
-    text-align: center;
-
-    .title {
-      font-size: 2em;
-      font-weight: bold;
-    }
-
-    p {
-      font-size: 1.5em;
-    }
-  }
-
-  counter-reset: boxes;
-
-  .download-box {
-    text-align: center;
-    height: 100%;
-    margin-bottom: 1em;
-
-    h4::before {
-      counter-increment: boxes;
-      content: counter(boxes);
-      padding: 3px 8px;
-      margin-right: .5em;
-      color: white;
-      font-weight: bold;
-      font-family: monospace;
-      background-color: $primary;
-      border: .1em solid $primary;
-      border-radius: 2em;      
-    }
-
-    .download-content {
-      padding: 1em 0.7em;
-      margin-top: 0;
-      border: 2px solid $light-gray;
-      height: inherit;
-
-      p {
-        margin: 1em 0;
-      }
-
-      .download-link {
-        font-size: 90%;
-        // font-weight: bold;
-        display: inline-block;
-        margin: 0.3em;
+  .download {
+    padding: 60px 0;
+    
+    &:nth-child(2) {
+      background-color: $bg;
+      color: $dark-blue;
+      @media (max-width: 768px) {
+        padding: 0;
+        background-color: $white;
+        p {
+          color: $gray;
+          line-height: 1.5;
+          margin-bottom: 30px;
+          text-align: center;
+        }
+        .download__left {
+          width: 100%;
+          display: flex;;
+          justify-content: center;
+          align-items: center;
+          .action-description {
+            display: none;
+          }
+        }
       }
     }
-  }
+    &:last-child {
+      background-color: $web-blue;
+      color: $white;
+      @media (max-width: 768px) {
+        background-color: $white;
+        color: $gray;
+        padding: 0;
+        text-align: center;
+        font-size: $text-font-size-2-xs;
+      }
+    }
 
-  .download-content {
-    padding: 0;
-    margin-top: 0;
+    &-title {
+      display: flex;
+      align-items: center;
 
-    p {
-      margin: 1em 0;
+      h2 {
+        font-size: $title-font-size-2;
+      }
+      img {
+        margin-right: 15px;
+      }
+      @media (max-width: 768px) {
+        position: relative;
+        width: 100%;
+        margin-bottom: 30px;
+
+        h2 {
+          font-size: $text-font-size-4-xs;
+          width: 100%;
+          text-align: left;
+          color: $web-blue;
+        }
+        img {
+          // display: none;
+          height: 40px;
+        }
+      }
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    &-description {
+      font-size: $title-font-size-1;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    .link {
+      margin-right: 20px;
+    }
+
+    &__left {
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 170px;
+      @media (max-width: 768px) {
+        min-height: inherit;
+        width: 100%;
+      }
+    }
+    &-action {
+      position: relative;
+      display: flex;
+      @media (max-width: 768px) {
+        padding: 0 !important;
+        margin-bottom: 50px;
+      }
+      .button {
+        padding-left: 25px;
+        padding-right: 25px;
+        width: fit-content;
+      }
+      code {
+        background-color: $orange;
+        padding: 15px 20px;
+        text-align: center;
+        border-radius: 4px;
+        width: 100%;
+        font-size: $text-font-size-2;
+        @media (max-width: 768px) {
+          margin-top: 30px;
+          background-color: $web-blue;
+          color: $white;
+          font-size: 14px;
+          padding: 40px 0;
+          white-space: nowrap;
+          overflow-x: auto;
+        }
+      }
+      .action-description {
+        position: absolute;
+        bottom: -1.8em;
+        font-size: 12px;
+        min-width: 400px;
+      }
+    }
+    &-command {
+      margin-top: 50px;
+      margin-bottom: 70px;
+      @media (max-width: 768px) {
+        margin-bottom: 30px;
+        margin-top: 0;
+      }
+      .command-label {
+        font-size: $text-font-size-2;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+      .download-action {
+        padding: 0 25px;
+        .button {
+          width: 100%;
+        }
+        .action-description {
+          width: calc(100% - 50px);
+          text-align: center;
+        }
+      }
+    }
+
+    hr.orange {
+      background-color: $orange;
+      margin-bottom: 50px;
+    }
+
+    .row {
+      align-items: flex-start;
+    }
+    .download-choices {
+      .choice-downloads {
+        .fas.fa-cube {
+          display: block;
+          width: 18px;
+          height: 18px;
+          background-image: url(../images/mac-os-package.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+      @media (max-width: 768px) {
+        & > div {
+          background-color: $bg;
+          color: $dark-blue;
+          margin-top: 50px;
+          width: 110%;
+          margin-left: -5%;
+          margin-right: -5%;
+          &:last-child {
+            margin-bottom: 80px;
+          }
+        }
+      }
+      .choice {
+        background-color: $white;
+        color: $dark-blue;
+        border-radius: 4px;
+        padding: 20px;
+        min-height: 325px;
+        flex-direction: column;
+        display: flex;
+        margin-bottom: 30px;
+
+        &-title {
+          display: flex;
+          align-items: center;
+          font-size: $text-font-size-2;
+          text-transform: uppercase;
+          margin-bottom: 30px;
+
+          .circle {
+            margin-right: 15px;
+            background-color: $orange;
+            border-radius: 50%;
+            width: 40px;
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $white;
+            font-size: $text-font-size-1;
+          }
+        }
+        code {
+          background-color: $dark-blue;
+          color: $white;
+          width: 100%;
+          overflow-x: auto;
+          height: 35px;
+          border-radius: 4px;
+          white-space: nowrap;
+          overflow-x: auto;
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          font-size: 12px;
+          justify-content: center;
+        }
+        &-hint {
+          line-height: 1.5;
+          text-align: center;
+        }
+        &-description {
+          text-align: center;
+          line-height: 1.8;
+          margin-bottom: 10px;
+        }
+        &-action {
+          display: flex;
+          background-color: $orange;
+          color: $white;
+          padding: 7px;
+          border-radius: 4px;
+          text-align: center;
+          font-size: 14px;
+          justify-content: center;
+          align-items: center;
+          height: 35px;
+          i {
+            font-size: $text-font-size-2-xs;
+            margin-right: 5px;
+          }
+        }
+        &-command {
+          background-color: $dark-blue;
+          color: $white;
+          padding: 7px;
+          font-size: 12px;
+          border-radius: 4px;
+          height: 35px;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        &-hint {
+          color: $orange;
+          margin-top: 30px;
+          font-size: 14px;
+        }
+
+        &-downloads {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 20px;
+
+          .download-item {
+            font-size: 14px;
+            color: $orange;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            margin: 0 7px;
+            i {
+              font-size: $text-font-size-2-xs;
+              margin-right: 5px;
+            }
+          }
+        }
+
+        @media (max-width: 768px) {
+          background-color: transparent;
+          min-height: inherit;
+          padding-top: 30px;
+
+          &-title {
+            position: relative;
+            text-align: center;
+            justify-content: center;
+            width: 100%;
+            font-size: $text-font-size-3-xs;
+            text-transform: inherit;
+            .circle {
+              position: absolute;
+              left: 10px;
+            }
+          }
+
+          &-description {
+            font-size: $text-font-size-3-xs;
+            line-height: 1.5;
+            margin-bottom: 30px;
+          }
+        }
+      }
     }
   }
 }

@@ -1,100 +1,107 @@
 <!-- Site Header -->
-<header class="site-header parallax" id="home" data-scrollax-parent="true">
-
-  <!-- Parallax Header Image -->
-  <div class="parallax-wrapper">
-    <div class="cover" data-scrollax="properties: { 'translateY': '48%' }">
-      <img src="images/header-image2.jpg?{{site.time | date: '%s%N'}}" />
-    </div>
-  </div>
+<header class="site-header" id="home" data-scrollax-parent="true">
 
   <div class="container">
-  <!-- Site Navigation Bar -->
-  <div class="row site-navigation-bar parent">
-
-    <!-- Logo -->
-    <div class="col-md-2 col-xs-4 logo">
-      <a href=""><img src="images/logo.svg?{{site.time | date: '%s%N'}}" alt="Diode - Logo"></a>
-    </div>
-
-    <!-- Toggle Mobile Menu -->
-    <div class="col-xs-8 toggle-menu">
-
-      <!-- Burger -->
-      <div class="navTrigger">
-        <i></i><i></i><i></i>
+    <!-- Site Navigation Bar -->
+    <div class="row site-navigation-bar parent">
+      <!-- Logo -->
+      <div class="col-md-2 col-xs-4 logo">
+        <a href=""
+          ><img
+            src="images/logo.svg?{{site.time | date: '%s%N'}}"
+            alt="Diode - Logo"
+        /></a>
       </div>
 
+      <!-- Toggle Mobile Menu -->
+      <div class="col-xs-8 toggle-menu">
+        <div class="toggle-menu__actions">
+          <a class="nav-link--shortcut" href="{{ site.links.telegram }}" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+          <a class="button nav-button" href="resources/download/">Download</a>
+        </div>
+        <!-- Burger -->
+        <div class="navTrigger"><i></i><i></i></div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <div class="col-sm-10 col-xs-8 navigation-bar">
+        <!-- Navigation Menu -->
+        <nav id="navMenu" class="nav-menu">
+          <ul class="menu">
+            {% for nav in site.navigation %}
+              {% if nav.is_button %}
+                <li class="has-button-nav">
+                  <a class="button nav-button" href="{{ nav.link }}">{{ nav.title }}</a>
+                </li>
+              {% elsif nav.target %}
+                <li class="has-target-nav">
+                  <a  class="nav-link" href="{{ nav.link }}" target="{{ nav.target }}"
+                    >{{ nav.title }}</a
+                  >
+                </li>
+              {% elsif nav.subs %}
+                <li class="subnav">
+                  <div class="nav-link" data-href="{{ nav.link }}">{{ nav.title }}</div>
+                  <div class="subnav-content">
+                    <div class="row container">
+                      {% for subnav in nav.subs %}
+                        <div class="col-sm-4">
+                          <a
+                            href="{{ subnav.link }}"
+                            {% if subnav.target %}
+                            target="{{ subnav.target }}"
+                            {% endif %}
+                          >{{ subnav.title }}</a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </li>
+              {% else %}
+                <li>
+                  <a  class="nav-link" href="{{ nav.link }}">{{ nav.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
     </div>
-
-    <!-- Navigation Bar -->
-    <div class="col-sm-10 col-xs-8 navigation-bar">
-
-      <!-- Navigation Menu -->
-      <nav id="navMenu" class="nav-menu">
-        <ul class="menu">
-          {% for nav in site.navigation %}
-          {% if nav.target %}
-          <li><a href="{{ nav.link }}" target="{{ nav.target }}">{{ nav.title }}</a></li>
-          {% else %}
-          <li><a href="{{ nav.link }}">{{ nav.title }}</a></li>
-          {% endif %}
-          {% endfor %}
-        </ul>
-      </nav>
-
-    </div>
-
-
   </div>
-
-    <!-- Site Header Banner -->
-    <div class="row header-banner parent" data-scrollax="properties: { 'translateY': '48%', 'opacity': '1.4' }">
-
-      <div class="heading-content text-center">
-
-        <!-- Heading Title -->
-        <div class="row heading-title">
-          <div class="col">
-            <h2 id="tagline">Web3 Tech for the Masses!</h2>
-            <hr class="small">
+  
+  <!-- Toggle Mobile Sub Menu -->
+  {% for nav in site.navigation %}
+    {% if nav.subs %}
+      <div class="toggle-submenu" data-parent="{{ nav.link }}">
+        <div class="sub-header">
+          <div class="container">
+            <div class="button-back">
+              <i class="pe-7s-angle-left"></i>
+            </div>
+            <div class="sub-header__title">
+              Solution
+            </div>
+            <div class="button-close">
+              <i></i><i></i>
+            </div>
           </div>
         </div>
-
-        <div class="row" style="margin-top: 2em">
-          <iframe class="tutorial" src="https://www.youtube-nocookie.com/embed/Zibg-6CClc4" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-
-        <!-- Header Buttons -->
-        <div class="row buttons-header">
-          <div class="col-lg-3 col-lg-push-3 col-md-4 col-md-push-2 col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1">
-            <a href="#features" class="button-cta button-focus">Learn more</a>
-          </div>
-          <div class="col-lg-3 col-lg-push-3 col-md-4 col-md-push-2 col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1">
-            <a href="/download" class="button-cta">Get Diode</a>
+        <div class="sub-menu">
+          <div class="container">
+            <ul class="subnavs">
+              {% for subnav in nav.subs %}
+              <li class="subnav">
+                <a class="subnav-link" href="{{ subnav.link }}">
+                  {{ subnav.title }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
-
-
       </div>
-
-    </div>
-
-    <!-- Arrow Down -->
-    <div class="row arrow-down-section" data-scrollax="properties: { 'opacity': '0.6' }">
-
-      <div class="wrapper-arrow child-center">
-        <a href="#about" class="arrow-down">
-          <i class="pe-7s-angle-down"></i>
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-
+    {% endif %}
+  {% endfor %}
   <!-- Overlay Lightbox -->
   <div id="video_overlay" class="overlay"></div>
-
 </header>

@@ -7,111 +7,143 @@
  **/
 
 section.features-section {
+  background-color: $white;
 
-  .features {
-    margin-top: 80px;
-    align-items: flex-start;
+  @media (max-width: 768px) {
+    padding: 40px 0;
   }
-
   // Feature
   .feature {
+    margin-bottom: 100px;
+    position: relative;
 
-    @media (max-width: 992px) {
-      margin-bottom: 80px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+    &:last-child {
+      margin-bottom: 30px;
     }
 
-    .icon {
-      .circle {
-        width: calc(50% - 15px);
-        padding-bottom: calc(50% - 23px);
-        margin: 0 auto;
-        margin-bottom: 40px;
-        border: 4px solid $primary;
-        transition: all $transition-links $transition-links-type;
+    &-content {
+      order: 1;
+    }
+    &-icon {
+      order: 2;
 
-        .circle {
-          width: 50%;
+      svg {
+        width: 100%;
+        max-width: 294px;
+      }
+    }
+    @media (max-width: 768px) {
+      &-icon {
+        position: absolute;
+        width: 50%;
+        right: 0;
+        align-items: flex-start;
+        height: 100%;
+        top: -100px;
+        
+        &--1 {
+          top: 0;
+        }
+
+        svg {
+          width: 100%;
           height: 50%;
-          padding-bottom: 50%;
-          border: 0;
-          background: $simple-gray;
+          min-height: 160px;
+        }
+      }
+    }
+    &:nth-child(even) {
+      .feature-content {
+        order: 2;
+      }
+      .feature-icon {
+        order: 1
+      }
+    }
 
-          path.fill {
-            fill:#1f2739;
-            stroke:#1f2739;
-            stroke-width:4;
-            fill-opacity:1;
-            fill-rule:nonzero;
-          }
+    .feature-title {
+      font-size: $title-font-size-1;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: $web-blue;
+      font-weight: 600;
 
-          path.stroke {
-            fill:none;
-            stroke:#1f2739;
-            stroke-width:4;
-            stroke-linecap:butt;
-            stroke-linejoin:miter;
-            stroke-miterlimit:10;
-            stroke-dasharray:none;
-            stroke-opacity:1;
-          }
+      &--xs {
+        display: none;
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+      }
+      @media (max-width: 768px) {
+        display: none;
+        &--xs {
+            display: block;
         }
       }
     }
 
-    // Feature Content
-    .content {
+    .feature-description {
+      font-size: $text-font-size-1;
+      margin-bottom: 30px;
 
-      h3 {
-        color: $secondary;
-        text-transform: uppercase;
-        margin-bottom: 1.25rem;
+      &--xs {
+        display: none;
+        font-size: $text-font-size-2-xs;
+        margin-bottom: 30px;
       }
-
-      h3, p {
-        transition: color $transition-links $transition-links-type;
+      @media (max-width: 768px) {
+        display: none;
+        &--xs {
+            display: block;
+        }
       }
     }
 
-    // Hover Mode
-    &:hover {
+    .feature-link {
+      &--xs {
+        display: none;
+      }
+      @media (max-width: 768px) {
+        display: none;
+        &--xs {
+            display: block;
+        }
+      }
+    }
+  }
+  // CONTACT US and LEARN MORE
+  .feature-more {
+    &>div:first-child {
+      
+      .contact-button {
+        display: block;
+        width: fit-content;
+        font-weight: 700;
+        margin-right: 20px;
+        margin-left: auto;
+      }
+    }
+    &>div:last-child {
+      a {
+        margin-left: 20px;
+      }
+    }
 
-      .icon {
-        .circle {
-          border-color: $simple-gray;
-
-          .circle {
-            background: $primary;
-
-            path.stroke {
-              stroke: $white;
-            }
-
-            path.fill {
-              fill: $white;
-              stroke: $white;
-            }
+    &--xs {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      display: none;
+      &--xs {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: -40px;
+          margin-bottom: 40px;
+          a {
+            margin: 5px;
           }
-        }
       }
-
-      .content {
-
-        h3 {
-          color: $primary;
-        }
-
-        p {
-          color: $secondary;
-        }
-
-      }
-
     }
-
   }
 
 }

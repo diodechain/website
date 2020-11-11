@@ -1,0 +1,159 @@
+<!-- Products Section -->
+<section class="site-section section-focus products-pricing-section" id="products-pricing">
+  <div class="container">
+
+    <!-- Products Pricing Page Title -->
+    <h2 class="site-section__title">{{ page.header-title }}</h2>
+
+    <div class="plans-description">
+      All plans include access to the <a href="products/diode-network">Diode Network Explorer</a> and use of the <a href="products/diode-cli">Diode CLI</a>
+    </div>
+
+    <!-- Switch (Mothly/Yearly) -->
+    <div class="plan-switch-container">
+      <input id="planSwitch" type="checkbox" class="checkbox-switch" />
+    </div>
+    <div class="plan-switch-label-container">
+      <label class="plan-switch-label" for="planSwitch">
+        <span class="plan-switch-label__yearly active">Yearly</span>
+        <span class="plan-switch-label__monthly">Monthly</span>
+      </label>
+    </div>
+    
+    <!-- Products Pricing Cards (Desktop) -->
+    <div class="plans row hidden-xs">
+      {% for plan in page.plans %}
+        <div class="col-plan col-plan--card">
+          <div class="plan">
+            <div class="plan__title">
+              {{ plan.title }}
+            </div>
+            <div class="plan__description">
+              {{ plan.description }}
+            </div>
+            <div class="plan__price yearly">
+              ${{ plan.price.yearly }}<span>/User/Mo</span>
+              <div class="plan__price_annotation">
+                Billed yearly as ${{ plan.price.full-year }}/User                
+              </div>
+            </div>
+            <div class="plan__price monthly hide">
+              ${{ plan.price.monthly }}<span>/User/Mo</span>
+            </div>
+            <div class="plan__features">
+              <ul>
+                {% for item in plan.items %}
+                  <li>
+                    <span class="circle"></span>
+                    {{ item.title }}
+                  </li>
+                 {% endfor %}
+              </ul>
+            </div>
+
+            <div class="plan__action">
+              <a href="{{ plan.action }}" class="button">{{ plan.action-name }}</a>
+            </div>  
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Products Pricing Plans (Mobile) -->
+    <div id="plans_xs" class="plans plans--xs owl-carousel hidden-sm hidden-md hidden-lg">
+      {% for plan in page.plans %}
+        {% assign outer_forloop = forloop %}
+        <div class="col-plan">
+          <div class="plan">
+            <div class="plan__title">
+              {{ plan.title }}
+            </div>
+            <div class="plan__description">
+              {{ plan.description }}
+            </div>
+            <div class="plan__price yearly">
+              ${{ plan.price.yearly }}<span>/User/Mo</span>
+              <div class="plan__price_annotation">
+                Billed yearly as ${{ plan.price.full-year }}/User                
+              </div>
+            </div>
+            <div class="plan__price monthly hide">
+              ${{ plan.price.monthly }}<span>/User/Mo</span>
+            </div>
+            <div class="plan__features">
+              <ul>
+                {% for item in plan.items %}
+                  <li>
+                    <span class="circle"></span>
+                    {{ item.title }}
+                  </li>
+                 {% endfor %}
+              </ul>
+            </div>
+
+            <div class="plan__action">
+              <a href="{{ plan.action }}" class="button">{{ plan.action-name }}</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+   
+    
+    <div class="plans-annotation">
+      All pricing listed is per-drive.  Only one Nomad drive may be deployed at one time.  A given dDrive installation may subscribe to an unlimited number of shared drives.
+    </div>
+    
+    
+    <!-- Products Pricing Table (Desktop) -->
+<!-- Reintroduce feature table when pricing becomes more complex
+    <div class="pricing-table hidden-xs">
+      <div class="row plans pricing-table__header">
+        <div class="col-blank">
+          FEATURES
+        </div>
+        {% for plan in page.plans %}
+        <div class="col-plan">
+          {{ plan.title }}
+        </div>
+        {% endfor %}
+      </div>
+      {% for item in page.items %}
+        <div class="row plans">
+          <div class="col-blank">
+            {{ item.title }}
+          </div>
+          {% for plan in item.plans %}
+            <div class="col-plan">
+              {% if plan.yearly != true and plan.yearly != false %}
+                <div class="yearly">{{ plan.yearly }}</div>
+                <div class="monthly hide">{{ plan.monthly }}</div>
+              {% else %}
+                {% if plan.yearly  %}
+                  Yes
+                {% else %}
+                  No
+                {% endif %}
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+      <div class="pricing-table__description">
+        * All plans have unlimited shares for full drive sharing. Only Business and Enterprise support users that can be assigned special permissions.
+      </div>
+    </div>
+-->
+
+
+    <!-- Products Pricing Page Description -->
+    <h3 class="products-section__description">{{ page.header-description }}</h3>
+
+    <!-- Contact us -->
+    <div class="products-pricing__contact-us">
+      <a id="contact-us" class="button button--outline" href="{{ site.links.contact_us }}">
+        CONTACT US
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+.switch {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  box-sizing: content-box;
+  outline: none;
+}
+.switch,
+.switch small {
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.switch small {
+  position: relative;
+  font-size: 12px;
+  top: 0;
+  border-radius: 100%;
+  text-align: center;
+  display: block;
+  background: transparent !important;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  overflow: hidden;
+  color: #000;
+}
+
+.switch-default {
+  width: 50px;
+  height: 30px;
+  border-radius: 20px;
+  line-height: 30px;
+}
+.switch-default small {
+  width: 30px;
+  height: 30px;
+}
+.switch-small {
+  border-radius: 20px;
+  height: 20px;
+  width: 33px;
+  line-height: 20px;
+}
+.switch-small small {
+  height: 20px;
+  width: 20px;
+}
+.switch-large {
+  border-radius: 50px;
+  height: 50px;
+  width: 100px;
+  line-height: 50px;
+  border: none !important;
+}
+.switch-large small {
+  height: 50px;
+  width: 50px;
+}
+.switch-disabled {
+  opacity: 0.5;
+}
+.switch-large small::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 34px;
+  height: 34px;
+  border-radius: 30px;
+  left: 8px;
+  top: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}

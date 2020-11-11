@@ -1,0 +1,25 @@
+---
+layout: default
+header-title: Download
+header-description: Get started with Diode℠ in just few seconds!
+
+choices:
+  - title: Download Diode CLI
+    description: Download the binary for your operating system
+    downloads: true
+  - title: Unzip and Install
+    description: Unzip the CLI. On <span id="osname">Windows</span>, you can double click it.
+    command: unzip Downloads/<span id="filename">filename</span>
+    hint: We recommend moving it into a $PATH directory such as /home/[user]/.local/bin
+  - title: Publish Ports
+    description: To publish, e.g. local http, ports to the Diode Network call
+    command: diode publish -public 80:80
+
+
+---
+
+{% include header.html %}
+
+{% include breadcrumbs.html %}
+
+{% include sections/download.html %}

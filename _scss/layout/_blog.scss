@@ -7,14 +7,13 @@
  **/
 
 section.blog-section {
-
+  padding: 150px 0;
+  background-color: $web-gray;
+  @media (max-width: 768px) {
+    padding: 50px 0;
+  }
   .row {
     align-items: initial;
-  }
-
-  hr.small {
-    margin-top: 40px;
-    margin-bottom: 40px;
   }
 
   // Blog Page
@@ -44,7 +43,7 @@ section.blog-section {
 
       border: 1px solid gray;
       padding: 1em;
-      border-style: dashed;      
+      border-style: dashed;
     }
 
     article.blog-article {
@@ -148,7 +147,6 @@ section.blog-section {
   // Blog Articles Container
   .blog-articles-container {
     // width: 100%;
-    margin-top: 80px;
     align-items: initial;
 
     // Resonsive Media
@@ -220,6 +218,7 @@ section.blog-section {
           max-width: 100%;
           height: auto;
           margin-bottom: 1em;
+          background-color: $white;
 
           a {
             width: 100%;
@@ -233,18 +232,22 @@ section.blog-section {
             @media (max-width: 992px) {
               object-fit: cover;
               height: 200px;
-            }    
+            }
           }
 
           img.vertical-preview {
-            object-fit: contain;
+            object-fit: cover;
             object-position: center;
             height: 250px;
             width: 100%;
 
             @media (max-width: 992px) {
               height: 200px;
-            }    
+            }
+            @media (max-width: 768px) {
+              height: 300px;
+              object-fit: cover;
+            }
           }
 
 
@@ -274,14 +277,16 @@ section.blog-section {
         .article-title {
           display: block;
           width: 100%;
-          margin: 30px 0;
+          margin: 15px 0 80px;
 
           h3.title {
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             line-height: 1.4;
             text-transform: uppercase;
             margin-bottom: 10px;
-
+            @media (max-width: 768px) {
+              text-transform: inherit;
+            }
             a {
               color: $secondary;
 
@@ -309,7 +314,7 @@ section.blog-section {
         width: 100%;
 
         @media (max-width: 992px) {
-          font-size: $global-font-size;
+          font-size: $text-font-size-1;
         }
 
         strong {
@@ -465,10 +470,13 @@ section.blog-section {
 
   // View All Posts
   .view-posts {
-    hr.normal {
-      margin: 20px auto;
+    &>div {
+      margin-top: -50px;
+      text-align: center;
+      @media (max-width: 768px) {
+        text-align: left;
+      }
     }
-
     .button-cta {
       margin-bottom: 0;
       float: inherit !important;

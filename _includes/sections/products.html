@@ -1,0 +1,84 @@
+<!-- Products Section -->
+<section class="site-section section-focus products-header-section" id="products-header">
+  <div class="container">
+
+    <!-- Products Header Page Title -->
+    <h2 class="site-section__title">{{ page.header-title }}</h2>
+
+    <!-- Products Header Page Description -->
+    <h3 class="site-section__description">{{ page.header-description }}</h3>  
+
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="products-image">
+          <!-- Products Header Image -->
+          {% if page.header-image %}
+            <img src="{{ page.header-image }}">
+          {% else %}
+            <iframe src="{{ page.header-video }}" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 hidden-sm hidden-xs">
+        <!-- Products Header Image Description -->
+        <div class="products-image-description">
+          {{ page.header-image-description }}
+        </div>
+      </div>
+    </div>
+    
+    <!-- Products Header Actions site.links.download -->
+    <div class="row">
+      <div class="products-header-actions hidden-xs">
+        <a href="{{ page.header-action-link }}" class="button">{{ page.header-action-text }}</a>
+      </div>
+      <div class="products-header-actions hidden-sm hidden-md hidden-lg">
+        <a href="{{ page.header-action-link }}" class="button button--outline">{{ page.header-action-text }}</a>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="site-section section-focus products-body-section" id="products-body">
+  <div class="container">
+    <!-- Products body text -->
+    <div class="products-body-text">
+      {{ page.body-text }}
+    </div>
+
+    <!-- Products body features -->
+    <ul class="products-body-features">
+      {% for feature in page.body-features %}
+        <li class="feature">
+          <div class="feature-title">
+            <img src="{{ feature.icon }}">
+            {{ feature.title }}
+          </div>
+          <p class="feature-description">
+            {{ feature.description }}
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="products-body-actions hidden-xs">
+      <a href="{{ site.links.download }}" class="button">DOWNLOAD</a>
+      <a href="{{ site.links.telegram }}" class="button button--outline">GET A DEMO</a>
+      <a href="{{ site.links.learn_more }}" class="link link--arrow">LEARN MORE</a>
+    </div>
+    <div class="products-body-actions hidden-sm hidden-md hidden-lg">
+      <a href="{{ site.links.telegram }}" class="button button--outline">GET A DEMO</a>
+      <a href="{{ site.links.download }}" class="button button--outline">DOWNLOAD</a>
+      <a href="{{ site.links.learn_more }}" class="link">LEARN MORE</a>
+    </div>
+  </div>
+</section>
+
+ <!-- Products footer section -->
+<section class="site-section section-focus products-footer-section" id="products-footer">
+  <div class="container">
+    <iframe class="tutorial" src="{{ page.footer-video }}" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+/**
+ *
+ *  Breadcrumbs Style
+ *
+ *  @package gleesik_layout
+ *
+ **/
+
+.breadcrumbs {
+  margin-top: $desktop-header-height;
+  
+  margin-bottom: 60px; // remove breadcrumb
+
+  display: flex;
+  flex-direction: row;
+
+  li {
+    font-size: $text-font-size-1;
+    padding: 40px 0;
+    position: relative;
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      padding: 30px 0;
+      font-size: $text-font-size-1-xs;
+      margin-right: 35px;
+    }
+    a {
+      color: $web-blue;
+      @media (max-width: 768px) {
+        color: $black-blue;
+      }
+      &:hover {
+        color: $orange;
+      }
+    }
+    &::after {
+      content: '\e684';
+      font-family: '7-stroke';
+      font-weight: 700;
+      font-size: 1.5em;
+      position: absolute;
+      color: $web-blue;
+      right: -32px;
+      @media (max-width: 768px) {
+        color: $black-blue;
+        font-size: 1.4em;
+        top: calc(50% - 11px);
+      }
+    }
+    &.active {
+      color: $orange;
+      &:after {
+        content: '';
+      }
+      @media (max-width: 768px) {
+        color: $gray;
+      }
+    }
+  }
+
+  & + section {
+    margin-top: 0rem !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs {
+    margin-top: $mobile-header-height;
+    & + section {
+      margin-top: 0rem !important;
+    }
+  }
+}
