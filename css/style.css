@@ -4912,6 +4912,41 @@ section.contact-section .form-container form.contact-form .form-action .send-but
  *  @package gleesik_layout
  *
  **/
+section.alpha {
+  background-color: antiquewhite;
+}
+
+section.alpha .alpha-header {
+  margin: 1em;
+  text-align: center;
+}
+
+section.alpha .alpha-header .title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+section.alpha .alpha-header p {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.5em;
+}
+
+section.alpha .alpha-header img {
+  height: 1.5em;
+  display: inline;
+}
+
 section.download-section {
   counter-reset: boxes;
 }

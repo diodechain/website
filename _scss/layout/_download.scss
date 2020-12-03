@@ -6,6 +6,32 @@
  *
  **/
 
+ section.alpha {
+    background-color: antiquewhite;
+
+    .alpha-header {
+      margin: 1em;
+      text-align: center;
+  
+      .title {
+        font-size: 2em;
+        font-weight: bold;
+      }
+  
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+      }
+
+      img {
+        height: 1.5em;
+        display: inline;
+      }
+    }      
+ }
+
  section.download-section {
 
   .row > [class*="col-"] {
