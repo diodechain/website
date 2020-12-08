@@ -34,4 +34,4 @@ It is easy to enable a Web2.0 domain to serve Web3 content - all that has to be 
 
 ![alt_text](images/blog/bns-screenshot.png "image_tooltip")
   
-To setup your customer Web2.0 domain, follow the guide at [https://support.diode.io/article/6pctb40wj8](https://support.diode.io/article/6pctb40wj8)!
+To setup your Web3 host with a custom Web2.0 domain, follow the guide at [https://support.diode.io/article/6pctb40wj8](https://support.diode.io/article/6pctb40wj8)!
