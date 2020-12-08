@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Web2.0 Custom Domains Hosted by Web3"
-date: 2020-10-20 02:12
+date: 2020-12-08 02:12
 categories: [Diode]
 tags: [Diode]
 author: Hans Rempel
