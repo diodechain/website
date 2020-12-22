@@ -100,14 +100,14 @@
                             {% if choice.downloads %}
 
                             {% for item in site.diode-cli.downloads %}
-                            <a class="choice-action hide {{ item.id }}" href="{{ site.download-base }}{{ item.link }}">
+                            <a class="choice-action hide {{ item.id }}" href="{{ site.diode-cli.download-base }}{{ item.link }}">
                                 {{ item.title }}
                             </a>
                             {% endfor %}
 
                             <div class="choice-downloads">
                                 {% for item in site.diode-cli.downloads %}
-                                    <a class="download-item" href="{{ site.download-base }}{{ item.link }}">
+                                    <a class="download-item" href="{{ site.diode-cli.download-base }}{{ item.link }}">
                                         {{ item.title }}
                                     </a>
                                 {% endfor %}
