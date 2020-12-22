@@ -137,6 +137,7 @@ section.site-section.hero-section {
         }
         .action-container {
             position: relative;
+            margin-right: 40%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -167,7 +168,7 @@ section.site-section.hero-section {
                     margin-bottom: 50px;
                 }
                 .link {
-                    margin-left: auto;
+                    margin-top: 20px;
                     margin-right: auto;
                 }
             }

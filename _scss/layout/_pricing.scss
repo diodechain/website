@@ -11,7 +11,7 @@ section.products-pricing-section {
       width: 100%;
       text-align: center;
       margin-top: 15px;
-      margin-bottom: 25px;
+      margin-bottom: 15px;
       .plan-switch-label {
         span {
           text-transform: uppercase;
@@ -29,12 +29,24 @@ section.products-pricing-section {
     .plans-description {
       width: 100%;
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       font-size: $text-font-size-3;
       color: $web-blue;
       line-height: 1.5;
       @media (max-width: 993px) {
         font-size: $text-font-size-2;
+      }
+    }
+
+    .plans-annotation {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: $text-font-size-1-xs;
+      color: $web-blue;
+      line-height: 1.5;
+      @media (max-width: 993px) {
+        font-size: $text-font-size-0-xs;
       }
     }
   
@@ -125,7 +137,7 @@ section.products-pricing-section {
         border-radius: 5px;
         padding: 25px;
         text-align: center;
-        height: 520px;
+        height: 460px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -151,6 +163,10 @@ section.products-pricing-section {
           &>span {
             font-size: $text-font-size-2;
             color: $web-blue;
+          }
+          .plan__price_annotation {
+            font-size: 12px;
+            color: #2d3e50;
           }
         }
 
@@ -244,7 +260,7 @@ section.products-pricing-section {
             width: 100%;
             .plan {
               height: inherit;
-              min-height: 500px;
+              min-height: 460px;
               margin-bottom: 0;
             }
         }
@@ -257,7 +273,7 @@ section.products-pricing-section {
       &__header{
         font-weight: 700;
         background-color: $white;
-        z-index: 2;
+        z-index: 0;
         .col-plan {
           font-weight: 700 !important;
         }
