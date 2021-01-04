@@ -236,12 +236,15 @@ diode-cli:
   icon: images/diode-client.png
   learn-more: 'products/diode-cli/'
   download-command: 'curl -Ssf https://diode.io/install.sh | sh'
-  download-base: https://github.com/diodechain/diode_go_client/releases/download/v0.8.0/
+  download-base: https://github.com/diodechain/diode_go_client/releases/download/v0.8.6/
   downloads:
   - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM)
     link: diode_linux_arm.zip
     name: Raspberry Pi
     id: raspberry-pi
+  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi 64bit (ARM64)
+    link: diode_linux_arm64.zip
+    name: Raspberry Pi 64bit
   - title: <i class="fab fa-apple"></i> MacOS X
     link: diode_darwin_amd64.zip
     name: MacOS
