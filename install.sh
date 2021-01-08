@@ -181,7 +181,7 @@ untar() {
   case "${tarball}" in
     *.tar.gz | *.tgz) tar -xzf "${tarball}" ;;
     *.tar) tar -xf "${tarball}" ;;
-    *.zip) unzip "${tarball}" ;;
+    *.zip) unzip -o "${tarball}" ;;
     *)
       echo "Unknown archive format for ${tarball}"
       return 1
