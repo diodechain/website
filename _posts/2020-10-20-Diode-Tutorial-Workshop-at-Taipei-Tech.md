@@ -21,7 +21,7 @@ The Custom RPC setup step involves one to manually type in the following details
 - Network name: diode
 - RPC: https://prenet.diode.io:8443
 - ChainID: 15
-- Symbol: DIO
+- Symbol: DIODE
 - Explorer: [https://diode.io/prenet](https://diode.io/prenet)
 
 

@@ -38,7 +38,7 @@
                         <account-link :hash="acc.id" :only-alias="true" :length="10"></account-link>
                       </div>
                       <span class="ul1" v-if="acc.name"><% acc.name %></span>
-                      <span class="ul2"><% Math.round(acc.balanceValue) %> DIO</span>
+                      <span class="ul2"><% Math.round(acc.balanceValue) %> DIODE</span>
                     </div>
                   </li>
                 </ul>
@@ -94,7 +94,7 @@
                         <account-link :hash="acc.id" :only-alias="true" :length="10"></account-link>
                       </div>
                       <span class="ul1" v-if="acc.name"><% acc.name %></span>
-                      <span class="ul2"><% Math.round(acc.stakeValue) %> DIO</span>
+                      <span class="ul2"><% Math.round(acc.stakeValue) %> DIODE</span>
                     </div>
                   </li>
                 </ul>
