@@ -24,6 +24,8 @@ Watch Diode Tuesday online meetup on [YouTube](https://youtu.be/B-YzxaKpEJQ). Pr
 
 In the demo, we used a Ghost website as an example. [Ghost](https://ghost.org/) is a popular modern open-source publishing platform. It’s beautifully designed and easy to use. So, we've got a Ghost blog running on a local computer; the audience could access the blog via the Diode network. 
 
+> Note: since we didn't modify the header from http proxy request, and Ghost api will validate whether the host is equal to the url in configuration, you should use http:// instead of https:// in the url configuration.
+
 It was something interesting to developers, because for app developers, or web developers, there would be times when you need to demo your work. But you would like to demo it without actually deploying. For developers, it would be perfect if you are able to give a URL to anyone. And that URL would allow them to try out the website you’re building without doing any deployment. Diode is really great for that. So, you wonder, where do I Start?
 
 First, you need to download Diode client. You can download Diode client from our website: [https://diode.io/download](https://diode.io/download). Or, you can build it from source: [https://github.com/diodechain/diode_go_client](https://github.com/diodechain/diode_go_client).
