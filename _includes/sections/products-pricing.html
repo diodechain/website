@@ -1,3 +1,4 @@
+<script src="https://js.stripe.com/v3/"></script>
 <!-- Products Section -->
 <section class="site-section section-focus products-pricing-section" id="products-pricing">
   <div class="container">
@@ -51,8 +52,13 @@
               </ul>
             </div>
 
-            <div class="plan__action">
+            <div class="plan__action">    
+              {% if plan.action %}
               <a href="{{ plan.action }}" class="button">{{ plan.action-name }}</a>
+              {% else %}
+              <button data-checkout-mode="subscription" data-price-id="{{ plan.id.monthly }}" class="monthly button hide">{{ plan.action-name }}</button>
+              <button data-checkout-mode="subscription" data-price-id="{{ plan.id.yearly }}" class="yearly button">{{ plan.action-name }}</button>
+              {% endif %}
             </div>  
           </div>
         </div>
@@ -92,7 +98,12 @@
             </div>
 
             <div class="plan__action">
+              {% if plan.action %}
               <a href="{{ plan.action }}" class="button">{{ plan.action-name }}</a>
+              {% else %}
+              <button data-checkout-mode="subscription" data-price-id="{{ plan.id.monthly }}" class="monthly button hide">{{ plan.action-name }}</button>
+              <button data-checkout-mode="subscription" data-price-id="{{ plan.id.yearly }}" class="yearly button">{{ plan.action-name }}</button>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -157,3 +168,37 @@
     </div>
   </div>
 </section>
+
+<script>
+  var DOMAIN = location.href.replace(/[^/]*$/, '');
+  var stripe = Stripe("{{ page.stripe }}");
+
+  // Handle any errors from Checkout
+  var handleResult = function (result) {
+    if (result.error) {
+      var displayError = document.getElementById('error-message');
+      displayError.textContent = result.error.message;
+    }
+  };
+
+  document.querySelectorAll('button').forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      var mode = e.target.dataset.checkoutMode;
+      var priceId = e.target.dataset.priceId;
+      var items = [{ price: priceId, quantity: 1 }];
+
+      // Make the call to Stripe.js to redirect to the checkout page
+      // with the sku or plan ID.
+      stripe
+        .redirectToCheckout({
+          mode: mode,
+          lineItems: items,
+          successUrl:
+            DOMAIN + 'success.html?session_id={CHECKOUT_SESSION_ID}',
+          cancelUrl:
+            DOMAIN,
+        })
+        .then(handleResult);
+    });
+  });
+</script>

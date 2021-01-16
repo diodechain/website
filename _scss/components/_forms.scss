@@ -14,6 +14,8 @@ form {
 
 // Forms fields
 input, textarea, button {
+  line-height: 1;
+  letter-spacing: 0.08rem;
   display: inline-block;
   position: relative;
   width: 100%;
@@ -48,7 +50,7 @@ input, textarea, button {
   &:hover,
   &:active {
     color: darken($global-text, 0.2);
-    border-color: darken($global-text, 0.2);
+    // border-color: darken($global-text, 0.2);
 
     // Placeholders
     &::-webkit-input-placeholder { /* Chrome/Opera/Safari */

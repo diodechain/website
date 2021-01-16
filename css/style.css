@@ -2394,6 +2394,8 @@ form {
 }
 
 input, textarea, button {
+  line-height: 1;
+  letter-spacing: 0.08rem;
   display: inline-block;
   position: relative;
   width: 100%;
@@ -2444,7 +2446,6 @@ input:-moz-placeholder, textarea:-moz-placeholder, button:-moz-placeholder {
 
 input:hover, input:active, textarea:hover, textarea:active, button:hover, button:active {
   color: #5d5d5d;
-  border-color: #5d5d5d;
 }
 
 input:hover::-webkit-input-placeholder, input:active::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder, textarea:active::-webkit-input-placeholder, button:hover::-webkit-input-placeholder, button:active::-webkit-input-placeholder {
