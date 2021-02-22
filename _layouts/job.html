@@ -1,0 +1,69 @@
+---
+skip_head: "true"
+layout: page
+---
+
+<!-- Blog Article -->
+<div class="post-full">
+    <!-- Products Header Page Title -->
+    <h2 class="site-section__title">{{ page.title }}</h2>
+
+    <!-- Products Header Page Description -->
+    <h3 class="site-section__description">{{ page.location }}</h3>
+    <article class="blog-article blog-single-page">
+
+        <!-- Article Content -->
+        <div class="article-content">
+            {{ page.content }}
+        </div>
+
+        <!-- Article Tool Boxes -->
+        <div class="article-boxes">
+            <center><a href="{{ page.link }}" class="button">Apply Now</a></center>
+
+            <!-- Share Article Links Box -->
+            <div class="share-article box">
+                <div class="social-icons box-content">
+                    <ul class="icons global-text-color-icons">
+                        <li>
+                            <a href="https://twitter.com/share?url={{ site.url }}{{ page.url | url_encode }}&text={{ page.title | url_encode }}"
+                                target="_blank">
+                                <i class="fi flaticon-twitter-c"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url | url_encode }}"
+                                target="_blank">
+                                <i class="fi flaticon-linkedin-c"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://telegram.me/share/url?url={{ site.url }}{{ page.url | url_encode }}"
+                                target="_blank">
+                                <i class="fi flaticon-telegram-c"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url | url_encode }}"
+                                target="_blank">
+                                <i class="fi flaticon-facebook-c"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/?text={{ site.url }}{{ page.url | url_encode }}" target="_blank">
+                                <i class="fi flaticon-whatsapp-c"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <input style="position: absolute; top: -9999px;" id="copy" type="text"
+                                value="{{ site.url }}{{ page.url }}" />
+                            <a onclick="$('#copy').select(); document.execCommand('copy')">
+                                <i class="pe-7s-paperclip"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>

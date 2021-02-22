@@ -372,6 +372,9 @@ collections:
   team:
     output: true 
     permalink: team/:name.html
+  jobs:
+    output: true
+    permalink: jobs/:name.html
 
 defaults:
   - scope:
@@ -381,4 +384,10 @@ defaults:
       layout: postlist
       tagline: All Articles By
       type: team
+  - scope:
+      path: "_jobs"
+      type: jobs
+    values:
+      layout: job
+      type: jobs
     
