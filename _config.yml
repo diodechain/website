@@ -39,6 +39,7 @@ lang: en-US
 header-title: <strong>Let's upgrade the Web</strong>
 # Header Tagline
 header-tagline: Web2 security is broken
+twitter_username: 'diode_chain'
 
 ####################################
 ######   CTA Header Buttons   ######
@@ -192,7 +193,6 @@ links:
   # pinterest: '#'
   # facebook: '#'
   twitter: 'https://twitter.com/diode_chain'
-  twitter_username: 'diode_chain'
   telegram: 'https://t.me/diode_chain'
   github: 'https://github.com/diodechain'
   # google-plus: '#'
