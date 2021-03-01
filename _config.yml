@@ -174,8 +174,8 @@ quick_links:
   link: blog/
 - title: Resources
   link: resources/
-- title: Privacy Policy
-  link: privacy-policy/
+# - title: Privacy Policy
+#   link: privacy-policy/
 
 #############################
 ######  Global Links   ######
