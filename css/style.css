@@ -6605,7 +6605,7 @@ section.how-it-works-section--3 .section-top-container .container .row > .item-c
   content: "";
   position: absolute;
   width: 1px;
-  height: 300px;
+  height: 200px;
   background-color: #f15d2f;
   top: 60px;
   right: 0;
@@ -6746,12 +6746,14 @@ section.how-it-works-section--3 .section-bottom-container .container .item-conta
 section.how-it-works-section--3 .section-bottom-container .container .item-container .item-description,
 section.how-it-works-section--3 .section-bottom-container .container .item-container .item-description > p {
   font-size: 18px;
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {
   section.how-it-works-section--3 .section-bottom-container .container .item-container .item-description,
   section.how-it-works-section--3 .section-bottom-container .container .item-container .item-description > p {
     font-size: 18px;
+    line-height: 1.5;
   }
 }
 
@@ -6763,6 +6765,12 @@ section.how-it-works-section--3 .section-bottom-container .action {
 section.how-it-works-section--4 {
   background-color: #fff !important;
   padding: 80px 0;
+}
+
+section.how-it-works-section--4 .container iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
 }
 
 @media (max-width: 768px) {

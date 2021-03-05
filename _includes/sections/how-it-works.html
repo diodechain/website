@@ -10,17 +10,12 @@
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="actions hidden-xs">
-      <a 
-        class="button"
-        href="{{ site.links.download }}"
-      >
-        Download
-      </a>
+      <a class="button" href="{{ site.links.download }}">DOWNLOAD</a>
       <a href="{{ site.diode-network.link }}" class="button button--outline">START USING THE NETWORK</a>
       <a href="resources/about" class="link link--arrow">ABOUT US</a>
     </div>
     <div class="actions hidden-sm hidden-md hidden-lg">
-      <a class="button" href="{{ site.links.download }}">Download</a>
+      <a class="button" href="{{ site.links.download }}">DOWNLOAD</a>
       <a class="button button--outline" href="resources/about">ABOUT US</a>
     </div>
   </div>
@@ -100,28 +95,10 @@
 <!-- How-It-Works Section 4 -->
 <section class="site-section section-focus how-it-works-section--4" id="how-it-works-4">
   <div class="container">
-    <h3 class="title">
-      {{ page.section4.title }}
-    </h3>
-    <p class="description">
-      {{ page.section4.description }}
-    </p>
-    {% for item in page.section4.items %}
-      <div class="row">
-        <div class="number">
-          {{ forloop.index + 1 }}
-        </div>
-
-        <div class="item">
-          <h4 class="item-title">
-            {{ item.title }}
-          </h4>
-          <div class="item-description">
-            {{ item.description }}
-          </div>
-        </div>
-      </div>
-    {% endfor %}
+    <div class="row">
+      <iframe class="tutorial" src="{{page.video2}}" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     <div class="action hidden-xs">
       <a href="https://support.diode.io/category/cck0x29491" class="link link--arrow">Start Using the Network</a>
     </div>

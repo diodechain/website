@@ -30,7 +30,7 @@ tagurl: 'blog/tags.html#'
 #######################################################
 
 # This is your site title
-title: Diode&#8480; - Reclaim Your Digital Sovereignty
+title: Diode&#8482; - Reclaim Your Digital Sovereignty
 # Meta description
 description: Diode enables digital sovereignty in everyday interactions.
 # Website language
@@ -87,8 +87,8 @@ navigation:
   link: products/
   ft_order: 2
   subs:
-    - title: dDrive
-      ft_title: dDrive
+    - title: Diode Drive
+      ft_title: Diode Drive
       link: products/d-drive
     - title: Diode CLI
       ft_title: CLI
@@ -145,7 +145,7 @@ breadcrumbs:
   serverless-communications: Serverless Communications
 
   products: Products
-  d-drive: dDrive
+  d-drive: Diode Drive
   diode-cli: Diode CLI
   diode-network: Diode Network
   pricing: Pricing
@@ -183,11 +183,14 @@ quick_links:
 links:
   # Common Links
   learn_more: 'resources/how-it-works/'
-  contact_us: 'https://t.me/diode_chain'
+  contact_us: 'https://contactdiode.paperform.co'
   get_a_demo: 'products/pricing/'
   try_it_out: 'products/pricing/'
   download: 'resources/download/'
-
+  privacy: 'privacy-policy/'
+  terms: 'msa/'
+  requestdemo: 'https://diodedemo.paperform.co'
+    
   # Social Links
   youtube: 'https://www.youtube.com/channel/UC3b5voADiipUmq1Q-vtPKsA'
   # pinterest: '#'
@@ -204,9 +207,9 @@ links:
 d-drive:
   title: Diode Drive
   title-1: Diode Drive
-  description: A cloud experience for your local storage - install on your computer, server, or device and start collaborating!
+  description: A privacy-focused alternative to Google Drive or Dropbox - share and collaborate without uploading to the cloud!
   # for solutions page(desktop)
-  description-1: dDrive combines the privacy and compliance benefits of local storage with the benefits and efficiency of remote access.
+  description-1: Diode Drive combines the privacy and compliance benefits of local storage with the benefits and efficiency of remote access.
   # for solutions page(mobile)
   description-2: Existing file servers and new Diode-enabled NAS systems can use Diode Drive to combine the privacy and compliance benefits of local storage with the benefits and efficiency of remote access.
   icon: images/diode-drive.png
@@ -231,7 +234,7 @@ d-drive:
     id: linux
 diode-cli:
   title: Diode CLI
-  description: Serverless remote access for your IT assets, localhost websites / webservices, and data/video streams.
+  description: High security remote access for your IT assets, localhost websites / webservices, and data/video streams.
   # for solution page(desktop)
   description-1: The Diode CLI is used to maintain systems in hard-to-access facilities and to securely publish data streams and web properties.
   icon: images/diode-client.png
@@ -293,7 +296,7 @@ about-us-description: >-
 #####################################
 ####### Diode Chain Features  #######
 #####################################
-chain-features-title: What is the Diode Chain<sup>tm</sup> software?
+chain-features-title: What is the Diode Chain<sup>TM</sup> software?
 chain-features-description:
 
   #

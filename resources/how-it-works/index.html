@@ -4,37 +4,25 @@ header-title: How It Works
 header-description: Web3 Technologies On a Mission
 
 video: https://www.youtube-nocookie.com/embed/B-bxdfGyCcA
+video2: https://www.youtube-nocookie.com/embed/xt4iyqTJVx8
 
 section2: 
   title: No Servers, No It Admins
-  description: The Diode Network allows any system on the planet to serve secured content to the public Internet without any centralized technology. We're ending the monopoly of datacenter servers, the need for static IP addresses, and the dangerious reliance on decades old, broken, PKI technologies.  With Diode, every system has a static address can be accessed with a human-readable names.
+  description: The Diode Network allows any system on the planet to serve secured content using public Internet without relying on centralized platforms. We're ending the monopoly of datacenter servers, big tech applications, the need for static IP addresses, and the dangerious reliance on decades old, broken, PKI technologies.  
 
 section3:
-  title: Key Network Concepts
-  description: The Diode Network is a decentralized public network composed of servers operated by Diode and others around the world.  These servers all run our open source software.  The core server software is based fundamentally on the Ethereum client, but it has two very important differences
+  title: Key Concepts
+  description: The Diode Network is a global server network operated by Diode and others around the world.  These servers all run our open source software that run Smart Contracts which remove the need for custom IT administration.
 
   items:
-    - title: Trustless P2P Communications
-      description: Systems outside of the network can directly communicate with and via nodes in the Diode Network.  Due to our implementation of the Blockquick algorithm, these external systems can be of any level of sophistication / capability, and need no pre-existing trust relationship with the network in order to communicate with, or via, it.  If an external system is communicating with another external system via the network, the network nodes establish and/or route the communications.
-    - title: StakeWork Consensus
-      description: The Diode Network uses Proof of StakeWork to validate ledger transactions.  Stake requires that a given identity “lock up” network tokens for a period of time in order to interact with the network.  If the identity is a miner, for example, a higher Stake lowers the difficulty of the Proof of Work it needs to produce.  Proof of StakeWork retains the proven security of Proof of Work, but both significantly reduces the power required to operate the network, and also protects the network from a 51% attack as the overall diversity of the nodes grows.
-    - title: Unique Addresses / Identities
-      description: "<p>Every entity communicating with the network must have a unique Diode address.  A Diode address is a portion of the hash of the public key of a web3 object containing, amongst other things, a private key.  This web3 object is often referred to as a “wallet” because it enables its owner (the holder of the private key) to do valuable things with/on the Diode Network.  At its most basic level, this wallet is just a unique address belonging to one, and only one, entity.  Therefore, every entity communicating with the network must have a wallet.</p><p>Although most entities will not have any value associated with their identity, it is possible, and even necessary, for certain entities to hold amounts of network tokens (“DIO”, the Diode Token) in their wallets.</p>NOTE: Because every entity’s identity is also the entity’s address, the terms “Address” and “Identity” are often used interchangeably.</p>"
-    - title: Communication is done within the context of a Fleet
-      description: <p>While individual identities can interact with the network for different reasons, only identities that are part of a Fleet can communicate via the network.  An identity can be part of multiple Fleets, and every Fleet is owned by a Fleet Operator (also sometimes called a Network Operator).  Fleets are defined in a special smart contract called a Fleet Contract.  A Fleet Contract contains a list of the identities that are in the Fleet, a Stake amount, and a Fleet Operator reward percentage.  Any identity can create a Fleet Contract, but only its owner can modify or otherwise manage it.</p><p>The Stake in a Fleet Contract sponsors its members’ communications.  If the amount of Stake in a Fleet Contract is too low to attract a sufficient service level from the network, the Stake must be increased.</p><p>Communications over the network can be scoped to be public (available to anyone, even outside the Fleet members), protected (available only to other members of the Fleet Contract), or private (available only to a specified identity - regardless of membership).</p>
-
-section4:
-  title: How Communication Works
-  description: The primary use case of the Diode Network is to enable one edge system to communicate to another edge system via the network.  This is how it works
-  items:
-    - title: Establish Connection
-      description: <p>In order to establish a connection with the network, an entity must have one or more known network node addresses stored in memory.  Upon finding a valid node, the BlockQuick algorithm is used to verify the node is truthfully representing the current state of the network.  If everything is in order a “Fast Sync” can be used (on the order of a few seconds), but if the entity has been disconnected from the network for a very long time, or if there are other inconsistencies, a “Slow Sync” is required.</p><p>Once a connection is established with a verified node, the entity can interact with the network or, if it is part of a Fleet, can communicate via the network to other entities.</p>
-    - title: Subscribe to Communications
-      description: If a subscribing entity would like to receive information from a publishing entity, it requests to be connected to the publisher.  The network looks up the state of connection of the publishing entity, and relays the subscriber’s request to the publishing entity.  In certain cases, if the publish entity is broadcasting information, the network will handle the scale-out of the outbound streams.
-    - title: Publish Communications
-      description: If a publishing entity would like to publish information, it connects to the network and awaits subscribers.  In order for the network to connect a subscriber, the publisher’s Fleet Contract must have enough Stake to incentivize the Relay Node to handle the communications - if the Stake is too low, the Relay Node may choose to prioritize communications with higher Stake and the publisher will need to find another “hungrier” Relay Node to route communications.
-    - title: Payment Resolution
-      description: Once a communication has been routed, the Relay Node submits a proof of communication ticket to the publisher for signature.  The Relay Node collects these signed tickets and submits signed tickets to the network before the end of the epoch (roughly every 30 days).  The Relay Node is paid a reward in proportion to each Fleet Contract’s Stake multiplied by the percentage of the total amount of communication routed on behalf of the Fleet Contract.  For example, if a Fleet Contract had 1,000 DIODE Stake, and the reward was 1% of Stake for the entire Fleet Contract, and the Relay Node submitted a signed ticket representing 50% of all the communications by members of the Fleet Contract in that epoch, the Relay Node’s reward on that ticket would be 0.5% of the Fleet Contract Stake = 5 DIODE.
+    - title: Peer to Peer Communications
+      description: People and systems can communicate directly with each other by using the Diode Network.  Systems of all levels of capability (computers, phone, IoT sensor) can exchange information without relying on big tech software applications or infrastructure.  Communications through the Diode Network are 256bit end to end encrypted, and the network handles addressing and routing.
+    - title: Unique Identities
+      description: Every user on the Diode Network interacts using a Client Identifier.  Each user can have one or more Client Identifiers, and there is no personal identification or pre-shared trust required for a user to establish a Client Identifier.  Every Client's identity is also used for the routing of communications so the terms “Address” and “Identity” are often used interchangeably.
+    - title: Sovereignty Zones
+      description: Diode Network users can operate in groups called "Sovereignty Zones."  Each user can be part of one or more Sovereignty Zone.  Users inside the Sovereignty Zones are able to share resources and engage in real time collaboration, depending on the applications they have installed.  Diode Network "Fleet Contracts" (smart contracts that implement Sovereignty Zone rules) are used to enforce permissions and capabilities for the Team Members in a Sovereignty Zone.
+    - title: Resilient Digital Footprint
+      description: Every Client Address is able to publish capabilities and digital resources - such as a file or a website.  If the Client is operating as part of a Sovereignty Zone, and multiple Sovereignty Zone members also have the ability to publish the resources, the Diode Network will intelligently route internal and external communications so that the published capabilities and resources leverage the combined capacity of all members.  This, combined with the inherently decentralized nature of the core Diode Network nodes, can create a very resilient external footprint for each Sovereignty Zone.
 
 ---
 
