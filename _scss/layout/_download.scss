@@ -358,4 +358,51 @@ section.download-section {
       }
     }
   }
+
+  .download-popup {
+    position: fixed;
+    width: 100%;
+    z-index: 200000;
+    background-color: rgba($color: #ccc, $alpha: 0.7);
+    top: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .popup {
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      max-width: 80rem;
+      width: 80%; 
+      background: white;
+
+      .popup-title {
+        display: flex;
+        padding: 2rem;
+        align-items: center;
+
+        img {
+          margin-right: .5em;
+        }
+
+        .title {
+          flex-grow: 1;
+        }
+
+        a {
+          cursor: pointer;
+        }
+      }
+
+      .popup-content {
+        background-color: $web-gray;
+        padding: 2rem;
+
+        .action-description {
+          margin-top: 1em;
+        }    
+      }
+    }
+  }
 }

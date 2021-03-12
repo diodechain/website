@@ -17,19 +17,7 @@
                     </div>
                     <p class="hidden-sm hidden-md hidden-lg">{{ site.d-drive.description }}</p>
                     <div class="download-action">
-                        <a class="button" href="https://forms.gle/9yNDgmTdy2KhjKHE8">Join the Alpha Program</a>
-                        <!--
-                        {% for download in site.d-drive.downloads %}
-                        <a class="button hide {{ download.id }}" href="{{ site.d-drive.download-base }}{{ download.link }}">Download dDrive for {{ download.name }}</a>
-                        {% endfor %}
-                        <div class="action-description">
-                            Available for
-                            <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[2].link }}">{{ site.d-drive.downloads[2].name }}</a>, 
-                            <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[1].link }}">{{ site.d-drive.downloads[1].name }}</a>, and 
-                            <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[3].link }}">{{ site.d-drive.downloads[3].name }}</a> 
-                            (<a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[0].link }}">{{ site.d-drive.downloads[0].name }}</a>)
-                        </div>
-                        -->
+                        <a class="button" id="download_button">Download Diode Drive</a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-8 hidden-xs">
@@ -42,6 +30,31 @@
                 </div>
             </div>
         </div>
+        <div id="download_popup" class="download-popup" style="display: none;">
+            <div id="popup" class="popup">
+                <div class="popup-title">
+                    <img class="icon" src="{{ site.d-drive.icon }}" />
+                    <h2 class="title">{{ site.d-drive.title }}</h2>
+                    <a id="popup_dismiss">Close</a>
+                </div>
+                <div class="popup-content">
+                    <h3>Get Diode Drive</h3>
+                    <p>By downloading Diode Drive you accept the <a href="/msa" target="_blank">IBTC Master Services Agreement</a>.</p>
+
+                    {% for download in site.d-drive.downloads %}
+                    <a class="button hide {{ download.id }}" href="{{ site.d-drive.download-base }}{{ download.link }}">Download dDrive for {{ download.name }}</a>
+                    {% endfor %}
+
+                    <div class="action-description">
+                        Available for
+                        <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[2].link }}">{{ site.d-drive.downloads[2].name }}</a>, 
+                        <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[1].link }}">{{ site.d-drive.downloads[1].name }}</a>, and 
+                        <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[3].link }}">{{ site.d-drive.downloads[3].name }}</a> 
+                        <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[0].link }}">{{ site.d-drive.downloads[0].name }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>        
     </div>
     <!-- Download Diode CLI -->
     <div class="download">

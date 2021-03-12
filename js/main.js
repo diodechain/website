@@ -238,56 +238,6 @@
     });
 
     /**
-     * Documentation navigation
-     */
-    let $heads = $(".toc-widget h3");
-    $heads.click(function () {
-      $(this).parent().toggleClass("folded");
-    });
-
-    /**
-     * Documentation secondary navigation
-     */
-    let $shortcut = $(".nav-sidebar");
-    $shortcut.click(function () {
-      $(".col-sidebar").toggle();
-      $shortcut.toggleClass("folded");
-    });
-
-    /**
-     * Documentation search
-     */
-    let $items = $(".toc-widget li");
-    let search = function () {
-      let term = $(this).val().toLowerCase();
-      if (term.length < 3) {
-        $items.removeClass("matching-item");
-        $items.removeClass("non-matching-item");
-        $(this).removeClass();
-        return;
-      }
-      let found = 0;
-      $items.removeClass("matching-item");
-      $items.addClass("non-matching-item");
-      for (i in idx) {
-        if (idx[i][1].includes(term)) {
-          $(idx[i][0]).addClass("matching-item");
-          $(idx[i][0]).removeClass("non-matching-item");
-          found++;
-        }
-      }
-      if (found > 0) {
-        $(this).removeClass();
-        $(this).addClass("active");
-      } else {
-        $(this).removeClass();
-        $(this).addClass("notfound");
-      }
-    };
-    $("#search").keyup(search);
-    $("#search").change(search);
-
-    /**
      * Downloads (dDrive and Diode CLI)
      */
     let OSName = "Unknown OS";
@@ -306,6 +256,28 @@
       file = file.substring(file.lastIndexOf("/") + 1);
       $("#filename").text(file);
       $("#osname").text(OSName);
+    }
+
+    const popup_button = $("#download_button")
+    const popup = $("#download_popup")
+    if (popup_button) {
+      popup_button.on("click", function (e) {
+        e.preventDefault();
+        popup.toggle();
+        $body.toggleClass("no-scroll");
+      });
+      popup.on("click", function (e) {
+        e.preventDefault();
+        popup.toggle();
+        $body.toggleClass("no-scroll");
+      });
+      $("#popup").on("click", function (e) {
+        e.stopPropagation();
+      });
+      $("#popup_dismiss").on("click", function (e) {
+        popup.toggle();
+        $body.toggleClass("no-scroll");
+      });
     }
 
     // Pricing page - plans (carousel)

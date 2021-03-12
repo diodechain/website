@@ -202,7 +202,7 @@ links:
 ######  Downloads  ######
 #########################
 d-drive:
-  title: dDrive
+  title: Diode Drive
   title-1: Diode Drive
   description: A cloud experience for your local storage - install on your computer, server, or device and start collaborating!
   # for solutions page(desktop)
@@ -211,22 +211,22 @@ d-drive:
   description-2: Existing file servers and new Diode-enabled NAS systems can use Diode Drive to combine the privacy and compliance benefits of local storage with the benefits and efficiency of remote access.
   icon: images/diode-drive.png
   learn-more: 'products/d-drive/'
-  download-base: https://github.com/diodechain/diode_go_client/releases/download/v0.8.0/
+  download-base: https://github.com/diodechain/diode_drive_feedback/releases/download/v1.0.0/
   downloads:
-  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM)
-    link: diode_linux_arm.zip
-    name: Raspberry Pi
-    id: raspberry-pi
+  # - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM)
+  #   link: diode_linux_arm.zip
+  #   name: Raspberry Pi
+  #   id: raspberry-pi
   - title: <i class="fab fa-apple"></i> MacOS X
-    link: diode_darwin_amd64.zip
+    link: dDrive-1.0.0.dmg
     name: MacOS
     id: macos
   - title: <i class="fab fa-windows"></i> Windows (64-bit)
-    link: diode_windows_amd64.zip
+    link: dDrive-1.0.0-win32.signed.exe
     name: Windows
     id: windows
   - title: <i class="fab fa-linux"></i> Linux (64-bit)
-    link: diode_linux_amd64.zip
+    link: dDrive-1.0.0-linux-x86_64.run
     name: Linux
     id: linux
 diode-cli:
