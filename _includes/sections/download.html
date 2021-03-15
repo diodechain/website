@@ -40,18 +40,25 @@
                 </div>
                 <div class="popup-content">
                     <h3>Get Diode Drive</h3>
-                    <p>By downloading Diode Drive you accept the <a href="/msa" target="_blank">Diode Master Services Agreement</a>.</p>
+                    <p>
+                        By downloading Diode Drive you accept the <a href="/msa" target="_blank">Diode Master Services Agreement</a> 
+                        and our <a href="/privacy-policy" target="_blank">privacy policy</a>.
+                    </p>
 
                     {% for download in site.d-drive.downloads %}
                     <a class="button hide {{ download.id }}" href="{{ site.d-drive.download-base }}{{ download.link }}">Download Diode Drive for {{ download.name }}</a>
                     {% endfor %}
 
                     <div class="action-description">
-                        Available for
-                        <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[2].link }}">{{ site.d-drive.downloads[2].name }}</a>, 
-                        <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[1].link }}">{{ site.d-drive.downloads[1].name }}</a>, and 
-                        <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[3].link }}">{{ site.d-drive.downloads[3].name }}</a> 
-                        <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[0].link }}">{{ site.d-drive.downloads[0].name }}</a>
+                        All downloads with SHA-256 their checksums:
+                        <ul class="downloads">
+                            {% for download in site.d-drive.downloads %}
+                            <li>
+                                <a href="{{ site.d-drive.download-base }}{{ download.link }}">{{ download.name }}</a><br/>
+                                <span class="sha">{{ download.sha256 }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
             </div>
