@@ -222,22 +222,22 @@ d-drive:
     link: dDrive-1.0.0-linux-armv7l.run
     name: Raspberry Pi (arm32)
     id: raspberry-pi
-    sha256: 0510ff39778c257d68efd0abf4272c0b1ad0e77fde63e11023515f0d6724d9a1
+    sha: 156b6058c24d9816885491782b8de7a3a1082a81
   - title: <i class="fab fa-apple"></i> MacOS X
-    link: dDrive-1.0.0.dmg
+    link: dDrive-1.0.1.dmg
     name: MacOS
     id: macos
-    sha256: d756168429a2edb0584b7369aa119a32d81113c8697745fc521893d43c021c7a
+    sha: e71b63e17b6cdf86e244814faa5d70bf1f5f7703
   - title: <i class="fab fa-windows"></i> Windows (64-bit)
     link: dDrive-1.0.0-win32.signed.exe
     name: Windows (64-bit)
     id: windows
-    sha256: 54549aae1f43dee6e015571ea16f0a60d5d5521f323e4195833a81abfda2bd23
+    sha: a91ae1aa204d63f83e267801fc88fcd7dab1e891
   - title: <i class="fab fa-linux"></i> Linux (64-bit)
     link: dDrive-1.0.0-linux-x86_64.run
     name: Linux (64-bit)
     id: linux
-    sha256: 3cf01a7d9dce63d37951d82fcf9e0ec77f8d2c2cbfedc517d4dc11d3dc2c26c3
+    sha: a1240ca6859f93235877245ef296cea1e2a49091
 diode-cli:
   title: Diode CLI
   description: High security remote access for your IT assets, localhost websites / webservices, and data/video streams.

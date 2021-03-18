@@ -50,12 +50,12 @@
                     {% endfor %}
 
                     <div class="action-description">
-                        All downloads with SHA-256 their checksums:
+                        All downloads with SHA-1 their checksums:
                         <ul class="downloads">
                             {% for download in site.d-drive.downloads %}
                             <li>
                                 <a href="{{ site.d-drive.download-base }}{{ download.link }}">{{ download.name }}</a><br/>
-                                <span class="sha">{{ download.sha256 }}</span>
+                                <span class="sha">{{ download.sha }}</span>
                             </li>
                             {% endfor %}
                         </ul>
