@@ -232,7 +232,7 @@ d-drive:
     link: dDrive-1.0.1-win32.signed.exe
     name: Windows (64-bit)
     id: windows
-    sha: dcbf1b237ec566137c45a0b5018e8afd1926a0c3
+    sha: 54259acec75ef513a1e6db140edc33ef464c69f4
   - title: <i class="fab fa-linux"></i> Linux (64-bit)
     link: dDrive-1.0.0-linux-x86_64.run
     name: Linux (64-bit)
