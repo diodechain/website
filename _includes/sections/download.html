@@ -1,3 +1,15 @@
+<script type="text/javascript"> 
+function ThankYouRedirect(redirect_link)
+{
+   var RedirectURL = redirect_link;
+   var RedirectPauseSeconds = 2;
+   setTimeout("DoTheRedirect('"+RedirectURL+"')",parseInt(RedirectPauseSeconds*1000));
+}
+   
+function DoTheRedirect(url) { window.location=url; }
+
+</script>
+
 <!-- Download Section -->
 <section class="site-section download-section" id="download">
     <div class="container hidden-sm hidden-md hidden-lg">
@@ -18,7 +30,8 @@
                     </div>
                     <p class="hidden-sm hidden-md hidden-lg">{{ site.d-drive.description }}</p>
                     <div class="download-action">
-                        <a class="button" id="download_button">Download Diode Drive</a>
+                        <a class="button hide JSButton" id="download_button">Download Diode Drive</a>
+                        <noscript>Select your download:</noscript>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-8 hidden-xs">
@@ -30,6 +43,25 @@
                     </div>
                 </div>
             </div>
+            <noscript>
+               <div class="row download-list">
+                  <div class="col-xs-12">
+                     <div class="action-description">
+                        <ul class="downloads">
+                           {% for download in site.d-drive.downloads %}
+                           <li>
+                              <a href="{{ site.d-drive.download-base }}{{ download.link }}">{{ download.name }}</a><br/>
+                              <span class="sha" style="padding-left:10px;">{{ download.sha }}</span>
+                           </li>
+                           {% endfor %}
+                        </ul>
+                     </div>
+                     </br>
+                     <p>By downloading Diode Drive you accept the <a href="{{ site.links.terms }}" target="_blank">Diode Master Services Agreement</a> 
+                     and our <a href="{{ site.links.privacy }}" target="_blank">privacy policy</a>.</p> 
+                  </div> 
+               </div>
+           </noscript>
         </div>
         <div id="download_popup" class="download-popup" style="display: none;">
             <div id="popup" class="popup">
@@ -46,15 +78,15 @@
                     </p>
 
                     {% for download in site.d-drive.downloads %}
-                    <a class="button hide {{ download.id }}" href="{{ site.d-drive.download-base }}{{ download.link }}">Download Diode Drive for {{ download.name }}</a>
+                    <a onclick="ThankYouRedirect('{{ site.d-drive.thank-you-for-downloading }}')" class="button hide {{ download.id }}" href="{{ site.d-drive.download-base }}{{ download.link }}">Download Diode Drive for {{ download.name }}</a>
                     {% endfor %}
-
+                    
                     <div class="action-description">
                         All downloads with SHA-1 their checksums:
                         <ul class="downloads">
                             {% for download in site.d-drive.downloads %}
                             <li>
-                                <a href="{{ site.d-drive.download-base }}{{ download.link }}">{{ download.name }}</a><br/>
+                                <a onclick="ThankYouRedirect('{{ site.d-drive.thank-you-for-downloading }}')" href="{{ site.d-drive.download-base }}{{ download.link }}">{{ download.name }}</a><br/>
                                 <span class="sha">{{ download.sha }}</span>
                             </li>
                             {% endfor %}
