@@ -8904,6 +8904,21 @@ section.download-section .download-popup .popup .popup-content .action-descripti
   font-size: 80%;
 }
 
+section.download-section .download-list .action-description ul.downloads {
+  margin-top: 0.3em;
+  list-style: disc;
+  padding-left: 1em;
+}
+
+section.download-section .download-list .action-description ul.downloads li {
+  padding: 0.3em 0em;
+}
+
+section.download-section .download-list .action-description ul.downloads span.sha {
+  font-family: monospace;
+  font-size: 80%;
+}
+
 /**
  *
  *  Footer Style
