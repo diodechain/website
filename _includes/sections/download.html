@@ -73,8 +73,8 @@ function DoTheRedirect(url) { window.location=url; }
                 <div class="popup-content">
                     <h3>Get Diode Drive</h3>
                     <p>
-                        By downloading Diode Drive you accept the <a href="/msa" target="_blank">Diode Master Services Agreement</a> 
-                        and our <a href="/privacy-policy" target="_blank">privacy policy</a>.
+                        By downloading Diode Drive you accept the <a href="{{ site.links.terms }}" target="_blank">Diode Master Services Agreement</a> 
+                        and our <a href="{{ site.links.privacy }}" target="_blank">privacy policy</a>.
                     </p>
 
                     {% for download in site.d-drive.downloads %}
