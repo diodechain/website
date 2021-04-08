@@ -258,6 +258,9 @@
       $("#osname").text(OSName);
     }
 
+    /* If javascript working, unhide buttons relying on JS */
+    $(".JSButton").removeClass("hide");
+    
     const popup_button = $("#download_button")
     const popup = $("#download_popup")
     if (popup_button) {
