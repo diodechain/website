@@ -1260,7 +1260,7 @@ var Network = Vue.component("network", {
           for (let [key, value] of serverObj[5]) {
             extra[key] = value;
           }
-          point.tickets = web3.utils.hexToNumber(extra["tickets"]);
+          point.tickets = web3.utils.hexToNumberString(extra["tickets"]);
           point.uptime = Math.round(
             web3.utils.hexToNumber(extra["uptime"]) / 1000
           );
