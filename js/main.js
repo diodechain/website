@@ -281,6 +281,11 @@
         popup.toggle();
         $body.toggleClass("no-scroll");
       });
+      // Toggle now?
+      if (window.location.hash == "#diodedrive") {
+        popup.toggle();
+        $body.toggleClass("no-scroll");
+      }
     }
 
     // Pricing page - plans (carousel)
