@@ -1,0 +1,38 @@
+<!-- Get Started Section -->
+<section class="products-header-section">
+  <div class="container">
+    <h2 class="site-section__title">{{ page.gs-title }}</h2>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="products-image">
+          <!-- Products Header Image -->
+          {% if page.gs-image %}
+            <img src="{{ page.gs-image }}">
+          {% else %}
+            <iframe src="{{ page.gs-video }}" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 hidden-sm hidden-xs">
+        <!-- Products Header Image Description -->
+        <div class="products-image-description">
+          {{ page.gs-description }}
+        </div>
+      </div>
+    </div>
+    
+    <!-- Actions -->
+    <div class="row">
+      <div class="products-header-actions hidden-xs">
+        <a href="{{ page.gs-action-link }}" class="button">{{ page.gs-action-text }}</a>
+      </div>
+      <div class="products-header-actions hidden-sm hidden-md hidden-lg">
+        <a href="{{ page.gs-action-link }}" class="button button--outline">{{ page.gs-action-text }}</a>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
