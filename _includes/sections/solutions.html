@@ -3,35 +3,37 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <!-- Solutions Page Description -->
-        <h3 class="solution-section__description">{{ page.page-description }}</h3>
-
         <!-- Solutions Page Title -->
         <h2 class="site-section__title">{{ page.page-title }}</h2>
+        <!-- Solutions Page Description -->
+        <h3 class="solution-section__description">{{ page.page-description }}</h3>
       </div>
     </div>
-    <!-- Solutions -->
-    <div
-      class="row"
-    >
-      {% for solution in page.solutions %}
-        <div class="col-sm-12 col-md-4">
-          <div class="solution">
-            <h4 class="solution-title">
-              {{ solution.title }}
-            </h4>
-            <p class="solution-description">
-              {{ solution.description }}
-            </p>
+  </div>
+  
+  <div class="mutant" style="padding-top:50px; padding-bottom:50px; background-image:url('{{ page.solution-bg-image }}')">
+    <div class="container">
+      <!-- Solutions -->
+      <div class="row">
+        {% for solution in page.solutions %}
+          <div class="col-sm-12 col-md-4">
+            <div class="solution">
+              <h4 class="solution-title">
+                {{ solution.title }}
+              </h4>
+              <p class="solution-description">
+                {{ solution.description }}
+              </p>
+            </div>
           </div>
+        {% endfor %}
+
+        <!-- Bottom Button (Mobile Design) -->
+        <div class="col-xs-12 hidden-md hidden-lg">
+          <a class="button" href="{{ site.links.learn_more }}">GET A DEMO</a>
         </div>
-      {% endfor %}
-
-      <!-- Bottom Button (Mobile Design) -->
-      <div class="col-xs-12 hidden-md hidden-lg">
-        <a class="button" href="{{ site.links.learn_more }}">GET A DEMO</a>
       </div>
-
     </div>
+    
   </div>
 </section>
