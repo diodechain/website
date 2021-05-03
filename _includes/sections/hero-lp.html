@@ -1,0 +1,53 @@
+<!-- Hero Section -->
+<section class="site-section hero-section" id="hero">
+  <div class="container">
+
+    <!-- Section Heading -->
+    <div class="row">
+      <div class="hero-text col-xs-12 col-lg-12">
+        <!-- Section Title -->
+        <h2 class="hero-title-lp hero-title">{{ page.hero-title }}</h2>
+        <h2 class="hero-title-lp--xs hero-title--xs">{{ page.hero-xs-title }}</h2>
+      
+        <div class="action-container">
+<!-- commenting out until we figure out downloads
+          {% for download in site.d-drive.downloads %}
+          <a class="button action-button hide {{ download.id }}" alt="Diode Drive" href="{{ site.d-drive.download-base }}{{ download.link }}">
+            <span class="text-sm">
+              Download Diode Drive for {{ download.name }}
+            </span>
+            <span class="text-xs">
+              Download
+            </span>
+          </a>
+          {% endfor %}
+-->
+        <a class="button" alt="Diode Drive" href="{{ site.links.download }}">
+            <span class="text-sm">
+              Get Started
+            </span>
+            <span class="text-xs">
+              Get Started
+            </span>
+          </a>
+          <a class="link text-sm link--white link--arrow" href="products/d-drive">
+            LEARN MORE
+          </a>
+          <a class="link text-xs link--white link--arrow" href="products/d-drive">
+            LEARN MORE
+          </a>
+<!-- commenting out until we figure out downloads
+          <div class="action-descriptoin">
+            Available for 
+            <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[2].link }}">{{ site.d-drive.downloads[2].name }}</a>, 
+            <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[1].link }}">{{ site.d-drive.downloads[1].name }}</a>, and 
+            <a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[3].link }}">{{ site.d-drive.downloads[3].name }}</a> 
+            (<a href="{{ site.d-drive.download-base }}{{ site.d-drive.downloads[0].link }}">{{ site.d-drive.downloads[0].name }}</a>)
+          </div>
+-->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
