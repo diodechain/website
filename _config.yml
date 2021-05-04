@@ -225,10 +225,10 @@ d-drive:
     id: raspberry-pi
     sha: 156b6058c24d9816885491782b8de7a3a1082a81
   - title: <i class="fab fa-apple"></i> MacOS X
-    link: dDrive-1.0.1.dmg
+    link: dDrive-1.2.0.dmg
     name: MacOS
     id: macos
-    sha: e71b63e17b6cdf86e244814faa5d70bf1f5f7703
+    sha: e603628536eacd59d2d93654b657ea0b0937b61e
   - title: <i class="fab fa-windows"></i> Windows (64-bit)
     link: dDrive-1.0.1-win32.signed.exe
     name: Windows (64-bit)
