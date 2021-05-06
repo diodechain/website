@@ -235,10 +235,10 @@ d-drive:
     id: windows
     sha: 54259acec75ef513a1e6db140edc33ef464c69f4
   - title: <i class="fab fa-linux"></i> Linux (64-bit)
-    link: dDrive-1.0.0-linux-x86_64.run
+    link: dDrive-1.2.0-linux-x86_64.run
     name: Linux (64-bit)
     id: linux
-    sha: a1240ca6859f93235877245ef296cea1e2a49091
+    sha: c1b1fff38e34c197ec9db97e748c843a93122b69
 diode-cli:
   title: Diode CLI
   description: High security remote access for your IT assets, localhost websites / webservices, and data/video streams.
