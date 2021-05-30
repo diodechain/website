@@ -230,10 +230,10 @@ d-drive:
     id: macos
     sha: e603628536eacd59d2d93654b657ea0b0937b61e
   - title: <i class="fab fa-windows"></i> Windows (64-bit)
-    link: dDrive-1.0.1-win32.signed.exe
+    link: dDrive-1.2.1-win32-signed.exe
     name: Windows (64-bit)
     id: windows
-    sha: 54259acec75ef513a1e6db140edc33ef464c69f4
+    sha: 8440b137320a0d4490c6d6ab51ce8f9a3dad0ac2
   - title: <i class="fab fa-linux"></i> Linux (64-bit)
     link: dDrive-1.2.0-linux-x86_64.run
     name: Linux (64-bit)
