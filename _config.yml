@@ -219,26 +219,34 @@ d-drive:
   learn-more: 'products/d-drive/'
   download-base: https://github.com/diodechain/diode_drive_feedback/releases/download/v1.0.0/
   downloads:
-  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM)
-    link: dDrive-1.0.0-linux-armv7l.run
-    name: Raspberry Pi (arm32)
-    id: raspberry-pi
-    sha: 156b6058c24d9816885491782b8de7a3a1082a81
   - title: <i class="fab fa-apple"></i> MacOS X
-    link: dDrive-1.2.0.dmg
+    link: dDrive-1.2.1.dmg
     name: MacOS
     id: macos
-    sha: e603628536eacd59d2d93654b657ea0b0937b61e
+
   - title: <i class="fab fa-windows"></i> Windows (64-bit)
     link: dDrive-1.2.1-win32-signed.exe
     name: Windows (64-bit)
     id: windows
-    sha: 8440b137320a0d4490c6d6ab51ce8f9a3dad0ac2
+
   - title: <i class="fab fa-linux"></i> Linux (64-bit)
-    link: dDrive-1.2.0-linux-x86_64.run
+    link: dDrive-1.2.1-linux-x86_64.run
     name: Linux (64-bit)
     id: linux
-    sha: c1b1fff38e34c197ec9db97e748c843a93122b69
+    sha: 44def2209c0136f7561dcbe4c49e4b9cd73585c8
+
+  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM 32-bit)
+    link: dDrive-1.2.1-linux-armv7l.run
+    name: Raspberry Pi / ARM 32bit
+    id: raspberry-pi
+    sha: 2eb261b846adc113d2adf3deaadd9a1b1e6dc6fa
+
+  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM 32-bit)
+    link: dDrive-1.2.1-linux-aarch64.run
+    name: Raspberry Pi / ARM 64bit
+    id: raspberry-pi-64
+    sha: 3755fd7834944b67ca9c6a13fff631757b1bd1ed
+
 diode-cli:
   title: Diode CLI
   description: High security remote access for your IT assets, localhost websites / webservices, and data/video streams.
@@ -253,25 +261,31 @@ diode-cli:
     link: diode_linux_arm.zip
     name: Raspberry Pi
     id: raspberry-pi
+
   - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi 64bit (ARM64)
     link: diode_linux_arm64.zip
     name: Raspberry Pi 64bit
+
   - title: <i class="fab fa-apple"></i> MacOS X
     link: diode_darwin_amd64.zip
     name: MacOS
     id: macos
+
   - title: <i class="fas fa-cube"></i> MacOS Package
     link: diode_darwin.pkg
     name: MacOS Package
     id: macos-package
+
   - title: <i class="fab fa-windows"></i> Windows (64-bit)
     link: diode_windows_amd64.zip
     name: Windows
     id: windows
+
   - title: <i class="fab fa-linux"></i> Linux (64-bit)
     link: diode_linux_amd64.zip
     name: Linux
     id: linux
+
 # for only solution pages (mobile)
 diode-network:
   title: Diode Network

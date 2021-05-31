@@ -82,7 +82,7 @@ function DoTheRedirect(url) { window.location=url; }
                     {% endfor %}
                     
                     <div class="action-description">
-                        All downloads with SHA-1 their checksums:
+                        Or choose another Platform:
                         <ul class="downloads">
                             {% for download in site.d-drive.downloads %}
                             <li>
@@ -91,6 +91,8 @@ function DoTheRedirect(url) { window.location=url; }
                             </li>
                             {% endfor %}
                         </ul>
+                        <hr/>
+                        MacOS + Windows builds are signed/notarized. For Linux builds please compare the SHA-1 checksum above with the file downloaded for validation.
                     </div>
                 </div>
             </div>
