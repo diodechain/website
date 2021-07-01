@@ -243,9 +243,13 @@
     let OSName = "Unknown OS";
     if (navigator.userAgent.indexOf("Win") != -1) OSName = "Windows";
     if (navigator.userAgent.indexOf("Mac") != -1) OSName = "MacOS";
+    if (navigator.userAgent.indexOf("iPod") != -1) OSName = "iOS";
+    if (navigator.userAgent.indexOf("iPad") != -1) OSName = "iOS";
+    if (navigator.userAgent.indexOf("iPhone") != -1) OSName = "iOS";
     if (navigator.userAgent.indexOf("Linux") != -1) {
-      if (navigator.userAgent.indexOf("armv") != -1) OSName = "Raspberry Pi";
-      else OSName = "Linux";
+      if (navigator.userAgent.indexOf("arm") != -1) OSName = "Raspberry Pi";
+        else if (navigator.userAgent.indexOf("Android") != -1) OSName = "Android";
+          else OSName = "Linux";
     }
     let downloadLink = $(
       "." + OSName.toLowerCase().replace(/\s+/g, '-')
