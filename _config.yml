@@ -248,7 +248,7 @@ d-drive:
     id: raspberry-pi-64
     sha: 3755fd7834944b67ca9c6a13fff631757b1bd1ed
 
- - title: <i class="fab fa-ios"></i> iOS
+  - title: <i class="fab fa-ios"></i> iOS
     name: iOS
     id: ios
     
