@@ -192,7 +192,8 @@ links:
   privacy: 'privacy-policy/'
   terms: 'msa/'
   requestdemo: 'https://diodedemo.paperform.co'
-    
+  mobilesurvey: 'https://fot7s63t.paperform.co'
+   
   # Social Links
   youtube: 'https://www.youtube.com/channel/UC3b5voADiipUmq1Q-vtPKsA'
   # pinterest: '#'
@@ -247,6 +248,14 @@ d-drive:
     id: raspberry-pi-64
     sha: 3755fd7834944b67ca9c6a13fff631757b1bd1ed
 
+ - title: <i class="fab fa-ios"></i> iOS
+    name: iOS
+    id: ios
+    
+  - title: <i class="fab fa-android"></i> Android
+    name: Android
+    id: android
+    
 diode-cli:
   title: Diode CLI
   description: High security remote access for your IT assets, localhost websites / webservices, and data/video streams.
