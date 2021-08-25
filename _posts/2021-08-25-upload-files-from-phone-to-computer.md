@@ -21,7 +21,7 @@ Diode is an even better solution - it enables me to upload files directly from m
 
 **Here’s how:**
 1. Open Diode Drive and select the desired Zone
-2. Click the box arrow icon to open base the Zone folder and create a sub-folder that you want to use for uploads.
+2. Click the box arrow icon to open the Zone folder and create a sub-folder that you want to use for uploads.
 3. Select your new upload folder by checking the box and then clicking the share icon.  This will open the “Share” setting where you can select the options you want.  Check the boxes for both “Can Upload” and “Enabled”, then hit “Save”.  
 4. Scan the QR code with your phone.  It will open a web portal where you can upload files directly.
 5. Click one file or long press to select multiple files.  Once you have selected your files, they are uploaded automatically.
