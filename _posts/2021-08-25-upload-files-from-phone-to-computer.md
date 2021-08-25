@@ -30,7 +30,7 @@ Diode is an even better solution - it enables me to upload files directly from m
 
 <a href="https://vimeo.com/562684103">Check out this video for a visual walk-through!</a>
 
-Some additional tips!:
+Some additional tips:
 * Bookmark the upload webpage for easy access from your mobile browser
 * Use “Add to Home Screen” to add an icon so you can upload any time with one click!
 * Share the QR code or URL with others so that they can also share files directly to your computer, perfect for parties and other events!
