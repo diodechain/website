@@ -8,7 +8,7 @@ author: Allen
 image: file-uploading-multiple-devices.png
 imageclass: top
 ---
-It is surprising how hard it can be to upload files and pictures from your phone to your computer.  This is often a multi-step process, and can be tricky depending on the size of the file or number of files you want to upload.  
+It is surprising how hard it can be to upload files and pictures from your phone to your computer.  
 
 I used to use email to send the file to myself as an attachment.  This would usually work, but had some problems: 
 * email usually has a file size limit so it may not work if the file is large
