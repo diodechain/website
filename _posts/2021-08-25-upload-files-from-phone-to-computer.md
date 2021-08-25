@@ -34,3 +34,4 @@ Some additional tips:
 * Bookmark the upload webpage for easy access from your mobile browser
 * Use “Add to Home Screen” to add an icon so you can upload any time with one click!
 * Share the QR code or URL with others so that they can also share files directly to your computer, perfect for parties and other events!
+* Add other team members to your Zone so that the files are automatically replicated to your family, friends, or co-workers
