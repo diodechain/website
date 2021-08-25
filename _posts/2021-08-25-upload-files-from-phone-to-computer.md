@@ -10,14 +10,14 @@ imageclass: top
 ---
 It is surprising how hard it can be to upload files and pictures from your phone to your computer.  This is often a multi-step process, and can be tricky depending on the size of the file or number of files you want to upload.  
 
-The option I usually go with is to use email to send the file to myself as an attachment.  This may work but sometimes has problems: 
+I used to use email to send the file to myself as an attachment.  This would usually work, but had some problems: 
 * email usually has a file size limit so it may not work if the file is large
 * multiple file attachments can be hard to keep organized
 * the email will get buried over time, making access difficult later
 
-Another option I sometimes use is a messaging app.  I will message files from my phone to my spouse and then switch to my computer so that I can access our chat and download from there.  My spouse is very forgiving, but I know it is annoying for her to get these messages.  
+Another option I used was a messaging app.  I would message files from my phone to my spouse and then switch to my computer so that I could access our chat and download from there.  My spouse is very forgiving, but I know it was annoying for her to get these messages.  
 
-A much better solution would be to upload a file directly from my phone to my computer.  Diode enables exactly this situation - all I need to do is set up a shared folder in my Diode Zone.  I can set up as many folders as I like and upload any size or type of file.  
+Diode is an even better solution - it enables me to upload files directly from my phone to my computer - all I need to do is set up a shared folder in my Diode Zone.  I can set up as many folders as I like and upload any size or type of file.  
 
 **Here’s how:**
 1. Open Diode Drive and select the desired Zone
@@ -34,5 +34,3 @@ Some additional tips!:
 * Bookmark the upload webpage for easy access from your mobile browser
 * Use “Add to Home Screen” to add an icon so you can upload any time with one click!
 * Share the QR code or URL with others so that they can also share files directly to your computer, perfect for parties and other events!
-
-
