@@ -14,12 +14,31 @@
         vertical-align: middle;
     }
 
-    .inner {
-        margin-left: auto;
-        margin-right: auto;
-        width: 1200px;
+    @media screen and (min-width: 901px) {
+        .inner {
+            margin-left: auto;
+            margin-right: auto;
+            width: 1200px;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .inner {
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            padding-right: 30px;
+        }
+
+        .joincode {
+            width: 400px;
+            word-wrap: break-word;
+            padding-right: 30px;
+        }
     }
 </style>
+
+
 
 <script>
     var url = new URL(document.location.toString());
@@ -46,7 +65,7 @@
                 <p>Alternativly, you can enter this Join Code by clicking the "Join" button on the Zones page of Diode
                     Drive.
                 </p>
-                <h3>
+                <h3 class="joincode">
                     <script>
                         document.write(url.hash.slice(1))
                     </script>
@@ -58,7 +77,7 @@
             <div id="other">
                 <p>Just click the "Join" button on the Zones page of Diode Drive and enter this Join Code!</p>
                 <br>
-                <h3>
+                <h3 class="joincode">
                     <script>
                         document.write(url.hash.slice(1))
                     </script>
@@ -69,7 +88,7 @@
                     src="resources/join-zone-gif.gif" alt="how to join zone with join code">
                 <br>
             </div>
-    
+
             <script>
                 if (navigator.userAgent.indexOf("Linux") != -1) {
                     document.getElementById('other').style.display = 'none';
