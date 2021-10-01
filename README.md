@@ -1,3 +1,25 @@
+
+# Diode Setup:
+## System Preparation
+1. Follow guides [here](http://jekyllrb.com/docs/installation/) to install ruby for your OS
+2. Install Jekyll & Bundler: `gem install jekyll bundler`
+   then `bundle install`
+4. Install NodeJS from [http://nodejs.org](http://nodejs.org)
+5. Install GulpJS: `npm install -g gulp` (mac may need sudo)
+
+
+## Local Dev Environment
+
+1. Inside the parent directory: `npm install`.
+2. To build: `jekyll build`
+3. To serve to localhost:4000: `jekyll serve --livereload`
+
+<br>
+<hr>
+<br>
+
+# Original ReadMe:
+
 ```
 =================================================
 =====     jekyll-gulp-sass-browser-sync     =====
