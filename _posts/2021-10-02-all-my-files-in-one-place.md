@@ -12,7 +12,7 @@ If you’re like me, you have a lot of devices.  I have my work computer, family
 
 I have tried different methods to keep all our files organized, accessible, and shareable.  Online options have file and storage size limits, I am never sure if my files are secure, and I have to provide “IT support” for my family members to ensure they have access to, and were using, the online service.  At one point I tried taking a large USB drive to each computer to do manual backups.  It was a chore but at least I knew where all my files were.  
 
-Enter <a href="/producdts/d-drive/">Diode Drive</a> – it provides an elegant solution to these problems – it quietly synchronizes files from all our devices to a single secure destination using full end to end encryption.
+Enter <a href="products/d-drive/">Diode Drive</a> – it provides an elegant solution to these problems – it quietly synchronizes files from all our devices to a single secure destination using full end to end encryption.
 
 <p align="center"><img src="images/blog/diode_drive_logo.png" width="500"></p>
 
