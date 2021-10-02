@@ -16,7 +16,7 @@ Enter <a href="products/d-drive/">Diode Drive</a> – it provides an elegant sol
 
 <p align="center"><img src="images/blog/diode_drive_logo.png" width="500"></p>
 
-For my Diode setup, I plugged a 1 Terabyte thumb drive into to a Raspberry Pi as my “secure destination”.  I set up a Zone for work, a Zone for family, and also setup a few personal Zones for files and folders I didn’t need to share access with other people.  Then, invited members to the Zones: co-workers to my work Zone, and my wife and kids to my family Zone.  My work Zone makes it easily for me to share any size files and to collaborate with co-workers.  I use my family Zone so that my wife and kids can access photos and other documents.  Even if none of our laptops or phones or other devices are open and running, the Pi is always on, seamlessly serving and backing up files. 
+For my Diode setup, I plugged a 1 Terabyte thumb drive into to a <a href="https://support.diode.io/article/d3eguu0pem-setup-diode-drive">Raspberry Pi</a> as my “secure destination”.  I set up a Zone for work, a Zone for family, and also setup a few personal Zones for files and folders I didn’t need to share access with other people.  Then, invited members to the Zones: co-workers to my work Zone, and my wife and kids to my family Zone.  My work Zone makes it easily for me to share any size files and to collaborate with co-workers.  I use my family Zone so that my wife and kids can access photos and other documents.  Even if none of our laptops or phones or other devices are open and running, the Pi is always on, seamlessly serving and backing up files. 
 
 <p align="center"><img src="images/blog/all-my-files-invite-team-member.png"></p>
 
