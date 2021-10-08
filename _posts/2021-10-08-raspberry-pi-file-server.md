@@ -12,11 +12,11 @@ There are no inherently “cloud” components of Diode-based applications – t
 
 <p align="center"><img src="images/blog/rpifileserver-web3-token.png" width="124"></p>
 
-In the case of <a href="products/d-drive/">Diode Drive</a>, if all Team Members in a Zone are just people using their phones and their computers, the overall state of the Zone may not be fully reflected in the aggregate of active participants at any given time.  Take the situation, for example, in which there are just two Team Members who happen to be in different timezones – if Team Member A updates a file and then goes offline all while Team Member B’s computer is off, when Team Member B does come online, the file update will not be available.  Since there are no centralized “always on” cloud components to the application, Team Members who pass like ships in the night may not get synchronized.  They need a third “Team Member” who is always online, and who can represent the state of the information to the other Team Member(s).
+In the case of <a href="products/d-drive/">Diode Drive</a>, if all Team Members in a Zone are just people using their phones and their computers, the overall state of the Zone may not be fully reflected in the aggregate of active participants at any given time.  Take the situation, for example, in which there are just two Team Members who happen to be in different timezones – if Team Member A updates a file and then goes offline all while Team Member B’s computer is off, when Team Member B does come online, the file update will not be available.  Since there are no centralized “always on” cloud components to the application, Team Members who pass like ships in the night may not get synchronized.
 
 <p align="center"><img src="images/blog/rpifileserver-not-synced-trio.png" width="50%"></p>
 
-Enter the humble <a href="https://www.raspberrypi.org/">Raspberry Pi</a>.
+They need a third “Team Member” who is always online, and who can represent the state of the information to the other Team Member(s).  Enter the humble <a href="https://www.raspberrypi.org/">Raspberry Pi</a>.
  
 <p align="center"><img src="images/blog/rpifileserver-rpi-board.png" width="50%"></p>
 
