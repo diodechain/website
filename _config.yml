@@ -221,7 +221,7 @@ d-drive:
   download-base: https://github.com/diodechain/diode_drive_feedback/releases/download/v1.0.0/
   downloads:
   - title: <i class="fab fa-apple"></i> MacOS X
-    link: dDrive-1.2.1.dmg
+    link: dDrive-1.3.5.dmg
     name: MacOS
     id: macos
 
