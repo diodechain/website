@@ -128,6 +128,8 @@ uname_os() {
 uname_arch() {
   arch=$(uname -m)
   case $arch in
+    # betting on rosetta for macos arm64
+    arm64) arch="amd64" ;;
     x86_64) arch="amd64" ;;
     x86) arch="386" ;;
     i686) arch="386" ;;
