@@ -54,7 +54,7 @@
             <br>
             <br>
             <h2 class="site-section__title">Join Code</h2>
-            <div id="linux">
+            <div id="auto">
                 <p>Already Have Diode Drive? Just click the button below!</p>
                 <a id="auto-add" class="button nav-button">Auto Join</a>
                 <br>
@@ -74,7 +74,7 @@
                 <br>
                 <br>
             </div>
-            <div id="other">
+            <div id="manual">
                 <p>Just click the "Join" button on the Zones page of Diode Drive and enter this Join Code!</p>
                 <br>
                 <h3 class="joincode">
@@ -90,12 +90,12 @@
             </div>
 
             <script>
-                if (navigator.userAgent.indexOf("Linux") != -1) {
-                    document.getElementById('other').style.display = 'none';
-                    document.getElementById('linux').style.display = 'block';
+                if (navigator.userAgent.indexOf("Windows") == -1) {
+                    document.getElementById('manual').style.display = 'none';
+                    document.getElementById('auto').style.display = 'block';
                 } else {
-                    document.getElementById('other').style.display = 'block';
-                    document.getElementById('linux').style.display = 'none';
+                    document.getElementById('manual').style.display = 'block';
+                    document.getElementById('auto').style.display = 'none';
                 }
                 var auto_join_link = "ddrive://" + url.hash.slice(1);
                 document.getElementById("auto-add").href = auto_join_link;
