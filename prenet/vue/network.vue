@@ -1247,8 +1247,8 @@ var Network = Vue.component("network", {
     },
 
     putPoint: function (node_id, serverObj, type, retries) {
-      let = ip = serverObj[1];
-      resolveIP(ip, (location) => {
+      resolveIP(serverObj[1], (location) => {
+        let ip = location.ip;
         let lat = Math.round(location.latitude * 1000) / 1000;
         let lon = Math.round(location.longitude * 1000) / 1000;
 

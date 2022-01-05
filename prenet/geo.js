@@ -15,6 +15,7 @@ let IPCache = {
     "e": invalid,
     "25.110.75.67": {
         // 25.110.0.0 - 25.110.255.255
+        "ip": "25.110.75.67",
         "type": "ipv4",
         "continent_code": "EU",
         "continent_name": "Europe",
@@ -28,6 +29,7 @@ let IPCache = {
         "longitude": -0.1224,
     },
     "172.104.119.67": {
+        "ip": "172.104.119.67",
         "type": "ipv4",
         "continent_code": "AS",
         "continent_name": "Asia",
@@ -41,6 +43,7 @@ let IPCache = {
         "longitude": 139.73855590820312,
     },
     "139.162.56.162": {
+        "ip": "139.162.56.162",
         "type": "ipv4",
         "continent_code": "AS",
         "continent_name": "Asia",
@@ -54,6 +57,7 @@ let IPCache = {
         "longitude": 103.8198013305664,
     },
     "45.79.115.246": {
+        "ip": "45.79.115.246",
         "type": "ipv4",
         "continent_code": "NA",
         "continent_name": "North America",
@@ -67,6 +71,7 @@ let IPCache = {
         "longitude": -121.988570,
     },
     "45.79.132.11": {
+        "ip": "45.79.132.11",
         "type": "ipv4",
         "continent_code": "NA",
         "continent_name": "North America",
@@ -80,6 +85,7 @@ let IPCache = {
         "longitude": -74.19452667236328,
     },
     "45.79.58.5": {
+        "ip": "45.79.58.5",
         "type": "ipv4",
         "continent_code": "NA",
         "continent_name": "North America",
@@ -93,6 +99,7 @@ let IPCache = {
         "longitude": -96.72972
     },
     "172.105.85.69": {
+        "ip": "172.105.85.69",
         "type": "ipv4",
         "continent_code": "EU",
         "continent_name": "Europe",
@@ -106,6 +113,7 @@ let IPCache = {
         "longitude": 8.684170,
     },
     "80.85.84.160": {
+        "ip": "80.85.84.160",
         "type": "ipv4",
         "continent_code": "EU",
         "continent_name": "Europe",
@@ -119,6 +127,7 @@ let IPCache = {
         "longitude": 0.04083999991416931,
     },
     "172.105.105.84": {
+        "ip": "172.105.105.84",
         "type": "ipv4",
         "continent_code": "NA",
         "continent_name": "North America",
@@ -132,6 +141,7 @@ let IPCache = {
         "longitude": -79.373333,
     },
     "172.105.186.136": {
+        "ip": "172.105.186.136",
         "type": "ipv4",
         "continent_code": "AU",
         "continent_name": "Australia",
@@ -145,6 +155,7 @@ let IPCache = {
         "longitude": 151.209444,
     },
     "45.79.126.86": {
+        "ip": "45.79.126.86",
         "type": "ipv4",
         "continent_code": "AS",
         "continent_name": "Asia",
@@ -168,8 +179,7 @@ function resolveIP(ip, callback) {
         return
     }
     let opt = { headers: { 'Content-Type': 'application/json' } }
-    axios.get('http://api.ipstack.com/' + ip + '?access_key=924711bf7f3da839723e8d3b4c9d441d&format=1', opt).then(response => {
-        console.log("ip", ip, response.data);
+    axios.get('https://monitor.testnet.diode.io/ip/' + ip, opt).then(response => {
         IPCache[ip] = response.data
         callback(response.data)
     })
