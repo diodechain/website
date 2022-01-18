@@ -28,7 +28,7 @@ layout: none
 {% endfor %}
 
 <url>
-<loc>https://diode.io/about.html</loc>
+<loc>https://diode.io/resources/about.html</loc>
 </url>
 <url>
 <loc>https://diode.io/blog/</loc>
