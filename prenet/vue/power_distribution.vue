@@ -263,7 +263,19 @@ var PowerDistribution = Vue.component("power_distribution", {
       let self = this;
       let activeBlocksBatch = new web3.BatchRequest();
 
+      let queryNames = {};
       for (key in this.names) {
+        if (!this.names[key].addr) continue;
+        if (!queryNames[this.names[key].addr]) {
+          queryNames[this.names[key].addr] = 1;
+        } else {
+          queryNames[this.names[key].addr]++;
+        }
+      }
+
+      console.log(queryNames);
+      for (addr in queryNames) {
+        let count = queryNames[addr];
         let callback = (error, block) => {
           if (error) {
             console.log(error);
@@ -278,16 +290,14 @@ var PowerDistribution = Vue.component("power_distribution", {
             let blockNumber = web3.utils.hexToNumber(block[2]);
 
             if (blockNumber > self.lastBlockNumber - 40320) {
-              this.activeDNSCount += 1;
+              this.activeDNSCount += count;
             }
           }
         };
 
-        if (this.names[key].addr) {
-          activeBlocksBatch.add(
-            web3.eth.getObject.request(this.names[key].addr, true, callback)
-          );
-        }
+        activeBlocksBatch.add(
+          web3.eth.getObject.request(addr, true, callback)
+        );
       }
 
       activeBlocksBatch.execute();
