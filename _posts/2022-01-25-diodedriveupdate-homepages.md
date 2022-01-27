@@ -18,10 +18,10 @@ This version also allows you to “promote” a Markdown document as your Zone�
 
 This is an example Markdown document that could be used for a home page:
 
-<p align="center"><img src="images/blog/diodedrive-zone-homepage.png" width="124"></p>
+<p align="center"><img src="images/blog/diodedrive-zone-homepage.png" width="600"></p>
 
 This is how it looks in Diode Drive:
 
-<p align="center"><img src="images/blog/diodedrive-zone-homepage-actual.png" width="124"></p>
+<p align="center"><img src="images/blog/diodedrive-zone-homepage-actual.png" width="600"></p>
 
 We will be adding more native viewers and Markdown rendering functionality to Diode Drive in future updates.  Connect with us on our Telegram channel for the latest updates and to join the discussion at <a href="https://t.me/diode_chain">https://t.me/diode_chain</a>.
