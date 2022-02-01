@@ -2,7 +2,7 @@
 layout: post
 title: I just want to have all my files in one place!
 date: 2021-10-02 18:37
-categories: [DiodeDrive]
+categories: [Diode Drive]
 tags: [Diode, Diode Drive, File Access, How To]
 author: Allen M
 image: all-my-files-in-one-place.png

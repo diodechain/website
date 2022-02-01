@@ -7932,7 +7932,7 @@ section.blog-section .blog-articles-container article.blog-article header.articl
 section.blog-section .blog-articles-container article.blog-article header.article-header .article-title {
   display: block;
   width: 100%;
-  margin: 15px 0 80px;
+  margin: 15px 0 15px;
 }
 
 section.blog-section .blog-articles-container article.blog-article header.article-header .article-title h3.title {

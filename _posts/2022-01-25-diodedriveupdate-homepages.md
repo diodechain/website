@@ -2,7 +2,7 @@
 layout: post
 title: Diode Drive Feature - Home Pages
 date: 2022-01-25 18:03
-categories: [DiodeDrive]
+categories: [Diode Drive]
 tags: [Diode, Diode Drive, Markdown]
 author: Allen M
 image: diodedrive-zone-homepage.png
