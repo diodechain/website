@@ -8,7 +8,7 @@ author: Allen M
 image: direct-connections.png
 imageclass: top
 ---
-One of the drawbacks of cloud storage is the time required to upload and/or download large amounts of data.  Depending on the amount of data, this process can take several days before everything is synced up.  Diode Drive has now introduced direct connections.  This means that team members can sync files and communicate directly with each other via the fastest connection possible. With a direct connection, files will sync exponentially faster, depending on your network speed and the number of network “hops” between the team members.  For team members or backup boxes on the same local area network, no Internet bandwidth is consumed - this may be important for users on a limited cell phone data plan or satellite internet.  
+One of the drawbacks of cloud storage is the time required to upload and/or download large amounts of data.  Depending on the amount of data, this process can take several days before everything is synced up.  Diode Drive has now introduced direct connections.  This means that team members can sync files and communicate directly with each other via the fastest connection possible. With a direct connection, files can sync exponentially faster, depending on your network speed and the number of network “hops” between the team members.  For team members or backup boxes on the same local area network, no Internet bandwidth is consumed - this may be important for users on a limited cell phone data plan or satellite internet.  
 
 Previous to this update, team members would continue to use decentralized relays after connecting to each other (these relayed connections were/are end to end encrypted). 
 
