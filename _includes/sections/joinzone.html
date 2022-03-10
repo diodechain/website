@@ -90,13 +90,15 @@
             </div>
 
             <script>
-                if (navigator.userAgent.indexOf("Windows") == -1) {
-                    document.getElementById('manual').style.display = 'none';
-                    document.getElementById('auto').style.display = 'block';
-                } else {
-                    document.getElementById('manual').style.display = 'block';
-                    document.getElementById('auto').style.display = 'none';
-                }
+                //if (navigator.userAgent.indexOf("Windows") == -1) {
+                //    document.getElementById('manual').style.display = 'none';
+                //    document.getElementById('auto').style.display = 'block';
+                //} else {
+                //    document.getElementById('manual').style.display = 'block';
+                //    document.getElementById('auto').style.display = 'none';
+                //}
+                document.getElementById('manual').style.display = 'block';
+                document.getElementById('auto').style.display = 'none';
                 var auto_join_link = "ddrive://" + url.hash.slice(1);
                 document.getElementById("auto-add").href = auto_join_link;
             </script>
