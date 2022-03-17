@@ -2,22 +2,41 @@
 layout: post
 title: Diode Drive Feature - Direct Connections
 date: 2022-02-2 22:22
-categories: [DiodeDrive]
-tags: [Diode, Diode Drive, P2P]
+categories: [Web3]
+tags: [Web3, Self-Custody, Decentralization, Decentralized Web Hosting]
 author: Allen M
-image: direct-connections.png
+image: web3_host.png
 imageclass: top
 ---
-One of the drawbacks of cloud storage is the time required to upload and/or download large amounts of data.  Depending on the amount of data, this process can take several days before everything is synced up.  Diode Drive has now introduced direct connections.  This means that team members can sync files and communicate directly with each other via the fastest connection possible. With a direct connection, files can sync exponentially faster, depending on your network speed and the number of network “hops” between the team members.  For team members or backup boxes on the same local area network, no Internet bandwidth is consumed - this may be important for users on a limited cell phone data plan or satellite internet.  
+Decentralized Web Hosting is a way of hosting websites so that the website cannot easily be taken down or degraded by a service outage (intentional or not) of a given vendor.  
 
-Previous to this update, team members would continue to use decentralized relays after connecting to each other (these relayed connections were/are end to end encrypted). 
+## Why Is Decentralized Website Hosting important?
 
-You can tell if another team member is directly connected or not by their online indicator in the side bar.  Some team members may not be able to directly connect – those peers will continue to use a relay for E2E encrypted communications, and are indicated by a single green dot:
-<p align="center"><img src="images/blog/peer-bridged.png"></p>
+The reasons for wanting to do decentralized web hosting, sometimes referred to as Web3 hosting, include:
+1)	Technical resilience of the website - the unintentional outage of one component does not bring the website down
+2)	Security and privacy – website information is not accessible by third parties who would otherwise be involved with hosting a centralized website
+3)	Protection against de-platforming / censorship – the website hosting components cannot easily be intentionally blocked or decommissioned
 
-Team members that are directly connected are indicated by a green dot with a white border.
-<p align="center"><img src="images/blog/peer-direct.png"></p>
+## How to Host a Decentralized Website
 
-Also, if you click the team member name, their connection type will say either “bridged” (using a relay) or “direct” (direct connection).
+*TLDR:* You can use Diode to [deploy a decentralized Wordpress website from a Raspberry Pi](https://support.diode.io/article/r62bhcnax0). 
 
-This is yet another way that Diode Drive differentiates from centralized solutions like Google Drive or Dropbox.  Not only is Diode Drive the leading [self-custody](diode drive/self-custody-for-data-22032/) collaboration solution, Diode Drive’s direct connections are more performant and have a smaller attack surface than are possible with centralized solutions.  
+There are a number of great solutions today contributing to the future of decentralized web hosting.  Some of these address portions of the problem (e.g. [ENS](https://ens.domains/) is an approach to decentralize DNS, as is [Diode’s BNS](https://support.diode.io/article/5nsoxvhug1-what-is-bns)), and others create a holistic solution (e.g. [IPFS](https://ipfs.io/) can be used to create decentralized, public, crowd-hosted websites, while [Diode’s Publish mechanism](https://support.diode.io/article/ss32engxlq) is a great [self-custody solution](https://diode.io/diode drive/self-custody-for-data-22032/)).
+
+While all of the contributors to Web3 are doing good work, the mixed bag of new Web3 technologies have not yet “crossed the chasm” – they are not yet ready to replace centralized technologies in most use cases.  
+
+At Diode, we believe that enabling today’s cloud technologies, while ushering in better, more sustainable capabilities, is critical to the success of Web3.  We want to enable each person to select the right mix of centralized and decentralized technologies for their use cases.  
+
+For example, you can deploy a website using [AWS](https://aws.amazon.com/) or [Azure](https://azure.microsoft.com/en-us/) (strong technical resilience), while publishing the website via Web3 (reduced censorship concerns).  Or, you can [deploy a website on a Raspberry Pi](https://support.diode.io/article/r62bhcnax0) (better cost, privacy, security, and host-side de-platforming) while [publishing it via Web2](https://support.diode.io/article/6pctb40wj8) (better searchability but centralized vulnerability to censorship and domain name de-platforming).  Or, you could combine all the Web3 elements by running your website on multiple web servers, at multiple residential IP addresses, while publishing it privately via Web3. 
+
+The mix selected will depend on the vulnerability you’d like to avoid in the particular use case.
+
+## The Future of Decentralized Web Hosting
+
+For many organizations, “the cloud” is the current vision of the future – they are migrating from on-premise / self-hosted servers (Web 1.0) to cloud based hardware and software technologies (Web 2.0).  Cloud based servers (e.g. [AWS](https://aws.amazon.com/), [Azure](https://azure.microsoft.com/en-us/), [GCP](https://cloud.google.com/), [Linode](https://www.linode.com/), etc…) and cloud based software (e.g. [Salesforce](https://www.salesforce.com/), [Epic](https://www.epic.com/software), [Exosite](https://www.exosite.com/), [Cloudflare](https://www.cloudflare.com/), etc…) have the advantages of economies of scale, subject matter expertise, and easy access.  From a cost perspective, an organization using the cloud will pay more for software and hardware, but less for IT staff.  At the end of the day, the increase in monthly fees paid to all the cloud vendors is offset by lower staffing costs, better functionality, and peace of mind.
+
+As compared to a Web2 private paradigm, one of the only clear down-sides to a Web2 cloud future is that the number of outside vendors increases, thereby decreasing an organization’s self-sufficiency and data integrity.  In an ideal world, these would not be concerns – you would be able to rely on the vendors always being there for you, and that they would never do anything untoward with your information.
+
+However, from the vantage point of March of 2022, it is increasingly clear that we do not live in an ideal world.  The scope of geographies and affiliations that will result in a vendor being banned or turning their back on you is increasing.  The scope of data breaches and third party [data requests made without due process](https://www.apple.com/legal/transparency/us.html) is increasing.  It seems clear that an approach that wisely incorporates the best of Web2 cloud and the best of Web3 technologies will chart the path to a vibrant future.
+
+At Diode, we are excited about how Web3 capabilities, such as decentralized web hosting, can help Web2 strategies better succeed.  We want to see all the power of the Internet continue to be used to power tomorrow’s use cases in our ever more dynamic world.
