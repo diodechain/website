@@ -28,15 +28,24 @@ layout: none
 {% endfor %}
 
 <url>
-<loc>https://diode.io/resources/about.html</loc>
+<loc>https://diode.io/blog/tags.html</loc>
+</url>
+<url>
+<loc>https://diode.io/resources/about/</loc>
 </url>
 <url>
 <loc>https://diode.io/blog/</loc>
 </url>
 <url>
-<loc>https://diode.io/</loc>
+<loc>https://diode.io/pricing/</loc>
 </url>
 <url>
-<loc>https://diode.io/blog/tags.html</loc>
+<loc>https://diode.io/resources/download/</loc>
+</url>
+<url>
+<loc>https://diode.io/products/d-drive/</loc>
+</url>
+<url>
+<loc>https://diode.io/</loc>
 </url>
 </urlset>
