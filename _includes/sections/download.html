@@ -51,10 +51,16 @@ function DoTheRedirect(url) { window.location=url; }
                            {% for download in site.d-drive.downloads %}
                            <li>
                               {% if download.link %}
-                              <a href="{{ site.d-drive.download-base }}{{ download.link }}">{{ download.name }}</a><br/>
-                              <span class="sha" style="padding-left:10px;">{{ download.sha }}</span>
+                                 <a href="{{ site.d-drive.download-base }}{{ download.link }}">{{ download.name }}</a><br/>
+                                 <span class="sha" style="padding-left:10px;">{{ download.sha }}</span>
                               {% else %}
-                              <a href="{{ site.links.mobilesurvey }}">{{ download.name }} (preview)</a>
+                                 {% if download.ext-link %}
+                                    <a href="{{ download.ext-link }}" target="_blank">{{ download.name }}</a><br/>
+                                    <span class="sha" style="padding-left:10px;">{{ download.sha }}</span>
+                                 {% else %}
+                                    <a href="{{ site.links.mobilesurvey }}">{{ download.name }} (preview)</a><br/>
+                                    <span class="sha" style="padding-left:10px;">{{ download.sha }}</span>
+                                 {% endif %}
                               {% endif %}
                            </li>
                            {% endfor %}
@@ -82,11 +88,15 @@ function DoTheRedirect(url) { window.location=url; }
                     </p>
 
                     {% for download in site.d-drive.downloads %}
-                       {% if download.link %}
-                       <a onclick="ThankYouRedirect('{{ site.d-drive.thank-you-for-downloading }}')" class="button hide {{ download.id }}" href="{{ site.d-drive.download-base }}{{ download.link }}">Download Diode Drive for {{ download.name }}</a>
-                       {% else %}
-                       <a class="button hide {{ download.id }}" href="{{ site.links.mobilesurvey }}">Preview Diode Drive for {{ download.name }}</a>
-                       {% endif %}   
+                      {% if download.link %}
+                        <a onclick="ThankYouRedirect('{{ site.d-drive.thank-you-for-downloading }}')" class="button hide {{ download.id }}" href="{{ site.d-drive.download-base }}{{ download.link }}">Download Diode Drive for {{ download.name }}</a>
+                      {% else %}
+                        {% if download.ext-link %}
+                           <a onclick="ThankYouRedirect('{{ site.d-drive.thank-you-for-downloading }}')" class="button hide {{ download.id }}" href="{{ download.ext-link }}" target="_blank">Get Diode Drive for {{ download.name }}</a>
+                        {% else %}
+                           <a class="button hide {{ download.id }}" href="{{ site.links.mobilesurvey }}">Preview Diode Drive for {{ download.name }}</a>
+                        {% endif %}   
+                      {% endif %}   
                     {% endfor %}
                     
                     <div class="action-description">
@@ -95,10 +105,14 @@ function DoTheRedirect(url) { window.location=url; }
                             {% for download in site.d-drive.downloads %}
                             <li>
                               {% if download.link %}
-                              <a onclick="ThankYouRedirect('{{ site.d-drive.thank-you-for-downloading }}')" href="{{ site.d-drive.download-base }}{{ download.link }}">{{ download.name }}</a><br/>
-                              <span class="sha">{{ download.sha }}</span>
+                                 <a onclick="ThankYouRedirect('{{ site.d-drive.thank-you-for-downloading }}')" href="{{ site.d-drive.download-base }}{{ download.link }}">{{ download.name }}</a><br/>
+                                 <span class="sha">{{ download.sha }}</span>
                               {% else %}
-                              <a href="{{ site.links.mobilesurvey }}">{{ download.name }} (preview)</a><br/>                          
+                                 {% if download.ext-link %}
+                                    <a onclick="ThankYouRedirect('{{ site.d-drive.thank-you-for-downloading }}')" href="{{ download.ext-link }}" target="_blank">{{ download.name }}</a><br/>
+                                 {% else %}
+                                    <a href="{{ site.links.mobilesurvey }}">{{ download.name }} (preview)</a><br/>
+                                 {% endif %} 
                               {% endif %}
                             </li>
                             {% endfor %}
