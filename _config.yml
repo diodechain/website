@@ -249,10 +249,12 @@ d-drive:
     sha: 3755fd7834944b67ca9c6a13fff631757b1bd1ed
 
   - title: <i class="fab fa-ios"></i> iOS
+    ext-link: https://apps.apple.com/us/app/diode-drive/id1605222443
     name: iOS
     id: ios
     
   - title: <i class="fab fa-android"></i> Android
+    ext-link: https://play.google.com/store/apps/details?id=io.diode.drive
     name: Android
     id: android
     
