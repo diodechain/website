@@ -8943,6 +8943,7 @@ section.download-section .download-popup .popup .popup-content .action-descripti
 section.download-section .download-popup .popup .popup-content .action-description ul.downloads span.sha {
   font-family: monospace;
   font-size: 80%;
+  word-break: break-word;
 }
 
 section.download-section .download-list .action-description ul.downloads {
