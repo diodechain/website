@@ -231,10 +231,10 @@ d-drive:
     id: windows
 
   - title: <i class="fab fa-linux"></i> Linux (64-bit)
-    link: dDrive-1.2.1-linux-x86_64.run
+    link: dDrive-1.4.7-linux-x86_64.run
     name: Linux (64-bit)
     id: linux
-    sha: 44def2209c0136f7561dcbe4c49e4b9cd73585c8
+    sha: 30641724f344d5d297a4fc294e83a937ee2b7efe
 
   - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM 32-bit)
     link: dDrive-1.2.1-linux-armv7l.run
