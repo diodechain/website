@@ -1228,7 +1228,7 @@ var Network = Vue.component("network", {
         ret = await web3.eth.getNode(base);
         // console.log("getNode: ", ret);
       } catch (err) {
-        console.log("getNode error:", node, err);
+        console.log("getNode error:", base, err);
         return;
       }
       this.baseIp = ret[1];
