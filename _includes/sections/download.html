@@ -182,7 +182,7 @@ function DoTheRedirect(url) { window.location=url; }
                             {% if choice.downloads %}
 
                             {% for item in site.diode-cli.downloads %}
-                            <a class="choice-action hide {{ item.id }}" href="{{ site.diode-cli.download-base }}{{ item.link }}">
+                            <a class="choice-action hide cli-{{ item.id }}" href="{{ site.diode-cli.download-base }}{{ item.link }}">
                                 {{ item.title }}
                             </a>
                             {% endfor %}

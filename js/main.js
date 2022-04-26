@@ -261,6 +261,15 @@
       $("#filename").text(file);
       $("#osname").text(OSName);
     }
+    let cliDownloadLink = $(
+      ".cli-" + OSName.toLowerCase().replace(/\s+/g, '-')
+    );
+    if (cliDownloadLink.length > 0) {
+      cliDownloadLink.removeClass("hide");
+      let file = cliDownloadLink.attr("href");
+      file = file.substring(file.lastIndexOf("/") + 1);
+      $("#cli-filename").text(file);
+    }
 
     /* If javascript working, unhide buttons relying on JS */
     $(".JSButton").removeClass("hide");
