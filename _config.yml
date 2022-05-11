@@ -226,9 +226,10 @@ d-drive:
     id: macos
 
   - title: <i class="fab fa-windows"></i> Windows (64-bit)
-    link: dDrive-1.4.7-win32-signed.exe
+    link: dDrive-1.4.8-win32.exe
     name: Windows (64-bit)
     id: windows
+    sha: a0e64efe3d664e1e1afbe72a8d69342559406975
 
   - title: <i class="fab fa-linux"></i> Linux (64-bit)
     link: dDrive-1.4.7-linux-x86_64.run
