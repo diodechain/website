@@ -10,7 +10,7 @@ imageclass: top
 ---
 [Diode Drive](https://diode.io/products/d-drive/) is a secure and confidential decentralized [Dropbox](https://dropbox.com) alternative.
 
-Diode Drive is a [self-custody solution for your information](https://diode.io/diode%20drive/self-custody-for-data-22032/). Whether you are an individual or a company, you can use Diode Drive to maintain a secure information environment (e.g. HIPAA, GDPR, cross-geopolitical security, anti-scraping, de-google) without IT development or maintenance.
+Diode Drive provides a [self-custody solution for your information](https://diode.io/diode%20drive/self-custody-for-data-22032/). Whether you are an individual or a company, you can use Diode Drive to maintain a secure information environment (e.g. HIPAA, GDPR, cross-geopolitical security, anti-scraping, de-google) without IT development or maintenance.
 
 Read below for how Diode Drive can be a more secure, confidential, and affordable decentralized Dropbox alternative.
 
