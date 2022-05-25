@@ -44,29 +44,29 @@ Diode Drive is committed to your right to keep your identity separate from your 
 
 Dropbox stores your information on [cloud servers](https://help.dropbox.com/accounts-billing/security/physical-location-data-storage) which are located in a limited number of regions and have restrictions on data migration.
 
-Diode Drive is a [self-custody solution](https://diode.io/diode%20drive/self-custody-for-data-22032/) – storage is provided by your Zone’s Team Members – no additional data footprint is created.  You can locate a Team Member (including backup devices) in any location you wish.  Also, you have the flexibility of including cloud based servers (for faster access) or limiting the Zone to just the devices and IT assets that comply with your information security goals.  
+Diode Drive is a [self-custody solution](https://diode.io/diode%20drive/self-custody-for-data-22032/) – storage is provided by your Zone’s Team Members – no additional data footprint is created.  You can locate a Team Member (including backup devices) in any location you wish.  You have the flexibility of including cloud-based servers (for faster access), or limiting membership to just the devices and IT assets that comply with your information security goals.  
 
-Further, since Diode Drive connection routing uses a decentralized network, the information in the Diode Drive Zone can be accessed securely by Team Members from any part of the world.
+Further, since Diode Drive connection routing uses a decentralized network, your information can be accessed securely by Team Members from any part of the world.
 
 ## 6)	Direct Connections
 
 The Dropbox cloud servers are always [in the middle of synchronizing files](https://help.dropbox.com/installs-integrations/sync-uploads/sync-overview) between Dropbox team users.  Even if other team users are in the same room, updates to files are first sent to the cloud and then to the other users.
 
-Diode Drive has a [Direct Connect](https://diode.io/diodedrive/diodedriveupdate-directconnect-22033/) feature that can directly connect to other Team Members.  This is often the case, for example, when working together in the same office.  With Direct Connections, file updates, chats, and other communications are transferred from one device to the other, without requiring additional network routing.  This means file transfers and communications can be much faster, Internet bandwidth usage is reduced, and the footprint of encrypted traffic is minimized.
+Diode Drive has a [Direct Connect](https://diode.io/diodedrive/diodedriveupdate-directconnect-22033/) feature that directly connects Team Members.  This is often the case, for example, when working together in the same office.  With Direct Connections, file transfers and communications can be much faster, Internet bandwidth usage is reduced, and the footprint of encrypted traffic is minimized.
 
-Diode Drive’s file synchronization behaviour is like a "self-custody bit torrent" - Team Members each simultaneously provide parts of a file to a Team Member who is out of date.  This allows file updates to be streamed quickly from many locations at once.  
+Diode Drive’s file synchronization works like a "private bit torrent" - Team Members each simultaneously provide parts of a file to a Team Member who is out of date.  This allows file updates to be rapidly synchronized.  
 
 ## 7)	End to End Encryption
 
 Dropbox uses [user-to-server encryption](https://www.dropboxforum.com/t5/Dropbox-files-folders/end-to-end-encryption/td-p/325994) for transferring files.  The server always terminates the encryption. 
 
-Diode uses [end to end encryption (user to user)](https://support.diode.io/article/pvmzyqlesq-how-it-works) for transferring files, chat, and other communications.  This removes a number of attack vectors that can be used to compromise your information, communications, and team members.
+Diode uses [end to end encryption (user to user)](https://support.diode.io/article/pvmzyqlesq-how-it-works) for transferring files, chat, and other communications.  This removes a number of attack vectors that can be used to compromise your information, communications, or team members.
 
 ## 8)	Share Without the App
 
-[Dropbox allows you to share a file](https://help.dropbox.com/files-folders/share/view-only-access) to someone who does not have Dropbox installed via shared link.  To do this, you must upload the file to Dropbox servers and send the person the https://www.dropbox.com/ -based link to the file.
+[Dropbox allows you to share files and folders read-only](https://help.dropbox.com/files-folders/share/view-only-access) to someone who does not have Dropbox installed via shared link.  To do this, you must upload the file to Dropbox servers and send the person the read-only link to the file.
 
-Diode Drive allows you to [share a link to a file without first uploading to the cloud](https://diode.io/diode%20drive/Share-Files-Without-Uploading-21077/).  Further, you can configure permissions for the share link to allow the recipient to edit the file/folder contents, and you can also customize the sharing page with your [custom organization name and logo](https://support.diode.io/article/ssnzo09rzv-share-page-information). 
+Diode Drive allows you to [share a read or edit link to a file or folder without even uploading to the cloud](https://diode.io/diode%20drive/Share-Files-Without-Uploading-21077/).  Further, you can customize the sharing page with your [custom organization name and logo](https://support.diode.io/article/ssnzo09rzv-share-page-information). 
 
 <hr>
 Diode Drive brings a whole new approach to file storage, synchronization, and collaboration – please [download it](https://diode.io/resources/download/) and let us know what you think!
