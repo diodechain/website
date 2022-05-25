@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Diode Drive Features - Linked Devices, Backups, and Light Zones
+title: Diode Drive Features - Linked Devices, Light Zones, and Backups
 date: 2022-04-27 23:12
 categories: [DiodeDrive]
 tags: [Diode, Diode Drive, P2P]
