@@ -44,7 +44,7 @@ Diode Drive is committed to your right to keep your identity separate from your 
 
 Dropbox stores your information on [cloud servers](https://help.dropbox.com/accounts-billing/security/physical-location-data-storage) which are located in a limited number of regions and have restrictions on data migration.
 
-Diode Drive is a [self-custody solution](https://diode.io/diode%20drive/self-custody-for-data-22032/) – information access and storage is provided by your Zone’s Team Members – no additional data footprint is created.  You can locate a Team Member (including backup devices) in any location you wish.  Also, you have the flexibility of including cloud based servers (for faster access) or limiting the Zone to just the devices and IT assets that comply with your information security goals.  
+Diode Drive is a [self-custody solution](https://diode.io/diode%20drive/self-custody-for-data-22032/) – storage is provided by your Zone’s Team Members – no additional data footprint is created.  You can locate a Team Member (including backup devices) in any location you wish.  Also, you have the flexibility of including cloud based servers (for faster access) or limiting the Zone to just the devices and IT assets that comply with your information security goals.  
 
 Further, since Diode Drive connection routing uses a decentralized network, the information in the Diode Drive Zone can be accessed securely by Team Members from any part of the world.
 
