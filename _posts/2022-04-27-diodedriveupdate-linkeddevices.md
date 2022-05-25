@@ -24,14 +24,6 @@ This capability is common in web applications, but since Diode Drive is a fully 
 
 A Diode Drive Zone can be operated in [Light Zone](https://support.diode.io/article/e90ihyvxq6) mode wherein the Zone’s files are not always synchronized to the device.  This is often the desired mode for computers or phones that need access to the Zone’s information, but don’t want to store all the Zone’s files on their local storage.
 
-Light Zone mode is default for other Linked Devices on the Account.  When a new Zone is created by one Linked Device, it will be automatically added to the other Linked Devices for the Account in “Light Zone” mode.
-
-In Light Zone mode, the “File Syncing” Zone option is disabled. 
-
-<p align="center"><img src="images/blog/light-zone-setting.png"></p>
-
-Because File Syncing is disabled, the Light Zone will not automatically synchronize files in the Zone.  However, if a file is opened, the file will automatically be downloaded to the device, and if a file is added by the device in Light Zone mode, the new file will be automatically synchronized to the Zone.  All other functions (chat, file view, settings) work the same as a Zone in normal mode.  
-
 In the Zone Picker bar, Light Zones are depicted with a non-sync icon in the lower right portion of the Zone icon.
 
 <p align="center"><img src="images/blog/light-zone-icon.png"></p>
@@ -44,5 +36,6 @@ Diode Drive 1.4.10 and later allows a device to operate as a backup device by tu
 
 <p align="center"><img src="images/blog/deleted-files-backup.png"></p>
 
-While normal Team Members can operate their device(s) in backup mode, Diode recommends a special [backup Team Member device be created](https://support.diode.io/article/x859ax5avc-backup-confidential-files) that is intended for that purpose.  This backup device should be located in a secure location, ideally one that has physical security and that is offsite from any normal hub of operations.  Organizations with critical data may want to operate more than one backup device, as is common in enterprise IT systems.
+<hr>
+These are just a few of the recent new Diode Drive features - we hope you'll [try Diode Drive out](https://diode.io/download) and use it to reclaim your information sovereignty!
 
