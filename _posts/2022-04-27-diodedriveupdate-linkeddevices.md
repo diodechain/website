@@ -18,7 +18,7 @@ A Diode Drive user often needs to access their Account from more than one device
 
 <p align="center"><img src="images/blog/linked-device-list.png"></p>
 
-This capability is common in web applications, but since Diode Drive is a fully decentralized self-custodial solution (Diode has no access to your Account or your data), a key difference is that every user, upon signing up, should make sure to [save their Backup Code in a safe location](https://support.diode.io/article/l7noragxyj).
+This capability is common in web applications, but since Diode Drive is a fully decentralized self-custodial solution (Diode has no access to your Account or your data), a key difference is that every user, upon signing up, should make sure to [save their Backup Code in a safe location](https://support.diode.io/article/l7noragxyj).  
 
 # Light Zones
 
