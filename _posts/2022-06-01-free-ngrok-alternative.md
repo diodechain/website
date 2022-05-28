@@ -14,7 +14,7 @@ Diode offers a free ngrok alternative.
 
 Keep reading to understand how you can use the Diode CLI for free to accomplish many of the same use cases as the top ngrok paid plan.
 
-# How the Diode CLI is a free ngrok alternative
+# How the Diode CLI can be used as a free ngrok alternative
 
 ## 1)	Cost
 
