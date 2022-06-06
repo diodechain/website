@@ -64,7 +64,7 @@ You can contact ngrok to specify a [custom ingress domain](https://ngrok.com/doc
 Anyone can host a Diode Network [relay server](https://github.com/diodechain/diode_server) and configure domains for it.  The [Diode CLI’s “diodeaddrs” parameter](https://support.diode.io/article/josr6wwh5e-go-client-commands) specifies acceptable relay servers for each agent/client.
 
 <hr>
-</br>
+<br/>
 As we hope you can see above, the Diode Network is a powerful Web3 communications network that enables a whole host of peer-to-peer applications!  Although ngrok does have [additional features](https://ngrok.com/pricing) (click “Full Feature Breakdown”) that some applications might require, your application may be perfectly suited to using the Diode Network/CLI as a free ngrok alternative.
 
 Please feel free to [download the Diode CLI](https://diode.io/download) and [try it out](https://support.diode.io/article/lsr4tkzz8t-getting-started) and [let us know what you think](https://t.me/diode_chain)!
