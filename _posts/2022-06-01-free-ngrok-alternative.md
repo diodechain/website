@@ -49,7 +49,7 @@ The Diode CLI uses [end to end encryption by default](https://support.diode.io/a
 
 One custom [ngrok.io subdomain](https://ngrok.com/docs/secure-tunnels#http-tunnels-subdomain) or [full domain](https://ngrok.com/docs/secure-tunnels#http-tunnels-custom-domains) is available per paid license.
 
-The Diode CLI allows you to assign a [BNS name](https://support.diode.io/article/5nsoxvhug1-what-is-bns) that is a fully decentralized domain name.  All BNS names are hosted as subdomains on diode.link and can be used to access any ports/services published publicly.  Further, if you want to use a full domain name, it is easy to [configure a custom full Web2 domain name](https://support.diode.io/article/6pctb40wj8-configure-a-custom-domain-for-diode).
+The Diode CLI allows you to assign a [BNS name](https://support.diode.io/article/5nsoxvhug1-what-is-bns) that is a fully decentralized domain name.  All BNS names are hosted as subdomains on diode.link and can be used to access any ports/services published publicly.  Further, if you want to use a full domain name (e.g. [for decentralized web hosting](https://diodechain.github.io/website_dev/web3/decentralized-web-hosting-22074/)), it is easy to [configure a custom full Web2 domain name](https://support.diode.io/article/6pctb40wj8-configure-a-custom-domain-for-diode).
 
 ## 7)	Self Host
 
