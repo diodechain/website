@@ -65,6 +65,8 @@ Anyone can host a Diode Network [relay server](https://github.com/diodechain/dio
 
 <hr>
 <br/>
-As we hope you can see above, the Diode Network is a powerful Web3 communications network that enables a whole host of peer-to-peer applications!  Although ngrok does have [additional features](https://ngrok.com/pricing) (click “Full Feature Breakdown”) that some applications might require, your application may be perfectly suited to using the Diode Network/CLI as a free ngrok alternative.
+As we hope you can see, the Diode Network is a powerful Web3 communications network that enables a whole host of peer-to-peer applications!  
+  
+Although ngrok does have [additional features](https://ngrok.com/pricing) (click “Full Feature Breakdown”) that some applications might require, your application may be perfectly suited to using the Diode Network/CLI as a free ngrok alternative.
 
 Please feel free to [download the Diode CLI](https://diode.io/download) and [try it out](https://support.diode.io/article/lsr4tkzz8t-getting-started) and [let us know what you think](https://t.me/diode_chain)!
