@@ -218,36 +218,36 @@ d-drive:
   icon: images/diode-drive.png
   thank-you-for-downloading: 'products/d-drive/thanks/'
   learn-more: 'products/d-drive/'
-  download-base: https://github.com/diodechain/diode_drive_feedback/releases/download/v1.0.0/
+  download-base: https://share.diode.link/download/drive-uu7nc1mj9pk4nv2vghsc/tkxxutdr5x6vj52v/
   downloads:
   - title: <i class="fab fa-apple"></i> MacOS X
-    link: dDrive-1.4.7.dmg
+    link: dDrive-1.6.3.dmg
     name: MacOS
     id: macos
 
   - title: <i class="fab fa-windows"></i> Windows (64-bit)
-    link: dDrive-1.4.8-win32.exe
+    link: dDrive-1.6.3-win32.exe
     name: Windows (64-bit)
     id: windows
-    sha: a0e64efe3d664e1e1afbe72a8d69342559406975
+    sha: 10bf7e8c2f1ceb6b7232464fa4840724efee254d
 
   - title: <i class="fab fa-linux"></i> Linux (64-bit)
-    link: dDrive-1.4.7-linux-x86_64.run
+    link: dDrive-1.6.3-linux-x86_64.run
     name: Linux (64-bit)
     id: linux
-    sha: 30641724f344d5d297a4fc294e83a937ee2b7efe
+    sha: 9e9d6e93c5ac0fa1e46552e911c1a8b02030c09c
 
   - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM 32-bit)
     link: dDrive-1.2.1-linux-armv7l.run
     name: Raspberry Pi / ARM 32bit
     id: raspberry-pi
-    sha: 2eb261b846adc113d2adf3deaadd9a1b1e6dc6fa
+    sha: 140daf2af4d1656cba3f6edd4b39f5c8b1eac9c9
 
-  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM 32-bit)
+  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM 64-bit)
     link: dDrive-1.2.1-linux-aarch64.run
     name: Raspberry Pi / ARM 64bit
     id: raspberry-pi-64
-    sha: 3755fd7834944b67ca9c6a13fff631757b1bd1ed
+    sha: 6aa7b5189d3d05cb36b960117375aff61b9e45a0
 
   - title: <i class="fab fa-ios"></i> iOS
     ext-link: https://apps.apple.com/us/app/diode-drive/id1605222443
