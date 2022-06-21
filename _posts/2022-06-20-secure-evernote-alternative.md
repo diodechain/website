@@ -21,8 +21,8 @@ You need seven things for a good, secure note taking experience:
 3. Affordable price
 4. Secure sync
 5. No application data leakage
-6. Share and collaborate
-7. Link to other notes
+6. Sharing and collaboration
+7. Links to other notes
 
 Diode Drive has had six of seven of these for some time, so we recently added #2 – Visual editor to complete the use case!  
 
