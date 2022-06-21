@@ -24,7 +24,7 @@ You need seven things for a good, secure note taking experience:
 6. Share and collaborate
 7. Link to other notes
 
-Diode Drive has had six of seven of these for some time, so we recently added #4 – Visual editor to complete the use case!  
+Diode Drive has had six of seven of these for some time, so we recently added #2 – Visual editor to complete the use case!  
 
 ## 1)	Cross-platform application
 
