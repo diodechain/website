@@ -10,7 +10,7 @@ imageclass: top
 ---
 [Diode Drive](https://diode.io/products/d-drive) can be used as a secure note taking application for multiple devices.  Many of us at Diode are ex Evernote users, and have been frustrated with the lack of quality [secure Evernote alternatives](https://dataoverhaulers.com/secure-note-taking-apps/).
 
-At Diode, we feel that, for the first time ever, confidential/sensitive information can be quickly, conveniently, and securely stored in our notes.  Read below for how Diode Drive can be used a secure Evernote alternative!
+With Diode Drive's recent introduction of a note editor, we feel for the first time ever that confidential/sensitive information can be quickly, conveniently, and securely stored in our notes.  Read below for how Diode Drive can be used a secure Evernote alternative!
 
 # Use Diode Drive as a Secure Evernote Alternative
 
