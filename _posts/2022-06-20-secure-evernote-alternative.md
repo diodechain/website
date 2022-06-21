@@ -3,7 +3,7 @@ layout: post
 title: Secure Evernote Alternative
 date: 2022-06-20 15:55
 categories: [Diode Drive]
-tags: [Web3, Self-Custody, Notes, Team, Office Tools, Collaboration]
+tags: [Self-Custody, Web3, Notes, Team, Office Tools, Collaboration]
 author: Hans R
 image: secure-evernote-alternative.png
 imageclass: top
