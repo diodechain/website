@@ -9476,6 +9476,7 @@ body.prenet th.fleet {
 }
 
 body.prenet table {
+  table-layout: fixed;
   border-top: 0 !important;
 }
 
@@ -9548,6 +9549,11 @@ body.prenet table.inner tr th {
 
 body.prenet table.data tr:nth-child(2n) {
   background-color: #f2f2f2;
+}
+
+body.prenet table.data tr.active {
+  background-color: #ddd;
+  border: 3px solid #d6442e;
 }
 
 body.prenet table.data th,

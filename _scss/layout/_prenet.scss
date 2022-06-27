@@ -267,6 +267,7 @@ body.prenet {
   }
 
   table {
+    table-layout: fixed;
     border-top: 0 !important;
     caption {
       text-align: left;
@@ -344,6 +345,11 @@ body.prenet {
     &.data {
       tr:nth-child(2n) {
         background-color: #f2f2f2;
+      }
+
+      tr.active {
+        background-color: #ddd;
+        border: 3px solid #d6442e;
       }
 
       th,

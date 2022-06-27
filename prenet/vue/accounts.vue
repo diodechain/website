@@ -21,7 +21,7 @@
     </div>
     <div class="column page-content">
       <div v-if="filter === ACCOUNTS_ALL_FILTER" class="graphs">
-        <figure class="left">
+        <figure>
           <div class="row">
             <div class="col-md-12">
               <h2 class="headline">Top Accounts by Balance</h2>
@@ -58,62 +58,6 @@
                 <circle
                   v-for="acc in accountsByBalance"
                   :key="acc.balanceValue"
-                  class="donut-segment"
-                  cx="21"
-                  cy="21"
-                  r="15.91549430918954"
-                  fill="transparent"
-                  v-bind:stroke="acc.color"
-                  stroke-width="32"
-                  v-bind:stroke-dasharray="acc.stroke"
-                  v-bind:stroke-dashoffset="acc.offset"
-                  aria-labelledby="donut-segment-1-title donut-segment-1-desc"
-                >
-                  <title id="donut-segment-1-title"><% acc.id || acc.name %></title>
-                  <desc id="donut-segment-1-desc">Segment spanning <% acc.percent %>% of the whole</desc>
-                </circle>
-              </svg>
-            </div>
-          </div>
-        </figure>
-        <figure class="right">
-          <div class="row">
-            <div class="col-md-12">
-              <h2 class="headline">Top Accounts by Stake</h2>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 col-md-offset-1">
-              <figcaption class="figure-key">
-                <ul class="figure-key-list long" aria-hidden="true" role="presentation">
-                  <li v-for="acc in accountsByStake" :key="acc.stakeValue">
-                    <span class="shape-square" v-bind:style="{ backgroundColor: acc.color }"></span>
-                    <div class="figure-legend">
-                      <div class v-if="acc.id">
-                        <account-link :hash="acc.id" :only-alias="true" :length="10"></account-link>
-                      </div>
-                      <span class="ul1" v-if="acc.name"><% acc.name %></span>
-                      <span class="ul2"><% Math.round(acc.stakeValue) %> DIODE</span>
-                    </div>
-                  </li>
-                </ul>
-              </figcaption>
-            </div>
-            <div class="figure-content col-md-5">
-              <svg
-                width="100%"
-                height="100%"
-                viewBox="0 0 42 42"
-                class="donut"
-                aria-labelledby="beers-title beers-desc"
-                role="img"
-              >
-                <title class="graph-title">Accounts balances Stats</title>
-                <desc class="graph-desc">Donut chart of the top accounts</desc>
-                <circle
-                  v-for="acc in accountsByStake"
-                  :key="acc.stakeValue"
                   class="donut-segment"
                   cx="21"
                   cy="21"
@@ -185,7 +129,6 @@
           <th style="width:500px">Account</th>
           <th >Type</th>
           <th>Balance</th>
-          <th>Stake</th>
         </tr>
         <tr :key="id" v-for="(acc, id) in accounts">
           <td>
@@ -193,7 +136,6 @@
           </td>
           <td><% acc["type"] %></td>
           <td><% acc["balanceFormatted"] %></td>
-          <td><% acc["stake"] %></td>
         </tr>
       </table>
     </div>
@@ -295,7 +237,7 @@ var VAccounts = Vue.component("accounts", {
 
       let lazyLoadIndex = 0;
 
-      for (let id in accounts) {
+      for (let id in []) { //accounts) {
         fetchStake(id, (stake) => {
           this.$set(this.accounts[id], "stake", valueToBalance(stake));
           this.$set(

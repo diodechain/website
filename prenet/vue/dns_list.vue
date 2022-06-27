@@ -59,8 +59,8 @@
       </table>
       <div v-else class="row align-start">
         <account-info :height="tableHeight"></account-info>
-        <div class="col-md-9 col-sm-9">
-          <table class="data" v-if="Object.entries(names).length !== 0" id="blockchain-names">
+        <div class="col-md-9 col-sm-9" v-if="Object.entries(names).length !== 0">
+          <table class="data" id="blockchain-names">
             <caption>
               <div class="col-md-12 no-padding">
                 Registered Blockchain Names
@@ -83,34 +83,22 @@
                 </div>
               </div>
             </caption>
+            <colgroup>
+                <col width="20%" />
+                <col width="40%" />
+                <col width="40%" />
+            </colgroup>
             <tr>
               <th>Name</th>
               <th>Destination</th>
               <th>Owner</th>
             </tr>
-            <tr v-bind:key="name.name" v-for="name in sortedNames">
-              <td>
-                <router-link :to="'/dns/' + name.name"><% name.name %></router-link>
-              </td>
-              <td>
-                <span v-if="isAddress(name.destination)">
-                  <account-link :hash="valueToAddress(name.destination)" mode="address"></account-link>
-                </span>
-                <span v-else-if="!name.destination">Loading</span>
-                <span v-else><% name.destination %></span>
-
-                <bns-update :name="name.name" :owner="name.owner"></bns-update>
-              </td>
-              <td>
-                <span v-if="isAddress(name.owner)">
-                  <storage-value v-if="name.owner" :value="name.owner" />
-                </span>
-                <span v-else-if="!name.owner">Loading</span>
-                <span v-else><% name.owner %></span>
-              </td>
-            </tr>
           </table>
-          <table class="data" v-else style="width: 100%">
+          <dns-row v-bind:key="name.name" v-bind:name="name" v-for="[_, name] in sortedNames">
+          </dns-row>
+        </div>
+        <div v-else class="col-md-9 col-sm-9">
+          <table class="data" style="width: 100%">
             <caption>No BNS available</caption>
             <tbody>
               <tr>
@@ -124,6 +112,41 @@
   </div>
 </template>
 <script>
+Vue.component("dns-row", {
+  props: ['name'],
+  delimiters: ["<%", "%>"],
+  template: 
+  `
+  <table class="data">
+  <colgroup>
+      <col width="20%" />
+      <col width="40%" />
+      <col width="40%" />
+  </colgroup>
+  <tr :class="{ active: name.added }">
+    <td>
+      <router-link :to="'/dns/' + name.name"><% name.name %></router-link>
+    </td>
+    <td>
+      <span v-if="isAddress(name.destination)">
+        <account-link :hash="valueToAddress(name.destination)" mode="address"></account-link>
+      </span>
+      <span v-else-if="!name.destination">Loading</span>
+      <span v-else><% name.destination %></span>
+
+      <bns-update :name="name.name" :owner="name.owner"></bns-update>
+    </td>
+    <td>
+      <span v-if="isAddress(name.owner)">
+        <storage-value v-if="name.owner" :value="name.owner" />
+      </span>
+      <span v-else-if="!name.owner">Loading</span>
+      <span v-else><% name.owner %></span>
+    </td>
+  </tr>
+  </table>
+  `
+})
 var DNSList = Vue.component("dns_list", {
   template: document.getElementById("dns_list").innerHTML,
   delimiters: ["<%", "%>"],
@@ -140,14 +163,36 @@ var DNSList = Vue.component("dns_list", {
       searchActivated: false,
       searchFinished: false,
       searchResults: [],
+      sortedNames: [],
       balance: 0,
       tableHeight: 300,
       version: 0,
     };
   },
 
-  computed: {
-    sortedNames () {
+  watch: {
+    enabled () { this.updateSortedNames(); },
+    names () { this.updateSortedNames(); }
+  },
+
+  created: function () {
+    let self = this;
+    getBase(function (base) {
+      self.base = base;
+    });
+
+    CallDNS("Version", [], (vsn) => {
+      this.version = web3.utils.hexToNumber(vsn);
+    });
+
+    this.refreshNames()
+    Wallet.subscribe(this)
+    setInterval(() => {
+      this.refreshNames();
+    }, 2500);
+  },
+  methods: {
+    updateSortedNames: function () {
       let ret = Object.entries(this.names).sort(([key1, value1], [key2, value2]) => {
           if (!value2 || !value1) {
             return false
@@ -165,30 +210,13 @@ var DNSList = Vue.component("dns_list", {
           return key1 > key2
       });
 
-      return Object.fromEntries(ret)
-    }
-  },
+      this.sortedNames = ret
+    },
 
-  created: function () {
-    let self = this;
-    getBase(function (base) {
-      self.base = base;
-    });
-
-    CallDNS("Version", [], (vsn) => {
-      this.version = web3.utils.hexToNumber(vsn);
-    });
-
-    this.refreshNames()
-    Wallet.subscribe(this)
-    setInterval(() => {
-      this.refreshNames();
-    }, 1000);
-  },
-  methods: {
     refreshNames: function () {
       for (key in DNSCache) {
         let name = DNSCache[key].name;
+        if (this.names[name]) continue;
         let entry = {
           name,
           destination: valueToAddress(DNSCache[key].destination),

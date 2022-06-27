@@ -10,37 +10,60 @@ let Wallet = {
 
 Wallet.enable = () => {
     if (Wallet.enabled) return;
+    if (Wallet.initializing) return;
+    Wallet.initializing = true;
     if (!window.ethereum || !window.ethereum.isMetaMask) {
         Wallet.error = "Please install <a href='https://metamask.io/'>MetaMask</a>";
         return;
     }
-    window.ethereum.enable().then((accounts, error) => {
-        if (!accounts || error) {
-            Wallet.error = "Enable error: " + error.toString();
+
+    const data = [{
+        chainId: '0xf',
+        chainName: 'Diode Prenet',
+        nativeCurrency:
+        {
+            name: 'Diodes',
+            symbol: 'DIODE',
+            decimals: 18
+        },
+        rpcUrls: ['wss://prenet.diode.io:8443/ws', 'https://prenet.diode.io:8443/'],
+        blockExplorerUrls: ['https://diode.io/prenet/'],
+    }]
+    window.ethereum.request({ method: 'wallet_addEthereumChain', params: data }).then((what, error) => {
+        if (error) {
+            Wallet.initializing = false;
             return;
         }
-        // let currentChainId = null
-        Wallet.account = valueToAddress(accounts[0]);
-        Wallet.update(true)
+        window.ethereum.enable().then((accounts, error) => {
+            if (!accounts || error) {
+                Wallet.error = "Enable error: " + error.toString();
+                Wallet.initializing = false;
+                return;
+            }
+            // let currentChainId = null
+            Wallet.account = valueToAddress(accounts[0]);
+            Wallet.update(true)
 
-        web3.eth.getBalance(Wallet.account, (err, ret) => {
-            if (err) Wallet.error = err;
-            else Wallet.balance = ret;
+            web3.eth.getBalance(Wallet.account, (err, ret) => {
+                if (err) Wallet.error = err;
+                else Wallet.balance = ret;
+            });
+
+            if (!Wallet.initialized) {
+                Wallet.initialized = true
+                window.ethereum.on("chainChanged", (chainId) =>
+                    Wallet.handleChainChanged(chainId)
+                );
+            }
+            Wallet.handleChainChanged(window.ethereum.networkVersion);
+            Wallet.initializing = false;
+            // Until eth_chainId calls actually works...
+            // window.ethereum
+            //   .send({ method: "eth_chainId" })
+            //   .then((chainId) => Wallet.handleChainChanged(chainId))
+            //   .catch(err => console.error(err))
         });
-
-        if (!Wallet.initialized) {
-            Wallet.initialized = true
-            window.ethereum.on("chainChanged", (chainId) =>
-                Wallet.handleChainChanged(chainId)
-            );
-        }
-        Wallet.handleChainChanged(window.ethereum.networkVersion);
-        // Until eth_chainId calls actually works...
-        // window.ethereum
-        //   .send({ method: "eth_chainId" })
-        //   .then((chainId) => Wallet.handleChainChanged(chainId))
-        //   .catch(err => console.error(err))
-    });
+    })
 }
 Wallet.handleChainChanged = (chainId) => {
     if (chainId != CHAIN_ID) {

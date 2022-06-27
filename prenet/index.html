@@ -248,7 +248,7 @@
             })
         }
         DNSRefresh()
-        subscribe("newBlockHeaders", DNSRefresh)
+        // subscribe("newBlockHeaders", DNSRefresh)
         setInterval(DNSRefresh, 25000)
 
         Vue.component("account-link", {
