@@ -27,7 +27,7 @@ Wallet.enable = () => {
             decimals: 18
         },
         rpcUrls: ['wss://prenet.diode.io:8443/ws', 'https://prenet.diode.io:8443/'],
-        blockExplorerUrls: ['https://diode.io/prenet/'],
+        blockExplorerUrls: ['https://diode.io/prenet/#/'],
     }]
     window.ethereum.request({ method: 'wallet_addEthereumChain', params: data }).then((what, error) => {
         if (error) {
