@@ -92,6 +92,15 @@
         },
         {
             name: false,
+            path: '//tx/:hash',
+            params: {
+                hash: '0x1'
+            },
+            component: Transaction,
+            props: true
+        },
+        {
+            name: false,
             path: '/tx/:hash',
             params: {
                 hash: '0x1'
@@ -114,6 +123,15 @@
             component: Block,
             props: true
         },
+        {
+            name: false,
+            path: '//block/:number',
+            params: {
+                number: 'latest'
+            },
+            component: Block,
+            props: true
+        },
 
         {
             name: 'Accounts',
@@ -123,6 +141,15 @@
         {
             name: false,
             path: '/address/:hash',
+            params: {
+                hash: Registry
+            },
+            component: VAccount,
+            props: true
+        },
+        {
+            name: false,
+            path: '//address/:hash',
             params: {
                 hash: Registry
             },
