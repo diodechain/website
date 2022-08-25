@@ -6157,7 +6157,9 @@ section.products-pricing-section .plans .plan {
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 30px;
 }
 
