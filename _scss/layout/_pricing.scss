@@ -137,10 +137,9 @@ section.products-pricing-section {
         border-radius: 5px;
         padding: 25px;
         text-align: center;
-        height: 460px;
+        height: 540px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         margin-bottom: 30px;
   
         &__title {
@@ -171,6 +170,7 @@ section.products-pricing-section {
         }
 
         &__action {
+          margin-top:auto;
           &>.button {
             width: 100%;
             text-transform: uppercase;
