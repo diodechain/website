@@ -14,6 +14,8 @@
 2. To build: `jekyll build`
 3. To serve to localhost:4000: `jekyll serve --livereload`
 
+Note: If step 2 or 3 fails, prepending `bundle exec` to the commands may solve the issue.
+
 <br>
 <hr>
 <br>
