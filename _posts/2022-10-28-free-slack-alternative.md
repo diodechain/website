@@ -16,7 +16,7 @@ Read below for how Diode can not only be used a free Slack alternative, but also
 
 # What Features are Important in a Free Slack Alternative?
 
-Chat has become an indispensable tool for work and personal communications.  Some key features that make or break a chat application are simple!  
+Chat has become an indispensable tool for work and personal communications.  Some key features that make or break a team chat application are simple!  
 
 Let’s dig in.
 
