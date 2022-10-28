@@ -3,7 +3,7 @@ layout: post
 title: Free Slack Alternative
 date: 2022-10-28 16:44
 categories: [Diode Drive]
-tags: [Self-Custody, Web3, Chat, Team, Office Tools, Collaboration]
+tags: [Collaboration, Self-Custody, Web3, Chat, Team, Office Tools]
 author: Hans Rempel
 image: free-slack-alternative.png
 imageclass: top
