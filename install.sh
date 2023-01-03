@@ -63,6 +63,7 @@ is_supported_platform() {
     darwin/amd64) found=0 ;;
     darwin/386) found=0 ;;
     linux/arm) found=0 ;;
+    linux/arm64) found=0 ;;
     linux/amd64) found=0 ;;
     linux/386) found=0 ;;
     windows/amd64) found=0 ;;
