@@ -34,7 +34,7 @@ parse_args() {
 # out preventing half-done work
 execute() {
   TMPDIR=$(mktmpdir)
-  echo "$PREFIX: downloading ${TARBALL_URL}"
+  echo "$PREFIX: downloading ${TARBALL_URL} to ${TMPDIR}/${TARBALL}"
   http_download "${TMPDIR}/${TARBALL}" "${TARBALL_URL}"
 
   (cd "${TMPDIR}" && untar "${TARBALL}")
