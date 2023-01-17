@@ -1,6 +1,12 @@
 node_modules/
 resources/*.xcf
-.vscode/
-_site/
+
+.vscode
+.idea
+.jekyll-cache
+
+_psd
+_site
+
 .history/
 *.xcf
