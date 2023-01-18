@@ -1,0 +1,177 @@
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+  font-size: 17px;
+  line-height: 18px;
+  cursor: default;
+  @include media-breakpoint-up(md) {
+    padding: 0;
+  }
+
+  .container {
+    padding-top: 51px;
+    padding-bottom: 50px;
+    position: relative;
+    @include media-breakpoint-up(md) {
+      padding-top: 50px;
+    }
+    @include media-breakpoint-up(lg) {
+      padding-top: 77px;
+    }
+
+    &::before {
+      @include pseudo;
+      width: 76px;
+      height: 4px;
+      position: absolute;
+      top: 0;
+      left: 24px;
+      background: $color-orange;
+    }
+  }
+
+  .col {
+    margin-bottom: 50px;
+    &:first-of-type {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include media-breakpoint-up(xl) {
+        padding-right: 60px;
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    margin: 0 0 50px;
+
+    img {
+      width: 129px;
+      display: block;
+      user-select: none;
+    }
+  }
+
+  &__nav {
+    width: 38.5%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font: 600 16px/24px $font-heading;
+    float: left;
+
+    a {
+      color: $color-orange;
+      text-decoration: none;
+      transition: color $effect-s;
+      @media (hover: hover) {
+        &:hover, &:focus {color: black;}
+      }
+    }
+  }
+
+  &__security {
+    @include media-breakpoint-up(lg) {
+      margin-top: 12px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-right: -30px;
+      margin-left: 8px;
+    }
+  }
+
+  h4 {
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 31px;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 50px;
+    }
+  }
+
+  p {
+    margin: 0;
+    &:not([class]) {
+      margin-right: 2px;
+      margin-left: 4px;
+    }
+  }
+
+  .social {
+    margin-top: 50px;
+    position: relative;
+    @include media-breakpoint-down(sm) {
+      left: 3px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: 56px;
+      margin-left: 10px;
+    }
+
+    li {margin-left: 48px;}
+  }
+
+  .newsletter {
+    width: 100%;
+    max-width: 283px;
+    display: block;
+    @include media-breakpoint-down(md) {
+      padding-top: 20px;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-top: 12px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-left: -19px;
+    }
+
+    .form-heading {
+      margin-bottom: 51px;
+      font: 600 25px/30px $font-heading;
+      @include media-breakpoint-up(md) {
+        margin-bottom: 31px;
+      }
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 50px;
+      }
+    }
+
+    .form-control, .btn {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .copyright {
+    margin: -7px 0 0;
+    font-size: 9px;
+    line-height: 14px;
+    letter-spacing: .02em;
+    color: $color-indigo;
+    @include media-breakpoint-up(md) {
+      margin: 0;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 13px;
+      line-height: 20px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: 21px;
+    }
+
+    a {
+      text-decoration: none;
+      @media (hover: hover) {
+        &:hover, &:focus {text-decoration: underline;}
+      }
+    }
+  }
+}

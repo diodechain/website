@@ -1,0 +1,32 @@
+/* ==========================================================================
+   HEADLINE
+   ========================================================================== */
+.headline {
+  margin: 80px 0;
+  text-align: center;
+  @include media-breakpoint-up(xl) {
+    margin: -80px 0 110px;
+  }
+  @include media-breakpoint-up(xxl) {
+    margin-top: 110px;
+  }
+
+  p {
+    margin: -4px 0;
+    font: 800 italic 26px/32px $font-heading;
+    @include media-breakpoint-up(md) {
+      margin: 0;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 40px;
+      line-height: 50px;
+    }
+    @include media-breakpoint-up(xxl) {
+      position: relative;
+      top: -44px;
+    }
+    @include media-breakpoint-up(xxxl) {
+      top: -52px;
+    }
+  }
+}

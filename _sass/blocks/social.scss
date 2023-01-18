@@ -1,0 +1,38 @@
+/* ==========================================================================
+   SOCIAL
+   ========================================================================== */
+.social {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  user-select: none;
+
+  li {
+    margin-left: 50px;
+    &:first-child {margin-left: 0;}
+  }
+
+  a {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (hover: hover) {
+      &:hover, &:focus {
+        svg path {fill: black;}
+      }
+    }
+  }
+
+  svg {
+    display: block;
+    path {
+      fill: $color-orange;
+      transition: fill $effect;
+    }
+  }
+}

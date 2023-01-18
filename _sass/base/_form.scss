@@ -1,0 +1,184 @@
+.form-group {
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.form-label {
+  margin: 0 0 16px;
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.form-control {
+  min-width: 200px;
+  padding: 16px 32px;
+  border: 2px solid black;
+  border-radius: 28px;
+  font: 13px/20px $font-default;
+  display: inline-block;
+  vertical-align: top;
+  color: $color-dark;
+  background: white;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: none !important;
+
+  &::-webkit-input-placeholder { color: $color-dark; transition: opacity $effect-s; }
+  &:-moz-placeholder { color: $color-dark; transition: opacity $effect-s; }
+  &::-moz-placeholder { color: $color-dark; transition: opacity $effect-s; }
+  &:-ms-input-placeholder { color: $color-dark; transition: opacity $effect-s; }
+  &::-ms-input-placeholder { color: $color-dark; transition: opacity $effect-s; }
+  &::placeholder { color: $color-dark; transition: opacity $effect-s; }
+
+  &:focus {
+    &::-webkit-input-placeholder { opacity: 0; }
+    &:-moz-placeholder { opacity: 0; }
+    &::-moz-placeholder { opacity: 0; }
+    &:-ms-input-placeholder { opacity: 0; }
+    &::-ms-input-placeholder { opacity: 0; }
+    &::placeholder { opacity: 0; }
+  }
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+.form-checkbox, .form-radio {
+  padding: 1px 13px 1px 39px;
+  margin: 5px 20px 0 0;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  user-select: none;
+  font: 600 16px/24px $font-default;
+  color: $color-indigo;
+
+  input[type="checkbox"], input[type="radio"] {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+
+    &:checked {
+      ~ .dot {
+        background: white;
+        &::before { opacity: 1; transform: scale(1); }
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    &:checked {
+      ~ .dot {
+        &::before { opacity: 1;}
+      }
+    }
+  }
+
+  .dot {
+    width: 25px;
+    height: 25px;
+    margin: auto 0;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    background: white;
+    transition: background-color $effect;
+    backface-visibility: hidden;
+
+    &::before {
+      @include pseudo;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      z-index: 2;
+      background: url($icon-checkbox) no-repeat center center;
+      transition: opacity $effect;
+      backface-visibility: hidden;
+    }
+    &::after {
+      @include pseudo;
+      border: 2px solid $color-indigo;
+      margin: auto;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      z-index: 1;
+      backface-visibility: hidden;
+    }
+  }
+}
+
+.form-radio {
+  .dot {
+    &:before {
+      border-radius: 50%;
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      right: 7px;
+      bottom: 7px;
+      background: $color-blue;
+    }
+    &:after {
+      border-radius: 50%;
+    }
+  }
+}
+
+.btn {
+  padding: 14px 46px;
+  border: 2px solid $color-orange;
+  border-radius: 28px;
+  display: inline-block;
+  position: relative;
+  font: 16px/24px $font-default;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: top;
+  text-align: center;
+  background: $color-orange;
+  transition: border-color $effect, background-color $effect;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+
+  @media (hover: hover) {
+    &:hover, &:focus {
+      border-color: black;
+      background-color: black;
+    }
+  }
+
+  &--bordered {
+    overflow: hidden;
+    z-index: 1;
+    border-color: black;
+    color: black;
+    background: none;
+    -webkit-backface-visibility: hidden;
+
+    @media (hover: hover) {
+      &:hover, &:focus {
+        border-color: var(--color);
+        color: white;
+        background: none;
+        &::before {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
