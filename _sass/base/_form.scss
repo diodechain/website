@@ -137,6 +137,7 @@ textarea.form-control {
 }
 
 .btn {
+  min-width: 140px;
   padding: 10px 20px;
   border: 2px solid $color-orange;
   border-radius: 28px;
@@ -155,7 +156,8 @@ textarea.form-control {
   cursor: pointer;
   outline: none;
   user-select: none;
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(md) {
+    min-width: 189px;
     padding: 14px 28px;
     font-size: 16px;
     line-height: 24px;
@@ -168,7 +170,30 @@ textarea.form-control {
   &--bordered {
     background-color: transparent;
     @media (hover: hover) {
-      &:hover, &:focus {border-color: white;background-color: transparent;}
+      &:hover, &:focus {
+        border-color: white;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &--blank {
+    min-width: 0;
+    padding: 12px 4px;
+    border: none;
+    border-radius: 0;
+    color: $color-orange;
+    background-color: transparent;
+    transition: color $effect;
+    @include media-breakpoint-up(xl) {
+      padding: 16px 12px;
+    }
+    @media (hover: hover) {
+      &:hover, &:focus {
+        border-color: transparent;
+        color: black;
+        background-color: transparent;
+      }
     }
   }
 }

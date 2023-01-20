@@ -201,18 +201,5 @@
       margin-bottom: 0;
       &::before {width: 385px;margin-top: -450px;margin-left: -385px;}
     }
-
-    & + .headline {
-      @include media-breakpoint-up(sm) {
-        margin-top: -120px;
-      }
-      @include media-breakpoint-up(md) {
-        margin-top: -140px;
-      }
-      @include media-breakpoint-up(xl) {
-        margin-top: -142px;
-        left: 28px;
-      }
-    }
   }
 }

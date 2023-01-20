@@ -9,13 +9,15 @@ html {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  font: 16px/30px $font-default;
+  font: 16px/17px $font-default;
   background: white;
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: scrollbar;
-  &[style="overflow: hidden;"] {
-    height: auto;
+  @include media-breakpoint-up(xl) {
+    font-size: 22px;
+    line-height: 24px;
   }
+  &[style="overflow: hidden;"] {height: auto;}
 }
 
 body {
@@ -48,7 +50,10 @@ a {
 }
 
 p, ul, ol, dl {
-  margin: 0 0 30px;
+  margin: 0 0 17px;
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 24px;
+  }
 }
 
 ul, ol {
@@ -56,7 +61,7 @@ ul, ol {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+  margin: 0 0 .5em;
   font-family: $font-heading;
   font-weight: 600;
 }
@@ -69,11 +74,29 @@ h1 {
     line-height: 76px;
   }
   @include media-breakpoint-up(xl) {
+    font-size: 90px;
+    line-height: 88px;
+  }
+  @include media-breakpoint-up(xxl) {
     font-size: 110px;
     line-height: 99px;
   }
 }
 h2 {
+  font-size: 42px;
+  line-height: 38px;
+  @include media-breakpoint-up(md) {
+    font-size: 56px;
+    line-height: 54px;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 64px;
+    line-height: 64px;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: 85px;
+    line-height: 90px;
+  }
 }
 h3 {
 }

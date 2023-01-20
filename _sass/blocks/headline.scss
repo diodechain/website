@@ -3,7 +3,7 @@
    ========================================================================== */
 .headline {
   padding: 100px 15px;
-  margin: 0 -15px 120px;
+  margin: 0 -15px 95px;
   font: 16px/17px $font-default;
   color: black;
   display: flex;
@@ -21,6 +21,7 @@
     padding: 40px 50px;
     border-radius: 120px;
     margin-right: -15px;
+    margin-bottom: 120px;
     margin-left: -15px;
     position: relative;
     z-index: 2;
@@ -34,9 +35,10 @@
   @include media-breakpoint-up(xl) {
     max-width: 925px;
     min-height: 291px;
-    padding: 30px 127px 25px 98px;
+    padding: 30px 125px 25px 96px;
     border-radius: 145px;
     margin-top: 0;
+    margin-bottom: 174px;
     font-size: 22px;
     line-height: 24px;
     background: $color-orange;
@@ -64,6 +66,12 @@
   &__content {
     position: relative;
     z-index: 2;
+    @include media-breakpoint-up(xss) {
+      left: 4px;
+    }
+    @include media-breakpoint-up(sm) {
+      left: auto;
+    }
   }
 
   &__title {
@@ -77,5 +85,19 @@
 
   p {
     margin: 0;
+  }
+
+  .hero--index + & {
+    @include media-breakpoint-up(sm) {
+      margin-top: -120px;
+    }
+    @include media-breakpoint-up(md) {
+      margin-top: -140px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: -143px;
+      margin-bottom: 272px;
+      left: 28px;
+    }
   }
 }
