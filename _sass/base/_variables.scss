@@ -6,6 +6,7 @@ $min-width: 320px;
 // Media Breakpoints
 $grid-breakpoints: (
   xs: 0,
+  xss: 360px,
   xsm: 375px,
   xsl: 420px,
   sm: 576px,
@@ -21,13 +22,11 @@ $img: '../img';
 
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 $font-default: 'IBM Plex Mono', monospace;
 $font-heading: 'Poppins', sans-serif;
 
 // Colors
-
-
 $color-orange: #f15d2f;
 $color-indigo: #1e2739;
 $color-dark: #161c2a;

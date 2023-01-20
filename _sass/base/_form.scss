@@ -137,48 +137,38 @@ textarea.form-control {
 }
 
 .btn {
-  padding: 14px 46px;
+  padding: 10px 20px;
   border: 2px solid $color-orange;
   border-radius: 28px;
   display: inline-block;
   position: relative;
-  font: 16px/24px $font-default;
+  font: 12px/18px $font-default;
   color: white;
+  letter-spacing: .02em;
   text-decoration: none;
   text-transform: uppercase;
   vertical-align: top;
+  white-space: nowrap;
   text-align: center;
   background: $color-orange;
   transition: border-color $effect, background-color $effect;
   cursor: pointer;
   outline: none;
   user-select: none;
+  @include media-breakpoint-up(xl) {
+    padding: 14px 28px;
+    font-size: 16px;
+    line-height: 24px;
+  }
 
   @media (hover: hover) {
-    &:hover, &:focus {
-      border-color: black;
-      background-color: black;
-    }
+    &:hover, &:focus {border-color: black;background-color: black;}
   }
 
   &--bordered {
-    overflow: hidden;
-    z-index: 1;
-    border-color: black;
-    color: black;
-    background: none;
-    -webkit-backface-visibility: hidden;
-
+    background-color: transparent;
     @media (hover: hover) {
-      &:hover, &:focus {
-        border-color: var(--color);
-        color: white;
-        background: none;
-        &::before {
-          width: 100%;
-          opacity: 1;
-        }
-      }
+      &:hover, &:focus {border-color: white;background-color: transparent;}
     }
   }
 }

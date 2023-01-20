@@ -2,5 +2,217 @@
    HERO
    ========================================================================== */
 .hero {
-  display: none;
+  padding: 152px 0 68px;
+  color: white;
+  position: relative;
+  z-index: 1;
+  cursor: default;
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-up(md) {
+    padding-bottom: 90px;
+  }
+  @include media-breakpoint-up(xl) {
+    padding-top: 219px;
+    padding-bottom: 113px;
+    margin-bottom: 146px;
+  }
+
+  &::before {
+    @include pseudo;
+    width: 57.5%;
+    height: 570px;
+    margin-top: -83px;
+    position: absolute;
+    top: 100%;
+    right: -25px;
+    z-index: -1;
+    background: url('#{$img}/hero.png') no-repeat top left;
+    background-size: 421px 570px;
+    @include media-breakpoint-up(sm) {
+      width: 405px;
+      margin-top: -170px;
+      margin-left: -405px;
+      right: auto;
+      left: 50%;
+      transform: translateX(50vw);
+    }
+    @include media-breakpoint-up(md) {
+      margin-top: -220px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: -375px;
+    }
+  }
+  &::after {
+    @include pseudo;
+    position: absolute;
+    top: 0;
+    right: -15px;
+    bottom: 0;
+    left: -15px;
+    z-index: -5;
+    background: #272d2d url('#{$img}/hero/default.jpg') no-repeat 32.5% bottom;
+    background-size: cover;
+    @include media-breakpoint-up(xss) {
+      right: -25px;
+      left: -25px;
+    }
+    @include media-breakpoint-up(sm) {
+      width: 100vw;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      background-position: center bottom;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    padding-bottom: 59px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+    line-height: 17px;
+    @include media-breakpoint-up(xl) {
+      padding-bottom: 64px;
+      font-size: 22px;
+      line-height: 24px;
+    }
+
+    &::after {
+      @include pseudo;
+      width: 76px;
+      height: 4px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: $color-orange;
+      @include media-breakpoint-up(xss) {
+        left: -6px;
+      }
+      @include media-breakpoint-up(md) {
+        left: 0;
+      }
+      @include media-breakpoint-up(xl) {
+        left: 9px;
+      }
+    }
+  }
+
+  &__preheading {
+    margin-bottom: 24px;
+    color: rgba(white, .8);
+    order: 1;
+    @include media-breakpoint-up(xl) {
+      margin-top: 38px;
+      margin-bottom: 16px;
+      margin-left: 10px;
+      color: white;
+    }
+  }
+
+  &__heading {
+    margin: 0;
+    order: 2;
+    user-select: none;
+  }
+
+  &__buttons {
+    margin-top: 33px;
+    position: relative;
+    display: flex;
+    order: 3;
+    @include media-breakpoint-up(xss) {
+      left: -5px;
+    }
+    @include media-breakpoint-up(md) {
+      left: 0;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: 0;
+      margin-left: 0;
+      margin-bottom: 22px;
+      order: 4;
+    }
+
+    & + .hero__subheading {
+      @include media-breakpoint-up(xl) {
+        margin-top: 37px;
+        margin-bottom: 35px;
+      }
+    }
+
+    .btn {
+      white-space: nowrap;
+      text-transform: none;
+
+      sup {
+        font-size: 100%;
+        top: -.25em;
+      }
+
+      & + .btn {
+        padding-right: 12px;
+        padding-left: 12px;
+        margin-left: 10px;
+        @include media-breakpoint-up(xss) {
+          margin-left: 20px;
+        }
+        @include media-breakpoint-up(md) {
+          padding-right: 40px;
+          padding-left: 40px;
+          margin-left: 30px;
+        }
+      }
+
+      span {
+        display: none;
+        @include media-breakpoint-up(md) {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  &__subheading {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(white, .8);
+    order: 4;
+    @include media-breakpoint-up(xl) {
+      margin-top: 26px;
+      margin-left: 10px;
+      color: white;
+      order: 3;
+    }
+  }
+
+  &--index {
+    &::after {background-image: url('#{$img}/hero/index.jpg');}
+    @include media-breakpoint-up(sm) {
+      padding-bottom: 90px;
+    }
+    @include media-breakpoint-up(xl) {
+      padding-bottom: 127px;
+      margin-bottom: 0;
+      &::before {width: 385px;margin-top: -450px;margin-left: -385px;}
+    }
+
+    & + .headline {
+      @include media-breakpoint-up(sm) {
+        margin-top: -120px;
+      }
+      @include media-breakpoint-up(md) {
+        margin-top: -140px;
+      }
+      @include media-breakpoint-up(xl) {
+        margin-top: -142px;
+        left: 28px;
+      }
+    }
+  }
 }

@@ -2,6 +2,7 @@
    HEADER
    ========================================================================== */
 .header {
+  display: none !important;
   width: 100%;
   min-width: $min-width;
   height: 120px;
@@ -62,6 +63,7 @@
   }
 
   &__nav {
+    display: none !important;
     overflow: hidden;
     position: absolute;
     top: 0;

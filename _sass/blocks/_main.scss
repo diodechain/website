@@ -4,9 +4,12 @@
 .main {
   width: 100%;
   min-height: 100%;
-  padding: 0 10px;
+  @include media-breakpoint-up(xss) {
+    padding: 0 10px;
+  }
   @include media-breakpoint-up(md) {
-    padding: 0;
+    padding-right: 0;
+    padding-left: 0;
   }
   & > .container::after {@include clearfix;}
 }
