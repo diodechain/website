@@ -91,12 +91,6 @@
       left: 0;
       bottom: 0;
       background: $color-orange;
-      @include media-breakpoint-up(xss) {
-        left: -6px;
-      }
-      @include media-breakpoint-up(md) {
-        left: 0;
-      }
       @include media-breakpoint-up(xl) {
         left: 9px;
       }
@@ -113,6 +107,11 @@
       margin-left: 10px;
       color: white;
     }
+
+    u {
+      text-decoration-thickness: .0625em;
+      text-underline-offset: .167em;
+    }
   }
 
   &__heading {
@@ -126,12 +125,6 @@
     position: relative;
     display: flex;
     order: 3;
-    @include media-breakpoint-up(xss) {
-      left: -5px;
-    }
-    @include media-breakpoint-up(md) {
-      left: 0;
-    }
     @include media-breakpoint-up(xl) {
       margin-top: 0;
       margin-left: 0;

@@ -1,0 +1,132 @@
+/* ==========================================================================
+   BOXES
+   ========================================================================== */
+.box {
+  margin-bottom: 75px;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 100px;
+  }
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 140px;
+  }
+
+  &es {
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 3;
+    &::after {@include clearfix;}
+
+    .box {
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 180px;
+      }
+      @include media-breakpoint-up(xxl) {
+        margin-bottom: 217px;
+      }
+    }
+  }
+
+  &__content {
+    @include media-breakpoint-up(xl) {
+      padding-right: 40px;
+    }
+    & > p:last-of-type {margin-bottom: 0;}
+  }
+
+  &__picture {
+    margin: 0 0 38px 0;
+    position: relative;
+    display: block;
+    @include media-breakpoint-up(lg) {
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      user-select: none;
+    }
+
+    &.rounded, &.oval {
+      img {
+        max-width: 272px;
+        border-radius: 136px;
+        @include media-breakpoint-up(sm) {
+          max-width: 300px;
+          border-radius: 150px;
+        }
+        @include media-breakpoint-up(md) {
+          max-width: 360px;
+          border-radius: 180px;
+        }
+        @include media-breakpoint-up(lg) {
+          max-width: 390px;
+          border-radius: 195px;
+        }
+        @include media-breakpoint-up(xl) {
+          max-width: 420px;
+          border-radius: 210px;
+        }
+      }
+    }
+    &.rounded {
+      img {
+        @include media-breakpoint-up(xxl) {
+          max-width: 550px;
+          border-radius: 50%;
+        }
+      }
+    }
+    &.oval {
+      @include media-breakpoint-up(xxl) {
+        margin-top: -38px;
+        left: 10px;
+        img {
+          max-width: 477px;
+          border-radius: 238px;
+        }
+      }
+    }
+  }
+
+  &__preheading {
+    margin-bottom: 25px;
+    font-size: 22px;
+    line-height: 24px;
+    text-decoration: underline;
+    text-decoration-thickness: .0625em;
+    text-underline-offset: .167em;
+    @include media-breakpoint-up(xl) {
+      margin-left: 8px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 33px;
+    @include media-breakpoint-up(xl) {
+      margin-right: -50px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__buttons {
+    margin-top: 19px;
+    display: flex;
+    @include media-breakpoint-up(xl) {
+      margin-top: 23px;
+    }
+
+    .btn + .btn {
+      margin-left: 10px;
+      @include media-breakpoint-up(md) {
+        margin-left: 20px;
+      }
+      @include media-breakpoint-up(xl) {
+        margin-left: 38px;
+      }
+    }
+  }
+}

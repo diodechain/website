@@ -66,18 +66,14 @@
   &__content {
     position: relative;
     z-index: 2;
-    @include media-breakpoint-up(xss) {
-      left: 4px;
-    }
-    @include media-breakpoint-up(sm) {
-      left: auto;
-    }
   }
 
   &__title {
     margin: 0 0 26px;
     font: 22px/24px $font-default;
     text-decoration: underline;
+    text-decoration-thickness: .0625em;
+    text-underline-offset: .167em;
     @include media-breakpoint-up(xl) {
       margin-bottom: 28px;
     }
