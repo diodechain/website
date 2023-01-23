@@ -171,7 +171,7 @@ textarea.form-control {
     color: $color-orange;
     background-color: transparent;
     transition: color $effect;
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(md) {
       padding: 16px 12px;
     }
     @media (hover: hover) {

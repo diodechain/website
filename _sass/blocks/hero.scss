@@ -93,8 +93,14 @@
       left: 0;
       bottom: 0;
       background: $color-orange;
+      @include media-breakpoint-up(xss) {
+        left: -6px;
+      }
+      @include media-breakpoint-up(sm) {
+        left: 0;
+      }
       @include media-breakpoint-up(xl) {
-        left: 9px;
+        left: 10px;
       }
     }
   }
@@ -130,6 +136,12 @@
     position: relative;
     display: flex;
     order: 3;
+    @include media-breakpoint-up(xss) {
+      margin-left: -5px;
+    }
+    @include media-breakpoint-up(sm) {
+      margin-left: 0;
+    }
     @include media-breakpoint-up(md) {
       margin-right: -130px;
     }
@@ -193,6 +205,7 @@
     }
   }
 
+  // Homepage version
   &--index {
     &::after {background-image: url('#{$img}/hero/index.jpg');}
     @include media-breakpoint-up(sm) {

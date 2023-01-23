@@ -33,8 +33,6 @@ body {
   }
 
   &.menu-open {
-    //position: fixed;
-    //overflow: hidden;
     &::-webkit-scrollbar {display: none;}
   }
 }
@@ -68,9 +66,17 @@ figure {
 blockquote {
   margin: 0;
   font: 600 22px/24px $font-heading;
+  text-align: center;
   @include media-breakpoint-up(xl) {
     font-size: 40px;
     line-height: 43px;
+  }
+  & + figcaption {
+    margin-top: 35px;
+    text-align: center;
+    @include media-breakpoint-up(xl) {
+      margin-top: 61px;
+    }
   }
 }
 
@@ -116,6 +122,9 @@ h2 {
 }
 
 h3 {
+  margin-bottom: 30px;
+  font-size: 25px;
+  line-height: 30px;
 }
 
 h4 {
