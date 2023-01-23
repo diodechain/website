@@ -35,7 +35,6 @@
     text-underline-offset: .167em;
     @include media-breakpoint-up(xl) {
       top: 3px;
-      //margin-left: 30px;
     }
   }
 
@@ -43,7 +42,6 @@
     margin-bottom: 35px;
     @include media-breakpoint-up(xl) {
       margin-bottom: 23px;
-      //margin-left: 30px;
     }
   }
 

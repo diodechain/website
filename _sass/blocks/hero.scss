@@ -6,7 +6,6 @@
   color: white;
   position: relative;
   z-index: 1;
-  cursor: default;
   @include media-breakpoint-up(sm) {
     margin-bottom: 60px;
   }
@@ -26,10 +25,13 @@
     margin-top: -83px;
     position: absolute;
     top: 100%;
-    right: -25px;
+    right: -15px;
     z-index: -1;
     background: url('#{$img}/hero.png') no-repeat top left;
     background-size: 421px 570px;
+    @include media-breakpoint-up(xss) {
+      right: -25px;
+    }
     @include media-breakpoint-up(sm) {
       width: 405px;
       margin-top: -170px;
@@ -115,9 +117,12 @@
   }
 
   &__heading {
+    max-width: 330px;
     margin: 0;
     order: 2;
-    user-select: none;
+    @include media-breakpoint-up(sm) {
+      max-width: none;
+    }
   }
 
   &__buttons {
@@ -125,10 +130,14 @@
     position: relative;
     display: flex;
     order: 3;
+    @include media-breakpoint-up(md) {
+      margin-right: -130px;
+    }
     @include media-breakpoint-up(xl) {
       margin-top: 0;
-      margin-left: 0;
+      margin-right: 0;
       margin-bottom: 22px;
+      margin-left: 0;
       order: 4;
     }
 

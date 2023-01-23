@@ -47,7 +47,7 @@
       height: auto;
       margin: 0 auto;
       display: block;
-      user-select: none;
+      @include user-select;
     }
 
     &.rounded, &.oval {

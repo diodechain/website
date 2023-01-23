@@ -57,3 +57,4 @@ $icon-submenu-back: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M
 // Mixins
 @mixin pseudo {content: '';display: block;overflow: hidden;}
 @mixin clearfix {content: '';display: table;clear: both;}
+@mixin user-select {-webkit-touch-callout: none;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}

@@ -7,10 +7,10 @@
   list-style: none;
   display: flex;
   align-items: center;
-  user-select: none;
+  @include user-select;
 
   li {
-    margin-left: 50px;
+    margin-left: 48px;
     &:first-child {margin-left: 0;}
   }
 

@@ -2,13 +2,14 @@
    FOOTER
    ========================================================================== */
 .footer {
+  padding-bottom: 30px;
   position: relative;
   z-index: 1;
   font-size: 17px;
   line-height: 18px;
-  cursor: default;
   @include media-breakpoint-up(xss) {
-    padding: 0 10px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
   @include media-breakpoint-up(md) {
     padding-right: 0;
@@ -17,7 +18,6 @@
 
   .container {
     padding-top: 51px;
-    padding-bottom: 50px;
     position: relative;
     @include media-breakpoint-up(md) {
       padding-top: 50px;
@@ -47,9 +47,7 @@
         padding-right: 60px;
       }
     }
-    &:last-child {
-      margin-bottom: 0;
-    }
+    &:last-child {margin-bottom: 0;}
   }
 
   &__logo {
@@ -59,7 +57,7 @@
     img {
       width: 129px;
       display: block;
-      user-select: none;
+      @include user-select;
     }
   }
 
@@ -122,8 +120,6 @@
       margin-top: 56px;
       margin-left: 10px;
     }
-
-    li {margin-left: 48px;}
   }
 
   .newsletter {

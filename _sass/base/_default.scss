@@ -12,12 +12,11 @@ html {
   font: 16px/17px $font-default;
   background: white;
   -webkit-font-smoothing: antialiased;
-  -ms-overflow-style: scrollbar;
+  -moz-osx-font-smoothing: grayscale;
   @include media-breakpoint-up(xl) {
     font-size: 22px;
     line-height: 24px;
   }
-  &[style="overflow: hidden;"] {height: auto;}
 }
 
 body {
@@ -34,8 +33,8 @@ body {
   }
 
   &.menu-open {
-    position: fixed;
-    overflow: hidden;
+    //position: fixed;
+    //overflow: hidden;
     &::-webkit-scrollbar {display: none;}
   }
 }
@@ -80,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-heading;
   font-weight: 600;
 }
+
 h1 {
   margin-bottom: 30px;
   font-size: 60px;
@@ -97,6 +97,7 @@ h1 {
     line-height: 99px;
   }
 }
+
 h2 {
   font-size: 42px;
   line-height: 38px;
@@ -113,14 +114,18 @@ h2 {
     line-height: 90px;
   }
 }
+
 h3 {
 }
+
 h4 {
   margin-bottom: 30px;
   font-size: 25px;
   line-height: 30px;
 }
+
 h5 {
 }
+
 h6 {
 }

@@ -24,22 +24,8 @@
   -webkit-appearance: none;
   box-shadow: none;
   outline: none !important;
-
-  &::-webkit-input-placeholder { color: $color-dark; transition: opacity $effect-s; }
-  &:-moz-placeholder { color: $color-dark; transition: opacity $effect-s; }
-  &::-moz-placeholder { color: $color-dark; transition: opacity $effect-s; }
-  &:-ms-input-placeholder { color: $color-dark; transition: opacity $effect-s; }
-  &::-ms-input-placeholder { color: $color-dark; transition: opacity $effect-s; }
-  &::placeholder { color: $color-dark; transition: opacity $effect-s; }
-
-  &:focus {
-    &::-webkit-input-placeholder { opacity: 0; }
-    &:-moz-placeholder { opacity: 0; }
-    &::-moz-placeholder { opacity: 0; }
-    &:-ms-input-placeholder { opacity: 0; }
-    &::-ms-input-placeholder { opacity: 0; }
-    &::placeholder { opacity: 0; }
-  }
+  &::placeholder { color: $color-dark; transition: opacity $effect-s; @include user-select; }
+  &:focus::placeholder { opacity: 0; }
 }
 
 textarea.form-control {
@@ -54,9 +40,9 @@ textarea.form-control {
   display: inline-block;
   vertical-align: top;
   cursor: pointer;
-  user-select: none;
   font: 600 16px/24px $font-default;
   color: $color-indigo;
+  @include user-select;
 
   input[type="checkbox"], input[type="radio"] {
     position: absolute;
@@ -155,7 +141,7 @@ textarea.form-control {
   transition: border-color $effect, background-color $effect;
   cursor: pointer;
   outline: none;
-  user-select: none;
+  @include user-select;
   @include media-breakpoint-up(md) {
     min-width: 189px;
     padding: 14px 28px;
