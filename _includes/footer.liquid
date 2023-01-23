@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col col-12 col-sm-10 col-md-8 col-lg-4">
-                <figure class="footer__logo"><img src="/assets/img/logo.svg" width="129" height="42" alt="Diode"></figure>
+                <figure class="footer__logo"><img src="{{ "/assets/img/logo.svg" | relative_url }}" width="129" height="42" alt="{{ site.title }}"></figure>
                 <ul class="footer__nav">
-                    <li><a href="/solutions/">Solutions</a></li>
+                    <li><a href="{{ "/solutions/" | relative_url }}">Solutions</a></li>
                     <li><a href="#">dDrive</a></li>
                     <li><a href="#">CLI</a></li>
                     <li><a href="#">Network</a></li>
@@ -17,8 +17,8 @@
                     <li><a href="#">Blog</a></li>
                 </ul>
                 <ul class="footer__nav">
-                    <li><a href="/teams/">Teams</a></li>
-                    <li><a href="/about/">About</a></li>
+                    <li><a href="{{ "/teams/" | relative_url }}">Teams</a></li>
+                    <li><a href="{{ "/about/" | relative_url }}">About</a></li>
                     <li><a href="#">Pricing</a></li>
                 </ul>
             </div>
@@ -35,7 +35,7 @@
                 </ul>
             </div>
             <div class="col col-12 col-md-5 col-lg-4 col-xl-3 offset-xl-1">
-                <form class="newsletter" action="./" method="get" autocomplete="off">
+                <form class="newsletter" action="{{ "./" | relative_url }}" method="get" autocomplete="off">
                     <p class="form-heading">Get in touch</p>
                     <div class="form-group">
                         <input type="text" class="form-control" name="name" maxlength="40" required value="" placeholder="Name">

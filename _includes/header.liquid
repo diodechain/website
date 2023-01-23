@@ -1,21 +1,21 @@
 <header class="header" role="banner">
 	<div class="container">
 		<h1 class="header__brand">Diode</h1>
-		<figure class="header__logo"><a href="/"><img src="/assets/img/logo.svg" width="129" height="42" alt="Diode"></a></figure>
+		<figure class="header__logo"><a href="{{ "/" | relative_url }}"><img src="{{ "/assets/img/logo.svg" | relative_url }}" width="129" height="42" alt="{{ site.title }}"></a></figure>
 		<div class="header__nav">
 			<div class="header__space">
 				<div class="container">
 					<ul class="header__menu">
 						<li>
-							<a href="/solutions/">Solutions</a>
+							<a href="{{ "/solutions/" | relative_url }}">Solutions</a>
 							<ul>
 								<li><a href="#">dDrive</a></li>
 								<li><a href="#">CLI</a></li>
 								<li><a href="#">Network</a></li>
 							</ul>
 						</li>
-						<li><a href="/teams/">Teams</a></li>
-						<li><a href="/about/">About</a></li>
+						<li><a href="{{ "/teams/" | relative_url }}">Teams</a></li>
+						<li><a href="{{ "/about/" | relative_url }}">About</a></li>
 						<li><a href="#">Pricing</a></li>
 						<li>
 							<a href="#">Resources</a>
