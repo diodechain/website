@@ -26,7 +26,7 @@
     position: absolute;
     top: 25px;
     left: 16px;
-    z-index: 0;
+    z-index: 5;
     @include media-breakpoint-up(xss) {
       left: 27px;
     }
@@ -186,11 +186,15 @@
     }
 
     > li {
-      transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -5px, 0);
       opacity: 0;
-      transition: opacity .8s ease, transform .8s ease-out;
+      transition: opacity .9s ease, transform .8s ease;
       @include media-breakpoint-up(md) {
         padding-bottom: 16px;
+      }
+      @include media-breakpoint-up(xl) {
+        transform: translate3d(0, -7px, 0);
+        transition: opacity 1.2s ease, transform 1s ease;
       }
 
       > a {
@@ -247,7 +251,7 @@
       opacity: 1;
       @for $i from 1 through 10 {
         &:nth-child(#{$i}) {
-          transition-delay: ($i * .3)+s;
+          transition-delay: ($i * .35)+s;
         }
       }
     }
