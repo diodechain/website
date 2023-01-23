@@ -11,7 +11,7 @@
   }
 
   &es {
-    margin-bottom: 18px;
+    margin-bottom: 39px;
     position: relative;
     z-index: 3;
     &::after {@include clearfix;}
@@ -21,7 +21,7 @@
         margin-bottom: 180px;
       }
       @include media-breakpoint-up(xxl) {
-        margin-bottom: 217px;
+        margin-bottom: 210px;
       }
     }
   }
@@ -210,6 +210,37 @@
         display: block;
         object-fit: cover;
         @include user-select;
+      }
+    }
+  }
+
+  // Fixing index page 'pixel perfect'
+  &es--index {
+    .box {
+      &:nth-child(1) {
+        @include media-breakpoint-up(xl) {
+          margin-bottom: 203px;
+          .box__preheading {margin-bottom: 22px;}
+          .box__heading {margin-bottom: 14px;}
+          .box__buttons {margin-top: 34px;}
+        }
+      }
+      &:nth-child(2) {
+        @include media-breakpoint-up(xl) {
+          margin-bottom: 226px;
+          .box__content {margin: 50px 0 0 -15px;}
+          .box__preheading {margin-bottom: 21px;}
+          .box__heading {margin-bottom: 17px;}
+          .box__picture {left: -28px;}
+        }
+      }
+      &:nth-child(3) {
+        @include media-breakpoint-up(xl) {
+          margin-bottom: 0;
+          .box__preheading {margin-bottom: 21px;}
+          .box__heading {margin-bottom: 31px;}
+          .box__buttons {margin-top: 25px;}
+        }
       }
     }
   }
