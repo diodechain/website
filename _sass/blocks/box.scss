@@ -250,9 +250,9 @@
       justify-content: center;
       align-items: center;
       flex-basis: 50%;
-      text-align: center;
       @include media-breakpoint-up(md) {
         flex-direction: column;
+        text-align: center;
       }
       @include media-breakpoint-up(xl) {
         padding: 30px 0;
@@ -298,25 +298,22 @@
 
   // Homepage version
   .hero--index ~ &es {
+    margin-bottom: 82px;
     .box {
-      &:nth-child(1) {
-        @include media-breakpoint-up(xl) {
+      &:last-child {margin-bottom: 0;}
+      @include media-breakpoint-up(xl) {
+        &:nth-child(1) {
           margin-bottom: 203px;
           .box__heading {margin-bottom: 14px;}
           .box__buttons {margin-top: 34px;}
         }
-      }
-      &:nth-child(2) {
-        @include media-breakpoint-up(xl) {
+        &:nth-child(2) {
           margin-bottom: 226px;
           .box__content {margin: 50px 0 0 -15px;}
           .box__heading {margin-bottom: 17px;}
           .box__picture {left: -28px;}
         }
-      }
-      &:nth-child(3) {
-        margin-bottom: 4px !important;
-        @include media-breakpoint-up(xl) {
+        &:nth-child(3) {
           margin-bottom: 27px !important;
           .box__heading {margin-bottom: 31px;}
           .box__buttons {margin-top: 25px;}

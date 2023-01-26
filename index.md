@@ -1,6 +1,7 @@
 ---
 layout: new
-title: "Reclaim Your Digital Sovereignty"
+homepage: true
+title: Reclaim Your Digital Sovereignty
 ---
 <header class="hero hero--index">
     <div class="row">
@@ -18,12 +19,11 @@ title: "Reclaim Your Digital Sovereignty"
     </div>
 </header>
 
-<section class="headline">
-    <div class="headline__content">
-        <h3 class="headline__title">Today’s Security Conundrum</h3>
-        <p>Today’s cloud-based collaboration tools all require third party validation – creating a host of security vulnerabilities that leave important company IP and assets unsecure.</p>
-    </div>
-</section>
+{%-
+        include headline.liquid
+        title="Today’s Security Conundrum"
+        text="Today’s cloud-based collaboration tools all require third party validation – creating a host of security vulnerabilities that leave important company IP and assets unsecure."
+-%}
 
 <div class="boxes">
     <section class="box">
@@ -70,19 +70,19 @@ title: "Reclaim Your Digital Sovereignty"
             <div class="col col-12 col-lg-6 col-xl-5 col-xxl-6">
                 <div class="box__teams">
                     <div class="box__teams-person">
-                        <figure class="box__teams-photo"><img src="{{ "/assets/img/team/person.webp" | relative_url }}" width="142" height="142" alt="First Name Last Name"></figure>
+                        <figure class="box__teams-photo"><img src="{{ "/assets/img/team/default.webp" | relative_url }}" width="142" height="142" alt="First Name Last Name"></figure>
                         <p class="box__teams-title">OT Teams <br>Asset Management</p>
                     </div>
                     <div class="box__teams-person">
-                        <figure class="box__teams-photo"><img src="{{ "/assets/img/team/person.webp" | relative_url }}" width="142" height="142" alt="First Name Last Name"></figure>
+                        <figure class="box__teams-photo"><img src="{{ "/assets/img/team/default.webp" | relative_url }}" width="142" height="142" alt="First Name Last Name"></figure>
                         <p class="box__teams-title">OT Teams <br>Asset Management</p>
                     </div>
                     <div class="box__teams-person">
-                        <figure class="box__teams-photo"><img src="{{ "/assets/img/team/person.webp" | relative_url }}" width="142" height="142" alt="First Name Last Name"></figure>
+                        <figure class="box__teams-photo"><img src="{{ "/assets/img/team/default.webp" | relative_url }}" width="142" height="142" alt="First Name Last Name"></figure>
                         <p class="box__teams-title">OT Teams <br>Asset Management</p>
                     </div>
                     <div class="box__teams-person">
-                        <figure class="box__teams-photo"><img src="{{ "/assets/img/team/person.webp" | relative_url }}" width="142" height="142" alt="First Name Last Name"></figure>
+                        <figure class="box__teams-photo"><img src="{{ "/assets/img/team/default.webp" | relative_url }}" width="142" height="142" alt="First Name Last Name"></figure>
                         <p class="box__teams-title">OT Teams <br>Asset Management</p>
                     </div>
                 </div>

@@ -22,7 +22,7 @@ Note: If step 2 or 3 fails, prepending `bundle exec` to the commands may solve t
 
 # Original ReadMe:
 
-```
+```x
 =================================================
 =====     jekyll-gulp-sass-browser-sync     =====
 =================================================
