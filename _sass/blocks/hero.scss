@@ -6,6 +6,9 @@
   color: white;
   position: relative;
   z-index: 1;
+  background-position: -100px -100px;
+  background-repeat: no-repeat;
+  background-size: 1px 1px;
   @include media-breakpoint-up(sm) {
     margin-bottom: 60px;
   }
@@ -55,7 +58,8 @@
     bottom: 0;
     left: -15px;
     z-index: -5;
-    background: #272d2d url('#{$img}/hero/default.jpg') no-repeat 32.5% bottom;
+    background: #272d2d no-repeat 32.5% bottom;
+    background-image: inherit;
     background-size: cover;
     @include media-breakpoint-up(xss) {
       right: -25px;
@@ -206,7 +210,7 @@
   }
 
   // Homepage version
-  &--index {
+  &--homepage {
     &::after {background-image: url('#{$img}/hero/index.jpg');}
     @include media-breakpoint-up(sm) {
       padding-bottom: 90px;

@@ -67,6 +67,7 @@
         height: 142px;
         border-radius: 50%;
         display: block;
+        object-fit: cover;
         @include user-select;
       }
     }

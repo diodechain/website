@@ -1,4 +1,3 @@
-{% assign path = '/assets/img/team/' %}
 {% assign data = site.data[include.data] %}
 <section class="team">
     <div class="row justify-content-md-center text-center">
@@ -12,8 +11,7 @@
             {% for member in data %}
                 <div class="col col-12 col-xl-4">
                     <article class="team__member">
-                        {%- if member.photo -%}
-                            <figure class="team__member-photo"><img src="{{ member.photo | prepend: path | relative_url }}" width="142" height="142" alt="{{ member.name }}"></figure>{% endif %}
+                        {%- if member.photo -%}<figure class="team__member-photo"><img src="{{ member.photo | prepend: site.path.images | relative_url }}" width="142" height="142" alt="{{ member.name }}"></figure>{% endif %}
                         {%- if member.name -%}<h3 class="team__member-name">{{ member.name }}</h3>{% endif %}
                         {%- if member.title -%}<p>{{ member.title }}</p>{% endif %}
                     </article>

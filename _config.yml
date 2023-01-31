@@ -4,11 +4,24 @@ exclude: [ "node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md"
 
 include: [ "install.sh", "msa.pdf" ]
 
+# Images path
+path:
+  images: "/assets/img/"
+  styles: "/assets/css/"
+  scripts: "/assets/js/"
+  favicon: "/assets/favicon/"
+
+# Social Networks
 social:
   youtube: "https://www.youtube.com/channel/UC3b5voADiipUmq1Q-vtPKsA"
   telegram: "https://t.me/diode_chain"
   twitter: "https://twitter.com/diode_chain"
   github: "https://github.com/diodechain"
+
+# Footer settings
+security:
+  title: "Security is everything."
+  content: "We’re governed by a strong set of ideals. Our belief that technology should help humans thrive – that it should allow us to explore, educate and innovate unhindered, drives what we create."
 
 copyright: "DIODE &copy; 2023, All Rights Reserved"
 
@@ -29,6 +42,16 @@ plugins:
 
 # the base hostname & protocol for your site
 url: https://diode.io
+
+
+
+
+
+
+
+
+
+
 
 ####################################
 ######   Optional Features    ######
@@ -401,7 +424,7 @@ blog-description: >-
 #####################################
 ############### Team ################
 #####################################
-team-title: Team-aaa
+team-title: Team
 team-description: >-
   Our team consists of true IoT experts from both the business and the technology side. We're dedicated
   to a secure IoT future!

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col col-12 col-sm-10 col-md-8 col-lg-4">
-                <figure class="footer__logo"><img src="{{ "/assets/img/logo.svg" | relative_url }}" width="129" height="42" alt="{{ site.title | escape }}"></figure>
+                <figure class="footer__logo"><img src="{{ "logo.svg" | prepend: site.path.images | relative_url }}" width="129" height="42" alt="{{ site.title | escape }}"></figure>
                 <ul class="footer__nav">
                     <li><a href="{{ "/solutions/" | relative_url }}">Solutions</a></li>
                     <li><a href="#">dDrive</a></li>
@@ -24,8 +24,8 @@
             </div>
             <div class="col col-12 col-md-7 col-lg-4">
                 <section class="footer__security">
-                    <h3>Security is everything.</h3>
-                    <p>We’re governed by a strong set of ideals. Our belief that technology should help humans thrive – that it should allow us to explore, educate and innovate unhindered, drives what we create.</p>
+                    {%- if site.security.title -%}<h3>{{ site.security.title }}</h3>{% endif %}
+                    {%- if site.security.content -%}<p>{{ site.security.content }}</p>{% endif %}
                 </section>
                 {%- include social.liquid -%}
             </div>

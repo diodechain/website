@@ -85,12 +85,10 @@
     }
   }
 
-  p {
-    margin: 0;
-  }
+  p {margin: 0;}
 
   // Homepage version
-  .hero--index ~ & {
+  .hero--homepage ~ & {
     @include media-breakpoint-up(sm) {
       margin-top: -120px;
     }

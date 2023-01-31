@@ -1,7 +1,7 @@
 <header class="header" role="banner">
     <div class="container">
         <h1 class="header__brand">Diode</h1>
-        <figure class="header__logo">{% if page.homepage != true %}<a href="{{ "/" | relative_url }}">{%- endif -%}<img src="{{ "/assets/img/logo.svg" | relative_url }}" width="129" height="42" alt="{{ site.title | escape }}">{% if page.homepage != true %}</a>{%- endif -%}</figure>
+        <figure class="header__logo">{% if page.class != 'page--homepage' %}<a href="{{ "/" | relative_url }}">{%- endif -%}<img src="{{ "/assets/img/logo.svg" | relative_url }}" width="129" height="42" alt="{{ site.title | escape }}">{% if page.class == 'page--homepage' %}</a>{%- endif -%}</figure>
         <div class="header__nav">
             <div class="header__space">
                 <div class="container">
