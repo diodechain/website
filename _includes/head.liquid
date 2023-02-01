@@ -7,20 +7,20 @@
     {%- seo -%}
 
     <!-- Stylesheet -->
-    <link href="{{ "/assets/css/style.css" | relative_url }}" rel="stylesheet">
+    <link href="{{ "style.css" | prepend: site.path.styles | relative_url }}" rel="stylesheet">
 
     <!-- Javascript -->
-    <script src="{{ "/assets/js/script.js" | relative_url }}" defer></script>
+    <script src="{{ "script.js" | prepend: site.path.scripts | relative_url }}" defer></script>
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicon/apple-touch-icon.png" | relative_url }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | relative_url }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/favicon-16x16.png" | relative_url }}">
-    <link rel="manifest" href="{{ "/assets/favicon/site.webmanifest" | relative_url }}">
-    <link rel="mask-icon" href="{{ "/assets/favicon/safari-pinned-tab.svg" | relative_url }}" color="#f15d2f">
-    <link rel="shortcut icon" href="{{ "/assets/favicon/favicon.ico" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | prepend: site.path.favicon | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | prepend: site.path.favicon | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | prepend: site.path.favicon | relative_url }}">
+    <link rel="manifest" href="{{ "site.webmanifest" | prepend: site.path.favicon | relative_url }}">
+    <link rel="mask-icon" href="{{ "safari-pinned-tab.svg" | prepend: site.path.favicon | relative_url }}" color="#f15d2f">
+    <link rel="shortcut icon" href="{{ "favicon.ico" | prepend: site.path.favicon | relative_url }}">
+    <meta name="msapplication-config" content="{{ "browserconfig.xml" | prepend: site.path.favicon | relative_url }}">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-config" content="{{ "/assets/favicon/browserconfig.xml" | relative_url }}">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->

@@ -1,46 +1,40 @@
-{% assign class = include.class | prepend: ' ' %}
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.story %}
+{% endif %}
 
-{%- if include.solutions -%}
-    {% comment %} Data subfolders support {% endcomment %}
-    {% assign array = include.solutions | split: '.' %}
-    {% assign arraysize = array | size %}
-    {% if arraysize > 1 %}
-        {% assign solutions = site.data %}
-        {% for entry in array %}
-            {% assign temp = array[forloop.index0] %}
-            {% assign solutions = solutions[temp] %}
-        {% endfor %}
-    {% else %}
-        {% assign solutions = site.data[include.solutions] %}
-    {% endif %}
+{%- if data.class -%}
+    {% assign class = data.class | prepend: ' ' %}
+{% else %}
+    {% assign class = "" %}
 {% endif %}
 
 <section class="box{{ class }}">
     <div class="row justify-content-md-center text-center">
         <div class="col col-12 col-lg-6 col-xl-7 col-xxl-6">
-            {%- if include.title -%}<h4 class="box__title">{{ include.title }}</h4>{% endif %}
-            {%- if include.heading -%}<h2 class="box__heading">{{ include.heading }}</h2>{% endif %}
+            {%- if data.title -%}<h4 class="box__title">{{ data.title }}</h4>{% endif %}
+            {%- if data.heading -%}<h2 class="box__heading">{{ data.heading }}</h2>{% endif %}
         </div>
     </div>
     <div class="row justify-content-md-center text-center">
-        {%- if include.content -%}
+        {%- if data.content -%}
             <div class="col col-12 col-md-8 col-lg-7">
-                <div class="box__content">{{ include.content }}</div>
+                <div class="box__content">{{ data.content | markdownify }}</div>
             </div>
         {% endif %}
-        {%- if include.blockquote -%}
+        {%- if data.blockquote -%}
             <div class="col col-12 col-md-8 col-lg-7">
                 <div class="box__content">
                     <figure>
-                        <blockquote><p>{{ include.blockquote }}</p></blockquote>
-                        {%- if include.caption -%}
-                            <figcaption>{{ include.caption }}</figcaption>{% endif %}
+                        <blockquote><p>{{ data.blockquote }}</p></blockquote>
+                        {%- if data.caption -%}<figcaption>{{ data.caption }}</figcaption>{% endif %}
                     </figure>
                 </div>
             </div>
         {% endif %}
-        {%- if include.solutions -%}
-            {% for solution in solutions %}
+        {%- if data.solutions -%}
+            {% for solution in data.solutions %}
                 <div class="col col-12 col-md-4">
                     <section class="box__solution">
                         {%- if forloop.index <= 4 -%}

@@ -1,59 +1,39 @@
-{% assign class = include.class | prepend: ' ' %}
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.story %}
+{% endif %}
 
-{%- if include.mirrored -%}
+{%- if data.class -%}
+    {% assign class = data.class | prepend: ' ' %}
+{% else %}
+    {% assign class = "" %}
+{% endif %}
+
+{%- if data.mirrored -%}
     {% assign mirrored = " align-items-lg-center" %}
 {% else %}
     {% assign mirrored = " flex-lg-row-reverse" %}
 {% endif %}
 
-{%- if include.gallery -%}
-    {% comment %} Data subfolders support {% endcomment %}
-    {% assign array = include.gallery | split: '.' %}
-    {% assign arraysize = array | size %}
-    {% if arraysize > 1 %}
-        {% assign gallery = site.data %}
-        {% for entry in array %}
-            {% assign temp = array[forloop.index0] %}
-            {% assign gallery = gallery[temp] %}
-        {% endfor %}
-    {% else %}
-        {% assign gallery = site.data[include.gallery] %}
-    {% endif %}
-{% endif %}
-
-{%- if include.teams -%}
-    {% comment %} Data subfolders support {% endcomment %}
-    {% assign array = include.teams | split: '.' %}
-    {% assign arraysize = array | size %}
-    {% if arraysize > 1 %}
-        {% assign teams = site.data %}
-        {% for entry in array %}
-            {% assign temp = array[forloop.index0] %}
-            {% assign teams = teams[temp] %}
-        {% endfor %}
-    {% else %}
-        {% assign teams = site.data[include.teams] %}
-    {% endif %}
-{% endif %}
-
 <section class="story{{ class }}">
-    <div class="row {{ mirrored }}">
+    <div class="row{{ mirrored }}">
         <div class="col col-12 col-lg-6 col-xl-5 col-xxl-6">
-            {%- if include.image -%}
-                <figure class="story__image {{ include.image_class }}"><img src="{{ include.image | prepend: site.path.images | relative_url }}" width="272" alt="{{ include.image_alt }}"></figure>
+            {%- if data.image -%}
+                <figure class="story__image {{ data.image.class }}"><img src="{{ data.image.src | prepend: site.path.images | relative_url }}" width="272" alt="{{ data.image.alt }}"></figure>
             {% endif %}
-            {%- if include.gallery -%}
+            {%- if data.gallery -%}
                 <div class="story__gallery">
-                    {% for entry in gallery %}
+                    {% for entry in data.gallery %}
                         {%- if forloop.index <= 3 -%}
                             <figure class="story__gallery-image"><img src="{{ entry.image | prepend: site.path.images | relative_url }}" width="294" height="196" alt="{{ entry.alt }}"></figure>
                         {% endif %}
                     {% endfor %}
                 </div>
             {% endif %}
-            {%- if include.teams -%}
+            {%- if data.teams -%}
                 <div class="story__teams">
-                    {% for member in teams %}
+                    {% for member in data.teams %}
                         <div class="story__teams-person">
                             {%- if forloop.index <= 4 -%}
                                 {%- if member.photo -%}
@@ -66,15 +46,18 @@
             {% endif %}
         </div>
         <div class="col col-12 col-lg-6 col-xl-7 col-xxl-6">
-            {%- if include.title -%}<h4 class="story__title">{{ include.title }}</h4>{% endif %}
-            {%- if include.heading -%}<h2 class="story__heading">{{ include.heading }}</h2>{% endif %}
-            {%- if include.content -%}{{ include.content }}{% endif %}
-            {%- if include.button -%}
-                <div class="story__buttons">
-                    {%- if include.button -%}<a href="{{ include.button_url }}" class="btn {{ include.button_class }}">{{ include.button }}</a>{% endif %}
-                    {%- if include.button2 -%}<a href="{{ include.button2_url }}" class="btn {{ include.button2_class }}">{{ include.button2 }}</a>{% endif %}
-                </div>
-            {% endif %}
+            <div class="story__content">
+                {%- if data.title -%}<h4 class="story__title">{{ data.title }}</h4>{% endif %}
+                {%- if data.heading -%}<h2 class="story__heading">{{ data.heading }}</h2>{% endif %}
+                {%- if data.content -%}{{ data.content | markdownify }}{% endif %}
+                {%- if data.buttons -%}
+                    <div class="story__buttons">
+                        {% for button in data.buttons %}
+                            <a href="{{ button.url }}" class="btn {{ button.class }}">{{ button.title }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
         </div>
     </div>
 </section>

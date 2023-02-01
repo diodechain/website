@@ -1,18 +1,31 @@
-{% assign image = include.image | prepend: site.path.images | relative_url %}
-{% assign class = include.class | prepend: ' ' %}
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.hero %}
+{% endif %}
+
+{%- if data.class -%}
+    {% assign class = data.class | prepend: ' ' %}
+{% else %}
+    {% assign class = "" %}
+{% endif %}
+
+{% assign image = data.image | prepend: site.path.images | relative_url %}
+
 <header class="hero{{ class }}" style="background-image:url('{{ image }}');">
     <div class="row">
-        <div class="col col-12 col-sm-8 col-lg-7 col-xxl-6">
+        <div class="col col-12 col-sm-8 col-lg-7">
             <div class="hero__content">
-                {%- if include.preheading -%}<p class="hero__preheading">{{ include.preheading }}</p>{% endif %}
-                {%- if include.heading -%}<h1 class="hero__heading">{{ include.heading }}</h1>{% endif %}
-                {%- if include.button -%}
+                {%- if data.title -%}<div class="hero__title">{{ data.title | markdownify }}</div>{% endif %}
+                {%- if data.heading -%}<h1 class="hero__heading">{{ data.heading }}</h1>{% endif %}
+                {%- if data.buttons -%}
                     <div class="hero__buttons">
-                        {%- if include.button -%}<a href="{{ include.button_url }}" class="btn {{ include.button_class }}">{{ include.button }}</a>{% endif %}
-                        {%- if include.button2 -%}<a href="{{ include.button2_url }}" class="btn {{ include.button2_class }}">{{ include.button2 }}</a>{% endif %}
+                        {% for button in data.buttons %}
+                            <a href="{{ button.url }}" class="btn {{ button.class }}">{{ button.title }}</a>
+                        {% endfor %}
                     </div>
                 {% endif %}
-                {%- if include.subheading -%}<p class="hero__subheading">{{ include.subheading }}</p>{% endif %}
+                {%- if data.subheading -%}<div class="hero__subheading">{{ data.subheading | markdownify }}</div>{% endif %}
             </div>
         </div>
     </div>

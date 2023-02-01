@@ -1,0 +1,1 @@
+<figure class="{{ include.class | default: "logo" }}">{% if page.class != 'page--homepage' %}<a href="{{ "/" | relative_url }}">{%- endif -%}<img src="{{ "logo.svg" | prepend: site.path.images | relative_url }}" width="129" height="42" alt="{{ site.name }}">{% if page.class == 'page--homepage' %}</a>{%- endif -%}</figure>

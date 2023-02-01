@@ -1,0 +1,4 @@
+<section class="{{ include.class | default: "security" }}">
+    {%- if site.security.title -%}<h3>{{ site.security.title }}</h3>{% endif %}
+    {%- if site.security.content -%}<p>{{ site.security.content }}</p>{% endif %}
+</section>

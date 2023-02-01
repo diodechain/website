@@ -1,6 +1,12 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.headline %}
+{% endif %}
+
 <section class="headline">
     <div class="headline__content">
-        {%- if include.title -%}<h3 class="headline__title">{{ include.title }}</h3>{% endif %}
-        {%- if include.text -%}<p>{{ include.text }}</p>{% endif %}
+        {%- if data.title -%}<h3 class="headline__title">{{ data.title }}</h3>{% endif %}
+        {%- if data.text -%}{{ data.text | markdownify }}{% endif %}
     </div>
 </section>

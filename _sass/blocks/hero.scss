@@ -109,18 +109,22 @@
     }
   }
 
-  &__preheading {
+  &__title {
     margin-bottom: 24px;
     color: rgba(white, .8);
     order: 1;
     @include media-breakpoint-up(xl) {
+      max-width: 440px;
       margin-top: 38px;
       margin-bottom: 16px;
-      margin-left: 10px;
       color: white;
     }
 
-    u {
+    p {margin: 0;}
+
+    em {
+      font-style: normal;
+      text-decoration: underline;
       text-decoration-thickness: .0625em;
       text-underline-offset: .167em;
     }
@@ -202,11 +206,13 @@
     color: rgba(white, .8);
     order: 4;
     @include media-breakpoint-up(xl) {
+      max-width: 625px;
       margin-top: 26px;
-      margin-left: 10px;
       color: white;
       order: 3;
     }
+
+    p {margin: 0;}
   }
 
   // Homepage version

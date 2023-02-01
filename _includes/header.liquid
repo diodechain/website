@@ -1,40 +1,20 @@
 <header class="header" role="banner">
     <div class="container">
-        <h1 class="header__brand">Diode</h1>
-        <figure class="header__logo">{% if page.class != 'page--homepage' %}<a href="{{ "/" | relative_url }}">{%- endif -%}<img src="{{ "/assets/img/logo.svg" | relative_url }}" width="129" height="42" alt="{{ site.title | escape }}">{% if page.class == 'page--homepage' %}</a>{%- endif -%}</figure>
-        <div class="header__nav">
-            <div class="header__space">
-                <div class="container">
-                    <ul class="header__menu">
-                        <li>
-                            <a href="{{ "/solutions/" | relative_url }}">Solutions</a>
-                            <ul>
-                                <li><a href="#">dDrive</a></li>
-                                <li><a href="#">CLI</a></li>
-                                <li><a href="#">Network</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="{{ "/teams/" | relative_url }}">Teams</a></li>
-                        <li><a href="{{ "/about/" | relative_url }}">About</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li>
-                            <a href="#">Resources</a>
-                            <ul>
-                                <li><a href="#">Download</a></li>
-                                <li><a href="#">How it works</a></li>
-                                <li><a href="#">Explorer</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Docs</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    {%- include social.liquid -%}
-                    {%- include copyright.liquid -%}
-                    <a href="#" class="btn header__download">Download</a>
-                    <div class="header__close"></div>
+        {%- include parts/brand.liquid -%}
+        {%- include parts/logo.liquid class="header__logo" -%}
+        {%- if site.nav -%}
+            <div id="menu" class="header__nav">
+                <div class="header__space">
+                    <div class="container">
+                        {%- include parts/nav.liquid class="header__menu" -%}
+                        {%- include parts/social.liquid -%}
+                        {%- include parts/copyright.liquid -%}
+                        <a href="#close" class="header__close"></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="header__toggle"><span></span></div>
+            {%- include parts/download.liquid class="header__download" -%}
+            <a href="#menu" class="header__toggle"><span></span></a>
+        {% endif %}
     </div>
 </header>

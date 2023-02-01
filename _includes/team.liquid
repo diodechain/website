@@ -1,14 +1,19 @@
-{% assign data = site.data[include.data] %}
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.team %}
+{% endif %}
+
 <section class="team">
     <div class="row justify-content-md-center text-center">
         <div class="col col-12 col-md-8 col-lg-7">
-            {%- if include.title -%}<h4 class="team__title">{{ include.title }}</h4>{% endif %}
-            {%- if include.heading -%}<h3 class="team__heading">{{ include.heading }}</h3>{% endif %}
+            {%- if data.title -%}<h4 class="team__title">{{ data.title }}</h4>{% endif %}
+            {%- if data.heading -%}<h3 class="team__heading">{{ data.heading }}</h3>{% endif %}
         </div>
     </div>
-    {%- if data -%}
+    {%- if data.members -%}
         <div class="row justify-content-center">
-            {% for member in data %}
+            {% for member in data.members %}
                 <div class="col col-12 col-xl-4">
                     <article class="team__member">
                         {%- if member.photo -%}<figure class="team__member-photo"><img src="{{ member.photo | prepend: site.path.images | relative_url }}" width="142" height="142" alt="{{ member.name }}"></figure>{% endif %}

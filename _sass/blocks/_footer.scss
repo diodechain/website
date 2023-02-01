@@ -61,13 +61,44 @@
     }
   }
 
-  &__nav {
-    width: 38.5%;
+  &__menu {
+    height: 192px;
     padding: 0;
     margin: 0;
     list-style: none;
     font: 600 16px/24px $font-heading;
+    white-space: nowrap;
     float: left;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 45px;
+    -moz-column-gap: 45px;
+    column-gap: 45px;
+    -webkit-column-fill: auto;
+    -moz-column-fill: auto;
+    column-fill: auto;
+    @include media-breakpoint-up(xss) {
+      -webkit-column-gap: 89px;
+      -moz-column-gap: 89px;
+      column-gap: 89px;
+    }
+    @include media-breakpoint-up(lg) {
+      -webkit-column-gap: 45px;
+      -moz-column-gap: 45px;
+      column-gap: 45px;
+    }
+    @include media-breakpoint-up(xl) {
+      -webkit-column-gap: 119px;
+      -moz-column-gap: 119px;
+      column-gap: 119px;
+    }
+
+    ul {
+      padding: 0;
+      margin-bottom: 24px;
+      list-style: none;
+    }
 
     a {
       color: $color-orange;
@@ -87,22 +118,24 @@
       margin-right: -30px;
       margin-left: 8px;
     }
-  }
 
-  h4 {
-    @include media-breakpoint-down(sm) {
-      margin-bottom: 31px;
+    h3 {
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 31px;
+      }
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 50px;
+      }
     }
-    @include media-breakpoint-up(lg) {
-      margin-bottom: 50px;
-    }
-  }
 
-  p {
-    margin: 0;
-    &:not([class]) {
+    p {
+      margin: 0;
       @include media-breakpoint-up(xss) {
-        margin-right: 6px;
+        margin-left: 4px;
+        margin-right: 34px;
+      }
+      @include media-breakpoint-up(md) {
+        margin-right: 0;
       }
     }
   }
@@ -122,7 +155,7 @@
     }
   }
 
-  .newsletter {
+  &__form {
     width: 100%;
     max-width: 283px;
     padding-top: 20px;
@@ -157,7 +190,7 @@
     }
   }
 
-  .copyright {
+  &__copyright {
     margin: -7px 0 0;
     font-size: 9px;
     line-height: 14px;

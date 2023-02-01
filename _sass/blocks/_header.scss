@@ -165,9 +165,9 @@
     @include media-breakpoint-up(sm) {
       padding-top: 110px;
       padding-bottom: 110px;
-      -webkit-columns: 2;
-      -moz-columns: 2;
-      columns: 2;
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
     }
     @include media-breakpoint-up(md) {
       max-width: 640px;
@@ -338,21 +338,11 @@
   }
 
   &__download {
-    display: none;
-    min-width: 164px;
-    padding-right: 40px;
-    padding-left: 40px;
-    margin-top: 19px;
-    @include media-breakpoint-up(md) {
-      margin-top: 30px;
-    }
-    @include media-breakpoint-up(xl) {
-      margin-top: 0;
-      margin-left: 39px;
-      float: left;
-    }
-    &::before {
-      background-color: inherit;
-    }
+    display: none !important;
+    display: block;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    z-index: 5;
   }
 }

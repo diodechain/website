@@ -2,38 +2,18 @@
     <div class="container">
         <div class="row">
             <div class="col col-12 col-sm-10 col-md-8 col-lg-4">
-                <figure class="footer__logo"><img src="{{ "logo.svg" | prepend: site.path.images | relative_url }}" width="129" height="42" alt="{{ site.title | escape }}"></figure>
-                <ul class="footer__nav">
-                    <li><a href="{{ "/solutions/" | relative_url }}">Solutions</a></li>
-                    <li><a href="#">dDrive</a></li>
-                    <li><a href="#">CLI</a></li>
-                    <li><a href="#">Network</a></li>
-                </ul>
-                <ul class="footer__nav">
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">Download</a></li>
-                    <li><a href="#">Docs</a></li>
-                    <li><a href="#">Explorer</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-                <ul class="footer__nav">
-                    <li><a href="{{ "/teams/" | relative_url }}">Teams</a></li>
-                    <li><a href="{{ "/about/" | relative_url }}">About</a></li>
-                    <li><a href="#">Pricing</a></li>
-                </ul>
+                {%- include parts/logo.liquid class="footer__logo" -%}
+                {%- include parts/nav.liquid class="footer__menu" -%}
             </div>
             <div class="col col-12 col-md-7 col-lg-4">
-                <section class="footer__security">
-                    {%- if site.security.title -%}<h3>{{ site.security.title }}</h3>{% endif %}
-                    {%- if site.security.content -%}<p>{{ site.security.content }}</p>{% endif %}
-                </section>
-                {%- include social.liquid -%}
+                {%- include parts/security.liquid class="footer__security" -%}
+                {%- include parts/social.liquid -%}
             </div>
             <div class="col col-12 col-md-5 col-lg-4 col-xl-3 offset-xl-1">
-                {%- include get-in-touch.liquid -%}
+                {%- include parts/get-in-touch.liquid -%}
             </div>
             <div class="col col-12">
-                {%- include copyright.liquid -%}
+                {%- include parts/copyright.liquid class="footer__copyright" -%}
             </div>
         </div>
     </div>

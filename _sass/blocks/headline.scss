@@ -34,11 +34,11 @@
   }
   @include media-breakpoint-up(xl) {
     max-width: 925px;
-    min-height: 291px;
-    padding: 30px 125px 25px 96px;
+    min-height: 290px;
+    padding: 30px 110px;
     border-radius: 145px;
     margin-top: 0;
-    margin-bottom: 174px;
+    margin-bottom: 175px;
     font-size: 22px;
     line-height: 24px;
     background: $color-orange;
@@ -75,13 +75,13 @@
   }
 
   &__title {
-    margin: 0 0 26px;
+    margin: 0 0 25px;
     font: 22px/24px $font-default;
     text-decoration: underline;
     text-decoration-thickness: .0625em;
     text-underline-offset: .167em;
     @include media-breakpoint-up(xl) {
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
   }
 
@@ -98,7 +98,6 @@
     @include media-breakpoint-up(xl) {
       margin-top: -143px;
       margin-bottom: 272px;
-      left: 28px;
     }
   }
 }
