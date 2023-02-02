@@ -3,22 +3,20 @@
    ========================================================================== */
 .hero {
   padding: 152px 0 68px;
+  margin-bottom: 60px;
   color: white;
   position: relative;
-  z-index: 1;
+  z-index: 0;
   background-position: -100px -100px;
   background-repeat: no-repeat;
   background-size: 1px 1px;
-  @include media-breakpoint-up(sm) {
-    margin-bottom: 60px;
-  }
   @include media-breakpoint-up(md) {
     padding-bottom: 90px;
   }
   @include media-breakpoint-up(xl) {
     padding-top: 219px;
     padding-bottom: 113px;
-    margin-bottom: 146px;
+    margin-bottom: 180px;
   }
 
   &::before {
@@ -38,7 +36,7 @@
     @include media-breakpoint-up(sm) {
       width: 405px;
       margin-top: -170px;
-      margin-left: -405px;
+      margin-left: -395px;
       right: auto;
       left: 50%;
       transform: translateX(50vw);
@@ -97,12 +95,6 @@
       left: 0;
       bottom: 0;
       background: $color-orange;
-      @include media-breakpoint-up(xss) {
-        left: -6px;
-      }
-      @include media-breakpoint-up(sm) {
-        left: 0;
-      }
       @include media-breakpoint-up(xl) {
         left: 10px;
       }
@@ -117,6 +109,7 @@
       max-width: 440px;
       margin-top: 38px;
       margin-bottom: 16px;
+      margin-left: 8px;
       color: white;
     }
 
@@ -208,6 +201,7 @@
     @include media-breakpoint-up(xl) {
       max-width: 625px;
       margin-top: 26px;
+      margin-left: 8px;
       color: white;
       order: 3;
     }

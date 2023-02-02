@@ -251,7 +251,7 @@
       opacity: 1;
       @for $i from 1 through 10 {
         &:nth-child(#{$i}) {
-          transition-delay: ($i * .35)+s;
+          transition-delay: ($i * .1)+s;
         }
       }
     }
@@ -338,11 +338,24 @@
   }
 
   &__download {
-    display: none !important;
-    display: block;
+    min-width: 80px;
+    padding: 5px 20px;
+    font-size: 14px;
+    line-height: 20px;
+    display: none;
     position: absolute;
-    top: 100px;
-    right: 100px;
     z-index: 5;
+    @include media-breakpoint-up(md) {
+      display: block;
+      top: 28px;
+      right: 65px;
+    }
+    @include media-breakpoint-up(xl) {
+      top: 65px;
+      right: 65px;
+    }
+    @include media-breakpoint-up(xxl) {
+      right: 185px;
+    }
   }
 }

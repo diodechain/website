@@ -6,7 +6,7 @@ title: About
 ### Hero
 hero:
   heading: Upgrade&nbsp;the Internet
-  subheading: For teams who care about the security of their operations.
+  subheading: For teams who care about the security of their&nbsp;operations.
   image: hero/default.jpg
 
 

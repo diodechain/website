@@ -1,0 +1,30 @@
+{%- if include.data -%}
+    {% assign stories = include.data | split: ',' %}
+{% endif %}
+
+<div class="stories">
+    <div class="row">
+        {% for story in stories %}
+            {% assign data = page[story] %}
+            <div class="col col-12 col-lg-6">
+                <section class="story">
+                    {%- if data.image -%}
+                        <figure class="story__image {{ data.image.class }}"><img src="{{ data.image.src | prepend: site.path.images | relative_url }}" width="272" alt="{{ data.image.alt }}"></figure>
+                    {% endif %}
+                    <div class="story__content">
+                        {%- if data.title -%}<h4 class="story__title">{{ data.title }}</h4>{% endif %}
+                        {%- if data.heading -%}<h2 class="story__heading">{{ data.heading }}</h2>{% endif %}
+                        {%- if data.content -%}{{ data.content | markdownify }}{% endif %}
+                        {%- if data.buttons -%}
+                            <div class="story__buttons">
+                                {% for button in data.buttons %}
+                                    <a href="{{ button.url }}" class="btn {{ button.class }}">{{ button.title }}</a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </section>
+            </div>
+        {% endfor %}
+    </div>
+</div>

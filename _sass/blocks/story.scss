@@ -2,25 +2,21 @@
    STORY
    ========================================================================== */
 .story {
-  margin-bottom: 78px;
+  margin-bottom: 80px;
   @include media-breakpoint-up(md) {
     margin-bottom: 100px;
   }
   @include media-breakpoint-up(xl) {
-    margin-bottom: 140px;
+    margin-bottom: 180px;
   }
 
   &__content {
-    @include media-breakpoint-up(xss) {
-      padding-left: 4px;
-    }
-    @include media-breakpoint-up(sm) {
-      padding-left: 0;
-    }
     @include media-breakpoint-up(xl) {
       padding-right: 40px;
     }
-    & > p:last-of-type {margin-bottom: 0;}
+    > h4:not([class]) {margin-bottom: 12px;}
+    > p + h4:not([class]) {margin-top: 42px;}
+    > p:last-child {margin-bottom: 0;}
   }
 
   &__title {
@@ -30,30 +26,24 @@
     text-decoration-thickness: .0625em;
     text-underline-offset: .167em;
     @include media-breakpoint-up(xl) {
-      margin-bottom: 22px;
+      margin-bottom: 21px;
       margin-left: 8px;
     }
   }
 
   &__heading {
     margin-bottom: 33px;
-    @include media-breakpoint-up(xss) {
-      margin-left: -3px;
-    }
-    @include media-breakpoint-up(sm) {
-      margin-left: 0;
-    }
     @include media-breakpoint-up(xxl) {
       margin-right: -50px;
-      margin-bottom: 26px;
+      margin-bottom: 15px;
     }
   }
 
   &__buttons {
-    margin-top: 19px;
+    margin-top: 20px;
     display: flex;
     @include media-breakpoint-up(xl) {
-      margin-top: 23px;
+      margin-top: 34px;
     }
 
     .btn + .btn {
@@ -62,7 +52,7 @@
         margin-left: 20px;
       }
       @include media-breakpoint-up(xl) {
-        margin-left: 38px;
+        margin-left: 40px;
       }
     }
   }
@@ -116,11 +106,9 @@
     }
     &.oval {
       @include media-breakpoint-up(xxl) {
-        margin-top: -38px;
-        left: 10px;
         img {
           max-width: 477px;
-          border-radius: 238px;
+          border-radius: 239px;
         }
       }
     }
@@ -129,7 +117,6 @@
   &__gallery {
     margin: 0 -15px 69px;
     position: relative;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     @include media-breakpoint-up(xss) {
@@ -167,11 +154,30 @@
       margin-left: -27px;
     }
 
+    &::before {
+      @include pseudo;
+      width: 421px;
+      height: 570px;
+      display: none;
+      position: absolute;
+      top: -134px;
+      left: -11px;
+      z-index: 0;
+      background: url('#{$img}/hero.png') no-repeat top left;
+      background-size: contain;
+      @include media-breakpoint-up(xl) {
+        display: block;
+      }
+    }
+    &::after {@include clearfix;}
+
     &-image {
       width: 294px;
       margin-left: 48px;
       flex-grow: 0;
       flex-shrink: 0;
+      position: relative;
+      z-index: 1;
       @include media-breakpoint-up(md) {
         margin-left: 0;
       }
@@ -231,12 +237,12 @@
       padding: 15px 0;
       margin-bottom: 5px;
       display: flex;
-      justify-content: center;
       align-items: center;
       flex-basis: 50%;
       @include media-breakpoint-up(md) {
         flex-direction: column;
         text-align: center;
+        justify-content: center;
       }
       @include media-breakpoint-up(xl) {
         padding: 30px 0;
@@ -281,29 +287,9 @@
   }
 
   // Homepage version
-  .page--homepage .headline + & {
+  .hero--homepage ~ .headline + .story + .story + & {
     @include media-breakpoint-up(xl) {
-      margin-bottom: 203px;
-      .story__heading {margin-bottom: 14px;}
-      .story__buttons {margin-top: 34px;}
-    }
-
-    & + .story {
-      @include media-breakpoint-up(xl) {
-        margin-bottom: 226px;
-        .story__content {margin: 50px 0 0 -15px;}
-        .story__heading {margin-bottom: 17px;}
-        .story__image {left: -28px;}
-      }
-
-      & + .story {
-        margin-bottom: 100px;
-        @include media-breakpoint-up(xl) {
-          margin-bottom: 27px;
-          .story__heading {margin-bottom: 31px;}
-          .story__buttons {margin-top: 25px;}
-        }
-      }
+      margin-bottom: 120px;
     }
   }
 }

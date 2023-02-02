@@ -95,7 +95,7 @@ solutions:
   heading: Our solutions.
   solutions:
   - title: App
-    content: The Diode App is for all your teams.  Whether replacing a leaky chat app, sharing files E2EE, securing a simple dashboard, or deploying advanced OT assets, this app unlocks the power of Diode for people.
+    content: The Diode App is for all your teams. Whether replacing a leaky chat app, sharing files E2EE, securing a simple dashboard, or deploying advanced OT assets, this app unlocks the power of Diode for people.
     button:
       label: Find Out More
       class: btn--blank
@@ -106,8 +106,8 @@ solutions:
       label: Find Out More
       class: btn--blank
       url: "/solutions/diode-cli/"
-  - title: Vault
-    content: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+  - title: Network
+    content: The Diode Network is the world’s leading Smart Network - a new generation of zero trust software defined networks based on hardened blockchain technology. Think ad hoc E2EE perimeters.
     button:
       label: Find Out More
       class: btn--blank
