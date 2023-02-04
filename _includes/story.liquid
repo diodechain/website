@@ -11,7 +11,7 @@
 {% endif %}
 
 {%- if data.mirrored -%}
-    {% assign mirrored = "" %}
+    {% assign mirrored = " align-items-lg-center" %}
 {% else %}
     {% assign mirrored = " flex-lg-row-reverse" %}
 {% endif %}
@@ -37,7 +37,7 @@
                         <div class="story__teams-person">
                             {%- if forloop.index <= 4 -%}
                                 {%- if member.photo -%}
-                                    <figure class="story__teams-photo"><img src="{{ member.photo | prepend: site.path.images | relative_url }}" width="142" height="142" alt="{{ member.name }}"></figure>{% endif %}
+                                    <figure class="story__teams-photo"><img src="{{ member.photo | prepend: site.path.images | relative_url }}" width="145" height="145" alt="{{ member.alt }}"></figure>{% endif %}
                                 {%- if member.title -%}<p class="story__teams-title">{{ member.title }}</p>{% endif %}
                             {% endif %}
                         </div>

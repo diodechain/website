@@ -34,7 +34,7 @@
       right: -25px;
     }
     @include media-breakpoint-up(sm) {
-      width: 405px;
+      width: 395px;
       margin-top: -170px;
       margin-left: -395px;
       right: auto;
@@ -211,7 +211,6 @@
 
   // Homepage version
   &--homepage {
-    &::after {background-image: url('#{$img}/hero/index.jpg');}
     @include media-breakpoint-up(sm) {
       padding-bottom: 90px;
     }

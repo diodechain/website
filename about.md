@@ -7,7 +7,7 @@ title: About
 hero:
   heading: Upgrade&nbsp;the Internet
   subheading: For teams who care about the security of their&nbsp;operations.
-  image: hero/default.jpg
+  image: hero/default.webp
 
 
 ### Headline below Hero

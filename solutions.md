@@ -7,7 +7,7 @@ title: Solutions
 hero:
   heading: defewar <br>dasfasf
   subheading: For teams who care about the security of their&nbsp;operations.
-  image: hero/default.jpg
+  image: hero/default.webp
 
 
 app:

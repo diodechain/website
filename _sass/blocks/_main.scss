@@ -12,5 +12,12 @@
     padding-right: 0;
     padding-left: 0;
   }
-  & > .container::after {@include clearfix;}
+
+  & > .container {
+    padding-bottom: 30px;
+    @include media-breakpoint-up(xl) {
+      padding-bottom: 85px;
+    }
+    &::after {@include clearfix;}
+  }
 }

@@ -1,10 +1,10 @@
 <ul class="{{ include.class | default: "logo" }}">
-    {% for entry in site.nav %}
+    {% for data in site.nav %}
         <li>
-            {%- if entry.title -%}<a href="{{ entry.url | relative_url }}" target="{{ entry.target }}">{{ entry.title }}</a>{% endif %}
-            {%- if entry.sub -%}
+            {%- if data.title -%}<a href="{{ data.url | relative_url }}" target="{{ data.target }}">{{ data.title }}</a>{% endif %}
+            {%- if data.sub -%}
                 <ul>
-                    {% for sub in entry.sub %}
+                    {% for sub in data.sub %}
                         {%- if sub.title -%}<li><a href="{{ sub.url | relative_url }}" target="{{ sub.target }}">{{ sub.title }}</a></li>{% endif %}
                     {% endfor %}
                 </ul>

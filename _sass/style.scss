@@ -1,4 +1,5 @@
-@import 'plugins/normalize';
+@import 'plugins/normalize',
+        'plugins/swiper';
 
 @import 'base/variables',
         'base/breakpoints',
@@ -15,4 +16,5 @@
         'blocks/headline',
         'blocks/story',
         'blocks/box',
-        'blocks/team';
+        'blocks/team',
+        'blocks/partners';

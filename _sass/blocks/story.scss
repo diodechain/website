@@ -27,7 +27,7 @@
     text-underline-offset: .167em;
     @include media-breakpoint-up(xl) {
       margin-bottom: 21px;
-      margin-left: 8px;
+      margin-left: 6px;
     }
   }
 
@@ -58,11 +58,11 @@
   }
 
   &__image {
-    margin: 0 0 38px 0;
+    margin: 0 0 40px;
     position: relative;
     display: block;
     @include media-breakpoint-up(lg) {
-      margin: 0;
+      margin-bottom: 0;
     }
 
     img {
@@ -99,7 +99,7 @@
     &.circle {
       img {
         @include media-breakpoint-up(xxl) {
-          max-width: 550px;
+          max-width: 461px;
           border-radius: 50%;
         }
       }
@@ -117,6 +117,7 @@
   &__gallery {
     margin: 0 -15px 69px;
     position: relative;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     @include media-breakpoint-up(xss) {
@@ -145,6 +146,7 @@
       margin-right: -24px;
       margin-bottom: 0;
       margin-left: -24px;
+      overflow: visible;
     }
     @include media-breakpoint-up(xl) {
       margin-top: 29px;
@@ -218,19 +220,39 @@
 
   &__teams {
     margin-top: 57px;
-    margin-bottom: 27px;
+    margin-bottom: 30px;
     position: relative;
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(sm) {
       max-width: 530px;
-      margin-top: -20px;
+      margin-top: 0;
       margin-right: auto;
       margin-left: auto;
       display: flex;
       flex-wrap: wrap;
     }
+    @include media-breakpoint-up(md) {
+      margin-top: -20px;
+    }
     @include media-breakpoint-up(xl) {
-      margin-top: 19px;
+      margin-top: 20px;
       left: 43px;
+    }
+
+    &::before {
+      @include pseudo;
+      width: 421px;
+      height: 570px;
+      display: none;
+      position: absolute;
+      top: -95px;
+      left: 15px;
+      z-index: 0;
+      background: url('#{$img}/hero.png') no-repeat top left;
+      background-size: contain;
+      transform: rotate(-90deg);
+      @include media-breakpoint-up(lg) {
+        display: block;
+      }
     }
 
     &-person {
@@ -239,14 +261,15 @@
       display: flex;
       align-items: center;
       flex-basis: 50%;
-      @include media-breakpoint-up(md) {
+      position: relative;
+      z-index: 1;
+      @include media-breakpoint-up(sm) {
         flex-direction: column;
         text-align: center;
         justify-content: center;
       }
       @include media-breakpoint-up(xl) {
         padding: 30px 0;
-        margin-bottom: 6px;
       }
     }
 
@@ -257,9 +280,9 @@
       @include media-breakpoint-up(xss) {
         margin-left: -3px;
       }
-      @include media-breakpoint-up(md) {
-        width: 142px;
-        height: 142px;
+      @include media-breakpoint-up(sm) {
+        width: 145px;
+        height: 145px;
         margin: 0 0 18px;
       }
 
@@ -280,7 +303,7 @@
       text-decoration: underline;
       text-decoration-thickness: .0625em;
       text-underline-offset: .167em;
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(sm) {
         margin: 0;
       }
     }
@@ -289,7 +312,7 @@
   // Homepage version
   .hero--homepage ~ .headline + .story + .story + & {
     @include media-breakpoint-up(xl) {
-      margin-bottom: 120px;
+      margin-bottom: 100px;
     }
   }
 }

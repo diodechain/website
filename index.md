@@ -13,10 +13,10 @@ hero:
   buttons:
   - title: FIND OUT MORE
     url: "#"
-  - title: DOWNLOAD dDrive<span>&trade; FOR MacOS</span>
+  - title: DOWNLOAD Diode<span>&trade; FOR MacOS</span>
     class: btn--bordered
     url: "#"
-  image: hero/index.jpg
+  image: hero/default.webp
 
 
 ### Headline below Hero
@@ -57,9 +57,9 @@ anywhere:
   - title: Find Out More
     url: "#"
   image:
-    src: story/default.webp
+    src: story/protected.svg
     class: circle
-    alt: alt
+    alt: Protected no matter what
   mirrored: true
 
 
@@ -79,13 +79,17 @@ protected:
     url: "#"
   teams:
   - title: Operational Technology <br>Asset Management
-    photo: team/default.webp
+    photo: team/operational-technology_s.webp
+    alt: Operational Technology
   - title: Product Development <br>Partner Interop
-    photo: team/default.webp
+    photo: team/product-development_s.webp
+    alt: Product Development
   - title: Developer Operations <br>Stakeholde Access
-    photo: team/default.webp
+    photo: team/developer-operations_s.webp
+    alt: Developer Operations
   - title: IP and Sensitive Content <br>Customer Portals
-    photo: team/default.webp
+    photo: team/ip-and-content_s.webp
+    alt: IP and Sensitive Content
 
 
 ### Box: Our solutions
@@ -95,19 +99,22 @@ solutions:
   heading: Our solutions.
   solutions:
   - title: App
+    icon: "icons/app.svg"
     content: The Diode App is for all your teams. Whether replacing a leaky chat app, sharing files E2EE, securing a simple dashboard, or deploying advanced OT assets, this app unlocks the power of Diode for people.
     button:
       label: Find Out More
       class: btn--blank
       url: "/solutions/diode-drive/"
   - title: CLI
+    icon: "icons/cli.svg"
     content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone or in concert with Zones created in the Diode App. Connect the edge here.
     button:
       label: Find Out More
       class: btn--blank
       url: "/solutions/diode-cli/"
-  - title: Network
-    content: The Diode Network is the world’s leading Smart Network - a new generation of zero trust software defined networks based on hardened blockchain technology. Think ad hoc E2EE perimeters.
+  - title: Vault
+    icon: "icons/vault.svg"
+    content: The Diode Vault is a Diode hardware appliance that combines both the App features and the CLI features in a small box. 24-7 availability, backup, and geo-access for your team and assets.
     button:
       label: Find Out More
       class: btn--blank
@@ -131,6 +138,27 @@ behind-scenes:
   
     We’ve patented this fundamental Web3-enablement technology in the EU, China and here in the States and it’s become the foundation for our Zero Trust toolset.
 
+
+### Partners
+partners:
+  title: World changing collaborations
+  heading: Our Partners
+
+  logos:
+  - image: partners/YETi-CGI.svg
+    alt: YETi CGI
+    url: "http://yeticgi.com"
+
+  - image: partners/compendium.svg
+    alt: Compendium
+
+  - image: partners/GEN.svg
+    alt: Global Enterprise Network
+
+  - image: partners/deraconnect.svg
+    alt: Deraconnect
+    url: "https://deraconnect.com"
+
 ---
 
 {%- include hero.liquid -%}
@@ -148,3 +176,5 @@ behind-scenes:
 {%- include box.liquid data="teams-saying" -%}
 
 {%- include box.liquid data="behind-scenes" -%}
+
+{%- include partners.liquid -%}

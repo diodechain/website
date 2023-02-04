@@ -19,7 +19,7 @@
     </div>
     <div class="row justify-content-md-center text-center">
         {%- if data.content -%}
-            <div class="col col-12 col-md-8 col-lg-7">
+            <div class="col col-12 col-md-10 col-lg-8 col-xxl-6">
                 <div class="box__content">{{ data.content | markdownify }}</div>
             </div>
         {% endif %}
@@ -38,6 +38,7 @@
                 <div class="col col-12 col-md-4">
                     <section class="box__solution">
                         {%- if forloop.index <= 4 -%}
+                            {%- if solution.icon -%}<img class="box__solution-icon" src="{{ solution.icon | prepend: site.path.images | relative_url }}" height="50" alt="{{ solution.title }}">{% endif %}
                             {%- if solution.title -%}<h3>{{ solution.title }}</h3>{% endif %}
                             {%- if solution.content -%}<p>{{ solution.content }}</p>{% endif %}
                             {%- if solution.button -%}<a href="{{ solution.button.url }}" class="btn {{ solution.button.class }}">{{ solution.button.label }}</a>{% endif %}

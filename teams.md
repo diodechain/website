@@ -7,7 +7,7 @@ title: Teams
 hero:
   heading: Teams headline
   subheading: For teams whose assets and communication require a highly secure connected network.
-  image: hero/default.jpg
+  image: hero/default.webp
 
 
 story:

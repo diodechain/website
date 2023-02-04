@@ -1,0 +1,35 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.partners %}
+{% endif %}
+
+{%- if data.class -%}
+    {% assign class = data.class | prepend: ' ' %}
+{% else %}
+    {% assign class = "" %}
+{% endif %}
+
+<section class="partners">
+    <div class="row">
+        <div class="col">
+            {%- if data.title -%}<h4 class="partners__title">{{ data.title }}</h4>{% endif %}
+            {%- if data.heading -%}<h2 class="partners__heading">{{ data.heading }}</h2>{% endif %}
+            {%- if data.logos -%}
+                <div class="partners__logos">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            {% for logo in data.logos %}
+                                <div class="swiper-slide">
+                                {%- if logo.url -%}<a href="{{ logo.url }}" target="_blank">{% endif %}<img src="{{ logo.image | prepend: site.path.images | relative_url }}" width="{{ logo.width }}" alt="{{ logo.alt }}">{%- if logo.url -%}</a>{% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

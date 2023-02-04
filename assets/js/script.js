@@ -5,10 +5,11 @@ var ready = (callback) => {
 
 // On Ready
 ready(() => {
-  initNav();
+  initHeader();
+  initPartners();
 });
 
-function initNav() {
+function initHeader() {
   function preventDefault(e) {
     e.preventDefault();
   }
@@ -82,4 +83,30 @@ function initNav() {
 
   document.querySelector('.header__toggle').addEventListener('click', toggleClick);
   nav.querySelector('.header__close').addEventListener('click', toggleClick);
+}
+
+function initPartners() {
+  document.querySelector('.partners__logos').classList.add('init');
+  const swiper = new Swiper('.partners__logos .swiper', {
+    slidesPerView: 3,
+    spaceBetween: 15,
+    centeredSlides: true,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      576: {
+        spaceBetween: 5
+      },
+      768: {
+        spaceBetween: 15
+      },
+      992: {
+        slidesPerView: 4,
+        centeredSlides: false
+      },
+    }
+  });
 }
