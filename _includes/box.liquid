@@ -13,6 +13,7 @@
 <section class="box{{ class }}">
     <div class="row justify-content-md-center text-center">
         <div class="col col-12 col-lg-6 col-xl-7 col-xxl-6">
+            {%- if data.icon -%}<img class="box__icon" src="{{ data.icon | prepend: site.path.images | relative_url }}" height="50" alt="{{ data.title }}">{% endif %}
             {%- if data.title -%}<h4 class="box__title">{{ data.title }}</h4>{% endif %}
             {%- if data.heading -%}<h2 class="box__heading">{{ data.heading }}</h2>{% endif %}
         </div>

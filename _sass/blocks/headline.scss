@@ -33,6 +33,9 @@
     margin-right: auto;
     margin-left: auto;
   }
+  @include media-breakpoint-up(lg) {
+    max-width: 680px;
+  }
   @include media-breakpoint-up(xl) {
     max-width: 925px;
     min-height: 290px;
@@ -99,7 +102,7 @@
     }
     @include media-breakpoint-up(xl) {
       margin-top: -143px;
-      margin-bottom: 240px;
+      margin-bottom: 273px;
     }
   }
 }

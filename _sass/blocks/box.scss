@@ -12,7 +12,7 @@
   }
   @include media-breakpoint-up(xl) {
     padding-top: 100px;
-    padding-bottom: 110px;
+    padding-bottom: 115px;
   }
 
   &__content {
@@ -26,6 +26,21 @@
       padding: 0 10px;
     }
     p:last-child {margin-bottom: 0;}
+  }
+
+  &__icon {
+    height: 50px;
+    margin: -10px auto 10px;
+    display: block;
+    @include user-select;
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+    }
+    @include media-breakpoint-up(xl) {
+      height: 78px;
+      margin-top: -30px;
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
@@ -90,7 +105,7 @@
       cursor: default;
       @include user-select;
       @include media-breakpoint-up(xl) {
-        height: 77px;
+        height: 78px;
       }
     }
 
@@ -168,6 +183,32 @@
         left: 50%;
         right: auto;
         transform: translate3d(-50%, 0, 0);
+      }
+    }
+  }
+
+  &--network {
+    font-size: 14px;
+    line-height: 15px;
+    @include media-breakpoint-up(xl) {
+      padding-bottom: 103px;
+      font-size: 17px;
+      line-height: 18px;
+      &::after {
+        @include pseudo;
+        width: 76px;
+        height: 4px;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        bottom: 28px;
+        left: 0;
+        background: $color-orange;
+      }
+    }
+    .box__content {
+      @include media-breakpoint-up(xl) {
+        margin: 0 -65px;
       }
     }
   }

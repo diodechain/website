@@ -25,13 +25,16 @@
   &__logo {
     position: absolute;
     top: 25px;
-    left: 16px;
+    left: 17px;
     z-index: 5;
     @include media-breakpoint-up(xss) {
       left: 27px;
     }
     @include media-breakpoint-up(sm) {
       left: 17px;
+    }
+    @include media-breakpoint-up(md) {
+      left: 15px;
     }
     @include media-breakpoint-up(xl) {
       top: 68px;
@@ -136,12 +139,15 @@
       height: 42px;
       position: absolute;
       top: 25px;
-      left: 16px;
+      left: 17px;
       z-index: 0;
       background: url('#{$img}/logo.svg') no-repeat center center;
       background-size: contain;
-      @include media-breakpoint-up(xss) {
+      @include media-breakpoint-up(sm) {
         left: 17px;
+      }
+      @include media-breakpoint-up(md) {
+        left: 15px;
       }
       @include media-breakpoint-up(xl) {
         top: 68px;

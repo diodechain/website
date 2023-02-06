@@ -95,13 +95,14 @@
       left: 0;
       bottom: 0;
       background: $color-orange;
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-up(xxl) {
         left: 10px;
       }
     }
   }
 
   &__title {
+    max-width: 340px;
     margin-bottom: 24px;
     color: rgba(white, .8);
     order: 1;
@@ -109,8 +110,10 @@
       max-width: 440px;
       margin-top: 38px;
       margin-bottom: 16px;
-      margin-left: 8px;
       color: white;
+    }
+    @include media-breakpoint-up(xxl) {
+      margin-left: 10px;
     }
 
     p {margin: 0;}
@@ -124,11 +127,15 @@
   }
 
   &__heading {
-    max-width: 330px;
-    margin: 0;
+    max-width: 400px;
+    margin: 0 -10px 0 0;
     order: 2;
+    @include media-breakpoint-up(xss) {
+      margin-right: -20px;
+    }
     @include media-breakpoint-up(sm) {
       max-width: none;
+
     }
   }
 
@@ -150,14 +157,12 @@
       margin-top: 0;
       margin-right: 0;
       margin-bottom: 22px;
-      margin-left: 0;
       order: 4;
     }
 
     & + .hero__subheading {
       @include media-breakpoint-up(xl) {
-        margin-top: 37px;
-        margin-bottom: 35px;
+        margin-bottom: 34px;
       }
     }
 
@@ -194,16 +199,19 @@
   }
 
   &__subheading {
+    max-width: 480px;
     margin-top: 30px;
     margin-bottom: 0;
     color: rgba(white, .8);
     order: 4;
     @include media-breakpoint-up(xl) {
       max-width: 625px;
-      margin-top: 26px;
-      margin-left: 8px;
+      margin-top: 34px;
       color: white;
       order: 3;
+    }
+    @include media-breakpoint-up(xxl) {
+      margin-left: 10px;
     }
 
     p {margin: 0;}
@@ -215,6 +223,7 @@
       padding-bottom: 90px;
     }
     @include media-breakpoint-up(xl) {
+      padding-top: 193px;
       padding-bottom: 127px;
       margin-bottom: 0;
       &::before {width: 385px;margin-top: -450px;margin-left: -385px;}

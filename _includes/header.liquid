@@ -9,12 +9,12 @@
                         {%- include parts/nav.liquid class="header__menu" -%}
                         {%- include parts/social.liquid -%}
                         {%- include parts/copyright.liquid -%}
-                        <a href="#close" class="header__close"></a>
+                        <a href="#close" class="header__close" aria-label="Hide navigation"></a>
                     </div>
                 </div>
             </div>
             {%- include parts/download.liquid class="header__download" -%}
-            <a href="#menu" class="header__toggle"><span></span></a>
+            <a href="#menu" class="header__toggle" aria-label="Show navigation"><span></span></a>
         {% endif %}
     </div>
 </header>

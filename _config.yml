@@ -18,6 +18,8 @@ path:
   styles: "/assets/css/"
   scripts: "/assets/js/"
   favicon: "/assets/favicon/"
+sass:
+  style: compressed
 
 
 # Navigation
@@ -25,12 +27,14 @@ nav:
 - title: Solutions
   url: "/solutions/"
   sub:
-  - title: dDrive
-    url: "/solutions/diode-drive/"
+  - title: App
+    url: "/solutions/app/"
   - title: CLI
-    url: "/solutions/diode-cli/"
+    url: "/solutions/cli/"
+  - title: Vault
+    url: "/solutions/vault/"
   - title: Network
-    url: "/solutions/diode-network/"
+    url: "/solutions/network/"
 - title: Teams
   url: "/teams/"
 - title: About

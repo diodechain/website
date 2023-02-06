@@ -8,7 +8,7 @@ title: Reclaim Your Digital Sovereignty
 hero:
   class: hero--homepage
   title: Securing team operations in fluid IT environments is _complicated_.
-  heading: Zero Trust, <br>Off the Shelf
+  heading: Zero&nbsp;Trust, <br>Off the Shelf
   subheading: For teams whose communications and asset connectivity require both agility and security.
   buttons:
   - title: FIND OUT MORE
@@ -79,16 +79,16 @@ protected:
     url: "#"
   teams:
   - title: Operational Technology <br>Asset Management
-    photo: team/operational-technology_s.webp
+    photo: team/operational-technology.webp
     alt: Operational Technology
   - title: Product Development <br>Partner Interop
-    photo: team/product-development_s.webp
+    photo: team/product-development.webp
     alt: Product Development
   - title: Developer Operations <br>Stakeholde Access
-    photo: team/developer-operations_s.webp
+    photo: team/developer-operations.webp
     alt: Developer Operations
   - title: IP and Sensitive Content <br>Customer Portals
-    photo: team/ip-and-content_s.webp
+    photo: team/ip-and-content.webp
     alt: IP and Sensitive Content
 
 
@@ -104,32 +104,42 @@ solutions:
     button:
       label: Find Out More
       class: btn--blank
-      url: "/solutions/diode-drive/"
+      url: "/solutions/app/"
   - title: CLI
     icon: "icons/cli.svg"
     content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone or in concert with Zones created in the Diode App. Connect the edge here.
     button:
       label: Find Out More
       class: btn--blank
-      url: "/solutions/diode-cli/"
+      url: "/solutions/cli/"
   - title: Vault
     icon: "icons/vault.svg"
     content: The Diode Vault is a Diode hardware appliance that combines both the App features and the CLI features in a small box. 24-7 availability, backup, and geo-access for your team and assets.
     button:
       label: Find Out More
       class: btn--blank
-      url: "/solutions/diode-network/"
+      url: "/solutions/vault/"
+
+
+### Box: Our network
+our-network:
+  class: "box--network"
+  icon: "icons/network.svg"
+  title: A better way
+  heading: Our network.
+  content: |
+    The Diode Network is the world’s leading Smart Network - a new generation of zero trust software defined networks based on hardened blockchain technology. Think ad hoc E2EE perimeters.
 
 
 ### Box: What teams are saying
-teams-saying:
+testimonials:
   title: What teams are saying
   blockquote: Diode is sweet, this is an amazing technology and product.
   caption: Erich, CEO Compendium
 
 
-### Box: Behind the scenes
-behind-scenes:
+### Box: How Diode works
+how-works:
   class: box--orange
   title: Behind the scenes
   heading: How Diode works.
@@ -143,7 +153,6 @@ behind-scenes:
 partners:
   title: World changing collaborations
   heading: Our Partners
-
   logos:
   - image: partners/YETi-CGI.svg
     alt: YETi CGI
@@ -173,8 +182,10 @@ partners:
 
 {%- include box.liquid data="solutions" -%}
 
-{%- include box.liquid data="teams-saying" -%}
+{%- include box.liquid data="our-network" -%}
 
-{%- include box.liquid data="behind-scenes" -%}
+{%- include box.liquid data="testimonials" -%}
+
+{%- include box.liquid data="how-works" -%}
 
 {%- include partners.liquid -%}
