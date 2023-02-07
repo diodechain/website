@@ -6,6 +6,7 @@ var ready = (callback) => {
 // On Ready
 ready(() => {
   initHeader();
+  initTestimonials();
   initPartners();
 });
 
@@ -85,28 +86,62 @@ function initHeader() {
   nav.querySelector('.header__close').addEventListener('click', toggleClick);
 }
 
+function initTestimonials() {
+  const testimonials = document.querySelectorAll('.box__testimonials');
+  testimonials.forEach((entry, index) => {
+    entry.classList.add('init');
+    entry.querySelector('.swiper').classList.add('testimonials-swiper-' + (index + 1));
+    new Swiper('.testimonials-swiper-' + (index + 1), {
+      slidesPerView: 1,
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+  });
+}
+
 function initPartners() {
-  document.querySelector('.partners__logos').classList.add('init');
-  const swiper = new Swiper('.partners__logos .swiper', {
-    slidesPerView: 3,
-    spaceBetween: 15,
-    centeredSlides: true,
-    loop: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      576: {
-        spaceBetween: 5
+  const partners = document.querySelectorAll('.partners');
+  partners.forEach((partner, index) => {
+    partner.querySelector('.partners__logos').classList.add('init');
+    partner.querySelector('.swiper').classList.add('partners-swiper-' + (index + 1));
+    new Swiper('.partners-swiper-' + (index + 1), {
+      slidesPerView: 3,
+      spaceBetween: 15,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        clickable: true
       },
-      768: {
-        spaceBetween: 15
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
-      992: {
-        slidesPerView: 4,
-        centeredSlides: false
-      },
-    }
+      breakpoints: {
+        576: {
+          spaceBetween: 5
+        },
+        768: {
+          spaceBetween: 15
+        },
+        1200: {
+          slidesPerView: 4,
+          centeredSlides: false
+        },
+      }
+    });
   });
 }

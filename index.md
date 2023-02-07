@@ -73,10 +73,11 @@ protected:
     Zero Trust perimeters that ring-fence digital operations, and that allow partners to securely interoperate, can be created and provisioned in seconds without burdening the IT team.
   buttons:
   - title: Find Out More
-    url: "#"
+    url: "/teams/"
   - title: Schedule a Demo
     class: btn--blank
-    url: "#"
+    url: "https://contactdiode.paperform.co/"
+    target: _blank
   teams:
   - title: Operational Technology <br>Asset Management
     photo: team/operational-technology.webp
@@ -134,8 +135,21 @@ our-network:
 ### Box: What teams are saying
 testimonials:
   title: What teams are saying
-  blockquote: Diode is sweet, this is an amazing technology and product.
-  caption: Erich, CEO Compendium
+  quotes:
+  - quote: I like very much the approach you are following at diode.io and am migrating to diode to have full remote control via ssh.
+    author: Ettoire, Modosmart
+  - quote: Diode's response to my support requests makes me know they really care about all of their customers.
+    author: Krista, RPG
+  - quote: Diode just works.
+    author: Joey, Exosite
+  - quote: Diode has changed the way we do business - we are able to deploy MES components and environments fully GDPR compliant and have created a Diode-based product line.
+    author: Omer, Dera Technologies
+  - quote: We are now using Diode for both our administration of the network and for our financial interactions with portfolio companies.  This tool has changed how we do business.
+    author: Eric, Global Enterprise Network
+  - quote: Diode allows us to move quickly while achieving the level of information protection for the communities and industries we serve.
+    author: Josh, YetiCGI
+  - quote: Diode is an important part of our system readiness.
+    author: Trey, Fairbanks Morse
 
 
 ### Box: How Diode works

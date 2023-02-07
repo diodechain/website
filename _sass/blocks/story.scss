@@ -2,9 +2,9 @@
    STORY
    ========================================================================== */
 .story {
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   @include media-breakpoint-up(md) {
-    margin-bottom: 100px;
+    margin-bottom: 120px;
   }
   @include media-breakpoint-up(xl) {
     margin-bottom: 180px;
@@ -58,7 +58,7 @@
   }
 
   &__image {
-    margin: 0 0 40px;
+    margin: 0 0 45px;
     position: relative;
     display: block;
     @include media-breakpoint-up(lg) {
@@ -115,7 +115,7 @@
   }
 
   &__gallery {
-    margin: 0 -15px 69px;
+    margin: 0 -15px 50px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -219,13 +219,12 @@
   }
 
   &__teams {
-    margin-top: 57px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     position: relative;
     @include media-breakpoint-up(sm) {
       max-width: 530px;
-      margin-top: 0;
       margin-right: auto;
+      margin-bottom: 30px;
       margin-left: auto;
       display: flex;
       flex-wrap: wrap;
@@ -245,7 +244,7 @@
       display: none;
       position: absolute;
       top: -95px;
-      left: 15px;
+      left: 0;
       z-index: 0;
       background: url('#{$img}/hero.png') no-repeat top left;
       background-size: contain;
@@ -253,17 +252,21 @@
       @include media-breakpoint-up(lg) {
         display: block;
       }
+      @include media-breakpoint-up(xl) {
+        left: 15px;
+      }
     }
 
     &-person {
-      padding: 15px 0;
-      margin-bottom: 5px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       flex-basis: 50%;
       position: relative;
       z-index: 1;
       @include media-breakpoint-up(sm) {
+        padding: 15px 0;
+        margin-bottom: 5px;
         flex-direction: column;
         text-align: center;
         justify-content: center;
@@ -312,7 +315,7 @@
   // Homepage version
   .hero--homepage ~ .headline + .story + .story + & {
     @include media-breakpoint-up(xl) {
-      margin-bottom: 100px;
+      margin-bottom: 110px;
     }
   }
 }

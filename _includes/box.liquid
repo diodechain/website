@@ -24,13 +24,20 @@
                 <div class="box__content">{{ data.content | markdownify }}</div>
             </div>
         {% endif %}
-        {%- if data.blockquote -%}
-            <div class="col col-12 col-md-8 col-lg-7">
-                <div class="box__content">
-                    <figure>
-                        <blockquote><p>{{ data.blockquote }}</p></blockquote>
-                        {%- if data.caption -%}<figcaption>{{ data.caption }}</figcaption>{% endif %}
-                    </figure>
+        {%- if data.quotes -%}
+            <div class="col col-12 col-md-10 col-lg-8">
+                <div class="box__testimonials">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            {% for quote in data.quotes %}
+                                <figure class="swiper-slide">
+                                    <blockquote><p>{{ quote.quote }}</p></blockquote>
+                                    {%- if quote.author -%}<figcaption>{{ quote.author }}</figcaption>{% endif %}
+                                </figure>
+                            {% endfor %}
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
                 </div>
             </div>
         {% endif %}

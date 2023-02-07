@@ -35,7 +35,7 @@ nav:
     url: "/solutions/vault/"
   - title: Network
     url: "/solutions/network/"
-- title: Teams
+- title: For Teams
   url: "/teams/"
 - title: About
   url: "/about/"
@@ -73,6 +73,7 @@ social:
   telegram: "https://t.me/diode_chain"
   twitter: "https://twitter.com/diode_chain"
   github: "https://github.com/diodechain"
+  matrix: "https://matrix.to/#/#diodechain:matrix.org"
 
 
 # Footer
@@ -453,9 +454,6 @@ collections:
   posts:
     output: true
     permalink: :categories/:title-:short_year:y_day/
-  team:
-    output: true
-    permalink: team/:name.html
   jobs:
     output: true
     permalink: jobs/:name.html

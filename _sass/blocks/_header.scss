@@ -348,9 +348,29 @@
     padding: 5px 20px;
     font-size: 14px;
     line-height: 20px;
-    display: none;
     position: absolute;
     z-index: 5;
+    @include media-breakpoint-down(md) {
+      width: 40px;
+      height: 40px;
+      min-width: 0;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      overflow: hidden;
+      top: 25px;
+      right: 55px;
+      text-indent: -1000px;
+      white-space: nowrap;
+      transition: none;
+      &, &:hover {background: url($icon-download) no-repeat center center;}
+    }
+    @include media-breakpoint-down(sm) {
+      right: 65px;
+    }
+    @include media-breakpoint-down(xss) {
+      right: 55px;
+    }
     @include media-breakpoint-up(md) {
       display: block;
       top: 28px;
@@ -358,10 +378,15 @@
     }
     @include media-breakpoint-up(xl) {
       top: 65px;
-      right: 65px;
     }
     @include media-breakpoint-up(xxl) {
       right: 185px;
+    }
+  }
+
+  &__space &__download {
+    @include media-breakpoint-down(md) {
+      right: 55px;
     }
   }
 }

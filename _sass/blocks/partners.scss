@@ -32,17 +32,35 @@
   }
 
   &__logos {
-    margin: 0 -90px;
+    margin: 0 -15px -30px;
     position: relative;
-    @include media-breakpoint-up(sm) {
-      margin: 0;
+    overflow: hidden;
+    @include media-breakpoint-up(xss) {
+      margin-right: -25px;
+      margin-left: -25px;
+    }
+    @include media-breakpoint-up(md) {
+      margin-right: 0;
+      margin-bottom: -15px;
+      margin-left: 0;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
     }
 
     .swiper {
-      @include media-breakpoint-up(md) {
-        padding: 0 30px;
+      padding-bottom: 45px;
+      margin: 0 -90px;
+      @include media-breakpoint-up(sm) {
+        margin: 0;
       }
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-up(md) {
+        padding-right: 30px;
+        padding-bottom: 40px;
+        padding-left: 30px;
+      }
+      @include media-breakpoint-up(lg) {
+        padding-bottom: 0;
       }
     }
 
@@ -69,6 +87,7 @@
         height: auto;
         margin: 0 auto;
         display: block;
+        @include user-select;
       }
     }
 
@@ -76,13 +95,13 @@
     .swiper-button-prev {
       left: -20px;
       @include media-breakpoint-up(lg) {
-        left: -10px;
+        left: -5px;
       }
     }
     .swiper-button-next {
       right: -20px;
       @include media-breakpoint-up(lg) {
-        right: -10px;
+        right: -5px;
       }
     }
 
@@ -110,6 +129,14 @@
 
     &.init .swiper-slide:nth-child(n+2) {
       display: block;
+    }
+
+    .swiper-pagination-bullets {
+      bottom: -5px;
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+      .swiper-pagination-bullet {background: $color-orange;}
     }
   }
 }

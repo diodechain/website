@@ -131,7 +131,6 @@
     p {
       margin: 0;
       @include media-breakpoint-up(xss) {
-        margin-left: 4px;
         margin-right: 34px;
       }
       @include media-breakpoint-up(md) {

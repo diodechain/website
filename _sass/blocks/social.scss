@@ -10,7 +10,16 @@
   @include user-select;
 
   li {
-    margin-left: 48px;
+    margin-left: 32px;
+    @include media-breakpoint-up(sm) {
+      margin-left: 48px;
+    }
+    @include media-breakpoint-up(md) {
+      margin-left: 32px;
+    }
+    @include media-breakpoint-up(xxl) {
+      margin-left: 48px;
+    }
     &:first-child {margin-left: 0;}
   }
 
@@ -29,6 +38,8 @@
   }
 
   svg {
+    width: 30px;
+    height: 30px;
     display: block;
     path {
       fill: $color-orange;

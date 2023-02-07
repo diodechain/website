@@ -1,7 +1,7 @@
 ---
 layout: new
 permalink: /teams/
-title: Teams
+title: For Teams
 
 
 hero:
