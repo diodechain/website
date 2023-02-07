@@ -15,7 +15,7 @@ hero:
     url: "#"
   - title: DOWNLOAD Diode<span>&trade; FOR MacOS</span>
     class: btn--bordered
-    url: "#"
+    url: "/download/"
   image: hero/default.webp
 
 

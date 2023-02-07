@@ -15,7 +15,7 @@
   }
   @include media-breakpoint-up(xl) {
     padding-top: 219px;
-    padding-bottom: 113px;
+    padding-bottom: 109px;
     margin-bottom: 180px;
   }
 
@@ -45,7 +45,7 @@
       margin-top: -220px;
     }
     @include media-breakpoint-up(xl) {
-      margin-top: -375px;
+      margin-top: -371px;
     }
   }
   &::after {
@@ -127,15 +127,10 @@
   }
 
   &__heading {
-    max-width: 400px;
     margin: 0 -10px 0 0;
     order: 2;
     @include media-breakpoint-up(xss) {
       margin-right: -20px;
-    }
-    @include media-breakpoint-up(sm) {
-      max-width: none;
-
     }
   }
 
@@ -162,6 +157,7 @@
 
     & + .hero__subheading {
       @include media-breakpoint-up(xl) {
+        margin-top: 34px;
         margin-bottom: 34px;
       }
     }
@@ -206,7 +202,7 @@
     order: 4;
     @include media-breakpoint-up(xl) {
       max-width: 625px;
-      margin-top: 34px;
+      margin-top: 26px;
       color: white;
       order: 3;
     }
@@ -227,6 +223,17 @@
       padding-bottom: 127px;
       margin-bottom: 0;
       &::before {width: 385px;margin-top: -450px;margin-left: -385px;}
+    }
+
+    .hero__heading {
+      max-width: 400px;
+      @include media-breakpoint-up(sm) {
+        max-width: none;
+      }
+      @include media-breakpoint-up(xxl) {
+        font-size: 127px;
+        line-height: 114px;
+      }
     }
   }
 }
