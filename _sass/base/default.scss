@@ -63,6 +63,20 @@ figure {
   margin: 0;
 }
 
+hr {
+  width: 76px;
+  height: 4px;
+  border: 0;
+  margin: 0;
+  display: block;
+  background: $color-orange;
+
+  margin-bottom: 100px;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 130px;
+  }
+}
+
 blockquote {
   margin: 0;
   font: 600 22px/24px $font-heading;

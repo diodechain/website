@@ -13,6 +13,7 @@ hero:
 app:
   title: People
   heading: App
+  icon: "icons/app.svg"
   content: |
     The Diode App is small application for computers and phones that connects your team to each other, to their information, and to their assets.  It is easy for non-technical people to install and use - everyone can collaborate and get things done without ever noticing they are also 256-bit E2EE secured.
   
@@ -28,12 +29,12 @@ app:
   image:
     src: story/orange.webp
     class: oval
-    alt: alt
 
 
 cli:
   title: Things
   heading: CLI
+  icon: "icons/cli.svg"
   content: |
     The Diode CLI is a headless tool that connects edge devices through Diode.  It can be used to securely publish, or subscribe to, resources from anywhere in the world.
   
@@ -41,7 +42,7 @@ cli:
   
     It is open-source and can be installed from binary or compiled for your platform.
     #### Use for
-    IoT/OT data, SSH, Websites, Server Admin
+    IoT/OT data, SSH, Websites, <br>Server Admin
 
   buttons:
   - title: Find Out More
@@ -49,14 +50,14 @@ cli:
   - title: Download
     url: "/download/"
   image:
-    src: story/orange.webp
+    src: story/orange-2.webp
     class: oval
-    alt: alt
 
 
 vault:
   title: Presence
   heading: Vault
+  icon: "icons/vault.svg"
   content: |
     The Diode Vault is a hardware appliance that works as an “always-on” team member device so that team chat, files, and assets are always available no matter if anyone else is online or not.
 
@@ -70,14 +71,14 @@ vault:
   - title: Download
     url: "/download/"
   image:
-    src: story/orange.webp
+    src: story/orange-2.webp
     class: oval
-    alt: alt
 
 
 network:
   title: Fabric
   heading: Network
+  icon: "icons/network.svg"
   content: |
     The Diode Network is the world’s leading Smart Network.  Smart Networks are a new generation of zero trust software defined networks based on hardened blockchain technology.  It is the fabric that allows you to create, provision, and use E2EE perimeters without requiring IT resources.
 
@@ -93,7 +94,6 @@ network:
   image:
     src: story/orange.webp
     class: oval
-    alt: alt
   mirrored: true
 
 ---
@@ -102,6 +102,10 @@ network:
 
 {%- include story.liquid data="app" -%}
 
+---
+
 {%- include stories.liquid data="cli,vault" -%}
+
+---
 
 {%- include story.liquid data="network" -%}

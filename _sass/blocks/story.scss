@@ -7,7 +7,7 @@
     margin-bottom: 120px;
   }
   @include media-breakpoint-up(xl) {
-    margin-bottom: 180px;
+    margin-bottom: 140px;
   }
 
   &__content {
@@ -15,7 +15,7 @@
       padding-right: 40px;
     }
     > h4:not([class]) {margin-bottom: 12px;}
-    > p + h4:not([class]) {margin-top: 42px;}
+    > p + h4:not([class]) {margin-top: 30px;}
     > p:last-child {margin-bottom: 0;}
   }
 
@@ -32,27 +32,46 @@
   }
 
   &__heading {
-    margin-bottom: 33px;
+    margin-bottom: 34px;
     @include media-breakpoint-up(xxl) {
       margin-right: -50px;
-      margin-bottom: 15px;
+    }
+  }
+
+  &__icon {
+    width: auto;
+    height: 50px;
+    margin: -12px 0 -4px 16px;
+    display: inline-block;
+    vertical-align: middle;
+    @include user-select;
+    @include media-breakpoint-up(xl) {
+      height: 64px;
+      margin-left: 25px;
+    }
+    @include media-breakpoint-up(xxl) {
+      height: 76px;
+      margin: -16px 0 0 30px;
     }
   }
 
   &__buttons {
-    margin-top: 20px;
+    margin-top: 24px;
     display: flex;
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(md) {
       margin-top: 34px;
     }
 
-    .btn + .btn {
-      margin-left: 10px;
-      @include media-breakpoint-up(sm) {
-        margin-left: 20px;
-      }
-      @include media-breakpoint-up(xl) {
-        margin-left: 40px;
+
+    .btn {
+      & + .btn {
+        margin-left: 10px;
+        @include media-breakpoint-up(sm) {
+          margin-left: 20px;
+        }
+        @include media-breakpoint-up(xl) {
+          margin-left: 40px;
+        }
       }
     }
   }
@@ -63,6 +82,11 @@
     display: block;
     @include media-breakpoint-up(lg) {
       margin-bottom: 0;
+    }
+    @include media-breakpoint-up(xxl) {
+      margin: -50px 0;
+      left: -25px;
+      .flex-lg-row-reverse & {left: -25px;}
     }
 
     img {
@@ -158,15 +182,16 @@
 
     &::before {
       @include pseudo;
-      width: 421px;
-      height: 570px;
+      width: 428px;
+      height: 555px;
       display: none;
       position: absolute;
-      top: -134px;
-      left: -11px;
+      top: -127px;
+      left: -33px;
       z-index: 0;
-      background: url('#{$img}/hero.png') no-repeat top left;
-      background-size: contain;
+      background: url('#{$img}/pattern.svg') no-repeat top left;
+      background-size: 535px auto;
+      opacity: .6;
       @include media-breakpoint-up(xl) {
         display: block;
       }
@@ -230,30 +255,31 @@
       flex-wrap: wrap;
     }
     @include media-breakpoint-up(md) {
-      margin-top: -20px;
+      margin-bottom: 0;
     }
     @include media-breakpoint-up(xl) {
-      margin-top: 20px;
+      margin-top: 30px;
       left: 43px;
     }
 
     &::before {
       @include pseudo;
       width: 421px;
-      height: 570px;
+      height: 555px;
       display: none;
       position: absolute;
-      top: -95px;
+      top: -66px;
       left: 0;
       z-index: 0;
-      background: url('#{$img}/hero.png') no-repeat top left;
-      background-size: contain;
+      background: url('#{$img}/pattern.svg') no-repeat top left;
+      background-size: 535px auto;
+      opacity: .6;
       transform: rotate(-90deg);
       @include media-breakpoint-up(lg) {
         display: block;
       }
       @include media-breakpoint-up(xl) {
-        left: 15px;
+        left: 14px;
       }
     }
 
@@ -316,6 +342,35 @@
   .hero--homepage ~ .headline + .story + .story + & {
     @include media-breakpoint-up(xl) {
       margin-bottom: 110px;
+    }
+  }
+
+  // Stories version
+  .stories & {
+    .row {
+      display: block !important;
+      .col {
+        width: 100% !important;
+      }
+    }
+    .story__image {
+      &.oval {
+        @include media-breakpoint-up(xxl) {
+          margin: 0 0 47px;
+          left: -38px;
+
+          img {
+            max-width: 494px;
+            border-radius: 247px;
+            margin: 0;
+          }
+        }
+      }
+    }
+    .story__content {
+      @include media-breakpoint-up(xxl) {
+        padding-right: 60px;
+      }
     }
   }
 }

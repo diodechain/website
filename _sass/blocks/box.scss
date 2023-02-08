@@ -44,16 +44,11 @@
   }
 
   &__title {
-    margin-bottom: 36px;
-    position: relative;
-    top: 1px;
+    margin-bottom: 33px;
     font: 22px/24px $font-default;
     text-decoration: underline;
     text-decoration-thickness: .0625em;
     text-underline-offset: .167em;
-    @include media-breakpoint-up(xl) {
-      top: 3px;
-    }
   }
 
   &__heading {
@@ -263,17 +258,41 @@
     }
     &::before {
       @include pseudo;
-      width: 330px;
-      height: 370px;
+      width: 352px;
+      height: 528px;
       margin-left: -50vw;
       display: none;
       position: absolute;
-      top: -20px;
+      top: -88px;
       left: 50%;
       z-index: -1;
-      background: url('#{$img}/hero.png') no-repeat bottom left;
-      background-size: 421px 570px;
+      background: url('#{$img}/pattern.svg') no-repeat bottom left;
+      background-size: 535px auto;
+      opacity: .6;
       transform: rotate(-90deg);
+      @include media-breakpoint-up(lg) {
+        display: block;
+      }
+    }
+  }
+
+  &--testimonials {
+    position: relative;
+    z-index: 1;
+    &::before {
+      @include pseudo;
+      width: 220px;
+      height: 540px;
+      margin-right: -50vw;
+      display: none;
+      position: absolute;
+      right: 50%;
+      bottom: -160px;
+      z-index: -1;
+      background: url('#{$img}/pattern.svg') no-repeat top right;
+      background-size: 535px auto;
+      opacity: .6;
+      transform: rotate(-90deg) translateY(-120px);
       @include media-breakpoint-up(lg) {
         display: block;
       }

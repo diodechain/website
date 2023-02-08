@@ -16,36 +16,43 @@
   @include media-breakpoint-up(xl) {
     padding-top: 219px;
     padding-bottom: 109px;
-    margin-bottom: 180px;
+    margin-bottom: 184px;
   }
 
   &::before {
     @include pseudo;
-    width: 57.5%;
-    height: 570px;
-    margin-top: -83px;
+    width: 64.5%;
+    height: 400px;
+    margin-top: -120px;
     position: absolute;
     top: 100%;
     right: -15px;
     z-index: -1;
-    background: url('#{$img}/hero.png') no-repeat top left;
-    background-size: 421px 570px;
+    background: url('#{$img}/pattern.svg') no-repeat top left;
+    background-size: 535px auto;
+    mix-blend-mode: hard-light;
+    opacity: .65;
     @include media-breakpoint-up(xss) {
       right: -25px;
     }
     @include media-breakpoint-up(sm) {
-      width: 395px;
-      margin-top: -170px;
-      margin-left: -395px;
+      width: 417px;
+      margin-top: -120px;
+      margin-left: -417px;
       right: auto;
       left: 50%;
       transform: translateX(50vw);
+      background-size: 535px auto;
     }
     @include media-breakpoint-up(md) {
-      margin-top: -220px;
+      margin-top: -190px;
+    }
+    @include media-breakpoint-up(lg) {
+      height: 570px;
+      margin-top: -260px;
     }
     @include media-breakpoint-up(xl) {
-      margin-top: -371px;
+      margin-top: -364px;
     }
   }
   &::after {
@@ -163,12 +170,27 @@
     }
 
     .btn {
+      color: white;
       white-space: nowrap;
       text-transform: none;
+
+      @media (hover: hover) {
+        &:hover, &:focus {
+          color: white;
+        }
+      }
 
       sup {
         font-size: 100%;
         top: -.25em;
+      }
+
+      &.btn--bordered {
+        @media (hover: hover) {
+          &:hover, &:focus {
+            border-color: white;
+          }
+        }
       }
 
       & + .btn {
@@ -222,7 +244,20 @@
       padding-top: 193px;
       padding-bottom: 127px;
       margin-bottom: 0;
-      &::before {width: 385px;margin-top: -450px;margin-left: -385px;}
+    }
+
+    &::before {
+      @include media-breakpoint-down(lg) {
+        height: 570px;
+      }
+      @include media-breakpoint-down(md) {
+        margin-top: -77px;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 385px;
+        margin-top: -450px;
+        margin-left: -385px;
+      }
     }
 
     .hero__heading {

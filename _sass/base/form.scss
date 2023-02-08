@@ -48,7 +48,7 @@ textarea.form-control {
   white-space: nowrap;
   text-align: center;
   background: $color-orange;
-  transition: border-color $effect, background-color $effect;
+  transition: color $effect-s, border-color $effect, background-color $effect;
   cursor: pointer;
   outline: none;
   @include user-select;
@@ -60,14 +60,18 @@ textarea.form-control {
   }
 
   @media (hover: hover) {
-    &:hover, &:focus {border-color: black;background-color: black;}
+    &:hover, &:focus {
+      color: black;
+      background-color: transparent;
+    }
   }
 
   &--bordered {
+    color: black;
     background-color: transparent;
     @media (hover: hover) {
       &:hover, &:focus {
-        border-color: white;
+        border-color: black;
         background-color: transparent;
       }
     }
@@ -89,6 +93,35 @@ textarea.form-control {
         border-color: transparent;
         color: black;
         background-color: transparent;
+      }
+    }
+  }
+
+  &--arrow {
+    transition: none;
+    &::after {
+      @include pseudo;
+      width: 13px;
+      height: 14px;
+      margin-left: 5px;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+      background: url($icon-arrow) no-repeat center center;
+      background-size: contain;
+      @include media-breakpoint-up(md) {
+        width: 15px;
+        height: 16px;
+        margin-left: 8px;
+      }
+    }
+    @media (hover: hover) {
+      &:hover, &:focus {
+        &::after {
+          -webkit-filter: brightness(0%);
+          filter: brightness(0%);
+        }
       }
     }
   }

@@ -75,7 +75,7 @@ protected:
   - title: Find Out More
     url: "/teams/"
   - title: Schedule a Demo
-    class: btn--blank
+    class: btn--blank btn--arrow
     url: "https://contactdiode.paperform.co/"
     target: _blank
   teams:
@@ -134,6 +134,7 @@ our-network:
 
 ### Box: What teams are saying
 testimonials:
+  class: box--testimonials
   title: What teams are saying
   quotes:
   - quote: I like very much the approach you are following at diode.io and am migrating to diode to have full remote control via ssh.

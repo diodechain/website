@@ -382,11 +382,17 @@
     @include media-breakpoint-up(xxl) {
       right: 185px;
     }
+    @media (hover: hover) {
+      &:hover, &:focus {color: white;}
+    }
   }
 
   &__space &__download {
     @include media-breakpoint-down(md) {
       right: 55px;
+    }
+    @media (hover: hover) {
+      &:hover, &:focus {color: black;}
     }
   }
 }

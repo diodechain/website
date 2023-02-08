@@ -15,8 +15,11 @@
 
   & > .container {
     padding-bottom: 30px;
+    @include media-breakpoint-up(md) {
+      padding-bottom: 50px;
+    }
     @include media-breakpoint-up(xl) {
-      padding-bottom: 85px;
+      padding-bottom: 80px;
     }
     &::after {@include clearfix;}
   }

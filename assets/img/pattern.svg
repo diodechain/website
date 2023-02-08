@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 626">
+    <defs>
+        <style>.cls-1{fill:#e4e6ea}.cls-2{fill:none;stroke:#e4e6ea;stroke-miterlimit:10}</style>
+    </defs>
+    <path d="m303.86 16.64-80.22 138.93-80.21-138.93M384.02 155.57 303.8 16.64" class="cls-2"/>
+    <path d="M183.56 225.04H23.13l80.22-138.93h160.43l-80.22 138.93z" class="cls-2"/>
+    <path d="m223.67 155.57-80.22 138.94-80.21-138.93 80.21-138.94 80.22 138.93z" class="cls-2"/>
+    <path d="M343.94 225.04H183.51l80.21-138.93h160.43l-80.21 138.93z" class="cls-2"/>
+    <path d="m384.05 155.57-80.22 138.94-80.22-138.93 80.22-138.94 80.22 138.93z" class="cls-2"/>
+    <path d="M263.75 363.98H103.32l80.21-138.94h160.44l-80.22 138.94z" class="cls-2"/>
+    <path d="m303.86 294.51-80.22 138.94-80.21-138.94 80.21-138.94 80.22 138.94z" class="cls-2"/>
+    <path d="M183.56 502.92H23.13l80.22-138.94h160.43l-80.22 138.94z" class="cls-2"/>
+    <path d="m223.67 433.45-80.22 138.94-80.21-138.94 80.21-138.94 80.22 138.94z" class="cls-2"/>
+    <path d="M343.94 502.92H183.51l80.21-138.94h160.43l-80.21 138.94z" class="cls-2"/>
+    <path d="m384.05 433.45-80.22 138.94-80.22-138.94 80.22-138.94 80.22 138.94z" class="cls-2"/>
+    <circle cx="143.7" cy="294.51" r="7.55" class="cls-1"/>
+    <circle cx="304.13" cy="294.51" r="7.55" class="cls-1"/>
+    <circle cx="102.66" cy="363.98" r="7.55" class="cls-1"/>
+    <circle cx="182.77" cy="363.98" r="7.55" class="cls-1"/>
+    <circle cx="262.87" cy="363.98" r="7.55" class="cls-1"/>
+    <circle cx="342.98" cy="363.98" r="7.55" class="cls-1"/>
+    <circle cx="223.61" cy="433.45" r="7.55" class="cls-1"/>
+    <circle cx="102.66" cy="502.92" r="7.55" class="cls-1"/>
+    <circle cx="182.77" cy="502.92" r="7.55" class="cls-1"/>
+    <circle cx="262.87" cy="502.92" r="7.55" class="cls-1"/>
+    <circle cx="342.98" cy="502.92" r="7.55" class="cls-1"/>
+    <circle cx="103.32" cy="225.04" r="7.55" class="cls-1"/>
+    <circle cx="183.51" cy="225.04" r="7.55" class="cls-1"/>
+    <circle cx="263.69" cy="225.04" r="7.55" class="cls-1"/>
+    <circle cx="343.88" cy="225.04" r="7.55" class="cls-1"/>
+    <circle cx="223.94" cy="155.57" r="7.55" class="cls-1"/>
+    <circle cx="384.37" cy="155.57" r="7.55" class="cls-1"/>
+    <circle cx="183.51" cy="84.6" r="7.55" class="cls-1"/>
+    <circle cx="263.69" cy="84.6" r="7.55" class="cls-1"/>
+    <circle cx="343.88" cy="84.6" r="7.55" class="cls-1"/>
+</svg>

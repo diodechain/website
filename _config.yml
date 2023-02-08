@@ -41,8 +41,9 @@ nav:
   url: "/about/"
 - title: Pricing
   url: "/pricing/"
-- title: Resources
-  url: "/resources/"
+- title: Support
+  url: "https://support.diode.io/"
+  target: _blank
   sub:
   - title: Download
     url: "/download/"
@@ -52,9 +53,6 @@ nav:
     url: "/prenet/"
   - title: Blog
     url: "/blog/"
-  - title: Docs
-    url: "https://support.diode.io/"
-    target: _blank
 
 
 # Other Links
