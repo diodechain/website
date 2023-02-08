@@ -67,16 +67,14 @@ hr {
   width: 76px;
   height: 4px;
   border: 0;
-  margin: 0;
+  margin: 0 0 100px;
   display: block;
   background: $color-orange;
-
-  margin-bottom: 90px;
   @include media-breakpoint-up(md) {
-    margin-bottom: 110px;
+    margin-bottom: 130px;
   }
   @include media-breakpoint-up(xl) {
-    margin-bottom: 130px;
+    margin-bottom: 160px;
   }
 }
 

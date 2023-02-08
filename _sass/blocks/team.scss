@@ -25,7 +25,6 @@
     font: 600 24px/26px $font-heading;
     text-align: center;
     @include media-breakpoint-up(md) {
-      margin-bottom: 50px;
       font-size: 36px;
       line-height: 38px;
     }
@@ -36,10 +35,16 @@
       line-height: 43px;
     }
     @include media-breakpoint-up(xl) {
-      margin-bottom: 70px;
+      margin-bottom: 60px;
     }
-    @include media-breakpoint-up(xxl) {
-      margin-bottom: 90px;
+  }
+
+  &__social {
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: top;
+    @include media-breakpoint-up(xl) {
+      margin-left: 17px;
     }
   }
 
@@ -58,7 +63,7 @@
       margin: 0 auto 15px;
       display: block;
       @include media-breakpoint-up(md) {
-        margin-bottom: 30px;
+        margin-bottom: 29px;
       }
 
       img {
@@ -74,7 +79,7 @@
     &-name {
       margin-bottom: 10px;
       @include media-breakpoint-up(md) {
-        margin-bottom: 15px;
+        margin-bottom: 16px;
       }
     }
 

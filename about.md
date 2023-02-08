@@ -40,10 +40,12 @@ team:
   members:
   - name: Hans
     title: CEO and Co-Founder
+    linkedin: "https://www.linkedin.com/in/hansrempel/"
     photo: team/default.webp
 
   - name: Dominic
     title: CTO and Co-Founder
+    linkedin: "https://www.linkedin.com/in/dominic-letz/"
     photo: team/default.webp
 
   - name: Zach

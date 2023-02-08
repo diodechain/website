@@ -17,7 +17,7 @@
                 <div class="col col-12 col-sm-6 col-md-4 col-xl-4">
                     <article class="team__member">
                         {%- if member.photo -%}<figure class="team__member-photo"><img src="{{ member.photo | prepend: site.path.images | relative_url }}" width="142" height="142" alt="{{ member.name }}"></figure>{% endif %}
-                        {%- if member.name -%}<h3 class="team__member-name">{{ member.name }}</h3>{% endif %}
+                        {%- if member.name -%}<h3 class="team__member-name">{{ member.name }}{%- if member.linkedin -%}<a class="team__social" href="{{ member.linkedin }}" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"><path fill="#F15D2F" d="M4.924 22H.364V7.312h4.56V22ZM2.641 5.308C1.183 5.308 0 4.1 0 2.642a2.642 2.642 0 1 1 5.283 0c0 1.458-1.184 2.666-2.642 2.666ZM21.995 22h-4.551v-7.15c0-1.704-.034-3.89-2.371-3.89-2.372 0-2.735 1.852-2.735 3.767V22H7.782V7.312h4.374v2.003h.064c.609-1.154 2.096-2.372 4.315-2.372 4.616 0 5.465 3.04 5.465 6.989V22h-.005Z"/></svg></a>{% endif %}</h3>{% endif %}
                         {%- if member.title -%}<p>{{ member.title }}</p>{% endif %}
                     </article>
                 </div>
