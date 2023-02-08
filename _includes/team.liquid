@@ -6,7 +6,7 @@
 
 <section class="team">
     <div class="row justify-content-md-center text-center">
-        <div class="col col-12 col-md-8 col-lg-7">
+        <div class="col col-12 col-lg-10 col-xl-8 col-xxl-7">
             {%- if data.title -%}<h4 class="team__title">{{ data.title }}</h4>{% endif %}
             {%- if data.heading -%}<h3 class="team__heading">{{ data.heading }}</h3>{% endif %}
         </div>
@@ -14,7 +14,7 @@
     {%- if data.members -%}
         <div class="row justify-content-center">
             {% for member in data.members %}
-                <div class="col col-12 col-xl-4">
+                <div class="col col-12 col-sm-6 col-md-4 col-xl-4">
                     <article class="team__member">
                         {%- if member.photo -%}<figure class="team__member-photo"><img src="{{ member.photo | prepend: site.path.images | relative_url }}" width="142" height="142" alt="{{ member.name }}"></figure>{% endif %}
                         {%- if member.name -%}<h3 class="team__member-name">{{ member.name }}</h3>{% endif %}

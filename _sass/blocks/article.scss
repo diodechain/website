@@ -1,0 +1,13 @@
+/* ==========================================================================
+   ARTICLE
+   ========================================================================== */
+.article {
+  margin-bottom: 40px;
+  position: relative;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 80px;
+  }
+}

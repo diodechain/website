@@ -71,8 +71,11 @@ hr {
   display: block;
   background: $color-orange;
 
-  margin-bottom: 100px;
+  margin-bottom: 90px;
   @include media-breakpoint-up(md) {
+    margin-bottom: 110px;
+  }
+  @include media-breakpoint-up(xl) {
     margin-bottom: 130px;
   }
 }

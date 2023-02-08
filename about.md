@@ -5,25 +5,27 @@ title: About
 
 ### Hero
 hero:
-  heading: Upgrade&nbsp;the Internet
-  subheading: For teams who care about the security of their&nbsp;operations.
-  image: hero/default.webp
+  heading: A little bit <br>about us.
+  subheading: How we started, what we believe in and where&nbsp;we’re&nbsp;going.
+  image: hero/about.webp
 
 
 ### Headline below Hero
 headline:
-  title: Protect. Thrive. Diode.
+  title: What drives us. Everyday.
   text: We’re governed by a strong set of ideals. Our belief that technology should help humans thrive – that it should allow us to explore, educate and innovate unhindered, drives what we create.
 
 
 ### Top Story
 story:
-  title: We had to walk uphill both ways&hellip;
-  heading: The attack surface was too large
+  title: The beginning of Diode
+  heading: It all started with fixing a web2 leak.
   content: |
-    Diode was born when co-founder Dominic Letz could not rest until he had solved for a Man in the Middle attack against time - a prerequisite for legacy Web2 PKI-based security (and a problem than had bricked millions of a customer’s devices).
-    
-    He found a solution by applying decentralized consensus to even the most resource constrained devices.  The Diode team has been innovating ever since to turn the dramatic implications for the future of the Internet into securing today’s most fluid IT environments.
+    Diode was born when co-founder Dominic Letz needed to solve for a Man in the Middle attack against time - a prerequisite for a legacy Web2 PKI-based security issue that had bricked millions of devices.
+  
+    He found a solution by applying decentralized consensus to even the most resource constrained devices.
+  
+    The Diode team has been innovating ever since to make even the most fluid IT environments secure.
   image:
     src: story/oval.webp
     class: oval
@@ -33,7 +35,7 @@ story:
 ### Our Team
 team:
   title: Our Team
-  heading: The Diode team has collaborated for over 10 years on high availability software and business operations for applications using IIoT, OT, and network security technologies to transform their industries.
+  heading: The Diode team has collaborated for over 10 years on high availability software that helps organizations transform their industries.
 
   members:
   - name: Hans
@@ -60,6 +62,23 @@ team:
     title: Brand and Market
     photo: team/default.webp
 
+
+### Article: Our desire
+article:
+  heading: Our desire to upgrade the internet.
+  content: |
+    At Diode, we believe the Internet is a wonderful tool that can enable free, civil, and thriving collaboration. However, it is has become increasingly difficult to leverage the Internet’s benefits without risking privacy or sustainability.
+  
+    Everything we do at Diode strives to enable individuals and organizations the means to private and secure collaboration.
+  
+    Today, the team is busy developing next generation applications, expanding the capabilities of the Diode Network, and growing our base of customers, partners, and developers.
+
+    If you’d like to find out more, or chat about how to best collaborate:
+  buttons:
+  - title: Get in Touch
+    url: "#"
+
+
 ---
 
 {%- include hero.liquid -%}
@@ -69,3 +88,7 @@ team:
 {%- include story.liquid -%}
 
 {%- include team.liquid -%}
+
+---
+
+{%- include article.liquid data="article" -%}
