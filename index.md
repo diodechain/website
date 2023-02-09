@@ -12,7 +12,7 @@ hero:
   subheading: For teams whose communications and asset connectivity require both agility and security.
   buttons:
   - title: FIND OUT MORE
-    url: "#"
+    url: "/solutions/"
   - title: DOWNLOAD Diode<span>&trade; FOR MacOS</span>
     class: btn--bordered
     url: "/download/"
@@ -35,7 +35,7 @@ what-is:
     Team members can chat, work on files, and hand off work-in-process to those best suited to take action.
   buttons:
   - title: Read More
-    url: "#"
+    url: "/solutions/app/"
   gallery:
   - image: story/screen.webp
     alt: Screenshot
@@ -55,7 +55,7 @@ anywhere:
     IT, OT, and IoT assets can be remotely managed whether they are on-premise, in the cloud, or deployed in a hybrid environment - all without leaking data, identifiers, or application / telemetry flows.
   buttons:
   - title: Find Out More
-    url: "#"
+    url: "/how-it-works/"
   image:
     src: story/protected.svg
     class: circle

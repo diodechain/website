@@ -3,7 +3,7 @@
    ========================================================================== */
 .hero {
   padding: 152px 0 68px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
   color: white;
   position: relative;
   z-index: 0;
@@ -11,12 +11,12 @@
   background-repeat: no-repeat;
   background-size: 1px 1px;
   @include media-breakpoint-up(md) {
-    padding-bottom: 90px;
+    margin-bottom: 120px;
   }
   @include media-breakpoint-up(xl) {
     padding-top: 219px;
-    padding-bottom: 109px;
-    margin-bottom: 184px;
+    padding-bottom: 113px;
+    margin-bottom: 180px;
   }
 
   &::before {
@@ -251,6 +251,9 @@
         height: 570px;
       }
       @include media-breakpoint-down(md) {
+        margin-top: -157px;
+      }
+      @include media-breakpoint-down(sm) {
         margin-top: -77px;
       }
       @include media-breakpoint-up(xl) {

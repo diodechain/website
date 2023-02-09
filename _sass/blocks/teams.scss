@@ -1,0 +1,114 @@
+/* ==========================================================================
+   TEAMS
+   ========================================================================== */
+.teams {
+  position: relative;
+  z-index: 1;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-up(xl) {
+    margin-top: -35px;
+    margin-bottom: 90px;
+  }
+
+  &__entry {
+    margin-bottom: 80px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
+    @include media-breakpoint-up(lg) {
+      padding-right: 30px;
+
+    }
+    @include media-breakpoint-up(xl) {
+      padding-right: 50px;
+    }
+    @include media-breakpoint-up(xxl) {
+      padding-right: 70px;
+    }
+  }
+
+  &__photo {
+    width: 188px;
+    height: 188px;
+    margin-bottom: 30px;
+    display: block;
+    @include media-breakpoint-up(md) {
+      width: 188px;
+      height: 188px;
+      margin-left: -10px;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 304px;
+      height: 304px;
+      margin-bottom: 52px;
+    }
+    @include media-breakpoint-up(xxl) {
+      margin-left: -27px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: block;
+      object-fit: cover;
+      @include user-select;
+    }
+  }
+
+  &__content {
+    h4 {
+      margin-top: 42px;
+      margin-bottom: 24px;
+    }
+
+    p:last-child {margin-bottom: 0;}
+  }
+
+  &__title {
+    margin: 0 0 25px;
+    font: 22px/24px $font-default;
+    text-decoration: underline;
+    text-decoration-thickness: .0625em;
+    text-underline-offset: .167em;
+    @include media-breakpoint-up(md) {
+      @include media-breakpoint-down(xl) {
+        font-size: 20px;
+        line-height: 22px;
+      }
+    }
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 48px;
+      margin-left: 8px;
+    }
+  }
+
+  &__heading {
+    @include media-breakpoint-up(md) {
+      @include media-breakpoint-down(xl) {
+        font-size: 48px;
+        line-height: 48px;
+      }
+    }
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 53px;
+    }
+  }
+
+  hr {
+    display: none;
+    @include media-breakpoint-up(md) {
+      margin: 80px 0;
+      display: block;
+    }
+    @include media-breakpoint-up(lg) {
+      margin: 100px 0;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: 140px;
+      margin-bottom: 100px;
+    }
+  }
+}

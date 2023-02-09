@@ -6,7 +6,7 @@ title: About
 ### Hero
 hero:
   heading: A little bit <br>about us.
-  subheading: How we started, what we believe in and where&nbsp;we’re&nbsp;going.
+  subheading: How we started, what we believe in and&nbsp;where&nbsp;we’re going.
   image: hero/about.webp
 
 
