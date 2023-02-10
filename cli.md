@@ -12,7 +12,7 @@ hero:
   buttons:
   - title: DOWNLOAD CLI
     url: "/download/"
-  image: hero/vault.webp
+  image: hero/cli.webp
 
 
 ### Story: For assets
