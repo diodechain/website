@@ -46,7 +46,7 @@ features:
       Connect, manage, collect, view, and administrate - everything you wish you could do with your IT and OT assets.
     buttons:
     - title: DOWNLOAD
-      url: "#"
+      url: "/download/"
     - title: SCHEDULE A DEMO
       class: btn--blank btn--arrow
       url: "https://contactdiode.paperform.co/"

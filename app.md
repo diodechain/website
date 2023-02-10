@@ -46,7 +46,7 @@ features:
       Communicate, reference, annotate, manage, and collaborate - everything a team working with real world IT, OT, or web assets requires.
     buttons:
     - title: DOWNLOAD
-      url: "#"
+      url: "/download/"
     - title: SCHEDULE A DEMO
       class: btn--blank btn--arrow
       url: "https://contactdiode.paperform.co/"
