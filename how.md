@@ -1,5 +1,6 @@
 ---
 layout: new
+class: header--white
 permalink: /how-it-works/
 title: How Diode works.
 
@@ -17,7 +18,7 @@ story:
   title: No third parties
   heading: Zero Leakage
   content: |
-    Diode’s Blockquick™ algorithm allows people and devices using the Diode Network to define their security perimeters – to connect with each other without using managed server environments. 
+    Diode’s Blockquick&trade; algorithm allows people and devices using the Diode Network to define their security perimeters – to connect with each other without using managed server environments. 
   
     Secured through hardened smart contracts running on a decentralized blockchain infrastructure, our  autonomous E2EE environment eliminates third parties from the IT stack, thereby removing a major attack surface and setting a new standard for security.
   video:

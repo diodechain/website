@@ -367,6 +367,12 @@
     @media (hover: hover) {
       &:hover, &:focus {color: white;}
     }
+
+    .header--white & {
+      @media (hover: hover) {
+        &:hover, &:focus {color: black;}
+      }
+    }
   }
 
   &__space &__download {

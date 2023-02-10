@@ -79,14 +79,14 @@ textarea.form-control {
 
   &--blank {
     min-width: 0;
-    padding: 12px 4px;
+    padding: 12px 0;
     border: none;
     border-radius: 0;
     color: $color-orange;
     background-color: transparent;
     transition: color $effect;
     @include media-breakpoint-up(md) {
-      padding: 16px 12px;
+      padding: 16px 0;
     }
     @media (hover: hover) {
       &:hover, &:focus {

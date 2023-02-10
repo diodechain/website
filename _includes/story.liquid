@@ -11,17 +11,14 @@
 {% endif %}
 
 {%- if data.mirrored -%}
-    {% assign mirrored = " align-items-lg-center" %}
+    {% assign mirrored = "" %}
 {% else %}
     {% assign mirrored = " flex-lg-row-reverse" %}
 {% endif %}
-{%- if data.video -%}
-    {% assign mirrored = " align-items-lg-center flex-lg-row-reverse" %}
-{% endif %}
 
 <section class="story{{ class }}">
-    <div class="row{{ mirrored }}">
-        <div class="col col-12 col-lg-6 col-xl-5 col-xxl-6">
+    <div class="row align-items-lg-center{{ mirrored }}">
+        <div class="col col-12 col-lg-6">
             {%- if data.image -%}
                 <figure class="story__image {{ data.image.class }}"><img src="{{ data.image.src | prepend: site.path.images | relative_url }}" width="272" alt="{{ data.image.alt }}"></figure>
             {% endif %}
@@ -51,7 +48,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="col col-12 col-lg-6 col-xl-7 col-xxl-6">
+        <div class="col col-12 col-lg-6">
             <div class="story__content">
                 {%- if data.title -%}<h4 class="story__title">{{ data.title }}</h4>{% endif %}
                 {%- if data.heading -%}<h2 class="story__heading">{{ data.heading }}{%- if data.icon -%}<img class="story__icon" src="{{ data.icon | prepend: site.path.images | relative_url }}" height="50" alt="">{% endif %}</h2>{% endif %}

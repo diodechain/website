@@ -24,17 +24,19 @@
             {% capture thecycle %}{% cycle "odd", "even" %}{% endcapture %}
             {% if thecycle == "odd" %}<div class="row">{% endif %}
             <div class="col col-12 col-lg-6">
-                <article class="features__entry">
-                    {%- if entry.title -%}<h4 class="features__title">{{ entry.title }}</h4>{% endif %}
-                    {{ entry.content | markdownify }}
-                    {%- if entry.buttons -%}
-                        <div class="features__buttons">
-                            {% for button in entry.buttons %}
-                                <a href="{{ button.url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                </article>
+                {%- if entry.title -%}
+                    <article class="features__entry">
+                        <h4 class="features__title">{{ entry.title }}</h4>
+                        {{ entry.content | markdownify }}
+                        {%- if entry.buttons -%}
+                            <div class="features__buttons">
+                                {% for button in entry.buttons %}
+                                    <a href="{{ button.url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </article>
+                {% endif %}
             </div>
             {% if thecycle == "even" %}
                 </div>

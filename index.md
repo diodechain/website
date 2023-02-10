@@ -96,7 +96,7 @@ protected:
 ### Box: Our solutions
 solutions:
   class: box--orange
-  title: No third parties means zero leakage.
+  title: No third parties means Zero Leakage&trade;
   heading: Our solutions.
   solutions:
   - title: App

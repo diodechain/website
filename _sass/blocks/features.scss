@@ -2,7 +2,16 @@
    FEATURES
    ========================================================================== */
 .features {
+  margin-bottom: 60px;
   position: relative;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 100px;
+  }
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 120px;
+  }
+
+  &:last-child {margin-bottom: 0;}
 
   &__heading {
     margin-bottom: 40px;
@@ -57,13 +66,11 @@
   &__buttons {
     margin-top: 20px;
     margin-bottom: 10px;
-    text-align: center;
     @include media-breakpoint-up(lg) {
       margin-top: -40px;
       margin-bottom: 0;
       position: relative;
       top: 70px;
-      text-align: left;
     }
 
     .btn {
