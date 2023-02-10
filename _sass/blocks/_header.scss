@@ -56,44 +56,23 @@
     height: 40px;
     position: absolute;
     top: 25px;
-    right: 14px;
+    right: 15px;
     z-index: 3;
     cursor: pointer;
     @include media-breakpoint-up(xss) {
-      right: 24px;
+      right: 25px;
     }
     @include media-breakpoint-up(sm) {
-      right: 14px;
+      right: 15px;
+    }
+    @include media-breakpoint-up(md) {
+      right: 5px;
     }
     @include media-breakpoint-up(xl) {
       top: 62px;
     }
     @include media-breakpoint-up(xxl) {
       right: 134px;
-    }
-
-    &::before, &::after, span {
-      @include pseudo;
-      width: 23px;
-      height: 2px;
-      margin: auto;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 1;
-      background: white;
-      transition: transform $effect, opacity $effect;
-      transform: none;
-      transform-origin: center;
-    }
-    &::before {top: 16px;}
-    &::after {bottom: 16px;}
-
-    .open & {
-      @include media-breakpoint-down(xl) {
-      }
     }
   }
 
@@ -317,7 +296,10 @@
     z-index: 10;
     cursor: pointer;
     @include media-breakpoint-up(xss) {
-      right: 14px;
+      right: 15px;
+    }
+    @include media-breakpoint-up(md) {
+      right: 5px;
     }
     @include media-breakpoint-up(xl) {
       top: 62px;
@@ -374,7 +356,7 @@
     @include media-breakpoint-up(md) {
       display: block;
       top: 28px;
-      right: 65px;
+      right: 55px;
     }
     @include media-breakpoint-up(xl) {
       top: 65px;

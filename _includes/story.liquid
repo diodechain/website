@@ -15,12 +15,18 @@
 {% else %}
     {% assign mirrored = " flex-lg-row-reverse" %}
 {% endif %}
+{%- if data.video -%}
+    {% assign mirrored = " align-items-lg-center flex-lg-row-reverse" %}
+{% endif %}
 
 <section class="story{{ class }}">
     <div class="row{{ mirrored }}">
         <div class="col col-12 col-lg-6 col-xl-5 col-xxl-6">
             {%- if data.image -%}
                 <figure class="story__image {{ data.image.class }}"><img src="{{ data.image.src | prepend: site.path.images | relative_url }}" width="272" alt="{{ data.image.alt }}"></figure>
+            {% endif %}
+            {%- if data.video -%}
+                <figure class="story__video"><a href="{{ data.video.src }}"><img src="{{ data.video.preview | prepend: site.path.images | relative_url }}" width="240" alt="{{ data.video.alt }}"></a></figure>
             {% endif %}
             {%- if data.gallery -%}
                 <div class="story__gallery">

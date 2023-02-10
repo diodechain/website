@@ -138,6 +138,35 @@
     }
   }
 
+  &__video {
+    max-width: 360px;
+    margin: 0 auto 45px;
+    position: relative;
+    @include media-breakpoint-up(md) {
+      max-width: 572px;
+    }
+    @include media-breakpoint-up(lg) {
+      margin: 0;
+    }
+    @include media-breakpoint-up(xxl) {
+      top: 24px;
+      left: 2px;
+    }
+
+    a {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      @include user-select;
+    }
+  }
+
   &__gallery {
     margin: 0 -15px 50px;
     position: relative;
@@ -371,6 +400,23 @@
       @include media-breakpoint-up(xxl) {
         padding-right: 60px;
       }
+    }
+  }
+
+
+  // Dashed
+  &--dash {
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      @include pseudo;
+      width: 76px;
+      height: 4px;
+      position: absolute;
+      left: 0;
+      bottom: -43px;
+      background: $color-orange;
     }
   }
 }

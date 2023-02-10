@@ -1,0 +1,46 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.features %}
+{% endif %}
+
+<section class="features">
+    <div class="row align-items-lg-center">
+        <div class="col col-12 col-lg-6">
+            {%- if data.heading -%}<h2 class="features__heading">{{ data.heading }}</h2>{% endif %}
+        </div>
+        {%- if data.actions -%}
+            <div class="col col-12 col-lg-6">
+                <div class="features__actions">
+                    {% for button in data.actions %}
+                        <a href="{{ button.url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    {%- if data.list -%}
+        {% for entry in data.list %}
+            {% capture thecycle %}{% cycle "odd", "even" %}{% endcapture %}
+            {% if thecycle == "odd" %}<div class="row">{% endif %}
+            <div class="col col-12 col-lg-6">
+                <article class="features__entry">
+                    {%- if entry.title -%}<h4 class="features__title">{{ entry.title }}</h4>{% endif %}
+                    {{ entry.content | markdownify }}
+                    {%- if entry.buttons -%}
+                        <div class="features__buttons">
+                            {% for button in entry.buttons %}
+                                <a href="{{ button.url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </article>
+            </div>
+            {% if thecycle == "even" %}
+                </div>
+            {% elsif forloop.last %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</section>

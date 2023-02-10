@@ -1,0 +1,79 @@
+/* ==========================================================================
+   FEATURES
+   ========================================================================== */
+.features {
+  position: relative;
+
+  &__heading {
+    margin-bottom: 40px;
+    text-align: center;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 50px;
+      text-align: left;
+    }
+  }
+
+  &__actions {
+    margin-bottom: 50px;
+    text-align: center;
+    @include media-breakpoint-up(lg) {
+      padding-bottom: 50px;
+      margin-bottom: 0;
+    }
+    @include media-breakpoint-up(xxl) {
+      padding-bottom: 46px;
+      padding-right: 98px;
+    }
+
+    .btn {
+      @include media-breakpoint-up(md) {
+        padding-right: 34px;
+        padding-left: 34px;
+      }
+    }
+  }
+
+  &__entry {
+    padding: 0 0 50px 0;
+    @include media-breakpoint-up(lg) {
+      padding-right: 30px;
+    }
+    @include media-breakpoint-up(xl) {
+      padding-right: 50px;
+    }
+    @include media-breakpoint-up(xxl) {
+      padding-right: 70px;
+    }
+
+    h4 {
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 40px;
+      }
+    }
+
+    p:last-of-type {margin-bottom: 0;}
+  }
+
+  &__buttons {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    @include media-breakpoint-up(lg) {
+      margin-top: -40px;
+      margin-bottom: 0;
+      position: relative;
+      top: 70px;
+      text-align: left;
+    }
+
+    .btn {
+      margin-top: 10px;
+      text-transform: none;
+      & + .btn {
+        @include media-breakpoint-up(lg) {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}

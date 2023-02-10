@@ -222,7 +222,7 @@
       @include media-breakpoint-up(sm) {
         left: 50%;
         right: auto;
-        transform: translate3d(-50%, 0, 0);
+        transform: translateX(-50%);
       }
     }
   }

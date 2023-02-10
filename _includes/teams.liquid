@@ -7,8 +7,8 @@
 <div class="teams">
     {%- if data -%}
         {% for entry in data %}
-            {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-            {% if thecycle == 'odd' %}<div class="row">{% endif %}
+            {% capture thecycle %}{% cycle "odd", "even" %}{% endcapture %}
+            {% if thecycle == "odd" %}<div class="row">{% endif %}
                 <div class="col col-12 col-md-6">
                     <article class="teams__entry">
                         {%- if entry.image -%}<figure class="teams__photo"><img src="{{ entry.image.src | prepend: site.path.images | relative_url }}" width="304" height="304" alt="{{ entry.heading }}"></figure>{% endif %}
@@ -17,7 +17,7 @@
                         {%- if entry.content -%}<div class="teams__content">{{ entry.content | markdownify }}</div>{% endif %}
                     </article>
                 </div>
-            {% if thecycle == 'even' %}</div>{% if forloop.last == false %}<hr>{% endif %}{% endif %}
+            {% if thecycle == "even" %}</div>{% if forloop.last == false %}<hr>{% endif %}{% endif %}
         {% endfor %}
     {% endif %}
 </div>

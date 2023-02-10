@@ -143,9 +143,12 @@ h3 {
 }
 
 h4 {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 25px;
   line-height: 30px;
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 30px;
+  }
 }
 
 h5 {
