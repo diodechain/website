@@ -27,7 +27,7 @@ story:
 ### Box: Our solutions
 solutions:
   class: box--orange
-  title: No third parties means Zero Leakage&trade;
+  title: No third parties means Zero&nbsp;Leakage&trade;
   heading: Our solutions.
   solutions:
   - title: App

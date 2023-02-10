@@ -49,7 +49,7 @@
                             {%- if solution.icon -%}<img class="box__solution-icon" src="{{ solution.icon | prepend: site.path.images | relative_url }}" height="50" alt="{{ solution.title }}">{% endif %}
                             {%- if solution.title -%}<h3>{{ solution.title }}</h3>{% endif %}
                             {%- if solution.content -%}<p>{{ solution.content }}</p>{% endif %}
-                            {%- if solution.button -%}<a href="{{ solution.button.url }}" class="btn {{ solution.button.class }}">{{ solution.button.label }}</a>{% endif %}
+                            {%- if solution.button -%}<a href="{{ solution.button.url | prepend: site.path.images | relative_url }}" class="btn {{ solution.button.class }}">{{ solution.button.label }}</a>{% endif %}
                         {% endif %}
                     </section>
                 </div>

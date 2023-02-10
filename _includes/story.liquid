@@ -56,7 +56,7 @@
                 {%- if data.buttons -%}
                     <div class="story__buttons">
                         {% for button in data.buttons %}
-                            <a href="{{ button.url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                            <a href="{{ button.url | prepend: site.path.images | relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
                         {% endfor %}
                     </div>
                 {% endif %}
