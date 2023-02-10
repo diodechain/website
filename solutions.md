@@ -23,7 +23,7 @@ app:
 
   buttons:
   - title: Find Out More
-    url: "./app/"
+    url: "/solutions/app/"
   - title: Download
     url: "/download/"
   image:
@@ -46,7 +46,7 @@ cli:
 
   buttons:
   - title: Find Out More
-    url: "./cli/"
+    url: "/solutions/cli/"
   - title: Download
     url: "/download/"
   image:
@@ -67,7 +67,7 @@ vault:
 
   buttons:
   - title: Find Out More
-    url: "./vault/"
+    url: "/solutions/vault/"
   - title: Download
     url: "/download/"
   image:
@@ -88,7 +88,7 @@ network:
 
   buttons:
   - title: Find Out More
-    url: "./network/"
+    url: "/solutions/network/"
   - title: Download
     url: "/download/"
   image:
