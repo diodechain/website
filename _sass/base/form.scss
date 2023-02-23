@@ -49,9 +49,7 @@ textarea.form-control {
   text-align: center;
   background: $color-orange;
   transition: color $effect-s, border-color $effect, background-color $effect;
-  cursor: pointer;
   outline: none;
-  @include user-select;
   @include media-breakpoint-up(md) {
     min-width: 189px;
     padding: 14px 28px;
@@ -122,6 +120,22 @@ textarea.form-control {
           -webkit-filter: brightness(0%);
           filter: brightness(0%);
         }
+      }
+    }
+  }
+
+  &--small {
+    min-height: 56px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    line-height: 18px;
+    @media (hover: hover) {
+      &:hover, &:focus {
+        color: white;
+        background-color: $color-orange;
       }
     }
   }

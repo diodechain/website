@@ -1,0 +1,73 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.download %}
+{% endif %}
+
+<section class="download">
+    <div class="row justify-content-center">
+        <div class="col col-12 col-lg-10 col-xxl-8">
+            <div class="download__content">
+                {%- if data.title -%}<p class="download__title">{{ data.title }}</p>{% endif %}
+                {%- if data.heading -%}<h2 class="download__heading">{{ data.heading }}</h2>{% endif %}
+                {%- if data.subheading -%}<p class="download__subheading">{{ data.subheading }}</p>{% endif %}
+                {%- if data.buttons -%}
+                    <div class="download__buttons">
+                        {% for button in data.buttons %}
+                            <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {%- if data.install -%}
+        <div class="row justify-content-center">
+            <div class="col col-12 col-lg-8 col-xxl-6">
+                <div class="download__install">
+                    <p class="lead">Copy &amp; paste the line below into a terminal:</p>
+                    <code>curl -Ssf https://diode.io/install.sh | sh</code>
+                    <p class="small">Supported on macOS, Linux, Raspberry Pi (or Windows if you have curl)</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col col-12">
+                <p class="lead">Or manually install:</p>
+            </div>
+            <div class="col col-12 col-lg-4 col-xxl-3">
+                <div class="download__manual">
+                    <var class="step">1</var>
+                    <p class="lead">Download Diode CLI</p>
+                    <p class="three">Download the binary for your operating system</p>
+                    <a href="https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_darwin_amd64.zip" class="btn">MacOS X</a>
+                    <ul class="list">
+                        <li><a href="https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_linux_arm.zip">Raspberry Pi (ARM)</a></li>
+                        <li><a href="https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_linux_arm64.zip">Raspberry Pi 64bit (ARM64)</a></li>
+                        <li><a href="https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_darwin_amd64.zip">MacOS X</a></li>
+                        <li><a href="https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_darwin.pkg">MacOS Package</a></li>
+                        <li><a href="https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_windows_amd64.zip">Windows (64-bit)</a></li>
+                        <li><a href="https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_linux_amd64.zip">Linux (64-bit)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col col-12 col-lg-4 col-xxl-3">
+                <div class="download__manual">
+                    <var class="step">2</var>
+                    <p class="lead">Unzip and Install</p>
+                    <p class="three">Unzip the CLI. On MacOS, you can double click it</p>
+                    <span class="btn btn--small">unzip Downloads/<br>diode_darwin_amd64.zip</span>
+                    <p class="note">We recommend moving it into a $PATH directory such as /home/[user]/.local/bin</p>
+                </div>
+            </div>
+            <div class="col col-12 col-lg-4 col-xxl-3">
+                <div class="download__manual">
+                    <var class="step">3</var>
+                    <p class="lead">Publish Ports</p>
+                    <p class="three">To publish, e.g. local http, ports to the Diode Network call</p>
+                    <span class="btn btn--small"><span class="noselect">$&nbsp;</span>diode publish -public 80:80</span>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</section>

@@ -1,0 +1,196 @@
+/* ==========================================================================
+   DOWNLOAD
+   ========================================================================== */
+.download {
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 80px;
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font: 22px/24px $font-default;
+    text-decoration: underline;
+    text-decoration-thickness: .0625em;
+    text-underline-offset: .167em;
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 33px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 0;
+  }
+
+  &__subheading {
+    max-width: 550px;
+    margin: 30px auto 0;
+    font: 600 20px/107.4% $font-heading;
+    @include media-breakpoint-up(md) {
+      margin-top: 60px;
+      font-size: 25px;
+    }
+  }
+
+  &__buttons {
+    margin-top: 30px;
+    @include media-breakpoint-up(md) {
+      margin-top: 42px;
+    }
+    .btn {margin-right: 5px;margin-left: 5px;}
+  }
+
+  &__install {
+    margin-top: 54px;
+    margin-bottom: 88px;
+    text-align: center;
+
+    .lead, .small {
+      cursor: default;
+      @include user-select;
+    }
+
+    code {
+      margin: 0 0 14px;
+      display: block;
+      font: 16px/18px $font-default;
+      text-decoration: underline;
+      text-decoration-thickness: .0625em;
+      text-underline-offset: .167em;
+      @include media-breakpoint-up(md) {
+        font-size: 22px;
+        line-height: 24px;
+      }
+    }
+
+    &-steps {
+      margin: 0;
+      display: flex;
+      list-style: none;
+
+      > li {
+        width: 33.3%;
+      }
+    }
+
+    *:last-child {margin-bottom: 0;}
+  }
+
+  .lead {
+    margin-bottom: 18px;
+    font: 600 25px/107.4% $font-heading;
+    text-align: center;
+  }
+
+  .small {
+    margin-bottom: 0;
+    display: block;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: .02em;
+    @include media-breakpoint-up(md) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__manual {
+    max-width: 320px;
+    margin: 50px auto 0;
+    position: relative;
+    font-size: 17px;
+    line-height: 26px;
+    text-align: center;
+    @include media-breakpoint-up(lg) {
+      max-width: none;
+      padding-right: 14px;
+      margin-top: 58px;
+      text-align: left;
+    }
+
+    .step {
+      margin-bottom: 16px;
+      display: block;
+      font: 600 65px/70px $font-heading;
+      @include user-select;
+      @include media-breakpoint-up(md) {
+        font-size: 89px;
+        line-height: 80px;
+      }
+    }
+    .lead {
+      margin-bottom: 17px;
+      @include media-breakpoint-up(lg) {
+        text-align: left;
+      }
+    }
+    .three {
+      margin-bottom: 20px;
+      @include media-breakpoint-up(lg) {
+        min-height: 78px;
+      }
+    }
+    .btn {
+      width: 220px;
+      margin: 0 auto 40px;
+      white-space: normal;
+      text-transform: none;
+      @include media-breakpoint-up(lg) {
+        width: 240px;
+      }
+    }
+    .list {
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+      line-height: 22px;
+      list-style: none;
+      @include media-breakpoint-up(lg) {
+        text-align: center;
+      }
+      li {
+        display: inline-block;
+        white-space: nowrap;
+      }
+    }
+    .note {
+      font-size: 14px;
+      line-height: 22px;
+    }
+    &::after {@include clearfix;}
+  }
+
+  .noselect {
+    @include user-select;
+  }
+
+  & + & {
+    margin-top: 80px;
+    @include media-breakpoint-up(md) {
+      margin-top: 100px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: 130px;
+    }
+    &::before {
+      @include pseudo;
+      width: 76px;
+      height: 4px;
+      margin: 0 auto 70px;
+      background: $color-orange;
+      @include media-breakpoint-up(md) {
+        width: 215px;
+        margin-bottom: 100px;
+      }
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 120px;
+      }
+    }
+  }
+}
