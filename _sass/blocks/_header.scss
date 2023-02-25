@@ -112,16 +112,10 @@
     }
 
     // Logo
-    & > .container::before {
-      @include pseudo;
-      width: 129px;
-      height: 42px;
-      position: absolute;
+    & > .container .header__menu {
       top: 25px;
       left: 17px;
       z-index: 0;
-      background: url('#{$img}/logo.svg') no-repeat center center;
-      background-size: contain;
       @include media-breakpoint-up(sm) {
         left: 17px;
       }
@@ -130,7 +124,7 @@
       }
       @include media-breakpoint-up(xl) {
         top: 68px;
-        left: 25px;
+        left: 0;
       }
     }
 

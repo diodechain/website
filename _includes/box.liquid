@@ -31,7 +31,7 @@
                         <div class="swiper-wrapper">
                             {% for quote in data.quotes %}
                                 <figure class="swiper-slide">
-                                    <blockquote><p>{{ quote.quote }}</p></blockquote>
+                                    <blockquote><p>{{ quote.quote | markdownify }}</p></blockquote>
                                     {%- if quote.author -%}<figcaption>{{ quote.author }}</figcaption>{% endif %}
                                 </figure>
                             {% endfor %}

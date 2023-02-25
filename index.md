@@ -7,13 +7,12 @@ title: Reclaim Your Digital Sovereignty
 ### Hero
 hero:
   class: hero--homepage
-  title: Securing team operations in fluid IT environments is _complicated_.
-  heading: Zero&nbsp;Trust, <br>Off the Shelf
-  subheading: For teams whose communications and asset connectivity require both agility and security.
+  heading: Diode is Zero Trust For Teams.
+  subheading: For operations requiring both agility and security.
   buttons:
   - title: FIND OUT MORE
     url: "/solutions/"
-  - title: DOWNLOAD Diode<span>&trade; FOR MacOS</span>
+  - title: DOWNLOAD FOR MacOS
     class: btn--bordered
     url: "/download/"
   image: hero/default.webp
@@ -76,7 +75,7 @@ protected:
     url: "/teams/"
   - title: Schedule a Demo
     class: btn--blank btn--arrow
-    url: "https://contactdiode.paperform.co/"
+    url: "https://diodedemo.paperform.co/"
     target: _blank
   teams:
   - title: Operational Technology <br>Asset Management
@@ -137,7 +136,9 @@ testimonials:
   class: box--testimonials
   title: What teams are saying
   quotes:
-  - quote: I like very much the approach you are following at diode.io and am migrating to diode to have full remote control via ssh.
+  - quote: Diode is sweet, this is an amazing technology and product.
+    author: Erich, CEO Compendium
+  - quote: I like very much the approach you are following at **diode.io** and am migrating to diode to have full remote control via ssh.
     author: Ettoire, Modosmart
   - quote: Diode's response to my support requests makes me know they really care about all of their customers.
     author: Krista, RPG

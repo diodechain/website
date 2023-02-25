@@ -279,6 +279,7 @@
   &--testimonials {
     position: relative;
     z-index: 1;
+
     &::before {
       @include pseudo;
       width: 220px;
@@ -296,6 +297,13 @@
       @include media-breakpoint-up(lg) {
         display: block;
       }
+    }
+
+    strong {
+      font-weight: inherit;
+      text-decoration: underline;
+      text-decoration-thickness: .0625em;
+      text-underline-offset: .084em;
     }
   }
 }

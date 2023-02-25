@@ -311,11 +311,12 @@
     .hero__content::after {display: block !important;}
 
     .hero__heading {
-      max-width: 400px;
-      @include media-breakpoint-up(sm) {
-        max-width: none;
+      max-width: 360px;
+      @include media-breakpoint-up(md) {
+        max-width: 500px;
       }
       @include media-breakpoint-up(xxl) {
+        max-width: 800px;
         font-size: 127px;
         line-height: 114px;
       }
@@ -323,8 +324,12 @@
 
     .hero__subheading {
       min-height: 0;
-      margin-top: 34px;
-      margin-bottom: 34px;
+      margin-top: 21px;
+      margin-bottom: 21px;
+      @include media-breakpoint-up(xl) {
+        max-width: 700px;
+        margin-bottom: 44px;
+      }
     }
 
     .hero__buttons {
@@ -335,7 +340,7 @@
         bottom: auto;
       }
       @include media-breakpoint-up(xl) {
-        margin-bottom: 22px;
+        margin-bottom: 37px;
       }
     }
   }
