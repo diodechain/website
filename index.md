@@ -123,21 +123,21 @@ solutions:
     content: The Diode App is for your team. Whether replacing a leaky chat app, sharing files E2EE, securing a server dashboard, or deploying advanced OT assets, our app unlocks the power of Diode for people.
     button:
       title: Find Out More
-      class: btn--blank btn--arrow
+      class: "btn--blank btn--arrow"
       url: "/solutions/app/"
   - title: CLI
     icon: "icons/cli.svg"
     content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone to secure autonomous systems, and/or in concert with team members using the Diode App.
     button:
       title: Find Out More
-      class: btn--blank btn--arrow
+      class: "btn--blank btn--arrow"
       url: "/solutions/cli/"
   - title: Vault
     icon: "icons/vault.svg"
     content: The Diode Vault is an autonomous tool that combines both App and CLI features in a small box or cloud appliance. 24-7 availability, backup, and geo-access for your team and assets.
     button:
       title: Find Out More
-      class: btn--blank btn--arrow
+      class: "btn--blank btn--arrow"
       url: "/solutions/vault/"
 
 

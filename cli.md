@@ -71,24 +71,24 @@ solutions:
   solutions:
   - title: App
     icon: "icons/app.svg"
-    content: The Diode App is for all your teams. Whether replacing a leaky chat app, sharing files E2EE, securing a simple dashboard, or deploying advanced OT assets, this app unlocks the power of Diode for people.
+    content: The Diode App is for your team. Whether replacing a leaky chat app, sharing files E2EE, securing a server dashboard, or deploying advanced OT assets, our app unlocks the power of Diode for people.
     button:
-      label: Find Out More
-      class: btn--blank
+      title: Find Out More
+      class: "btn--blank btn--arrow"
       url: "/solutions/app/"
   - title: Vault
     icon: "icons/vault.svg"
-    content: The Diode Vault is a Diode hardware appliance that combines both the App features and the CLI features in a small box. 24-7 availability, backup, and geo-access for your team and assets.
+    content: The Diode Vault is an autonomous tool that combines both App and CLI features in a small box or cloud appliance. 24-7 availability, backup, and geo-access for your team and assets.
     button:
-      label: Find Out More
-      class: btn--blank
+      title: Find Out More
+      class: "btn--blank btn--arrow"
       url: "/solutions/vault/"
   - title: Network
     icon: "icons/network.svg"
     content: The Diode Network is the world’s leading Smart Network - a new generation of zero trust software defined networks based on hardened blockchain technology. Think ad hoc E2EE perimeters.
     button:
-      label: Find Out More
-      class: btn--blank
+      title: Find Out More
+      class: "btn--blank btn--arrow"
       url: "/solutions/network/"
 
 ---

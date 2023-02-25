@@ -32,24 +32,24 @@ solutions:
   solutions:
   - title: App
     icon: "icons/app.svg"
-    content: The Diode App is for all your teams. Whether replacing a leaky chat app, sharing files E2EE, securing a simple dashboard, or deploying advanced OT assets, this app unlocks the power of Diode for people.
+    content: The Diode App is for your team. Whether replacing a leaky chat app, sharing files E2EE, securing a server dashboard, or deploying advanced OT assets, our app unlocks the power of Diode for people.
     button:
-      label: Find Out More
-      class: btn--blank
+      title: Find Out More
+      class: "btn--blank btn--arrow"
       url: "/solutions/app/"
   - title: CLI
     icon: "icons/cli.svg"
-    content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone or in concert with Zones created in the Diode App. Connect the edge here.
+    content: The Diode App is for your team. Whether replacing a leaky chat app, sharing files E2EE, securing a server dashboard, or deploying advanced OT assets, our app unlocks the power of Diode for people.
     button:
-      label: Find Out More
-      class: btn--blank
+      title: Find Out More
+      class: "btn--blank btn--arrow"
       url: "/solutions/cli/"
   - title: Network
     icon: "icons/network.svg"
     content: The Diode Network is the world’s leading Smart Network - a new generation of zero trust software defined networks based on hardened blockchain technology. Think ad hoc E2EE perimeters.
     button:
-      label: Find Out More
-      class: btn--blank
+      title: Find Out More
+      class: "btn--blank btn--arrow"
       url: "/solutions/network/"
 
 ---
