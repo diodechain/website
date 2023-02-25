@@ -21,7 +21,16 @@
     <div class="row justify-content-md-center text-center">
         {%- if data.content -%}
             <div class="col col-12 col-md-10 col-lg-8 col-xxl-6">
-                <div class="box__content">{{ data.content | markdownify }}</div>
+                <div class="box__content">
+                    {{ data.content | markdownify }}
+                    {%- if data.buttons -%}
+                        <div class="box__buttons">
+                            {% for button in data.buttons %}
+                                <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
             </div>
         {% endif %}
         {%- if data.quotes -%}
@@ -49,7 +58,7 @@
                             {%- if solution.icon -%}<img class="box__solution-icon" src="{{ solution.icon | prepend: site.path.images | relative_url }}" height="50" alt="{{ solution.title }}">{% endif %}
                             {%- if solution.title -%}<h3>{{ solution.title }}</h3>{% endif %}
                             {%- if solution.content -%}<p>{{ solution.content }}</p>{% endif %}
-                            {%- if solution.button -%}<a href="{{ solution.button.url | relative_url }}" class="btn {{ solution.button.class }}">{{ solution.button.label }}</a>{% endif %}
+                            {%- if solution.button -%}<a href="{{ solution.button.url | relative_url }}" class="btn {{ solution.button.class }}">{{ solution.button.title }}</a>{% endif %}
                         {% endif %}
                     </section>
                 </div>

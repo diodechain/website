@@ -22,9 +22,10 @@ $img: '../img';
 
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-$font-default: 'IBM Plex Mono', monospace;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+$font-default: Poppins, sans-serif;
 $font-heading: Poppins, sans-serif;
+$font-code: 'IBM Plex Mono', monospace;
 
 // Colors
 $color-orange: #f15d2f;

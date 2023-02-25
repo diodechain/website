@@ -8,5 +8,12 @@
     <div class="headline__content">
         {%- if data.title -%}<h3 class="headline__title">{{ data.title }}</h3>{% endif %}
         {%- if data.text -%}{{ data.text | markdownify }}{% endif %}
+        {%- if data.buttons -%}
+            <div class="headline__buttons">
+                {% for button in data.buttons %}
+                    <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
     </div>
 </section>

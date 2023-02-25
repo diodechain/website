@@ -112,19 +112,16 @@
     }
 
     // Logo
-    & > .container .header__menu {
-      top: 25px;
-      left: 17px;
-      z-index: 0;
-      @include media-breakpoint-up(sm) {
-        left: 17px;
+    & > .container {
+      .header__menu {
+        z-index: 0;
       }
-      @include media-breakpoint-up(md) {
-        left: 15px;
-      }
-      @include media-breakpoint-up(xl) {
-        top: 68px;
-        left: 0;
+      .header__logo {
+        @include media-breakpoint-up(xss) {
+          @include media-breakpoint-down(md) {
+            left: 17px;
+          }
+        }
       }
     }
 
@@ -135,14 +132,13 @@
   &__menu {
     width: 100%;
     min-height: 100%;
-    padding: 88px 0;
+    padding: 110px 0 88px;
     margin: 0;
     font: 600 38px/42px $font-heading;
     list-style: none;
     position: relative;
     z-index: 1;
     @include media-breakpoint-up(sm) {
-      padding-top: 110px;
       padding-bottom: 110px;
       -webkit-column-count: 2;
       -moz-column-count: 2;

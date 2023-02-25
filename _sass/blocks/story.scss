@@ -4,7 +4,7 @@
 .story {
   margin-bottom: 100px;
   @include media-breakpoint-up(md) {
-    margin-bottom: 130px;
+    margin-bottom: 120px;
   }
   @include media-breakpoint-up(xl) {
     margin-bottom: 160px;
@@ -14,25 +14,27 @@
     @include media-breakpoint-up(xl) {
       padding-right: 40px;
     }
+    @include media-breakpoint-up(xxl) {
+      padding-right: 50px;
+    }
     > h4:not([class]) {margin-bottom: 12px;}
     > p + h4:not([class]) {margin-top: 30px;}
     > p:last-child {margin-bottom: 0;}
   }
 
   &__title {
-    margin-bottom: 25px;
-    font: 22px/24px $font-default;
-    text-decoration: underline;
-    text-decoration-thickness: .0625em;
-    text-underline-offset: .167em;
+    margin-bottom: 24px;
+    font: 600 20px/22px $font-default;
     @include media-breakpoint-up(xl) {
       margin-bottom: 21px;
-      margin-left: 6px;
+      margin-left: 8px;
+      font-size: 22px;
+      line-height: 24px;
     }
   }
 
   &__heading {
-    margin-bottom: 34px;
+    margin-bottom: 22px;
     @include media-breakpoint-up(xxl) {
       margin-right: -50px;
     }
@@ -56,12 +58,11 @@
   }
 
   &__buttons {
-    margin-top: 24px;
+    margin-top: 22px;
     display: flex;
     @include media-breakpoint-up(md) {
-      margin-top: 34px;
+      margin-top: 33px;
     }
-
 
     .btn {
       & + .btn {
@@ -77,7 +78,7 @@
   }
 
   &__image {
-    margin: 0 auto 45px;
+    margin: 0 auto 40px;
     position: relative;
     display: block;
     @include media-breakpoint-up(md) {
@@ -87,6 +88,7 @@
     @include media-breakpoint-up(lg) {
       max-width: none;
       margin-right: 0;
+      margin-bottom: 0;
       margin-left: 0;
     }
 
@@ -169,7 +171,7 @@
   }
 
   &__gallery {
-    margin: 0 -15px 50px;
+    margin: 0 -15px 40px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -292,8 +294,8 @@
       margin-bottom: 0;
     }
     @include media-breakpoint-up(xl) {
-      margin-top: 30px;
-      left: 43px;
+      margin-top: 26px;
+      left: 45px;
     }
 
     &::before {
@@ -324,9 +326,10 @@
       flex-basis: 50%;
       position: relative;
       z-index: 1;
+      cursor: default;
       @include media-breakpoint-up(sm) {
         padding: 15px 0;
-        margin-bottom: 5px;
+        margin-bottom: 9px;
         flex-direction: column;
         text-align: center;
         justify-content: center;
@@ -340,13 +343,10 @@
       width: 108px;
       height: 108px;
       display: block;
-      @include media-breakpoint-up(xss) {
-        margin-left: -3px;
-      }
       @include media-breakpoint-up(sm) {
         width: 145px;
         height: 145px;
-        margin: 0 0 18px;
+        margin: 0 0 16px;
       }
 
       img {
@@ -360,12 +360,10 @@
     }
 
     &-title {
-      margin: 0 0 14px 17px;
-      font-size: 15px;
-      line-height: 16px;
-      text-decoration: underline;
-      text-decoration-thickness: .0625em;
-      text-underline-offset: .167em;
+      margin-bottom: 0;
+      margin-left: 17px;
+      font-size: 13px;
+      line-height: 14px;
       @include media-breakpoint-up(sm) {
         margin: 0;
       }
@@ -408,7 +406,6 @@
     }
   }
 
-
   // Dashed
   &--dash {
     position: relative;
@@ -422,6 +419,26 @@
       left: 0;
       bottom: -43px;
       background: $color-orange;
+    }
+  }
+
+  &--homepage {
+    .story__image {
+      @include media-breakpoint-up(lg) {
+        width: 50vw;
+        margin-left: -15px;
+        overflow: hidden;
+        img {
+          width: 900px;
+          max-width: none;
+        }
+      }
+      @include media-breakpoint-up(xxl) {
+        margin-bottom: -100px;
+        img {
+          width: 1220px;
+        }
+      }
     }
   }
 }

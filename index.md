@@ -12,7 +12,7 @@ hero:
   buttons:
   - title: FIND OUT MORE
     url: "/solutions/"
-  - title: DOWNLOAD FOR MacOS
+  - title: DOWNLOAD <span>FOR MacOS</span>
     class: btn--bordered
     url: "/download/"
   image: hero/default.webp
@@ -20,63 +20,42 @@ hero:
 
 ### Headline below Hero
 headline:
-  title: Today’s Security Conundrum
-  text: Today’s collaboration and connectivity tools require either self-hosting or third-party involvement - burdening the team with either cost/complexity or security compromises. Diode has a better way.
+  title: Today’s digital security dilemma.
+  text: Today’s collaboration and connectivity tools require self-hosting or third-party involvement - burdening teams with cost, complexity and security compromises. <br>Diode has a better way.
+  buttons:
+  - title: Find Out More
+    class: btn--blank btn--arrow
+    url: "#"
 
 
 ### Story: What is Diode
-what-is:
+app:
+  class: "story--homepage"
   title: What is Diode
-  heading: An asset connectivity network built for teams.
+  heading: A zero trust connectivity network–built for teams.
   content: |
-    Diode’s Smart Network is intuitive to use - your team can quickly secure access to each other and their managed assets, no matter where they are at in the world.
-  
-    Team members can chat, work on files, and hand off work-in-process to those best suited to take action.
+    Diode’s Smart Network is intuitive and easy to use, allowing your teams access to each other and their assets – quickly and securely – no matter where they are in the world.
+    
+    Teams can collaborate and access assets and other secure systems without the fear of loss of valuable IP or data.
   buttons:
   - title: Read More
     url: "/solutions/app/"
-  gallery:
-  - image: story/screen.webp
-    alt: Screenshot
-  - image: story/screen.webp
-    alt: Screenshot
-  - image: story/screen.webp
-    alt: Screenshot
-
-
-### Story: Anywhere. Whenever.
-anywhere:
-  title: Anywhere. Whenever.
-  heading: Protected no matter what.
-  content: |
-    Eliminate third parties from your IT environment, making it more secure than any managed SSE or Cloud VPN solution.
-  
-    IT, OT, and IoT assets can be remotely managed whether they are on-premise, in the cloud, or deployed in a hybrid environment - all without leaking data, identifiers, or application / telemetry flows.
-  buttons:
-  - title: Find Out More
-    url: "/how-it-works/"
   image:
-    src: story/protected.svg
-    class: circle
-    alt: Protected no matter what
-  mirrored: true
+    src: story/app.webp
+    alt: Diode App
 
 
-### Story: Operate protected
+### Story: Fort Knox protection
 protected:
-  title: Operate protected
+  title: Fort Knox protection
   heading: For teams just like yours.
   content: |
-    By using Diode, your team can move fast and operate at or above the security level that your assets and IP require.
-  
-    Zero Trust perimeters that ring-fence digital operations, and that allow partners to securely interoperate, can be created and provisioned in seconds without burdening the IT team.
+    By using Diode, your team can move fast – and operate above the security level that your organization requires.    
+    
+    It’s easy to create Zero Trust zones that protect your digital operations and allow your partners to securely interoperate.  Get up and running quickly without burdening your IT team.
   buttons:
   - title: Find Out More
     url: "/teams/"
-  - title: Schedule a Demo
-    class: btn--blank btn--arrow
-    url: "https://diodedemo.paperform.co/"
-    target: _blank
   teams:
   - title: Operational Technology <br>Asset Management
     photo: team/operational-technology.webp
@@ -92,43 +71,22 @@ protected:
     alt: IP and Sensitive Content
 
 
-### Box: Our solutions
-solutions:
-  class: box--orange
-  title: No third parties means Zero&nbsp;Leakage&trade;
-  heading: Our solutions.
-  solutions:
-  - title: App
-    icon: "icons/app.svg"
-    content: The Diode App is for all your teams. Whether replacing a leaky chat app, sharing files E2EE, securing a simple dashboard, or deploying advanced OT assets, this app unlocks the power of Diode for people.
-    button:
-      label: Find Out More
-      class: btn--blank
-      url: "/solutions/app/"
-  - title: CLI
-    icon: "icons/cli.svg"
-    content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone or in concert with Zones created in the Diode App. Connect the edge here.
-    button:
-      label: Find Out More
-      class: btn--blank
-      url: "/solutions/cli/"
-  - title: Vault
-    icon: "icons/vault.svg"
-    content: The Diode Vault is a Diode hardware appliance that combines both the App features and the CLI features in a small box. 24-7 availability, backup, and geo-access for your team and assets.
-    button:
-      label: Find Out More
-      class: btn--blank
-      url: "/solutions/vault/"
-
-
-### Box: Our network
-our-network:
-  class: "box--network"
-  icon: "icons/network.svg"
-  title: A better way
-  heading: Our network.
+### Story: From anywhere, whenever
+anywhere:
+  title: From anywhere, whenever
+  heading: Protected no matter what.
   content: |
-    The Diode Network is the world’s leading Smart Network - a new generation of zero trust software defined networks based on hardened blockchain technology. Think ad hoc E2EE perimeters.
+    Eliminate third parties from your IT environment, making it more secure than any managed SSE or Cloud VPN solution.
+  
+    With Diode, IT, OT, and IoT assets can be remotely managed whether they are on-site, in the cloud, or set up in a hybrid environment – all without leaking data, identifiable information, or behaviors.
+  buttons:
+  - title: Find Out More
+    url: "/how-it-works/"
+  image:
+    src: story/protected.svg
+    class: circle
+    alt: Protected no matter what
+  mirrored: true
 
 
 ### Box: What teams are saying
@@ -154,21 +112,65 @@ testimonials:
     author: Trey, Fairbanks Morse
 
 
+### Box: Our solutions
+solutions:
+  class: box--orange
+  title: No third parties means Zero&nbsp;Leakage&trade;
+  heading: Our solutions.
+  solutions:
+  - title: App
+    icon: "icons/app.svg"
+    content: The Diode App is for your team. Whether replacing a leaky chat app, sharing files E2EE, securing a server dashboard, or deploying advanced OT assets, our app unlocks the power of Diode for people.
+    button:
+      title: Find Out More
+      class: btn--blank btn--arrow
+      url: "/solutions/app/"
+  - title: CLI
+    icon: "icons/cli.svg"
+    content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone to secure autonomous systems, and/or in concert with team members using the Diode App.
+    button:
+      title: Find Out More
+      class: btn--blank btn--arrow
+      url: "/solutions/cli/"
+  - title: Vault
+    icon: "icons/vault.svg"
+    content: The Diode Vault is an autonomous tool that combines both App and CLI features in a small box or cloud appliance. 24-7 availability, backup, and geo-access for your team and assets.
+    button:
+      title: Find Out More
+      class: btn--blank btn--arrow
+      url: "/solutions/vault/"
+
+
+### Box: Our Network
+our-network:
+  class: "box--network"
+  icon: "icons/network.svg"
+  title: A better way
+  heading: Our network.
+  content: |
+    The Diode Network is the world’s leading Smart Network - a new generation of zero trust software defined networks based on hardened blockchain technology. Think ad hoc E2EE perimeters.
+  buttons:
+  - title: Find Out More
+    url: "/solutions/network/"
+
+
 ### Box: How Diode works
 how-works:
-  class: box--orange
+  class: "box--orange box--how"
   title: Behind the scenes
   heading: How Diode works.
   content: |
-    Diode uses Blockchain Defined Perimeters&trade; to enable end-to-end encrypted application zones without managed servers.
-  
-    We’ve patented this fundamental Web3-enablement technology in the EU, China and here in the States and it’s become the foundation for our Zero Trust toolset.
+    Diode uses Blockchain Defined Perimeters™ that define and enforce end-to-end encrypted application zones without managed servers.
+  buttons:
+  - title: Find Out More
+    class: "btn--bordered"
+    url: "/how-it-works/"
 
 
 ### Partners
 partners:
-  title: World changing collaborations
-  heading: Our Partners
+  title: World-changing collaborations
+  heading: Our Partners.
   logos:
   - image: partners/YETi-CGI.svg
     alt: YETi CGI
@@ -184,23 +186,29 @@ partners:
     alt: Deraconnect
     url: "https://deraconnect.com"
 
+  - image: partners/iPS.svg
+    alt: iPS
+
+  - image: partners/context.svg
+    alt: Context
+
 ---
 
 {%- include hero.liquid -%}
 
 {%- include headline.liquid -%}
 
-{%- include story.liquid data="what-is" -%}
+{%- include story.liquid data="app" -%}
+
+{%- include story.liquid data="protected" -%}
 
 {%- include story.liquid data="anywhere" -%}
 
-{%- include story.liquid data="protected" -%}
+{%- include box.liquid data="testimonials" -%}
 
 {%- include box.liquid data="solutions" -%}
 
 {%- include box.liquid data="our-network" -%}
-
-{%- include box.liquid data="testimonials" -%}
 
 {%- include box.liquid data="how-works" -%}
 

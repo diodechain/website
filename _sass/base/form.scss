@@ -39,7 +39,7 @@ textarea.form-control {
   border-radius: 28px;
   display: inline-block;
   position: relative;
-  font: 12px/18px $font-default;
+  font: 13px/18px $font-default;
   color: white;
   letter-spacing: .02em;
   text-decoration: none;
@@ -97,6 +97,10 @@ textarea.form-control {
 
   &--arrow {
     transition: none;
+    @include media-breakpoint-up(xl) {
+      position: relative;
+      left: 11px;
+    }
     &::after {
       @include pseudo;
       width: 13px;
@@ -105,13 +109,18 @@ textarea.form-control {
       display: inline-block;
       vertical-align: middle;
       position: relative;
-      top: -2px;
+      top: -1px;
       background: url($icon-arrow) no-repeat center center;
       background-size: contain;
       @include media-breakpoint-up(md) {
         width: 15px;
         height: 16px;
         margin-left: 8px;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 17px;
+        height: 16px;
+        margin-left: 5px;
       }
     }
     @media (hover: hover) {

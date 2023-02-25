@@ -342,6 +342,11 @@
       @include media-breakpoint-up(xl) {
         margin-bottom: 37px;
       }
+      @include media-breakpoint-up(xxl) {
+        .btn.btn--bordered {
+          min-width: 350px;
+        }
+      }
     }
   }
 
