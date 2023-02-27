@@ -7,11 +7,11 @@ title: Diode CLI
 ### Hero
 hero:
   class: hero--rounded
-  heading: Diode <br>CLI.
-  subheading: Manage your IT/OT device access and assets.
+  heading: Manage assets with Diode CLI.
+  subheading: Access and manage servers and OT assets.
   buttons:
   - title: DOWNLOAD CLI
-    url: "/download/"
+    url: "/download/#cli"
   image: hero/cli.webp
 
 
@@ -22,31 +22,34 @@ story:
   content: |
     The Diode CLI makes your IT, OT, or IoT assets both smart and secure. Every CLI-enabled asset is globally accessible to authorized parties and is 256-bit E2EE secured.
   
-    The CLI uses less resources than a VPN, requires no managed server infrastructure (VPN cloud), and is more secure - it brings the power of the Diode Network to your edge devices.
+    The open source CLI uses less resources than a VPN, requires no managed server infrastructure (VPN cloud), and is more secure - it brings the power of the Diode Network to your edge devices.
   buttons:
   - title: See How The Network Works
     class: btn--blank
     url: "#"
   image:
-    src: story/cli.webp
-    alt: "Network"
+    src: story/cli-full.webp
+    alt: Diode CLI
+    class: cli-full
 
 
 ### Features
 features:
+  after:
+    src: story/world.svg
   list:
   - title: Globally accessible
     content: |
-      Every Diode client has a globally unique identifier that is used for security and routing. The Diode CLI “lights up” your device, making it accessible from anywhere in the world while securing it to only the resources you’ve authorized to access it. It becomes globally accessible while being more secure than a local network. 
+      Every Diode client has a globally unique identifier that is used for security and routing.The Diode CLI “lights up” your device, making it accessible from anywhere in the world while securing it to only the resources you’ve authorized to access it. It becomes globally accessible while being more secure than a local network. 
 
   - title: Use for
     content: |
       IoT/OT data, SSH, Websites, Server Admin
-  
+
       Connect, manage, collect, view, and administrate - everything you wish you could do with your IT and OT assets.
     buttons:
     - title: DOWNLOAD
-      url: "/download/"
+      url: "/download/#cli"
     - title: SCHEDULE A DEMO
       class: btn--blank btn--arrow
       url: "https://contactdiode.paperform.co/"
@@ -54,13 +57,13 @@ features:
 
   - title: Resource publication
     content: |
-      Whether your asset is publishing an SSH port to an explicit DevOps allow-list, an IoT API in a zero trust data fabric, or a website to the world, the CLI makes it easy. Publishing a resource with the CLI allows you to isolate the rest of the system, saving IT time and resources that would otherwise be spent on system maintenance.
+      Whether your asset is publishing an SSH port to an explicit DevOps allow-list, an IoT API in a zero trust data fabric, or a website to the world, the CLI makes it easy.Publishing a resource with the CLI allows you to isolate the rest of the system, saving IT time and resources that would otherwise be spent on system maintenance.
 
   -
 
   - title: Access management
     content: |
-      Any Diode CLI client can publish a resource in private, protected, or public mode. By using the protected mode, an ad hoc zero trust perimeter is created that contains the asset, and makes it easy to manage access to it on a group level. 
+      Any Diode CLI client can publish a resource in private, protected, or public mode. By using the protected mode, an ad hoc zero trust perimeter is created that contains the asset, and makes it easy to manage access to it on a group level.
 
 
 ### Box: Our solutions

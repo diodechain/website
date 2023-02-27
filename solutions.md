@@ -32,7 +32,7 @@ app:
   - title: Download
     url: "/download/#app"
   image:
-    src: story/app-new.webp
+    src: story/app.webp
     class: app
 
 
@@ -53,7 +53,7 @@ cli:
   - title: Find Out More
     url: "/solutions/cli/"
   image:
-    src: story/cli-new.webp
+    src: story/cli.webp
     class: cli
 
 
@@ -73,7 +73,7 @@ vault:
     url: "https://diodedemo.paperform.co/"
     target: _blank
   image:
-    src: story/vault-new.webp
+    src: story/vault.webp
     class: vault
 
 
@@ -92,7 +92,7 @@ network:
   - title: Find Out More
     url: "/solutions/network/"
   image:
-    src: story/network-new.webp
+    src: story/network.webp
     class: network
   mirrored: true
 
