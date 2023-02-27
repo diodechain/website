@@ -2,12 +2,12 @@
    STORY
    ========================================================================== */
 .story {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   @include media-breakpoint-up(md) {
-    margin-bottom: 120px;
+    margin-bottom: 100px;
   }
   @include media-breakpoint-up(xl) {
-    margin-bottom: 160px;
+    margin-bottom: 120px;
   }
 
   .main > .container > &:last-child {
@@ -82,6 +82,10 @@
         @include media-breakpoint-up(xl) {
           margin-left: 40px;
         }
+      }
+
+      &--arrow {
+        left: 0;
       }
     }
   }

@@ -25,8 +25,8 @@ story:
     The Diode Network ensures that not even Diode has access to your team’s communications, information, or activity.
   buttons:
   - title: See how teams are using the app
-    class: btn--blank
-    url: "#"
+    class: btn--blank btn--arrow
+    url: "/teams/"
   image:
     src: story/app-full.webp
     alt: App

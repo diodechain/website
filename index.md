@@ -25,7 +25,7 @@ headline:
   buttons:
   - title: Find Out More
     class: btn--blank btn--arrow
-    url: "#"
+    url: "/solutions/app/"
 
 
 ### Story: What is Diode

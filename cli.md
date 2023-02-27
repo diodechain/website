@@ -25,8 +25,8 @@ story:
     The open source CLI uses less resources than a VPN, requires no managed server infrastructure (VPN cloud), and is more secure - it brings the power of the Diode Network to your edge devices.
   buttons:
   - title: See How The Network Works
-    class: btn--blank
-    url: "#"
+    class: btn--blank btn--arrow
+    url: "/solutions/network/"
   image:
     src: story/cli-full.webp
     alt: Diode CLI
