@@ -7,11 +7,11 @@ title: Diode App
 ### Hero
 hero:
   class: hero--rounded
-  heading: Diode <br>App.
-  subheading: Secure collaboration and communication for teams.
+  heading: Team collaboration on&nbsp;Diode App.
+  subheading: Secure collaboration around IT/OT/IP work product.
   buttons:
   - title: DOWNLOAD APP
-    url: "/download/"
+    url: "/download/#app"
   image: hero/app.webp
 
 
@@ -20,24 +20,29 @@ story:
   title: Operate protected
   heading: For teams.
   content: |
-    The Diode App is like a VPN that has built-in team collaboration and asset management features. It integrates both security and functionality – your team will be operating in one of the most protected environments possible.
+    The Diode App is like a VPN that has built-in team collaboration and asset management features. It is a decentralized “local first” solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
   
     The Diode Network ensures that not even Diode has access to your team’s communications, information, or activity.
   buttons:
-  - title: See How The Network Works
+  - title: See how teams are using the app
     class: btn--blank
     url: "#"
   image:
-    src: story/app.webp
-    alt: "Network"
+    src: story/app-full.webp
+    alt: App
+    class: network-full
 
 
 ### Features
 features:
+  image:
+    src: story/for-teams.webp
+  after:
+    src: story/protected.svg
   list:
   - title: Secure Chat and Files
     content: |
-      Communications and structured information are at the core of everything teams do.  That is why we built direct messaging, group chat, and file syncing into the core of the Diode App. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available.
+      Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of the Diode App.All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available. 
 
   - title: Use for
     content: |
@@ -46,7 +51,7 @@ features:
       Communicate, reference, annotate, manage, and collaborate - everything a team working with real world IT, OT, or web assets requires.
     buttons:
     - title: DOWNLOAD
-      url: "/download/"
+      url: "/download/#app"
     - title: SCHEDULE A DEMO
       class: btn--blank btn--arrow
       url: "https://contactdiode.paperform.co/"
@@ -96,6 +101,8 @@ solutions:
 {%- include hero.liquid -%}
 
 {%- include story.liquid -%}
+
+---
 
 {%- include features.liquid -%}
 

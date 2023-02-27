@@ -5,6 +5,10 @@
 {% endif %}
 
 <section class="features">
+    {%- if data.image -%}
+        <figure class="features__image {{ data.image.class }}"><img src="{{ data.image.src | prepend: site.path.images | relative_url }}" alt="{{ data.image.alt }}"></figure>
+        <hr>
+    {% endif %}
     <div class="row align-items-lg-center">
         <div class="col col-12 col-lg-6">
             {%- if data.heading -%}<h2 class="features__heading">{{ data.heading }}</h2>{% endif %}
@@ -44,5 +48,8 @@
                 </div>
             {% endif %}
         {% endfor %}
+        {%- if data.after -%}
+            <figure class="features__after"><img src="{{ data.after.src | prepend: site.path.images | relative_url }}" alt="{{ data.after.alt }}"></figure>
+        {% endif %}
     {% endif %}
 </section>

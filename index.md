@@ -83,7 +83,7 @@ anywhere:
   - title: Find Out More
     url: "/how-it-works/"
   image:
-    src: story/protected.svg
+    src: story/around.svg
     class: circle
     alt: Protected no matter what
   mirrored: true

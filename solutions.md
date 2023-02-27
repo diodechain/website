@@ -52,8 +52,6 @@ cli:
   buttons:
   - title: Find Out More
     url: "/solutions/cli/"
-  - title: Download
-    url: "/download/#cli"
   image:
     src: story/cli-new.webp
     class: cli
@@ -71,8 +69,9 @@ vault:
     #### Use for
     Backup, timezone-bridging, network exit node
   buttons:
-  - title: Find Out More
-    url: "/solutions/vault/"
+  - title: Sign up
+    url: "https://diodedemo.paperform.co/"
+    target: _blank
   image:
     src: story/vault-new.webp
     class: vault

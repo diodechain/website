@@ -173,6 +173,20 @@
         }
       }
     }
+
+    &.network-full {
+      @include media-breakpoint-up(xxl) {
+        margin-bottom: -155px;
+        margin-left: -64px;
+      }
+      img {
+        @include media-breakpoint-up(xxl) {
+          width: 737px;
+          max-width: none;
+          height: auto;
+        }
+      }
+    }
   }
 
   &__video {

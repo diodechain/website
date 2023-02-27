@@ -13,6 +13,77 @@
 
   &:last-child {margin-bottom: 0;}
 
+  &__image {
+    margin: 0 auto 40px;
+    position: relative;
+    display: block;
+    @include media-breakpoint-up(md) {
+      max-width: 580px;
+      margin-bottom: 60px;
+    }
+    @include media-breakpoint-up(lg) {
+      max-width: 100%;
+      margin-bottom: 80px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 120px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      @include user-select;
+    }
+
+    & + hr {
+      margin: 100px 0 60px;
+      @include media-breakpoint-up(md) {
+        margin: 120px 0 80px;
+      }
+      @include media-breakpoint-up(xl) {
+        margin: 140px 0 100px;
+      }
+    }
+  }
+
+  &__after {
+    max-width: 240px;
+    margin: 40px auto;
+    position: relative;
+    display: block;
+    @include media-breakpoint-up(md) {
+      max-width: 300px;
+    }
+    @include media-breakpoint-up(lg) {
+      max-width: 300px;
+      margin: 0;
+      position: absolute;
+      right: 100px;
+      bottom: 30px;
+    }
+    @include media-breakpoint-up(xl) {
+      max-width: 360px;
+      right: 140px;
+      bottom: 60px;
+    }
+    @include media-breakpoint-up(xxl) {
+      max-width: 440px;
+      bottom: 20px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      @include user-select;
+    }
+  }
+
   &__heading {
     margin-bottom: 40px;
     text-align: center;
@@ -77,6 +148,7 @@
       margin-top: 10px;
       text-transform: none;
       & + .btn {
+        margin-left: 10px;
         @include media-breakpoint-up(lg) {
           margin-left: 15px;
         }
