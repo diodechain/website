@@ -7,11 +7,11 @@ title: Diode Network
 ### Hero
 hero:
   class: hero--rounded
-  heading: Diode Network.
+  heading: Build on top&nbsp;of&nbsp;Diode Network.
   subheading: Expand your team’s security perimeter.
   buttons:
   - title: DOWNLOAD
-    url: "/download/"
+    url: "/download/#network"
   image: hero/network.webp
 
 
@@ -21,7 +21,7 @@ story:
   title: Zero trust data fabric
   heading: Security and Access.
   content: |
-    The Diode Network is the world’s most advanced Smart Network. It is a web3 communications network that combines the highest security with the best accessibility. And it’s available off-the-shelf as a service to the world.
+    The Diode Network is the world’s most advanced Smart Network. It is an open-source web3 communications network that combines the highest security with the best accessibility. And it’s available off-the-shelf as a service to the world.
   
     We believe the Diode Network is the beginning of great things for the future of the Internet.
   buttons:
@@ -29,8 +29,9 @@ story:
     class: btn--blank
     url: "#"
   image:
-    src: story/network.webp
-    alt: "Network"
+    src: story/network-full.webp
+    alt: Network
+    class: network-full
 
 
 ### Features
@@ -38,16 +39,17 @@ features:
   list:
   - title: Automated Security
     content: |
-      The Diode Network uses hardened smart contracts running on a blockchain network to automate provisioning and to guarantee security.  This means you can use it like a SaaS product and operate your appliclation like an air-gapped security environment.
+      The Diode Network uses hardened smart contracts running on a blockchain network to automate provisioning and to guarantee security. This means you can use it like a SaaS product and operate your appliclation like an air-gapped security environment.
 
   - title: Use for
     content: |
       Custom apps, private networks, fleet sponsorship
-
+  
       Use the public network off the shelf, extend with your own relay node, or connect with us about private network options.
     buttons:
-    - title: Run a Node
-      url: "#"
+    - title: RUN A NODE
+      url: "https://support.diode.io/article/y9hxzsbhg8"
+      target: _blank
     - title: SCHEDULE A DEMO
       class: btn--blank btn--arrow
       url: "https://contactdiode.paperform.co/"
@@ -55,7 +57,7 @@ features:
 
   - title: Your Own Relay Node
     content: |
-      You can host your own relay node (aka PoP Node) to expand the reach of the Diode Network and to earn rewards by relaying traffic.  You can direct your assets to prioritize the use of your own relay nodes to further isolate your traffic, reduce your cost, and to integrate with enterprise tools.
+      You can host your own Diode Network relay node (aka PoP Node) to expand the reach of the Diode Network. As a node host, you can also direct your assets to prioritize the use of your own nodes to further isolate your traffic, reduce your cost, and to integrate with enterprise tools.
 
   -
 

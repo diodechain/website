@@ -30,7 +30,7 @@ story:
   image:
     src: story/app-full.webp
     alt: App
-    class: network-full
+    class: network-wide
 
 
 ### Features

@@ -174,7 +174,7 @@
       }
     }
 
-    &.network-full {
+    &.network-wide {
       @include media-breakpoint-up(xxl) {
         margin-bottom: -155px;
         margin-left: -64px;
@@ -207,10 +207,22 @@
           width: 800px;
           max-width: none;
           height: auto;
-          margin-left: 40px;
         }
         @include media-breakpoint-up(xl) {
           width: 954px;
+          margin-left: 20px;
+        }
+      }
+    }
+    &.network-full {
+      img {
+        @include media-breakpoint-up(lg) {
+          width: 860px;
+          max-width: none;
+          height: auto;
+        }
+        @include media-breakpoint-up(xl) {
+          width: 1093px;
           margin-left: 20px;
         }
       }
