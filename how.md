@@ -4,11 +4,12 @@ class: header--white
 permalink: /how-it-works/
 title: How Diode works.
 
+
 ### Hero
 hero:
   class: hero--rounded
   heading: How Diode works.
-  subheading: A quick look at what makes Diode tick.
+  subheading: A look at what makes Diode tick.
   image: hero/how-it-works.webp
 
 
@@ -16,9 +17,9 @@ hero:
 story:
   class: "story--dash"
   title: No third parties
-  heading: Zero Leakage
+  heading: Zero Leakage.
   content: |
-    Diode’s Blockquick&trade; algorithm allows people and devices using the Diode Network to define their security perimeters – to connect with each other without using managed server environments. 
+    Diode’s Blockquick&trade; algorithm allows people and devices using the open source Diode Network to define their security perimeters – to connect with each other without using managed server environments. 
   
     Secured through hardened smart contracts running on a decentralized blockchain infrastructure, our  autonomous E2EE environment eliminates third parties from the IT stack, thereby removing a major attack surface and setting a new standard for security.
   video:
@@ -44,7 +45,8 @@ features:
     content: Clients publish resources via the Diode Network and can do so publicly, privately (allow list), or protected (Zone/Fleet).  Diode’s Blockchain Name System can be used for Client friendly names, and Kademlia routing is used to optimize routes.
     buttons:
     - title: Run a PoP Node
-      url: "#"
+      url: "https://support.diode.io/article/y9hxzsbhg8"
+      target: _blank
     - title: DOWNLOAD
       url: "/download/"
   - title: Zones and Fleet Contracts

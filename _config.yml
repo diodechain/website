@@ -60,6 +60,9 @@ links:
   download:
     title: Download
     url: "/download/"
+  terms:
+    title: Terms
+    url: "/msa/"
   privacy:
     title: Privacy Policy
     url: "/privacy-policy/"
