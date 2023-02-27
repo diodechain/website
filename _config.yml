@@ -35,7 +35,6 @@ nav:
     url: "/solutions/vault/"
   - title: Network
     url: "/solutions/network/"
-    target: _blank
 - title: For Teams
   url: "/teams/"
 - title: About

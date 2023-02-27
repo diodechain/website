@@ -7,22 +7,31 @@ title: Diode Vault
 ### Hero
 hero:
   class: hero--rounded
-  heading: Diode <br>Vault.
-  subheading: One tiny but powerful box that helps keep your remote teams connected.
+  heading: Extend team reach with Diode Vault.
+  subheading: A small but powerful tool that helps keep your remote teams connected.
   image: hero/vault.webp
 
 
 ### Story: Set and forget
 story:
   title: Set and forget
-  heading: Extend your reach.
+  heading: Always on. Always.
   content: |
-    The Diode Vault is a little box that extends the presence and reach of your team. Plug it into power and Ethernet in a secure location and it will extend the reach of your E2EE collaboration zones.
+    The Diode Vault is a tool that extends the presence and reach of your team. It can be deployed in the cloud or as a small box that plugs into power and Ethernet.  Ether way, it will extend the reach of your E2EE collaboration zones.
   
     It relays encrypted messages on behalf of offline team members, backs up files, and provides a private exit node to give your team ex-region Internet access.
+  buttons:
+  - title: SIGN UP
+    url: "https://mk4kxqqc.paperform.co/"
+    target: _blank
+  - title: SCHEDULE A DEMO
+    class: btn--blank btn--arrow
+    url: "https://contactdiode.paperform.co/"
+    target: _blank
   image:
-    src: story/oval.webp
-    class: oval
+    src: story/vault-full.webp
+    class: vault-full
+
 
 ### Box: Our solutions
 solutions:

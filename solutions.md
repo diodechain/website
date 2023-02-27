@@ -70,7 +70,7 @@ vault:
     Backup, timezone-bridging, network exit node
   buttons:
   - title: Sign up
-    url: "https://diodedemo.paperform.co/"
+    url: "https://mk4kxqqc.paperform.co/"
     target: _blank
   image:
     src: story/vault.webp

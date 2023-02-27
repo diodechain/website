@@ -201,6 +201,20 @@
         }
       }
     }
+    &.vault-full {
+      img {
+        @include media-breakpoint-up(lg) {
+          width: 800px;
+          max-width: none;
+          height: auto;
+          margin-left: 40px;
+        }
+        @include media-breakpoint-up(xl) {
+          width: 954px;
+          margin-left: 20px;
+        }
+      }
+    }
   }
 
   &__video {
