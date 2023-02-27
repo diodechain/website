@@ -4,20 +4,22 @@ permalink: /teams/
 title: For Teams
 
 
+### Hero
 hero:
   heading: Secure assets and protect your team.
-  subheading: A sneak peek at how different teams are using Diode.
+  subheading: How different teams are using Diode.
   image: hero/teams.webp
 
 
+### Teams
 teams:
 - title: Remote asset management
   heading: Operational Technology.
   content: |
-    Diode is a robust data fabric for the industrial Internet of Things that can securely expand your OT boundary to give your team highly secure remote access to add new assets or to manage and interact with existing assets in hard-to-reach locations.<br><br>
+    Give your team highly secure remote access to assets in hard-to-reach locations. Expand your OT security boundary without custom IT!
     
     #### GDPR and Data Compliance
-    No matter where your assets are at in the world, Diode’s “self custody” approach to regionality and data compliance means that you set the terms - all without IT setup or maintenance burden.
+    No matter where your assets are at in the world, Diode makes regionality and data compliance simple - all without IT setup or maintenance burden.
   image:
     src: "team/operational-technology_big.webp"
     alt: Operational Technology
@@ -25,10 +27,10 @@ teams:
 - title: Integrate in-house and 3rd party systems
   heading: Product Development.
   content: |
-    Easily deploy product, model, or network-level security perimeters where all components are explicitly identified and permissioned - whether created and provisioned in-house, or from a valued partner.  If you need Zero Trust security but need to build an ecosystem, Diode could be the ticket.
+    Create connected products that are bomb-proof secure without needing a cloud service.  You can easily integrate partner components as your ecosystem matures - every piece of the system is explicitly identified and managed with Zero Trust security.
     
     #### Enterprise Security and Access Control
-    It’s easy to support multiple enterprises  and even transition ownership of the perimeters to a new enterprise. If your IT team has a cyber operations requirement, Diode can integrate with existing tools.
+    Support multiple customers, integrate with enterprise security tools, and even reconfigure permissions later - all without changing your product.
   image:
     src: "team/product-development_big.webp"
     alt: Product Development
@@ -36,10 +38,12 @@ teams:
 - title: Access for stakeholders
   heading: Developer Operations.
   content: |
-    Every Devops team has one or more server interfaces or dashboards that are not hardened for exposure to the public Internet. You can use Diode to pipe those interfaces to even non-tech stakeholders without requiring development or any more of your time explaining again how to use a VPN.
+    Securely pipe server interfaces and dashboards to even non-tech stakeholders without development, and without complicated VPN clients.
     
     #### Perfect for On Premise and Hybrid
-    On prem and managed cloud deployments just got a lot easier. Provision the server and ship product - Diode will connect you no matter where it lands.
+    On premise and managed cloud deployments just got a lot easier. Provision the server and ship product - Diode will connect you no matter where it lands.
+  
+    Ask us about integrating with your enterprise’s defensive cyber-operations tools!
   image:
     src: "team/developer-operations_big.webp"
     alt: Product Development
@@ -47,13 +51,16 @@ teams:
 - title: Protect IP and customer information
   heading: IP and  Content.
   content: |
-    Cloud data, email history, and FTP accounts grow, get stale, and become a liability. Diode is an inherently self-custody solution that just works. You can limit your exposure by keeping your IP and sensitive content under your control and just enabling per-customer or per-project secure portals to the information that already exists.
-    
+    Limit your cloud data footprint and make your customers’ confident in your security by keeping sensitive content under your full control.
+  
+    Make sure critical information never touches another server that will be copied, get stale, and become a liability.
+  
     #### HIPAA and Regulated Industries
-    If you operated in a regulated industry, Diode can integrate into your organization’s policy framework and allow you and suppliers to continue agile collaborations without the liability of cloud data footprints.
+    Give your team and suppliers an easy way to collaborate and share information without the liability of email or cloud data.
   image:
     src: "team/ip-and-content_big.webp"
     alt: Product Development
+
 ---
 
 {%- include hero.liquid -%}

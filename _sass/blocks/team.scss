@@ -12,12 +12,13 @@
   }
 
   &__title {
-    margin-bottom: 38px;
-    position: relative;
-    font: 22px/24px $font-default;
-    text-decoration: underline;
-    text-decoration-thickness: .0625em;
-    text-underline-offset: .167em;
+    margin-bottom: 24px;
+    font: 600 20px/22px $font-default;
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 21px;
+      font-size: 22px;
+      line-height: 24px;
+    }
   }
 
   &__heading {
