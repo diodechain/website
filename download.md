@@ -50,8 +50,8 @@ network:
 
 {%- include hero.liquid -%}
 
-{%- include download.liquid data="app" -%}
+{%- include download.liquid id="app" data="app" -%}
 
-{%- include download.liquid data="cli" -%}
+{%- include download.liquid id="cli" data="cli" -%}
 
-{%- include download.liquid data="network" -%}
+{%- include download.liquid id="network" data="network" -%}

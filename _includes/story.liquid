@@ -20,19 +20,10 @@
     <div class="row align-items-lg-center{{ mirrored }}">
         <div class="col col-12 col-lg-6">
             {%- if data.image -%}
-                <figure class="story__image {{ data.image.class }}"><img src="{{ data.image.src | prepend: site.path.images | relative_url }}" width="272" alt="{{ data.image.alt }}"></figure>
+                <figure class="story__image {{ data.image.class }}"><img src="{{ data.image.src | prepend: site.path.images | relative_url }}" alt="{{ data.image.alt }}"></figure>
             {% endif %}
             {%- if data.video -%}
-                <figure class="story__video"><a href="{{ data.video.src }}"><img src="{{ data.video.preview | prepend: site.path.images | relative_url }}" width="240" alt="{{ data.video.alt }}"></a></figure>
-            {% endif %}
-            {%- if data.gallery -%}
-                <div class="story__gallery">
-                    {% for entry in data.gallery %}
-                        {%- if forloop.index <= 3 -%}
-                            <figure class="story__gallery-image"><img src="{{ entry.image | prepend: site.path.images | relative_url }}" width="294" height="196" alt="{{ entry.alt }}"></figure>
-                        {% endif %}
-                    {% endfor %}
-                </div>
+                <figure class="story__video"><a href="{{ data.video.src }}"><img src="{{ data.video.preview | prepend: site.path.images | relative_url }}" alt="{{ data.video.alt }}"></a></figure>
             {% endif %}
             {%- if data.teams -%}
                 <div class="story__teams">

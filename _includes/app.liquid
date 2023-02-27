@@ -1,0 +1,38 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.app %}
+{% endif %}
+
+<section class="story story-app">
+    <div class="row">
+        <div class="col col-12">
+            <div class="story__content">
+                {%- if data.title -%}<p class="story__title">{{ data.title }}</p>{% endif %}
+                {%- if data.heading -%}<h2 class="story__heading">{{ data.heading }}{%- if data.icon -%}<img class="story__icon" src="{{ data.icon | prepend: site.path.images | relative_url }}" height="50" alt="">{% endif %}</h2>{% endif %}
+            </div>
+        </div>
+        <div class="col col-12">
+            {%- if data.image -%}
+                <figure class="story__image {{ data.image.class }}"><img src="{{ data.image.src | prepend: site.path.images | relative_url }}" alt="{{ data.image.alt }}"></figure>
+            {% endif %}
+        </div>
+        <div class="col col-12 col-lg-7">
+            <div class="story__content">
+                {%- if data.content -%}{{ data.content | markdownify }}{% endif %}
+            </div>
+        </div>
+        <div class="col col-12 col-lg-5">
+            <div class="story__content">
+                {%- if data.more -%}{{ data.more | markdownify }}{% endif %}
+                {%- if data.buttons -%}
+                    <div class="story__buttons">
+                        {% for button in data.buttons %}
+                            <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
