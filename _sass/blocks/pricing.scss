@@ -5,6 +5,11 @@
   position: relative;
   z-index: 1;
 
+  & ~ .download {
+    padding-top: 17px;
+    padding-bottom: 20px;
+  }
+
   &__header {
     text-align: center;
   }
@@ -159,6 +164,17 @@
       }
     }
 
+    &-get-in-touch {
+      font-size: 40px;
+      line-height: 36px;
+      font-weight: 600;
+      @include media-breakpoint-up(xl) {
+        margin-top: 35px;
+        font-size: 60px;
+        line-height: 54px;
+      }
+    }
+
     &-price {
       margin-top: 30px;
       margin-bottom: 30px;
@@ -236,7 +252,7 @@
       left: 20px;
       text-align: center;
       @include media-breakpoint-up(xl) {
-        bottom: 12px;
+        bottom: 20px;
       }
     }
 
@@ -252,9 +268,9 @@
       background: white;
       cursor: pointer;
       @include media-breakpoint-up(xl) {
-        padding-top: 16px;
-        padding-bottom: 16px;
-        border-radius: 28px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        border-radius: 30px;
         font-size: 16px;
       }
     }

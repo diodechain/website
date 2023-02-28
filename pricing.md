@@ -89,7 +89,7 @@ note:
   subheading: |
     No purchase is necessary to download and start collaborating - every Zone is free when first created, and can be later upgraded by ordering one of the plans above.
     
-    [Watch a video for how this works.](https://duckduckgo.com)
+    [Watch a video for how this works.](https://duckduckgo.com){:target="_blank"}
   buttons:
   - title: Download
     url: "/download/"
