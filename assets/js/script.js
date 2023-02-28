@@ -5,12 +5,13 @@ var ready = (callback) => {
 
 // On Ready
 ready(() => {
-  initHeader();
+  initPopup();
   initTestimonials();
   initPartners();
+  initOS()
 });
 
-function initHeader() {
+function initPopup() {
   function preventDefault(e) {
     e.preventDefault();
   }
@@ -88,8 +89,8 @@ function initHeader() {
   }
 
   var navbar = document.querySelector('.header__nav'),
-      toggle = document.querySelector('.header__toggle'),
-      close = navbar.querySelector('.header__close');
+    toggle = document.querySelector('.header__toggle'),
+    close = navbar.querySelector('.header__close');
 
   toggle.area = navbar;
   toggle.navbar = true;
@@ -101,7 +102,7 @@ function initHeader() {
 
   document.querySelectorAll('.popup-open').forEach((link) => {
     var target = link.getAttribute('href'),
-        popup = document.querySelector(target);
+      popup = document.querySelector(target);
 
     link.area = popup;
     link.addEventListener('click', toggleClick, false);
@@ -169,5 +170,47 @@ function initPartners() {
         },
       }
     });
+  });
+}
+
+function initOS() {
+  let OSName = 'Unknown OS';
+  if (navigator.userAgent.indexOf('Win') !== -1) {
+    OSName = 'Windows';
+  }
+  if (navigator.userAgent.indexOf('Mac') !== -1) {
+    OSName = 'MacOS';
+  }
+  if (navigator.userAgent.indexOf('iPod') !== -1) {
+    OSName = "iOS";
+  }
+  if (navigator.userAgent.indexOf('iPad') !== -1) {
+    OSName = "iOS";
+  }
+  if (navigator.userAgent.indexOf('iPhone') !== -1) {
+    OSName = "iOS";
+  }
+  if (navigator.userAgent.indexOf('Linux') !== -1) {
+    if (navigator.userAgent.indexOf('arm') !== -1) {
+      OSName = 'Raspberry Pi';
+    } else if (navigator.userAgent.indexOf('Android') !== -1) {
+      OSName = 'Android';
+    } else {
+      OSName = 'Linux';
+    }
+  }
+
+  let os = OSName.toLowerCase().replace(/\s+/g, '-');
+
+  document.querySelectorAll('.detect-os').forEach((entry) => {
+    cls = '.' + os;
+    var target = entry.querySelector(cls);
+    if (target) {
+      var all = entry.querySelectorAll('.os');
+      all.forEach((one) => {
+        one.classList.add('hide');
+      });
+      target.classList.remove('hide');
+    }
   });
 }

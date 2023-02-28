@@ -149,12 +149,13 @@
       }
     }
     .btn {
-      width: 220px;
+      max-width: 240px;
       margin: 0 auto 40px;
       white-space: normal;
       text-transform: none;
       @include media-breakpoint-up(lg) {
-        width: 240px;
+        margin-right: 0;
+        margin-left: 0;
       }
       &--small {
         font-family: $font-code;

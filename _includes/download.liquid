@@ -41,14 +41,21 @@
                     <var class="step">1</var>
                     <p class="lead">Download Diode CLI</p>
                     <p class="three">Download the binary for your operating system</p>
-                    <a href="https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_darwin_amd64.zip" class="btn">MacOS X</a>
+                    <div class="detect-os">
+                        <a class="btn btn-primary os raspberry-pi hide" href="{{ site.download.app.raspberry-pi }}">Raspberry Pi (ARM)</a>
+                        <a class="btn btn-primary os raspberry-pi-64 hide" href="{{ site.download.app.raspberry-pi-64 }}">Raspberry Pi 64bit (ARM64)</a>
+                        <a class="btn btn-primary os macos" href="{{ site.download.app.macos }}">MacOS X</a>
+                        <a class="btn btn-primary os macos-package hide" href="{{ site.download.app.macos-package }}">MacOS Package</a>
+                        <a class="btn btn-primary os windows hide" href="{{ site.download.app.windows }}">Windows (64-bit)</a>
+                        <a class="btn btn-primary os linux hide" href="{{ site.download.app.linux }}">Linux (64-bit)</a>
+                    </div>
                     <ul class="list">
-                        <li><a href="{{ site.download.app.raspberry-pi }}" target="_blank">Raspberry Pi (ARM)</a></li>
-                        <li><a href="{{ site.download.app.raspberry-pi-64 }}" target="_blank">Raspberry Pi 64bit (ARM64)</a></li>
-                        <li><a href="{{ site.download.app.macos }}" target="_blank">MacOS X</a></li>
-                        <li><a href="{{ site.download.app.macos-package }}" target="_blank">MacOS Package</a></li>
-                        <li><a href="{{ site.download.app.windows }}" target="_blank">Windows (64-bit)</a></li>
-                        <li><a href="{{ site.download.app.linux }}" target="_blank">Linux (64-bit)</a></li>
+                        <li><a href="{{ site.download.app.raspberry-pi }}">Raspberry Pi (ARM)</a></li>
+                        <li><a href="{{ site.download.app.raspberry-pi-64 }}">Raspberry Pi 64bit (ARM64)</a></li>
+                        <li><a href="{{ site.download.app.macos }}">MacOS X</a></li>
+                        <li><a href="{{ site.download.app.macos-package }}">MacOS Package</a></li>
+                        <li><a href="{{ site.download.app.windows }}">Windows (64-bit)</a></li>
+                        <li><a href="{{ site.download.app.linux }}">Linux (64-bit)</a></li>
                     </ul>
                 </div>
             </div>
