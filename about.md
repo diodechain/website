@@ -16,7 +16,7 @@ hero:
 ### Headline below Hero
 headline:
   title: What drives us. Everyday.
-  text: We’re governed by the belief that technology should help humans thrive. It should enhance our ability to operate, create, explore, educate, and innovate... unhindered.
+  text: We’re governed by the belief that technology should help humans thrive. It should enhance our ability to operate, create, explore, educate, and innovate - unhindered.
 
 
 ### Top Story
