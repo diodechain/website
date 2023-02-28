@@ -50,7 +50,7 @@ pricing:
       monthly: "price_1IET4eEGYTHllVn0GJvaFrOP"
 
   - title: Business
-    description: for small businesses and multi-site operations.
+    description: for teams collaborating on operations.
     price:
       yearly: 40
       year: 480
