@@ -50,7 +50,7 @@ pricing:
       monthly: "price_1IET4eEGYTHllVn0GJvaFrOP"
 
   - title: Business
-    description: for independent professionals.
+    description: for small businesses and multi-site operations.
     price:
       yearly: 40
       year: 480

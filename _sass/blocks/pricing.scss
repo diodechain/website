@@ -164,6 +164,18 @@
       }
     }
 
+    &-description {
+      @include media-breakpoint-up(md) {
+        min-height: 80px;
+      }
+      @include media-breakpoint-up(lg) {
+        min-height: 60px;
+      }
+      @include media-breakpoint-up(xl) {
+        min-height: 66px;
+      }
+    }
+
     &-get-in-touch {
       font-size: 40px;
       line-height: 36px;
