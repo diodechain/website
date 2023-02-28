@@ -26,7 +26,7 @@ pricing:
   - Secure markdown editor
   - Browser upload/download
   - Unlimited storage
-  - Unlimited team members
+  - 10 team members
 
   plans:
   - title: Freelancer
@@ -42,7 +42,6 @@ pricing:
       - 3 chat channels
       - 20 web links
       - 10 free team members
-      - $3 per additional team
       - Basic support
     button: Order
     id:
