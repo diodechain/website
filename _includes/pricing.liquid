@@ -1,0 +1,106 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.pricing %}
+{% endif %}
+
+<section class="pricing" id="{{ include.id }}">
+    <header class="pricing__header">
+        {%- if data.title -%}<p class="pricing__title">{{ data.title }}</p>{% endif %}
+        {%- if data.heading -%}<h2 class="pricing__heading">{{ data.heading }}</h2>{% endif %}
+    </header>
+
+    {%- if data.include -%}
+        <dl class="pricing__include">
+            <dd>{{ data.include }}:</dd>
+            <dt>
+                <ul>
+                    <li>E2EE file sharing</li>
+                    <li>E2EE group chat and DMs</li>
+                    <li>Secure markdown editor</li>
+                    <li>Browser upload/download</li>
+                    <li>Asset connectivity</li>
+                    <li>Public invitation codes</li>
+                    <li>Unlimited storage</li>
+                    <li>Unlimited team members</li>
+                </ul>
+            </dt>
+        </dl>
+    {% endif %}
+
+    <input id="switch" class="pricing__checkbox" type="checkbox"/>
+    <div class="pricing__switch">
+        <label for="switch"></label>
+        <span class="yearly">Yearly</span>
+        <span class="monthly">Monthly</span>
+    </div>
+
+    <div class="pricing__plans">
+        <div class="row justify-content-center">
+            {% for plan in data.plans %}
+                <div class="col col-12 col-md-4">
+                    <div class="pricing__plan">
+                        {%- if plan.title -%}<p class="pricing__plan-title">{{ plan.title }}</p>{% endif %}
+                        {%- if plan.description -%}<p class="pricing__plan-description">{{ plan.description }}</p>{% endif %}
+                        {%- if plan.price -%}
+                            <div class="pricing__plan-price">
+                                <span class="yearly">{{ plan.price.yearly }}</span>
+                                <span class="monthly">{{ plan.price.monthly }}</span>
+                                <small class="pricing__plan-price-yearly yearly">Billed yearly as ${{ plan.price.year }}</small>
+                            </div>
+                        {% else %}
+                            <p>Get in Touch</p>
+                        {% endif %}
+                        {%- if plan.features -%}
+                            <div class="pricing__plan-features">
+                                {{ plan.features | markdownify }}
+                            </div>
+                        {% endif %}
+                        <div class="pricing__plan-action">
+                            {% if plan.action %}
+                                <a href="{{ plan.action }}" class="btn btn-primary">{{ plan.button }}</a>
+                            {% else %}
+                                <button data-checkout-mode="subscription" data-price-id="{{ plan.id.monthly }}" class="btn btn-primary monthly">{{ plan.button }}</button>
+                                <button data-checkout-mode="subscription" data-price-id="{{ plan.id.yearly }}" class="btn btn-primary yearly">{{ plan.button }}</button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  var DOMAIN = location.href.replace(/[^/]*$/, '');
+  var stripe = Stripe("pk_live_51He4M0EGYTHllVn0iPT4hONmdtfrTMXJiLrWbT0e3LjtdstS6AtRlgnAjTZW7z21jWnaRTU9jWshQVRT5SPmWlA500G7L5BNNr");
+
+  // Handle any errors from Checkout
+  var handleResult = function (result) {
+    if (result.error) {
+      var displayError = document.getElementById('error-message');
+      displayError.textContent = result.error.message;
+    }
+  };
+
+  document.querySelectorAll('button').forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      var mode = e.target.dataset.checkoutMode;
+      var priceId = e.target.dataset.priceId;
+      var items = [{price: priceId, quantity: 1}];
+
+      // Make the call to Stripe.js to redirect to the checkout page with the sku or plan ID.
+      stripe
+        .redirectToCheckout({
+          mode: mode,
+          lineItems: items,
+          successUrl:
+            DOMAIN + 'success.html?session_id={CHECKOUT_SESSION_ID}',
+          cancelUrl:
+          DOMAIN,
+        })
+        .then(handleResult);
+    });
+  });
+</script>

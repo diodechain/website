@@ -1,0 +1,202 @@
+/* ==========================================================================
+   PRICING
+   ========================================================================== */
+.pricing {
+  position: relative;
+  z-index: 1;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font: 600 20px/22px $font-default;
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 33px;
+      font-size: 22px;
+      line-height: 24px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 0;
+  }
+
+  &__include {
+    margin-top: 50px;
+    margin-bottom: 0;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      display: flex;
+      justify-content: center;
+      text-align: left;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: 57px;
+    }
+
+    dd {
+      margin-left: 0;
+      margin-bottom: 20px;
+      font-size: 20px;
+      line-height: 20px;
+      font-weight: 600;
+      @include media-breakpoint-up(md) {
+        width: 207px;
+        margin-bottom: 0;
+        font-size: 25px;
+        line-height: 22px;
+      }
+    }
+
+    dt {
+      @include media-breakpoint-up(md) {
+        width: 322px;
+      }
+    }
+
+    ul {
+      padding: 0;
+      margin: -6px 0 0;
+      font-size: 17px;
+      line-height: 26px;
+      list-style: none;
+    }
+  }
+
+  &__switch {
+    max-width: 340px;
+    padding: 92px 0 0;
+    margin: 53px auto 73px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    color: #d9d9d9;
+    list-style: none;
+    cursor: default;
+    @include user-select;
+    @include media-breakpoint-up(xl) {
+      font-size: 25px;
+    }
+
+    label {
+      @include pseudo;
+      width: 125px;
+      height: 62px;
+      border-radius: 31px;
+      margin: 0 auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      background: $color-orange;
+      cursor: pointer;
+
+      &::before {
+        @include pseudo;
+        width: 38px;
+        height: 38px;
+        border-radius: 19px;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: white;
+        transition: left $effect;
+      }
+    }
+
+    span {
+      margin: 0 20px;
+      transition: color $effect;
+      &.active {color: black;}
+    }
+  }
+
+  &__plan {
+    max-width: 340px;
+    min-height: 100%;
+    padding: 54px 23px;
+    border-radius: 30px;
+    margin: 0 auto;
+    color: black;
+    background: $color-orange;
+
+    &-title, &-description {
+      margin-bottom: 30px;
+      font-size: 25px;
+      line-height: 22px;
+      font-weight: 600;
+    }
+
+    &-price {
+      margin-top: 72px;
+      margin-bottom: 37px;
+      position: relative;
+      font-size: 89px;
+      line-height: 80px;
+      font-weight: 600;
+
+      span {
+        margin-left: -5px;
+        display: block;
+        position: relative;
+        &::before {
+          content: '$';
+          font-size: 60px;
+          line-height: 56px;
+        }
+        &::after {
+          margin-left: 11px;
+          content: '/mo';
+          position: relative;
+          top: -5px;
+          font-size: 13px;
+          line-height: 14px;
+          font-weight: normal;
+          text-transform: uppercase;
+        }
+      }
+
+      &-yearly {
+        margin-top: 5px;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: normal;
+        display: block !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transition: opacity $effect;
+      }
+    }
+
+    &-features {
+      font-size: 17px;
+      line-height: 26px;
+      p {margin-bottom: 0;}
+    }
+  }
+
+  &__checkbox {
+    margin-top: 40px;
+    position: absolute;
+    left: 50%;
+    visibility: hidden;
+    &:not(:checked) {
+      ~ .pricing__switch .yearly {color: black;}
+      ~ .pricing__plans .monthly {display: none;}
+      ~ .pricing__plans .pricing__plan-price-yearly {opacity: 1;}
+    }
+
+    &:checked {
+      ~ .pricing__switch label::before {left: 75px;}
+      ~ .pricing__switch .monthly {color: black;}
+      ~ .pricing__plans .yearly {display: none;}
+      ~ .pricing__plans .pricing__plan-price-yearly {opacity: 0;}
+    }
+  }
+}

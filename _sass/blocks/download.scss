@@ -2,11 +2,21 @@
    DOWNLOAD
    ========================================================================== */
 .download {
-  margin-bottom: 60px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   position: relative;
   z-index: 1;
+  .hero + & {margin-top: -80px;}
+  @include media-breakpoint-up(md) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .hero + & {margin-top: -100px;}
+  }
   @include media-breakpoint-up(xl) {
-    margin-bottom: 80px;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    .hero + & {margin-top: -140px;}
+    &:last-of-type {padding-bottom: 100px;}
   }
 
   &__content {
@@ -15,12 +25,11 @@
 
   &__title {
     margin-bottom: 20px;
-    font: 22px/24px $font-default;
-    text-decoration: underline;
-    text-decoration-thickness: .0625em;
-    text-underline-offset: .167em;
+    font: 600 20px/22px $font-default;
     @include media-breakpoint-up(xl) {
       margin-bottom: 33px;
+      font-size: 22px;
+      line-height: 24px;
     }
   }
 
@@ -36,6 +45,8 @@
       margin-top: 60px;
       font-size: 25px;
     }
+    a {color: $color-orange;}
+    p:last-of-type {margin-bottom: 0;}
   }
 
   &__buttons {
@@ -59,7 +70,8 @@
     code {
       margin: 0 0 14px;
       display: block;
-      font: 16px/18px $font-default;
+      font-size: 16px;
+      line-height: 18px;
       text-decoration: underline;
       text-decoration-thickness: .0625em;
       text-underline-offset: .167em;
@@ -144,6 +156,9 @@
       @include media-breakpoint-up(lg) {
         width: 240px;
       }
+      &--small {
+        font-family: $font-code;
+      }
     }
     .list {
       padding: 0;
@@ -171,25 +186,18 @@
   }
 
   & + & {
-    margin-top: 80px;
-    @include media-breakpoint-up(md) {
-      margin-top: 100px;
-    }
-    @include media-breakpoint-up(xl) {
-      margin-top: 130px;
-    }
     &::before {
       @include pseudo;
       width: 76px;
       height: 4px;
       margin: 0 auto 70px;
+      position: absolute;
+      top: -2px;
+      right: 0;
+      left: 0;
       background: $color-orange;
       @include media-breakpoint-up(md) {
         width: 215px;
-        margin-bottom: 100px;
-      }
-      @include media-breakpoint-up(xl) {
-        margin-bottom: 120px;
       }
     }
   }

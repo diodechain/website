@@ -10,7 +10,7 @@
             <div class="download__content">
                 {%- if data.title -%}<p class="download__title">{{ data.title }}</p>{% endif %}
                 {%- if data.heading -%}<h2 class="download__heading">{{ data.heading }}</h2>{% endif %}
-                {%- if data.subheading -%}<p class="download__subheading">{{ data.subheading }}</p>{% endif %}
+                {%- if data.subheading -%}<div class="download__subheading">{{ data.subheading | markdownify }}</div>{% endif %}
                 {%- if data.buttons -%}
                     <div class="download__buttons">
                         {% for button in data.buttons %}

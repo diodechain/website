@@ -192,6 +192,10 @@ partners:
   - image: partners/context.svg
     alt: Context
 
+  - image: partners/exosite.svg
+    alt: Exosite
+    url: "https://www.exosite.com"
+
 ---
 
 {%- include hero.liquid -%}

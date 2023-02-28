@@ -107,3 +107,12 @@ solutions:
 {%- include features.liquid -%}
 
 {%- include box.liquid data="solutions" -%}
+
+  <div prefill="name=Danny&company=Paperform" data-paperform-id="contactdiode"></div>
+  <script>
+  (function() {
+  var script = document.createElement('script');
+  script.src = "https://paperform.co/__embed.min.js";
+  document.body.appendChild(script);
+  })()
+  </script>
