@@ -27,7 +27,7 @@ story:
   buttons:
   - title: See How The Network Works
     class: btn--blank
-    url: "#"
+    url: "/solutions/network/"
   image:
     src: story/network-full.webp
     alt: Network
