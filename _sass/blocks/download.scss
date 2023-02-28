@@ -159,6 +159,13 @@
       &--small {
         font-family: $font-code;
       }
+      &--nowrap {
+        white-space: nowrap;
+        @include media-breakpoint-down(md) {
+          width: auto;
+          max-width: 260px;
+        }
+      }
     }
     .list {
       padding: 0;

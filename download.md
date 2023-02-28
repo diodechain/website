@@ -18,10 +18,15 @@ app:
   subheading: Chat, files, assets, and more - replace your leaky team collaboration app with Diode.
   buttons:
   - title: Download
-    url: "#"
+    url: "#download-app"
+    class: popup-open
   - title: Learn More
     url: "/solutions/app/"
     class: "btn--blank btn--arrow"
+
+### Popup: App
+popup:
+  title: Get the App
 
 ### Download: CLI
 cli:
@@ -55,3 +60,5 @@ network:
 {%- include download.liquid id="cli" data="cli" -%}
 
 {%- include download.liquid id="network" data="network" -%}
+
+{%- include download-popup.liquid id="download-app" -%}

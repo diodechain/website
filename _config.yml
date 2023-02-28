@@ -77,6 +77,25 @@ social:
   matrix: "https://matrix.to/#/#diodechain:matrix.org"
 
 
+# Download Links
+download:
+  app:
+    macos: "https://share.diode.link/download/drive-uu7nc1mj9pk4nv2vghsc/tkxxutdr5x6vj52v/dDrive-1.8.1.dmg"
+    windows: "https://share.diode.link/download/drive-uu7nc1mj9pk4nv2vghsc/tkxxutdr5x6vj52v/dDrive-1.8.1-win32.exe"
+    linux: "https://share.diode.link/download/drive-uu7nc1mj9pk4nv2vghsc/tkxxutdr5x6vj52v/dDrive-1.8.1-linux-x86_64.run"
+    raspberry-pi: "https://share.diode.link/download/drive-uu7nc1mj9pk4nv2vghsc/tkxxutdr5x6vj52v/dDrive-1.2.1-linux-armv7l.run"
+    raspberry-pi-64: "https://share.diode.link/download/drive-uu7nc1mj9pk4nv2vghsc/tkxxutdr5x6vj52v/dDrive-1.2.1-linux-aarch64.run"
+    ios: "https://apps.apple.com/us/app/diode-drive/id1605222443"
+    android: "https://play.google.com/store/apps/details?id=io.diode.drive"
+  cli:
+    macos: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_darwin_amd64.zip"
+    macos-package: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_darwin.pkg"
+    windows: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_windows_amd64.zip"
+    linux: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_linux_amd64.zip"
+    raspberry-pi: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_linux_arm.zip"
+    raspberry-pi-64: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_linux_arm64.zip"
+
+
 # Footer
 copyright: "DIODE &copy; 2023, All Rights Reserved"
 security:

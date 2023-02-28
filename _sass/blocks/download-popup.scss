@@ -1,0 +1,57 @@
+/* ==========================================================================
+   DOWNLOAD POPUP
+   ========================================================================== */
+.download-popup {
+
+  &__buttons {
+    margin-bottom: 30px;
+
+    .btn {
+      text-transform: none;
+    }
+
+    .hide {display: none;}
+  }
+
+  &__other {
+    margin-bottom: 30px;
+
+    &, &-title {
+      font-size: 14px;
+      line-height: 22px;
+      @include media-breakpoint-up(md) {
+        font-size: 15px;
+      }
+      @include media-breakpoint-up(xl) {
+        font-size: 16px;
+      }
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    &-title {
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .sha {
+      display: block;
+      word-wrap: break-word;
+    }
+  }
+
+  hr {
+    margin-bottom: 10px;
+  }
+
+  &__note {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.25em;
+    @include media-breakpoint-up(xl) {
+      font-size: 14px;
+    }
+  }
+}

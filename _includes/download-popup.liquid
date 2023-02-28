@@ -1,0 +1,43 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.popup %}
+{% endif %}
+
+<div class="popup" id="{{ include.id }}">
+    <div class="popup__space">
+        <aside class="popup__content">
+            <a href="#close" class="popup__close" aria-label="Hide popup"></a>
+            <header class="popup__header">
+                {%- if data.title -%}<h2 class="popup__title">{{ data.title }}</h2>{% endif %}
+                <p>By downloading Diode App you accept the <a href="{{ site.links.terms.url }}" target="_blank">terms</a> and our <a href="{{ site.links.privacy.url }}" target="_blank">privacy policy</a>.</p>
+            </header>
+
+            <div class="download-popup">
+                <div class="download-popup__buttons">
+                    <a class="btn btn-primary macos" href="{{ site.download.app.macos }}" target="_blank">DOWNLOAD FOR MacOS X</a>
+                    <a class="btn btn-primary hide windows" href="{{ site.download.app.windows }}" target="_blank">DOWNLOAD FOR Windows (64-bit)</a>
+                    <a class="btn btn-primary hide linux" href="{{ site.download.app.linux }}" target="_blank">DOWNLOAD FOR Linux (64-bit)</a>
+                    <a class="btn btn-primary hide raspberry-pi" href="{{ site.download.app.raspberry-pi }}" target="_blank">DOWNLOAD FOR Raspberry Pi / ARM 32bit</a>
+                    <a class="btn btn-primary hide raspberry-pi-64" href="{{ site.download.app.raspberry-pi-64 }}" target="_blank">DOWNLOAD FOR Raspberry Pi / ARM 64bit</a>
+                    <a class="btn btn-primary hide ios" href="{{ site.download.app.ios }}" target="_blank">GET FOR iOS</a>
+                    <a class="btn btn-primary hide android" href="{{ site.download.app.android }}" target="_blank">GET FOR Android</a>
+                </div>
+
+                <p class="download-popup__other-title">Or choose another Platform:</p>
+                <ul class="download-popup__other">
+                    <li><a href="{{ site.download.app.macos }}" target="_blank">MacOS X</a><br></li>
+                    <li><a href="{{ site.download.app.windows }}" target="_blank">Windows (64-bit)</a></li>
+                    <li><a href="{{ site.download.app.linux }}" target="_blank">Linux (64-bit)</a><code class="sha">47d8a4b6c7171c4d21b922dc30269f2291907c8b</code></li>
+                    <li><a href="{{ site.download.app.raspberry-pi }}" target="_blank">Raspberry Pi / ARM 32bit</a><code class="sha">140daf2af4d1656cba3f6edd4b39f5c8b1eac9c9</code></li>
+                    <li><a href="{{ site.download.app.raspberry-pi-64 }}" target="_blank">Raspberry Pi / ARM 64bit</a><code class="sha">6aa7b5189d3d05cb36b960117375aff61b9e45a0</code></li>
+                    <li><a href="{{ site.download.app.ios }}" target="_blank">iOS</a></li>
+                    <li><a href="{{ site.download.app.android }}" target="_blank">Android</a></li>
+                </ul>
+
+                <hr>
+                <p class="download-popup__note">MacOS + Windows builds are signed/notarized. For Linux builds please compare the SHA-1 checksum above with the file downloaded for validation.</p>
+            </div>
+        </aside>
+    </div>
+</div>

@@ -58,32 +58,58 @@ function initHeader() {
 
   function toggleClick(event) {
     event.preventDefault();
-    if (nav.classList.contains('visible')) {
-      setTimeout(function () {
-        nav.classList.remove('open');
-        document.body.classList.remove('menu-open');
-        enableScroll();
+    var target = event.currentTarget.area, isNavbar = event.currentTarget.navbar;
+    if (target) {
+      if (target.classList.contains('visible')) {
         setTimeout(function () {
-          nav.classList.remove('visible');
-        }, 250);
-      }, 25);
-    } else {
-      nav.classList.add('visible');
-      setTimeout(function () {
-        nav.classList.add('open');
-      }, 25);
-      setTimeout(function () {
-        document.body.classList.add('menu-open');
-        disableScroll();
-      }, 300);
+          target.classList.remove('open');
+          if (isNavbar) {
+            document.body.classList.remove('menu-open');
+            enableScroll();
+          }
+          setTimeout(function () {
+            target.classList.remove('visible');
+          }, 250);
+        }, 25);
+      } else {
+        target.classList.add('visible');
+        setTimeout(function () {
+          target.classList.add('open');
+        }, 25);
+        setTimeout(function () {
+          if (isNavbar) {
+            document.body.classList.add('menu-open');
+            disableScroll();
+          }
+        }, 300);
+      }
     }
     return false;
   }
 
-  var nav = document.querySelector('.header__nav');
+  var navbar = document.querySelector('.header__nav'),
+      toggle = document.querySelector('.header__toggle'),
+      close = navbar.querySelector('.header__close');
 
-  document.querySelector('.header__toggle').addEventListener('click', toggleClick);
-  nav.querySelector('.header__close').addEventListener('click', toggleClick);
+  toggle.area = navbar;
+  toggle.navbar = true;
+  toggle.addEventListener('click', toggleClick, false);
+
+  close.area = navbar;
+  close.navbar = true;
+  close.addEventListener('click', toggleClick, false);
+
+  document.querySelectorAll('.popup-open').forEach((link) => {
+    var target = link.getAttribute('href'),
+        popup = document.querySelector(target);
+
+    link.area = popup;
+    link.addEventListener('click', toggleClick, false);
+
+    var close = popup.querySelector('.popup__close');
+    close.area = popup;
+    close.addEventListener('click', toggleClick, false);
+  });
 }
 
 function initTestimonials() {

@@ -1,0 +1,133 @@
+/* ==========================================================================
+   POPUP
+   ========================================================================== */
+.popup {
+  width: 100%;
+  min-width: 320px;
+  overflow: hidden;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+
+  &.visible {
+    display: block;
+  }
+
+  .container {
+    height: 100%;
+    position: relative;
+  }
+
+  &__close {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    cursor: pointer;
+    @include media-breakpoint-up(xss) {
+    }
+    @include media-breakpoint-up(md) {
+    }
+    @include media-breakpoint-up(xl) {
+    }
+    @include media-breakpoint-up(xxl) {
+    }
+
+    &::before, &::after {
+      @include pseudo;
+      width: 23px;
+      height: 2px;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background: black;
+    }
+    &::before {transform: rotate(45deg);}
+    &::after {transform: rotate(-45deg);}
+  }
+
+  &__space {
+    height: 100%;
+    padding: 15px;
+    display: none;
+    overflow: hidden;
+    overflow-y: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    transition: opacity $effect;
+    background: rgba(black, .8);
+    opacity: 0;
+    -webkit-overflow-scrolling: touch;
+
+    @media screen and (max-height: 700px) {
+      display: block !important;
+    }
+
+    .visible & {display: flex;}
+    .open & {opacity: 1;}
+  }
+
+  &__content {
+    max-width: 100%;
+    padding: 50px 15px 20px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    z-index: 1;
+    background: #f6f6f6;
+    @include media-breakpoint-up(xss) {
+      padding: 30px 20px;
+    }
+    @include media-breakpoint-up(xss) {
+      padding-right: 25px;
+      padding-left: 25px;
+    }
+    @include media-breakpoint-up(xsl) {
+      max-width: 560px;
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+    @include media-breakpoint-up(md) {
+      max-width: 680px;
+    }
+    @include media-breakpoint-up(lg) {
+      max-width: 840px;
+    }
+    @include media-breakpoint-up(xl) {
+      max-width: 920px;
+    }
+  }
+
+  &__header {
+    font-size: 14px;
+    margin-bottom: 30px;
+    @include media-breakpoint-up(xss) {
+      font-size: 15px;
+    }
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 18px;
+    }
+
+    h2 {margin-bottom: .25em;}
+    &:last-child {margin-bottom: 0;}
+
+  }
+}

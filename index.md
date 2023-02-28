@@ -12,7 +12,7 @@ hero:
   buttons:
   - title: FIND OUT MORE
     url: "/solutions/"
-  - title: DOWNLOAD <span>FOR MacOS</span>
+  - title: DOWNLOAD
     class: btn--bordered
     url: "/download/"
   image: hero/default.webp

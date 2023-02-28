@@ -63,9 +63,9 @@ vault:
   heading: Vault
   icon: icons/vault.svg
   content: |
-    The Diode Vault is a small hardware device that works as an “always-on” team member so team chat, files, and assets are always available – whether you’re online or not.
+    The Diode Vault is an autonomous team member that works as an “always-on” system so team chat, files, and assets are always available – whether your people are online or not.
   
-    You can put it in your office, in a data center, or in a friendly region to relay, sync, and backup up your data. It makes it easy for your team to operate in what we call “Light Zone” mode, reducing the amount of data distributed.<br><br>
+    You can buy it for your office or deploy in a data center or friendly region to relay, sync, and backup up your data. It makes it easy for your team to operate in what we call “Light Zone” mode, reducing the amount of data distributed.
     #### Use for
     Backup, timezone-bridging, network exit node
   buttons:
