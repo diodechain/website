@@ -32,13 +32,9 @@
     right: 10px;
     z-index: 10;
     cursor: pointer;
-    @include media-breakpoint-up(xss) {
-    }
-    @include media-breakpoint-up(md) {
-    }
-    @include media-breakpoint-up(xl) {
-    }
-    @include media-breakpoint-up(xxl) {
+    @include media-breakpoint-up(lg) {
+      top: 20px;
+      right: 20px;
     }
 
     &::before, &::after {
