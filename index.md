@@ -66,7 +66,7 @@ protected:
   - title: Product Development <br>Partner Interop
     photo: team/product-development.webp
     alt: Product Development
-  - title: Developer Operations <br>Stakeholde Access
+  - title: Developer Operations <br>Stakeholder Access
     photo: team/developer-operations.webp
     alt: Developer Operations
   - title: IP and Sensitive Content <br>Customer Portals
