@@ -58,6 +58,11 @@
     width: 100%;
     margin: 0 0 50px;
 
+    a {
+      display: block;
+      .page--homepage & {cursor: default;}
+    }
+
     img {
       width: 129px;
       display: block;

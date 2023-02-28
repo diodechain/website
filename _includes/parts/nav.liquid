@@ -1,4 +1,4 @@
-<ul class="{{ include.class | default: "logo" }}">
+<ul class="{{ include.class | default: "nav" }}">
     {% for data in site.nav %}
         <li>
             {%- if data.title -%}<a href="{{ data.url | relative_url }}" target="{{ data.target }}">{{ data.title }}</a>{% endif %}

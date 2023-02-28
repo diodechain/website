@@ -1,8 +1,11 @@
 ---
+title: Download
 layout: new
 class: header--white
 permalink: /download/
-title: Download
+redirect_from:
+- /resources/download/
+
 
 ### Hero
 hero:
@@ -10,6 +13,7 @@ hero:
   heading: Download Diode
   subheading: Download our highly-secure collaboration App, asset management CLI, or network node.
   image: hero/how-it-works.webp
+
 
 ### Download: App
 app:
@@ -24,9 +28,11 @@ app:
     url: "/solutions/app/"
     class: "btn--blank btn--arrow"
 
+
 ### Popup: App
 popup:
   title: Get the App
+
 
 ### Download: CLI
 cli:
@@ -39,6 +45,7 @@ cli:
     url: "/solutions/cli/"
     class: "btn--blank btn--arrow"
 
+
 ### Download: Network
 network:
   title: For your community
@@ -46,7 +53,8 @@ network:
   subheading: You can expand the Diode Network by hosting a node.
   buttons:
   - title: Download
-    url: "#"
+    url: "https://support.diode.io/article/lsr4tkzz8t"
+    target: _blank
   - title: Learn More
     url: "/solutions/network/"
     class: "btn--blank btn--arrow"

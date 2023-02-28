@@ -1,8 +1,9 @@
 ---
+title: Privacy Policy
 layout: new
 class: header--white
 permalink: /privacy-policy/
-title: Privacy Policy
+
 
 ### Hero
 hero:
@@ -30,7 +31,7 @@ Diode collects data to provide You with the best experience possible while engag
 ### 3. WHEN AND HOW WE COLLECT DATA
 You provide some data directly to Us when You complete activities like submitting a support question, requesting our team to contact You, filling in surveys and forms, and communicating on other topics via email, chat, or voice.
 
-We obtain some data when You complete activities like browsing Our website or interacting with Our software products. We also receive some data via error reports or usage data from Our Service performance monitoring tools. To interact with Our software products, You must agree to the Diode Terms and Conditions ([https://diode.io/msa](/msa)).
+We obtain some data when You complete activities like browsing Our website or interacting with Our software products. We also receive some data via error reports or usage data from Our Service performance monitoring tools. To interact with Our software products, You must agree to the Diode Terms and Conditions ([https://diode.io/terms](/terms)).
 
 ### 4. HOW WE USE THAT DATA
 - **To give You personalized customer support**

@@ -1,8 +1,11 @@
 ---
+title: Pricing
 layout: new
 class: header--white
 permalink: /pricing/
-title: Pricing
+redirect_from:
+- /pricing/success.html
+
 
 ### Hero
 hero:
@@ -89,7 +92,7 @@ note:
   subheading: |
     No purchase is necessary to download and start collaborating - every Zone is free when first created, and can be later upgraded by ordering one of the plans above.
     
-    [Watch a video for how this works.](https://duckduckgo.com){:target="_blank"}
+    [Watch a video for how this works.](https://support.diode.io/article/pr3fytz8sq){:target="_blank"}
   buttons:
   - title: Download
     url: "/download/"

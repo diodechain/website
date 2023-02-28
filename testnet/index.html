@@ -1,17 +1,14 @@
----
----
 <!DOCTYPE html>
 <html>
 <head>
-   <!-- HTML meta refresh URL redirection -->
-   <meta http-equiv="refresh" content="5; url={{ site.github.url }}/prenet/">
+    <!-- HTML meta refresh URL redirection -->
+    <meta http-equiv="refresh" content="5; url=https://diode.io/prenet/">
 </head>
 <body>
-   <script>
-      let url = document.location.toString().replace("/testnet/", "/prenet/")
-      window.location.replace(url);
-   </script>
-   <p>The page has moved to:
-      <a href="{{ site.github.url }}/prenet/">this page</a></p>
+    <script>
+        let url = document.location.toString().replace("/testnet/", "/prenet/")
+        window.location.replace(url);
+    </script>
+    <p>The page has moved to: <a href="https://diode.io/prenet/">this page</a></p>
 </body>
 </html>

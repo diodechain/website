@@ -1,7 +1,18 @@
 ---
+title: Solutions
 layout: new
 permalink: /solutions/
-title: Solutions
+redirect_from:
+- /products/
+- /solutions/asset-management/
+- /solutions/backup/
+- /solutions/file-sharing/
+- /solutions/healthcare-and-compliance/
+- /solutions/private-collaboration/
+- /solutions/private-storage/
+- /solutions/remote-work/
+- /solutions/serverless-communications/
+- /solutions/streaming-video/
 
 
 ### Hero

@@ -12,7 +12,7 @@ minima:
 plugins:
 - jekyll-feed
 - jekyll-seo-tag
-#  - jekyll-redirect-from
+- jekyll-redirect-from
 path:
   images: "/assets/img/"
   styles: "/assets/css/"
@@ -51,8 +51,6 @@ nav:
     url: "/how-it-works/"
   - title: Explorer
     url: "/prenet/"
-  - title: Blog
-    url: "/blog/"
 
 
 # Other Links
@@ -62,7 +60,7 @@ links:
     url: "/download/"
   terms:
     title: Terms
-    url: "/msa/"
+    url: "/terms/"
   privacy:
     title: Privacy Policy
     url: "/privacy-policy/"

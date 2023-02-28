@@ -1,8 +1,11 @@
 ---
+title: How Diode works.
 layout: new
 class: header--white
 permalink: /how-it-works/
-title: How Diode works.
+redirect_from:
+- /resources/
+- /resources/how-it-works/
 
 
 ### Hero

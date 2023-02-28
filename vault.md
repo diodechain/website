@@ -1,8 +1,9 @@
 ---
+title: Diode Vault
 layout: new
 class: header--white
 permalink: /solutions/vault/
-title: Diode Vault
+
 
 ### Hero
 hero:

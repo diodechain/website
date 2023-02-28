@@ -1,7 +1,10 @@
 ---
+title: Reclaim Your Digital Sovereignty
 layout: new
 class: page--homepage
-title: Reclaim Your Digital Sovereignty
+redirect_from:
+- /joinzone/
+- /newsletter/welcome.html
 
 
 ### Hero

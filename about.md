@@ -1,7 +1,10 @@
 ---
+title: About
 layout: new
 permalink: /about/
-title: About
+redirect_from:
+- /resources/about/
+
 
 ### Hero
 hero:
@@ -22,9 +25,9 @@ story:
   heading: It all started with fixing a web2 leak.
   content: |
     Diode was born when co-founder Dominic Letz needed to solve for a Man in the Middle attack against Internet time - a prerequisite for a legacy Web2 PKI-based security issue that had bricked millions of devices.
-  
+    
     He found a solution by applying decentralized consensus to even the most resource constrained devices.
-  
+    
     The Diode team has been innovating ever since to make even the most fluid IT environments secure.
   image:
     src: story/about.svg
@@ -77,7 +80,6 @@ article:
   - title: Get in Touch
     url: "https://contactdiode.paperform.co/"
     target: _blank
-
 
 ---
 

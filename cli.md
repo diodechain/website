@@ -1,8 +1,11 @@
 ---
+title: Diode CLI
 layout: new
 class: header--white
 permalink: /solutions/cli/
-title: Diode CLI
+redirect_from:
+- /products/diode-cli/
+
 
 ### Hero
 hero:
@@ -15,7 +18,7 @@ hero:
   image: hero/cli.webp
 
 
-### Story: For assets
+### Story: For Assets
 story:
   title: Precise global access
   heading: For assets.

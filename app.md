@@ -1,8 +1,11 @@
 ---
+title: Diode App
 layout: new
 class: header--white
 permalink: /solutions/app/
-title: Diode App
+redirect_from:
+- /products/d-drive/
+
 
 ### Hero
 hero:
@@ -15,7 +18,7 @@ hero:
   image: hero/app.webp
 
 
-### Story: For teams
+### Story: For Teams
 story:
   title: Operate protected
   heading: For teams.
@@ -107,12 +110,3 @@ solutions:
 {%- include features.liquid -%}
 
 {%- include box.liquid data="solutions" -%}
-
-  <div prefill="name=Danny&company=Paperform" data-paperform-id="contactdiode"></div>
-  <script>
-  (function() {
-  var script = document.createElement('script');
-  script.src = "https://paperform.co/__embed.min.js";
-  document.body.appendChild(script);
-  })()
-  </script>

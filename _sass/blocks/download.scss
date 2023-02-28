@@ -153,10 +153,6 @@
       margin: 0 auto 40px;
       white-space: normal;
       text-transform: none;
-      @include media-breakpoint-up(lg) {
-        margin-right: 0;
-        margin-left: 0;
-      }
       &--small {
         font-family: $font-code;
       }

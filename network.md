@@ -1,8 +1,11 @@
 ---
+title: Diode Network
 layout: new
 class: header--white
 permalink: /solutions/network/
-title: Diode Network
+redirect_from:
+- /products/diode-network/
+
 
 ### Hero
 hero:

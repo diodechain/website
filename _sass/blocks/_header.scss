@@ -41,7 +41,10 @@
       left: 25px;
     }
 
-    a {display: block;}
+    a {
+      display: block;
+      .page--homepage & {cursor: default;}
+    }
 
     img {
       width: 129px;
@@ -132,7 +135,7 @@
   &__menu {
     width: 100%;
     min-height: 100%;
-    padding: 110px 0 88px;
+    padding: 110px 0 90px;
     margin: 0;
     font: 600 38px/42px $font-heading;
     list-style: none;
@@ -170,6 +173,7 @@
       @include media-breakpoint-up(xl) {
         transform: translate3d(0, -7px, 0);
         transition: opacity 1.2s ease, transform 1s ease;
+        &:last-of-type {min-height: 280px;}
       }
 
       > a {
