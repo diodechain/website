@@ -11,7 +11,7 @@ redirect_from:
 hero:
   class: hero--rounded
   heading: Download Diode
-  subheading: Download our highly-secure collaboration App, asset management CLI, or network node.
+  subheading: Download our zero trust collaboration App, asset management CLI, and network node.
   image: hero/how-it-works.webp
 
 
