@@ -48,7 +48,7 @@ cli:
 
 ### Download: Network
 network:
-  title: For your community
+  title: For your enterprise
   heading: Join the Network
   subheading: You can expand the Diode Network by hosting a node.
   buttons:
