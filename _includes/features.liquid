@@ -17,7 +17,7 @@
             <div class="col col-12 col-lg-6">
                 <div class="features__actions">
                     {% for button in data.actions %}
-                        <a href="{{ button.url | prepend: relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                        <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
                     {% endfor %}
                 </div>
             </div>
