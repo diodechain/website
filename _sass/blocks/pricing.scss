@@ -68,7 +68,7 @@
   &__switch {
     max-width: 340px;
     padding: 92px 0 0;
-    margin: 53px auto 73px;
+    margin: 40px auto 50px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -80,6 +80,7 @@
     cursor: default;
     @include user-select;
     @include media-breakpoint-up(xl) {
+      margin: 53px auto 73px;
       font-size: 25px;
     }
 
@@ -119,51 +120,91 @@
   &__plan {
     max-width: 340px;
     min-height: 100%;
-    padding: 54px 23px;
+    padding: 24px 20px 70px;
     border-radius: 30px;
     margin: 0 auto;
+    position: relative;
     color: black;
     background: $color-orange;
+    @include media-breakpoint-up(md) {
+      margin-right: -10px;
+      margin-left: -10px;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+    @include media-breakpoint-up(xl) {
+      padding: 54px 23px 98px;
+    }
+
+    &s {
+      .col + .col {
+        padding-top: 30px;
+        @include media-breakpoint-up(md) {
+          padding-top: 0;
+        }
+      }
+    }
 
     &-title, &-description {
-      margin-bottom: 30px;
-      font-size: 25px;
-      line-height: 22px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      line-height: 20px;
       font-weight: 600;
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 30px;
+        font-size: 25px;
+        line-height: 22px;
+      }
     }
 
     &-price {
-      margin-top: 72px;
-      margin-bottom: 37px;
+      margin-top: 30px;
+      margin-bottom: 30px;
       position: relative;
-      font-size: 89px;
-      line-height: 80px;
+      font-size: 64px;
+      line-height: 60px;
       font-weight: 600;
+      @include media-breakpoint-up(xl) {
+        margin-top: 72px;
+        margin-bottom: 37px;
+        font-size: 89px;
+        line-height: 80px;
+      }
 
       span {
-        margin-left: -5px;
         display: block;
         position: relative;
         &::before {
           content: '$';
-          font-size: 60px;
-          line-height: 56px;
+          font-size: 40px;
+          line-height: 36px;
+          @include media-breakpoint-up(xl) {
+            margin-left: -5px;
+            font-size: 60px;
+            line-height: 56px;
+          }
         }
         &::after {
-          margin-left: 11px;
+          margin-left: 4px;
           content: '/mo';
           position: relative;
-          top: -5px;
-          font-size: 13px;
+          top: -3px;
+          font-size: 12px;
           line-height: 14px;
           font-weight: normal;
           text-transform: uppercase;
+          @include media-breakpoint-up(xl) {
+            margin-left: 11px;
+            font-size: 13px;
+            top: -5px;
+          }
         }
       }
 
       &-yearly {
-        margin-top: 5px;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 14px;
         font-weight: normal;
         display: block !important;
@@ -171,13 +212,51 @@
         top: 100%;
         left: 0;
         transition: opacity $effect;
+        @include media-breakpoint-up(xl) {
+          margin-top: 5px;
+          font-size: 14px;
+        }
       }
     }
 
     &-features {
-      font-size: 17px;
-      line-height: 26px;
+      font-size: 14px;
+      line-height: 20px;
+      @include media-breakpoint-up(xl) {
+        font-size: 17px;
+        line-height: 26px;
+      }
       p {margin-bottom: 0;}
+    }
+
+    &-action {
+      position: absolute;
+      right: 20px;
+      bottom: 16px;
+      left: 20px;
+      text-align: center;
+      @include media-breakpoint-up(xl) {
+        bottom: 12px;
+      }
+    }
+
+    .btn {
+      min-width: 190px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 24px;
+      display: inline-block;
+      font-size: 15px;
+      line-height: 24px;
+      color: black;
+      background: white;
+      cursor: pointer;
+      @include media-breakpoint-up(xl) {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border-radius: 28px;
+        font-size: 16px;
+      }
     }
   }
 
