@@ -25,7 +25,6 @@ pricing:
   - E2EE asset connectivity
   - Secure markdown editor
   - Browser upload/download
-  - Public invitation codes
   - Unlimited storage
   - Unlimited team members
 
@@ -39,6 +38,7 @@ pricing:
     features: |
       All free features plus:
       - File backup
+      - Invitation codes
       - 3 chat channels
       - 20 web links
       - 10 free team members
@@ -58,10 +58,8 @@ pricing:
     features: |
       All Freelancer plus:
       - Custom web link brand
-      - Private invitation codes
       - Private chat channels
       - Web3 secure sites
-      - Asset management
       - 10 chat channels
       - 100 web links
       - 20 free team members
@@ -76,10 +74,9 @@ pricing:
     description: for organizations expanding their security perimeter.
     features: |
       All Business plus:
-      - Asset fleets
+      - Asset management
+      - Private invitation codes
       - Web2 regional proxies
-      - Private chat channels
-      - Subfolder permissions
       - DCO integrations
       - Port mapping policies
       - Unlimited chat channels
