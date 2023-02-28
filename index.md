@@ -97,7 +97,7 @@ testimonials:
   class: box--testimonials
   title: What teams are saying
   quotes:
-  - quote: Diode is sweet, this is an amazing technology and product.
+  - quote: Diode is an amazing technology and product - it unlocks our software for use in regulated and sensitive environments.
     author: Erich, CEO Compendium
   - quote: I like very much the approach you are following at **diode.io** and am migrating to diode to have full remote control via ssh.
     author: Ettoire, Modosmart
