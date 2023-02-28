@@ -63,7 +63,7 @@ pricing:
       - 100 web links
       - 20 free team members
       - $5 per additional team
-      - Premium support
+      - Standard support
     button: Order
     id:
       yearly: "price_1IET4XEGYTHllVn0xPwXihpr"
@@ -80,7 +80,7 @@ pricing:
       - Port mapping policies
       - Unlimited chat channels
       - Unlimited web links
-      - Custom support SLA
+      - Premium support SLA
     button: Contact Us
     action: "https://contactdiode.paperform.co/"
 
