@@ -72,7 +72,7 @@
       display: block;
       font-size: 16px;
       line-height: 18px;
-      text-decoration: underline;
+      background: #eee;
       text-decoration-thickness: .0625em;
       text-underline-offset: .167em;
       @include media-breakpoint-up(md) {
