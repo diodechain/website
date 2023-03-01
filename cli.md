@@ -55,7 +55,7 @@ features:
       url: "/download/#cli"
     - title: SCHEDULE A DEMO
       class: btn--blank btn--arrow
-      url: "https://contactdiode.paperform.co/"
+      url: "https://diodedemo.paperform.co/"
       target: _blank
 
   - title: Resource publication

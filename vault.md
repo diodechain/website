@@ -27,7 +27,7 @@ story:
     target: _blank
   - title: SCHEDULE A DEMO
     class: btn--blank btn--arrow
-    url: "https://contactdiode.paperform.co/"
+    url: "https://diodedemo.paperform.co/"
     target: _blank
   image:
     src: story/vault-full.webp
