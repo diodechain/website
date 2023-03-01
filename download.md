@@ -50,7 +50,7 @@ cli:
 network:
   title: For your enterprise
   heading: Join the Network
-  subheading: You can expand the Diode Network by hosting a node.
+  subheading: You can deepen the security of your zero trust perimeters by hosting a node.
   buttons:
   - title: Download
     url: "https://support.diode.io/article/lsr4tkzz8t"
