@@ -70,6 +70,7 @@
   &__title {
     margin: 0 0 25px;
     font: 22px/24px $font-default;
+    font-weight: bold;
     text-decoration-thickness: .0625em;
     text-underline-offset: .167em;
     @include media-breakpoint-up(md) {
