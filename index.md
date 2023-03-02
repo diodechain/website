@@ -111,8 +111,6 @@ testimonials:
     author: Eric, Global Enterprise Network
   - quote: Diode allows us to move quickly while achieving the level of information protection for the communities and industries we serve.
     author: Josh, YetiCGI
-  - quote: Diode is an important part of our system readiness.
-    author: Trey, Fairbanks Morse
 
 
 ### Box: Our solutions
