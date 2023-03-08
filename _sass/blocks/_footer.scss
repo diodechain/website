@@ -71,7 +71,7 @@
   }
 
   &__menu {
-    height: 216px;
+    height: 266px;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -116,6 +116,10 @@
       @media (hover: hover) {
         &:hover, &:focus {color: black;}
       }
+    }
+
+    .demo {
+      margin-top: 24px;
     }
   }
 

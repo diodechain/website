@@ -16,6 +16,9 @@
   .container {
     height: 100%;
     position: relative;
+    @include media-breakpoint-up(xxl) {
+      position: static;
+    }
   }
 
   &__brand {
@@ -39,6 +42,10 @@
     @include media-breakpoint-up(xl) {
       top: 68px;
       left: 25px;
+    }
+    @include media-breakpoint-up(xxl) {
+      margin-left: -625px;
+      left: 50%;
     }
 
     a {
@@ -75,7 +82,32 @@
       top: 62px;
     }
     @include media-breakpoint-up(xxl) {
-      right: 134px;
+      right: 52px;
+    }
+
+    &::before, &::after, span {
+      @include pseudo;
+      width: 23px;
+      height: 2px;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background: white;
+      transition: transform $effect, opacity $effect;
+      transform: none;
+      transform-origin: center;
+    }
+    &::before {top: 16px;}
+    &::after {bottom: 16px;}
+
+    .header--white & {
+      @include media-breakpoint-up(md) {
+        &::before, &::after, span {background: black;}
+      }
     }
   }
 
@@ -223,6 +255,10 @@
           top: 11px;
         }
       }
+
+      &.demo {
+        display: none !important;
+      }
     }
 
     .open & > li {
@@ -299,7 +335,7 @@
       top: 62px;
     }
     @include media-breakpoint-up(xxl) {
-      right: 134px;
+      right: 52px;
     }
 
     &::before, &::after {
@@ -321,9 +357,10 @@
 
   &__download {
     min-width: 80px;
-    padding: 5px 20px;
-    font-size: 14px;
+    padding: 5px 19px;
+    font-size: 12px;
     line-height: 20px;
+    font-weight: 300;
     position: absolute;
     z-index: 5;
     @include media-breakpoint-down(md) {
@@ -356,7 +393,7 @@
       top: 65px;
     }
     @include media-breakpoint-up(xxl) {
-      right: 185px;
+      right: 102px;
     }
     @media (hover: hover) {
       &:hover, &:focus {color: white;}

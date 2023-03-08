@@ -1,3 +1,15 @@
+*Theme
+
+## Structure
+
+### Local startup
+
+To run project locally execute:
+
+    $  bundle exec jekyll serve
+
+After that website could be acessed via URL `http://127.0.0.1:4000/`
+
 
 # Diode Setup:
 ## System Preparation

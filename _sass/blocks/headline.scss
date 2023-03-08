@@ -2,7 +2,7 @@
    HEADLINE
    ========================================================================== */
 .headline {
-  padding: 100px 15px;
+  padding: 70px 15px;
   margin: -80px -15px 93px;
   font-size: 16px;
   line-height: 18px;
@@ -13,7 +13,6 @@
   background: $color-orange;
   @include media-breakpoint-up(xss) {
     padding-right: 60px;
-    padding-bottom: 88px;
     padding-left: 25px;
     margin-right: -25px;
     margin-left: -25px;
@@ -41,8 +40,8 @@
   }
   @include media-breakpoint-up(xl) {
     max-width: 925px;
-    min-height: 291px;
-    padding: 46px 110px 32px;
+    min-height: 260px;
+    padding: 45px 110px;
     border-radius: 145px 145px 0 145px;
     margin-top: -30px;
     margin-bottom: 175px;
@@ -95,22 +94,18 @@
 
   &__buttons {
     margin-top: 6px;
-    margin-bottom: -12px;
     @include media-breakpoint-up(md) {
       margin-top: 8px;
-      margin-bottom: -16px;
     }
     @include media-breakpoint-up(xl) {
       margin-top: 13px;
     }
 
     .btn {
+      padding-bottom: 0;
       color: white;
       letter-spacing: 0.0125em;
       position: relative;
-      @include media-breakpoint-up(xl) {
-        left: -11px;
-      }
 
       &.btn--arrow::after {
         -webkit-filter: brightness(1000%);

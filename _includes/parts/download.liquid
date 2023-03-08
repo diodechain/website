@@ -1,1 +1,5 @@
-<a href="{{ site.links.download.url | relative_url }}" class="btn {{ include.class }}">{{ site.links.download.title }}</a>
+{% assign link = site.links.download.url %}
+{%- if page.permalink == "/download/" -%}
+    {% assign link = page.permalink | append: "#app" %}
+{% endif %}
+<a href="{{ link | relative_url }}" class="btn {{ include.class }}">{{ site.links.download.title }}</a>

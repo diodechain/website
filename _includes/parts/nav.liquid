@@ -1,11 +1,13 @@
 <ul class="{{ include.class | default: "nav" }}">
     {% for data in site.nav %}
-        <li>
+        <li class="{{ data.class }}">
             {%- if data.title -%}<a href="{{ data.url | relative_url }}" target="{{ data.target }}">{{ data.title }}</a>{% endif %}
             {%- if data.sub -%}
                 <ul>
                     {% for sub in data.sub %}
-                        {%- if sub.title -%}<li><a href="{{ sub.url | relative_url }}" target="{{ sub.target }}">{{ sub.title }}</a></li>{% endif %}
+                        {%- if sub.title -%}
+                                <li><a href="{{ sub.url | relative_url }}" target="{{ sub.target }}">{{ sub.title }}</a></li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             {% endif %}
