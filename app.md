@@ -10,7 +10,7 @@ redirect_from:
 ### Hero
 hero:
   class: hero--rounded
-  heading: Team collaboration on&nbsp;Diode App.
+  heading: Team collaboration on&nbsp;Diode&nbsp;App.
   subheading: Secure collaboration around IT/OT/IP work product.
   buttons:
   - title: DOWNLOAD APP

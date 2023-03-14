@@ -1,7 +1,6 @@
 ---
 title: Download
 layout: new
-class: header--white
 permalink: /download/
 redirect_from:
 - /resources/download/
@@ -9,10 +8,11 @@ redirect_from:
 
 ### Hero
 hero:
-  class: hero--rounded
-  heading: Download Diode
-  subheading: Download our zero trust collaboration App, asset management CLI, and network node.
-  image: hero/how-it-works.webp
+  class: hero--right
+  heading: Download Hub
+  heading-title: Your spot for downloading all of our security solutions.
+  subheading: Download our zero trust collaboration App, asset management CLI, and network node below.
+  image: hero/download.webp
 
 
 ### Download: App

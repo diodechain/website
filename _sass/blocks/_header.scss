@@ -36,15 +36,11 @@
     @include media-breakpoint-up(sm) {
       left: 17px;
     }
-    @include media-breakpoint-up(md) {
-      left: 15px;
-    }
     @include media-breakpoint-up(xl) {
       top: 68px;
-      left: 25px;
     }
     @include media-breakpoint-up(xxl) {
-      margin-left: -625px;
+      margin-left: -632px;
       left: 50%;
     }
 

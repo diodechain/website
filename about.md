@@ -9,7 +9,7 @@ redirect_from:
 ### Hero
 hero:
   heading: A little bit <br>about us.
-  subheading: How we started, what we believe in, and where we’re going.
+  subheading: How we started, what we believe in, <br>and where we’re going.
   image: hero/about.webp
 
 

@@ -1,7 +1,6 @@
 ---
 title: Pricing
 layout: new
-class: header--white
 permalink: /pricing/
 redirect_from:
 - /pricing/success.html
@@ -9,7 +8,7 @@ redirect_from:
 
 ### Hero
 hero:
-  class: hero--rounded
+  class: hero--right
   heading: Plans and pricing.
   subheading: Start today at the level you need.
   image: hero/pricing.webp
