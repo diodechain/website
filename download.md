@@ -10,8 +10,9 @@ redirect_from:
 hero:
   class: hero--right
   heading: Download Hub
-  heading-title: Your spot for downloading all of our security solutions.
+  small: Your spot for downloading all of our security solutions.
   subheading: Download our zero trust collaboration App, asset management CLI, and network node below.
+  scroll: "#app"
   image: hero/download.webp
 
 
@@ -21,7 +22,7 @@ app:
   heading: Get the App
   subheading: Chat, files, assets, and more - replace your leaky team collaboration app with Diode.
   buttons:
-  - title: Download
+  - title: Download App
     url: "#download-app"
     class: popup-open
   - title: Learn More
@@ -52,7 +53,7 @@ network:
   heading: Join the Network
   subheading: You can deepen the security of your zero trust perimeters by hosting a node.
   buttons:
-  - title: Download
+  - title: Download Network
     url: "https://support.diode.io/article/lsr4tkzz8t"
     target: _blank
   - title: Learn More
