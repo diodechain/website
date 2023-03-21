@@ -154,7 +154,7 @@
   }
 
   &__heading {
-    margin: 0 -10px 0 -2px;
+    margin: 0;
     position: relative;
     @include media-breakpoint-up(xss) {
       margin-right: -20px;
@@ -493,6 +493,51 @@
     }
     @include media-breakpoint-up(xxxxl) {
       &::after {width: 976px;transform: translateX(0);}
+    }
+  }
+
+  // Smaller version
+  &--smaller {
+    .hero__heading {
+      @include media-breakpoint-down(md) {
+        font-size: 42px;
+        @include media-breakpoint-up(xsm) {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+
+  // Right version
+  &--align {
+    padding-top: 130px;
+    @include media-breakpoint-up(xl) {
+      padding-top: 167px;
+      padding-bottom: 140px;
+    }
+
+    .hero__heading span {
+      @include media-breakpoint-up(md) {
+        white-space: nowrap;
+      }
+    }
+
+    .hero__buttons .btn+.btn {
+      @include media-breakpoint-up(md) {
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-left: 5px;
+      }
+    }
+
+    &::after {
+      background-position: 65% center;
+      @include media-breakpoint-up(xsm) {
+        background-position: 55% center;
+      }
+      @include media-breakpoint-up(sm) {
+        background-position: center center;
+      }
     }
   }
 }

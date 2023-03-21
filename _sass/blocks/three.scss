@@ -1,0 +1,76 @@
+/* ==========================================================================
+   THREE
+   ========================================================================== */
+.three {
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+  @include media-breakpoint-up(md) {
+    padding-bottom: 40px;
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-up(xl) {
+    padding-bottom: 77px;
+    margin-top: -59px;
+    margin-bottom: 84px;
+  }
+
+  &::after {
+    @include pseudo;
+    width: 215px;
+    height: 4px;
+    margin: 0 auto;
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $color-orange;
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  &__header {
+    margin-bottom: 60px;
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 94px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 40px;
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 62px;
+    }
+  }
+
+  &__title {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 25px;
+    line-height: 27px;
+    font-weight: bold;
+  }
+
+  &__column {
+    max-width: 280px;
+    margin: 0 auto 40px;
+    font-size: 17px;
+    line-height: 18.26px;
+    text-align: center;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin-right: -30px;
+      margin-left: -30px;
+      margin-bottom: 26px;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.video %}
+{% endif %}
+
+<section class="video">
+    <div class="row justify-content-center align-items-center">
+        <div class="col col-12">
+            {%- if data.heading -%}<h3 class="video__heading">{{ data.heading }}</h3>{% endif %}
+        </div>
+        <div class="col col-12 col-lg-6">
+            {%- if data.video -%}
+                <figure class="video__player">
+                    <iframe src="https://player.vimeo.com/video/562684103" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen=""></iframe>
+                </figure>
+            {% endif %}
+        </div>
+        <div class="col col-12 col-lg-5 col-xl-4">
+            <div class="video__content">
+                {%- if data.content -%}
+                    {{ data.content }}
+                {% endif %}
+                {%- if data.buttons -%}
+                    <div class="video__buttons">
+                        {% for button in data.buttons %}
+                            <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

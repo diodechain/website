@@ -1,0 +1,68 @@
+/* ==========================================================================
+   VIDEO
+   ========================================================================== */
+.video {
+  margin-bottom: 60px;
+
+  &__heading {
+    margin-bottom: 23px;
+    text-align: center;
+  }
+
+  &__player {
+    iframe {
+      width: 100%;
+      margin: 0 auto 30px;
+      display: block;
+      @include media-breakpoint-up(xss) {
+        width: 310px;
+        height: 180px;
+      }
+      @include media-breakpoint-up(xsm) {
+        width: 325px;
+        height: 190px;
+      }
+      @include media-breakpoint-up(xsl) {
+        width: 370px;
+        height: 210px;
+      }
+      @include media-breakpoint-up(md) {
+        width: 540px;
+        height: 310px;
+      }
+      @include media-breakpoint-up(lg) {
+        width: 450px;
+        height: 260px;
+        margin: 0;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 540px;
+        height: 310px;
+      }
+      @include media-breakpoint-up(xxl) {
+        width: 600px;
+        height: 335px;
+      }
+    }
+  }
+
+  &__content {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      max-width: none;
+      margin: 0;
+      text-align: left;
+    }
+    @include media-breakpoint-up(xl) {
+      max-width: 295px;
+      font-size: 17px;
+      line-height: 19px;
+    }
+
+    .btn {
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.three %}
+{% endif %}
+
+<section class="three">
+    <div class="row justify-content-md-center text-center">
+        <div class="col col-12">
+            <div class="three__header">
+                {%- if data.heading -%}<h2 class="three__heading">{{ data.heading }}</h2>{% endif %}
+                {%- if data.title -%}<p class="three__title">{{ data.title }}</p>{% endif %}
+            </div>
+        </div>
+    </div>
+    {%- if data.columns -%}
+        <div class="row justify-content-center">
+            {% for column in data.columns %}
+                <div class="col col-12 col-md-6 col-lg-4 col-xl-4">
+                    <article class="three__column">
+                        {%- if column.title -%}<h3>{{ column.title }}</h3>{% endif %}
+                        {%- if column.text -%}<p>{{ column.text }}</p>{% endif %}
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</section>
