@@ -1,5 +1,4 @@
 ---
-redirect_from: burning-platform-pki/2019/04/26/why-we-cant-trust-network-time.html
 layout: post
 title: "Why We Can't Trust Network Time"
 date: 2019-04-26 11:41
@@ -7,19 +6,16 @@ categories: [Burning-Platform-PKI]
 tags: [Burning Platform, Security, Time]
 author: Dominic Letz
 image: Why-We0.png
+redirect_from:
+- /burning-platform-pki/2019/04/26/why-we-cant-trust-network-time.html
+- /burning-platform-pki/why-we-cant-trust-network-time-19116/
 ---
 
-<blockquote>
+> “If you knew Time as well as I do,” said the Hatter, “you wouldn’t talk about wasting it. It’s him.”
 
-“If you knew Time as well as I do,” said the Hatter, “ you wouldn’t talk about wasting it. It’s him.” <br/>
+> “I don’t know what you mean,” said Alice.
 
-“ I don’t know what you mean,” said Alice. <br/>
-
-“ Of course you don’t !” the Hatter said, tossing his head contemptuously. “ I dare say you never even spoke to Time !
-
-<small>Alice in Wonderland</small>
-
-</blockquote>
+> “Of course you don’t!” the Hatter said, tossing his head contemptuously. “I dare say you never even spoke to Time !“ <small>Alice in Wonderland</small>
 
 In order to trust a time source, we need to validate its certificate. In order to validate a certificate, we need to know the current time. This is a catch-22. 
 
@@ -35,13 +31,13 @@ The validity period on each certificate serves three major purposes:
 
 Pragmatically speaking there's a **fourth** important aspect of validity periods in PKI certificates. And that is that the other approach the so-called revocation of a certificate is effectively non-functional on the internet. E.g. in the case of the above-mentioned ownership change of a domain, it would be much cleaner to revoke an existing certificate instead of waiting for its expiry. Unfortunately, though the two standards that have been defined for certificate revocation CRL and OCSP are not being used systematically. Most tools don't check revocation by default at all, those that do usually only check either CRL or OCSP and finally most suppliers don't care to even register certificates as revoked when they should.
 
-![](../assets/img/blog/Why-We1.png "Google Chrome vs. Firefox revocation checking")
+![Google Chrome vs. Firefox revocation checking](../assets/img/blog/Why-We1.png)
 
 A prime example of non-working revocation is the website [https://revoked.grc.com](https://revoked.grc.com), which shows the different behaviors from Google Chrome, Firefox, Safari and Internet Explorer. The situation is even worse with non-browser software tools such as wget, curl and most IoT deployments where there is no browser facilitating communication - these nearly never check any revocation. As a result, the validation periods are the primary and only reliable protection.
 
 Unfortunately for IoT devices, these validation periods go all up to the chain to the very top **root certificates**, those that were used to sign the domain certificates. This means not only that devices need to always know the current time but they also need at all times to ensure to have a set of non-expired root certificates. In short there is no way for devices today to get around the requirement to know time in the first place.
 
-# Why IoT Devices Can't Keep Track Of The Correct Time Alone
+### Why IoT Devices Can't Keep Track Of The Correct Time Alone
 
 There are devices that can keep time accurately for an extended period of time. Most computers and notebooks have built-in battery driven clocks and their charge will in most circumstances never go to zero allowing them to keep the time mostly accurate. Small drifts of time such as by a couple of minutes or even hours are also not a problem since even that accuracy is enough to reasonably well differentiate valid from invalid certificates. Additionally there is a human factor for computers. Because we use computers it is often a human that is using the computer provided time and thus double checking whether the current time is correct. 
 
@@ -49,7 +45,7 @@ That's different for many IoT devices without displays though. Most IoT devices 
 
 The connected shoe or the industrial gateway need to be able to deal with this situation from a system design perspective. The circumstances in which they lose track of time can be rare but the logic to fetch the current time from a time server must be present for the case when it is needed. For an attacker this means that there are avenues to inject a wrong time into the device. In most cases devices are still using the [non secured network time protocol](https://tools.ietf.org/html/rfc868). If that is the case it is easy for the attacker to inject a wrong time. The attacker just needs to get between the device and it's time server.
 
-# What It Means To Trust Expired Certificates
+### What It Means To Trust Expired Certificates
 
 ![Google Chrome vs. Firefox revocation checking](../assets/img/blog/Why-We2.png "Google Chrome vs. Firefox revocation checking")
 
@@ -59,13 +55,13 @@ Both choices a) and b) have the same fundamental issue. If the device decides to
 
 The problem is that at this moment the device becomes susceptible to attacks using any of  the masses of expired certificates. This is especially true for the currently over 3000 active intermediate certificates. All of these expire and have one or more generations of predecessor certificates that are already expired - these generations of expired certificates are heaps of digital toxic waste. Expired certificates are usually considered worthless, and do not receive the same level of protection as active certificates from operators. Instead of needing to steal an active valid certificate from a server - it is enough for an attacker to retrieve any past and now expired certificate. And since the [trading of stolen certificates is rampant on the dark web](https://searchsecurity.techtarget.com/news/252460108/Study-reveals-sale-of-SSL-TLS-certificates-on-dark-web) it means that launching an attack on any such IoT device becomes a cheap operation. The purchase of a single expired intermediate certificate allows a malicious attacker to attack any number of devices.
 
-# Way Forward
+### Way Forward
 
 Today fetching time from a network is not possible in a secure way. This in return shakes the foundation of PKI security for internet communication. Next to the [PKI governance issues discussed](/burning-platform-pki/2019/04/08/why-there-are-3652-organizations-that-can-read-your-traffic.html) in the last blog post this poses a major technical security issue. In the next blog post of this series we want to introduce a new secure network time protocol based on blockchain technology and show how even the smallest devices can establish completely secure connections. Be sure to follow our [twitter account](https://twitter.com/diode_chain) to get notified when the next post comes out.
 
-<hr/>
+---
 
-Sources
+**Sources**
 
 [https://knowledge.digicert.com/generalinformation/INFO3977.html](https://knowledge.digicert.com/generalinformation/INFO3977.html)
 

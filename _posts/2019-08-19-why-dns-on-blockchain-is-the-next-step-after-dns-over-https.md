@@ -5,6 +5,8 @@ categories: [Distributed-Infrastructure]
 tags: [Distributed Infrastructure, Security, Blockchain]
 author: Peter Lai
 image: Why-DNS3.png
+redirect_from:
+- /distributed-infrastructure/Why-DNS-on-Blockchain-is-the-next-step-after-DNS-over-HTTPS-19231/
 ---
 
 Last month, the trade association for internet service providers in the U.K. has [nominated Mozilla for this year’s award of Internet Villain](https://www.zdnet.com/article/uk-isp-group-names-mozilla-internet-villain-for-supporting-dns-over-https/) because Mozilla plans to support DNS-over-HTTPS that would bypass U.K. filtering obligations and parental controls, undermining internet standards in the U.K.

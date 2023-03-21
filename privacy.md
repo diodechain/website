@@ -1,13 +1,13 @@
 ---
 title: Privacy Policy
 layout: new
-class: header--white
+class: header--dark
 permalink: /privacy-policy/
 
 
 ### Hero
 hero:
-  class: hero--rounded
+  class: hero--right
   heading: Privacy <br>Policy
   subheading: This Privacy Policy is effective as of March 1, 2021.
   image: hero/default.webp

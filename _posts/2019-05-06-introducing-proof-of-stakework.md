@@ -1,5 +1,4 @@
 ---
-redirect_from: /mining/2019/05/06/introducing-proof-of-stakework.html
 layout: post
 title: Introducing Proof-Of-StakeWork
 date: 2019-05-06 13:42
@@ -7,6 +6,9 @@ categories: [Mining]
 tags: [Mining, Proof-Of-StakeWork, Blockchain]
 author: Greg Belcher
 image: StakeWork0.jpg
+redirect_from:
+- /mining/introducing-proof-of-stakework-19126/
+- /mining/2019/05/06/introducing-proof-of-stakework.html
 ---
 
 [Note: This post requires background knowledge in blockchain technology. We have provided links to background information.]
@@ -21,17 +23,15 @@ POW is the process by which miners solve for the cryptographic hash and create t
 
 The problem is that POW is becoming a victim of its own success. POW is doing exactly what it was designed to do; attract more computational power to secure the network. However, blockchain networks are getting so large that many in the community fear their electricity consumption could be unsustainable.
 
-**Preventing 51% Attacks**
+### Preventing 51% Attacks
 
-In his published blog post, [On Value Capture at Layers 1 and 2](https://multicoin.capital/2019/03/14/on-value-capture-at-layers-1-and-2/), Kyle Samani of Multicoin Capital detailed economic frameworks for how layer 1 and 2 protocols capture value in the marketplace. Layer 1 protocols are defined as ones that run on unique blockchain protocols while layer 2 protocols are built on top of existing blockchains. 
+In his published blog post, [On Value Capture at Layers 1 and 2](https://multicoin.capital/2019/03/14/on-value-capture-at-layers-1-and-2/), Kyle Samani of Multicoin Capital detailed economic frameworks for how layer 1 and 2 protocols capture value in the marketplace. Layer 1 protocols are defined as ones that run on unique blockchain protocols while layer 2 protocols are built on top of existing blockchains.
 
 Samani argues that unique blockchains must be able to credibly thwart [51% attacks](https://www.investopedia.com/terms/1/51-attack.asp) for them to have any chance at becoming stores of value for investors.
 
-Samani summarizes this simple yet astute observation by asking the rhetorical question: 
+Samani summarizes this simple yet astute observation by asking the rhetorical question:
 
-<blockquote>
-“Why would users choose to store their wealth in a chain that’s been 51% attacked when they can choose to store their wealth in a chain that hasn’t been?”
-</blockquote>
+> “Why would users choose to store their wealth in a chain that’s been 51% attacked when they can choose to store their wealth in a chain that hasn’t been?”
 
 By the same logic, why would anyone build a distributed application on top of a blockchain that could be 51% attacked if they don’t have to?
 
@@ -39,30 +39,28 @@ Samani coined the phrase ‘security budget’ when describing the computational
 
 Samani provides a formula to quantify a network’s security budget.
 
-<code class="math">
+```
 SB = aggregate network value &times; inflation rate + transaction fees
-</code>
+```
 
 The inflation rate, in this case, is also the block reward as new coins (or tokens) are created to compensate miners for loaning their computational resources to secure the network. Network users can also compensate miners via transaction fees, but those tend to be a much smaller portion of the reward.
 
-Samani points out that the security budget is a floor, not a ceiling. Meaning, the security budget represents the theoretical minimum cost to perform a 51% attack, but in the real world, an attack will usually be more costly. The largest restraint to successfully performing a 51% attack is the procurement of the computing hardware itself. 
+Samani points out that the security budget is a floor, not a ceiling. Meaning, the security budget represents the theoretical minimum cost to perform a 51% attack, but in the real world, an attack will usually be more costly. The largest restraint to successfully performing a 51% attack is the procurement of the computing hardware itself.
 
-The most vulnerable blockchains are [smaller blockchains](https://www.coindesk.com/blockchains-feared-51-attack-now-becoming-regular) that share the same mining protocols as larger chains. This allows specially designed miners, commonly referred to as [ASIC](https://en.bitcoin.it/wiki/ASIC)s (application specific integrated circuits) developed for larger blockchains like Bitcoin and Ethereum to point their large amount of computing power at smaller networks and quickly overpower their hashrate. The rapid growth of the [liquid mining rental market](https://www.coindesk.com/51-attacks-for-rent%e2%80%8a-the-trouble-with-a-liquid-mining-market) has made this threat even more pervasive. 
+The most vulnerable blockchains are [smaller blockchains](https://www.coindesk.com/blockchains-feared-51-attack-now-becoming-regular) that share the same mining protocols as larger chains. This allows specially designed miners, commonly referred to as [ASIC](https://en.bitcoin.it/wiki/ASIC)s (application specific integrated circuits) developed for larger blockchains like Bitcoin and Ethereum to point their large amount of computing power at smaller networks and quickly overpower their hashrate. The rapid growth of the [liquid mining rental market](https://www.coindesk.com/51-attacks-for-rent%e2%80%8a-the-trouble-with-a-liquid-mining-market) has made this threat even more pervasive.
 
 All hope is not lost, however, for layer 1 blockchain startups. There are a couple of defenses:
-
-
 
 1. Design a unique mining protocol
 2. Leverage Proof-of-Stake economics
 
-**Unique Mining Protocols**
+### Unique Mining Protocols
 
 If a layer 1 blockchain has a small network because it is young and just getting started, a unique mining algorithm will prevent ASICs designed for other blockchains from working. This strategy has a limited shelf-life because eventually, someone will develop an ASIC for the blockchain.
 
 Experts in the blockchain community estimate, depending upon the complexity and memory usage of the protocol, it will only take industry participants 4-6 months to develop ASICs for a specific blockchain.
 
-**Proof-of-Stake Economics**
+### Proof-of-Stake Economics
 
 Proof-of-Stake (POS) provides a clever defense against 51% attacks. POS was initially designed to solve the [energy consumption](/distributed-infrastructure/2019/03/07/the-end-of-mining.html) issue associated with POW. As we have learned with Bitcoin, the more valuable a network becomes, the greater the security budget, but the worse it is for the environment. Every couple of months a new report is issued about which country Bitcoin has surpassed in terms of [energy usage](https://arstechnica.com/tech-policy/2017/12/bitcoins-insane-energy-consumption-explained/). POS rewards miners (or in this case validators) based upon the amount of digital currency “staked” on the chain instead of the amount of computational power.
 
@@ -72,26 +70,23 @@ Abhishek Sharma details many of the weaknesses in POS in [parts 2](https://mediu
 
 Vitalik Buterin offers [two possible solutions](https://blog.ethereum.org/2014/07/05/stake/) to the ‘nothing at stake’ problem.
 
-
-
 1. Penalize those who voted on more than one version of the chain.
 2. Penalize those who voted on the ‘wrong’ block whether they double-voted or not.
 
 Various other projects are attempting to solve this problem, like [Peercoin](http://wiki.peercointalk.org/index.php?title=Peerunity), [NXT](https://nxtwiki.org/wiki/Whitepaper:Nxt), and Daniel Larimer’s [Transactions as POS](https://bravenewcoin.com/assets/Uploads/TransactionsAsProofOfStake10.pdf). However, none entirely solve the problem that the same coin can be staked on multiple chain versions.
 
-In [part 3](https://medium.com/p/672a3d413501) Sharma details the ‘Long Range Attacks’ which is arguably a more severe vulnerability to POS. 
+In [part 3](https://medium.com/p/672a3d413501) Sharma details the ‘Long Range Attacks’ which is arguably a more severe vulnerability to POS.
 
+### Proof-Of-StakeWork<sup>&trade;</sup>
 
-# Proof-Of-StakeWork<sup>TM</sup>
-
-[Diode](https://diode.io/), a blockchain developed for industrial IoT applications, combined some of the most desirable attributes of both POW and POS to create Proof-of-StakeWork<sup>TM</sup>.
+[Diode](https://diode.io/), a blockchain developed for industrial IoT applications, combined some of the most desirable attributes of both POW and POS to create Proof-of-StakeWork<sup>&trade;</sup>.
 
 Proof-of-StakeWork is, at its core, a POW protocol but also employs POS economics to allow miners to grow their mining operation by reinvesting the block reward instead of having to buy more hardware and consume more electricity.
 
-Proof-of-StakeWork<sup>TM</sup> defends against 51% attacks without the expense and environmental impact of POW mining. But at the same time, doesn’t have the ‘Nothing at stake’ vulnerability because miners can only mine one blockchain at a time.
+Proof-of-StakeWork<sup>&trade;</sup> defends against 51% attacks without the expense and environmental impact of POW mining. But at the same time, doesn’t have the ‘Nothing at stake’ vulnerability because miners can only mine one blockchain at a time.
 
-Diode’s Proof-of-StakeWork<sup>TM  </sup>is a more fair and inclusive protocol than [DPoS](https://hackernoon.com/what-is-delegated-proof-of-stake-897a2f0558f9) (Delegated Proof-of-Stake). DPoS was developed to address the scaling issues with PoS. DPoS does not allow everyone in the network to vote on which blocks should be validated. Instead, for the sake of speed and efficiency, the network delegates a small number of ‘trusted’ elites to do the validation and those ‘trusted elites’ tend to keep most of the rewards for themselves. With Proof-of-StakeWork<sup>TM</sup>, community members don’t have to be industry insiders or own millions of dollars worth of coins to participate and share in the block reward.
+Diode’s Proof-of-StakeWork<sup>&trade;</sup> is a more fair and inclusive protocol than [DPoS](https://hackernoon.com/what-is-delegated-proof-of-stake-897a2f0558f9) (Delegated Proof-of-Stake). DPoS was developed to address the scaling issues with PoS. DPoS does not allow everyone in the network to vote on which blocks should be validated. Instead, for the sake of speed and efficiency, the network delegates a small number of ‘trusted’ elites to do the validation and those ‘trusted elites’ tend to keep most of the rewards for themselves. With Proof-of-StakeWork<sup>&trade;</sup>, community members don’t have to be industry insiders or own millions of dollars worth of coins to participate and share in the block reward.
 
 Most importantly Proof-of-StakeWork gives miners a choice and empowers them to decide which growth model works best for their mining operation. Some may feel that they have an advantage in the development and procurement of advanced mining hardware or may have access to low -cost electricity. While others in the community may feel more comfortable growing their operation by reinvesting their block rewards into an increased stake. Either approach or even a combination of the two can make you successful with Diode.
 
-For these reasons and more, we believe Proof-of-StakeWork<sup>TM</sup> is the next logical evolution toward a more perfect blockchain protocol that works for everyone in the community. To learn more please join us on this exciting journey and follow us on Twitter and Telegram and sign up for our mailing list.
+For these reasons and more, we believe Proof-of-StakeWork<sup>&trade;</sup> is the next logical evolution toward a more perfect blockchain protocol that works for everyone in the community. To learn more please join us on this exciting journey and follow us on Twitter and Telegram and sign up for our mailing list.

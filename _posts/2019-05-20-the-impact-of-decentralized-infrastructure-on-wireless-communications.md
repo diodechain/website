@@ -6,6 +6,8 @@ categories: [Distributed-Infrastructure]
 tags: [Distributed Infrastructure, PKI, Blockchain, Security, IoT]
 image: Decentralized-Wireless0.jpg
 author: Hans Rempel
+redirect_from:
+- /distributed-infrastructure/the-impact-of-decentralized-infrastructure-on-wireless-communications-19140/
 ---
 
 The Diode Network enables practical distributed trust for IoT communications (and for other modalities as well).  The implications of this for [distributed IT infrastructure](/distributed-infrastructure/2019/03/07/the-end-of-mining.html) are significant.  However, as the reality of distributed infrastructure emerges, other more immediate applications on the way to fully distributed infrastructure are also interesting.  One of these applications is distributed wireless network operations.
@@ -20,9 +22,9 @@ In the coming years, as big business continues to operate large, costly, and unw
 
 In addition to the impact on cellular operations and cellular backbone hardware providers, data center virtualization providers will also be impacted by the closing gap between centralized handheld and decentralized IoT paradigms.  Organizations who currently operate in one or more of these areas can play an important part in realizing the future of wireless communications by aligning their business operations with the implications of blockchain technology. Organizations who align early, whether new entrants or existing players, will be the ones who will realize the innovations and disrupt the market.
 
-<hr/>
+---
 
-Sources
+**Sources**
 
 [https://www.scmp.com/tech/china-tech/article/2101138/china-mobile-grapples-internet-things-after-its-wrong-footed](https://www.scmp.com/tech/china-tech/article/2101138/china-mobile-grapples-internet-things-after-its-wrong-footed)
 

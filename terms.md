@@ -1,17 +1,17 @@
 ---
 title: Master Services Agreement
 layout: new
-class: header--white
+class: header--dark
 permalink: /terms/
 redirect_from:
 - /msa/
 
 ### Hero
 hero:
-  class: hero--rounded
+  class: hero--right
   heading: Master Services Agreement
   subheading: This Master Services Agreement is effective as of March 10, 2021.
-  image: hero/default.webp
+  image: hero/download.webp
 
 ---
 

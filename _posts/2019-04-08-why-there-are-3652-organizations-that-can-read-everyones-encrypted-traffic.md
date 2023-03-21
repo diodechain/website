@@ -1,5 +1,4 @@
 ---
-redirect_from: burning-platform-pki/2019/04/08/why-there-are-3652-organizations-that-can-read-your-traffic.html
 layout: post
 title: "Why there are 3652 organizations that can read everyone's encrypted traffic"
 date: 2019-04-08 13:23
@@ -7,6 +6,9 @@ categories: [Burning-Platform-PKI]
 tags: [Burning Platform, Security, PKI]
 image: Netscape-and.png
 author: Dominic Letz
+redirect_from:
+- /burning-platform-pki/2019/04/08/why-there-are-3652-organizations-that-can-read-your-traffic.html
+- /burning-platform-pki/why-there-are-3652-organizations-that-can-read-everyones-encrypted-traffic-19098/
 ---
 
 You may not be aware of this but if you are browsing the web or running IoT devices in your business or at your home, you are being protected by a 30-year-old security infrastructure. In this post, we will uncover the history of the internet PKI that holds most of the internet together today and highlight some of the most obvious threats and known flaws. This article is the first in a series investigating the current state of PKI and the events leading up to the first Diode concept.
@@ -52,7 +54,7 @@ $ strings NETSCAPE.EXE | grep MII | xargs -I % -n1 sh -c "echo % | base64 -d - |
 
 There are a total of four certificates in the Netscape 1.0 binary belonging to three companies. Netscape itself, RSA Data Security, and MCI. At the time, MCI was a large telecommunications company that supported Netscape with a $7 million deal to build an online marketplace. For more on that background story, there is nice coverage directly between Marc Andreessen and Vint Carf at minute 24:00:
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/y9bJ8LslSZ4?start=1440" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y9bJ8LslSZ4?start=1440" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In 1994, there were only four root certificates. Each root certificate could be used to create entity certificates for websites. Subordinate intermediate certificates were introduced soon after, allowing organizations to keep the root certificates in secure cold storage while only using the subordinate intermediate certificates for creating new website certificates. At that point in time, the Internet had Internet PKI with fundamentally the same structure as today.
 
@@ -78,7 +80,9 @@ Today we have much better tools to handle distributed consensus and are able to 
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Sources
+---
+
+**Sources**
 
 [https://www.networkcomputing.com/network-security/encrypted-traffic-reaches-new-threshold](https://www.networkcomputing.com/network-security/encrypted-traffic-reaches-new-threshold)
 

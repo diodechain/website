@@ -5,6 +5,8 @@ categories: [Blockchain]
 tags: [Blockchain, IoT]
 author: Greg Belcher
 image: IOT-Industry1.jpg
+redirect_from:
+- /blockchain/How-the-Experts-are-Approaching-the-Intersection-of-Blockchain-and-IoT-19246/
 ---
 
 Blockchain and Internet of Things (IoT) technologies have each received a lot of attention from industry researchers and investors alike over the past few years. However, it is only recently that the two technologies have begun to be considered together allowing participants to reimagine the potential for both, blockchain and IoT.
@@ -13,9 +15,9 @@ The major benefit that IoT offers blockchain is in its ability to act as a bridg
 
 The major benefit that blockchain brings to IoT is trust, or more specifically, removing the need for trust. The value in deploying a network of connected devices and sensors is in allowing those devices to perform work that will allow humans to do other things. IoT devices can remotely monitor and in some cases even control machines and processes and only alert a human if there is a problem. If the devices cannot be trusted to communicate effectively or if there is a chance they can be taken over by an adversary, the value of IoT will never reach its full potential.
 
-Blockchain unlocks the value of IoT by dramatically reducing the risk of collusion or tampering. IoT unlocks the value of blockchain by binding this revolutionary digital technology to actual events that are observed in the physical world and can now be verified and validated on a blockchain autonomously. 
+Blockchain unlocks the value of IoT by dramatically reducing the risk of collusion or tampering. IoT unlocks the value of blockchain by binding this revolutionary digital technology to actual events that are observed in the physical world and can now be verified and validated on a blockchain autonomously.
 
-There are a number of Blockchain IoT projects that are approaching the intersection of these two transformative technologies, but each are approaching it from very different angles and perspectives. 
+There are a number of Blockchain IoT projects that are approaching the intersection of these two transformative technologies, but each are approaching it from very different angles and perspectives.
 
 The major categories that Blockchain IoT projects tend to fall into are application platforms, cybersecurity solutions, communication networks, M2M transactions and supply chain specific applications.
 
@@ -23,7 +25,7 @@ The major categories that Blockchain IoT projects tend to fall into are applicat
 
 **Cybersecurity** - Device and network security solutions that leverage blockchain trust features to authenticate device permissions and communications within a traditional IoT device network.
 
-**Hardware communication networks** - Networks that leverage blockchain economies and payment mechanisms to collect payment from users and/or incentivize network providers. 
+**Hardware communication networks** - Networks that leverage blockchain economies and payment mechanisms to collect payment from users and/or incentivize network providers.
 
 **Machine to machine transactions** - Solutions built to facilitate autonomous cryptocurrency payments between machines.
 
@@ -45,15 +47,15 @@ IOTA enables data-driven infrastructure and a machine economy through its lightw
 
 [IoTeX](https://www.iotex.io/)
 
-IoTeX’s blockchains-in-blockchain architecture allows developers to build their own blockchains and run their full node with one simple command. 
+IoTeX’s blockchains-in-blockchain architecture allows developers to build their own blockchains and run their full node with one simple command.
 
 [KrypC](https://krypc.com/platform/) (India)
 
-Platform that accelerates Blockchain IoT project development though integrations with popular IoT platforms such as Microsoft Azure and Amazon IoT coupled with codeless application building. 
+Platform that accelerates Blockchain IoT project development though integrations with popular IoT platforms such as Microsoft Azure and Amazon IoT coupled with codeless application building.
 
 [Streamr](https://www.streamr.com/)
 
-The Streamr platform is an open source, blockchain-backed data marketplace that allows users to own and monetize their data. 
+The Streamr platform is an open source, blockchain-backed data marketplace that allows users to own and monetize their data.
 
 [Waltonchain](https://www.waltonchain.org/en/)
 
@@ -63,13 +65,11 @@ Waltonchain leverages RFID technology to create an ecosystem that mechants can b
 
 MXC is building a global data network that allows the devices to connect, commit and communicate. Cities, companies and individuals may build the network, or using it to transmit and manage their data.
 
-
-
 **<span style="text-decoration:underline;">Cybersecurity</span>**
 
 [Atonomi](https://atonomi.io/)
 
-Atonomi Embedded SDK provides IoT developers and manufacturers with an embedded solution to secure devices with blockchain-based immutable identity and reputation tracking with a footprint under 100 KB.. 
+Atonomi Embedded SDK provides IoT developers and manufacturers with an embedded solution to secure devices with blockchain-based immutable identity and reputation tracking with a footprint under 100 KB..
 
 [Slock.it](https://slock.it/)
 
@@ -98,8 +98,6 @@ HDAC believes transactions should be easier. HDAC focuses on machine-to-machine 
 [Filament](https://filament.com/) (USA)
 
 Blocklet, a blockchain hardware wallet for machines, provides a secure contract system upon which companies can build products and services.
-
-
 
 **<span style="text-decoration:underline;">Supply Chain</span>**
 

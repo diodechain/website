@@ -6,6 +6,8 @@ categories: [Distributed-Infrastructure]
 tags: [Distributed Infrastructure, Blockchain, BDN, Security]
 image: Blockchain-Defined.jpg
 author: Dominic Letz
+redirect_from:
+- /distributed-infrastructure/from-software-defined-networking-to-blockchain-defined-networking-19142/
 ---
 
 [Software Defined Networking](https://en.wikipedia.org/wiki/Software-defined_networking) (SDN) and [Network virtualization](https://en.wikipedia.org/wiki/Network_virtualization) have been the disruptor technologies that were fundamental to the success of Infrastructure as a Service (IaaS) providers such as Amazon AWS, Google Cloud Compute, and Azure during the last decade. Before that, there were plenty of rival cloud providers - for most of them, changing network configurations, adding/removing machines to a network required human interaction and would take hours or sometimes days. Dedicated networking, networking lines, and cables were key investments and skillsets maintained by these providers. A change in the network configuration would require a physical cable to change its place. However, manual labor also brings human errors, and often enough these physical changes were flawed.  Some issues would only show themselves in critical conditions - such as when a cold backup load-balancer would not be properly connected to its primary.
@@ -26,7 +28,6 @@ Software Defined Networks are defined by two attributes:
 
 **1. Separation of control and data plane**. The separation of the control and data planes means that the intelligence of where the data is routed is split out from data itself, and placed on a separate control plane. This allows the routing to change without applications needing to adopt.
 
-
 **2. Programmability**. This refers to the ability to make changes to the network configuration and add/remove new endpoints and application links during the runtime of the network. This includes the ability to change traffic flows and set Quality of Service (QoS) rules.
 
 **BDN.** Blockchain Defined Networks (BDN), are a new class of software-defined networks that belong to this taxonomy. BDNs use the blockchain itself as a separate control plane, and use smart-contracts for programmability. Blockchain technology is by design slow to write, but scales extremely well on reads. Every write operation is validated through secure consensus checks until the whole network agrees on the changes. But once the changes are transactionally committed all network participants have immediate and fast read access to it. These attributes of blockchain lend themselves perfectly to the use case as the control plane for networks. 
@@ -39,56 +40,57 @@ Configuring millions of IoT endpoints into a single network is not a problem any
 
 ![BDN-IoT Deployment](../assets/img/blog/Blockchain-Defined1.png "BDN-IoT Deployment")
 
-
 **No-Ops.** Blockchain brought a separation between "miners,” who operate the computational resources that the network is running on, and the users, who deploy smart-contracts, [decentralized applications](https://en.wikipedia.org/wiki/Decentralized_application) (Dapps) or just transact value. For an enterprise considering to adopt an SDN solution, this means that operational personnel, backup strategies, and other traditional IT tooling are not required parts of the system that needs to be established. Instead, the company can focus on its business requirements and formulate those in smart-contracts. This is a shift in the industry that follows the footsteps of the cloud providers, splitting the responsibility between operating a cloud and defining application logic. The opportunity to simplify operations is big, but requires change. Companies need to acquire new skills around smart-contract design and transform responsibility of current IT teams.
 
 **Summary**. For many applications, the introduction of blockchain technology provides the potential for improvements.  But, in a few applications, like SDN deployments with growing IoT fleets, the advantages are game-changing. Today, Diode is the only IoT-Blockchain organization working on this new technology trend - we’re excited to be at the front end of what we are certain will become a large and vibrant market sector in the near future. 
 
-<div style="overflow: auto"><table>
-  <tr>
-   <th></th>
-   <th>SDN / SD-WAN</th>
-   <th>BDN / BDN-IoT</th>
-  </tr>
-  <tr>
-   <th>Separation of Control Plane</th>
-   <td class="green">Yes</td>
-   <td class="green">Yes</td>
-  </tr>
-  <tr>
-   <th>Programmability</th>
-   <td class="yellow"><a href="https://www.cisco.com/c/dam/en_us/solutions/industries/docs/gov/software_defined_networking.pdf">Limited, per Controller</a></td>
-   <td class="green">Global Smart-Contract Programming Language</td>
-  </tr>
-  <tr>
-   <th>Scalability</th>
-   <td class="yellow">Limited, 100s of Sites</td>
-   <td class="green">Yes, >1,000,000s of Sites</td>
-  </tr>
-  <tr>
-   <th>No Point of Failure</th>
-   <td class="red">No, need active/active or other failover strategies.</td>
-   <td class="green">Yes, </td>
-  </tr>
-  <tr>
-   <th>Automatic Repair, after network split</th>
-   <td class="red">No</td>
-   <td class="green">Yes</td>
-  </tr>
-  <tr>
-   <th>No-Ops</th>
-   <td class="red">No, requires dedicated, vendor trained teams.</td>
-   <td class="green">Yes</td>
-  </tr>
-</table></div>
+<div style="overflow: auto">
+<table>
+<tr>
+ <th></th>
+ <th>SDN / SD-WAN</th>
+ <th>BDN / BDN-IoT</th>
+</tr>
+<tr>
+ <th>Separation of Control Plane</th>
+ <td class="green">Yes</td>
+ <td class="green">Yes</td>
+</tr>
+<tr>
+ <th>Programmability</th>
+ <td class="yellow"><a href="https://www.cisco.com/c/dam/en_us/solutions/industries/docs/gov/software_defined_networking.pdf">Limited, per Controller</a></td>
+ <td class="green">Global Smart-Contract Programming Language</td>
+</tr>
+<tr>
+ <th>Scalability</th>
+ <td class="yellow">Limited, 100s of Sites</td>
+ <td class="green">Yes, >1,000,000s of Sites</td>
+</tr>
+<tr>
+ <th>No Point of Failure</th>
+ <td class="red">No, need active/active or other failover strategies.</td>
+ <td class="green">Yes, </td>
+</tr>
+<tr>
+ <th>Automatic Repair, after network split</th>
+ <td class="red">No</td>
+ <td class="green">Yes</td>
+</tr>
+<tr>
+ <th>No-Ops</th>
+ <td class="red">No, requires dedicated, vendor trained teams.</td>
+ <td class="green">Yes</td>
+</tr>
+</table>
+</div>
 
 If you're interested to learn more about this exciting development, or if you are an enterprise using SD-WANs and are looking for ways to extend them to your IoT fleet, follow us on [Twitter](https://twitter.com/diode_chain) or signup for our newsletter and we'll keep you up-to-date.
 
 If you're a supplier of SDN or SD-WAN solutions, and would like to reach out to us for partnerships and cooperation, feel free to reach out to us directly at [partner@diode.io](mailto:partner@diode.io) or join the conversation on [Telegram](https://t.me/diode_chain).
 
-<hr/>
+---
 
-Sources
+**Sources**
 
 [https://en.wikipedia.org/wiki/Software-defined_networking](https://en.wikipedia.org/wiki/Software-defined_networking)
 

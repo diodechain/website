@@ -1,5 +1,4 @@
 ---
-redirect_from: burning-platform-pki/2019/03/20/decentralized-pki.html
 layout: post
 title:  "Decentralized PKI in a nutshell"
 date: 2019-03-20 16:58
@@ -7,16 +6,16 @@ categories: [Burning-Platform-PKI]
 tags: [Burning Platform, Development, Security, PKI, Distributed Infrastructure]
 image: conflict.png
 author: Dominic Letz
+redirect_from:
+- /burning-platform-pki/2019/03/20/decentralized-pki.html
+- /burning-platform-pki/decentralized-pki-in-a-nutshell-19079/
 ---
 
 In Today's internet, the authenticity of content is secured by the internet PKI system and the domain name registries. To make it all work first the domain name server (DNS), second you - holding the certificate and the corresponding private key and third a certificate authority which signed your certificate all have to agree on the same data to create this security.
 
 A single miss like a domain name server pointing to a different server - not yours - is already enough for hackers to create a fake certificate and impersonate your website [such as in the hack of a Brazilian bank's online operations](https://www.wired.com/2017/04/hackers-hijacked-banks-entire-online-operation/). The same is true if a certificate authority is issuing a second certificate to someone else deliberately, like when [Symantec employees created secondary certificates for Google domains without Google knowing about it](https://news.softpedia.com/news/three-symantec-employees-fired-for-issuing-fake-google-com-ssl-certificates-492190.shtml). In order to prevent that abuse a system of checks and balances is has been built and is enforced by big browser companies such as Google and Mozilla, maker of Firefox. Still, the conversations about who is eligible and who is not to be a certificate authority are hard to formalize, such as in the case of the [United Arab Emirates government contracted company DarkMatter](/burning-platform-pki/2019/01/27/darkmatter.html).
 
-<blockquote cite="http://schneier.com">
-  For years, though, hackers have been using valid signing authorities to create valid authentication signatures for <strong>bad updates</strong>
-  <small>Bruce Schneier - Click Here to Kill Everybody</small>
-</blockquote>
+> For years, though, hackers have been using valid signing authorities to create valid authentication signatures for <strong>bad updates</strong><small>Bruce Schneier - Click Here to Kill Everybody</small>
 
 The problems with still using this solution are that:
 
