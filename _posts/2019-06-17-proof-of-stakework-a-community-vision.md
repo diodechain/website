@@ -6,9 +6,9 @@ tags: [Mining, Proof-Of-StakeWork, Blockchain]
 author: Greg Belcher
 image: POSW-Community3.jpg
 ---
-[Note: This post is a follow-on discussion to topics discussed in [Introducing Proof-Of-StakeWork](https://diode.io/mining/introducing-proof-of-stakework-19126/) and requires some background knowledge in blockchain technology.] 
+[Note: This post is a follow-on discussion to topics discussed in [Introducing Proof-Of-StakeWork](/mining/introducing-proof-of-stakework-19126/) and requires some background knowledge in blockchain technology.] 
 
-In the last [post](https://diode.io/mining/introducing-proof-of-stakework-19126/) on Proof-Of-StakeWork we talked about some of the advantages and disadvantages of both Proof-Of-Work (POW) and Proof-Of-Stake (POS) so I won’t go into those details here. The purpose of this post is to more fully articulate the vision and motivation behind Proof-Of-StakeWork (POSW) and to provide a little more detail around how the protocol will actually work.
+In the last [post](/mining/introducing-proof-of-stakework-19126/) on Proof-Of-StakeWork we talked about some of the advantages and disadvantages of both Proof-Of-Work (POW) and Proof-Of-Stake (POS) so I won’t go into those details here. The purpose of this post is to more fully articulate the vision and motivation behind Proof-Of-StakeWork (POSW) and to provide a little more detail around how the protocol will actually work.
 
 The motivation behind POSW is to contribute to the blockchain community in 3 main ways:
 
@@ -66,7 +66,7 @@ To illustrate this concept in more concrete terms, POW algorithms such as Bitcoi
 
 
 
-![](../assets/img/blog/POSW-Community0.png){: .center-block }
+![](../assets/img/blog/POSW-Community0.png)
 
 
 
@@ -76,7 +76,7 @@ Proof-Of-StakeWork introduces a new variable, the stake of the miner (S<sub>mine
 
 
 
-![](../assets/img/blog/POSW-Community1.png){: .center-block }
+![](../assets/img/blog/POSW-Community1.png)
 
 
 
@@ -86,7 +86,7 @@ Further, **F** is a weighting function that amplifies the effectiveness of the m
 
 
 
-![](../assets/img/blog/POSW-Community2.png){: .center-block }
+![](../assets/img/blog/POSW-Community2.png)
 
 
 

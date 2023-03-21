@@ -24,7 +24,7 @@ The reasons for wanting to do decentralized web hosting, sometimes referred to a
 
 *TLDR:* You can use Diode to [deploy a decentralized Wordpress website from a Raspberry Pi](https://support.diode.io/article/r62bhcnax0). 
 
-There are a number of great solutions today contributing to the future of decentralized web hosting. Some of these address portions of the problem (e.g. [ENS](https://ens.domains/) is an approach to decentralize DNS, as is [Diode’s BNS](https://support.diode.io/article/5nsoxvhug1-what-is-bns)), and others create a holistic solution (e.g. [IPFS](https://ipfs.io/) can be used to create decentralized, public, crowd-hosted websites, while [Diode’s Publish mechanism](https://support.diode.io/article/ss32engxlq) is a great [self-custody solution](https://diode.io/diode drive/self-custody-for-data-22032/)).
+There are a number of great solutions today contributing to the future of decentralized web hosting. Some of these address portions of the problem (e.g. [ENS](https://ens.domains/) is an approach to decentralize DNS, as is [Diode’s BNS](https://support.diode.io/article/5nsoxvhug1-what-is-bns)), and others create a holistic solution (e.g. [IPFS](https://ipfs.io/) can be used to create decentralized, public, crowd-hosted websites, while [Diode’s Publish mechanism](https://support.diode.io/article/ss32engxlq) is a great [self-custody solution](/diode drive/self-custody-for-data-22032/)).
 
 While contributors to Web3 are doing good work, the mixed bag of new Web3 technologies have not yet “crossed the chasm” – they are not yet ready to replace centralized technologies in most use cases. 
 

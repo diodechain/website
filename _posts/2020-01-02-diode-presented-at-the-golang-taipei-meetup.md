@@ -64,10 +64,10 @@ Q: If you are using OpenSSL, does it mean you are using a CGo compiler?
 Yes, we use CGo to call C functions.
 
 
-![](images/blog/Golang_08.jpg)
+![](../assets/img/blog/Golang_08.jpg)
 
 
-![](images/blog/Golang_09.jpg)
+![](../assets/img/blog/Golang_09.jpg)
 
 If you're interested in being an alpha tester of the Diode network, sign up on our [Telegram](http://t.me/diode_chain) group, or reach out to us on [Github](https://github.com/diodechain/diode_go_client) or [Twitter](https://twitter.com/diode_chain).
 

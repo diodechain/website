@@ -11,11 +11,11 @@ imageclass: contain
 
 [Download full paper here (PDF).](https://eprint.iacr.org/2019/579.pdf)
 
-Diode’s CTO Dominic Letz published a [paper](https://eprint.iacr.org/2019/579.pdf) recently to give an introduction of [BlockQuick](https://diode.io/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/), a super light client protocol for blockchain validation on constrained devices. One of the key concepts behind the newly proposed BlockQuick is that it plans to adopt a consensus-based reputation scheme to accept blocks. This article explores how blockchain synchronization of Internet-of-Things (IoT) devices can be achieved through BlockQuick consensus reputation table, as well as sheds some light on the current development of the project.
+Diode’s CTO Dominic Letz published a [paper](https://eprint.iacr.org/2019/579.pdf) recently to give an introduction of [BlockQuick](/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/), a super light client protocol for blockchain validation on constrained devices. One of the key concepts behind the newly proposed BlockQuick is that it plans to adopt a consensus-based reputation scheme to accept blocks. This article explores how blockchain synchronization of Internet-of-Things (IoT) devices can be achieved through BlockQuick consensus reputation table, as well as sheds some light on the current development of the project.
 
 **What is BlockQuick?**
 
-Developed by the Diode team, BlockQuick is the first super light client protocol for Ethereum that addresses the issue of [man-in-the-middle (MITM) attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and [eclipse attacks](https://diode.io/blockchain/how-blockquick-super-light-client-protocol-can-help-mitigate-eclipse-attacks-19161/). It is capable of preventing attacks because it doesn’t depend solely on choosing the longest chain with the highest difficulty on the Proof-of-Work (PoW) network when validating a block. Instead, it validates a block based on the so-called Consensus Reputation Table.
+Developed by the Diode team, BlockQuick is the first super light client protocol for Ethereum that addresses the issue of [man-in-the-middle (MITM) attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and [eclipse attacks](/blockchain/how-blockquick-super-light-client-protocol-can-help-mitigate-eclipse-attacks-19161/). It is capable of preventing attacks because it doesn’t depend solely on choosing the longest chain with the highest difficulty on the Proof-of-Work (PoW) network when validating a block. Instead, it validates a block based on the so-called Consensus Reputation Table.
 
 BlockQuick super light client protocol is designed for anyone who hopes to connect IoT devices to public blockchains. For resource-constrained hardware and low-end chips for IoT products such as [ESP32](https://www.espressif.com/en/products/hardware/esp32/overview), [TI CC3220](http://www.ti.com/product/CC3220S), [LinkIt 7697](https://labs.mediatek.com/en/platform/linkit-7697), the biggest challenge is how do we synchronize the blockchain without running out of disk storage. For us, adopting BlockQuick’s consensus reputation table is the answer.
 
@@ -33,7 +33,7 @@ Each miner will be represented in the consensus reputation table with 2 items: t
 
 BlockQuick Consensus Reputation Table Example
 
-![](images/blog/Blockquick-RT1.png){: .center-block }
+![](../assets/img/blog/Blockquick-RT1.png)
 
 The proposed light client protocol establishes a reputation system on the mining nodes in the network. The reputation of each mining node corresponds directly to the percentage of blocks that each mining node contributed compared to all mining nodes in a given time frame. The time frame is the consensus group’s history length (i.e. the last 100 blocks as illustrated in the paper).
 
@@ -45,13 +45,13 @@ It’s the percentage of the total computational power during the last 100 block
 
 Consensus Reputation Table based on the data from the Etherscan website
 
-![](images/blog/Blockquick-RT2.png){: .center-block }
+![](../assets/img/blog/Blockquick-RT2.png)
 
 So, what happens when an IoT device wants to validate a new block? The device will validate the cryptographic signature of the miners, and then it will compare these signatures with the known miner identities in the already established consensus reputation table. The new block would only be accepted by the client if the block receives a consensus share score of >50%; the client would turn down a chain if the total consensus share score is lower than 50%.
 
 Consensus Reputation Table in pie chart format based on the data from the Etherscan website
 
-![](images/blog/Blockquick-RT3.png){: .center-block }
+![](../assets/img/blog/Blockquick-RT3.png)
 
 With BlockQuick, the client will look at how the devices iterate the blocks and will run a slow update mechanism. So, instead of complying with the longest chain rule, BlockQuick will be running a reputation check in order to ensure that the client is accepting only the blocks with >50% reputation scores.
 

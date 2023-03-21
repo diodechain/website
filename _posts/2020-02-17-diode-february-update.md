@@ -20,9 +20,9 @@ But let's have a look what happened so far.
 
 ## Prenet Explorer
 
-To explore and interact with our prenet we launched a MetaMask compatible [Prenet explorer](https://diode.io/prenet/#/). Importantly it visualized the current BlockQuick Proof-Of-StakeWork power distribution. 
+To explore and interact with our prenet we launched a MetaMask compatible [Prenet explorer](/prenet/#/). Importantly it visualized the current BlockQuick Proof-Of-StakeWork power distribution. 
 
-![](images/blog/feb_prenet.png "Prenet Explorer"){: .center-block }
+![](../assets/img/blog/feb_prenet.png "Prenet Explorer")
 
 ## Web3 Diode Gateway
 
@@ -36,9 +36,9 @@ https://<Ethereum Address>.diode.link
 
 For example we have setup a Webcam on a Raspberry-Pi with a Webinterface exposed through the Diode Meshnetwork here: [https://0xc206e1255cbace8ba904daa259d7a5b7f90e2d50.diode.link](https://0xc206e1255cbace8ba904daa259d7a5b7f90e2d50.diode.link)
 
-You can also use the Prenet Explorer to explore more information about this device [0xc206e1255cbace8ba904daa259d7a5b7f90e2d50](https://diode.io/prenet/#/address/0xc206e1255cbace8ba904daa259d7a5b7f90e2d50) such it's Fleet Contract 
+You can also use the Prenet Explorer to explore more information about this device [0xc206e1255cbace8ba904daa259d7a5b7f90e2d50](/prenet/#/address/0xc206e1255cbace8ba904daa259d7a5b7f90e2d50) such it's Fleet Contract 
 
-When you want to use the Gateway for your own devices just ensure that the ports you want to expose - such as 80 for http - are accessible by the Gateway. The Gateway is running its own Diode Client with its own identity [0x84c485c62cdd878ce795aa90f269f84b5ae4fa0e](https://diode.io/prenet/#/address/0x84c485c62cdd878ce795aa90f269f84b5ae4fa0e). So put access for the ports you want to make accessible through the gateway either to _public_ or you add the Gateway Address to your _private_ or _protected_ group:
+When you want to use the Gateway for your own devices just ensure that the ports you want to expose - such as 80 for http - are accessible by the Gateway. The Gateway is running its own Diode Client with its own identity [0x84c485c62cdd878ce795aa90f269f84b5ae4fa0e](/prenet/#/address/0x84c485c62cdd878ce795aa90f269f84b5ae4fa0e). So put access for the ports you want to make accessible through the gateway either to _public_ or you add the Gateway Address to your _private_ or _protected_ group:
 
 ### _public_
 
@@ -57,9 +57,9 @@ diode_go_client publish -private 80:80@0x84c485c62cdd878ce795aa90f269f84b5ae4fa0
 
 ### _protected_
 
-For protected mode first add the gateway address 0x84c485c62cdd878ce795aa90f269f84b5ae4fa0e to your fleet on [https://diode.io/prenet/#/fleets](https://diode.io/prenet/#/fleets)
+For protected mode first add the gateway address 0x84c485c62cdd878ce795aa90f269f84b5ae4fa0e to your fleet on [https://diode.io/prenet/#/fleets](/prenet/#/fleets)
 
-![](images/blog/feb_fleet.png "Fleet Whitelisting"){: .center-block }
+![](../assets/img/blog/feb_fleet.png "Fleet Whitelisting")
 
 ```
 diode_go_client publish -public 80:80
@@ -67,15 +67,15 @@ diode_go_client publish -public 80:80
 
 ## Fleet Interface 
 
-As part of our Prenet Explorer we have also launched a [Fleet Development Interface](https://diode.io/prenet/#/fleets). It automates the process of deploying the initial reference contract using MetaMask and adding devices. Before it was only possible from the command line using the Ethereum RPC API. If you don't have a fleet contract yet it will offer to create one. 
+As part of our Prenet Explorer we have also launched a [Fleet Development Interface](/prenet/#/fleets). It automates the process of deploying the initial reference contract using MetaMask and adding devices. Before it was only possible from the command line using the Ethereum RPC API. If you don't have a fleet contract yet it will offer to create one. 
 
-![](images/blog/feb_fleet2.png "Fleet Management"){: .center-block }
+![](../assets/img/blog/feb_fleet2.png "Fleet Management")
 
 ## Simple Blockchain Name System (BNS) Contract
 
 For creating human readable links instead of above hex based addresses we deployed a simple [BNS Contract](https://github.com/diodechain/diode_contract/blob/master/contracts/DNS.sol) on the Diode prenet. This is also exposed in the Explorer via the BNS tab and can be used to register short domain names such as for our webcam, that is also reachable via [https://betahaus-berlin.diode.link/](https://betahaus-berlin.diode.link/) 
 
-![](images/blog/feb_dns.png "Prenet BNS"){: .center-block }
+![](../assets/img/blog/feb_dns.png "Prenet BNS")
 
 If you feel curious about trying it yourself checkout our [tutorial on how to setup Metamask](https://support.diode.io/article/uec3mloh9z-metamask).
 
@@ -93,12 +93,12 @@ You can checkout the full list of command line parameters [here in our new docs]
 
 ## Uptime Monitor
 
-While were developing the BlockQuick clients and making further changes we're keeping score based on the uptime of deployed devices. For this we have created a [prenet status dashboard](https://diode.io/status/) that keeps track of the uptime of two selected devices. Over the coming weeks as we roll out new releases this will be our continous score board.
+While were developing the BlockQuick clients and making further changes we're keeping score based on the uptime of deployed devices. For this we have created a [prenet status dashboard](/status/) that keeps track of the uptime of two selected devices. Over the coming weeks as we roll out new releases this will be our continous score board.
 
-![](images/blog/feb_status.png "Status Monitor"){: .center-block }
+![](../assets/img/blog/feb_status.png "Status Monitor")
 
 ## Documentation
 
 Last but not least we have started a new documentation section on our website and will be adding guides and references over the next quarter.
 
-![](images/blog/feb_docs.png "Documentation"){: .center-block }
+![](../assets/img/blog/feb_docs.png "Documentation")

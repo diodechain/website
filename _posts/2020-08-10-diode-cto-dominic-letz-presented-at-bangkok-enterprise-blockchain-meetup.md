@@ -6,8 +6,9 @@ categories: [Security]
 tags: [Security]
 author: Yahsin Huang
 image: Bangkok_01.png
+redirect_from:
+- /security/Diode-CTO-Dominic-Letz-Presented-at-Bangkok-Enterprise-Blockchain-Meetup-20223/
 ---
-
 
 Diode CTO Dominic Letz was invited to speak at [Bangkok Enterprise Blockchain group](https://www.meetup.com/Bangkok-Enterprise-Blockchain/events/271814031/) on Wednesday, 29th of July, along with another speaker Jana Bulkin from Integrationworks Asia. 
 
@@ -17,9 +18,7 @@ Organized by [Atato](https://www.atato.com/), the online event _“Enterprise Bl
 
 Check out Diode’s Bangkok meetup presentation slides on [Github](https://github.com/diodechain/presentations/blob/master/Bangkok_Meetup_2020/Bangkok_Meetup_2020.pdf). Watch the livestream-ed meetup on [YouTube](https://youtu.be/tGepc4324xQ?t=2320). Dominic’s presentation starts at 38:40.
 
-
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/tGepc4324xQ?start=2320" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tGepc4324xQ?start=2320" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Dominic discussed issues concerning IoT security, and how Diode can play a key role in giving IoT security the upgrade it needed. At Diode, we’ve set up an integrated enterprise solution that is unique to upgrade the security. We’re proposing to replace overreaching admin permissions using smart contracts.
 
@@ -61,5 +60,5 @@ __A question asked about our plans to follow Ethereum’s recent development, su
 
 We’re definitely watching Eth2 closely. We think the Eth2 development is generally moving toward the right direction and we will be ready to follow Eth2 when it’s working well. 
 
-Diode’s vision is to see a world wide network operating on fully decentralized infrastructure. We’d like to invite you to join the Web3 movement and build great decentralized infrastructure! Check out Dominic’s recent write-up on [Raspberry Pi hardware watchdog](https://diode.io/raspberry%20pi/running-forever-with-the-raspberry-pi-hardware-watchdog-20202/).
+Diode’s vision is to see a world wide network operating on fully decentralized infrastructure. We’d like to invite you to join the Web3 movement and build great decentralized infrastructure! Check out Dominic’s recent write-up on [Raspberry Pi hardware watchdog](/raspberry%20pi/running-forever-with-the-raspberry-pi-hardware-watchdog-20202/).
 

@@ -8,7 +8,7 @@ image: blockquick.jpg
 ---
 [- Click here if you just want to read the Paper -](https://eprint.iacr.org/2019/579.pdf)
 
-In the last two posts of this series, we [first introduced the governance issues in PKI](https://diode.io/burning-platform-pki/why-there-are-3652-organizations-that-can-read-everyones-encrypted-traffic-19098/) and then the circular dependency between establishing trust in PKI certificates and [establishing the current time on a connected device](https://diode.io/burning-platform-pki/why-we-cant-trust-network-time-19116/).
+In the last two posts of this series, we [first introduced the governance issues in PKI](/burning-platform-pki/why-there-are-3652-organizations-that-can-read-everyones-encrypted-traffic-19098/) and then the circular dependency between establishing trust in PKI certificates and [establishing the current time on a connected device](/burning-platform-pki/why-we-cant-trust-network-time-19116/).
 
 So let's break that circular dependency between time and trust. The difference between trusting a person/an entity and trusting data is key here. How can we establish trust in the data, specifically in the time information, without trusting the individual messenger of this data? This is, in fact, leads to the same problem that Satoshi Nakamoto set out to solve with bitcoin the first blockchain network. The term blockchain has become [rather muddy, but by convention, the property we're talking about is the trustless blockchain](https://hackernoon.com/decentralized-data-why-blockchain-is-meaningless-and-trustless-is-everything-318fd14d3827). Creating a public consensus of the current state of facts without trusting any individual. 
 
@@ -67,7 +67,7 @@ When HTC announced that their new Handheld [Exodus 1s will be running a full Bit
 # Enter BlockQuick
 Just 20kb to validate the blockchain.
 
-[![BlockQuick](../assets/img/blog/blockquick.png "BlockQuick Paper"){: .center-block }](https://eprint.iacr.org/2019/579.pdf)
+[![BlockQuick](../assets/img/blog/blockquick.png "BlockQuick Paper")](https://eprint.iacr.org/2019/579.pdf)
 
 We started developing [BlockQuick](https://eprint.iacr.org/2019/579.pdf) with these goals in mind. BlockQuick is a super-light-client, meaning the amount of data that it needs to fetch from the blockchain is sublinear to the total size of the blockchain. BlockQuick is using a consensus-based reputation scheme to accept blocks. During development, [Benedikt Bünz](https://twitter.com/benediktbuenz) released [FlyClient](https://eprint.iacr.org/2019/226.pdf), another super-light-client which inspired a better solution to do Block-Inclusion-Proofs in BlockQuick. To our knowledge these two forms currently the only two entrants in the new class of super-light-clients for decentralized blockchain validation on resource-constrained devices.
 

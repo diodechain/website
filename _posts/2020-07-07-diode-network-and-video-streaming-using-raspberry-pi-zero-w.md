@@ -6,13 +6,15 @@ categories: [Diode]
 tags: [Diode, Blockchain, Events, Raspberry Pi]
 author: Yahsin Huang
 image: June_Meetup_Event.png
+redirect_from:
+- /diode/Diode-Network-and-Video-Streaming-Using-Raspberry-Pi-Zero-W-20189/
 ---
 
 Diode’s second livestream meetup event went live on Tuesday (June 30). The 30-minute online event drew some 20 engineers, developers, makers, Raspberry Pi enthusiasts from countries across the globe. CTO Dominic Letz and blockchain engineer Peter Lai were the featured speakers. 
 
 The meetup topic was about how to perform video streaming using Raspberry Pi Zero W via Diode network. Check out the Diode meetup presentation slides on [Github](https://github.com/diodechain/presentations/blob/master/Diode_Online_Event_June_2020/Diode%20Tuesday%20online%20event%20%232_%20Diode%20Network%20and%20Video%20Streaming%20Using%20Raspberry%20Pi%20Zero%20W.pdf). Watch the livestream-ed meetup on[ YouTube](https://youtu.be/4VnDFfqQl3w).
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/4VnDFfqQl3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4VnDFfqQl3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Peter started his presentation by giving a quick demo. We’ve got a Raspberry Pi set up at our office in Berlin, Germany (where Dominic is currently based), and another Raspberry Pi set up at our office in Taipei, Taiwan. 
 
@@ -71,4 +73,4 @@ Q: For Raspberry Pi users, why would you want to use Diode network when you can 
 
 With Diode, the user can “ssh” to the Raspberry Pi from anywhere in the world. We’re actually doing this regularly to debug our Raspberry Pis in Taipei, Berlin and at home. We can easily login to any of our Pis from anywhere on the planet using Diode. 
 
-Diode’s vision is to see a world wide network operating on fully decentralized infrastructure. We’d like to invite you to join the Web3 movement and build great decentralized infrastructure with us! Check out CTO Dominic Letz’s recent write-up on the [development updates](https://diode.io/diode/Diode-June-Update-20168/).
+Diode’s vision is to see a world wide network operating on fully decentralized infrastructure. We’d like to invite you to join the Web3 movement and build great decentralized infrastructure with us! Check out CTO Dominic Letz’s recent write-up on the [development updates](/diode/Diode-June-Update-20168/).

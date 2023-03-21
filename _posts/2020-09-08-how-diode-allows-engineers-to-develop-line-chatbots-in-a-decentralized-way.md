@@ -18,7 +18,7 @@ Why should you choose Diode over Ngrok? This is one of the questions we get aske
 
 ![](../assets/img/blog/diode_line_bot_02.png)
 
-The second important reason to use Diode is it allows you to create your unlimited, free subdomains, which we called BNS names. You’re able to see a list of the registered BNS names on Diode’s [prenet website](https://diode.io/prenet/#/dns). And the third reason is Diode has adopted the end-to-end encryption, which is a critical component if you’re looking for a censorship-resistance, privacy-preserving option.
+The second important reason to use Diode is it allows you to create your unlimited, free subdomains, which we called BNS names. You’re able to see a list of the registered BNS names on Diode’s [prenet website](/prenet/#/dns). And the third reason is Diode has adopted the end-to-end encryption, which is a critical component if you’re looking for a censorship-resistance, privacy-preserving option.
 
 We’d like to give everyone a better, more secure, fully decentralized option. Diode is the best tool in connecting LINE’s webhook. Your chatbot development experience would never be the same. Diode allows you to connect LINE’s message API through Diode’s peer-to-peer network and establish your LINE’s webhook within a few minutes.
 

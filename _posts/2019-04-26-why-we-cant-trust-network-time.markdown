@@ -23,7 +23,7 @@ image: Why-We0.png
 
 In order to trust a time source, we need to validate its certificate. In order to validate a certificate, we need to know the current time. This is a catch-22. 
 
-But why would a device not have the correct time in the first place and why is the time so important for certificate validation? This is the second part of a blog post series about the history of PKI and its current problems. If you've missed the previous post and want to know more about the history please [go here and check it out.](https://diode.io/burning-platform-pki/2019/04/08/why-there-are-3652-organizations-that-can-read-your-traffic.html) For today we just need to know that PKI is the internet trust system that works with central certificate authorities. These central authorities create signed certificates for domain names, machines, and services on the internet. The system requires an awareness of time that it captures in **validity periods**. Each signed certificate has a certain validity start and validity end date.
+But why would a device not have the correct time in the first place and why is the time so important for certificate validation? This is the second part of a blog post series about the history of PKI and its current problems. If you've missed the previous post and want to know more about the history please [go here and check it out.](/burning-platform-pki/2019/04/08/why-there-are-3652-organizations-that-can-read-your-traffic.html) For today we just need to know that PKI is the internet trust system that works with central certificate authorities. These central authorities create signed certificates for domain names, machines, and services on the internet. The system requires an awareness of time that it captures in **validity periods**. Each signed certificate has a certain validity start and validity end date.
 
 The validity period on each certificate serves three major purposes:  
 
@@ -35,7 +35,7 @@ The validity period on each certificate serves three major purposes:
 
 Pragmatically speaking there's a **fourth** important aspect of validity periods in PKI certificates. And that is that the other approach the so-called revocation of a certificate is effectively non-functional on the internet. E.g. in the case of the above-mentioned ownership change of a domain, it would be much cleaner to revoke an existing certificate instead of waiting for its expiry. Unfortunately, though the two standards that have been defined for certificate revocation CRL and OCSP are not being used systematically. Most tools don't check revocation by default at all, those that do usually only check either CRL or OCSP and finally most suppliers don't care to even register certificates as revoked when they should.
 
-![](images/blog/Why-We1.png "Google Chrome vs. Firefox revocation checking")
+![](../assets/img/blog/Why-We1.png "Google Chrome vs. Firefox revocation checking")
 
 A prime example of non-working revocation is the website [https://revoked.grc.com](https://revoked.grc.com), which shows the different behaviors from Google Chrome, Firefox, Safari and Internet Explorer. The situation is even worse with non-browser software tools such as wget, curl and most IoT deployments where there is no browser facilitating communication - these nearly never check any revocation. As a result, the validation periods are the primary and only reliable protection.
 
@@ -51,7 +51,7 @@ The connected shoe or the industrial gateway need to be able to deal with this s
 
 # What It Means To Trust Expired Certificates
 
-![Google Chrome vs. Firefox revocation checking](images/blog/Why-We2.png "Google Chrome vs. Firefox revocation checking")
+![Google Chrome vs. Firefox revocation checking](../assets/img/blog/Why-We2.png "Google Chrome vs. Firefox revocation checking")
 
 An IoT device as discussed above that comes online or gets powered on first needs to find out what the current time is. And it has no choice but to make a leap of faith in order to successfully fetch the current time. It can choose to make this leap of faith either in a) insecurely getting the time from a time server - e.g. by using the unsafe network time protocol or in b) trusting an expired certificate from a secure time server. In both cases, strict security guarantees are gone. In fact, attacks become very easy, if an attacker can get into the middle between the device and its server.
 
@@ -61,7 +61,7 @@ The problem is that at this moment the device becomes susceptible to attacks usi
 
 # Way Forward
 
-Today fetching time from a network is not possible in a secure way. This in return shakes the foundation of PKI security for internet communication. Next to the [PKI governance issues discussed](https://diode.io/burning-platform-pki/2019/04/08/why-there-are-3652-organizations-that-can-read-your-traffic.html) in the last blog post this poses a major technical security issue. In the next blog post of this series we want to introduce a new secure network time protocol based on blockchain technology and show how even the smallest devices can establish completely secure connections. Be sure to follow our [twitter account](https://twitter.com/diode_chain) to get notified when the next post comes out.
+Today fetching time from a network is not possible in a secure way. This in return shakes the foundation of PKI security for internet communication. Next to the [PKI governance issues discussed](/burning-platform-pki/2019/04/08/why-there-are-3652-organizations-that-can-read-your-traffic.html) in the last blog post this poses a major technical security issue. In the next blog post of this series we want to introduce a new secure network time protocol based on blockchain technology and show how even the smallest devices can establish completely secure connections. Be sure to follow our [twitter account](https://twitter.com/diode_chain) to get notified when the next post comes out.
 
 <hr/>
 

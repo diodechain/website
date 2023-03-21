@@ -31,7 +31,7 @@ To get started, here are the steps to follow:
 
 ![](../assets/img/blog/Diode_demo_00.png)
 
-Go to Diode’s [Github page](https://github.com/diodechain); install the [Diode go client](https://github.com/diodechain/diode_go_client). You need to have the [Go](https://golang.org/) programming language installed on your computer. It would be best to use the newer versions of Go. Go to Diode’s [prenet website](https://diode.io/prenet/); register your fleet contract. To run the diode_go_client, use the command: make build.
+Go to Diode’s [Github page](https://github.com/diodechain); install the [Diode go client](https://github.com/diodechain/diode_go_client). You need to have the [Go](https://golang.org/) programming language installed on your computer. It would be best to use the newer versions of Go. Go to Diode’s [prenet website](/prenet/); register your fleet contract. To run the diode_go_client, use the command: make build.
 
 Add your device to the Whitelist. Confirm the [Metamask](https://metamask.io/) transaction. It takes about 40 seconds or less for the new block to be added to the Diode Chain. What goes behind is the [Blockquick](https://eprint.iacr.org/2019/579.pdf) algorithm doing its work in finalizing a block.
 
@@ -40,7 +40,7 @@ How do we know if the device has been added to the Whitelist? One way to check i
 You can type “help” to get a list of all the environment variables. Also, you can choose your own node. Or, if you leave this off, then your default node will be used one out of the 3 full nodes (the U.S., Europe, and Asia) based on your geographic location. For instance, our blockchain engineer Peter is currently located in Taipei, so it by default will choose the full node operating in Asia.
 
 
-![](images/blog/Diode_demo_firefox.png)
+![](../assets/img/blog/Diode_demo_firefox.png)
 
 Here comes an important step to follow. Set up our [Firefox](https://www.mozilla.org/) proxy settings under the about preferences. Type “about:preferences”. Go to Network Settings. Go to Settings, configure proxy access to the Internet. Go to Automatic proxy configuration URL. 
 

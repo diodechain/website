@@ -6,11 +6,11 @@ tags: [Blockchain, Eclipse Attack, Security]
 author: Yahsin Huang
 image: Eclipse-Attacks2.jpg
 ---
-In May, Diode’s CTO Dominic Letz published a [paper](https://eprint.iacr.org/2019/579.pdf) introducing [BlockQuick](https://diode.io/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/), a super light client protocol for blockchain validation on constrained devices. The paper shows that unlike other existing approaches such as [proofs of proof-of-work (PoPoW)](https://fc16.ifca.ai/bitcoin/papers/KLS16.pdf) and [FlyClient](https://eprint.iacr.org/2019/226.pdf), Diode’s BlockQuick super light client protocol is capable of protecting against [eclipse attacks](https://bitcoinmagazine.com/articles/researchers-explore-eclipse-attacks-ethereum-blockchain/) and [man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) on a peer-to-peer network. But what is an eclipse attack? Is it possible to prevent some of blockchain’s biggest security threats?
+In May, Diode’s CTO Dominic Letz published a [paper](https://eprint.iacr.org/2019/579.pdf) introducing [BlockQuick](/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/), a super light client protocol for blockchain validation on constrained devices. The paper shows that unlike other existing approaches such as [proofs of proof-of-work (PoPoW)](https://fc16.ifca.ai/bitcoin/papers/KLS16.pdf) and [FlyClient](https://eprint.iacr.org/2019/226.pdf), Diode’s BlockQuick super light client protocol is capable of protecting against [eclipse attacks](https://bitcoinmagazine.com/articles/researchers-explore-eclipse-attacks-ethereum-blockchain/) and [man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) on a peer-to-peer network. But what is an eclipse attack? Is it possible to prevent some of blockchain’s biggest security threats?
 
 To shed some light on the issue, we describe what an eclipse attack is, some of the bad things you can do in an eclipse attack, and how BlockQuick is addressing them in [Proof-of-Work (PoW)](https://en.wikipedia.org/wiki/Proof-of-work_system) networks.
 
-![](../assets/img/blog/Eclipse-Attacks1.png){: .center-block }
+![](../assets/img/blog/Eclipse-Attacks1.png)
 
 Image: Aviv Zohar’s [website](https://www.avivz.net)
 
@@ -30,7 +30,7 @@ Nonetheless, in most cases eclipse attacks are still difficult to do because the
 
 During the resetting, the attacker would force the connections to redirect to a new set of nodes, and thereby gaining full control of all of the victim’s connections. That is not an easy task, but it is doable. So far we haven’t seen any examples of eclipse attacks happening in real life; however, recent research results have shown that it is something that shouldn’t be ignored.
 
-![](../assets/img/blog/Eclipse-Attacks3.png){: .center-block }
+![](../assets/img/blog/Eclipse-Attacks3.png)
 
 **Eclipse attacks on IoT devices**
 
@@ -42,7 +42,7 @@ If the attacker wants to launch an eclipse attack on an IoT device, what the att
 
 In an eclipse attack scenario in a proof-of-work (PoW) based network, the attacker exploits to force a node to accept a longer chain with lower total difficulty than the main chain. Since the attacker advertised a higher total difficulty than honest nodes', when the victim node rejoins the network, it would receive a chain that is longer than the valid chain but has lower total difficulty. Therefore, what happens is the victim node can no longer synchronize with the valid chain. So, how does BlockQuick alleviate this problem?
 
-Proposed by Dominic Letz last month, [BlockQuick](https://diode.io/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/) is the first super light client protocol that addresses the issue of eclipse attacks. As Letz wrote in the [paper](https://eprint.iacr.org/2019/579.pdf) “BlockQuick: Super-Light Client Protocol for Blockchain Validation on Constrained Devices,” BlockQuick is capable of preventing eclipse attacks because it doesn’t depend solely on choosing the longest chain with the highest difficulty on the Proof-of-Work (PoW) network when validating a block.
+Proposed by Dominic Letz last month, [BlockQuick](/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/) is the first super light client protocol that addresses the issue of eclipse attacks. As Letz wrote in the [paper](https://eprint.iacr.org/2019/579.pdf) “BlockQuick: Super-Light Client Protocol for Blockchain Validation on Constrained Devices,” BlockQuick is capable of preventing eclipse attacks because it doesn’t depend solely on choosing the longest chain with the highest difficulty on the Proof-of-Work (PoW) network when validating a block.
 
 The longest chain and highest difficulty features are critical in the blockchain protocol and to popular light clients such as [Ethereum Geth](https://geth.ethereum.org) as well, but without proper protection can be abused by attackers. We believe that in order to provide a secure light client protocol, the security policy must adopt the consensus reputation table when validating a block. As Letz explains: “In each new block the device validates the cryptographic signature of the miner and compares these with the known miner identities in its consensus reputation table. Only if a block receives a consensus score of >50% is it accepted by the client. Receiving a chain with a lower total score results in an abort.”
 

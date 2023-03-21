@@ -14,11 +14,11 @@ In the modern networks of the big cloud providers, all machines are physically i
 
 **OpenStack**. The open market has not been able to successfully compete with the vertical integration that the big three (Amazon, Google, Microsoft) are able to offer in their cloud offerings. The OpenStack initiative launched with much fanfare with the promise to integrate SDN technology into a fully open source ecosystem of [Software Defined Infrastructure](https://en.wikipedia.org/wiki/Software-defined_infrastructure), and hence to enable all hardware providers to compete. While it reached its highest popularity in 2015, it ultimately [failed in its mission to commoditize what AWS brought to cloud computing ](https://www.packet.com/blog/how-we-failed-at-openstack/)
 
-![OpenStack on Google Trends from 2009 to 2019](images/blog/Blockchain-Defined0.png "The Rise and Fall of OpenStack")
+![OpenStack on Google Trends from 2009 to 2019](../assets/img/blog/Blockchain-Defined0.png "The Rise and Fall of OpenStack")
 
 **SD-WAN.** Although the adoption of SDNs has mostly stayed within the big data center providers, and within some enterprise use cases, the technology has been able to develop further. The concept of Software Defined Wide Area Networks (SD-WAN) is a relatively recent idea using the same building blocks to create networks that span geographies to include branch-offices in remote areas. The enablers for SD-WAN are usually SD-WAN enabled network routers that connect whole subnets to each other. 
 
-![SD-WAN Overview](images/blog/Blockchain-Defined2.png "SD-WAN Overview"){: .pull-right }
+![SD-WAN Overview](../assets/img/blog/Blockchain-Defined2.png "SD-WAN Overview"){: .pull-right }
 
 This deployment though means that there must be a minimum critical mass for a remote location to cost-efficiently added to an SD-WAN. 
 
@@ -37,7 +37,7 @@ Configuring millions of IoT endpoints into a single network is not a problem any
 
 **No-SPOF.** One major benefit blockchain-as-control-plane has over other technology is that it does not have a single-point-of-failure (SPOF). While traditional centrally configured networks become more brittle with size, the opposite is true for blockchain networks. Each added node is increasing the strength of its consensus. This allows BDNs to scale to many more, even millions of independent networks participants. Even when networks are split, the individual subnets can keep operating, and once networks are repaired the blockchain automatically repairs itself to a single chain using the builtin consensus mechanism. 
 
-![BDN-IoT Deployment](images/blog/Blockchain-Defined1.png "BDN-IoT Deployment")
+![BDN-IoT Deployment](../assets/img/blog/Blockchain-Defined1.png "BDN-IoT Deployment")
 
 
 **No-Ops.** Blockchain brought a separation between "miners,” who operate the computational resources that the network is running on, and the users, who deploy smart-contracts, [decentralized applications](https://en.wikipedia.org/wiki/Decentralized_application) (Dapps) or just transact value. For an enterprise considering to adopt an SDN solution, this means that operational personnel, backup strategies, and other traditional IT tooling are not required parts of the system that needs to be established. Instead, the company can focus on its business requirements and formulate those in smart-contracts. This is a shift in the industry that follows the footsteps of the cloud providers, splitting the responsibility between operating a cloud and defining application logic. The opportunity to simplify operations is big, but requires change. Companies need to acquire new skills around smart-contract design and transform responsibility of current IT teams.

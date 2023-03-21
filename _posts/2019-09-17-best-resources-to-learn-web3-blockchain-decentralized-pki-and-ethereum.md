@@ -7,12 +7,12 @@ author: Yahsin Huang
 image: Best-R1.jpg
 ---
 
-Here is a curated list of readings and resources that ignited our interest in realizing a [decentralized Public Key Infrastructure (PKI)](https://diode.io/blockchain/MITM-attacks-and-why-it's-time-to-start-thinking-about-decentralized-PKI-19210/) vision for the future. We included topics such as fundamentals, Web3, blockchain, web PKI, DNS, time, IoT security, light clients, Ethereum, as well as development tools and tutorials. We are also collecting feedback for our newly published research [paper](https://eprint.iacr.org/2019/579.pdf) about [BlockQuick](https://diode.io/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/), a super light client protocol for blockchain validation. DM us on [Twitter](https://twitter.com/diode_chain) if you want to share your thoughts. We look forward to hearing from you!
+Here is a curated list of readings and resources that ignited our interest in realizing a [decentralized Public Key Infrastructure (PKI)](/blockchain/MITM-attacks-and-why-it's-time-to-start-thinking-about-decentralized-PKI-19210/) vision for the future. We included topics such as fundamentals, Web3, blockchain, web PKI, DNS, time, IoT security, light clients, Ethereum, as well as development tools and tutorials. We are also collecting feedback for our newly published research [paper](https://eprint.iacr.org/2019/579.pdf) about [BlockQuick](/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/), a super light client protocol for blockchain validation. DM us on [Twitter](https://twitter.com/diode_chain) if you want to share your thoughts. We look forward to hearing from you!
 
 
 ## **Fundamentals**
 
-![](images/blog/Best-R2.png){: .center-block }
+![](../assets/img/blog/Best-R2.png)
 
 **The Future of Decentralized Trust on the Internet**
 
@@ -24,7 +24,7 @@ Here is a curated list of readings and resources that ignited our interest in re
     *   Handshake, ENS and Decentralized Naming Services Explained (2018) 
 [https://hackernoon.com/handshake-ens-and-decentralized-naming-services-explained-2e69a1ca1313](https://hackernoon.com/handshake-ens-and-decentralized-naming-services-explained-2e69a1ca1313)
     *   Why DNS-on-Blockchain is the next step after DNS-over-HTTPS — our take on the issue: 
-[https://diode.io/distributed-infrastructure/Why-DNS-on-Blockchain-is-the-next-step-after-DNS-over-HTTPS-19231/](https://diode.io/distributed-infrastructure/Why-DNS-on-Blockchain-is-the-next-step-after-DNS-over-HTTPS-19231/)
+[/distributed-infrastructure/Why-DNS-on-Blockchain-is-the-next-step-after-DNS-over-HTTPS-19231/](/distributed-infrastructure/Why-DNS-on-Blockchain-is-the-next-step-after-DNS-over-HTTPS-19231/)
 *   **Decentralized Networks**
     *   IPFS — introducing a peer-to-peer distributed file system 
 [https://ipfs.io/ipfs/QmR7GSQM93Cx5eAg6a6yRzNde1FQv7uL6X1o4k7zrJa3LX/ipfs.draft3.pdf](https://ipfs.io/ipfs/QmR7GSQM93Cx5eAg6a6yRzNde1FQv7uL6X1o4k7zrJa3LX/ipfs.draft3.pdf)
@@ -34,7 +34,7 @@ Here is a curated list of readings and resources that ignited our interest in re
 
 *   **Decentralized PKI (Public Key Infrastructure)**
     *   A methodology to ensure the creation, storage, distribution, and revocation of public keys. — a paper from Rebooting the Web of Trust workshop [https://github.com/WebOfTrustInfo/rwot1-sf/blob/master/final-documents/dpki.pdf](https://github.com/WebOfTrustInfo/rwot1-sf/blob/master/final-documents/dpki.pdf)
-    *   Our take on it: [https://diode.io/dpki/how-decentralized-public-key-infrastructure-will-be-the-future-for-the-web-19148/](https://diode.io/dpki/how-decentralized-public-key-infrastructure-will-be-the-future-for-the-web-19148/) 
+    *   Our take on it: [/dpki/how-decentralized-public-key-infrastructure-will-be-the-future-for-the-web-19148/](/dpki/how-decentralized-public-key-infrastructure-will-be-the-future-for-the-web-19148/) 
 
 **Light Clients — thin, light, super-light clients**
 
@@ -42,9 +42,9 @@ Here is a curated list of readings and resources that ignited our interest in re
 [https://en.bitcoin.it/wiki/Thin_Client_Security#Simplified_Payment_Verification_.28SPV.29](https://en.bitcoin.it/wiki/Thin_Client_Security#Simplified_Payment_Verification_.28SPV.29)
 *   BitCoin paper on SPV (thin clients)
     [https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)
-*   BlockQuick: A super light blockchain client for trustless time by Dominic Letz [https://diode.io/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/](https://diode.io/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/) 
+*   BlockQuick: A super light blockchain client for trustless time by Dominic Letz [/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/](/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/) 
 *   BlockQuick Reputation Table Explained
-    [https://diode.io/blockquick/blockquick-consensus-reputation-table-explained-19182/](https://diode.io/blockquick/blockquick-consensus-reputation-table-explained-19182/) 
+    [/blockquick/blockquick-consensus-reputation-table-explained-19182/](/blockquick/blockquick-consensus-reputation-table-explained-19182/) 
 
 
 **Blockchain Technology** 
@@ -65,15 +65,15 @@ Here is a curated list of readings and resources that ignited our interest in re
 *   The Constrained Resource Clients Ring of Ethereum Magicians Forum
     [https://ethereum-magicians.org/c/working-groups/constrained-resource-client-ring](https://ethereum-magicians.org/c/working-groups/constrained-resource-client-ring)
 
-*   Man-in-the-middle attacks [https://diode.io/blockchain/MITM-attacks-and-why-it's-time-to-start-thinking-about-decentralized-PKI-19210/](https://diode.io/blockchain/MITM-attacks-and-why-it's-time-to-start-thinking-about-decentralized-PKI-19210/) 
+*   Man-in-the-middle attacks [https://diode.io/blockchain/MITM-attacks-and-why-it's-time-to-start-thinking-about-decentralized-PKI-19210/](/blockchain/MITM-attacks-and-why-it's-time-to-start-thinking-about-decentralized-PKI-19210/) 
 
-*   Eclipse attacks [https://diode.io/blockchain/how-blockquick-super-light-client-protocol-can-help-mitigate-eclipse-attacks-19161/](https://diode.io/blockchain/how-blockquick-super-light-client-protocol-can-help-mitigate-eclipse-attacks-19161/)
-*   Trust of network time [https://diode.io/burning-platform-pki/why-we-cant-trust-network-time-19116/](https://diode.io/burning-platform-pki/why-we-cant-trust-network-time-19116/)
+*   Eclipse attacks [https://diode.io/blockchain/how-blockquick-super-light-client-protocol-can-help-mitigate-eclipse-attacks-19161/](/blockchain/how-blockquick-super-light-client-protocol-can-help-mitigate-eclipse-attacks-19161/)
+*   Trust of network time [https://diode.io/burning-platform-pki/why-we-cant-trust-network-time-19116/](/burning-platform-pki/why-we-cant-trust-network-time-19116/)
 *   DNS on blockchain
-    [https://diode.io/distributed-infrastructure/Why-DNS-on-Blockchain-is-the-next-step-after-DNS-over-HTTPS-19231/](https://diode.io/distributed-infrastructure/Why-DNS-on-Blockchain-is-the-next-step-after-DNS-over-HTTPS-19231/) 
+    [https://diode.io/distributed-infrastructure/Why-DNS-on-Blockchain-is-the-next-step-after-DNS-over-HTTPS-19231/](/distributed-infrastructure/Why-DNS-on-Blockchain-is-the-next-step-after-DNS-over-HTTPS-19231/) 
 
 *   BGP attacks
-    [https://diode.io/security/why-the-internet-infrastructure-is-vulnerable-to-bgp-hijacking-attacks-19175/](https://diode.io/security/why-the-internet-infrastructure-is-vulnerable-to-bgp-hijacking-attacks-19175/)
+    [https://diode.io/security/why-the-internet-infrastructure-is-vulnerable-to-bgp-hijacking-attacks-19175/](/security/why-the-internet-infrastructure-is-vulnerable-to-bgp-hijacking-attacks-19175/)
 
 
 

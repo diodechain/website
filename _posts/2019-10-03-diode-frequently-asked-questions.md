@@ -23,7 +23,7 @@ Below is the old version of the FAQ
 
 Diode is an integrated Blockchain implementation of the Web3, the server-less internet and the decentralized web, targeted primarily at enabling IoT devices. It was designed to address the security and infrastructure needs of device-driven connected applications.
 
-![](../assets/img/blog/Best-R2.png){: .center-block }
+![](../assets/img/blog/Best-R2.png)
 
 
 
@@ -72,7 +72,7 @@ You can build all kinds of Web3 applications on Diode. Here are some examples:
 *   Decentralized messaging apps that can send messages, data and tokens, and can’t be stopped.
 *   Uncensorable websites that live in the Diode Network and are always reachable from everywhere.
 *   Decentralized Friend to Friend File sharing services
-*   Secure Network bridges and Blockchain controlled VPN, ([Blockchain Defined Networks BDN](https://diode.io/distributed-infrastructure/from-software-defined-networking-to-blockchain-defined-networking-19142/))
+*   Secure Network bridges and Blockchain controlled VPN, ([Blockchain Defined Networks BDN](/distributed-infrastructure/from-software-defined-networking-to-blockchain-defined-networking-19142/))
 
 
 ### There are several existing tools already pretty available to developers, helping them achieve the task of “demoing websites without deploying,” is it really necessary to do it with blockchain technology?
@@ -156,7 +156,7 @@ Diode Chain is a permissionless, decentralized public blockchain which requires 
 
 ### What is BlockQuick?
 
-Developed by the Diode team, [BlockQuick](https://diode.io/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/) is the first super light client protocol for Ethereum that addresses the issue of [man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and [eclipse attacks](https://diode.io/blockchain/how-blockquick-super-light-client-protocol-can-help-mitigate-eclipse-attacks-19161/). It is capable of preventing attacks because it doesn’t depend solely on choosing the longest chain with the highest difficulty on the Proof-of-Work (PoW) network when validating a block. Instead, it validates a block based on the so-called [Consensus Reputation Table](https://diode.io/blockquick/blockquick-consensus-reputation-table-explained-19182/).
+Developed by the Diode team, [BlockQuick](/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/) is the first super light client protocol for Ethereum that addresses the issue of [man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and [eclipse attacks](/blockchain/how-blockquick-super-light-client-protocol-can-help-mitigate-eclipse-attacks-19161/). It is capable of preventing attacks because it doesn’t depend solely on choosing the longest chain with the highest difficulty on the Proof-of-Work (PoW) network when validating a block. Instead, it validates a block based on the so-called [Consensus Reputation Table](/blockquick/blockquick-consensus-reputation-table-explained-19182/).
 
 BlockQuick super light client protocol is designed for anyone who hopes to connect IoT devices to public blockchains. Unlike the current full sync, fast sync, or light sync requirements (i.e. a full sync typically requires more than 200GB of disk storage), through BlockQuick the device only needs a handshake size of 20KB to establish the most recent block hash. The design enables a client to sync up to a recent block with a consensus reputation table.
 
@@ -167,13 +167,13 @@ In the Ethereum network, you have the option of running various types of nodes: 
 
 Below is an overview of the three node types with their storage requirements.
 
-![](../assets/img/blog/FAQ-03.png){: .center-block }
+![](../assets/img/blog/FAQ-03.png)
 
 Full nodes are typically run on servers in data-centers; they are commonly used for mining purposes. Light clients require less storage, but also offer less functionality as compared to running a full node. Light clients only need to download the block headers of the blockchain, and are designed for desktop and mobile wallet applications. The amount of data they have to store is much smaller, but still grows at the same pace as the blockchain itself.
 
-Super light clients such as [Diode’s BlockQuick](https://diode.io/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/) require even less storage than light clients. Super light clients do not need to download every single block header for validation, and are designed for resource-constrained devices. As a result, super light clients can’t be used to monitor the blockchain in real time; instead, they read data periodically. 
+Super light clients such as [Diode’s BlockQuick](/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/) require even less storage than light clients. Super light clients do not need to download every single block header for validation, and are designed for resource-constrained devices. As a result, super light clients can’t be used to monitor the blockchain in real time; instead, they read data periodically. 
 
-A more detailed introduction of blockchain clients’ hardware requirements can be found in our [blog post](https://diode.io/iot/hardware-requirements-of-blockchain-clients-19196/).
+A more detailed introduction of blockchain clients’ hardware requirements can be found in our [blog post](/iot/hardware-requirements-of-blockchain-clients-19196/).
 
 
 ### What is BlockQuick Reputation Table?

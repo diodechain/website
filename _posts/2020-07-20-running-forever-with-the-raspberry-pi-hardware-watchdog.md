@@ -6,6 +6,8 @@ categories: [Raspberry Pi]
 tags: [Raspberry Pi]
 author: Dominic Letz
 image: watchdog/image1.png
+redirect_from:
+- /raspberry%20pi/running-forever-with-the-raspberry-pi-hardware-watchdog-20202/
 ---
 
 At [Diode](https://diode.io) we have deployed a couple of long-running Raspberry Pis equipped with cameras and sensors reporting into our network 24/7. All these are under uptime monitoring for us to keep track of the network availability. Every time there is a software problem we want to know it. For that we're using some external and internal tools. 
@@ -88,5 +90,3 @@ echo 'interface = wlan0' >> /etc/watchdog.conf
 ```
 
 With this additional configuration line, the watchdog will also power cycle the Raspberry Pi when the wifi interface _wlan0_ gets into trouble.
-
-glhf.

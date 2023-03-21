@@ -28,7 +28,7 @@ First, you need to get an ENS domain name. ENS, or the Ethereum Name Service, is
 
 Registering an ENS name is relatively easy compared with most of the crypto applications! Go to [https://app.ens.domains/](https://app.ens.domains/). Search .eth domains and see if they are still available. You’ll need some Ethers (ETH) in your MetaMask wallet to buy ENS domain names. If you don’t have any, you can get some from your friend or buy some from an exchange, but the detail is out of the scope of this tutorial.
 
-![](images/blog/ens-ipfs2.png)
+![](../assets/img/blog/ens-ipfs2.png)
 
 
 Then, you want to create a simple static website. It can be as simple as an index.html file as this example shows. Add proper CSS or JavaScript to decorate it if you like.
@@ -51,7 +51,7 @@ I wouldn’t recommend getting your website fancier beyond the above example. Th
 
 Once you’ve prepared a simple, beautiful index.html file, you are ready to go! Go to [https://github.com/ipfs-shipyard/ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop) and download the latest release of IPFS Desktop. Click the +Add button in the upper-right corner of the IPFS window to add your index.html.
 
-![](images/blog/ens-ipfs3.png)
+![](../assets/img/blog/ens-ipfs3.png)
 
 
 The most important step is adding your IPFS hash to your ENS record. Go to [https://app.ens.domains/](https://app.ens.domains/)
@@ -61,7 +61,7 @@ Add the IPFS hash to your ENS record in the “Content” field record type. IPF
 View my ENS+IPFS decentralized website: [https://yahsin.eth.link/](https://yahsin.eth.link/)
 
 
-![](images/blog/ens-ipfs4.png)
+![](../assets/img/blog/ens-ipfs4.png)
 
 Above is a screenshot showcasing the IPFS deployment of the Diode Prenet example website.
 
@@ -70,7 +70,7 @@ Above is a screenshot showcasing the IPFS deployment of the Diode Prenet example
 Designed for IoT embedded devices, Diode is an integrated blockchain implementation of the Web3 - the vision of the server-less internet, the fully decentralized web. We are seeing a trend of moving away from the client-server model towards peer-to-peer networks
 
 
-![](images/blog/ens-ipfs5.png)
+![](../assets/img/blog/ens-ipfs5.png)
 
 
 Above is a screenshot showing a [demo website](https://pi-taipei.diode.link) of Diode network. This demo website showcases the potential of streaming real-time data through the Diode network. 

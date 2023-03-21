@@ -62,7 +62,7 @@ Further, Diode supports a team environment right out of the box – something th
 
 Sync should just work and it should be bomb proof secure. 
 
-Diode Drive is a [peer-to-peer encrypted](https://support.diode.io/article/jieo6utgv9-are-my-communications-via-the-diode-network-encrypted) sync environment, and allows you to [link all of your devices](https://diode.io/diodedrive/diodedriveupdate-linkeddevices-22117/) so that your notes are always accessible. Every update to your notes is quickly and efficiently synchronized over a 256bit encrypted connection to your other devices.
+Diode Drive is a [peer-to-peer encrypted](https://support.diode.io/article/jieo6utgv9-are-my-communications-via-the-diode-network-encrypted) sync environment, and allows you to [link all of your devices](/diodedrive/diodedriveupdate-linkeddevices-22117/) so that your notes are always accessible. Every update to your notes is quickly and efficiently synchronized over a 256bit encrypted connection to your other devices.
 
 ![](../assets/img/blog/secure-evernote-alternative_devices.png)
 
@@ -102,7 +102,7 @@ In Diode Drive, all notes can include links to other notes or other files – th
 
 ---
 
-You’ve probably heard of [de-googling](https://www.reddit.com/r/degoogle/) – a process that you can also do for [Google Drive or Dropbox by deploying Diode Drive](https://diode.io/web3/diode%20drive/decentralized-dropbox-alternative-22140/). We at Diode have now “de-evernoted” our notes and are not looking back! 
+You’ve probably heard of [de-googling](https://www.reddit.com/r/degoogle/) – a process that you can also do for [Google Drive or Dropbox by deploying Diode Drive](/web3/diode%20drive/decentralized-dropbox-alternative-22140/). We at Diode have now “de-evernoted” our notes and are not looking back! 
 
 For a how-to on Diode Drive secure note taking, see the [support article](https://support.diode.io/article/nwoi0x3d67-take-secure-notes-with-diode-drive).
 

@@ -10,7 +10,7 @@ redirect_from:
 - /raspberry%20pi/fixing-camera-freezes-on-the-raspberry-pi-picam-module-20261/
 ---
 
-Keeping your Raspberry Pi Video project up and running 24/7 can be quite a task. With the [Diode Client](/download/) you have always access from everywhere and can easily share it's video stream. In our previous Raspberry Pi post we focused on the [built-in watchdog](https://diode.io/raspberry%20pi/running-forever-with-the-raspberry-pi-hardware-watchdog-20202/) to keep survive hardware errors. But what do you do if the video fails on you?
+Keeping your Raspberry Pi Video project up and running 24/7 can be quite a task. With the [Diode Client](/download/) you have always access from everywhere and can easily share it's video stream. In our previous Raspberry Pi post we focused on the [built-in watchdog](/raspberry%20pi/running-forever-with-the-raspberry-pi-hardware-watchdog-20202/) to keep survive hardware errors. But what do you do if the video fails on you?
 
 There are different tools you can use to capture pictures from your Raspberry Pi Cam versions 1 and 2. The most common are [raspistill and raspivid](https://www.raspberrypi.org/documentation/raspbian/applications/camera.md). In our demo deployments we're using _raspivid_ to stream the live video to a local port and expose that through [Diode to the public](https://pi-taipei.diode.link/).
 

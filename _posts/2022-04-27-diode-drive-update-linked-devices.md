@@ -10,7 +10,7 @@ redirect_from:
 - /diodedrive/diodedriveupdate-linkeddevices-22117/
 ---
 
-Diode Drive is a [self-custody solution for your information](https://diode.io/diode%20drive/self-custody-for-data-22032/). It gives you full control of who has access to your information and where it is stored - whether you are an individual or a company, you can use Diode Drive to maintain a secure information environment (e.g. HIPAA, GDPR, cross-geopolitical security, anti-scraping, de-google).
+Diode Drive is a [self-custody solution for your information](/diode%20drive/self-custody-for-data-22032/). It gives you full control of who has access to your information and where it is stored - whether you are an individual or a company, you can use Diode Drive to maintain a secure information environment (e.g. HIPAA, GDPR, cross-geopolitical security, anti-scraping, de-google).
 
 This post introduces recent new usability features: Linked Devices, Light Zones, and Deleted File Backups.
 
