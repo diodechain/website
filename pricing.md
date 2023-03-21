@@ -1,6 +1,6 @@
 ---
 title: Pricing
-layout: new
+layout: page
 class: header--dark
 permalink: /pricing/
 redirect_from:

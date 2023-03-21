@@ -1,6 +1,6 @@
 ---
 title: Diode Vault
-layout: new
+layout: page
 class: header--white
 permalink: /solutions/vault/
 

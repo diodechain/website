@@ -1,6 +1,6 @@
 ---
 title: Diode Network
-layout: new
+layout: page
 class: header--white
 permalink: /solutions/network/
 redirect_from:

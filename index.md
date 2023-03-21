@@ -1,6 +1,6 @@
 ---
 title: Reclaim Your Digital Sovereignty
-layout: new
+layout: page
 class: page--homepage header--dark
 redirect_from:
 - /joinzone/

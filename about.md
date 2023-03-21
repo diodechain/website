@@ -1,6 +1,6 @@
 ---
 title: About
-layout: new
+layout: page
 class: header--dark
 permalink: /about/
 redirect_from:

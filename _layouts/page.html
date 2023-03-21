@@ -1,42 +1,23 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
 
-{% include header.html %}
-<!-- Page Section -->
-<section class="site-section blog-section page-layout no-sidebar" id="start">
-  <div class="container">
+{%- include head.liquid -%}
 
-    <!-- Page Layout -->
-    {% unless layout.skip_head == "true" %}
-    <div class="row">
-      <!-- Content -->
-      <div class="col blog-articles-container">
-        <h2>
-          {% if page.tagline == null %}
-            {{ page.type }}
-          {% else %}
-            {{ page.tagline }}
-          {% endif %}
-        </h2>
-        <h1 class="thin title">{{ page.title }}</h1>
-        {% if page.subtitle != null %}
-          <h4 class="subtitle">
-            {{ page.subtitle }}
-          </h4>
-        {% endif %}
-        <hr class="small">
-      </div>
-    </div>
-    {% endunless %}
+<body class="{{ page.class }}">
 
-    <!-- Page Layout -->
-    <div class="row">
-      <!-- Content -->
-      <div class="col blog-articles-container">
-        {{ content }}
-      </div>
-    </div>
-  </div>
-</section>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59C3BGK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 
+	{%- include header.liquid -%}
+
+	<main class="main" role="main">
+		<article class="container">
+			{{ content }}
+		</article>
+	</main>
+
+	{%- include footer.liquid -%}
+
+</body>
+</html>

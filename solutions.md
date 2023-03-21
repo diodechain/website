@@ -1,6 +1,6 @@
 ---
 title: Solutions
-layout: new
+layout: page
 class: header--dark
 permalink: /solutions/
 redirect_from:

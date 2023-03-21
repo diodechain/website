@@ -1,6 +1,6 @@
 ---
 title: How Diode works.
-layout: new
+layout: page
 class: header--white
 permalink: /how-it-works/
 redirect_from:

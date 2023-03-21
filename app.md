@@ -1,6 +1,6 @@
 ---
 title: Diode App
-layout: new
+layout: page
 class: header--white
 permalink: /solutions/app/
 redirect_from:

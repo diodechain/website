@@ -1,6 +1,6 @@
 ---
 title: Master Services Agreement
-layout: new
+layout: page
 class: header--dark
 permalink: /terms/
 redirect_from:

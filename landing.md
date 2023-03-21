@@ -1,6 +1,6 @@
 ---
 title: Secure File Transfer
-layout: new
+layout: page
 class: header--dark
 permalink: /secure-file-transfer/
 redirect_from:

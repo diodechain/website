@@ -1,6 +1,6 @@
 ---
 title: Download
-layout: new
+layout: page
 class: header--dark
 permalink: /download/
 redirect_from:

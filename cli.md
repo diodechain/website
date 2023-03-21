@@ -1,6 +1,6 @@
 ---
 title: Diode CLI
-layout: new
+layout: page
 class: header--white
 permalink: /solutions/cli/
 redirect_from:

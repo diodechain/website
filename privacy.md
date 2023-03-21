@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-layout: new
+layout: page
 class: header--dark
 permalink: /privacy-policy/
 
