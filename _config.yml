@@ -15,6 +15,7 @@ plugins:
 - jekyll-paginate
 - jekyll-seo-tag
 - jekyll-redirect-from
+- jekyll-sitemap
 
 path:
   images: "/assets/img/"
@@ -113,3 +114,23 @@ copyright: "DIODE &copy; 2023, All Rights Reserved"
 security:
   title: "Security is everything."
   content: "We’re governed by the belief that technology should help humans thrive. It should enhance our ability to operate, create, explore, educate, and innovate - unhindered."
+
+
+# Sitemap excludes
+defaults:
+- scope:
+    path: "multisig/**/*.*"
+  values:
+    sitemap: false
+- scope:
+    path: "status/**/*.*"
+  values:
+    sitemap: false
+- scope:
+    path: "files/**/*.*"
+  values:
+    sitemap: false
+- scope:
+    path: "vesting/**/*.*"
+  values:
+    sitemap: false
