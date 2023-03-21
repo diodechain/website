@@ -6,6 +6,8 @@ categories: [Diode]
 tags: [Diode, Development, Blockchain, IoT, Ethereum]
 author: Dominic Letz
 image: NovemberT.jpg
+redirect_from:
+- /diode/Diode-November-Update-19309/
 ---
 
 [Diode](https://diode.io/), at its core, is a finality gadget with an [Ethereum](https://www.ethereum.org/) block header change. It’s enabled by a [super-light protocol and client](/blockchain/how-blockquick-super-light-client-protocol-can-help-mitigate-eclipse-attacks-19161/) for [constrained devices](/iot/hardware-requirements-of-blockchain-clients-19196/), allowing them to read contract state data and validate the corresponding merkle proofs. The finality gadget and algorithm are based on [BlockQuick](https://eprint.iacr.org/2019/579.pdf). View the Diode project on [Github](https://github.com/diodechain). In this blog post, we take a look back at the past few months and a look ahead to the plans for the coming months.
@@ -14,17 +16,17 @@ It has been a very busy few months for the Diode team. There is a lot happening 
 
 In mid October, a few of us attended [Crosslink 2019](https://crosslink.taipei/), a 2-day Ethereum conference organized by [Taipei Ethereum Meetup](https://www.meetup.com/Taipei-Ethereum-Meetup/) community, in New Taipei City, Taiwan. The lineup of impressive speakers and researchers such as Ethereum creator [Vitalik Buterin](https://vitalik.ca/) and [Protocol Labs](https://libp2p.io/) the libp2p project tech lead [Raúl Kripalani](https://github.com/raulk) generously shared their knowledge and expertise with the local community. We were honored to be able to take part in this amazing event!
 
-# Roadmap Update
+## Roadmap Update
 
-## In Progress
+### In Progress
 
-### Web3, Web3, Web3 (aka Firefox Plugin)
+#### Web3, Web3, Web3 (aka Firefox Plugin)
 
 Currently, we are working on developing Firefox browser plugins in order to allow more users to be able to access the first Web3 Network Diode. Our goal is to make the system easily accessible to website providers, makers, hackers, and the general public. It will be able to support a wide range of devices including Arduino, Raspberry Pi and ESP32, as well as general website servers at your home or a data center. We want to empower users to build the decentralized web. It will have a lot of potential for both IoT devices as well as for people, as it offers a new way for web content to be published and consumed anywhere server-less. 
 
-## Highlights of what we have achieved over the past few months
+### Highlights of what we have achieved over the past few months
 
-### 100x Faster EVM
+#### 100x Faster EVM
 
 Most notably, we replaced the Ethereum Virtual Machine (EVM for short) that we borrowed from [aeternity](https://github.com/aeternity/aeternity/tree/master/apps/aevm/src) in our codebase with the official EVM from the [aleth project formerly known as cpp-ethereum](https://github.com/ethereum/aleth/blob/master/libaleth-interpreter/).
 
@@ -95,7 +97,7 @@ We believe that these differences between `fib(11)` and fib(23)/fib(27) in impro
 
 For now we’re pretty happy to have a fully compatible and much faster EVM. Using the same estimation of how long a CPU heavy 10 million gas transaction would take to validate now we get 627ms / 2.5x = **250ms**. In the future, it might be great to extract this EVM interface and make it available as a library to the greater Elixir community. If you feel like this is something you would like to do, check out [our current wrapper](https://github.com/diodechain/diode_server_ex/blob/master/lib/evm.ex).
 
-### Data Interfaces EIP-2330
+#### Data Interfaces EIP-2330
 
 Just this week we filed an Ethereum Improvement Proposal (EIP) for a new EVM opcode _EXTSLOAD_ and connected updates to Solidity. These extensions we believe are crucial to make decentralized infrastructure accessible on very small IoT devices. Currently the Ethereum ecosystem assumes that each participant can validate the chain and is running a compatible EVM. With [BlockQuick](https://eprint.iacr.org/2019/579.pdf), we allowed tiny devices to identify the authoritative Ethereum chain, and with this improvement small devices would be able to read information such as for ENS from the chain directly. If you curious to learn more [read the EIP here](https://dominicletz.github.io/EIPs/EIPS/eip-2330) and [join the discussion](https://ethereum-magicians.org/t/eip-2330-sload2-and-abi-for-lower-gas-cost-and-off-chain-apps/3733).
 
@@ -103,7 +105,7 @@ Just this week we filed an Ethereum Improvement Proposal (EIP) for a new EVM opc
 * Solidity-7593: [https://github.com/ethereum/solidity/issues/7593](https://github.com/ethereum/solidity/issues/7593)
 * Discussion: [https://ethereum-magicians.org/t/eip-2330-sload2-and-abi-for-lower-gas-cost-and-off-chain-apps/3733](https://ethereum-magicians.org/t/eip-2330-sload2-and-abi-for-lower-gas-cost-and-off-chain-apps/3733)
 
-### TravisCI
+#### TravisCI
 
 Last but not least, we finally enabled continuous testing for our [server implementation](https://github.com/diodechain/diode_server_ex). We initially had some problems getting Travis to run the most recent software versions until we realised that Travis does not yet support Ubuntu 18.04 for Elixir as one of their build options, and had to do some work-arounds in our [travis.yml](https://github.com/diodechain/diode_server_ex/blob/master/.travis.yml) to use a recent C++ compiler for our new AlethVM. We are full believers in continuous automated testing and will keep rolling this out to other tools as well in the future. Until then enjoy the green build flag on our repository:
 

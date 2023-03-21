@@ -5,17 +5,17 @@ categories: [Blockchain]
 tags: [Blockchain, Resources, Web3, DPKI, PKI, Decentralization, Ethereum]
 author: Yahsin Huang
 image: Best-R1.jpg
+redirect_from:
+- /blockchain/Best-Resources-to-Learn-Web3-Blockchain-Decentralized-PKI-and-Ethereum-19262/
 ---
 
 Here is a curated list of readings and resources that ignited our interest in realizing a [decentralized Public Key Infrastructure (PKI)](/blockchain/MITM-attacks-and-why-it's-time-to-start-thinking-about-decentralized-PKI-19210/) vision for the future. We included topics such as fundamentals, Web3, blockchain, web PKI, DNS, time, IoT security, light clients, Ethereum, as well as development tools and tutorials. We are also collecting feedback for our newly published research [paper](https://eprint.iacr.org/2019/579.pdf) about [BlockQuick](/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/), a super light client protocol for blockchain validation. DM us on [Twitter](https://twitter.com/diode_chain) if you want to share your thoughts. We look forward to hearing from you!
-
 
 ## **Fundamentals**
 
 ![](../assets/img/blog/Best-R2.png)
 
 **The Future of Decentralized Trust on the Internet**
-
 
 *   **Web3**
     *   Decentralized web 

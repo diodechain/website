@@ -48,7 +48,7 @@
 
             {% for page in (1..paginator.total_pages) %}
                 {% if page == paginator.page %}
-                    <em>{{ page }}</em>
+                    <strong>{{ page }}</strong>
                 {% elsif page == 1 %}
                     <a href="{{ '/blog/' | relative_url }}">{{ page }}</a>
                 {% else %}

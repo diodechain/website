@@ -5,6 +5,8 @@ categories: [Devcon]
 tags: [Devcon, Diode, Ethereum, Blockchain, Web3]
 author: Yahsin Huang
 image: Devcon_1.jpg
+redirect_from:
+- /devcon/Diode-Osaka-Devcon-V-Recap-19298/
 ---
 
 This month, Diode CTO Dominic Letz and marketing team attended [DevCon 5](http://devcon.org) and several off-devcon events in Osaka, Japan. In addition to meeting leaders of the Ethereum community, we also took the opportunity to discuss the challenges in realizing the Web3 vision on Day 3 at the Amphitheater.
@@ -13,9 +15,8 @@ This month, Diode CTO Dominic Letz and marketing team attended [DevCon 5](http:/
 
 We had a great experience at the conference. It was a pleasure to meet Ethereum Research core team, developers of Remix, members of the Ethereal Name Service (ENS), coordinators of the Ethereum Magicians, core team members of imToken, researchers who hosted the Scaling Ethereum research workshop in Toronto, Canada, researchers of zk-SNARKS, community leaders of Kuala Lumpur, Malaysia; Sydney, Australia; Bangkok, Thailand, and a couple smart contract workshop instructors from Europe. 
 
-{: .row }
-![](../assets/img/blog/Devcon_3.jpg){: .col-md-6 } 
-![](../assets/img/blog/Devcon_5.jpg){: .col-md-6 }
+![](../assets/img/blog/Devcon_3.jpg) 
+![](../assets/img/blog/Devcon_5.jpg)
 
 Many people gave us positive feedback. During the week in Osaka, some of the discussions had provided us a unique opportunity to learn more about the issues at stake from multiple perspectives.
 
@@ -41,4 +42,3 @@ Having implemented all protocols, the next step is to have a great user experien
 At Devcon, Slock.it meetup, Solana events, Cryptoeconomics Lab’s Layer 2 events, and many other off-devcon events, we spoke about how Diode Chain and the BlockQuick super light client can help make Web3 a reality. We look forward to seeing a continuous growth in the blockchain community as we move towards building blockchain-based decentralized PKI for IoT devices.
 
 Finally, check out our [Github](https://github.com/diodechain) and the BlockQuick [paper](https://eprint.iacr.org/2019/579.pdf) to be among the first to learn about the details of the Diode Chain.
-

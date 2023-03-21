@@ -158,3 +158,18 @@ b, strong {font-weight: bold;}
 code {font-family: $font-code;}
 .detect-os .hide {display: none !important;}
 .img-fluid {max-width: 100%;height: auto;}
+
+table {
+  margin-bottom: 1.5em;
+  border-collapse: collapse;
+  font-size: 16px;
+  td, th {
+    padding: 3px;
+    border: 1px solid #ccc;
+    @include media-breakpoint-up(xl) {
+      padding: 5px;
+      font-size: 18px;
+    }
+  }
+  th {text-align: left;background: #eee;}
+}

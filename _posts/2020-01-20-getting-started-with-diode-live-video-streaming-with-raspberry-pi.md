@@ -6,14 +6,14 @@ categories: [Diode]
 tags: [Diode, Blockchain, Demo, IoT, Raspberry Pi, P2P, Web3, Ethereum]
 author: Yahsin Huang
 image: Diode_demo_feature_size.png
-imageclass: middle
+redirect_from:
+- /diode/Getting-Started-with-Diode-Live-Video-Streaming-with-Raspberry-Pi-20020/
 ---
 
 Last week we released a [demo](https://youtu.be/Zibg-6CClc4) on YouTube that shows how to get started with [Diode](https://github.com/diodechain). It’s a simple guide to help you get a Raspberry Pi connected to the Diode network.
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/Zibg-6CClc4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zibg-6CClc4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<br/>
 To get started, here are the steps to follow:
 
 1. Install Diode go client
@@ -28,7 +28,6 @@ To get started, here are the steps to follow:
 
 6. Run a live video streaming with "diode.link"
 
-
 ![](../assets/img/blog/Diode_demo_00.png)
 
 Go to Diode’s [Github page](https://github.com/diodechain); install the [Diode go client](https://github.com/diodechain/diode_go_client). You need to have the [Go](https://golang.org/) programming language installed on your computer. It would be best to use the newer versions of Go. Go to Diode’s [prenet website](/prenet/); register your fleet contract. To run the diode_go_client, use the command: make build.
@@ -38,7 +37,6 @@ Add your device to the Whitelist. Confirm the [Metamask](https://metamask.io/) t
 How do we know if the device has been added to the Whitelist? One way to check is to notice whether any error messages appear. If you still see messages like “Device was not whitelisted,” it means it has not been properly set up yet. If you stop seeing these kinds of error messages, it means you’re good to go!
 
 You can type “help” to get a list of all the environment variables. Also, you can choose your own node. Or, if you leave this off, then your default node will be used one out of the 3 full nodes (the U.S., Europe, and Asia) based on your geographic location. For instance, our blockchain engineer Peter is currently located in Taipei, so it by default will choose the full node operating in Asia.
-
 
 ![](../assets/img/blog/Diode_demo_firefox.png)
 

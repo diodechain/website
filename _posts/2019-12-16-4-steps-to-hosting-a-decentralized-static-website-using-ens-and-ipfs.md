@@ -6,14 +6,14 @@ categories: [Diode]
 tags: [Diode, ENS, IPFS, Blockchain, IoT, Ethereum]
 author: Yahsin Huang
 image: ens-ipfs1.jpg
-imageclass: bottom
+redirect_from:
+- /diode/4-steps-to-hosting-a-decentralized-static-website-using-ens-and-ipfs-19350/
 ---
 
 In this article, we will outline the steps required to deploy a static website under your ens name. One example is my personal website hosting on IPFS using “yahsin.eth” my ENS custom domain. What it does is that anyone can visit [https://yahsin.eth.link/](https://yahsin.eth.link/), the browser would return an introduction of myself. It will work faster if the viewer has MetaMask readily installed. View a list of ENS+IPFS websites compiled by Almonit here: [https://almonit.eth.link/](https://almonit.eth.link/)
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/oA4oOY5zgU0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oA4oOY5zgU0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<br/>
 So, how can you do that? Let’s dive right in!
 
 Step 1. Registering an ENS name
@@ -30,9 +30,7 @@ Registering an ENS name is relatively easy compared with most of the crypto appl
 
 ![](../assets/img/blog/ens-ipfs2.png)
 
-
 Then, you want to create a simple static website. It can be as simple as an index.html file as this example shows. Add proper CSS or JavaScript to decorate it if you like.
-
 
 ```html
 <html>
@@ -46,20 +44,17 @@ Then, you want to create a simple static website. It can be as simple as an inde
 </html>
 ```
 
-
 I wouldn’t recommend getting your website fancier beyond the above example. The IPFS doesn’t work like a server we are used to, so loading many pages or images may involve non-trivial front-end tricks to work well.
 
 Once you’ve prepared a simple, beautiful index.html file, you are ready to go! Go to [https://github.com/ipfs-shipyard/ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop) and download the latest release of IPFS Desktop. Click the +Add button in the upper-right corner of the IPFS window to add your index.html.
 
 ![](../assets/img/blog/ens-ipfs3.png)
 
-
 The most important step is adding your IPFS hash to your ENS record. Go to [https://app.ens.domains/](https://app.ens.domains/)
 
 Add the IPFS hash to your ENS record in the “Content” field record type. IPFS is a peer-to-peer file sharing system, so it might take a few minutes for the content to propagate through the network. And that’s it! Very simple way to host a decentralized website using ENS domain names and IPFS distributed content system. We’re using IPFS in this example, but you can easily use other distributed storage systems such as Swarm ([https://ethersphere.github.io/swarm-home/](https://ethersphere.github.io/swarm-home/)), or DAT ([https://dat.foundation/](https://dat.foundation/)).
 
 View my ENS+IPFS decentralized website: [https://yahsin.eth.link/](https://yahsin.eth.link/)
-
 
 ![](../assets/img/blog/ens-ipfs4.png)
 
@@ -68,7 +63,6 @@ Above is a screenshot showcasing the IPFS deployment of the Diode Prenet example
 **The Diode Network**
 
 Designed for IoT embedded devices, Diode is an integrated blockchain implementation of the Web3 - the vision of the server-less internet, the fully decentralized web. We are seeing a trend of moving away from the client-server model towards peer-to-peer networks
-
 
 ![](../assets/img/blog/ens-ipfs5.png)
 

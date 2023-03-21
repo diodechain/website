@@ -5,7 +5,8 @@ categories: [Development]
 tags: [Development, IoT, Web3]
 author: Dominic Letz
 image: edge_proto.png
-imageclass: bottom
+redirect_from:
+- /development/New-Edge-Protocol-In-The-Testnet-20083/
 ---
 
 With the next major client update the Diode network will be using a new Edge Network Protocol. _Edge2_ is replacing the current _Edge1_ protocol. Nodes will be supporting both protocols for some time until all clients are being upgraded. The new protocol brings major enhancements. First and foremost the protocol change enables full async messaging and will remove those pesky timeout issues. In addition the change from JSON to [RLP](https://github.com/ethereum/wiki/wiki/RLP) for protocol encoding is halving the amount of data needs to be transferred between devices.
@@ -67,7 +68,6 @@ The second improvement is that the new __Edge2__ protocol is using asynchronous 
 ## Type Disambiguation
  
 Finally changing the implementation from JSON to RLP allows us to simplify client and server data conversion code. In JSON we did accept all possible JSON data types and tried if they can be converted to the expected format type. Especially guessing string types to differentiate a printable string such as `"hello world"` from a binary encoded string in hex `"0x68656c6c6f20776f726c64"` was a heuristic and prone to errors. In RLP there is only binary data and so no type guessing is needed anymore. Reducing implementation effort and killing bugs.
-
 
 ### Stay tuned
 
