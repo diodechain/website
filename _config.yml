@@ -2,6 +2,7 @@
 name: Diode
 title: Diode&#8482; - Reclaim Your Digital Sovereignty
 description: Diode enables digital sovereignty in everyday interactions.
+
 url: https://diode.io
 
 
@@ -9,17 +10,25 @@ theme: minima
 # Date format (refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this)
 minima:
   date_format: "%b %-d, %Y"
+
 plugins:
 - jekyll-feed
+- jekyll-paginate
 - jekyll-seo-tag
 - jekyll-redirect-from
+
 path:
   images: "/assets/img/"
   styles: "/assets/css/"
   scripts: "/assets/js/"
   favicon: "/assets/favicon/"
+
 sass:
   style: compressed
+
+paginate: 10
+paginate_path: "/blog/:num/"
+permalink: "/blog/:title"
 
 
 # Navigation
@@ -55,6 +64,8 @@ nav:
     url: "/how-it-works/"
   - title: Explorer
     url: "/prenet/"
+  - title: Blog
+    url: "/blog/"
 
 
 # Other Links
@@ -79,12 +90,6 @@ social:
   matrix: "https://matrix.to/#/#diodechain:matrix.org"
 
 
-# share links on First - not used until network stability sorted
-#    macos: "https://share.diode.link/download/drive-uu7nc1mj9pk4nv2vghsc/tkxxutdr5x6vj52v/dDrive-1.8.1.dmg"
-#    windows: "https://share.diode.link/download/drive-uu7nc1mj9pk4nv2vghsc/tkxxutdr5x6vj52v/dDrive-1.8.1-win32.exe"
-#    linux: "https://share.diode.link/download/drive-uu7nc1mj9pk4nv2vghsc/tkxxutdr5x6vj52v/dDrive-1.8.1-linux-x86_64.run"
-#    raspberry-pi: "https://share.diode.link/download/drive-uu7nc1mj9pk4nv2vghsc/tkxxutdr5x6vj52v/dDrive-1.2.1-linux-armv7l.run"
-#    raspberry-pi-64: "https://share.diode.link/download/drive-uu7nc1mj9pk4nv2vghsc/tkxxutdr5x6vj52v/dDrive-1.2.1-linux-aarch64.run"
 # Download Links
 download:
   app:
@@ -129,260 +134,6 @@ show_excerpts: false
 
 tagurl: 'blog/tags.html#'
 
-#######################################################
-#######################################################
-###############   HEADER INFORMATIONS   ###############
-#######################################################
-#######################################################
-
-# Website language
-lang: en-US
-# Header Title
-header-title: <strong>Let's upgrade the Web</strong>
-# Header Tagline
-header-tagline: Web2 security is broken
-twitter_username: 'diode_chain'
-
-####################################
-######   CTA Header Buttons   ######
-####################################
-
-# Focus Buttons
-header-focus-button:
-  title: Watch the Video
-  url: https://player.vimeo.com/video/318384993?autoplay=1
-
-# Secondary Buttons
-header-secondary-button:
-  title: BlockQuick Paper
-  url: https://eprint.iacr.org/2019/579.pdf
-
-
-####################################
-######  Global Navigation     ######
-####################################
-
-navigation:
-- title: Solutions
-  link: solutions/
-  ft_order: 1
-  subs:
-  - title: Private Collaboration
-    ft_title: Private Collaboration
-    link: solutions/private-collaboration
-  - title: File Sharing
-    ft_title: File Sharing
-    link: solutions/file-sharing
-  - title: Backup
-    ft_title: Backup
-    link: solutions/backup
-  - title: Remote Work
-    ft_title: Remote Work
-    link: solutions/remote-work
-  - title: Asset Management
-    ft_title: Asset Management
-    link: solutions/asset-management
-  - title: Serverless Communications
-    ft_title: Serverless Communications
-    link: solutions/serverless-communications
-- title: Products
-  link: products/
-  ft_order: 2
-  subs:
-  - title: Diode Drive
-    ft_title: Diode Drive
-    link: products/d-drive
-  - title: Diode CLI
-    ft_title: CLI
-    link: products/diode-cli
-  - title: Diode Network
-    ft_title: Network
-    link: products/diode-network
-- title: Pricing
-  link: pricing/
-  ft_order: 4
-- title: Blog
-  link: blog/
-  ft_order: 5
-- title: Resources
-  link: resources/
-  ft_order: 3
-  subs:
-  - title: How It Works
-    ft_title: How It Works
-    link: resources/how-it-works
-  - title: About
-    ft_title: About
-    link: resources/about
-  - title: Docs
-    ft_title: Docs
-    link: https://support.diode.io/
-    target: _blank
-  - title: Download
-    ft_title: Download
-    link: resources/download
-  - title: Explorer
-    ft_title: Explorer
-    link: prenet
-- title: <i class="fab fa-telegram-plane"></i>
-  link: https://t.me/diode_chain
-  target: _blank
-- title: Download
-  link: resources/download/
-  is_button: true
-  target: _blank
-
-
-#################################
-######  Breadcrumbs label  ######
-#################################
-breadcrumbs:
-  solutions: Solutions
-  remote-work: Remote Work
-  private-storage: Private Storage
-  streaming-video: Streaming Video
-  healthcare-and-compliance: Healthcare & Compliance
-  internet-of-things: Internet of Things
-  it-and-developers: IT and Developers
-  serverless-communications: Serverless Communications
-
-  products: Products
-  d-drive: Diode Drive
-  diode-cli: Diode CLI
-  diode-network: Diode Network
-  pricing: Pricing
-
-  blog: Blog
-
-  resources: Resources
-  how-it-works: How it Works
-  about: About
-  download: Download
-  explorer: Explorer
-  docs: Docs
-
-
-####################################
-######  Quick links of footer ######
-####################################
-quick_links:
-- title: Solutions
-  link: solutions/
-- title: Products
-  link: products/
-- title: Pricing
-  link: pricing/
-- title: Blog
-  link: blog/
-- title: Resources
-  link: resources/
-- title: Terms of Service
-  link: msa/
-- title: Privacy Policy
-  link: privacy-policy/
-
-#########################
-######  Downloads  ######
-#########################
-d-drive:
-  title: Diode Drive
-  title-1: Diode Drive
-  description: A privacy-focused alternative to Google Drive or Dropbox - share and collaborate without uploading to the cloud!
-  # for solutions page(desktop)
-  description-1: Diode Drive combines the privacy and compliance benefits of local storage with the benefits and efficiency of remote access.
-  # for solutions page(mobile)
-  description-2: Existing file servers and new Diode-enabled NAS systems can use Diode Drive to combine the privacy and compliance benefits of local storage with the benefits and efficiency of remote access.
-  icon: images/diode-drive.png
-  thank-you-for-downloading: 'products/d-drive/thanks/'
-  learn-more: 'products/d-drive/'
-  download-base: https://share.diode.link/download/drive-uu7nc1mj9pk4nv2vghsc/tkxxutdr5x6vj52v/
-  downloads:
-  - title: <i class="fab fa-apple"></i> MacOS X
-    link: dDrive-1.6.3.dmg
-    name: MacOS
-    id: macos
-
-  - title: <i class="fab fa-windows"></i> Windows (64-bit)
-    link: dDrive-1.6.3-win32.exe
-    name: Windows (64-bit)
-    id: windows
-    sha: 10bf7e8c2f1ceb6b7232464fa4840724efee254d
-
-  - title: <i class="fab fa-linux"></i> Linux (64-bit)
-    link: dDrive-1.6.3-linux-x86_64.run
-    name: Linux (64-bit)
-    id: linux
-    sha: 9e9d6e93c5ac0fa1e46552e911c1a8b02030c09c
-
-  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM 32-bit)
-    link: dDrive-1.2.1-linux-armv7l.run
-    name: Raspberry Pi / ARM 32bit
-    id: raspberry-pi
-    sha: 140daf2af4d1656cba3f6edd4b39f5c8b1eac9c9
-
-  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM 64-bit)
-    link: dDrive-1.2.1-linux-aarch64.run
-    name: Raspberry Pi / ARM 64bit
-    id: raspberry-pi-64
-    sha: 6aa7b5189d3d05cb36b960117375aff61b9e45a0
-
-  - title: <i class="fab fa-ios"></i> iOS
-    ext-link: https://apps.apple.com/us/app/diode-drive/id1605222443
-    name: iOS
-    id: ios
-
-  - title: <i class="fab fa-android"></i> Android
-    ext-link: https://play.google.com/store/apps/details?id=io.diode.drive
-    name: Android
-    id: android
-
-diode-cli:
-  title: Diode CLI
-  description: High security remote access for your IT assets, localhost websites / webservices, and data/video streams.
-  # for solution page(desktop)
-  description-1: The Diode CLI is used to maintain systems in hard-to-access facilities and to securely publish data streams and web properties.
-  icon: images/diode-client.png
-  learn-more: 'products/diode-cli/'
-  download-command: 'curl -Ssf https://diode.io/install.sh | sh'
-  download-base: https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/
-  downloads:
-  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi (ARM)
-    link: diode_linux_arm.zip
-    name: Raspberry Pi
-    id: raspberry-pi
-
-  - title: <i class="fab fa-raspberry-pi"></i> Raspberry Pi 64bit (ARM64)
-    link: diode_linux_arm64.zip
-    name: Raspberry Pi 64bit
-
-  - title: <i class="fab fa-apple"></i> MacOS X
-    link: diode_darwin_amd64.zip
-    name: MacOS
-    id: macos
-
-  - title: <i class="fas fa-cube"></i> MacOS Package
-    link: diode_darwin.pkg
-    name: MacOS Package
-    id: macos-package
-
-  - title: <i class="fab fa-windows"></i> Windows (64-bit)
-    link: diode_windows_amd64.zip
-    name: Windows
-    id: windows
-
-  - title: <i class="fab fa-linux"></i> Linux (64-bit)
-    link: diode_linux_amd64.zip
-    name: Linux
-    id: linux
-
-# for only solution pages (mobile)
-diode-network:
-  title: Diode Network
-  learn-more: 'products/diode-network/'
-  description: The Diode Network is the world’s only fully decentralized communications network capable of supporting the needs of private, secure communications for the enterprise.
-  link: 'https://support.diode.io/article/lsr4tkzz8t'
-
-
 #########################
 ######   Widgets   ######
 #########################
@@ -396,108 +147,3 @@ map-lat: 44.4267674
 map-lng: 26.102538399999958
 
 # Enter your Mailchimp User ID and Campaign ID
-#####################################
-############   About us   ###########
-#####################################
-about-us-title: Diode<sup>TM</sup>
-about-us-description: >-
-  Diode is responsible for governance and issuance of Diode Tokens, governance and maintenance of the Diode Network, and growing the ecosystem surrounding both.  The Diode Network is formed by the producers and miners who run instances of the Diode Chain&trade; Software.  The Diode Chain Software’s development and configuration management is provided by Diode.  Users of the Diode Network must use Diode Tokens to be granted access to the Diode Network’s unique capabilities for secure IoT communications.  Diode manages the issuance (block rewards) and other tokenomics for Diode Tokens.
-
-#####################################
-####### Diode Chain Features  #######
-#####################################
-chain-features-title: What is the Diode Chain<sup>TM</sup> software?
-chain-features-description:
-
-#
-# Diode Chain Features
-#
-chain-features:
-
-# Feature
-- title: Edge Connector
-  description: >-
-    Designed for microchips Diode Chains edge connector software runs even on very constrained client 
-    devices. Written in protable C and implemening Diodes BlockQuick&trade; algorithm this piece of
-    sofware allos to connect real world microchips such as the TI CC3220, development boards such as
-    Arduino Yun and Industrial Gateways securely to the IoT cloud. With 10x less memory than 
-    competitive products it's delivering 1000x times higher security for endpoint devices.
-
-  icon: svgs/security.svg
-
-# Feature
-- title: Efficient & Secure Mining
-  description: >-
-    The Diode Chain software bundles the StakeWork&trade; consensus algorithm, providing more than 3x
-    better energy efficiency compared with BitCoin and Ethereum while providing effective protections
-    against Proof-Of-Work attacks. The algorithm is bundled with both the edge connector and the
-    mining node software providing providing reference implementations.  
-
-  icon: svgs/streaming.svg
-
-# Feature
-- title: Mining Node Sofware
-  description: >-
-    The full nodes of the Diode network are Ethereum VM and Ethereum RPC compatible offering 
-    developers access to the full set of the development tools of the Ethereum Ecosystem
-    such as remix and solidity. The Diode Chain software bundle contains the full reference
-    implementation allowing easy operation in datacanters and mining operations. 
-
-  icon: svgs/lower_cost.svg
-
-
-#####################################
-############# Our Blog ##############
-#####################################
-blog-name: Diode Team Blog
-blog-title: Newest Articles
-blog-description: >-
-  As we're working on rolling out the next evolutionary steps of the Diode Network we will be 
-  posting updates regularly. Also keep track of our twitter account to get all the latest news.
-
-
-#####################################
-############### Team ################
-#####################################
-team-title: Team
-team-description: >-
-  Our team consists of true IoT experts from both the business and the technology side. We're dedicated
-  to a secure IoT future!
-
-#####################################
-#############   Footer   ############
-#####################################
-footer-description: >-
-  <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a><br/>
-  Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a>
-footer-copyright-text: DIODE
-footer-copyright-url: https://diode.io/
-footer-copyright-year: 2021
-
-#########################
-######   Widgets   ######
-#########################
-
-collections:
-  posts:
-    output: true
-    permalink: :categories/:title-:short_year:y_day/
-  jobs:
-    output: true
-    permalink: jobs/:name.html
-
-defaults:
-- scope:
-    path: "_team"
-    type: team
-  values:
-    layout: postlist
-    tagline: All Articles By
-    type: team
-- scope:
-    path: "_jobs"
-    type: jobs
-  values:
-    layout: job
-    type: jobs
-    

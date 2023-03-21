@@ -6,8 +6,10 @@ categories: [Diode Drive]
 tags: [Diode, Diode Drive, File Sharing, How To]
 author: Allen M
 image: file-uploading-multiple-devices.png
-imageclass: top
+redirect_from:
+- /diode%20drive/upload-files-from-phone-to-computer-21237/
 ---
+
 It is surprising how hard it can be to upload files and pictures from your phone to your computer.  
 
 I used to use email to send the file to myself as an attachment.  This would usually work, but had some problems: 
@@ -26,9 +28,9 @@ Diode is an even better solution - it enables me to upload files directly from m
 4. Scan the QR code with your phone.  It will open a web portal where you can upload files directly.
 5. Click one file or long press to select multiple files.  Once you have selected your files, they are uploaded automatically.
 
-<p align="center"><a href="https://vimeo.com/562684103"><img src="images/blog/file-uploading-share-zone-2.png"></a></p>
+[![](../assets/img/blog/file-uploading-share-zone-2.png)](https://vimeo.com/562684103)
 
-<a href="https://vimeo.com/562684103">Check out this video for a visual walk-through!</a>
+**[Check out this video for a visual walk-through!](https://vimeo.com/562684103)**
 
 Some additional tips:
 * Bookmark the upload webpage for easy access from your mobile browser

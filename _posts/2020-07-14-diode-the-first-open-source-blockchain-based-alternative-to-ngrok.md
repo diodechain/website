@@ -6,7 +6,6 @@ categories: [Diode]
 tags: [Diode, Blockchain, Use case]
 author: Yahsin Huang
 image: diode_ngrok_alt_f.png
-imageclass: top
 ---
 
 [Diode](https://github.com/diodechain/diode_go_client) is an open-source blockchain-based peer-to-peer network that enables developers to create applications for various decentralized projects. One of the popular applications that is being developed recently is using Diode as a blockchain implementation of [Ngrok](https://ngrok.com/).
@@ -15,18 +14,18 @@ To use Diode, the first open-source, blockchain-based Ngrok alternative, written
 
 <code class="highlighter-rouge"><span class="noselect">$ </span>curl -Ssf https://diode.io/install.sh | sh</code>
 
-Go to [https://diode.io/download/](https://diode.io/download/). 
+Go to [/download//](/download//). 
 
 Open a terminal window and run the curl command so that it installs the Diode Client. 
 
-![alt_text](images/blog/diode_ngrok_1.png "image_tooltip")
+![](../assets/img/blog/diode_ngrok_1.png)
 
 
 Or, you can build from source: [https://github.com/diodechain/diode_go_client](https://github.com/diodechain/diode_go_client) 
 
 Here’s what it looks like after you installing the Diode Client: 
 
-![alt_text](images/blog/diode_install_ngrok.gif "image_tooltip")
+![](../assets/img/blog/diode_install_ngrok.gif)
 
 Before we had a diode init command, at the moment we’ve made some changes and you no longer need the init command in client. Now you can simply publish or browse resources through the Diode network without any initialization.
 
@@ -37,13 +36,13 @@ Then, you want to publish your local port to the Diode Network. In your terminal
 <code class="highlighter-rouge"><span class="noselect">$ </span>diode publish -public 3030:3030</code>
 
 Here’s what the output looks like:
-![alt_text](images/blog/gif_diode_publish.gif "image_tooltip")
+![](../assets/img/blog/gif_diode_publish.gif)
 
 This binds your local port to a Diode port. We are publishing as “public” so anyone can view it (can also use “protected” or “private”) 
 
 Now anyone can access your website through our gateway “[address].diode.link”!
 
-![alt_text](images/blog/diode_ngrok_prenet.png "image_tooltip")
+![](../assets/img/blog/diode_ngrok_prenet.png)
 
 Here’s a bonus -- your website address can use a human readable name. Register your Blockchain Name System (BNS) custom domain: [https://diode.io/prenet/#/dns](https://diode.io/prenet/#/dns). 
 

@@ -1,0 +1,43 @@
+<div class="post">
+    <div class="row">
+        {% if page.image %}
+            <div class="col col-12">
+                <figure class="post__image">
+                    <img src="{{ page.image | prepend: 'blog/' | prepend: site.path.images | relative_url }}" alt="{{ page.title }}">
+                </figure>
+            </div>
+            <div class="col col-12">
+                <header class="post__header">
+                    <h1 class="h2 post__title">{{ page.title }}</h1>
+                    <p class="post__info">
+                        {%- if page.author %}by {{ page.author }} | {% endif -%}
+                        {{ page.date | date: "%B %d, %Y" }}
+                        | Category: {{ page.tags | first }}
+                    </p>
+                </header>
+            </div>
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col col-12 col-xl-9 col-xxl-8">
+            <div class="post__content">
+                {{ page.content }}
+            </div>
+        </div>
+
+        <div class="col col-12 col-xl-3 col-xxl-4">
+            <ul class="post__tags">
+                {% assign tags_list = page.tags %}
+                {% if tags_list.first[0] == null %}
+                    {% for tag in tags_list %}
+                        <li>#&nbsp;{{ tag }}</li>
+                    {% endfor %}
+                {% else %}
+                    {% for tag in tags_list %}
+                        <li>#&nbsp;{{ tag[0] }}</li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>

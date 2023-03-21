@@ -10,7 +10,7 @@ In May, Diode’s CTO Dominic Letz published a [paper](https://eprint.iacr.org/2
 
 To shed some light on the issue, we describe what an eclipse attack is, some of the bad things you can do in an eclipse attack, and how BlockQuick is addressing them in [Proof-of-Work (PoW)](https://en.wikipedia.org/wiki/Proof-of-work_system) networks.
 
-![alt_text](images/blog/Eclipse-Attacks1.png "image_tooltip"){: .center-block }
+![](../assets/img/blog/Eclipse-Attacks1.png){: .center-block }
 
 Image: Aviv Zohar’s [website](https://www.avivz.net)
 
@@ -30,7 +30,7 @@ Nonetheless, in most cases eclipse attacks are still difficult to do because the
 
 During the resetting, the attacker would force the connections to redirect to a new set of nodes, and thereby gaining full control of all of the victim’s connections. That is not an easy task, but it is doable. So far we haven’t seen any examples of eclipse attacks happening in real life; however, recent research results have shown that it is something that shouldn’t be ignored.
 
-![alt_text](images/blog/Eclipse-Attacks3.png "image_tooltip"){: .center-block }
+![](../assets/img/blog/Eclipse-Attacks3.png){: .center-block }
 
 **Eclipse attacks on IoT devices**
 

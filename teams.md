@@ -1,6 +1,7 @@
 ---
 title: For Teams
 layout: new
+class: header--dark
 permalink: /teams/
 
 

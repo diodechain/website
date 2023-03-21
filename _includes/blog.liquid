@@ -1,0 +1,67 @@
+{%- if site.posts -%}
+    {% assign posts = paginator.posts %}
+{% endif %}
+
+<div class="blog">
+
+    {% for post in posts %}
+
+        <article class="blog__article">
+            <header class="blog__header">
+                {% if post.title %}
+                    <h3 class="blog__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                {% endif %}
+                {% if post.tags %}
+                    <p class="blog__category">{{ post.tags | first }}</p>
+                {% endif %}
+                {% if post.date %}
+                    <div class="blog__date">
+                        <div class="date">{{ post.date | date: "%d" }} {{ post.date | date: "%b" }}</div>
+                        <div class="time">{{ post.date | date: "%H:%M" }}</div>
+                    </div>
+                {% endif %}
+            </header>
+
+            {% if post.image %}
+                <figure class="blog__image {{ post.imageclass }}">
+                    <a href="{{ post.url | relative_url }}">
+                        <img src="{{ post.image | prepend: 'blog/' | prepend: site.path.images | relative_url }}" alt="{{ post.title }}">
+                    </a>
+                </figure>
+            {% endif %}
+
+            <div class="blog__content">
+                {{ post.content | strip_html | truncatewords: 75 }}
+                <div class="blog__more"><a href="{{ post.url | relative_url }}" class="btn btn--arrow">Read More</a></div>
+            </div>
+        </article>
+
+    {% endfor %}
+
+    {% if paginator.total_pages > 1 %}
+        <div class="blog__pagination">
+            {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path | relative_url }}">&lt;</a>
+            {% else %}
+                <span>&lt;</span>
+            {% endif %}
+
+            {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                    <em>{{ page }}</em>
+                {% elsif page == 1 %}
+                    <a href="{{ '/blog/' | relative_url }}">{{ page }}</a>
+                {% else %}
+                    <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path | relative_url }}">&gt;</a>
+            {% else %}
+                <span>&gt;</span>
+            {% endif %}
+        </div>
+    {% endif %}
+
+</div>

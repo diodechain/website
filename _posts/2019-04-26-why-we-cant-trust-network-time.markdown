@@ -7,7 +7,6 @@ categories: [Burning-Platform-PKI]
 tags: [Burning Platform, Security, Time]
 author: Dominic Letz
 image: Why-We0.png
-imageclass: top
 ---
 
 <blockquote>
@@ -36,7 +35,7 @@ The validity period on each certificate serves three major purposes:
 
 Pragmatically speaking there's a **fourth** important aspect of validity periods in PKI certificates. And that is that the other approach the so-called revocation of a certificate is effectively non-functional on the internet. E.g. in the case of the above-mentioned ownership change of a domain, it would be much cleaner to revoke an existing certificate instead of waiting for its expiry. Unfortunately, though the two standards that have been defined for certificate revocation CRL and OCSP are not being used systematically. Most tools don't check revocation by default at all, those that do usually only check either CRL or OCSP and finally most suppliers don't care to even register certificates as revoked when they should.
 
-![alt_text](images/blog/Why-We1.png "Google Chrome vs. Firefox revocation checking")
+![](images/blog/Why-We1.png "Google Chrome vs. Firefox revocation checking")
 
 A prime example of non-working revocation is the website [https://revoked.grc.com](https://revoked.grc.com), which shows the different behaviors from Google Chrome, Firefox, Safari and Internet Explorer. The situation is even worse with non-browser software tools such as wget, curl and most IoT deployments where there is no browser facilitating communication - these nearly never check any revocation. As a result, the validation periods are the primary and only reliable protection.
 

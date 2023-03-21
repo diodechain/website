@@ -66,7 +66,7 @@ To illustrate this concept in more concrete terms, POW algorithms such as Bitcoi
 
 
 
-![alt_text](images/blog/POSW-Community0.png "image_tooltip"){: .center-block }
+![](../assets/img/blog/POSW-Community0.png){: .center-block }
 
 
 
@@ -76,7 +76,7 @@ Proof-Of-StakeWork introduces a new variable, the stake of the miner (S<sub>mine
 
 
 
-![alt_text](images/blog/POSW-Community1.png "image_tooltip"){: .center-block }
+![](../assets/img/blog/POSW-Community1.png){: .center-block }
 
 
 
@@ -86,7 +86,7 @@ Further, **F** is a weighting function that amplifies the effectiveness of the m
 
 
 
-![alt_text](images/blog/POSW-Community2.png "image_tooltip"){: .center-block }
+![](../assets/img/blog/POSW-Community2.png){: .center-block }
 
 
 

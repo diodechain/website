@@ -92,7 +92,7 @@
       bottom: 0;
       left: 0;
       z-index: 1;
-      background: white;
+      background: black;
       transition: transform $effect, opacity $effect;
       transform: none;
       transform-origin: center;
@@ -100,9 +100,17 @@
     &::before {top: 16px;}
     &::after {bottom: 16px;}
 
+    .header--dark & {
+      &::before, &::after, span {
+        background: white;
+      }
+    }
     .header--white & {
-      @include media-breakpoint-up(md) {
-        &::before, &::after, span {background: black;}
+      &::before, &::after, span {
+        background: white;
+        @include media-breakpoint-up(md) {
+          background: black;
+        }
       }
     }
   }
@@ -392,12 +400,24 @@
       right: 102px;
     }
     @media (hover: hover) {
-      &:hover, &:focus {color: white;}
+      &:hover, &:focus {color: black}
     }
 
+    .header--dark & {
+      @media (hover: hover) {
+        &:hover, &:focus {
+          color: white;
+        }
+      }
+    }
     .header--white & {
       @media (hover: hover) {
-        &:hover, &:focus {color: black;}
+        &:hover, &:focus {
+          color: white;
+          @include media-breakpoint-up(md) {
+            color: black;
+          }
+        }
       }
     }
   }

@@ -1,17 +1,17 @@
 ---
-layout: page
-title: Diode Team Blog
+title: Blog
+layout: new
+class: header--dark
+
+### Hero
+hero:
+  class: hero--right
+  heading: Blog roll please.
+  subheading: Quick reads across a variety of topics.
+  image: hero/blog.webp
+
 ---
 
-{% for post in site.posts %}
+{%- include hero.liquid -%}
 
-  <!-- Blog Article -->
-  <div class="post-full">
-    <article class="blog-article border-article">
-
-      {% include post-preview.html post=post %}
-
-    </article>
-  </div>
-
-{% endfor %}
+{%- include blog.liquid -%}

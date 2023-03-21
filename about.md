@@ -1,6 +1,7 @@
 ---
 title: About
 layout: new
+class: header--dark
 permalink: /about/
 redirect_from:
 - /resources/about/

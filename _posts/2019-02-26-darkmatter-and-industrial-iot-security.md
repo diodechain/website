@@ -36,7 +36,7 @@ Intermediate certificates, like the one DarkMatter was given, are a major source
 
 Users who could come in contact with malicious software and websites are not the only victims. Anyone relying upon QuoVadis certificates could be at risk as well. Some users have proposed deleting the QuoVadis root certificate from any installation to ensure that the DarkMatter certificates also become invalid. However, Protonmail a provider of VPN services and secure email, received its certificates from QuoVadis. As the company [pointed out](https://securityboulevard.com/2019/02/protonmail-ssl-certificates-and-darkmatter/) if any of their customers do this it would also disable their services as well.
 
-<img src="images/blog/mitm.png?{{site.time | date: '%s%N'}}"/>
+<img src="../assets/img/blog/mitm.png?{{site.time | date: '%s%N'}}"/>
 
 What is perhaps most troubling is the lack of commentary around the repercussions these governance issues have for the rapidly growing internet of things (IoT) industry. IoT devices typically have limited computing power and most operate autonomously making them especially vulnerable to attack. Most connected devices do not have a way to check for certificate revocation. So even if the existing DarkMatter certificates are revoked, most connected devices will still not be safe.
 

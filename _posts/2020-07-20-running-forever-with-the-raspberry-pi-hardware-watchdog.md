@@ -6,16 +6,15 @@ categories: [Raspberry Pi]
 tags: [Raspberry Pi]
 author: Dominic Letz
 image: watchdog/image1.png
-imageclass: top
 ---
 
 At [Diode](https://diode.io) we have deployed a couple of long-running Raspberry Pis equipped with cameras and sensors reporting into our network 24/7. All these are under uptime monitoring for us to keep track of the network availability. Every time there is a software problem we want to know it. For that we're using some external and internal tools. 
 
-![alt_text](images/blog/watchdog/image3.png "Diode.io status page")
+![](../assets/img/blog/watchdog/image3.png "Diode.io status page")
 
 Eventually we have run into a problem not related to our software. From to time one of our Raspberry Pis freezes in the field either because of a kernel or a hardware issue. In that case there is nothing that can be done with software anymore. You can't connect to it, can't ping the Pi -- It becomes impossible to send it a restart command in any way to bring it back to normal operation. Debugging into these events you might find indications of such as freeze in the _/var/log/kernel.log_ file. Below an example of a freeze that first shows a kernel exception and then just garbage _^@^@^@^@^@_
 
-![alt_text](images/blog/watchdog/image4.png "Kernel log at freeze")
+![](../assets/img/blog/watchdog/image4.png "Kernel log at freeze")
 
 That's the point the Pi froze, and only manual powering down, and powering up again brought it back to live.
 
@@ -63,7 +62,7 @@ sudo systemctl status watchdog
 
 If everything worked then you should after the last command output similiar to this:
 
-![alt_text](images/blog/watchdog/image2.png "Watchdog service running")
+![](../assets/img/blog/watchdog/image2.png "Watchdog service running")
 
 Now next time your Raspberry Pi freezes, the hardware watchdog will restart it automatically after 15 seconds. 
 

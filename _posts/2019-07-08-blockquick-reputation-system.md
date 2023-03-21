@@ -5,7 +5,6 @@ categories: [Blockquick]
 tags: [Blockquick, Blockchain, Reputation]
 author: Yahsin Huang
 image: Blockquick-Re0.jpg
-imageclass: top
 ---
 
 **China social credit system: the method to reward or punish citizens for their behavior is unclear**

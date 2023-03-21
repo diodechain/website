@@ -15,7 +15,7 @@ In 1994, Netscape started to make the Web secure and created, with the SSL proto
 
 The Internet, being a rich archive, we can quickly find the [first public version of the Netscape Navigator 1.0 from 1994](https://winworldpc.com/product/netscape-navigator/1x), using "Wine," a Windows emulation software, it is even possible to run Netscape Navigator version 1.0 today:
 
-![alt_text](images/blog/Netscape-and0.png "image_tooltip")
+![](../assets/img/blog/Netscape-and0.png)
 
 Netscape Navigator 1.0 was developed in 1994 by a team led by Marc Andreessen, who later went on to found Andreessen Horowitz
 
@@ -60,7 +60,7 @@ The name SSL coined by Netscape for this new protocol had to change after SSLv3 
 
 From there to today, adoption of SSL/TLS, and with that, the internet PKI was slowly but surely gaining traction. While in 1994 there were only four trusted certificates, today we're looking at a total of more than [3,600 known certificates](https://censys.io/certificates?q=validation.nss.valid%3A+true+AND+parsed.extensions.basic_constraints.is_ca%3A+true) with around 72% percent of all Internet traffic being transmitted in encrypted form. It has become a commodity.
 
-![alt_text](images/blog/Netscape-and1.png "image_tooltip")
+![](../assets/img/blog/Netscape-and1.png)
 
 In today's Internet, setting up a domain and securing it with PKI is straightforward - in some cases, fully automatic. 
 
@@ -68,7 +68,7 @@ This wide availability of trusted third party certificates has allowed the web t
 
 Oversight and governance of these certificates is largely a manual task across the whole Internet. Misuse of trusted certificates, as well as industrial espionage, are on the rise. To fight this angle of attack, new certificates are being issued for shorter and shorter validity periods, but this increases the maintenance efforts on the owner's side who want to protect their communication. The recent US government shutdown showcased that again. During the relatively short shutdown period, multiple US government websites became effectively unprotected because the current Internet PKI system forced a renewal action, but [operators we're not able to renew the short lived certificates during a government freeze](https://news.netcraft.com/archives/2019/01/16/manufacturing-gov-and-white-house-security-suffer-under-u-s-shutdown.html).
 
-![alt_text](images/blog/Netscape-and2.png "image_tooltip")
+![](../assets/img/blog/Netscape-and2.png)
 
 The Internet PKI as introduced by Netscape was an amazing achievement. It started the widespread adoption of secure communications.  This achievement is even more impressive given that this type of distributed trust system, now spanning thousands of organizations, was developed years before blockchain based consensus was invented. However, the system is clearly showing it's age. Having over 3,600 copies of what essentially are master keys around the globe doesn't scale, and more importantly, does not sufficiently guarantee security anymore. This brings us back to the headline. Every single one of these certificates can be used to issue valid certificates for all domain names worldwide, and [any](https://www.esecurityplanet.com/network-security/symantec-issues-fraudulent-google-ssl-cert.html) [one](https://www.securityweek.com/lets-encrypt-issues-15000-fraudulent-paypal-certificates-used-cybercrime) of them [might do so in order to tap into your traffic at any time](https://www.zdnet.com/article/indian-government-agency-issues-fake-google-certificates/). Your browser, your operating system or the operating system of your IoT devices will not be able to tell the difference, because all these certificates are equally valid, [yet you might be compromised](https://news.netcraft.com/archives/2014/02/12/fake-ssl-certificates-deployed-across-the-internet.html).
 

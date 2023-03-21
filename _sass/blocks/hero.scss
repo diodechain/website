@@ -3,6 +3,7 @@
    ========================================================================== */
 .hero {
   padding: 152px 0 68px;
+  margin-top: -100px;
   margin-bottom: 80px;
   color: white;
   position: relative;
@@ -11,12 +12,14 @@
   background-repeat: no-repeat;
   background-size: 1px 1px;
   @include media-breakpoint-up(md) {
+    margin-top: -120px;
     padding-bottom: 98px;
     margin-bottom: 110px;
   }
   @include media-breakpoint-up(xl) {
     padding-top: 219px;
     padding-bottom: 113px;
+    margin-top: -170px;
     margin-bottom: 180px;
   }
 

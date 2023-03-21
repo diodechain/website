@@ -40,6 +40,7 @@ GEM
       webrick (~> 1.7)
     jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
+    jekyll-paginate (1.1.0)
     jekyll-redirect-from (0.16.0)
       jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (2.2.0)
@@ -78,6 +79,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  jekyll-paginate
   jekyll-redirect-from
   minima!
 

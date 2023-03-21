@@ -1,0 +1,147 @@
+/* ==========================================================================
+   POST
+   ========================================================================== */
+.post {
+  margin-bottom: 3em;
+
+  &__image {
+    max-width: 1155px;
+    margin: 0 0 40px;
+    //background: #d9d9d9;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 60px;
+    }
+    @include media-breakpoint-up(lg) {
+    }
+    @include media-breakpoint-up(xl) {
+      margin-left: -10px;
+    }
+
+    img {
+      //width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      @include media-breakpoint-up(xl) {
+        margin: 0;
+      }
+    }
+  }
+
+  &__header {
+    margin-bottom: 3em;
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__title {
+    margin-bottom: .5em;
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 0;
+    font-size: 1.137em;
+    line-height: 1em;
+    font-weight: bold;
+  }
+
+  &__content {
+    p, ul, ol, dl {
+      margin-bottom: 1.25em;
+    }
+
+    h1, h2 {
+      font-size: 1.91em;
+      line-height: 1.25em;
+    }
+    h3 {
+      font-size: 1.137em;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.5em;
+      margin-bottom: .5em;
+    }
+    h3, h4, h5, h6 {
+      @include media-breakpoint-up(xl) {
+        margin-top: 2em;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+
+    iframe {
+      margin: 0 auto 1.5em;
+      display: block;
+    }
+
+    hr {
+      margin: 40px 0;
+      @include media-breakpoint-up(md) {
+        margin: 60px 0;
+      }
+      @include media-breakpoint-up(xl) {
+        margin: 80px 0;
+      }
+    }
+
+    div.highlight {
+      border-radius: 5px;
+      margin: 0 auto 2em;
+      padding: 10px;
+      font-size: 14px;
+      overflow: auto;
+      background-color: #eee;
+      pre {
+        margin: 0;
+      }
+    }
+
+    code.highlighter-rouge {
+      border-radius: 5px;
+      margin: 0 auto 2em;
+      padding: 10px;
+      display: block;
+      font-size: 14px;
+      background-color: #eee
+    }
+
+    > * {
+      &:first-child {margin-top: 0;}
+      &:last-child {margin-bottom: 0;}
+    }
+  }
+
+  &__tags {
+    padding: 0;
+    margin: 3em 0 0 .6em;
+    font-size: 1.137em;
+    line-height: 1.15em;
+    font-weight: 600;
+    list-style: none;
+    position: relative;
+
+    @include media-breakpoint-up(xl) {
+      padding-bottom: 3.32em;
+      margin-top: 0;
+      &::before {
+        @include pseudo;
+        width: 76px;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: $color-orange;
+      }
+    }
+  }
+}

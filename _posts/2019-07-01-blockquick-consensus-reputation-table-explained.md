@@ -33,7 +33,7 @@ Each miner will be represented in the consensus reputation table with 2 items: t
 
 BlockQuick Consensus Reputation Table Example
 
-![alt_text](images/blog/Blockquick-RT1.png "image_tooltip"){: .center-block }
+![](images/blog/Blockquick-RT1.png){: .center-block }
 
 The proposed light client protocol establishes a reputation system on the mining nodes in the network. The reputation of each mining node corresponds directly to the percentage of blocks that each mining node contributed compared to all mining nodes in a given time frame. The time frame is the consensus group’s history length (i.e. the last 100 blocks as illustrated in the paper).
 
@@ -45,13 +45,13 @@ It’s the percentage of the total computational power during the last 100 block
 
 Consensus Reputation Table based on the data from the Etherscan website
 
-![alt_text](images/blog/Blockquick-RT2.png "image_tooltip"){: .center-block }
+![](images/blog/Blockquick-RT2.png){: .center-block }
 
 So, what happens when an IoT device wants to validate a new block? The device will validate the cryptographic signature of the miners, and then it will compare these signatures with the known miner identities in the already established consensus reputation table. The new block would only be accepted by the client if the block receives a consensus share score of >50%; the client would turn down a chain if the total consensus share score is lower than 50%.
 
 Consensus Reputation Table in pie chart format based on the data from the Etherscan website
 
-![alt_text](images/blog/Blockquick-RT3.png "image_tooltip"){: .center-block }
+![](images/blog/Blockquick-RT3.png){: .center-block }
 
 With BlockQuick, the client will look at how the devices iterate the blocks and will run a slow update mechanism. So, instead of complying with the longest chain rule, BlockQuick will be running a reputation check in order to ensure that the client is accepting only the blocks with >50% reputation scores.
 

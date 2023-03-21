@@ -1,6 +1,7 @@
 ---
 title: Pricing
 layout: new
+class: header--dark
 permalink: /pricing/
 redirect_from:
 - /pricing/success.html

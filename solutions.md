@@ -1,6 +1,7 @@
 ---
 title: Solutions
 layout: new
+class: header--dark
 permalink: /solutions/
 redirect_from:
 - /products/

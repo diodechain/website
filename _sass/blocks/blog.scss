@@ -1,0 +1,120 @@
+/* ==========================================================================
+   BLOG
+   ========================================================================== */
+.blog {
+  max-width: 802px;
+  margin-bottom: 62px;
+
+  &__article {
+    border-radius: 30px;
+    margin-bottom: 68px;
+    position: relative;
+    font-size: 17px;
+    background: $color-orange;
+  }
+
+  &__header {
+    padding: 30px 20px 27px;
+    @include media-breakpoint-up(md) {
+      padding-top: 50px;
+      padding-right: 120px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+  }
+
+  &__category {
+    margin-bottom: 0;
+  }
+
+  &__date {
+    margin-top: 5px;
+    margin-bottom: 0;
+    display: flex;
+    font-size: 15px;
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+      display: block;
+      font-size: 17px;
+      line-height: 30px;
+      position: absolute;
+      top: 54px;
+      right: 48px;
+      text-align: right;
+    }
+
+    @include media-breakpoint-down(md) {
+      .date {margin-right: 10px;}
+    }
+  }
+
+  &__image {
+    padding: 0;
+    margin: 0;
+    display: block;
+    background: #d9d9d9;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 480px;
+      //height: 327px !important;
+      display: block;
+      object-fit: cover;
+      object-position: top;
+      @include user-select;
+    }
+  }
+
+  &__content {
+    padding: 30px 20px;
+    font-size: 15px;
+    line-height: 18px;
+    @include media-breakpoint-up(md) {
+      padding-top: 50px;
+      padding-bottom: 40px;
+      font-size: 17px;
+      line-height: 19px;
+    }
+  }
+
+  &__more {
+    margin-top: 24px;
+    .btn {
+      min-width: 0;
+      padding-left: 0;
+      left: -3px;
+      &::after {filter: brightness(400%);}
+      &:hover, &:focus {
+        &::after {filter: brightness(0%);}
+      }
+    }
+  }
+
+  &__pagination {
+    margin: -5px 20px 0;
+    font-size: 16px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    cursor: default;
+
+    a {
+      padding: 5px;
+      display: block;
+      text-decoration: none;
+      &:hover, &:focus {
+        color: $color-orange;
+      }
+    }
+
+    em {
+      padding: 5px;
+      display: block;
+      font-style: normal;
+    }
+  }
+}

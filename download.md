@@ -1,6 +1,7 @@
 ---
 title: Download
 layout: new
+class: header--dark
 permalink: /download/
 redirect_from:
 - /resources/download/

@@ -1,15 +1,16 @@
 ---
 layout: post
-title: "Fixing Camera Freezes on the Raspberry Pi PiCam Module"
+title: Fixing Camera Freezes on the Raspberry Pi PiCam Module
 date: 2020-09-17 00:43
 categories: [Raspberry Pi]
 tags: [Raspberry Pi]
 author: Dominic Letz
 image: pi/camera1.jpg
-imageclass: top
+redirect_from:
+- /raspberry%20pi/fixing-camera-freezes-on-the-raspberry-pi-picam-module-20261/
 ---
 
-Keeping your Raspberry Pi Video project up and running 24/7 can be quite a task. With the [Diode Client](https://diode.io/download) you have always access from everywhere and can easily share it's video stream. In our previous Raspberry Pi post we focused on the [built-in watchdog](https://diode.io/raspberry%20pi/running-forever-with-the-raspberry-pi-hardware-watchdog-20202/) to keep survive hardware errors. But what do you do if the video fails on you?
+Keeping your Raspberry Pi Video project up and running 24/7 can be quite a task. With the [Diode Client](/download/) you have always access from everywhere and can easily share it's video stream. In our previous Raspberry Pi post we focused on the [built-in watchdog](https://diode.io/raspberry%20pi/running-forever-with-the-raspberry-pi-hardware-watchdog-20202/) to keep survive hardware errors. But what do you do if the video fails on you?
 
 There are different tools you can use to capture pictures from your Raspberry Pi Cam versions 1 and 2. The most common are [raspistill and raspivid](https://www.raspberrypi.org/documentation/raspbian/applications/camera.md). In our demo deployments we're using _raspivid_ to stream the live video to a local port and expose that through [Diode to the public](https://pi-taipei.diode.link/).
 
@@ -21,7 +22,7 @@ raspivid -awb auto -t 0 -w 320 -h 180 -fps 12 \
     -ex auto  -n -l -o tcp://127.0.0.1:3030 -pf baseline
 ```
 
-![alt_text](images/blog/pi/video1.jpg "Live stream")
+![Live stream](../assets/img/blog/pi/video1.jpg)
 
 But sometimes we found that the stream would stop and show error messages like this in the logs:
 
