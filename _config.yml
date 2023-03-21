@@ -1,15 +1,16 @@
-# Settings
+# General Settings
 name: Diode
 title: Diode&#8482; - Reclaim Your Digital Sovereignty
 description: Diode enables digital sovereignty in everyday interactions.
 url: https://diode.io
 
 
+# Theme Settings
 theme: minima
-# Date format (refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this)
 minima:
   date_format: "%b %-d, %Y"
-
+sass:
+  style: compressed
 plugins:
 - jekyll-feed
 - jekyll-paginate
@@ -17,18 +18,13 @@ plugins:
 - jekyll-redirect-from
 - jekyll-sitemap
 
+
+# Path
 path:
   images: "/assets/img/"
   styles: "/assets/css/"
   scripts: "/assets/js/"
   favicon: "/assets/favicon/"
-
-sass:
-  style: compressed
-
-paginate: 10
-paginate_path: "/blog/:num/"
-permalink: "/blog/:title"
 
 
 # Navigation
@@ -116,6 +112,12 @@ security:
   content: "We’re governed by the belief that technology should help humans thrive. It should enhance our ability to operate, create, explore, educate, and innovate - unhindered."
 
 
+# Paginator Settings
+paginate: 10
+paginate_path: "/blog/:num/"
+permalink: "/blog/:title"
+
+
 # Sitemap excludes
 defaults:
 - scope:
@@ -127,7 +129,7 @@ defaults:
   values:
     sitemap: false
 - scope:
-    path: "files/**/*.*"
+    path: "assets/**/*.*"
   values:
     sitemap: false
 - scope:

@@ -35,7 +35,7 @@ As a group of Rebooting the Web of Trust researchers (including Christopher Alle
 
 Furthermore, researchers argued that the logic of key management can be implemented on smart contract of blockchain, and “[Privacy based decentralized Public Key Infrastructure (PKI) implementation using Smart contract in Blockchain](https://isrdc.iitb.ac.in/blockchain/workshops/2017-iitb/papers/paper-11%20-%20Decentralized%20PKI%20in%20blockchain%20and%20Smart%20contract.pdf)” by Sivakumar P and Dr. Kunwar Singh published in 2017 had successfully implemented it.
 
-Nevertheless, blockchain is not perfect yet because it requires a device to synchronize a full copy of consensus data. Today’s Geth (Go-Ethereum) client provides multiple types of sync mode: full sync, fast sync, light sync. The following table is a comparison of different types of sync mode, trust model, bandwidth, and duration for Geth, FlyClient, [BlockQuick](/files/blockquick.pdf), traditional Web PKI client.
+Nevertheless, blockchain is not perfect yet because it requires a device to synchronize a full copy of consensus data. Today’s Geth (Go-Ethereum) client provides multiple types of sync mode: full sync, fast sync, light sync. The following table is a comparison of different types of sync mode, trust model, bandwidth, and duration for Geth, FlyClient, [BlockQuick](../assets/files/blockquick.pdf), traditional Web PKI client.
 
 <div style="overflow: auto"><table>
 <tr>
