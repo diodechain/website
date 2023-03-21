@@ -91,7 +91,7 @@
   }
 
   &__image {
-    margin: 0 auto 40px;
+    margin: 0 auto 30px;
     position: relative;
     display: block;
     @include media-breakpoint-up(md) {
@@ -430,6 +430,21 @@
     > .row {
       display: block !important;
       > .col-lg-6 {width: 100% !important;}
+    }
+  }
+
+  &--next {
+    & + hr {
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+  }
+}
+.stories {
+  hr {
+    @include media-breakpoint-up(lg) {
+      display: none;
     }
   }
 }

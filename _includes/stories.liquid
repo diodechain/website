@@ -7,6 +7,9 @@
         {% for story in stories %}
             <div class="col col-12 col-lg-6">
                 {%- include story.liquid data=story -%}
+                {% if forloop.index == 1 %}
+                    <hr>
+                {% endif %}
             </div>
         {% endfor %}
     </div>

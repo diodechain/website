@@ -246,6 +246,12 @@
       }
     }
 
+    &:last-child {
+      @include media-breakpoint-down(xl) {
+        margin-bottom: 40px;
+      }
+    }
+
     .btn--bordered {
       border-color: white;
       color: white;

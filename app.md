@@ -20,6 +20,7 @@ hero:
 
 ### Story: For Teams
 story:
+  class: story--next
   title: Operate protected
   heading: For teams.
   content: |
