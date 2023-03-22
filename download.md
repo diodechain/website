@@ -1,5 +1,5 @@
 ---
-title: Download
+title: Download Hub
 layout: page
 class: header--dark
 permalink: /download/

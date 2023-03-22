@@ -8,7 +8,7 @@ ready(() => {
   initPopup();
   initTestimonials();
   initPartners();
-  initOS()
+  initOS();
 });
 
 function initPopup() {
@@ -213,4 +213,14 @@ function initOS() {
       target.classList.remove('hide');
     }
   });
+}
+
+function DoTheRedirect(url) {
+  window.location = url;
+}
+
+function ThankYouRedirect(redirect_link) {
+  var RedirectURL = redirect_link;
+  var RedirectPauseSeconds = 3;
+  setTimeout("DoTheRedirect('" + RedirectURL + "')", parseInt(RedirectPauseSeconds * 1000));
 }

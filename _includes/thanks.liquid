@@ -1,0 +1,14 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.thanks %}
+{% endif %}
+
+<section class="thanks" id="thanks">
+    {%- if data.title -%}<h3 class="thanks__title">{{ data.title }}</h3>{% endif %}
+    {% for item in data.items %}
+        <ul class="thanks__list">
+            <li><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></li>
+        </ul>
+    {% endfor %}
+</section>

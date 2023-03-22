@@ -75,6 +75,9 @@ links:
   privacy:
     title: Privacy Policy
     url: "/privacy-policy/"
+  thanks:
+    title: Thank You
+    url: "/download/thanks/"
 
 
 # Social Networks
@@ -134,5 +137,9 @@ defaults:
     sitemap: false
 - scope:
     path: "vesting/**/*.*"
+  values:
+    sitemap: false
+- scope:
+    path: "staging/**/*.*"
   values:
     sitemap: false
