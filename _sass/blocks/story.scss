@@ -283,11 +283,11 @@
 
     &::before {
       @include pseudo;
-      width: 421px;
-      height: 555px;
+      width: 460px;
+      height: 600px;
       display: none;
       position: absolute;
-      top: -66px;
+      top: -100px;
       left: 0;
       z-index: 0;
       background: url('#{$img}/pattern.svg') no-repeat top left;

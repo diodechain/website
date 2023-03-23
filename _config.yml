@@ -115,9 +115,10 @@ security:
   content: "We’re governed by the belief that technology should help humans thrive. It should enhance our ability to operate, create, explore, educate, and innovate - unhindered."
 
 
-# Paginator Settings
+# Blog Settings
 paginate: 10
-paginate_path: "/blog/:num/"
+paginate_path: "/blog/:num"
+tags_path: "/blog/tags"
 permalink: "/blog/:title"
 
 

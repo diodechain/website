@@ -30,7 +30,7 @@
                 {% assign tags_list = page.tags %}
                 {% if tags_list.first[0] == null %}
                     {% for tag in tags_list %}
-                        <li>#&nbsp;{{ tag }}</li>
+                        <li><a href="{{ site.tags_path | relative_url }}#{{ tag | slugify }} ">#&nbsp;{{ tag }}</a></li>
                     {% endfor %}
                 {% else %}
                     {% for tag in tags_list %}

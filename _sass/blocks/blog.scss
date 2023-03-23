@@ -87,9 +87,15 @@
       min-width: 0;
       padding-left: 0;
       left: -3px;
-      &::after {filter: brightness(400%);}
+      &::after {
+        -webkit-filter: brightness(400%);
+        filter: brightness(400%);
+      }
       &:hover, &:focus {
-        &::after {filter: brightness(0%);}
+        &::after {
+          -webkit-filter: brightness(0%);
+          filter: brightness(0%);
+        }
       }
     }
   }

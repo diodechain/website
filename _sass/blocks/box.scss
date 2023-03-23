@@ -148,9 +148,21 @@
       padding: 0;
       color: white;
 
-      &.btn--arrow::after {
-        -webkit-filter: brightness(1000%);
-        filter: brightness(1000%);
+      &.btn--arrow {
+        &::after {
+          -webkit-filter: brightness(1000%);
+          filter: brightness(1000%);
+        }
+
+        @media (hover: hover) {
+          &:hover, &:focus {
+            color: black;
+            &::after {
+              -webkit-filter: brightness(0%);
+              filter: brightness(0%);
+            }
+          }
+        }
       }
     }
   }
@@ -255,6 +267,13 @@
     .btn--bordered {
       border-color: white;
       color: white;
+      transition: none;
+      @media (hover: hover) {
+        &:hover, &:focus {
+          border-color: black;
+          color: black;
+        }
+      }
     }
   }
 
