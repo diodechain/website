@@ -10,7 +10,11 @@
     {% assign class = "" %}
 {% endif %}
 
+{%- if data.animated -%}
+<section class="box{{ class }}" data-aos="fade-up" data-aos-offset="300" data-aos-duration="1000" data-aos-once="true">
+{% else %}
 <section class="box{{ class }}">
+{% endif %}
     <div class="row justify-content-md-center text-center">
         <div class="col col-12 col-lg-6 col-xl-7 col-xxl-6">
             {%- if data.icon -%}<img class="box__icon" src="{{ data.icon | prepend: site.path.images | relative_url }}" height="50" alt="{{ data.title }}">{% endif %}

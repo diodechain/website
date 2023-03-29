@@ -11,6 +11,8 @@ ready(() => {
   initTags();
   initScroll();
   initOS();
+  initReveal();
+  initRedirect();
 });
 
 function initPopup() {
@@ -230,7 +232,7 @@ function initTags() {
 
     window.onscroll = () => {
       if (updating) {
-        return
+        return;
       } else {
         updating = true;
         requestAnimationFrame(handleScroll);
@@ -243,12 +245,24 @@ function initTags() {
     }
     initOffset();
     handleScroll();
-
-    console.log(document.querySelector('.hero').getBoundingClientRect().height);
   }
 }
 
 function initScroll() {
+  const supportsNativeSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+
+  window.scrollToView = (elem) => {
+    if (supportsNativeSmoothScroll) {
+      window.scrollTo({
+        behavior: 'smooth',
+        left: 0,
+        top: elem.getBoundingClientRect().top + window.pageYOffset
+      });
+    } else {
+      elem.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    }
+  }
+
   document.querySelectorAll('.scrollto').forEach((link) => {
     var target = link.getAttribute('href');
     target = target.replaceAll('#', '');
@@ -302,35 +316,17 @@ function initOS() {
   });
 }
 
-function DoTheRedirect(url) {
-  window.location = url;
+function initReveal() {
+  AOS.init();
 }
 
-function ThankYouRedirect(redirect_link) {
-  var RedirectURL = redirect_link;
-  var RedirectPauseSeconds = 3;
-  setTimeout("DoTheRedirect('" + RedirectURL + "')", parseInt(RedirectPauseSeconds * 1000));
-}
-
-const supportsNativeSmoothScroll = 'scrollBehavior' in document.documentElement.style;
-
-function scrollToView(elem) {
-  if (supportsNativeSmoothScroll) {
-    // https://caniuse.com/#feat=mdn-api_window_scrollto
-    // As of publish date of this gist,
-    // this is only supported in 52% browsers,
-    // So, the next section (`else{`) is a fallback
-    window.scrollTo({
-      behavior: 'smooth',
-      left: 0,
-      top: elem.getBoundingClientRect().top + window.pageYOffset
-    });
-  } else {
-    // Supported by 97% of browsers
-    // https://caniuse.com/#feat=scrollintoview
-    elem.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+function initRedirect() {
+  window.DoTheRedirect = (url) => {
+    window.location = url;
+  }
+  window.ThankYouRedirect = (redirect_link) => {
+    var RedirectURL = redirect_link;
+    var RedirectPauseSeconds = 3;
+    setTimeout("DoTheRedirect('" + RedirectURL + "')", parseInt(RedirectPauseSeconds * 1000));
   }
 }
-
-// Usage
-// scrollToView(document.getElementById('abc'));

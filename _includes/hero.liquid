@@ -16,20 +16,31 @@
     {% assign buttons = " hero__content-buttons" %}
 {% endif %}
 
+{%- if data.animated -%}
+<header class="hero{{ class }}" style="background-image:url('{{ image }}');" data-aos="fade-down" data-aos-duration="1200" data-aos-easing="ease-out" data-aos-once="true">
+{% else %}
 <header class="hero{{ class }}" style="background-image:url('{{ image }}');">
+{% endif %}
     <div class="row">
         <div class="col col-12 col-lg-10">
+            {%- if data.animated -%}
+            <div class="hero__content{{ buttons }}" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1500" data-aos-easing="ease-out" data-aos-once="true">
+            {% else %}
             <div class="hero__content{{ buttons }}">
-                {%- if data.title -%}<div class="hero__title">{{ data.title | markdownify }}</div>{% endif %}
-                {%- if data.heading -%}<h1 class="hero__heading">{{ data.heading }}{%- if data.small -%}<small class="hero__small">{{ data.small }}</small>{% endif %}</h1>{% endif %}
-                {%- if data.subheading -%}<div class="hero__subheading">{{ data.subheading | markdownify }}{%- if data.scroll -%}<a class="hero__scroll scrollto" href="{{ data.scroll }}"></a>{% endif %}</div>{% endif %}
-                {%- if data.buttons -%}
-                    <div class="hero__buttons">
-                        {% for button in data.buttons %}
-                            <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}">{{ button.title }}</a>
-                        {% endfor %}
-                    </div>
-                {% endif %}
+            {% endif %}
+            {%- if data.title -%}
+                <div class="hero__title">{{ data.title | markdownify }}</div>{% endif %}
+            {%- if data.heading -%}
+                <h1 class="hero__heading">{{ data.heading }}{%- if data.small -%}<small class="hero__small">{{ data.small }}</small>{% endif %}</h1>{% endif %}
+            {%- if data.subheading -%}
+                <div class="hero__subheading">{{ data.subheading | markdownify }}{%- if data.scroll -%}<a class="hero__scroll scrollto" href="{{ data.scroll }}"></a>{% endif %}</div>{% endif %}
+            {%- if data.buttons -%}
+                <div class="hero__buttons">
+                    {% for button in data.buttons %}
+                        <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}">{{ button.title }}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
             </div>
         </div>
     </div>

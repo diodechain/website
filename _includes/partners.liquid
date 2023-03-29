@@ -10,6 +10,11 @@
     {% assign class = "" %}
 {% endif %}
 
+{%- if data.animated -%}
+<section class="partners" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-once="true">
+{% else %}
+    <section class="partners">
+{% endif %}
 <section class="partners">
     <div class="row">
         <div class="col">

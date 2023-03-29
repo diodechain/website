@@ -10,6 +10,7 @@ redirect_from:
 ### Hero
 hero:
   class: hero--homepage
+  animated: true
   heading: Diode is Zero Trust For Teams.
   subheading: For operations requiring both agility and security.
   buttons:
@@ -23,6 +24,7 @@ hero:
 
 ### Headline below Hero
 headline:
+  animated: true
   title: Today’s digital security dilemma.
   text: Today’s collaboration and connectivity tools require self-hosting or third-party involvement - burdening teams with cost, complexity and security compromises. <br>Diode has a better way.
   buttons:
@@ -34,6 +36,7 @@ headline:
 ### Story: What is Diode
 app:
   class: "story--homepage"
+  animated: true
   title: What is Diode
   heading: A zero trust connectivity network–built for teams.
   content: |
@@ -50,6 +53,7 @@ app:
 
 ### Story: Fort Knox protection
 protected:
+  animated: true
   title: Fort Knox protection
   heading: For teams just like yours.
   content: |
@@ -76,6 +80,7 @@ protected:
 
 ### Story: From anywhere, whenever
 anywhere:
+  animated: true
   title: From anywhere, whenever
   heading: Protected no matter what.
   content: |
@@ -95,6 +100,7 @@ anywhere:
 ### Box: What teams are saying
 testimonials:
   class: box--testimonials
+  animated: true
   title: What teams are saying
   quotes:
   - quote: Diode is an amazing technology and product - it unlocks our software for use in regulated and sensitive environments.
@@ -116,6 +122,7 @@ testimonials:
 ### Box: Our solutions
 solutions:
   class: box--orange
+  animated: true
   title: No third parties means Zero&nbsp;Leakage&trade;
   heading: Our solutions.
   solutions:
@@ -145,6 +152,7 @@ solutions:
 ### Box: Our Network
 our-network:
   class: "box--network"
+  animated: true
   icon: icons/network.svg
   title: A better way
   heading: Our network.
@@ -158,6 +166,7 @@ our-network:
 ### Box: How Diode works
 how-works:
   class: "box--orange box--how"
+  animated: true
   title: Behind the scenes
   heading: How Diode works.
   content: |
@@ -170,6 +179,7 @@ how-works:
 
 ### Partners
 partners:
+  animated: true
   title: World-changing collaborations
   heading: Our Partners.
   logos:

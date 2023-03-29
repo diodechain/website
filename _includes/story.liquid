@@ -18,7 +18,15 @@
 
 <section class="story{{ class }}">
     <div class="row align-items-lg-center{{ mirrored }}">
+        {%- if data.animated -%}
+            {%- if data.mirrored -%}
+                <div class="col col-12 col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300" data-aos-delay="200" data-aos-easing="ease-out" data-aos-once="true">
+            {% else %}
+                <div class="col col-12 col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="300" data-aos-delay="200" data-aos-easing="ease-out" data-aos-once="true">
+            {% endif %}
+        {% else %}
         <div class="col col-12 col-lg-6">
+        {% endif %}
             {%- if data.image -%}
                 <figure class="story__image {{ data.image.class }}"><img src="{{ data.image.src | prepend: site.path.images | relative_url }}" alt="{{ data.image.alt }}"></figure>
             {% endif %}
@@ -39,7 +47,15 @@
                 </div>
             {% endif %}
         </div>
+        {%- if data.animated -%}
+            {%- if data.mirrored -%}
+                <div class="col col-12 col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="300" data-aos-easing="ease-out" data-aos-once="true">
+            {% else %}
+                <div class="col col-12 col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300" data-aos-easing="ease-out" data-aos-once="true">
+            {% endif %}
+        {% else %}
         <div class="col col-12 col-lg-6">
+        {% endif %}
             <div class="story__content">
                 {%- if data.title -%}<p class="story__title">{{ data.title }}</p>{% endif %}
                 {%- if data.heading -%}<h2 class="story__heading">{{ data.heading }}{%- if data.icon -%}<img class="story__icon" src="{{ data.icon | prepend: site.path.images | relative_url }}" height="50" alt="">{% endif %}</h2>{% endif %}
