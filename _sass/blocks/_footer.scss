@@ -171,6 +171,7 @@
     width: 100%;
     max-width: 283px;
     padding-top: 20px;
+    position: relative;
     display: block;
     @include media-breakpoint-up(md) {
       padding-top: 0;
@@ -202,6 +203,22 @@
     }
     .btn {
       cursor: pointer;
+    }
+
+    .scrollto {
+      width: 54px;
+      height: 39px;
+      padding: 5px;
+      border-radius: 20px;
+      display: block;
+      position: absolute;
+      top: -5px;
+      right: 0;
+      font: 16px/30px $font-code;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      background: $color-orange;
     }
   }
 

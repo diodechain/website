@@ -1,0 +1,29 @@
+{%- if paginator.posts -%}
+    {% assign posts = paginator.posts %}
+{% endif %}
+
+<div class="blog">
+    <div class="row flex-lg-row-reverse">
+        <div class="col col-12 col-lg-4 col-xl-3 col-xxl-4">
+            <div class="blog__tags">
+                <ul class="blog__tags-list">
+                    {% for tag in site.tags %}
+                        <li><a href="#{{ tag[0] | slugify }}">#{{ tag[0] }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="col col-12 col-lg-8 col-xl-9 col-xxl-8">
+            <div class="blog__space">
+                {% for tag in site.tags %}
+                    <div class="blog__taglist">
+                        <h3 id="{{ tag[0] | slugify }}" class="blog__taglist-title"><span>#{{ tag[0] }}</span> <var>[{{ tag[1] | size }}]</var></h3>
+                        {% for post in tag[1] %}
+                            {%- include blog-article.liquid data=post -%}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

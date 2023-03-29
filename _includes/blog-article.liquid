@@ -1,0 +1,31 @@
+{% assign post = page[include.data] %}
+
+<article class="blog__article">
+    <header class="blog__header">
+        {% if post.title %}
+            <h3 class="blog__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        {% endif %}
+        {% if post.tags %}
+            <p class="blog__category">{{ post.tags | first }}</p>
+        {% endif %}
+        {% if post.date %}
+            <div class="blog__date">
+                <div class="date">{{ post.date | date: "%d" }} {{ post.date | date: "%b" }}</div>
+                <div class="time">{{ post.date | date: "%H:%M" }}</div>
+            </div>
+        {% endif %}
+    </header>
+
+    {% if post.image %}
+        <figure class="blog__image {{ post.imageclass }}">
+            <a href="{{ post.url | relative_url }}">
+                <img src="{{ post.image | prepend: 'blog/' | prepend: site.path.images | relative_url }}" alt="{{ post.title }}">
+            </a>
+        </figure>
+    {% endif %}
+
+    <div class="blog__content">
+        {{ post.content | strip_html | truncatewords: 75 }}
+        <div class="blog__more"><a href="{{ post.url | relative_url }}" class="btn btn--arrow">Read More</a></div>
+    </div>
+</article>

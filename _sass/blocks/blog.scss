@@ -2,8 +2,9 @@
    BLOG
    ========================================================================== */
 .blog {
-  max-width: 802px;
   margin-bottom: 62px;
+  position: relative;
+  &::after {@include clearfix;}
 
   &__article {
     border-radius: 30px;
@@ -121,6 +122,117 @@
       padding: 5px;
       display: block;
       font-style: normal;
+    }
+  }
+
+  &__taglist {
+    margin-bottom: 100px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 120px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 170px;
+    }
+
+    &-title {
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 40px;
+        font-size: 35px;
+        line-height: 40px;
+      }
+
+      &::before {
+        @include pseudo;
+        height: 1px;
+        border-top: 1px dashed $color-dark;
+        margin-top: 10px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+      }
+
+      span {
+        padding-right: 10px;
+        display: block;
+        position: relative;
+        z-index: 5;
+        background: white;
+      }
+
+      var {
+        padding-left: 10px;
+        display: block;
+        font-style: normal;
+        position: relative;
+        z-index: 5;
+        background: white;
+        cursor: default;
+      }
+    }
+  }
+
+  &__tags {
+    height: 100%;
+    margin-bottom: 4em;
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+      width: 330px;
+      height: 100vh;
+      padding: 1em 0 5em;
+      margin-bottom: 0;
+      &-fixed {
+        position: fixed;
+        top: 0;
+        &-bottom {
+          position: absolute;
+          top: auto;
+          bottom: 0;
+        }
+      }
+
+      &::before {
+        @include pseudo;
+        width: 76px;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        bottom: 1.68em;
+        background: $color-orange;
+      }
+    }
+    @include media-breakpoint-up(xl) {
+      width: 255px;
+    }
+    @include media-breakpoint-up(xxl) {
+      width: 380px;
+    }
+
+    &-list {
+      padding: 0;
+      margin: 0;
+      font-size: 1em;
+      line-height: 1.15em;
+      font-weight: 600;
+      list-style: none;
+      position: relative;
+      @include media-breakpoint-up(lg) {
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      @include media-breakpoint-up(xl) {
+        font-size: 1em;
+      }
+      @include media-breakpoint-up(xxl) {
+        font-size: 1.137em;
+      }
     }
   }
 }

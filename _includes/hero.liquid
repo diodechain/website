@@ -22,7 +22,7 @@
             <div class="hero__content{{ buttons }}">
                 {%- if data.title -%}<div class="hero__title">{{ data.title | markdownify }}</div>{% endif %}
                 {%- if data.heading -%}<h1 class="hero__heading">{{ data.heading }}{%- if data.small -%}<small class="hero__small">{{ data.small }}</small>{% endif %}</h1>{% endif %}
-                {%- if data.subheading -%}<div class="hero__subheading">{{ data.subheading | markdownify }}{%- if data.scroll -%}<a class="hero__scroll" href="{{ data.scroll }}"></a>{% endif %}</div>{% endif %}
+                {%- if data.subheading -%}<div class="hero__subheading">{{ data.subheading | markdownify }}{%- if data.scroll -%}<a class="hero__scroll scrollto" href="{{ data.scroll }}"></a>{% endif %}</div>{% endif %}
                 {%- if data.buttons -%}
                     <div class="hero__buttons">
                         {% for button in data.buttons %}

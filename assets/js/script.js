@@ -8,6 +8,8 @@ ready(() => {
   initPopup();
   initTestimonials();
   initPartners();
+  initTags();
+  initScroll();
   initOS();
 });
 
@@ -173,6 +175,91 @@ function initPartners() {
   });
 }
 
+function initTags() {
+  if (document.querySelector('.blog__tags')) {
+
+    const tags = document.querySelector('.blog__tags');
+    const space = document.querySelector('.blog__space');
+
+    const fixedClass = 'blog__tags-fixed';
+    const fixedClassBottom = 'blog__tags-fixed-bottom';
+
+    let offsetTop = 526;
+    let offsetbottom = 1130;
+
+    const initOffset = () => {
+      offsetTop = 526;
+      offsetbottom = 1130;
+      if (window.innerWidth >= 1200) {
+        offsetTop = 735;
+        offsetbottom = 870;
+      }
+    }
+
+    let allHeight = space.getBoundingClientRect().height + tags.getBoundingClientRect().height - offsetbottom;
+    setTimeout(function () {
+      allHeight = space.getBoundingClientRect().height + tags.getBoundingClientRect().height - offsetbottom;
+    }, 1000);
+
+    let updating = false
+    const handleScroll = () => {
+      if (window.scrollY >= offsetTop || window.pageYOffset >= offsetTop) {
+        console.log(offsetTop, allHeight);
+        tags.classList.add(fixedClass);
+        console.log(window.scrollY, allHeight)
+        if (window.scrollY >= allHeight || window.pageYOffset >= allHeight) {
+          tags.classList.add(fixedClassBottom);
+        } else {
+          tags.classList.remove(fixedClassBottom);
+        }
+      } else {
+        tags.classList.remove(fixedClass);
+      }
+      updating = false;
+    }
+
+    tags.querySelectorAll('.blog__tags-list a').forEach((link) => {
+      var target = link.getAttribute('href');
+      target = target.replaceAll('#', '');
+      target = document.getElementById(target);
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        scrollToView(target);
+      }, false);
+    });
+
+    window.onscroll = () => {
+      if (updating) {
+        return
+      } else {
+        updating = true;
+        requestAnimationFrame(handleScroll);
+      }
+    }
+
+    window.onresize = () => {
+      initOffset();
+      handleScroll();
+    }
+    initOffset();
+    handleScroll();
+
+    console.log(document.querySelector('.hero').getBoundingClientRect().height);
+  }
+}
+
+function initScroll() {
+  document.querySelectorAll('.scrollto').forEach((link) => {
+    var target = link.getAttribute('href');
+    target = target.replaceAll('#', '');
+    target = document.getElementById(target);
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      scrollToView(target);
+    }, false);
+  });
+}
+
 function initOS() {
   let OSName = 'Unknown OS';
   if (navigator.userAgent.indexOf('Win') !== -1) {
@@ -224,3 +311,26 @@ function ThankYouRedirect(redirect_link) {
   var RedirectPauseSeconds = 3;
   setTimeout("DoTheRedirect('" + RedirectURL + "')", parseInt(RedirectPauseSeconds * 1000));
 }
+
+const supportsNativeSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+
+function scrollToView(elem) {
+  if (supportsNativeSmoothScroll) {
+    // https://caniuse.com/#feat=mdn-api_window_scrollto
+    // As of publish date of this gist,
+    // this is only supported in 52% browsers,
+    // So, the next section (`else{`) is a fallback
+    window.scrollTo({
+      behavior: 'smooth',
+      left: 0,
+      top: elem.getBoundingClientRect().top + window.pageYOffset
+    });
+  } else {
+    // Supported by 97% of browsers
+    // https://caniuse.com/#feat=scrollintoview
+    elem.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+  }
+}
+
+// Usage
+// scrollToView(document.getElementById('abc'));
