@@ -3,8 +3,6 @@ title: Join Zone
 layout: page
 class: header--dark
 permalink: /joinzone/
-redirect_from:
-- /joinzone/
 
 ### Hero
 hero:
