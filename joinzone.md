@@ -2,7 +2,7 @@
 title: Join Zone
 layout: page
 class: header--dark
-permalink: /terms/
+permalink: /joinzone/
 redirect_from:
 - /joinzone/
 
