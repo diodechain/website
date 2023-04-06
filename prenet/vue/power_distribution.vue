@@ -91,12 +91,12 @@
               </div>
             </div>
             <div class="doclet">
-              <h2>BNS (Active)</h2>
+              <h2>BNS</h2>
               <div class="link">
                 <router-link
                   :class="'no-decoration'"
                   :to="'/dns'"
-                ><% (Object.keys(names).length || '...') + ' (' + activeDNSCount + ')' %></router-link>
+                ><% (Object.keys(names).length || '...') %></router-link>
               </div>
             </div>
             <div class="doclet">
