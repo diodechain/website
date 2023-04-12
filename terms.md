@@ -8,6 +8,7 @@ redirect_from:
 
 ### Hero
 hero:
+  animated: true
   class: hero--right
   heading: Master Services Agreement
   subheading: This Master Services Agreement is effective as of March 10, 2021.

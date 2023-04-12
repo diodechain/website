@@ -6,10 +6,20 @@
 
 <section class="features">
     {%- if data.image -%}
-        <figure class="features__image {{ data.image.class }}"><img src="{{ data.image.src | prepend: site.path.images | relative_url }}" alt="{{ data.image.alt }}"></figure>
+        {%- if data.animated -%}
+        <figure class="features__image {{ data.image.class }}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out" data-aos-once="true">
+        {% else %}
+        <figure class="features__image {{ data.image.class }}">
+        {% endif %}
+            <img src="{{ data.image.src | prepend: site.path.images | relative_url }}" alt="{{ data.image.alt }}">
+        </figure>
         <hr>
     {% endif %}
+    {%- if data.animated -%}
+    <div class="row align-items-lg-center" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out" data-aos-once="true">
+    {% else %}
     <div class="row align-items-lg-center">
+    {% endif %}
         <div class="col col-12 col-lg-6">
             {%- if data.heading -%}<h2 class="features__heading">{{ data.heading }}</h2>{% endif %}
         </div>
@@ -27,7 +37,11 @@
         {% for entry in data.list %}
             {% capture thecycle %}{% cycle "odd", "even" %}{% endcapture %}
             {% if thecycle == "odd" %}<div class="row">{% endif %}
+            {%- if data.animated -%}
+            <div class="col col-12 col-lg-6" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out" data-aos-once="true">
+            {% else %}
             <div class="col col-12 col-lg-6">
+            {% endif %}
                 {%- if entry.title -%}
                     <article class="features__entry">
                         <h4 class="features__title">{{ entry.title }}</h4>

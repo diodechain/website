@@ -101,7 +101,7 @@ textarea.form-control {
       position: relative;
       left: 11px;
     }
-    &::after {
+    &::before, &::after {
       @include pseudo;
       width: 13px;
       height: 14px;
@@ -109,6 +109,7 @@ textarea.form-control {
       display: inline-block;
       vertical-align: middle;
       position: relative;
+      z-index: 2;
       top: -1px;
       background: url($icon-arrow) no-repeat center center;
       background-size: contain;
@@ -122,6 +123,13 @@ textarea.form-control {
         height: 16px;
         margin-left: 6px;
       }
+    }
+    &::before {
+      z-index: 1;
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 50%;
     }
     @media (hover: hover) {
       &:hover, &:focus {

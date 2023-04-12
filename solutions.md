@@ -18,6 +18,7 @@ redirect_from:
 
 ### Hero
 hero:
+  animated: true
   heading: Connect securely with our solutions.
   subheading: For teams who care about the security of their operations from the ground up.
   image: hero/solutions.webp
@@ -25,6 +26,7 @@ hero:
 
 ### Solution: App
 app:
+  animated: true
   class: story--app
   title: Connecting People
   heading: App
@@ -50,6 +52,7 @@ app:
 
 ### Solution: CLi
 cli:
+  animated: true
   title: Connecting Things
   heading: CLI
   icon: icons/cli.svg
@@ -71,6 +74,7 @@ cli:
 
 ### Solution: Vault
 vault:
+  animated: true
   title: Ensuring Availability
   heading: Vault
   icon: icons/vault.svg
@@ -91,6 +95,7 @@ vault:
 
 ### Solution: Network
 network:
+  animated: true
   title: Upgrading the Internet
   heading: Network
   icon: icons/network.svg

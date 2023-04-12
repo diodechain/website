@@ -5,13 +5,13 @@
 {% endif %}
 
 <section class="pricing" id="{{ include.id }}">
-    <header class="pricing__header">
+    <header class="pricing__header" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out" data-aos-once="true">
         {%- if data.title -%}<p class="pricing__title">{{ data.title }}</p>{% endif %}
         {%- if data.heading -%}<h2 class="pricing__heading">{{ data.heading }}</h2>{% endif %}
     </header>
 
     {%- if data.include -%}
-        <dl class="pricing__include">
+        <dl class="pricing__include" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out" data-aos-once="true">
             <dd>{{ data.include }}:</dd>
             <dt>
                 <ul>
@@ -28,13 +28,13 @@
     {% endif %}
 
     <input id="switch" class="pricing__checkbox" type="checkbox"/>
-    <div class="pricing__switch">
+    <div class="pricing__switch" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out" data-aos-once="true">
         <label for="switch"></label>
         <span class="yearly">Yearly</span>
         <span class="monthly">Monthly</span>
     </div>
 
-    <div class="pricing__plans">
+    <div class="pricing__plans" data-aos="fade-up" data-aos-offset="500" data-aos-duration="1000" data-aos-easing="ease-out" data-aos-once="true">
         <div class="row justify-content-center">
             {% for plan in data.plans %}
                 <div class="col col-12 col-md-4">

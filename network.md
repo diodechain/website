@@ -9,6 +9,7 @@ redirect_from:
 
 ### Hero
 hero:
+  animated: true
   class: hero--rounded
   heading: Build on top&nbsp;of&nbsp;Diode Network.
   subheading: Expand your team’s security perimeter.
@@ -20,7 +21,8 @@ hero:
 
 ### Story: Security and Access.
 story:
-  class: "story--dash"
+  animated: true
+  class: story--dash
   title: Zero trust data fabric
   heading: Security and Access.
   content: |
@@ -39,6 +41,7 @@ story:
 
 ### Features
 features:
+  animated: true
   list:
   - title: Automated Security
     content: |
@@ -71,6 +74,7 @@ features:
 
 ### Box: Our solutions
 solutions:
+  animated: true
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
   heading: Our solutions.

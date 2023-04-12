@@ -9,6 +9,7 @@ redirect_from:
 
 ### Hero
 hero:
+  animated: true
   class: hero--right
   heading: Download Hub
   small: Your spot for downloading all of our security solutions.
@@ -19,6 +20,7 @@ hero:
 
 ### Download: App
 app:
+  animated: true
   title: For your people
   heading: Get the App
   subheading: Chat, files, assets, and more - replace your leaky team collaboration app with Diode.
@@ -38,6 +40,7 @@ popup:
 
 ### Download: CLI
 cli:
+  animated: true
   title: For your assets
   heading: Get the CLI
   subheading: Developers and IT admins can enable zero trust remote access for devices and servers so that the right people and systems can interact.
@@ -50,6 +53,7 @@ cli:
 
 ### Download: Network
 network:
+  animated: true
   title: For your enterprise
   heading: Join the Network
   subheading: You can deepen the security of your zero trust perimeters by hosting a node.

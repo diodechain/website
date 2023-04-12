@@ -7,6 +7,7 @@ permalink: /solutions/vault/
 
 ### Hero
 hero:
+  animated: true
   class: hero--rounded
   heading: Extend team reach with Diode Vault.
   subheading: A small but powerful tool that helps keep your remote teams connected.
@@ -15,6 +16,7 @@ hero:
 
 ### Story: Set and forget
 story:
+  animated: true
   title: Set and forget
   heading: Always on. Always.
   content: |
@@ -36,6 +38,7 @@ story:
 
 ### Box: Our solutions
 solutions:
+  animated: true
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
   heading: Our solutions.

@@ -10,6 +10,7 @@ redirect_from:
 
 ### Hero
 hero:
+  animated: true
   class: hero--rounded
   heading: How Diode works.
   subheading: A look at what makes Diode tick.
@@ -18,6 +19,7 @@ hero:
 
 ### Story: Zero Leakage
 story:
+  animated: true
   class: "story--dash"
   title: No third parties
   heading: Zero Leakage.
@@ -29,6 +31,7 @@ story:
 
 ### Features: The moving pieces
 features:
+  animated: true
   heading: The moving pieces.
   actions:
   - title: BROWSE THE NETWORK EXPLORER

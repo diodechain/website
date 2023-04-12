@@ -9,12 +9,14 @@ redirect_from:
 
 ### Hero
 hero:
+  animated: true
   class: hero--right
   heading: Plans and pricing.
   subheading: Start today at the level you need.
   image: hero/pricing.webp
 
 pricing:
+  animated: true
   title: E2EE from the core
   heading: A fit for every team.
 
@@ -86,6 +88,7 @@ pricing:
 
 
 note:
+  animated: true
   subheading: |
     No purchase is necessary to download and start collaborating - every Zone is free when first created, and can be later upgraded by ordering one of the plans above.
     

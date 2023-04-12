@@ -149,18 +149,13 @@
       color: white;
 
       &.btn--arrow {
-        &::after {
-          -webkit-filter: brightness(1000%);
-          filter: brightness(1000%);
-        }
-
+        transition: color $effect;
+        &::before {display: inline-block;opacity: 1;-webkit-filter: brightness(0%);filter: brightness(0%);margin-top: -8px;}
+        &::after {transition: opacity $effect;-webkit-filter: brightness(1000%);filter: brightness(1000%);}
         @media (hover: hover) {
           &:hover, &:focus {
             color: black;
-            &::after {
-              -webkit-filter: brightness(0%);
-              filter: brightness(0%);
-            }
+            &::after {opacity: 0;}
           }
         }
       }
@@ -267,7 +262,7 @@
     .btn--bordered {
       border-color: white;
       color: white;
-      transition: none;
+      transition: border-color $effect, color $effect;
       @media (hover: hover) {
         &:hover, &:focus {
           border-color: black;

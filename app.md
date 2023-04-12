@@ -10,6 +10,7 @@ redirect_from:
 ### Hero
 hero:
   class: hero--rounded hero--smaller
+  animated: true
   heading: Team collaboration on&nbsp;Diode&nbsp;App.
   subheading: Secure collaboration around IT/OT/IP work product.
   buttons:
@@ -20,6 +21,7 @@ hero:
 
 ### Story: For Teams
 story:
+  animated: true
   class: story--next
   title: Operate protected
   heading: For teams.
@@ -39,6 +41,7 @@ story:
 
 ### Features
 features:
+  animated: true
   image:
     src: story/for-teams.webp
   after:
@@ -74,6 +77,7 @@ features:
 
 ### Box: Our solutions
 solutions:
+  animated: true
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
   heading: Our solutions.

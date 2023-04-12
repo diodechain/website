@@ -7,6 +7,7 @@ permalink: /privacy-policy/
 
 ### Hero
 hero:
+  animated: true
   class: hero--right
   heading: Privacy <br>Policy
   subheading: This Privacy Policy is effective as of March 1, 2021.

@@ -13,7 +13,11 @@
 <section class="article{{ class }}">
     <div class="row">
         <div class="col col-12 col-lg-11 col-xl-10">
+            {%- if data.animated -%}
+            <div class="story__content" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out" data-aos-once="true">
+            {% else %}
             <div class="story__content">
+            {% endif %}
                 {%- if data.heading -%}<h3 class="article__heading">{{ data.heading }}</h3>{% endif %}
                 {%- if data.content -%}{{ data.content | markdownify }}{% endif %}
                 {%- if data.buttons -%}

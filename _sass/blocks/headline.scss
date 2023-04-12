@@ -107,9 +107,16 @@
       letter-spacing: 0.0125em;
       position: relative;
 
-      &.btn--arrow::after {
-        -webkit-filter: brightness(1000%);
-        filter: brightness(1000%);
+      &.btn--arrow {
+        transition: color $effect;
+        &::before {display: inline-block;opacity: 1;-webkit-filter: brightness(0%);filter: brightness(0%);}
+        &::after {transition: opacity $effect;-webkit-filter: brightness(1000%);filter: brightness(1000%);}
+        @media (hover: hover) {
+          &:hover, &:focus {
+            color: black;
+            &::after {opacity: 0;}
+          }
+        }
       }
     }
   }

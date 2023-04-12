@@ -5,7 +5,11 @@
 {% endif %}
 
 <section class="story story-app">
+    {%- if data.animated -%}
+    <div class="row" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out" data-aos-once="true">
+    {% else %}
     <div class="row">
+    {% endif %}
         <div class="col col-12">
             <div class="story__content">
                 {%- if data.title -%}<p class="story__title">{{ data.title }}</p>{% endif %}
@@ -17,6 +21,12 @@
                 <figure class="story__image {{ data.image.class }}"><img src="{{ data.image.src | prepend: site.path.images | relative_url }}" alt="{{ data.image.alt }}"></figure>
             {% endif %}
         </div>
+    </div>
+    {%- if data.animated -%}
+    <div class="row" data-aos="fade-up" data-aos-offset="500" data-aos-duration="1000" data-aos-easing="ease-out" data-aos-once="true">
+    {% else %}
+    <div class="row">
+    {% endif %}
         <div class="col col-12 col-lg-7">
             <div class="story__content">
                 {%- if data.content -%}{{ data.content | markdownify }}{% endif %}

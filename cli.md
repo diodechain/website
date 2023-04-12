@@ -9,6 +9,7 @@ redirect_from:
 
 ### Hero
 hero:
+  animated: true
   class: hero--rounded
   heading: Manage assets with Diode CLI.
   subheading: Access and manage servers and OT assets.
@@ -20,6 +21,7 @@ hero:
 
 ### Story: For Assets
 story:
+  animated: true
   title: Precise global access
   heading: For assets.
   content: |
@@ -38,6 +40,7 @@ story:
 
 ### Features
 features:
+  animated: true
   after:
     src: story/world.svg
   list:
@@ -71,6 +74,7 @@ features:
 
 ### Box: Our solutions
 solutions:
+  animated: true
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
   heading: Our solutions.

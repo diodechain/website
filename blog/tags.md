@@ -6,6 +6,7 @@ permalink: /blog/tags/
 
 ### Hero
 hero:
+  animated: true
   class: hero--right
   heading: Tags
   image: hero/blog.webp
