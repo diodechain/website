@@ -25,7 +25,7 @@ hero:
 headline:
   animated: true
   title: Today’s digital security dilemma.
-  text: Today’s collaboration and connectivity tools require self-hosting or third-party involvement - burdening teams with cost, complexity and security compromises. <br>Diode has a better way.
+  text: Today’s collaboration and connectivity tools require self-hosting or third-party involvement - burdening teams with cost, complexity and security compromises. Diode has a better way.
   buttons:
   - title: Find Out More
     class: btn--blank btn--arrow
