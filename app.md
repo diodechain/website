@@ -10,7 +10,7 @@ redirect_from:
 ### Hero
 hero:
   class: hero--rounded hero--smaller
-  animated: false
+  animated: true
   heading: Team collaboration on&nbsp;Diode&nbsp;App.
   subheading: Secure collaboration around IT/OT/IP work product.
   buttons:
