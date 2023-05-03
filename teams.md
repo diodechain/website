@@ -15,7 +15,7 @@ hero:
 
 ### Teams
 teams:
-  animated: true
+  animated: false
   list:
   - title: Remote asset management
     heading: Operational Technology.
