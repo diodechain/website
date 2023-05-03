@@ -26,7 +26,7 @@ story:
   title: Operate protected
   heading: For teams.
   content: |
-    The Diode App creates secure tunnels between your team members with built-in collaboration and dashboarding features. It is a decentralized “local first” solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
+    The Diode App creates secure tunnels between your team members that form a "security perimeter" (a Zone).  Each Zone has built-in collaboration and visualization capabilities. The app is a decentralized “local first” solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
   
     The Diode Network ensures that not even Diode has access to your team’s communications, information, or activity.
   buttons:
