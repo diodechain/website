@@ -10,7 +10,7 @@ redirect_from:
 hero:
   class: hero--homepage
   animated: true
-  heading: Diode is Zero Trust For Teams.
+  heading: Off the Shelf Zero Trust Solutions.
   subheading: For operations requiring both agility and security.
   buttons:
   - title: FIND OUT MORE
@@ -25,7 +25,7 @@ hero:
 headline:
   animated: true
   title: Today’s digital security dilemma.
-  text: Today’s collaboration and connectivity tools require self-hosting or third-party involvement - burdening teams with cost, complexity and security compromises. Diode has a better way.
+  text: Today’s collaboration and connectivity tools require self-hosting or third-party involvement - burdening teams with cost, complexity, and security compromises. Diode has a better way.
   buttons:
   - title: Find Out More
     class: btn--blank btn--arrow
@@ -37,11 +37,11 @@ app:
   class: "story--homepage"
   animated: true
   title: What is Diode
-  heading: A zero trust connectivity network–built for teams.
+  heading: Off the shelf zero trust solutions – built for teams.
   content: |
-    Diode’s Smart Network is intuitive and easy to use, allowing your teams access to each other and their assets – quickly and securely – no matter where they are in the world.
+    Diode’s off the shelf solutions, built on our Smart Network, are intuitive and easy to use.  Your teams can quickly and securely access each other - and their assets – no matter where they are in the world.
     
-    Teams can collaborate and access assets and other secure systems without the fear of loss of valuable IP or data.
+    Teams can collaborate, share, and access assets and other secure systems without the fear of loss of valuable IP or data.
   buttons:
   - title: Read More
     url: "/solutions/app/"
