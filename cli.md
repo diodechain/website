@@ -21,7 +21,7 @@ hero:
 
 ### Story: For Assets
 story:
-  animated: true
+  animated: false
   title: Precise global access
   heading: For assets.
   content: |
@@ -40,7 +40,7 @@ story:
 
 ### Features
 features:
-  animated: true
+  animated: false
   after:
     src: story/world.svg
   list:
@@ -74,7 +74,7 @@ features:
 
 ### Box: Our solutions
 solutions:
-  animated: true
+  animated: false
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
   heading: Our solutions.
