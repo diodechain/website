@@ -19,7 +19,7 @@ hero:
 
 ### Story: Zero Leakage
 story:
-  animated: true
+  animated: false
   class: "story--dash"
   title: No third parties
   heading: Zero Leakage.
@@ -31,7 +31,7 @@ story:
 
 ### Features: The moving pieces
 features:
-  animated: true
+  animated: false
   heading: The moving pieces.
   actions:
   - title: BROWSE THE NETWORK EXPLORER
