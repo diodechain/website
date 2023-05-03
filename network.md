@@ -21,7 +21,7 @@ hero:
 
 ### Story: Security and Access.
 story:
-  animated: true
+  animated: false
   class: story--dash
   title: Zero trust data fabric
   heading: Security and Access.
@@ -41,7 +41,7 @@ story:
 
 ### Features
 features:
-  animated: true
+  animated: false
   list:
   - title: Automated Security
     content: |
@@ -74,7 +74,7 @@ features:
 
 ### Box: Our solutions
 solutions:
-  animated: true
+  animated: false
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
   heading: Our solutions.
