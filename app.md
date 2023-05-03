@@ -26,7 +26,7 @@ story:
   title: Operate protected
   heading: For teams.
   content: |
-    The Diode App is like a VPN that has built-in team collaboration and asset management features. It is a decentralized “local first” solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
+    The Diode App creates secure tunnels between your team members with built-in collaboration and dashboarding features. It is a decentralized “local first” solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
   
     The Diode Network ensures that not even Diode has access to your team’s communications, information, or activity.
   buttons:
@@ -49,11 +49,11 @@ features:
   list:
   - title: Secure Chat and Files
     content: |
-      Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of the Diode App.All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available. 
+      Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of the Diode App. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available. 
 
   - title: Use for
     content: |
-      Chat, files, notes, wiki, secure web access
+      Chat, files, notes, wiki, secure sites, web portals
   
       Communicate, reference, annotate, manage, and collaborate - everything a team working with real world IT, OT, or web assets requires.
     buttons:
@@ -68,7 +68,9 @@ features:
     content: |
       Collaborating with Diode is like using a VPN and collaboration tool built in one.  This allows your team to connect from anywhere in the world. And, if they happen to be in the same office, their devices direct-connect to carry on the conversation without even touching the Internet.
 
-  -
+  - title: Secure Web Portals
+    content: |
+      Sometimes you need to share, or collect, information with people who don't have Diode installed.  Creating a secure web portal can be done with a single click any any file or folder you'd like to turn into a web portal that is accessible from any web browser.  This is a great way to provide customers with a secure upload or download portal.
 
   - title: Protected Identities
     content: |
