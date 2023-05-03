@@ -83,7 +83,7 @@ anywhere:
   title: From anywhere, whenever
   heading: Protected no matter what.
   content: |
-    Eliminate third parties from your IT environment, making it more secure than any managed SSE or Cloud VPN solution.
+    Eliminate third parties from your IT environment, making it more secure than any managed ZTNA or Cloud VPN solution.
   
     With Diode, IT, OT, and IoT assets can be remotely managed whether they are on-site, in the cloud, or set up in a hybrid environment – all without leaking data, identifiable information, or behaviors.
   buttons:
