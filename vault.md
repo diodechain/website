@@ -16,7 +16,7 @@ hero:
 
 ### Story: Set and forget
 story:
-  animated: true
+  animated: false
   title: Set and forget
   heading: Always on. Always.
   content: |
@@ -38,7 +38,7 @@ story:
 
 ### Box: Our solutions
 solutions:
-  animated: true
+  animated: false
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
   heading: Our solutions.
