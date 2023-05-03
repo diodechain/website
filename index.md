@@ -37,7 +37,7 @@ app:
   class: "story--homepage"
   animated: true
   title: What is Diode
-  heading: Zero trust solutions that are built for teams.
+  heading: Zero trust solutions built to protect teams.
   content: |
     Diode’s off the shelf solutions, built on our Smart Network, are intuitive and easy to use.  Your teams can quickly and securely access each other - and their assets – no matter where they are in the world.
     
