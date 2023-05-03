@@ -26,7 +26,7 @@ hero:
 
 ### Solution: App
 app:
-  animated: true
+  animated: false
   class: story--app
   title: Connecting People
   heading: App
@@ -52,7 +52,7 @@ app:
 
 ### Solution: CLi
 cli:
-  animated: true
+  animated: false
   title: Connecting Things
   heading: CLI
   icon: icons/cli.svg
@@ -74,7 +74,7 @@ cli:
 
 ### Solution: Vault
 vault:
-  animated: true
+  animated: false
   title: Ensuring Availability
   heading: Vault
   icon: icons/vault.svg
@@ -95,7 +95,7 @@ vault:
 
 ### Solution: Network
 network:
-  animated: true
+  animated: false
   title: Upgrading the Internet
   heading: Network
   icon: icons/network.svg
