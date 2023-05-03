@@ -17,14 +17,14 @@ hero:
 
 ### Headline below Hero
 headline:
-  animated: true
+  animated: false
   title: What drives us. Everyday.
   text: We’re governed by the belief that technology should help humans thrive. It should enhance our ability to operate, create, explore, educate, and innovate - unhindered.
 
 
 ### Top Story
 story:
-  animated: true
+  animated: false
   title: The beginning of Diode
   heading: It all started with fixing a web2 leak.
   content: |
@@ -39,7 +39,7 @@ story:
 
 ### Our Team
 team:
-  animated: true
+  animated: false
   title: Our Team
   heading: The Diode team has collaborated for over 10 years on high availability software that helps organizations transform their industries.
   members:
@@ -72,7 +72,7 @@ team:
 
 ### Article: Our desire
 article:
-  animated: true
+  animated: false
   heading: Our desire to upgrade the internet.
   content: |
     At Diode, we love how the Internet is a wonderful tool that can enable free, civil, and thriving collaboration. However, it is has become increasingly difficult to leverage the Internet’s benefits without risking privacy or sustainability. 
