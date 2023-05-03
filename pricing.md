@@ -16,7 +16,7 @@ hero:
   image: hero/pricing.webp
 
 pricing:
-  animated: true
+  animated: false
   title: E2EE from the core
   heading: A fit for every team.
 
@@ -88,7 +88,7 @@ pricing:
 
 
 note:
-  animated: true
+  animated: false
   subheading: |
     No purchase is necessary to download and start collaborating - every Zone is free when first created, and can be later upgraded by ordering one of the plans above.
     
