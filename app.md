@@ -67,10 +67,14 @@ features:
   - title: Connect From Anywhere
     content: |
       Collaborating with Diode is like using a VPN and collaboration tool built in one.  This allows your team to connect from anywhere in the world. And, if they happen to be in the same office, their devices direct-connect to carry on the conversation without even touching the Internet.
+      
+  -
 
   - title: Secure Web Portals
     content: |
-      Sometimes you need to share, or collect, information with people who don't have Diode installed.  Creating a secure web portal can be done with a single click any any file or folder you'd like to turn into a web portal that is accessible from any web browser.  This is a great way to provide customers with a secure upload or download portal.
+      Sometimes you need to share, or collect, information with people who don't have Diode installed - via a share link accessible from any web browser. This is a great way to exchange information securely with customers, partners, and vendors when operating in a regulated industry. Creating a secure web portal can be done with a single click on any file or folder you'd like to make available.
+      
+  -
 
   - title: Protected Identities
     content: |
