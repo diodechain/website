@@ -9,7 +9,7 @@ redirect_from:
 ### Hero
 hero:
   class: hero--homepage
-  animated: false
+  animated: true
   heading: Off the Shelf Zero Trust Solutions.
   subheading: For operations requiring both agility and security.
   buttons:
