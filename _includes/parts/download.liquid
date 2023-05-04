@@ -1,13 +1,5 @@
-{% assign link = site.links.download.url | relative_url %}
-{% assign class = include.class %}
-{%- if page.permalink == "/download/" -%}
-    {% assign link = "#download-app" %}
-    {% assign class = "popup-open" %}
-{% endif %}
+{% assign link = "#download-app" %}
+{% assign class = "popup-open" %}
 <section class="download">
-
-
 <a href="{{ link }}" class="btn header__download {{ class }}" target="">{{ site.links.download.title }}</a>
-
-
 </section>
