@@ -2,6 +2,6 @@
 {% assign class = include.class %}
 {%- if page.permalink == "/download/" -%}
     {% assign link = "#download-app" %}
-    {% assign class = "btn popup-open" %}
+    {% assign class = "popup-open" %}
 {% endif %}
 <a href="{{ link }}" class="btn {{ class }}" target="">{{ site.links.download.title }}</a>
