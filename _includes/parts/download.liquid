@@ -1,7 +1,6 @@
 {% assign link = site.links.download.url | relative_url %}
 {% assign class = include.class %}
 {%- if page.permalink == "/download/" -%}
-    {% assign link = "#app" %}
-    {% assign class = include.class | append: " scrollto" %}
+    {% assign link = "#download-app" %}
 {% endif %}
 <a href="{{ link }}" class="btn {{ class }}">{{ site.links.download.title }}</a>
