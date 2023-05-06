@@ -17,24 +17,9 @@ hero:
 teams:
   animated: false
   list:
-  - title: Secure remote asset management
-    heading: Operational Technology.
-    content: |
-      Give your team highly secure remote access to assets in hard-to-reach locations. Expand your OT security boundary without custom IT!
-      
-      #### GDPR and Data Compliance
-      No matter where your assets are at in the world, Diode makes regionality and data compliance simple - all without IT setup or maintenance burden.
-    image:
-      src: "team/operational-technology_big.webp"
-      alt: Operational Technology
-    buttons:
-    - title: Move on from complicated VPN projects
-      class: btn--blank btn--arrow
-      url: "https://contactdiode.paperform.co/"
-      target: _blank
-
   - title: Encrypt IP and customer information
     heading: Sensitive Data.
+    anchor: regulated
     content: |
       Limit your cloud data footprint and make your customers’ confident in your security by keeping sensitive content under your full control.
     
@@ -51,9 +36,26 @@ teams:
       url: "https://contactdiode.paperform.co/"
       target: _blank
 
-
+  - title: Secure remote asset management
+    heading: Operational Technology.
+    anchor: OT
+    content: |
+      Give your team highly secure remote access to assets in hard-to-reach locations. Expand your OT security boundary without custom IT!
+      
+      #### GDPR and Data Compliance
+      No matter where your assets are at in the world, Diode makes regionality and data compliance simple - all without IT setup or maintenance burden.
+    image:
+      src: "team/operational-technology_big.webp"
+      alt: Operational Technology
+    buttons:
+    - title: Move on from complicated VPN projects
+      class: btn--blank btn--arrow
+      url: "https://contactdiode.paperform.co/"
+      target: _blank
+      
   - title: Protect world wide teams
     heading: Team Collaboration.
+    anchor: collaboration
     content: |
       Establish full custody of your organization's data and communications and eliminate data, identity, and behavioural leakages that could unintentionally violate regional data restrictions.
       
@@ -71,9 +73,10 @@ teams:
       target: _blank
 
   - title: Provide access for stakeholders
-    heading: Developer Operations.
+    heading: DevSec Operations.
+    anchor: devsecops
     content: |
-      Securely pipe server interfaces and dashboards to even non-tech stakeholders without development, and without complicated VPN clients.
+      Isolate server interfaces, dashboards, and network cyber operation tools from attack vectors while providing secure and easy access for the team and stakeholders.
       
       #### Perfect for On Premise and Hybrid
       On premise and managed cloud deployments just got a lot easier. Provision the server and ship product - Diode will connect you no matter where it lands.
@@ -91,8 +94,9 @@ teams:
 
   - title: Integrate in-house and 3rd party systems
     heading: Product Development.
+    anchor: products
     content: |
-      Create connected products that are bomb-proof secure without needing a cloud service.  You can easily integrate partner components as your ecosystem matures - every piece of the system is explicitly identified and managed with Zero Trust security.
+      Create highly secure connected products without needing a cloud service.  You can easily integrate partner components as your ecosystem matures - every piece of the system is explicitly identified and managed with Zero Trust security.
       
       #### Enterprise Security and Access Control
       Support multiple customers, integrate with enterprise security tools, and even reconfigure permissions later - all without changing your product.

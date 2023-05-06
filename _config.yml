@@ -44,13 +44,15 @@ nav:
   url: "/teams/"
   sub:
   - title: Sensitive Data
-    url: "/teams/"
-  - title: IoT and OT
-    url: "/teams/"
-  - title: Developer Operations
-    url: "/teams/"
+    url: "/teams/#regulated"
+  - title: OT and IoT
+    url: "/teams/#OT"
+  - title: Team Collaboration
+    url: "/teams/#collaboration"
+  - title: DevSec Operations
+    url: "/teams/#devsecops"
   - title: Connected Products
-    url: "/teams/"
+    url: "/teams/#products"
 - title: About Us
   url: "/about/"
 - title: Pricing

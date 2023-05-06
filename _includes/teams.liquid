@@ -9,7 +9,7 @@
         {% for entry in data.list %}
             {% capture thecycle %}{% cycle "odd", "even" %}{% endcapture %}
             {% if thecycle == "odd" %}<div class="row">{% endif %}
-                <div class="col col-12 col-md-6">
+                <div class="col col-12 col-md-6" id="{{ entry.anchor }}">
                     {%- if data.animated -%}
                     <article class="teams__entry" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" data-aos-easing="ease-out" data-aos-once="true">
                     {% else %}

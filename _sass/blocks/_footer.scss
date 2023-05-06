@@ -88,9 +88,9 @@
     -moz-column-fill: auto;
     column-fill: auto;
     @include media-breakpoint-up(xss) {
-      -webkit-column-gap: 90px;
-      -moz-column-gap: 90px;
-      column-gap: 90px;
+      -webkit-column-gap: 45px;
+      -moz-column-gap: 45px;
+      column-gap: 45px;
     }
     @include media-breakpoint-up(lg) {
       -webkit-column-gap: 45px;
@@ -98,9 +98,9 @@
       column-gap: 45px;
     }
     @include media-breakpoint-up(xl) {
-      -webkit-column-gap: 120px;
-      -moz-column-gap: 120px;
-      column-gap: 120px;
+      -webkit-column-gap: 45px;
+      -moz-column-gap: 45px;
+      column-gap: 45px;
     }
 
     ul {
