@@ -186,8 +186,8 @@
     @include media-breakpoint-up(md) {
       max-width: 640px;
       padding-top: 140px;
-      font-size: 56px;
-      line-height: 60px;
+      font-size: 45px;
+      line-height: 47px;
     }
     @include media-breakpoint-up(lg) {
       max-width: 800px;
@@ -195,20 +195,20 @@
     @include media-breakpoint-up(xl) {
       max-width: 997px;
       padding-top: 175px;
-      font-size: 85px;
-      line-height: 88px;
+      font-size: 45px;
+      line-height: 47px;
     }
 
     > li {
       transform: translate3d(0, -5px, 0);
       opacity: 0;
-      transition: opacity .9s ease, transform .8s ease;
+      transition: opacity .3s ease, transform .3s ease;
       @include media-breakpoint-up(md) {
         padding-bottom: 16px;
       }
       @include media-breakpoint-up(xl) {
         transform: translate3d(0, -7px, 0);
-        transition: opacity 1.2s ease, transform 1s ease;
+        transition: opacity 0.3s ease, transform 0.3s ease;
         &:last-of-type {min-height: 280px;}
       }
 
@@ -239,8 +239,8 @@
           padding-top: 11px;
           padding-bottom: 11px;
           padding-left: 0;
-          font-size: 34px;
-          line-height: 37px;
+          font-size: 24px;
+          line-height: 28px;
         }
 
         a {
@@ -270,7 +270,7 @@
       opacity: 1;
       @for $i from 1 through 10 {
         &:nth-child(#{$i}) {
-          transition-delay: ($i * .1)+s;
+          transition-delay: ($i * .05)+s;
         }
       }
     }

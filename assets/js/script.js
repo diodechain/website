@@ -62,7 +62,7 @@ function initPopup() {
   }
 
   function toggleClick(event) {
-    event.preventDefault();
+   
     var target = event.currentTarget.area, isNavbar = event.currentTarget.navbar;
     if (target) {
       if (target.classList.contains('visible')) {
@@ -103,6 +103,12 @@ function initPopup() {
   close.area = navbar;
   close.navbar = true;
   close.addEventListener('click', toggleClick, false);
+
+  document.querySelectorAll('.close-nav').forEach((link) => {
+    link.area = navbar;
+    link.addEventListener('click', toggleClick, false);
+    link.navbar = true;
+  });
 
   document.querySelectorAll('.popup-open').forEach((link) => {
     var target = link.getAttribute('href'),

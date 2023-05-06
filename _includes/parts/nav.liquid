@@ -6,7 +6,7 @@
                 <ul>
                     {% for sub in data.sub %}
                         {%- if sub.title -%}
-                                <li><a href="{{ sub.url | relative_url }}" target="{{ sub.target }}">{{ sub.title }}</a></li>
+                                <li><a href="{{ sub.url | relative_url }}" target="{{ sub.target }}" class="close-nav">{{ sub.title }}</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
