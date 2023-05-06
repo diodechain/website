@@ -17,7 +17,7 @@ hero:
 teams:
   animated: false
   list:
-  - title: Remote asset management
+  - title: Secure remote asset management
     heading: Operational Technology.
     content: |
       Give your team highly secure remote access to assets in hard-to-reach locations. Expand your OT security boundary without custom IT!
@@ -27,6 +27,67 @@ teams:
     image:
       src: "team/operational-technology_big.webp"
       alt: Operational Technology
+    buttons:
+    - title: Move on from complicated VPN projects
+      class: btn--blank btn--arrow
+      url: "https://contactdiode.paperform.co/"
+      target: _blank
+
+  - title: Encrypt IP and customer information
+    heading: Sensitive Data.
+    content: |
+      Limit your cloud data footprint and make your customers’ confident in your security by keeping sensitive content under your full control.
+    
+      Make sure critical information never touches another server that will be copied, get stale, and become a liability.
+    
+      #### PII, HIPAA, and Regulated Industries
+      Give your team and suppliers an easy way to collaborate and share information without the liability of email or cloud data.
+    image:
+      src: "team/ip-and-content_big.webp"
+      alt: Regulated Data
+    buttons:
+    - title: Diode makes compliance regimes easy
+      class: btn--blank btn--arrow
+      url: "https://contactdiode.paperform.co/"
+      target: _blank
+
+
+  - title: Protect world wide teams
+    heading: Team Collaboration.
+    content: |
+      Establish full custody of your organization's data and communications and eliminate data, identity, and behavioural leakages that could unintentionally violate regional data restrictions.
+      
+      #### Remove points of vulnerability
+      Give your most vulnerable people the tools they need to operate securely in their persons, data, and communications.
+    
+    image:
+      src: "team/default.webp"
+      alt: Protect Team
+
+    buttons:
+    - title: Your team can be protected today
+      class: btn--blank btn--arrow
+      url: "https://contactdiode.paperform.co/"
+      target: _blank
+
+  - title: Provide access for stakeholders
+    heading: Developer Operations.
+    content: |
+      Securely pipe server interfaces and dashboards to even non-tech stakeholders without development, and without complicated VPN clients.
+      
+      #### Perfect for On Premise and Hybrid
+      On premise and managed cloud deployments just got a lot easier. Provision the server and ship product - Diode will connect you no matter where it lands.
+    
+    image:
+      src: "team/developer-operations_big.webp"
+      alt: Developer Operations
+
+    buttons:
+    - title: Remote APIs, SSH, Dashboards, and DCO integrations
+      class: btn--blank btn--arrow
+      url: "https://contactdiode.paperform.co/"
+      target: _blank
+
 
   - title: Integrate in-house and 3rd party systems
     heading: Product Development.
@@ -39,31 +100,11 @@ teams:
       src: "team/product-development_big.webp"
       alt: Product Development
 
-  - title: Access for stakeholders
-    heading: Developer Operations.
-    content: |
-      Securely pipe server interfaces and dashboards to even non-tech stakeholders without development, and without complicated VPN clients.
-      
-      #### Perfect for On Premise and Hybrid
-      On premise and managed cloud deployments just got a lot easier. Provision the server and ship product - Diode will connect you no matter where it lands.
-    
-      Ask us about integrating with your enterprise’s defensive cyber-operations tools!
-    image:
-      src: "team/developer-operations_big.webp"
-      alt: Product Development
-
-  - title: Protect IP and customer information
-    heading: IP and  Content.
-    content: |
-      Limit your cloud data footprint and make your customers’ confident in your security by keeping sensitive content under your full control.
-    
-      Make sure critical information never touches another server that will be copied, get stale, and become a liability.
-    
-      #### HIPAA and Regulated Industries
-      Give your team and suppliers an easy way to collaborate and share information without the liability of email or cloud data.
-    image:
-      src: "team/ip-and-content_big.webp"
-      alt: Product Development
+    buttons:
+    - title: Connected products without a web service
+      class: btn--blank btn--arrow
+      url: "https://contactdiode.paperform.co/"
+      target: _blank
 
 ---
 

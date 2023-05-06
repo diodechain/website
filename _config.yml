@@ -40,9 +40,18 @@ nav:
     url: "/solutions/vault/"
   - title: Network
     url: "/solutions/network/"
-- title: For Teams
+- title: Use Cases
   url: "/teams/"
-- title: About
+  sub:
+  - title: Sensitive Data
+    url: "/teams/"
+  - title: IoT and OT
+    url: "/teams/"
+  - title: Developer Operations
+    url: "/teams/"
+  - title: Connected Products
+    url: "/teams/"
+- title: About Us
   url: "/about/"
 - title: Pricing
   url: "/pricing/"

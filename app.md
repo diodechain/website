@@ -30,7 +30,7 @@ story:
   
     The Diode Network ensures that not even Diode has access to your team’s communications, information, or activity.
   buttons:
-  - title: See how teams are using the app
+  - title: See how teams are using Diode
     class: btn--blank btn--arrow
     url: "/teams/"
   image:
@@ -59,6 +59,8 @@ features:
     buttons:
     - title: DOWNLOAD
       url: "/download/#app"
+    - title: HOW IT WORKS
+      url: "/how-it-works/"
     - title: SCHEDULE A DEMO
       class: btn--blank btn--arrow
       url: "https://diodedemo.paperform.co/"

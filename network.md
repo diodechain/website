@@ -14,8 +14,8 @@ hero:
   heading: Build on top&nbsp;of&nbsp;Diode Network.
   subheading: Expand your team’s security perimeter.
   buttons:
-  - title: DOWNLOAD
-    url: "/download/#network"
+  - title: RUN A NODE
+    url: "https://support.diode.io/article/y9hxzsbhg8"
   image: hero/network.webp
 
 
@@ -30,9 +30,9 @@ story:
   
     We believe the Diode Network is the beginning of great things for the future of the Internet.
   buttons:
-  - title: See How The Network Works
-    class: btn--blank
-    url: "/solutions/network/"
+  - title: See how teams are using Diode
+    class: btn--blank btn--arrow
+    url: "/teams/"
   image:
     src: story/network-full.webp
     alt: Network
@@ -56,6 +56,8 @@ features:
     - title: RUN A NODE
       url: "https://support.diode.io/article/y9hxzsbhg8"
       target: _blank
+    - title: HOW IT WORKS
+      url: "/how-it-works/"
     - title: SCHEDULE A DEMO
       class: btn--blank btn--arrow
       url: "https://diodedemo.paperform.co/"

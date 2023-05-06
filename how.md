@@ -34,8 +34,10 @@ features:
   animated: false
   heading: The moving pieces.
   actions:
-  - title: BROWSE THE NETWORK EXPLORER
-    url: "/prenet/"
+  - title: Read support articles
+    class: btn--blank btn--arrow
+    url: "https://support.diode.io/article/lsr4tkzz8t-getting-started"
+    target: _blank
   list:
   - title: Clients
     content: Everything (people, devices) using Diode are called “Clients”.  Every Client is secured with a public/private key self-custody identity. A Client’s routing address is its public key, and its security is ensured through the same technology that secures self custody digital assets everywhere.
@@ -46,11 +48,12 @@ features:
   - title: Visibility
     content: Clients publish resources via the Diode Network and can do so publicly, privately (allow list), or protected (Zone/Fleet).  Diode’s Blockchain Name System can be used for Client friendly names, and Kademlia routing is used to optimize routes.
     buttons:
-    - title: RUN A NODE
-      url: "https://support.diode.io/article/y9hxzsbhg8"
+    - title: BROWSE THE EXPLORER
+      url: "/prenet/"
+    - title: SCHEDULE A DEMO
+      class: btn--blank btn--arrow
+      url: "https://diodedemo.paperform.co/"
       target: _blank
-    - title: DOWNLOAD
-      url: "/download/"
   - title: Zones and Fleet Contracts
     content: Fleet Contracts are the basic security perimeter element of the Diode Network - every Client must belong to at least one Fleet Contract so that the network can provision communications. Zones are a special type of Fleet Contract that are used by people and businesses to ring fence operations - including the operation of other Fleet Contracts.
 

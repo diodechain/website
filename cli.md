@@ -14,7 +14,7 @@ hero:
   heading: Manage assets with Diode CLI.
   subheading: Access and manage servers and OT assets.
   buttons:
-  - title: DOWNLOAD CLI
+  - title: GET THE CLI
     url: "/download/#cli"
   image: hero/cli.webp
 
@@ -29,9 +29,9 @@ story:
   
     The open source CLI uses less resources than a VPN, requires no managed server infrastructure (VPN cloud), and is more secure - it brings the power of the Diode Network to your edge devices.
   buttons:
-  - title: See How The Network Works
+  - title: See how teams are using Diode
     class: btn--blank btn--arrow
-    url: "/solutions/network/"
+    url: "/teams/"
   image:
     src: story/cli-full.webp
     alt: Diode CLI
@@ -54,8 +54,10 @@ features:
 
       Connect, manage, collect, view, and administrate - everything you wish you could do with your IT and OT assets.
     buttons:
-    - title: DOWNLOAD
+    - title: GET THE CLI
       url: "/download/#cli"
+    - title: HOW IT WORKS
+      url: "/how-it-works/"
     - title: SCHEDULE A DEMO
       class: btn--blank btn--arrow
       url: "https://diodedemo.paperform.co/"

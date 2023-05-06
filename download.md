@@ -58,8 +58,8 @@ network:
   heading: Join the Network
   subheading: You can deepen the security of your zero trust perimeters by hosting a node.
   buttons:
-  - title: Download Network
-    url: "https://support.diode.io/article/lsr4tkzz8t"
+  - title: Run a Node
+    url: "https://support.diode.io/article/y9hxzsbhg8"
     target: _blank
   - title: Learn More
     url: "/solutions/network/"

@@ -19,6 +19,13 @@
                         {%- if entry.title -%}<h4 class="teams__title">{{ entry.title }}</h4>{% endif %}
                         {%- if entry.heading -%}<h2 class="teams__heading">{{ entry.heading }}</h2>{% endif %}
                         {%- if entry.content -%}<div class="teams__content">{{ entry.content | markdownify }}</div>{% endif %}
+                        {%- if entry.buttons -%}
+                            <div class="story__buttons">
+                                {% for button in entry.buttons %}
+                                    <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                     </article>
                 </div>
             {% if thecycle == "even" %}</div>{% if forloop.last == false %}<hr>{% endif %}{% endif %}
