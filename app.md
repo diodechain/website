@@ -121,5 +121,3 @@ solutions:
 {%- include features.liquid -%}
 
 {%- include box.liquid data="solutions" -%}
-
-{%- include download-popup.liquid id="download-app" -%}

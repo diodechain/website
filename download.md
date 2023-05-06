@@ -74,5 +74,3 @@ network:
 {%- include download.liquid id="cli" data="cli" -%}
 
 {%- include download.liquid id="network" data="network" -%}
-
-{%- include download-popup.liquid id="download-app" -%}

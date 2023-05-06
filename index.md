@@ -15,7 +15,7 @@ hero:
   buttons:
   - title: FIND OUT MORE
     url: "/solutions/"
-  - title: DOWNLOAD
+  - title: DOWNLOAD HUB
     class: btn--bordered
     url: "/download/"
   image: hero/default.webp
@@ -227,3 +227,5 @@ partners:
 {%- include box.liquid data="how-works" -%}
 
 {%- include partners.liquid -%}
+
+{%- include download-popup.liquid id="download-app" -%}
