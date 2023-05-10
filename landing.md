@@ -38,7 +38,8 @@ landing:
 ### Video
 video:
   heading: Get going in less than 2 minutes!
-  src: "https://player.vimeo.com/video/562684103"
+  video:
+    src: "https://player.vimeo.com/video/562684103"
   content: |
     Traditional secure file transfer solutions, like FTP, are costly to setup and maintain. Modern cloud storage solutions don't have the level of security and privacy required.If you need to share sensitive files and data with your clients, Diode Drive may be the perfect solution.
   buttons:
