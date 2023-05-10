@@ -8,7 +8,7 @@ permalink: /use-case/secure-teams-for-missions/
 ### Hero
 hero:
   class: hero--align
-  heading: Secure <span>your customer's</span> <span>sensitive data</span>.
+  heading: Advance the <span>Gospel into</span> <span>the nations</span>.
   buttons:
   - title: DOWNLOAD
     url: "/download/#app"
@@ -37,7 +37,7 @@ video:
   video: 
     src: "https://player.vimeo.com/video/825246709"
   content: |
-    Traditional secure file transfer solutions, like FTP, are costly to setup and maintain. Modern cloud storage solutions don't have the level of security and privacy required.If you need to share sensitive files and data with your clients, Diode Drive may be the perfect solution.
+    Traditional secure communication solutions, like VPN, are costly to setup and maintain. Modern cloud storage solutions don't have the level of security and privacy required. If you need to share sensitive files and data accross your team, Diode Drive may be the perfect solution.
   buttons:
   - title: Download App
     url: "/download/#app"
