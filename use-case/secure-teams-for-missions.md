@@ -2,7 +2,7 @@
 title: Advance the Gospel 
 layout: page
 class: header--dark
-permalink: /use-case/missions/
+permalink: /use-case/secure-teams-for-missions/
 
 
 ### Hero
