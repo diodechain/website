@@ -20,8 +20,8 @@ hero:
 
 ### Landing
 landing:
-  heading: Secure Mission Teams
-  title: Relate, equip, and empower people in the most sensitive countries around the world with a "military-grade" secure application. 
+  heading: Develop People
+  title: Train people anywhere in the world with zero leakage.  
   columns:
   - title: Secure Content
     text: Make content accessible in any region of the world without leakage of proprietary or sensitive content. 
