@@ -1,14 +1,14 @@
 ---
-title: Advance the Gospel 
+title: Fulfill your Mission 
 layout: page
 class: header--dark
-permalink: /use-case/secure-teams-for-missions/
+permalink: /use-case/secure-teams-for-NGO-missions/
 
 
 ### Hero
 hero:
   class: hero--align
-  heading: Advance the <span>Gospel into</span> <span>the nations</span>.
+  heading: Advance your <span>mission around</span> <span>the world</span>.
   buttons:
   - title: DOWNLOAD
     url: "/download/#app"
@@ -20,11 +20,11 @@ hero:
 
 ### Landing
 landing:
-  heading: Secure Mission Teams
-  title: Relate, equip, and empower people in the most sensitive countries around the world with a "military-grade" secure application. 
+  heading: Secure NGO Mission Teams
+  title: Serve, equip, and empower people in the most sensitive countries around the world with a "military-grade" secure application. 
   columns:
-  - title: Share the Gospel
-    text: Called to make disciples of every nation – we want to help catalyze a movement. 
+  - title: Fulfill your Mission
+    text: Called to serve people of every nation – we want to help catalyze a movement. 
   - title: Protect your Team
     text: Encrypt sensitive communications and information to protect your people and their contacts.  
   - title: Replace VPNs
