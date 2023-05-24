@@ -188,7 +188,7 @@ partners:
     
   - image: partners/ironwood.svg
     alt: Ironwood Cyber
-    url: "https://ironwoodcyber.com/"
+    url: "https://ironwoodcyber.com"
     
   - image: partners/axellio.svg
     alt: Axellio
@@ -197,6 +197,11 @@ partners:
   - image: partners/syllab.svg
     alt: Syllab
     url: "https://www.syllab.io"
+    
+  - image: partners/rebelspace.svg
+    alt: Rebel Space
+    url: "https://www.rebelspacetech.com"
+
 
   - image: partners/compendium.svg
     alt: Compendium
