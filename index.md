@@ -182,27 +182,31 @@ partners:
   title: World-changing collaborations
   heading: Our Partners.
   logos:
-  - image: partners/YETi-CGI.svg
-    alt: YETi CGI
-    url: "http://yeticgi.com"
-
+  - image: partners/deraconnect.svg
+    alt: Deraconnect
+    url: "https://deraconnect.com"
+    
   - image: partners/ironwood.svg
     alt: Ironwood Cyber
     url: "https://ironwoodcyber.com/"
+    
+  - image: partners/axellio.svg
+    alt: Axellio
+    url: "https://www.axellio.com"
 
   - image: partners/compendium.svg
     alt: Compendium
     
+  - image: partners/YETi-CGI.svg
+    alt: YETi CGI
+    url: "http://yeticgi.com"
+    
   - image: partners/GEN.svg
     alt: Global Enterprise Network
 
-  - image: partners/deraconnect.svg
-    alt: Deraconnect
-    url: "https://deraconnect.com"
-
   - image: partners/iPS.svg
     alt: iPS
-    url: "https://www.intelpayloads.com/"    
+    url: "https://www.intelpayloads.com/"
 
   - image: partners/context.svg
     alt: Context
