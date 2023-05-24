@@ -193,6 +193,10 @@ partners:
   - image: partners/axellio.svg
     alt: Axellio
     url: "https://www.axellio.com"
+    
+  - image: partners/syllab.svg
+    alt: Syllab
+    url: "https://www.syllab.io"
 
   - image: partners/compendium.svg
     alt: Compendium
