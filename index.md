@@ -186,9 +186,13 @@ partners:
     alt: YETi CGI
     url: "http://yeticgi.com"
 
+  - image: partners/ironwood.svg
+    alt: Ironwood Cyber
+    url: "https://ironwoodcyber.com/"
+
   - image: partners/compendium.svg
     alt: Compendium
-
+    
   - image: partners/GEN.svg
     alt: Global Enterprise Network
 
@@ -198,9 +202,11 @@ partners:
 
   - image: partners/iPS.svg
     alt: iPS
+    url: "https://www.intelpayloads.com/"    
 
   - image: partners/context.svg
     alt: Context
+    url: "https://bycontxt.com/"
 
   - image: partners/exosite.svg
     alt: Exosite
