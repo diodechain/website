@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Cost of Data Breaches 
+title: The Pillars of the Zero Trust Architecture 
 date: 2023-06-20 16:45
 categories: [Zero Trust]
 tags: [Zero Trust, Security]
