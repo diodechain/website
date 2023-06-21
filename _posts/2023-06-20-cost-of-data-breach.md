@@ -5,7 +5,7 @@ date: 2023-06-20 16:45
 categories: [News, Security]
 tags: [Defense, Case Study]
 author: MNJR
-image: databreach.png
+image: databreach1.png
 
 ---
 ## The Cost of Data Breaches
