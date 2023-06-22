@@ -1,27 +1,39 @@
 ---
 layout: post
-title: The Cost of Data Breaches 
+title: The Cost of a Data Breach 
 date: 2023-06-20 16:45
 categories: [News, Security]
 tags: [Defense, Case Study]
 author: MNJR
-image: databreachlaw.png
+image: databreachblog.png
 
 ---
-## The Cost of Data Breaches
+## The Cost of a Data Breach
 
-As the web develops and tech becomes more accessible, more and more people are using the tools that are provided to store, upload, and send their data. However, as the online world is expanding, it is becoming increasingly difficult for businesses, individuals, and corporations to ensure that their sensitive data is completely secure. So, in order to protect this information, it is crucial to first understand the cost of a data breach. 
+With the rapid advancement of technology, more and more people are turning to digital platforms for storing, uploading, and sharing their data. However, this increased reliance on the digital realm comes with an increased risk of a data breach.
 
-In the year between 2020 and 2021, there was a 10% increase in the average total cost of a breach, which is the largest single year cost increase that has occurred in the last seven years. Within this single year, this 10% increase made the breach cost rise from $3.86 million to $4.24 million, making the current cost the highest it had ever been in history. Then, in 2022, this number rose again with a 2.6% increase to $4.35 million meaning that, in total, the cost average climbed 12.7% since 2020. 
+To prepare your organization, it is important to understand the financial costs associated with data breaches, and what you can do about it.
 
-Since 2021, there has been a growth rate of 41% of ransomware attacks. The average rate of these breaches was only 7.8% in 2021 but then proceeded to rise to 11% by 2022 with a cost of $4.54 million, which is only slightly higher than the overall cost of a data breach at $4.35 million. 
+### An Increasing Threat
 
-This cost is not just affecting certain businesses either. A total of 83% of organizations have experienced more than one data breach with only 17% claiming it was their first. As a result of the costs that come with the breaches, around 60% of companies have said that that they have been forced to increase the price of their services or products. 
+Between 2020 and 2022, the average total cost of a breach increased by [13% to $4.35 million](https://www.ibm.com/downloads/cas/OJDVQGRY) - the highest it has ever been.  Data breaches have a significant ripple effect, with 83% of organizations experiencing multiple breaches, while only 17% experiencing their first.  Consequently, around 60% of companies raise prices to cope with the resulting financial burden. 
 
-Out of all the different types of data breaches, 44% of them are related to customer personally identifiable information (PII) and the loss of their records. This type of breach is also the most costly record type at $180 per lost or stolen record. Business email compromise (BEC) only results in 4% of breaches, but has the highest average cost at $5.01 million. Then, phishing is averaged at $4.65 million, malicious insiders at $4.61 million, social engineering at $4.47 million, and lastly, compromised credentials at $4.37 million. 
+The implications of these breaches extend beyond individual businesses, impacting the overall landscape of data security.
 
-The average number of days it takes for a data breach to be identified and contained is 287. Unfortunately, the longer it takes to contain, the more costly the breach is. Breaches that take longer than 200 days to identify and contain cost around $4.87 million while ones that take less than 200 ays cost $3.61 million.
+### Not All Breaches are Created Equal
 
-Where zero trust companies were involved, there was a reduction in the average cost of data breaches. Without the use of zero trust, the average cost of a breach is $5.04 million compared to the $3.28 million for those who had zero trust deployed, showing a 2.3%, or $1.17 million, difference. Unfortunately, 76% of critical infrastructure organizations did not utilise a zero trust architecture. 
+Different types of data breaches have varying costs and impacts. 
 
-Summed up, data breaches are no small thing. The time, money, product, and services that are reduced  as a result of these can be crippling to certain companies or individuals and it is critical, now more than ever, to understand the risks and take preemptive action. 
+44% involve the loss of customer personally identifiable information (PII), which averages a cost of $180 per record!   Business email compromise (BEC) breaches accounts for only 4% of breaches, but they carry the highest average cost of $5.01 million per breach. Ransomware attacks are on the rise - they have increased 41% since 2021, now accounting for 11% of all breaches and costing an average of $4.54 million per breach.  Phishing, malicious insiders, social engineering, and compromised credentials round out the pack with costs ranging from $4.37 million to $4.65 million. 
+
+### Time is an Enemy
+
+The average time to identify and contain a data breach is [287 days](https://www.ibm.com/downloads/cas/3R8N1DZJ). Longer containment periods result in higher costs, with breaches exceeding 200 days costing around $4.87 million, compared to $3.61 million for breaches contained within 200 days.
+
+### How Zero Trust Can Help
+
+Companies who adopt a Zero Trust architecture experience lower average breach costs due to enhanced security measures. Breaches without Zero Trust result in an average cost of $5.04 million, while those with Zero Trust deployed have an average cost of [$3.28 million](https://newsroom.ibm.com/2022-07-27-IBM-Report-Consumers-Pay-the-Price-as-Data-Breach-Costs-Reach-All-Time-High).  Unfortunatley, the a majority (76%) of critical infrastructure organizations have not yet adopted a Zero Trust architecture. 
+
+Due to the rising number of breaches, and the repercussions of a breach for individuals and business, it is urgent that data protection be a priority. Implementing proactive solutions, such as the Zero Trust solutions that Diode provides, can mitigate risks and reduce breach costs. 
+
+[See how Diode’s solutions can help your organization.](https://diode.io/teams)
