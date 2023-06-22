@@ -32,7 +32,7 @@ The average time to identify and contain a data breach is [287 days](https://www
 
 ### How Zero Trust Can Help
 
-Companies who adopt a Zero Trust architecture experience lower average breach costs due to enhanced security measures. Breaches without Zero Trust result in an average cost of $5.04 million, while those with Zero Trust deployed have an average cost of [$3.28 million](https://newsroom.ibm.com/2022-07-27-IBM-Report-Consumers-Pay-the-Price-as-Data-Breach-Costs-Reach-All-Time-High).  Unfortunatley, the majority (76%) of critical infrastructure organizations have not yet adopted a Zero Trust architecture. 
+Companies who adopt a Zero Trust architecture experience lower average breach costs due to enhanced security measures. Breaches without Zero Trust result in an average cost of $5.04 million, while those with Zero Trust deployed have an average cost of [$3.28 million](https://newsroom.ibm.com/2022-07-27-IBM-Report-Consumers-Pay-the-Price-as-Data-Breach-Costs-Reach-All-Time-High).  Unfortunately, the majority (76%) of critical infrastructure organizations have not yet adopted a Zero Trust architecture. 
 
 Due to the rising number of breaches, and the repercussions of a breach for individuals and business, it is urgent that data protection be a priority. Implementing proactive solutions, such as the Zero Trust solutions that Diode provides, can mitigate risks and reduce breach costs. 
 
