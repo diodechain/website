@@ -8,31 +8,29 @@ author: MNJR
 image: pillars.png
 
 ---
-## The Pillars of the Zero Trust Architecture
+## Pillars of Zero Trust Architecture
 
-Identity/User security 
+Every Zero Trust architecture is built around the “policy of least permission” (aka “least privilege”), but there are certain key pillars of Zero Trust architecture that must be put in place to achieve a system with fine-grained security that enhances the way your organization works.
 
-*   Each user’s identity must be verified for any access to any sort of information (communications, data, etc.) through identification, authentication, and access control policies. This can be done through passwords as well as through multi-factor authentications.
+### Identity/User Security
 
-Device security 
+*   Each user must have a system-wide identity that can be verified for any access to any information (communications, data, etc.).  This identity must be recognized, authenticated, and then compared to the access control policies. Although some Zero Trust architectures do this through passwords, as well as through multi-factor authentications, others choose to even further reduce the identity attack surface by implementing [self-custody identities](https://www.ssh.com/academy/ssh/identity-key).
 
-*   Identification and authorization with a “system of record” validation is used when devices connect to one another, regardless of if they are user-controlled or autonomous. These validations are used when two devices try to connect to one another.
+### Device Security
 
-Data security
+*   Authorization with a “system of record” validation is used when devices connect to one another, or an application resource, regardless of if they are user-controlled or autonomous. These validations often use an “Access Control List” that is managed by the Zero Trust network infrastructure, and are used to allow (or deny) a connection when a device tries to connect.
 
-*   All security measures are taken in order to protect ones data through devices, applications, and/or networks. This is done through the categorization of the data so that it can be separated from everything/everyone else except for those with access. This process also determines where the data should be stored and is encrypted in the meantime both with in transit or sitting.
+### Network Security
 
-Workload security
+*   Assets can be placed into different virtual Zero Trust networks to isolate sensitive assets at the network level.  This makes it so that Devices and Users must be part of the same network first before being authorized for access.  This can be an effective way to mitigate the impact of IT administrator visibility, mistakes, and insider threat.
 
-*   An organization’s workload consists of their applications, digital processes, resources, and programs which are all used for the functionality of the organisation. So, the security of the workload is vital as to prevent unauthorized access that could lead to the tampering or collection of sensitive data.
+### Data and Workload Security
 
-Automation and Orchestration
+*   All security measures are taken in order to protect ones data through devices, applications, workloads, and/or networks. This is done through the categorization of the data so that it can be separated from everything/everyone else except for those who have been given explicit permission. Implementing data security will usually require determining where the data should be stored and how it should be encrypted both in-transit and at-rest.
 
-*   Automating security processes with Security Orchestration, Automation, and Response (SOAR) enables fast and scalable policy-based actions across the enterprise. SOAR improves security, reduces response times, and integrates security tools like SIEM to manage diverse security systems. It requires defined processes and consistent security policy enforcement in a Zero Trust (ZT) environment to provide proactive command and control.
+### Automation and Observability
 
-**Visibility and Analytics**
+*   Automating security processes with continuous monitoring and defensive cyber operations integrations is an important step to optimizing and managing your Zero Trust architecture.  Although it is possible to implement Zero Trust all at once, many organizations find it more efficient to establish their Zero Trust architecture and expand the Zero Trust security perimeter over time.
 
-*   All security processes have to be monitored closely if they are related to access control, segmentation, encryption, or data organization. The process to monitor these components are automated, usually through AI, to detect anomalies to provide insight into user and system behaviours through real-time communications.
-
-Given, there are other pillars of Zero Trust and these particular pillars aren’t end all be all, but these are the ones Diode finds the most foundational for the Zero Trust network. Diode seeks to provide the most secure connections for uploading, downloading, communicating, and storing data all while making these features accessible to everyone. These Zero Trust solutions are built to protect teams.
+Diode has integrated these pillars into our Zero Trust solutions in order to make it easy for teams to protect their sensitive assets no matter where their team members, or their assets, are at in the world.
 
