@@ -1,9 +1,9 @@
 ---
 layout: post
 title: The Cost of a Data Breach 
-date: 2023-06-20 16:45
-categories: [News, Security]
-tags: [Defense, Zero Trust, Case Study]
+date: 2023-06-22 16:45
+categories: [Regulated Data]
+tags: [Regulated Data, Zero Trust, Data Breach]
 author: MNJR
 image: databreachblog.png
 
