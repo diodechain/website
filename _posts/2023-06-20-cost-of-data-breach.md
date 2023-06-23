@@ -32,8 +32,12 @@ The average time to identify and contain a data breach is [287 days](https://www
 
 ### How Zero Trust Can Help
 
-Companies who adopt a Zero Trust architecture experience lower average breach costs due to enhanced security measures. Breaches without Zero Trust result in an average cost of $5.04 million, while companies that deployed Zero Trust reduced the average cost of a breach by 35% to [$3.28 million](https://newsroom.ibm.com/2022-07-27-IBM-Report-Consumers-Pay-the-Price-as-Data-Breach-Costs-Reach-All-Time-High). Unfortunately, the majority (76%) of critical infrastructure organizations still have not yet adopted a Zero Trust architecture. 
+Companies who adopt a Zero Trust architecture experience lower average breach costs due to enhanced security measures. Breaches without Zero Trust result in an average cost of $5.04 million, while companies that deployed Zero Trust reduced the average cost of a breach by 35% to [$3.28 million](https://newsroom.ibm.com/2022-07-27-IBM-Report-Consumers-Pay-the-Price-as-Data-Breach-Costs-Reach-All-Time-High).
 
-Due to the rising number of breaches, and the repercussions of a breach for individuals and business, it is urgent that data protection be a priority. Implementing proactive solutions, such as the Zero Trust solutions that Diode provides, can mitigate risks and reduce breach costs. Diode has already been helping protect sensitive data (like PII, HIPAA, or IP) for law offices, financial institutions, accounting agencies, and insurance brokers 
+However, the majority (76%) of organizations responsible for critical data still have not yet adopted a Zero Trust architecture. 
+
+Due to the rising number of breaches, and the repercussions of a breach for individuals and business, it is urgent that data protection be a priority. Implementing a proactive solution for critical data and interfaces, such as a Diode Zero Trust solution, can mitigate risks and reduce breach costs, if any. 
+
+Diode's solutions are today being used to protect sensitive data (like PII, HIPAA, or IP) for law offices, financial institutions, accounting agencies, insurance brokers, and more.
 
 [See how Diode’s solutions can help your organization.](https://diode.io/teams)
