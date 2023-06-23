@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Pillars of the Zero Trust Architecture 
-date: 2023-06-20 16:45
+date: 2023-06-28 16:45
 categories: [Zero Trust]
 tags: [Zero Trust, Security]
 author: MNJR
