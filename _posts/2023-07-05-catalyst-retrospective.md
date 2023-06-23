@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Catalyst Accelerator and Air Force Research Labratory 
-date: 2023-06-20 09:45
+title: Air Force Research Labratory Catalyst Retropspective
+date: 2023-07-05 09:45
 categories: [Press]
 tags: [Press, Defense, Cyber, Case Study]
 author: MNJR
