@@ -16,7 +16,7 @@ To prepare your organization, it is important to understand the financial costs 
 
 ### An Increasing Threat
 
-Between 2020 and 2022, the average total cost of a breach increased by 13% to [$4.35 million](https://www.ibm.com/downloads/cas/OJDVQGRY) - the highest it has ever been.  Data breaches have a significant ripple effect, with 83% of organizations experiencing multiple breaches, while only 17% experiencing their first.  Consequently, around 60% of companies raise prices to cope with the resulting financial burden. 
+Between 2020 and 2022, the average total cost of a breach increased by 13% to [$4.35 million](https://www.ibm.com/downloads/cas/OJDVQGRY) - the highest it has ever been.  Data breaches have a significant ripple effect throughout an organization.  83% of breached organizations that have already experienced multiple breaches.  Consequently, around 60% of companies are forced to raise prices to cope with the resulting financial burden, ultimately erroding a competative edge. 
 
 The implications of these breaches extend beyond individual businesses, impacting the overall landscape of data security.
 
@@ -32,7 +32,7 @@ The average time to identify and contain a data breach is [287 days](https://www
 
 ### How Zero Trust Can Help
 
-Companies who adopt a Zero Trust architecture experience lower average breach costs due to enhanced security measures. Breaches without Zero Trust result in an average cost of $5.04 million, while those with Zero Trust deployed have an average cost of [$3.28 million](https://newsroom.ibm.com/2022-07-27-IBM-Report-Consumers-Pay-the-Price-as-Data-Breach-Costs-Reach-All-Time-High).  Unfortunately, the majority (76%) of critical infrastructure organizations have not yet adopted a Zero Trust architecture. 
+Companies who adopt a Zero Trust architecture experience lower average breach costs due to enhanced security measures. Breaches without Zero Trust result in an average cost of $5.04 million, while companies that deployed Zero Trust reduced the average cost of a breach by 35% to [$3.28 million](https://newsroom.ibm.com/2022-07-27-IBM-Report-Consumers-Pay-the-Price-as-Data-Breach-Costs-Reach-All-Time-High).  Unfortunately, the majority (76%) of critical infrastructure organizations still have not yet adopted a Zero Trust architecture. 
 
 Due to the rising number of breaches, and the repercussions of a breach for individuals and business, it is urgent that data protection be a priority. Implementing proactive solutions, such as the Zero Trust solutions that Diode provides, can mitigate risks and reduce breach costs. 
 
