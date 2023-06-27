@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Pillars of the Zero Trust Architecture 
-date: 2023-06-26 16:45
+date: 2023-06-27 16:45
 categories: [Zero Trust]
 tags: [Zero Trust, Security]
 author: MNJR
@@ -32,5 +32,9 @@ Every Zero Trust architecture is built around the “policy of least permission�
 
 *   Automating security processes with continuous monitoring and defensive cyber operations integrations is an important step to optimizing and managing your Zero Trust architecture.  Although it is possible to implement Zero Trust all at once, many organizations find it more efficient to establish their Zero Trust architecture and expand the Zero Trust security perimeter over time.
 
+# Get Started with Zero Trust using Diode
+
 Diode has integrated these pillars into our Zero Trust solutions in order to make it easy for teams to protect their sensitive assets no matter where their team members, or their assets, are at in the world.
+
+It is easy to try out Zero Trust fundamentals with the [Diode App](https://diode.io/solutions/app) - go to our [Downloads Page](https://diode.io/download) to download and start using Zero Trust connectivity today!
 
