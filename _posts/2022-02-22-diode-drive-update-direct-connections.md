@@ -3,7 +3,7 @@ layout: post
 title: Diode Drive Feature - Direct Connections
 date: 2022-02-2 22:22
 categories: [DiodeDrive]
-tags: [Diode, Diode Drive, P2P]
+tags: [Diode, Diode Drive, Decentralization]
 author: Allen M
 image: direct-connections.png
 redirect_from:
