@@ -3,8 +3,8 @@ layout: post
 title: "Breaking new ground in IoT"
 tagline: "Hello World. This is Diode"
 date: 2019-01-21 13:23
-categories: [News]
-tags: [News, Blockchain]
+categories: [Press]
+tags: [Press, Blockchain]
 image: groundbreaking.jpg
 redirect_from:
 - /news/2019/01/21/hello-world.html
