@@ -2,7 +2,7 @@
 layout: post
 date: 2019-07-29 15:00
 categories: [Blockchain]
-tags: [Blockchain, DPKI, PKI, Decentralization, Security]
+tags: [Blockchain, PKI, Decentralization, Security]
 author: Yahsin Huang
 image: MITM-DPKI-feature.jpg
 redirect_from:
