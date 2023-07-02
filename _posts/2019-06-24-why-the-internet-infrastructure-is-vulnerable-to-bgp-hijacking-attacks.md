@@ -2,7 +2,7 @@
 layout: post
 date: 2019-06-24 10:02
 categories: [Security]
-tags: [Security, BGP Hijacking, Blockchain]
+tags: [Security, Blockchain]
 author: Yahsin Huang
 image: BGP0.jpg
 redirect_from:
