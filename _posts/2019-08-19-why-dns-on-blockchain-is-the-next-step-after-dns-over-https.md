@@ -1,8 +1,8 @@
 ---
 layout: post
 date: 2019-08-19 11:41
-categories: [Distributed-Infrastructure]
-tags: [Distributed Infrastructure, Security, Blockchain]
+categories: [Decentralization]
+tags: [Decentralization, Security, Blockchain]
 author: Peter Lai
 image: Why-DNS3.png
 redirect_from:
