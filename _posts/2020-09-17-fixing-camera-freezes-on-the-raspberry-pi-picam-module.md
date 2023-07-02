@@ -2,8 +2,8 @@
 layout: post
 title: Fixing Camera Freezes on the Raspberry Pi PiCam Module
 date: 2020-09-17 00:43
-categories: [Raspberry Pi]
-tags: [Raspberry Pi]
+categories: [How To]
+tags: [How To]
 author: Dominic Letz
 image: pi/camera1.jpg
 redirect_from:
