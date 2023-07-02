@@ -3,7 +3,7 @@ layout: post
 title: February 2020 Update
 date: 2020-02-17 12:10
 categories: [Diode]
-tags: [Diode, Development, Blockchain, IoT, Ethereum]
+tags: [Diode, Development, Blockchain, IoT]
 author: Dominic Letz
 image: feb_head.jpg
 redirect_from:
