@@ -2,7 +2,7 @@
 layout: post
 date: 2019-07-08 18:06
 categories: [Blockquick]
-tags: [Blockquick, Blockchain, Reputation]
+tags: [Blockquick, Blockchain]
 author: Yahsin Huang
 image: Blockquick-Re0.jpg
 redirect_from:
