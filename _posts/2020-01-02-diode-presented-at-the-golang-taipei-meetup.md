@@ -3,7 +3,7 @@ layout: post
 title: Diode Presented at the Golang Taipei Meetup
 date: 2020-01-02 22:59
 categories: [Diode]
-tags: [Diode, Blockchain, Go, Events]
+tags: [Diode, Blockchain, Events]
 author: Yahsin Huang
 image: Golang_feature01.jpg
 redirect_from:
