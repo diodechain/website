@@ -2,8 +2,8 @@
 layout: post
 title: "Running forever with the Raspberry Pi Hardware Watchdog"
 date: 2020-07-20 19:45
-categories: [Raspberry Pi]
-tags: [Raspberry Pi]
+categories: [How To]
+tags: [How To]
 author: Dominic Letz
 image: watchdog/image1.png
 redirect_from:
