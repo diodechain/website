@@ -3,7 +3,7 @@ layout: post
 title: Free ngrok Alternative
 date: 2022-06-01 14:44
 categories: [Diode CLI, Web3, Diode Network]
-tags: [Web3, Self-Custody, Decentralization, Free ngrok Alternative, Open Source]
+tags: [Web3, Self-Custody, Decentralization, Free ngrok Alternative, Development]
 author: Allen M
 image: free-ngrok-alternative2.jpg
 redirect_from:
