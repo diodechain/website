@@ -2,7 +2,7 @@
 layout: post
 date: 2019-09-19 17:30
 categories: [Blockchain]
-tags: [Blockchain, Resources, Web3, DPKI, PKI, Decentralization, Ethereum]
+tags: [Blockchain, Web3, PKI, Decentralization]
 author: Yahsin Huang
 image: Best-R1.jpg
 redirect_from:
