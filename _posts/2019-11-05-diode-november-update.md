@@ -3,7 +3,7 @@ layout: post
 title: November 2019 Update
 date: 2019-11-05 17:10
 categories: [Diode]
-tags: [Diode, Development, Blockchain, IoT, Ethereum]
+tags: [Diode, Development, Blockchain, IoT]
 author: Dominic Letz
 image: NovemberT.jpg
 redirect_from:
