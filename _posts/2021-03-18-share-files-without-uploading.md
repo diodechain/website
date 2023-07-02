@@ -3,7 +3,7 @@ layout: post
 title: File Sharing Without Uploading to the Cloud
 date: 2021-03-18 13:12
 categories: [Diode Drive]
-tags: [Diode, Diode Drive, File Sharing]
+tags: [Diode, Diode Drive, File]
 author: Hans Rempel
 image: file-sharing-via-diode-drive.png
 redirect_from:
