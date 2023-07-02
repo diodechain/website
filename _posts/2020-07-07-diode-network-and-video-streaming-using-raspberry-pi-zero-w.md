@@ -3,7 +3,7 @@ layout: post
 title: Diode Network and Video Streaming Using Raspberry Pi Zero W
 date: 2020-07-07 00:30
 categories: [Diode]
-tags: [Diode, Blockchain, Events, Raspberry Pi]
+tags: [Diode, Blockchain, Events]
 author: Yahsin Huang
 image: June_Meetup_Event.png
 redirect_from:
