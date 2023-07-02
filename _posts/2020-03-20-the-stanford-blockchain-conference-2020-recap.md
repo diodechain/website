@@ -3,7 +3,7 @@ layout: post
 title: The Stanford Blockchain Conference 2020 Recap
 date: 2020-03-20 00:24
 categories: [Diode]
-tags: [Diode, Blockchain, Events, Stanford]
+tags: [Diode, Blockchain, Events]
 author: Yahsin Huang
 image: StanfordBC_01.jpg
 redirect_from:
