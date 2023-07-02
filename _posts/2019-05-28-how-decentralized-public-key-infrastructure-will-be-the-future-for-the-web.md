@@ -1,8 +1,8 @@
 ---
 layout: post
 date: 2019-05-28 15:54
-categories: [DPKI]
-tags: [DPKI, PKI, Blockchain, Security, Distributed Infrastructure]
+categories: [PKI]
+tags: [PKI, Blockchain, Security, Decentralization]
 author: Yahsin Huang
 image: dpki.jpg
 redirect_from:
