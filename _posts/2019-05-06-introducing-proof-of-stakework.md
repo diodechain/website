@@ -2,8 +2,8 @@
 layout: post
 title: Introducing Proof-Of-StakeWork
 date: 2019-05-06 13:42
-categories: [Mining]
-tags: [Mining, Proof-Of-StakeWork, Blockchain]
+categories: [Blockchain]
+tags: [Blockchain]
 author: Greg Belcher
 image: StakeWork0.jpg
 redirect_from:
