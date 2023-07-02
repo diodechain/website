@@ -3,7 +3,7 @@ layout: post
 title: Easily Upload Files from Your Phone to Your Computer
 date: 2021-08-25 11:48
 categories: [Diode Drive]
-tags: [Diode, Diode Drive, File Sharing, How To]
+tags: [Diode, Diode Drive, File, How To]
 author: Allen M
 image: file-uploading-multiple-devices.png
 redirect_from:
