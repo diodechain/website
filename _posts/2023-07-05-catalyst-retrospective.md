@@ -3,7 +3,7 @@ layout: post
 title: Air Force Research Labratory Catalyst Retropspective
 date: 2023-07-05 09:45
 categories: [Press]
-tags: [Press, Defense, Cyber, Case Study]
+tags: [Press, Defense, Cyber, Case Use]
 author: MNJR
 image: cadco.png
 
