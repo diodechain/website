@@ -2,7 +2,7 @@
 layout: post
 date: 2019-07-18 00:40
 categories: [Blockchain]
-tags: [Blockchain, Harberger taxes, Decentralization]
+tags: [Blockchain, Decentralization]
 author: Yahsin Huang
 image: V-Taipei-event1.jpg
 redirect_from:
