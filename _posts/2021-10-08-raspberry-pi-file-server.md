@@ -3,7 +3,7 @@ layout: post
 title: Raspberry Pi File Server
 date: 2021-10-08 19:04
 categories: [Diode Drive]
-tags: [Diode, Diode Drive, File Access, How To, Raspberry Pi]
+tags: [Diode, Diode Drive, File, How To]
 author: Hans Rempel
 image: rpifileserver-diode-pi-mesh.png
 redirect_from:
