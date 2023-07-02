@@ -1,8 +1,8 @@
 ---
 layout: post
 date: 2019-10-25 10:43
-categories: [Devcon]
-tags: [Devcon, Diode, Ethereum, Blockchain, Web3]
+categories: [Events]
+tags: [Events, Diode, Blockchain, Web3]
 author: Yahsin Huang
 image: Devcon_1.jpg
 redirect_from:
