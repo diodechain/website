@@ -3,7 +3,7 @@ layout: post
 title: Diode Drive Features - Linked Devices, Light Zones, and Backups
 date: 2022-04-27 23:12
 categories: [DiodeDrive]
-tags: [Diode, Diode Drive, P2P]
+tags: [Diode, Diode Drive, Decentralization]
 author: Allen M
 image: linked-devices.png
 redirect_from:
