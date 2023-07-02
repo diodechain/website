@@ -3,7 +3,7 @@ layout: post
 title: June 2020 Update
 date: 2020-06-16 9:10
 categories: [Diode]
-tags: [Diode, Development, Blockchain, IoT, Ethereum]
+tags: [Diode, Development, Blockchain, IoT]
 author: Dominic Letz
 image: dev-june/header.png
 redirect_from:
