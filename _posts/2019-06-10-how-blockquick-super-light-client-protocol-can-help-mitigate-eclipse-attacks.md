@@ -2,7 +2,7 @@
 layout: post
 date: 2019-06-10 14:24
 categories: [Blockchain]
-tags: [Blockchain, Eclipse Attack, Security]
+tags: [Blockchain, Security]
 author: Yahsin Huang
 image: Eclipse-Attacks2.jpg
 redirect_from:
