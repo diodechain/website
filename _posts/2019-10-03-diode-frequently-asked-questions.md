@@ -3,7 +3,7 @@ layout: post
 title: Diode FAQ
 date: 2020-05-23 16:00
 categories: [Diode]
-tags: [Diode, FAQ, Blockchain]
+tags: [Diode, How To, Blockchain]
 image: Diode_FAQ_Image.png
 author: Yahsin Huang
 ---
