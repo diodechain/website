@@ -1,8 +1,8 @@
 ---
 layout: post
 date: 2019-06-17 17:46
-categories: [Mining]
-tags: [Mining, Proof-Of-StakeWork, Blockchain]
+categories: [Blockchain]
+tags: [Blockchain]
 author: Greg Belcher
 image: POSW-Community3.jpg
 redirect_from:
