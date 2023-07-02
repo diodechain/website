@@ -3,7 +3,7 @@ layout: post
 title: Defensive Cyber Operations
 date: 2023-03-02 12:45
 categories: [Press, Diode Drive]
-tags: [Press, Defense, Cyber, Case Study]
+tags: [Press, Defense, Security, Use Case]
 author: Allen M
 image: cadco.png
 redirect_from:
