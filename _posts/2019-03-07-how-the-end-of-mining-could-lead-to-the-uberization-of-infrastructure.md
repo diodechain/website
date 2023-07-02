@@ -2,7 +2,7 @@
 layout: post
 title: "How the End of Mining Could Lead to the ‘Uberization’ of Infrastructure"
 date: 2019-03-07 12:11
-category: [Distributed-Infrastructure]
+category: [Decentralization]
 tags: [Decentralization, PKI, IoT]
 image: the-end-of-mining.jpg
 author: Greg Belcher
