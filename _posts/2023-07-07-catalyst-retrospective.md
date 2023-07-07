@@ -8,43 +8,28 @@ author: MNJR
 image: cadco-cohort.png
 
 ---
-Diode was honored to be selected as the emerging Zero Trust communications company to participate in the Defensive Cyber Operations for Space cohort program, held at the [Catalyst Campus for Technology and Innovation](https://catalystcampus.org/) (CCTI) in Colorado Springs, CO.  The Catalyst program is a partnership between the [Air Force Research Laboratory](https://www.afrl.af.mil/) (AFRL) and CCTI, and its objective is to integrate nontraditional tech companies into the national security ecosystem.  [Hans and Eric](/about) from Diode attended the program and .
+Diode was honored to be selected as the emerging Zero Trust communications company to participate in the Defensive Cyber Operations (DCO) for Space cohort program, held at the [Catalyst Campus for Technology and Innovation](https://catalystcampus.org/) (CCTI) in Colorado Springs, CO.  The Catalyst program is a partnership between the [Air Force Research Laboratory](https://www.afrl.af.mil/) (AFRL) and CCTI, and its objective is to integrate nontraditional tech companies into the national security ecosystem.  [Hans and Eric](/about) from Diode attended the program and interacted with civilian and defense professionals who are working daily to deepen the defensive cyber posture of the United States Space Force.
 
-As a primarily commercially-focused organization, Diode sensed there was  Here were some of the takeaways from the program:
-
-
-HIgh level takeaway: Awesome fit, Diode is aweseom, engaging and investing 
-
+Here were some of our takeaways from the program:
 
 #1 - Zero Trust is driving investment
 
-Required from every agency
+Checkpoint research released a [report](https://blog.checkpoint.com/2023/01/05/38-increase-in-2022-global-cyberattacks/) showing that cyberattacks rose over 22% year-on-year by the close of 2022.  Due to these rising threats, both [civilian](https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf) and [defense](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf) government agencies have roadmaps to implement Zero Trust, with deadlines ranging from 2024 through 2027.  As a result, "Zero Trust" has become a buzz word, with all the good and bad that accompanies it.  For example, statements like "Zero Trust is an approach, not a product", while true from a certain perspective, are thrown around by firms seeking to provide consulting services to entities trying to sort out how to succeed in a Zero Trust world.  No less than three organizations we talked to mentioned their involvment in creating [DISA's Zero Trust reference architecture](https://dodcio.defense.gov/Portals/0/Documents/Library/(U)ZT_RA_v2.0(U)_Sep22.pdf) (and we can imagine perhaps more than that were actually involved!).  Whatever the actual end state, it is clear that a Zero Trust revolution is in the making, and that significant effort, changes, and capabilities will be required to see it succeed.
 
-#2 - Taking advantage of Zero Trust benefits is not always just a technical challenge
+#2 - Zero Trust benefits BOTH external security AND internal operations
 
-Legacy OT, comms, training, tools
+As we spoke to officers in the USSF's Delta 6, collaborated with the Guardians, heard from the "Primes", and strategized with leadership, it became apparent the need for enhanced DCO capabilities were great.  It was satisfying to see how Zero Trust communications could effectively address identified security needs for which no other practical solution exists.  However, the needs were not limited to technical operational imperatives - the needs also encompassed more interesting topics such as training, collaboration between DCO and operational teams, collaboration with vendor/contractor teams, informing the right influencers, securing the necessary prioritization, and achieving certifications.  As we dug in, because of these non-technical challenges, we were able to observe how Zero Trust's ability to simplify digital security internally was just as powerful as its ability to secure digital operations externally.  We also found that Diode's ability to rapidly provision Zero Trust infrastruture on-premise, in remote operating theaters, and in the cloud was unique, and can make Zero Trust accessible for even the most demanding customer.
 
 #3 - Partnerships are critical
 
-Cohort, buyers, primes, providers, consortiums, regional PTACS
+Providing commercial technology in a way that the US government can adopt or adapt it is non-trivial.  Despite the desire for collaboration on both sides, and perhaps due to it, there are a myriad of acronyms, systems, accounts, formats, roles, and programs related to helping commercial businesses supply technologies and services to the government.  We found the partnerships with the CCTI team and the over 100 other partners we met during the program to each be instrumental in disambiguating the topics so that Diode could effectively engage.  
 
+In terms of paths of engagement, we found the following to be actionable:
 
-Lots of resources available - maybe too many
+    * The tried-and-true SBIR program.  While a smaller Phase I program can be helpful in "finding the customer", if you have connections to interested buyers, it can be easier for commercially deployed companies to go the "Direct to Phase II" approach.  Not all SBIR programs are created equal - each will have its own requirements, so read the fine print!
+    * "Other Transaction Authority" entities.  Programs like the [Defense Innovation Unit](https://www.diu.mil/) and [Trade Wind](https://www.tradewindai.com) have identified that the SBIR program can be too slow and that the FAR/DFAR regulatory approach can be too burdensome, and have aligned funded contract vehicles behind directly engaging with existing commercial capabilities.
+    * Primes and existing contractors.  Certain entities already have funded contracts and need technologies to fulfill the contractual requirements.  While it can be difficult to have an open goal-oriented conversation with these entities, this can provide a short time to engagement if the right partner with the right incentives is identified.
 
-Providing commercial technology in a way that the US government can adopt or adapt it is non-trivial.  There are a myriad of acronyms, systems, accounts, formats, roles, and programs related to helping commercial businesses supply technologies and services to the government.  However, despite the desire for collaboration on both sides, and perhaps due to it, knowing how to engage is half the battle.
+It was refreshing to find that each of these sometimes cumbersome paths still requires relationship with real people who are getting things done.  Some of the funnest interactions were with other [companies participating in the program](https://www.globenewswire.com/en/news-release/2023/02/17/2610867/0/en/EIGHT-COMPANIES-JOIN-CATALYST-ACCELERATOR-S-DEFENSIVE-CYBER-OPERATIONS-FOR-SPACE-COHORT.html) who were also adding value in their repsective areas of focus, who collaborated openly as each of us made new discoveries on customer needs, and some of whom Diode has partnered with to provide leading cyber security solutions to both government and commercial customers.
 
-The program provided content on a wide variety of topics that helped to disambiguate the resources, scope the engagement investment/return, and understand the different buyer models.  Diode left the program with a mini-MBA in government engagement and was equipped to scope opportunities, manage timeline and budget expectations, and employ partnership tactics for engagement.
-
-#2 - Practical Engagement Paths
-
-Diode was able to identify a few practical engagement paths during the program and found three paths to be immediately actionable: 
-
-Defense Innovation Unit (DIU) - DIU programs use a rapid engagement model that is optimized for placing successful commercial technologies into funded government buyers. DIU programs also use an Other Transaction Authority (OTA) which can make them more flexible with respect to timing, compliance, and intellectual property topics.  There are also other alternative contract vehicles (e.g. https://space-enterprise.org/, https://www.tradewindai.com/, others) doing similar things as DIU.
-
-Small Business Innovation Research (SBIR) - there are hundreds of SBIR programs available to apply to that range from $50k (small Phase I) to >$1M (possible in a direct-to-Phase II).  These take some time to apply to, but there is a significant ecosystem that is built to help a business succeed with an SBIR program.
-
-Partnerships - many organzations already have contracts to deploy significant capabilities and can create better impact by partnering with a business focused on a specific problem/solution set.
-
-#3 - The Other Cohort Companies
-
-The Catalyst program coordinators and advisors did a great job selecting other emerging companies who are leading their field.  Working and collaborating with leaders from these organizations was truly a case of “iron sharpens iron” and the partnerships that were created have the potential of innovating disruptive capabilities for government and commercial sectors.
+If you are interested collaborating with Diode on innovating Zero Trust for the government sector, or perhaps interested in more details around the Catalyst program, please feel free to [Contact Us](https://contactdiode.paperform.co/).
