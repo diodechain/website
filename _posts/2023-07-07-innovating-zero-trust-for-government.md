@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Innovating Zero Trust for the Government Sector 
-date: 2023-07-07 09:45
+date: 2023-07-09 09:45
 categories: [Press]
 tags: [Press, Defense, Cyber, Use Case]
 author: MNJR
