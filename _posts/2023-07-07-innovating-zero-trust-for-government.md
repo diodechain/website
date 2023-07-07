@@ -1,16 +1,16 @@
 ---
 layout: post
-title: Diode Takeaways from the Air Force Research Laboratory's Catalyst Program
+title: Innovating Zero Trust for the Government Sector 
 date: 2023-07-07 09:45
 categories: [Press]
-tags: [Press, Defense, Cyber, Case Use]
+tags: [Press, Defense, Cyber, Use Case]
 author: MNJR
 image: cadco-cohort.png
 
 ---
-Diode was honored to be selected as the emerging Zero Trust communications company to participate in the Defensive Cyber Operations (DCO) for Space cohort program, held at the [Catalyst Campus for Technology and Innovation](https://catalystcampus.org/) (CCTI) in Colorado Springs, CO.  The Catalyst program is a partnership between the [Air Force Research Laboratory](https://www.afrl.af.mil/) (AFRL) and CCTI, and its objective is to integrate nontraditional tech companies into the national security ecosystem.  [Hans and Eric](/about) from Diode attended the program and interacted with civilian and defense professionals who are working daily to deepen the defensive cyber posture of the United States Space Force.
+We [wrote in March](https://diode.io/blog/defensive-cyber-operations) that Diode was honored to be selected as the emerging Zero Trust communications company to participate in the Defensive Cyber Operations (DCO) for Space cohort program, held at the [Catalyst Campus for Technology and Innovation](https://catalystcampus.org/) (CCTI) in Colorado Springs, CO.  The Catalyst program is a partnership between the [Air Force Research Laboratory](https://www.afrl.af.mil/) (AFRL) and CCTI, and its objective is to integrate nontraditional tech companies into the national security ecosystem.  [Hans and Eric](/about) from Diode attended the program and interacted with civilian and defense professionals who are working daily to deepen the defensive cyber posture of the United States Space Force.
 
-Here were some of our takeaways from the program:
+Here were some of our takeaways for how the Government Sector is engaging Zero Trust innovations:
 
 #1 - Zero Trust is driving investment
 
