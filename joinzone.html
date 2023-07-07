@@ -1,0 +1,35 @@
+---
+title: Join Zone
+layout: page
+class: header--white
+permalink: /joinzone/
+
+nav: 
+
+---
+
+<script>
+  var url = new URL(document.location.toString());
+  if (url.hash.slice(1).length != 75) {
+      window.location.replace((url.origin + url.pathname).replace("/joinzone/", "/"));
+  }
+</script>
+
+<div class="text-center joinzone">
+  <h2 class="title">Join Code</h2>
+  <hr class="title_line">
+  <p class="subtitle">Click the "Join" button on the Zones page of the Diode App and enter this Join Code!</p>
+  <h3 class="joincode">
+      <script>
+          document.write(url.hash.slice(1))
+      </script>
+  </h3>
+  <img style="display:block; margin-left:auto; margin-right: auto; width: 520px;"
+      src="/images/joincode-entry-example.gif" alt="how to join zone with join code">
+  <p class="download-prompt">Need the Diode App?</p>
+  <div>
+    <a href="#download-app" class="btn popup-open" target="">{{ site.links.download.title }}</a>
+  </div>
+</div>
+
+
