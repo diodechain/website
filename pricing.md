@@ -47,8 +47,8 @@ pricing:
       - Basic support
     button: Order
     id:
-      yearly: "price_1IET4eEGYTHllVn0KLQTQOmk"
-      monthly: "price_1IET4eEGYTHllVn0GJvaFrOP"
+      yearly: "https://buy.stripe.com/9AQdTC6YQdD8cLu002"
+      monthly: "https://buy.stripe.com/7sIg1Kbf60QmfXG9AD"
 
   - title: Business
     description: for teams collaborating on operations.
@@ -68,8 +68,8 @@ pricing:
       - Standard support
     button: Order
     id:
-      yearly: "price_1IET4XEGYTHllVn0xPwXihpr"
-      monthly: "price_1IET4XEGYTHllVn0rZD0UVlt"
+      yearly: "https://buy.stripe.com/5kA7veeri0Qm26Q6oo"
+      monthly: "https://buy.stripe.com/eVa6ra6YQ1Uq9zi8wA"
 
   - title: Enterprise
     description: for organizations expanding their security perimeter.
