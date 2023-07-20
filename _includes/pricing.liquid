@@ -27,6 +27,13 @@
         </dl>
     {% endif %}
 
+    <input id="switch" class="pricing__checkbox" type="checkbox"/>
+    <div class="pricing__switch">
+        <label for="switch"></label>
+        <span class="yearly">Yearly</span>
+        <span class="monthly">Monthly</span>
+    </div>
+
     <div class="pricing__plans">
         <div class="row justify-content-center">
             {% for plan in data.plans %}
@@ -60,13 +67,6 @@
                 </div>
             {% endfor %}
         </div>
-    </div>
-
-    <input id="switch" class="pricing__checkbox" type="checkbox"/>
-    <div class="pricing__switch">
-        <label for="switch"></label>
-        <span class="yearly">Yearly</span>
-        <span class="monthly">Monthly</span>
     </div>
 </section>
 
