@@ -18,70 +18,55 @@ hero:
 pricing:
   animated: false
   title: E2EE from the core
-  heading: A fit for every team.
+  heading: Secure your team today.
 
-  include: Both free and paid plans include
-  items:
-  - E2EE file sharing
-  - E2EE group chat and DMs
-  - E2EE asset connectivity
-  - Secure markdown editor
-  - Browser upload/download
-  - Unlimited storage
-  - 10 team members
+  blurb: <br/>Every Zone is free when first created, and can be later upgraded by ordering a plan.
 
   plans:
-  - title: Freelancer
-    description: for independent professionals.
+  - title: Nomad
+    description: a free plan for evaluation and privacy.
     price:
-      yearly: 8
-      year: 96
-      monthly: 10
+      yearly: 0
+      year: 0
+      monthly: 0
     features: |
-      All free features plus:
-      - File backup
-      - Invitation codes
-      - 3 chat channels
-      - 20 web links
-      - 10 free team members
-      - Basic support
-    button: Order
-    id:
-      yearly: "https://buy.stripe.com/9AQdTC6YQdD8cLu002"
-      monthly: "https://buy.stripe.com/7sIg1Kbf60QmfXG9AD"
+      - E2EE file sharing
+      - E2EE group chat and DMs
+      - E2EE asset connectivity
+      - Browser upload/download
+      - Unlimited storage
+      - 5 team members
+    button: Download
+    action: "https://diode.io/download/#app"
 
   - title: Business
-    description: for teams collaborating on operations.
+    description: for organizations securing their remote teams.
     price:
-      yearly: 40
-      year: 480
-      monthly: 50
+      yearly: 80
+      year: 960
+      monthly: 100
     features: |
-      All Freelancer plus:
-      - Custom web link brand
-      - Private chat channels
-      - Web3 secure sites
+      All Nomad plus:
+      - Invitation codes
       - 10 chat channels
-      - 100 web links
-      - 20 free team members
+      - 20 web links
+      - 20 team members
       - $5 per additional team
       - Standard support
     button: Order
     id:
-      yearly: "https://buy.stripe.com/5kA7veeri0Qm26Q6oo"
-      monthly: "https://buy.stripe.com/eVa6ra6YQ1Uq9zi8wA"
+      yearly: "https://buy.stripe.com/bIY5n6gzq42ycLufZ3"
+      monthly: "https://buy.stripe.com/8wMeXGfvmfLgbHq28e"
 
   - title: Enterprise
-    description: for organizations expanding their security perimeter.
+    description: for enterprises expanding their security perimeter.
     features: |
       All Business plus:
+      - Secure web browser
+      - Regional access tunnels
       - Asset management
-      - Private invitation codes
-      - Web2 regional proxies
-      - DCO integrations
-      - Port mapping policies
-      - Unlimited chat channels
-      - Unlimited web links
+      - Whitelabeling
+      - Enterprise integrations
       - Premium support SLA
     button: Contact Us
     action: "https://contactdiode.paperform.co/"
@@ -90,8 +75,6 @@ pricing:
 note:
   animated: false
   subheading: |
-    No purchase is necessary to download and start collaborating - every Zone is free when first created, and can be later upgraded by ordering one of the plans above.
-    
     [Watch a video for how this works.](https://support.diode.io/article/pr3fytz8sq){:target="_blank"}
   buttons:
   - title: Download
