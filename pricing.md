@@ -35,7 +35,7 @@ pricing:
       - E2EE asset connectivity
       - Browser upload/download
       - Unlimited storage
-      - 5 team members
+      - 10 team members
     button: Download
     action: "https://diode.io/download/#app"
 
