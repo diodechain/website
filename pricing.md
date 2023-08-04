@@ -20,7 +20,7 @@ pricing:
   title: E2EE from the core
   heading: Secure your team today.
 
-  blurb: <br/>Every Zone is free when first created, and can be later upgraded by ordering a plan.
+  blurb: <br/>Every Zone can use the "Nomad" plan when first created, and can be later upgraded as desired.
 
   plans:
   - title: Nomad
@@ -75,10 +75,13 @@ pricing:
 note:
   animated: false
   subheading: |
-    [Watch a video for how this works.](https://support.diode.io/article/pr3fytz8sq){:target="_blank"}
+    [Watch a video for how this works.](https://support.diode.io/article/pr3fytz8sq){:target="_blank"} 
+
+    Please connect with us if you don't see a good plan for your community! 
+    
   buttons:
-  - title: Download
-    url: "/download/"
+  - title: Get in Touch
+    url: "https://contactdiode.paperform.co/"
 
 ---
 
