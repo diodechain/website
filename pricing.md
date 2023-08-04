@@ -24,7 +24,7 @@ pricing:
 
   plans:
   - title: Nomad
-    description: a free plan for evaluation and privacy.
+    description: a free plan for private collaboration.
     price:
       yearly: 0
       year: 0
@@ -35,7 +35,7 @@ pricing:
       - E2EE asset connectivity
       - Browser upload/download
       - Unlimited storage
-      - 10 team members
+      - 5 team members
     button: Download
     action: "https://diode.io/download/#app"
 
