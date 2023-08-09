@@ -5,7 +5,7 @@ date: 2023-08-09 14:45
 categories: [Zero Trust]
 tags: [Zero Trust]
 author: MNJR
-image: e2ee.png
+image: Screen Shot 2023-08-09 at 3.34.45 PM.png
 
 ---
 ### Trust Brokers Make Zero Trust Possible
@@ -22,6 +22,7 @@ A Zero Trust E2EE system is designed to look something like this:
 
 **Decryption**: When Fiona receives the message, she decrypts it using the unique decryption key. This key unscrambles the content, restoring it to its original form and allows Fiona to read the message from Jeremy.
 
+<img src="../assets/img/blog/e2ee-goes-right.png" width="600" alt="Image of When E2EE Goes Right">
 
 ### The Importance of Trust Broker Security
 
@@ -34,6 +35,8 @@ When a Trust Broker is compromised, it can look something like this:
 **Transmission:** Jeremy sends the encrypted message to the Trust Broker, addressed to Fiona, through a communication channel, like the cloud. However, the Trust Broker has been compromised: Instead of ensuring the message is sent only to Fiona, it sends the message and other meta data to the Attacker.  The Attacker uses the metadata to take advantage of other vulnerabilities in the Trust Broker, hacks the encrypted messages from Jeremy, and further exploits Jeremy’s misplaced trust in the connection to “Fiona”. 
 
 **Decryption**: Fiona either never receives a message, receives false messages, or receives the same (but potentially compromised) messages in order to keep her in a state of ignorance that the Trust Broker has been compromised.
+
+<img src="../assets/img/blog/e2ee-goes-wrong.png" width="600" alt="Image of When E2EE Goes Wrong">
 
 ### Diode Secures the Trust Broker
 
