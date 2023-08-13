@@ -16,13 +16,14 @@ Zero Trust introduces the concept of a Trust Broker to enable establishing conne
 
 A Zero Trust E2EE system is designed to look something like this:
 
+<img src="../assets/img/blog/e2ee-goes-right.png" width="600" alt="Image of When E2EE Goes Right">
+
 **Encryption:** When Jeremy sends data using end-to-end encryption (E2EE), it gets encrypted from his device or browser using a unique encryption key that only he and Fiona know. This key transforms the content into an unreadable format, ensuring it remains unintelligible to potential interceptions.
 
 **Transmission:** Jeremy sends the encrypted message to the Trust Broker, addressed to Fiona, through a communication channel, like the cloud. During this transmission, the Trust Broker, acting as an intermediary, verifies that the identities of both Jeremy and Fiona match those specified in the Access Control List.  If they do, it then relays the encrypted data to Fiona. 
 
 **Decryption**: When Fiona receives the message, she decrypts it using the unique decryption key. This key unscrambles the content, restoring it to its original form and allows Fiona to read the message from Jeremy.
 
-<img src="../assets/img/blog/e2ee-goes-right.png" width="600" alt="Image of When E2EE Goes Right">
 
 ### The Importance of Trust Broker Security
 
@@ -30,13 +31,14 @@ Because of the central role that Trust Brokers play, Zero Trust networks require
 
 When a Trust Broker is compromised, it can look something like this:
 
+<img src="../assets/img/blog/e2ee-goes-wrong.png" width="600" alt="Image of When E2EE Goes Wrong">
+
 **Encryption:** When Jeremy sends data using end-to-end encryption (E2EE), it gets encrypted from his device or browser using a unique encryption key that only he and Fiona know. This key transforms the content into an unreadable format, ensuring it remains unintelligible to potential interceptions.
 
 **Transmission:** Jeremy sends the encrypted message to the Trust Broker, addressed to Fiona, through a communication channel, like the cloud. However, the Trust Broker has been compromised: Instead of ensuring the message is sent only to Fiona, it sends the message and other meta data to the Attacker.  The Attacker uses the metadata to take advantage of other vulnerabilities in the Trust Broker, hacks the encrypted messages from Jeremy, and further exploits Jeremy’s misplaced trust in the connection to “Fiona”. 
 
 **Decryption**: Fiona either never receives a message, receives false messages, or receives the same (but potentially compromised) messages in order to keep her in a state of ignorance that the Trust Broker has been compromised.
 
-<img src="../assets/img/blog/e2ee-goes-wrong.png" width="600" alt="Image of When E2EE Goes Wrong">
 
 ### Diode Secures the Trust Broker
 
