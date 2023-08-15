@@ -8,7 +8,7 @@ permalink: /use-case/secure-communication-for-missions-teams/
 ### Hero
 hero:
   class: hero--align
-  heading: Secure your <span>mission team </span> <span> anywhere in the world</span>.
+  heading: Secure your <span>mission team </span> <span> everywhere in the world</span>.
   buttons:
   - title: DOWNLOAD
     url: "/download/#app"
