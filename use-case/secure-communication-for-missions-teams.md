@@ -25,9 +25,9 @@ landing:
   columns:
   - title: Encrypted Team Communication
     text: End to end encrypted (E2EE) sensitive chat, group communication, file collaborations, information wiki, repositories and websites to protect your people and their contacts.  
-  - title: Zero Data Leakage
+  - title: Zero Data </span>Leakage
     text: All communication is your own.  There is no meta data stored on users, not even a phone number, email, or IP address, which protects both your team and network of contacts from being leaked.
-  - title: Replace Traditional VPNs
+  - title: Replace </span> Traditional VPNs
     text: The most secure solution for – great firewall type –  of environments around the world to tunnel internet traffic by replacing traditional VPN IP addresses flagging content. 
 
 ### Video
