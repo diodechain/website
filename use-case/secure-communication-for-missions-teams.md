@@ -23,11 +23,11 @@ landing:
   heading: Secure NGO and Mission Teams
   title: Serve, equip, and empower people even in the most sensitive countries around the world with the greatest level of security in an easy to use application. 
   columns:
-  - title: Encrypted Team Communication
-    text: End to end encrypted (E2EE) sensitive chat, group communication, file collaborations, information wiki, repositories and websites to protect your people and their contacts.  
-  - title: Zero Data     Leakage
+  - title: Encrypted Teams
+    text: End to end encrypted (E2EE) sensitive chat, group communication, online training, file collaborations, information wiki, repositories and websites to protect your people and their contacts.  
+  - title: Zero Data Leakage
     text: All communication is your own.  There is no meta data stored on users, not even a phone number, email, or IP address, which protects both your team and network of contacts from being leaked.
-  - title: Replace     Traditional VPNs
+  - title: Replace Traditional VPNs
     text: The most secure solution for – great firewall type –  of environments around the world to tunnel internet traffic by replacing traditional VPN IP addresses flagging content. 
 
 ### Video
