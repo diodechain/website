@@ -8,7 +8,7 @@ permalink: /use-case/secure-communication-for-missions-teams/
 ### Hero
 hero:
   class: hero--align
-  heading: Secure your <span>missions team around</span> <span>the world</span>.
+  heading: Secure your <span>mission team </span> <span> anywhere in the world</span>.
   buttons:
   - title: DOWNLOAD
     url: "/download/#app"
@@ -25,9 +25,9 @@ landing:
   columns:
   - title: Encrypted Team Communication
     text: End to end encrypted (E2EE) sensitive chat, group communication, file collaborations, information wiki, repositories and websites to protect your people and their contacts.  
-  - title: Zero Leakage
-    text: All communication is your own.  There is no meta data stored on users, not even a phone number, email, or IP address, which protects both uers and the network of contacts from being leaked.
-  - title: Replace VPNs
+  - title: Zero Data Leakage
+    text: All communication is your own.  There is no meta data stored on users, not even a phone number, email, or IP address, which protects both your team and network of contacts from being leaked.
+  - title: Replace Traditional VPNs
     text: The most secure solution for – great firewall type –  of environments around the world to tunnel internet traffic by replacing traditional VPN IP addresses flagging content. 
 
 ### Video
@@ -36,7 +36,7 @@ video:
   video: 
     src: "https://player.vimeo.com/video/825246709"
   content: |
-    NGOs, international organiztions and mission groups require a specialized security.  We get it, we've lived it for over half of our lives.  Our desire is to help protect your people, contacts and communication while supporting your purposes to bless people around the world. Traditional secure communication solutions, like VPNs, are costly to setup and maintain. Modern cloud storage solutions don't have the level of security and privacy required. If you need a solution for even the most sensitive enviroments to chat, share files and engage people, please get in contact with us, Diode Drive may be the perfect solution.
+    NGOs, international organiztions and mission groups require a specialized security.  We get it, we've lived it for most of our lives.  Our desire is to help protect your people, contacts and communication while supporting your purposes to bless people around the world. Traditional secure communication solutions, like VPNs, are costly to setup and maintain. Modern cloud storage solutions don't have the level of security and privacy required. If you need a solution for even the most sensitive enviroments around the world, please contact us, Diode Drive may be the perfect solution.
   buttons:
   - title: Download App
     url: "/download/#app"
