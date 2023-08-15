@@ -36,7 +36,7 @@ video:
   video: 
     src: "https://player.vimeo.com/video/825246709"
   content: |
-    NGOs, international organiztions and mission groups require a specialized security.  We get it, we've lived it for most of our lives.  Our desire is to help protect your people, contacts and communication while supporting your purposes to bless people around the world. Traditional secure communication solutions, like VPNs, are costly to setup and maintain. Modern cloud storage solutions don't have the level of security and privacy required. If you need a solution for even the most sensitive enviroments around the world, please contact us, Diode Drive may be the perfect solution.
+    NGOs, international organiztions and mission groups require a specialized security.  We get it, we've lived it for most of our lives.  Our desire is to help protect your people, contacts and communication while supporting your purposes to bless people around the world. Traditional VPNs and modern cloud storage solutions are costly and don't have the level of security or privacy required. If you need a solution for even the most sensitive enviroments around the world, please contact us, Diode may be the perfect solution.
   buttons:
   - title: Download App
     url: "/download/#app"
