@@ -10,7 +10,7 @@ image: encryption for teams.png
 ---
 ### Security for NGO and Mission Team Communication
 
-In today's interconnected world, NGOs, international organizations, and mission groups grapple with securing communication channels amidst a diverse and changing landscape. Ensuring privacy and security for exchanging sensitive data is paramount. This is why Diode's goal is to remove obstacles, enabling mission teams to fulfill their purpose to serve, equip, develop, and empower people, even in the toughest global settings, while maintaining peak security levels with a decentralized platform.
+In today's interconnected world, NGOs, international organizations, and mission groups grapple with securing communication channels amidst a diverse and changing landscape. Ensuring privacy and security for exchanging sensitive data is paramount. This is why Diode's goal is to remove obstacles, [enabling teams](https://diode.io/solutions/app/) to fulfill their purpose to serve, equip, develop, and empower people, even in the toughest global settings, while maintaining peak security levels with a decentralized platform.
 
 **The Challenge of Secure Communication for NGO and Mission Organizations:**
 
@@ -20,7 +20,7 @@ Diode addresses this by safeguarding people, contacts, and communication, fillin
 
 **Encrypted Teams:** 
 
-Diode introduces end-to-end encrypted (E2EE) features that fortify an organization's online communication. Mission teams can utilise anonymous and secure chat, group communication, online training, file collaborations, information wikis, repositories, and websites. Every aspect is designed to protect teams and their contacts, ensuring the utmost confidentiality.
+Diode introduces [end-to-end encrypted](https://diode.io/how-it-works/) (E2EE) features that fortify an organization's online communication. Mission teams can utilise anonymous and secure chat, group communication, online training, file collaborations, information wikis, repositories, and websites. Every aspect is designed to protect teams and their contacts, ensuring the utmost confidentiality.
 
 **Zero Data Leakage:** 
 
@@ -32,7 +32,7 @@ Diode's innovation replaces traditional VPN technology avoiding throttling and i
 
 **Communication:**
 
-Anonymous chat that shields identity with encryption allows for private and group messaging as Diode ensures that sensitive data remains confidential. Whether it's an international mission organization or company with a global team, Diode offers secure communication with easy to use tools that work for teams requiring agility.  Your teams can quickly and securely access each other no matter where they are in the world.  
+Anonymous chat that shields identity with encryption allows for private and group messaging as Diode ensures that sensitive data remains confidential. Whether it's an international mission organization or company with a global team, Diode offers secure communication with easy to use tools that work for teams requiring agility. Teams can quickly and securely access each other no matter where they are in the world.  
 
 #### Get Started with Diode:
 
