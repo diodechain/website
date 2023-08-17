@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Security for NGO and Mission Team Communication
-date: 2023-08-17 14:45
+date: 2023-08-17 16:45
 categories: [Security]
 tags: [Security]
 author: MNJR
