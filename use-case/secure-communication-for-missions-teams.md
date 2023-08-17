@@ -3,6 +3,7 @@ title: Secure Communication for Mission Teams
 layout: page
 class: header--dark
 permalink: /use-case/secure-communication-for-missions-teams/
+description: Secure anonymous chat and file collaboration for missons teams and NGO's
 
 
 ### Hero
