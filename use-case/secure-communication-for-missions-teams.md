@@ -9,7 +9,7 @@ description: Secure anonymous chat and file collaboration for missons teams and 
 ### Hero
 hero:
   class: hero--align
-  heading: Secure your mission <span> team communication </span> <span> everywhere in the world</span>.
+  heading: Secure your <span> mission team communication </span> <span> everywhere in the world</span>.
   buttons:
   - title: DOWNLOAD
     url: "/download/#app"
@@ -37,7 +37,7 @@ video:
   video: 
     src: "https://player.vimeo.com/video/825246709"
   content: |
-    NGOs, international organiztions and mission groups require a specialized security.  We get it, we've lived it for most of our lives.  Our desire is to help protect your people, contacts and communication while supporting your purposes to bless people around the world. Traditional VPNs and modern cloud storage solutions are costly and don't have the level of communication security or privacy required. If you need a secure communication solution for restricted or sensitive enviroments around the world, please contact us, Diode may be the perfect app.
+    International NGOs, organizations and mission groups require a specialized security.  We get it, we've lived it for most of our lives.  Our desire is to help protect your people, contacts and communication while supporting your purposes to bless people around the world. Traditional VPNs and modern cloud storage solutions are costly and don't have the level of communication security or privacy required. If you need a secure communication solution for restricted or sensitive enviroments around the world, please contact us or read more [here] (https://diode.io/blog/NGO-and-mission-team-communication), Diode may be the perfect app.
   buttons:
   - title: Download App
     url: "/download/#app"
