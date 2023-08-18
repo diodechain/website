@@ -37,7 +37,7 @@ video:
   video: 
     src: "https://player.vimeo.com/video/825246709"
   content: |
-    International NGOs, organizations and mission groups require a specialized security.  We get it, we've lived it for most of our lives.  Our desire is to help protect your people, contacts and communication while supporting your purposes to bless people around the world. Traditional VPNs and modern cloud storage solutions are costly and don't have the level of communication security or privacy required. If you need a secure communication solution for restricted or sensitive enviroments around the world, please contact us or read more [here] (https://diode.io/blog/NGO-and-mission-team-communication), Diode may be the perfect app.
+    International NGOs, organizations and mission groups require a specialized security.  We get it, we've lived it for most of our lives.  Our desire is to help protect your people, contacts and communication while supporting your purposes to bless people around the world. Traditional VPNs and modern cloud storage solutions are costly and don't have the level of communication security or privacy required. If you need a secure communication solution for restricted or sensitive enviroments around the world, please contact us or read more [here](https://diode.io/blog/NGO-and-mission-team-communication), Diode may be the perfect app.
   buttons:
   - title: Download App
     url: "/download/#app"
