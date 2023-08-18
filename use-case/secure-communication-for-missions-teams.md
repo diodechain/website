@@ -9,7 +9,7 @@ description: Secure anonymous chat and file collaboration for missons teams and 
 ### Hero
 hero:
   class: hero--align
-  heading: Secure your <span> mission team communication </span> <span> everywhere in the world</span>.
+  heading: Secure your mission <span> team communication </span> <span> around the world</span>.
   buttons:
   - title: DOWNLOAD
     url: "/download/#app"
