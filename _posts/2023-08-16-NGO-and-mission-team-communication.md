@@ -10,7 +10,9 @@ image: encryption for teams.png
 ---
 ### Security for NGO and Mission Team Communication
 
-In today's interconnected world, NGOs, international organizations, and mission groups grapple with securing communication channels amidst a diverse and changing landscape. Ensuring privacy and security for exchanging sensitive data is paramount. This is why Diode's goal is to remove obstacles, [enabling teams](https://diode.io/solutions/app/) to fulfill their purpose to serve, equip, develop, and empower people, even in the toughest global settings, while maintaining peak security levels with a decentralized platform.
+Diode believes that technology should help humans thrive. It should enhance our ability to operate, create, explore, educate, and innovate - unhindered.
+
+We understand that international NGOs, organizations, and mission groups have a similar desire for people to flourish.  In today's interconnected world, these teams grapple with securing communication channels amidst a diverse and changing landscape. Ensuring privacy and security while exchanging sensitive data is paramount. This is why Diode's goal is to remove obstacles, [enabling teams](https://diode.io/solutions/app/) to fulfill their purpose to serve, equip, develop, and empower people, even in the toughest global settings, while maintaining peak security levels with a decentralized platform.
 
 **The Challenge of Secure Communication for NGO and Mission Organizations:**
 
@@ -24,11 +26,11 @@ Diode introduces [end-to-end encrypted](https://diode.io/how-it-works/) (E2EE) f
 
 **Zero Data Leakage:** 
 
-At Diode, individual data and communication are strictly protected with digital sovereignty. Privacy is heightened by not retaining user metadata, such as phone numbers, emails, and IP addresses, while granting users anonymity and pseudonymity. The Pin Code system secures access for authorized individuals, and an emergency code functions as a kill switch with breach and device pin options for added safety. Incorporating dummy data bolsters security by providing an extra layer of defense against potential breaches. This approach safeguards both teams and contact networks from potential leaks.
+Diode works without retaining user metadata, phone numbers, emails, or IP addresses, while offering users anonymity and pseudonymity. This approach safeguards both teams and contact networks from potential leaks and provides users the ability to increase their team’s digital sovereignty.
 
 **Replacing Traditional VPNs:**
 
-Diode's innovation replaces traditional VPN technology avoiding throttling and international IP address concerns. Internet traffic tunnels securely directly through the app, ensuring unimpeded access even in the most restrictive settings to organization resources, public websites, and information.
+Diode's innovation replaces traditional VPN technology avoiding potential throttling and international IP address concerns. Internet traffic tunnels securely through the app, ensuring unimpeded access even in the most restrictive settings to organization resources, public websites, and information.
 
 **Communication:**
 
@@ -36,4 +38,4 @@ Anonymous chat that shields identity with encryption allows for private and grou
 
 #### Get Started with Diode:
 
-In a world where secure communication is non-negotiable but often traded for convenience, NGOs, international organizations, and mission organizations can confidently adopt Diode as a solution. This stands as a testament to the potential of technology to empower missions, providing a secure bridge to global collaboration and communication. Find out more and join the ranks of visionary purpose-driven organizations that are reshaping secure communication with [Diode](Diode.io).
+Secure communication is non-negotiable but often traded for convenience. International NGOs,  organizations, and mission groups can confidently adopt Diode as a solution. This stands as a testament to the potential of technology to empower people, providing a secure bridge to global collaboration and communication. Find out more and join the ranks of visionary purpose-driven organizations that are reshaping secure communication with [Diode](Diode.io).
