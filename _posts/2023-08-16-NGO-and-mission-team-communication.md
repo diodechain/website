@@ -38,4 +38,4 @@ Anonymous chat that shields identity with encryption allows for private and grou
 
 #### Get Started with Diode:
 
-Secure communication is non-negotiable but often traded for convenience. International NGOs,  organizations, and mission groups can confidently adopt Diode as a solution. This stands as a testament to the potential of technology to empower people, providing a secure bridge to global collaboration and communication. Find out more and join the ranks of visionary purpose-driven organizations that are reshaping secure communication with [Diode](Diode.io).
+Secure communication is non-negotiable but often traded for convenience. International NGOs,  organizations, and mission groups can confidently adopt Diode as a solution. This stands as a testament to the potential of technology to empower people, providing a secure bridge to global collaboration and communication. Find out more and join the ranks of visionary purpose-driven organizations that are reshaping secure communication with [Diode](https://diode.io).
