@@ -61,6 +61,7 @@ is_supported_platform() {
   found=1
   case "$platform" in
     darwin/amd64) found=0 ;;
+    darwin/arm64) found=0 ;;
     darwin/386) found=0 ;;
     linux/arm) found=0 ;;
     linux/arm64) found=0 ;;
@@ -104,6 +105,12 @@ adjust_os() {
 }
 adjust_arch() {
   # adjust archive name based on ARCH
+  if [ "$PLATFORM" == "darwin/arm64" ]; then
+    echo "fixing up darwin/arm64"
+    ARCH="amd64"
+    echo "$ARCH"
+    return 1
+  fi
   true
 }
 
