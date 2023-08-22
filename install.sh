@@ -109,7 +109,7 @@ adjust_arch() {
     echo "fixing up darwin/arm64"
     ARCH="amd64"
     echo "$ARCH"
-    return 1
+    return 0
   fi
   true
 }
