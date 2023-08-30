@@ -10,8 +10,8 @@ redirect_from:
 hero:
   class: hero--homepage
   animated: true
-  heading: Off the Shelf Zero Trust Solutions.
-  subheading: For operations requiring both agility and security.
+  heading: Secure Collaboration Everywhere.
+  subheading: Diode protects your team with serverless, end-to-end encrypted messaging, files, and browsing.
   buttons:
   - title: FIND OUT MORE
     url: "/solutions/"
@@ -24,8 +24,8 @@ hero:
 ### Headline below Hero
 headline:
   animated: false
-  title: Today’s digital security dilemma.
-  text: Today’s collaboration and connectivity tools require self-hosting or third-party involvement - burdening teams with cost, complexity, and security compromises. Diode has a better way.
+  title: A changing security landscape.
+  text: We work with teams all over the world who are responsible for protecting information, and who operate in sensitive regions.  <br/><br/>Diode’s zero trust application deploys in minutes. 
   buttons:
   - title: Find Out More
     class: btn--blank btn--arrow
@@ -36,12 +36,12 @@ headline:
 app:
   class: "story--homepage"
   animated: false
-  title: What is Diode
-  heading: Zero trust solutions built to protect teams.
+  title: Leave no trace
+  heading: Protect your digital footprint.
   content: |
-    Diode’s off the shelf solutions, built on our Smart Network, are intuitive and easy to use.  Your teams can quickly and securely access each other - and their assets – no matter where they are in the world.
+    We’ve removed third parties from the data equation.  No information to be hacked, no identities to be leaked, no data to be scraped.  Just you, your people, and your assets - the way humans naturally work.
     
-    Teams can collaborate, share, and access assets and other secure systems without the fear of loss of valuable IP or data.
+    Your device becomes a cryptographic data safe that can communicate with other devices as if you own the fiber Internet cable connecting them.
   buttons:
   - title: Read More
     url: "/solutions/app/"
@@ -53,26 +53,26 @@ app:
 ### Story: Fort Knox protection
 protected:
   animated: false
-  title: Fort Knox protection
-  heading: For teams just like yours.
+  title: Security that works for you
+  heading: Lower the <br/>cost of collaboration.
   content: |
-    By using Diode, your team can move fast – and operate above the security level that your organization requires.    
+    Diode’s security saves dollars today and mitigates expensive risks tomorrow.  There are no storage fees, no chat history limits, and no bandwidth restrictions.    
     
-    It’s easy to create Zero Trust zones that protect your digital operations and allow your partners to securely interoperate.  Get up and running quickly without burdening your IT team.
+    Diode can be deployed for specific teams in a way that addresses their unique security needs, yet keeps them connected with your existing software systems.
   buttons:
   - title: Find Out More
     url: "/teams/"
   teams:
-  - title: Operational Technology <br>Asset Management
+  - title: Data Security
     photo: team/operational-technology.webp
     alt: Operational Technology
-  - title: Product Development <br>Partner Interop
+  - title: Remote Teams
     photo: team/product-development.webp
     alt: Product Development
-  - title: Developer Operations <br>Stakeholder Access
+  - title: Traveling Expats
     photo: team/developer-operations.webp
     alt: Developer Operations
-  - title: IP and Sensitive Content <br>Customer Portals
+  - title: Training Cohorts
     photo: team/ip-and-content.webp
     alt: IP and Sensitive Content
 
@@ -80,12 +80,12 @@ protected:
 ### Story: From anywhere, whenever
 anywhere:
   animated: false
-  title: From anywhere, whenever
-  heading: Protected no matter what.
+  title: No more borders
+  heading: Stay connected  globally.
   content: |
-    Eliminate third parties from your IT environment, making it more secure than any managed ZTNA or Cloud VPN solution.
+    Your traveling and remote teams can stay connected without complicated VPNs, and can access your cloud software, hosted tools, and other resources just as if they are in the home office. 
   
-    With Diode, IT, OT, and IoT assets can be remotely managed whether they are on-site, in the cloud, or set up in a hybrid environment – all without leaking data, identifiable information, or behaviors.
+    Diode’s border crossing features protect your people, their contacts, and your intellectual property, no matter the situation.
   buttons:
   - title: Find Out More
     url: "/how-it-works/"
@@ -94,6 +94,25 @@ anywhere:
     class: circle
     alt: Protected no matter what
   mirrored: true
+
+
+### Story: From anywhere, whenever
+developers:
+  class: "story--homepage"
+  animated: false
+  title: Zero trust around the world
+  heading: Extend your security perimeter.
+  content: |
+    Diode's zero trust data fabric is under the hood.  Your IT team can use it to extend the secure collaboration environment with custom web applications, operational technology access, API tunneling, and more.
+    
+    A key focus of compliance regimes is to ensure the security of your server assets.  Diode's serverless environment can accelerate, simplify, and fulfill your compliance requirements.
+  buttons:
+  - title: Read More
+    url: "/solutions/app/"
+  image:
+    src: story/network-full.webp
+    alt: Diode App
+
 
 
 ### Box: What teams are saying
@@ -236,6 +255,8 @@ partners:
 {%- include story.liquid data="protected" -%}
 
 {%- include story.liquid data="anywhere" -%}
+
+{%- include story.liquid data="developers" -%}
 
 {%- include box.liquid data="testimonials" -%}
 
