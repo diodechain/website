@@ -5,7 +5,7 @@ date: 2023-08-17 16:45
 categories: [Security]
 tags: [Security]
 author: MNJR
-image: encryption for teams.png
+image: encryption for teams.jpg
 
 ---
 ### Security for NGO and Mission Team Communication
