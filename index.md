@@ -39,7 +39,7 @@ app:
   title: Leave no trace
   heading: Protect your digital footprint.
   content: |
-    We’ve removed third parties from the data equation.  No information to be hacked, no identities to be leaked, no data to be scraped.  Just you, your people, and your assets - the way humans naturally work.
+    Remove third parties from your data equation.  No information to be hacked, no identities to be leaked, no data to be scraped.  Just you, your people, and your assets - the way humans naturally work.
     
     Your device becomes a cryptographic data safe that can communicate with other devices as if you own the fiber Internet cable connecting them.
   buttons:
