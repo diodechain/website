@@ -35,7 +35,7 @@ Diode Diode: [https://diode.io/download/](/download/)
 To install the Diode Client, use the curl command:
 
 ```
-curl -Ssf https://diode.io/install.sh | sh
+curl -Ssf https://diode.io/install.sh | bash
 ```
 
 Or, you can build from source: [https://github.com/diodechain/diode_go_client](https://github.com/diodechain/diode_go_client)

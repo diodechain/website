@@ -14,7 +14,7 @@ redirect_from:
 
 To use Diode, the first open-source, blockchain-based Ngrok alternative, written in Go, install the Diode Client using the curl command: 
 
-<code class="highlighter-rouge"><span class="noselect">$ </span>curl -Ssf https://diode.io/install.sh | sh</code>
+<code class="highlighter-rouge"><span class="noselect">$ </span>curl -Ssf https://diode.io/install.sh | bash</code>
 
 Go to [Download](/download/).
 
