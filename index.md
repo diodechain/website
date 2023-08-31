@@ -25,7 +25,7 @@ hero:
 headline:
   animated: false
   title: A changing security landscape.
-  text: We work with teams every day who are responsible for protecting information, and who operate in sensitive regions.  <br/><br/>Diode’s zero trust application deploys in minutes. 
+  text: We work with teams every day who are responsible for protecting information, and who operate in sensitive environments.  <br/><br/>Diode’s zero trust application deploys in minutes. 
   buttons:
   - title: Find Out More
     class: btn--blank btn--arrow
