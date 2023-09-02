@@ -100,11 +100,11 @@ h1, h2, h3, h4, h5, h6,
 
 h1, .h1 {
   margin-bottom: 30px;
-  font-size: 48px;
-  line-height: 46px;
+  font-size: 35px;
+  line-height: 33px;
   @include media-breakpoint-up(xss) {
-    font-size: 50px;
-    line-height: 54px;
+    font-size: 40px;
+    line-height: 38px;
   }
   @include media-breakpoint-up(md) {
     font-size: 80px;

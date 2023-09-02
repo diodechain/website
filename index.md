@@ -10,7 +10,7 @@ redirect_from:
 hero:
   class: hero--homepage
   animated: true
-  heading: Secure Collaboration Everywhere.
+  heading: Secure Communication Everywhere
   subheading: Diode protects your team with serverless, end-to-end encrypted messaging, files, and browsing.
   buttons:
   - title: FIND OUT MORE
@@ -24,7 +24,7 @@ hero:
 ### Headline below Hero
 headline:
   animated: false
-  title: A changing security landscape.
+  title: A changing security landscape
   text: We work with teams every day who are responsible for protecting information, and who operate in sensitive environments.  <br/><br/>Diode’s zero trust application deploys in minutes. 
   buttons:
   - title: Find Out More
@@ -37,7 +37,7 @@ app:
   class: "story--homepage"
   animated: false
   title: Leave no trace
-  heading: Protect your digital footprint.
+  heading: Protect your digital footprint
   content: |
     Remove third parties from your data equation.  No information to be hacked, no identities to be leaked, no data to be scraped.  Just you, your people, and your assets - the way humans naturally work.
     
@@ -54,7 +54,7 @@ app:
 protected:
   animated: false
   title: Security that works for you
-  heading: Lower the <br/>cost of collaboration.
+  heading: Lower the <br/>cost of collaboration
   content: |
     Diode’s security saves dollars today and mitigates expensive risks tomorrow.  There are no storage fees, no chat history limits, and no bandwidth restrictions.    
     
@@ -80,8 +80,8 @@ protected:
 ### Story: From anywhere, whenever
 anywhere:
   animated: false
-  title: No more borders
-  heading: Stay connected  globally.
+  title: Ditch the VPN
+  heading: Stay connected  globally
   content: |
     Your traveling and remote teams can stay connected without complicated VPNs, and can access your cloud software, hosted tools, and other resources just as if they are in the home office. 
   
@@ -100,10 +100,10 @@ anywhere:
 developers:
   class: "story--homepage"
   animated: false
-  title: Zero trust around the world
-  heading: Extend your security perimeter.
+  title: Zero trust under the hood
+  heading: Extend your security perimeter
   content: |
-    Diode's zero trust data fabric is under the hood.  Your IT team can use it to extend the secure collaboration environment with custom web applications, operational technology access, API tunneling, and more.
+    Diode's zero trust data fabric makes it easy extend the secure collaboration environment with E2EE video conferencing, operational technology tools, custom web applications, devops interfaces, API tunneling, and more.
     
     A key focus of compliance regimes is to ensure the security of your server assets.  Diode's serverless environment can accelerate, simplify, and fulfill your compliance requirements.
   buttons:
