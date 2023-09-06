@@ -70,7 +70,7 @@ function initPopup() {
           target.classList.remove('open');
           if (isNavbar) {
             document.body.classList.remove('menu-open');
-            enableScroll();
+            //enableScroll();
           }
           setTimeout(function () {
             target.classList.remove('visible');
@@ -84,7 +84,7 @@ function initPopup() {
         setTimeout(function () {
           if (isNavbar) {
             document.body.classList.add('menu-open');
-            disableScroll();
+            //disableScroll();
           }
         }, 300);
       }
