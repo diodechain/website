@@ -63,17 +63,17 @@ protected:
   - title: Find Out More
     url: "/teams/"
   teams:
-  - title: Data Security
-    photo: team/operational-technology.webp
+  - title: Back Office Security
+    photo: team/product-development.webp
     alt: Operational Technology
   - title: Remote Teams
-    photo: team/product-development.webp
+    photo: team/ip-and-content.webp
     alt: Product Development
   - title: Traveling Expats
     photo: team/developer-operations.webp
     alt: Developer Operations
   - title: Training Cohorts
-    photo: team/ip-and-content.webp
+    photo: team/operational-technology.webp
     alt: IP and Sensitive Content
 
 
