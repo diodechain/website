@@ -34,5 +34,5 @@ Here are some things that our customers value about Diode’s approach to enabli
 
 By combining Zero Trust networking principles with a commitment to universal accessibility, Diode opens the doors to a future where individuals and businesses can collaborate and communicate with confidence, irrespective of geographical boundaries. 
 
-[Download](Diode.io/download) Diode now and join the movement to break down digital barriers while safeguarding your data and connections. 
+[Download](/download) Diode now and join the movement to break down digital barriers while safeguarding your data and connections. 
 
