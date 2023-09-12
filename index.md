@@ -11,7 +11,7 @@ hero:
   class: hero--homepage
   animated: true
   heading: Secure Communication Everywhere
-  subheading: Diode protects your team with serverless, end-to-end encrypted messaging, files, and browsing.
+  subheading: Diode protects your team with end-to-end encrypted messaging, file sharing, and web browsing.
   buttons:
   - title: FIND OUT MORE
     url: "/solutions/"
