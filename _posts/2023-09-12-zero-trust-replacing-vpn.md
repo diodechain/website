@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Zero Trust Replaces VPN 
-date: 2023-09-13 16:45
+date: 2023-09-13 07:45
 categories: [Zero Trust]
 tags: [Zero Trust, Security]
 author: MNJR
