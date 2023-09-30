@@ -141,8 +141,12 @@ if (isElectron) {
 var txDefault = {
   ethereumNodes : [
     {
-      url : "https://testnet.diode.io:8443",
-      name: "Diode Prenet"
+      url : "https://moonbeam-alpha.api.onfinality.io/public",
+      name: "Moonbase Alpha"
+    },
+    {
+      url : "https://prenet.diode.io:8443",
+      name: "Diode L1"
     },
     {
       url : "https://staging.diode.io:8443",
@@ -172,6 +176,10 @@ var txDefault = {
     },
     'diode': {
       name: 'Diode Prenet',
+      address: '0x0000000000000000000000000000000000000000'
+    },
+    'moonbasealpha': {
+      name: 'Moonbase Alpha',
       address: '0x0000000000000000000000000000000000000000'
     },
     'privatenet': {
