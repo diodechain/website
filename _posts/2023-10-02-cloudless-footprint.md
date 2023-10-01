@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Your Cloudless Footprint 
-date: 2023-09-30 13:45
+date: 2023-10-02 13:45
 categories: [Security]
 tags: [Security, Decentralisation]
 author: MNJR
@@ -20,7 +20,7 @@ Digital footprints often contain sensitive and personal information, such as bro
 
 # The Free-for-all on Your Digital Footprint
 
-Here are five systemic vulnerabilities through which your digital footprints, and more, are leaked.  Please note, we don’t even delve into the more [fundamental problems with Internet security](link to blog post about how there are 3900 CAs and all can read your info).  
+Here are five systemic vulnerabilities through which your digital footprints, and more, are leaked.  Please note, we don’t even delve into the more [fundamental problems with Internet security](https://diode.io/blog/why-there-are-3652-organizations-that-can-read-everyones-encrypted-traffic).  
 
 We’ll try to be brief:
 
@@ -42,6 +42,6 @@ Here is how Diode treats each of the vulnerabilities above:
 4.  **Usernames** - Each zone is created with its own pseudo username to remove the usage of a single, globally identifiable username. These pseudo usernames are specific to the respective zone and may not be linked directly to the user's primary account.
 5.  **Privacy Policies** - Despite working on the Diode app, not even Diode has your information. Any chat, collaboration, file uploading, or other features used are enitrely encrypted and unreadable by Diode itself.
 
-Finally, Diode’s intention is to transform the Internet into everyone’s private network. This won’t happen with only Diode alone - that is why our Diode Network is an _open_ E2EE data fabric that more and more people are building solutions around. This won’t work without something to replace the incentive to sell your profile to the highest bidder. This is where blockchain tokens come in - instead of “he who has the gold makes the rules,” it is “he who makes apps that are wildly popular get more rewards” - we harness [Metcalf’s law](https://en.wikipedia.org/wiki/Metcalfe%27s_law) as a meritocrical incentive to replace the incentive to sell your data to the highest bidder. 
+Finally, Diode's goal is to transform the Internet into a private network accessible to everyone. Achieving this vision requires more than just Diode itself. That's why our Diode Network is an open end-to-end encrypted (E2EE) data fabric that an increasing number of people are building solutions around. Furthermore, this transformation won't succeed without an alternative to the current practice of selling your profile to the highest bidder. This is where blockchain tokens come into play. Instead of the traditional 'he who has the gold makes the rules,' we adopt a new approach: 'he who creates wildly popular apps receives greater rewards.' We harness [Metcalf’s law](https://en.wikipedia.org/wiki/Metcalfe%27s_law) as a meritocrical incentive to replace the incentive to sell your data to the highest bidder. 
 
 If this sounds like the route you want to take for yourself, your organisation, or your company, [try Diode.io out](https://diode.io/download/#download-app) today.
