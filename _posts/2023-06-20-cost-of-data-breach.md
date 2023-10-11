@@ -16,7 +16,7 @@ To prepare your organization, it is important to understand the financial costs 
 
 ### An Increasing Threat
 
-Between 2020 and 2022, the average total cost of a breach increased by 13% to [$4.35 million](https://www.ibm.com/downloads/cas/OJDVQGRY) - the highest it has ever been. Data breaches have a significant ongoing ripple effect throughout an organization - 83% of breached organizations experience multiple breaches. Consequently, around 60% of companies are forced to raise prices to cope with the resulting financial burden, ultimately erroding a competative edge. 
+Between 2020 and 2022, the average total cost of a breach increased by 13% to $4.35 million - the highest it has ever been. Data breaches have a significant ongoing ripple effect throughout an organization - 83% of breached organizations experience multiple breaches. Consequently, around 60% of companies are forced to raise prices to cope with the resulting financial burden, ultimately erroding a competative edge. 
 
 The implications of these breaches extend beyond individual businesses, impacting the overall landscape of data security.
 
