@@ -10,7 +10,7 @@ redirect_from:
 - /diode/Diode-June-Update-20168/
 ---
 
-Since our last development update in February we're now just getting over the extended periods of Covid forced home-office. While our [Taiwan office](https://pi-taipei.diode.link/) was only little affected by Covid19 and has had business as usual since quite a time. In our [German office](berlin-zehlendorf.diode.link/) we're just returning now to a somewhat normal. Hope you guys are all well - keep safe. That said, let's have a look at the development we got done in those last months. It's actually plenty...
+Since our last development update in February we're now just getting over the extended periods of Covid forced home-office. While our [Taiwan office](https://pi-taipei.diode.link/) was only little affected by Covid19 and has had business as usual since quite a time. In our German office we're just returning now to a somewhat normal. Hope you guys are all well - keep safe. That said, let's have a look at the development we got done in those last months. It's actually plenty...
 
 ## Roadmap Update
 
