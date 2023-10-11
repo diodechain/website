@@ -24,4 +24,4 @@ Team members that are directly connected are indicated by a green dot with a whi
 
 Also, if you click the team member name, their connection type will say either “bridged” (using a relay) or “direct” (direct connection).
 
-This is yet another way that Diode Drive differentiates from centralized solutions like Google Drive or Dropbox. Not only is Diode Drive the leading [self-custody](diode drive/self-custody-for-data-22032/) collaboration solution, Diode Drive’s direct connections are more performant and have a smaller attack surface than are possible with centralized solutions.
+This is yet another way that Diode Drive differentiates from centralized solutions like Google Drive or Dropbox. Not only is Diode Drive the leading [self-custody](/blog/self-custody-for-data) collaboration solution, Diode Drive’s direct connections are more performant and have a smaller attack surface than are possible with centralized solutions.
