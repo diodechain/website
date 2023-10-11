@@ -37,7 +37,7 @@ Although a few other chat applications, like Signal, have a similar commitment f
 
 We really respect Signal here at Diode. However, Signal is oriented towards individual users and user groups - not towards organizations and teams.
 
-Diode is more organization-oriented, like Slack or Discord, but also has native integrations with [structured files](/blog/decentralized-dropbox-alternative/) (a self custody Dropbox / Google Drive like capability) and [dynamic content](/blog/free-ngrok-alternative) (an enterprise VPN like capability) - the very information that makes many chats pertinent to teams in the first place!
+Diode is more organization-oriented, like Slack or Discord, but also has native integrations with [structured files](/blog/decentralized-dropbox-alternative) (a self custody Dropbox / Google Drive like capability) and [dynamic content](/blog/free-ngrok-alternative) (an enterprise VPN like capability) - the very information that makes many chats pertinent to teams in the first place!
 
 If the team's focus includes files/work product, Diode Drive can help the team's chats organize, share, reference, pin, and even author files in conversations. 
 
