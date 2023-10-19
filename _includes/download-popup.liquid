@@ -28,9 +28,9 @@
                 <ul class="download-popup__other">
                     <li><a href="{{ site.download.app.macos }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">MacOS X</a><br></li>
                     <li><a href="{{ site.download.app.windows }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Windows (64-bit)</a></li>
-                    <li><a href="{{ site.download.app.linux }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Linux (64-bit)</a><code class="sha">47d8a4b6c7171c4d21b922dc30269f2291907c8b</code></li>
-                    <li><a href="{{ site.download.app.raspberry-pi }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Raspberry Pi / ARM 32bit</a><code class="sha">140daf2af4d1656cba3f6edd4b39f5c8b1eac9c9</code></li>
-                    <li><a href="{{ site.download.app.raspberry-pi-64 }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Raspberry Pi / ARM 64bit</a><code class="sha">6aa7b5189d3d05cb36b960117375aff61b9e45a0</code></li>
+                    <li><a href="{{ site.download.app.linux }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Linux (64-bit)</a><code class="sha">{{ site.download.app.linux-checksum }}</code></li>
+                    <li><a href="{{ site.download.app.raspberry-pi }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Raspberry Pi / ARM 32bit</a><code class="sha">{{ site.download.app.raspberry-pi-checksum }}</code></li>
+                    <li><a href="{{ site.download.app.raspberry-pi-64 }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Raspberry Pi / ARM 64bit</a><code class="sha">{{ site.download.app.raspberry-pi-64-checksum }}</code></li>
                     <li><a href="{{ site.download.app.ios }}" target="_blank">iOS</a></li>
                     <li><a href="{{ site.download.app.android }}" target="_blank">Android</a></li>
                 </ul>
