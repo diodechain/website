@@ -20,8 +20,8 @@
                     <a class="btn btn-primary os linux hide" href="{{ site.download.app.linux }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR Linux (64-bit)</a>
                     <a class="btn btn-primary os raspberry-pi hide" href="{{ site.download.app.raspberry-pi }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR Raspberry Pi / ARM 32bit</a>
                     <a class="btn btn-primary os raspberry-pi-64 hide" href="{{ site.download.app.raspberry-pi-64 }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR Raspberry Pi / ARM 64bit</a>
-                    <a class="btn btn-primary os ios hide" href="{{ site.download.app.ios }}" target="_blank">GET FOR iOS</a>
-                    <a class="btn btn-primary os android hide" href="{{ site.download.app.android }}" target="_blank">GET FOR Android</a>
+                    <a class="btn btn-primary os ios hide" href="{{ site.download.app.ios }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">GET FOR iOS</a>
+                    <a class="btn btn-primary os android hide" href="{{ site.download.app.android }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">GET FOR Android</a>
                 </div>
 
                 <p class="download-popup__other-title">Or choose another Platform:</p>
@@ -31,8 +31,8 @@
                     <li><a href="{{ site.download.app.linux }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Linux (64-bit)</a><code class="sha">{{ site.download.app.linux-checksum }}</code></li>
                     <li><a href="{{ site.download.app.raspberry-pi }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Raspberry Pi / ARM 32bit</a><code class="sha">{{ site.download.app.raspberry-pi-checksum }}</code></li>
                     <li><a href="{{ site.download.app.raspberry-pi-64 }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Raspberry Pi / ARM 64bit</a><code class="sha">{{ site.download.app.raspberry-pi-64-checksum }}</code></li>
-                    <li><a href="{{ site.download.app.ios }}" target="_blank">iOS</a></li>
-                    <li><a href="{{ site.download.app.android }}" target="_blank">Android</a></li>
+                    <li><a href="{{ site.download.app.ios }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">iOS</a></li>
+                    <li><a href="{{ site.download.app.android }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Android</a></li>
                 </ul>
                 <hr>
                 <p class="download-popup__note">MacOS + Windows builds are signed/notarized. For Linux builds please compare the SHA-1 checksum above with the file downloaded for validation.</p>
