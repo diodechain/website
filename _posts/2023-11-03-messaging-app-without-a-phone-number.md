@@ -10,13 +10,11 @@ image: messaging.jpeg
 ---
 ## Messaging App Without a Phone Number
 
-There are not many options for messaging apps without a phone number - even the apps that are known for some of their security features such as Signal, WhatsApp, and Telegram, require users to provide a phone number in order to use their services.  
+There are not many options for messaging apps without a phone number - even the apps that are known for some of their security features, such as Signal, WhatsApp, and Telegram, require users to provide a phone number in order to use their services.  
 
 However, at Diode, we believe secure communication should be accessible to everyone - whether or not they have a phone number or whether or not they want to provide a phone number. 
 
-In a recent poll we conducted on X, formerly known as Twitter, we found others in agreement that requiring a phone number for messaging apps is not a desired feature. Rather, all respondents either sought an alternative or already refuse to use these types of platforms.
-
-![](../assets/img/blog/twitterpoll.png)
+Many people feel the same way - in a recent poll we conducted on X (formerly Twitter), 0% of respondents favored requiring a phone number for messaging apps.
 
 ## Why Phone Numbers Present a Problem
 
