@@ -16,7 +16,7 @@ However, at Diode, we believe secure communication should be accessible to every
 
 In a recent poll we conducted on X, formerly known as Twitter, we found others in agreement that requiring a phone number for messaging apps is not a desired feature. Rather, all respondents either sought an alternative or already refuse to use these types of platforms.
 
-![Screenshot of Twitter Poll](/assets/img/blog/twitterpoll.png)
+![](../assets/img/blog/twitterpoll.png)
 
 ## Why Phone Numbers Present a Problem
 
