@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Messaging App Without A Phone Number
+description: decentralized discord, decentralized messaging app, messaging app without a phone number
 date: 2023-11-03 13:45
 categories: [Security]
 tags: [Security]
