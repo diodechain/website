@@ -6,7 +6,7 @@ date: 2023-11-03 13:45
 categories: [Security]
 tags: [Security]
 author: MNJR
-image: /assets/img/blog/messaging.jpeg
+image: messaging.jpeg
 
 ---
 ## Messaging App Without a Phone Number
