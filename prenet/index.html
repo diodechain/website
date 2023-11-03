@@ -18,6 +18,7 @@
     <script src="prenet/geo.js"></script>
     <script src="prenet/storage.js"></script>
     <script src="prenet/donut.js"></script>
+    <script src="prenet/blocklist.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     </link>
     <link rel="shortcut icon" href="images/favicon.png" title="Favicon">
@@ -253,7 +254,7 @@
 
                 for (key in ret) {
                     let name = valueToString(ret[key]);
-                    if (name == undefined) continue;
+                    if (name == undefined || isBlocked(name)) continue;
                     name = name.toLowerCase();
 
                     let nameOffset = web3.utils.toBN(key)
