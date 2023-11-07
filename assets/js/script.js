@@ -300,11 +300,18 @@ function initOS() {
   if (navigator.userAgent.indexOf('Linux') !== -1) {
     if (navigator.userAgent.indexOf('arm') !== -1) {
       OSName = 'Raspberry Pi';
-    } else if (navigator.userAgent.indexOf('Android') !== -1) {
-      OSName = 'Android';
     } else {
       OSName = 'Linux';
     }
+  }
+  if (navigator.userAgent.indexOf('Raspberry') !== -1) {
+    OSName = 'Raspberry Pi';
+  }
+  if (navigator.userAgent.indexOf('Raspbian') !== -1) {
+    OSName = 'Raspberry Pi';
+  }
+  if (navigator.userAgent.indexOf('Android') !== -1) {
+    OSName = 'Android';
   }
 
   let os = OSName.toLowerCase().replace(/\s+/g, '-');
@@ -320,6 +327,8 @@ function initOS() {
       target.classList.remove('hide');
     }
   });
+
+  return os;
 }
 
 function initReveal() {
