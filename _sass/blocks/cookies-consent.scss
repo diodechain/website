@@ -1,0 +1,43 @@
+/* ==========================================================================
+   COOKIES CONSENT
+   ========================================================================== */
+.cookies-consent {
+  font-size: 14px;
+  line-height: 1.428em;
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 17px;
+  }
+
+  hr {
+    margin: 1.5em 0 2em;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    @include media-breakpoint-up(sm) {
+      gap: 20px;
+    }
+    @include media-breakpoint-up(xl) {
+      gap: 30px;
+    }
+
+    .btn {
+      cursor: pointer;
+      @include media-breakpoint-down(sm) {
+        min-width: 120px;
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+      @include media-breakpoint-up(xl) {
+        min-width: 220px;
+        padding-right: 40px;
+        padding-left: 40px;
+      }
+    }
+  }
+}

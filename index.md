@@ -267,5 +267,3 @@ partners:
 {%- include box.liquid data="how-works" -%}
 
 {%- include partners.liquid -%}
-
-{%- include download-popup.liquid id="download-app" -%}

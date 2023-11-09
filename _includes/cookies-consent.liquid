@@ -1,0 +1,24 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.popup %}
+{% endif %}
+
+<div class="popup" id="{{ include.id }}">
+    <div class="popup__space">
+        <aside class="popup__content">
+            <header class="popup__header">
+                <h3 class="popup__title">We value your privacy</h3>
+            </header>
+            <div class="cookies-consent">
+                <p>We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.</p>
+                <p>By clicking "Accept All", you consent to our use of cookies. <a href="{{ site.links.privacy.url }}">Privacy Policy</a>.</p>
+                <hr>
+                <div class="cookies-consent__buttons">
+                    <button type="button" class="btn cookie-accept">Accept All</button>
+                    <button type="button" class="btn btn--bordered cookie-reject">Reject All</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
