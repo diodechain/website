@@ -255,7 +255,7 @@ var VAccount = Vue.component("account", {
       web3.eth.getStorage(this.hash, (err, ret) => {
         this.err = undefined;
         if (err) this.error = err;
-        else this.storage = ret;
+        else this.storage = ret.sort();
       });
       web3.eth.getTransactionCount(this.hash, (err, ret) => {
         this.err = undefined;
