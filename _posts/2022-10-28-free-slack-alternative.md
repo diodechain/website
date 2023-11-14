@@ -60,6 +60,6 @@ Diode Drive is bringing a whole new approach to collaboration – please [downlo
 
 <div class="story__buttons">
   <a href="/website_dev_2023/solutions/app/" class="btn " target="">Find Out More</a>
-  <a href="download-app" class="btn " target="">Download</a>
+  <a href="#download-app" class="btn " target="">Download</a>
 </div>
 
