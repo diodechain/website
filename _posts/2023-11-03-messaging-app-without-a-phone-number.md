@@ -43,4 +43,10 @@ At Diode, we provide a messaging app that prioritizes both security and privacy 
 
 Our commitment to safeguarding your digital sovereignty begins with our dedication to supplying technologies, such as our mathematically secured end-to-end encrypted network, that fundamentally do not have access to information that might compromise your autonomy.  This is just another way we are making communication secure for the world.
 
-If this is something you want to start using today - a messaging app without a phone number - one that is free, secure, and private - feel free to [download now](diode.io/download). 
+Start using Diode today - a messaging app without a phone number - one that is free, secure, and private. 
+
+<div class="story__buttons">
+  <a href="/website_dev_2023/solutions/app/" class="btn " target="">Find Out More</a>
+  <a href="download-app" class="btn " target="">Download</a>
+</div>
+
