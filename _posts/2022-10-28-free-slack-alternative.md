@@ -57,6 +57,13 @@ If you are looking for a free Slack alternative, Diode may check all the boxes! 
 In the spirit of full disclosure, Diode does have modest [paid plans](/pricing/) for when your team grows or when certain features become more widely used by the team!
 
 Diode Drive is bringing a whole new approach to collaboration – please [download and try it out](/download/)! If you have questions or want to talk more about how Diode can enable your use-case, please [get in touch](https://contactdiode.paperform.co/)!
-<button name="Download" class="btn" onclick="#download-app">Donwload</button>
-
+<button name="Download" class="btn" onclick="#download-app">{{ site.links.download.title }}</button>
+  <div>
+    <a href="#download-app" class="btn popup-open" target="">{{ site.links.download.title }}</a>
+    <a href="/website_dev_2023/solutions/app/" class="btn " target="">Find Out More</a>
+  </div>
+<div class="story__buttons">
+  <a href="/website_dev_2023/download/#app" class="btn " target="">Download</a>
+  <a href="/website_dev_2023/solutions/app/" class="btn " target="">Find Out More</a>
+</div>
 
