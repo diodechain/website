@@ -59,6 +59,6 @@ In the spirit of full disclosure, Diode does have modest [paid plans](/pricing/)
 Diode Drive is bringing a whole new approach to collaboration – please [download and try it out](/download/)! If you have questions or want to talk more about how Diode can enable your use-case, please [get in touch](https://contactdiode.paperform.co/)!
 
 <div class="story__buttons">
-  <a href={{"/solutions/app/" | prepend: site.path | relative_url}} class="btn" target="">Find Out More</a>
+  <a href="{{"/solutions/app/" | prepend: site | relative_url}}" class="btn" target="">Find Out More</a>
   <a href="#download-app" class="btn popup-open" target="">{{ site.links.download.title }}</a>
 </div>
