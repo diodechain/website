@@ -47,6 +47,6 @@ Start using Diode today - a messaging app without a phone number - one that is f
 
 <div class="story__buttons">
   <a href="/website_dev_2023/solutions/app/" class="btn " target="">Find Out More</a>
-  <a href="download-app" class="btn " target="">Download</a>
+  <a href="#download-app" class="btn " target="">Download</a>
 </div>
 
