@@ -46,7 +46,7 @@ Our commitment to safeguarding your digital sovereignty begins with our dedicati
 Start using Diode today - a messaging app without a phone number - one that is free, secure, and private. 
 
 <div class="story__buttons">
-  <a href="/website_dev_2023/solutions/app/" class="btn " target="">Find Out More</a>
+  <a href="/solutions/app/" class="btn" target="">Find Out More</a>
   <a href="#download-app" class="btn popup-open" target="">{{ site.links.download.title }}</a>
 </div>
 
