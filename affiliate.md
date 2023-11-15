@@ -10,7 +10,7 @@ hero:
   animated: true
   class: hero--right
   heading: Diode Affiliate Agreement
-  subheading: This Master Services Agreement is effective as of November 15, 2023.
+  subheading: This Diode Affiliate Agreement is effective as of November 15, 2023.
   image: hero/download.webp
 
 ---
@@ -130,4 +130,4 @@ In the event any provision of this Agreement is held to be invalid or unenforcea
 - **"Customer Lead"** means any prospective end user of the Services in the Territory that is referred by Affiliate to Diode for approval or rejection in accordance with this Agreement.
 - **"Documentation"** means the reference materials, technical information, website content, and marketing materials as furnished by Diode with respect to the Services.
 - **"Services"** means subscriptions to Diode's Online Services provided by Diode to Customers.
-- **"Territory" means the Region of Operation of this Agreement, as defined in the Addendum.
+- **"Territory"** means the Region of Operation of this Agreement, as defined in the Addendum.
