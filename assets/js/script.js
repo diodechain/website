@@ -341,7 +341,7 @@ function initRedirect() {
   }
   window.ThankYouRedirect = (redirect_link) => {
     var RedirectURL = redirect_link;
-    var RedirectPauseSeconds = 3;
+    var RedirectPauseSeconds = 10;
     setTimeout("DoTheRedirect('" + RedirectURL + "')", parseInt(RedirectPauseSeconds * 1000));
   }
 }
