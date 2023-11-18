@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Messaging App Without A Phone Number
-description: decentralized discord, decentralized messaging app, messaging app without a phone number
+description: messaging app without a phone number, decentralized messaging app, decentralized discord
 date: 2023-11-03 13:45
 categories: [Security]
 tags: [Security]
@@ -11,7 +11,7 @@ image: messaging.jpeg
 ---
 ## Messaging App Without a Phone Number
 
-There are not many options for messaging apps without a phone number - even the apps that are known for some of their security features, such as Signal, WhatsApp, and Telegram, require users to provide a phone number in order to use their services.  
+A messaging apps without a phone number is incredibly difficult to find nowadays. Even the apps that are known for some of their security features, such as Signal, WhatsApp, and Telegram, require users to provide a phone number in order to use their services.  
 
 However, at Diode, we believe secure communication should be accessible to everyone - whether or not they have a phone number or whether or not they want to provide a phone number. 
 
