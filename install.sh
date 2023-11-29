@@ -105,7 +105,7 @@ adjust_os() {
 }
 adjust_arch() {
   # adjust archive name based on ARCH
-  if [ "$PLATFORM" == "darwin/arm64" ]; then
+  if [ "$PLATFORM" = "darwin/arm64" ]; then
     echo "fixing up darwin/arm64 to amd64"
     ARCH="amd64"
     return 0
