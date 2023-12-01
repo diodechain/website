@@ -6,7 +6,7 @@ date: 2023-12-01 15:25
 categories: [Security, IT Tools, CLI]
 tags: [Security]
 author: HR
-image: vpn.jpeg
+image: Securely Share Remote Drives.jpeg
 
 ---
 ## Remote drive sharing and mapping
@@ -21,7 +21,7 @@ The traditional way of supporting this type of environment is via a VPN setup.  
 
 ### How it works
 
-The technology usually used to create a Windows network drive is called "SMB" - the [Server Message Block] protocol(https://www.techtarget.com/searchnetworking/definition/Server-Message-Block-Protocol).  We can use Diode to create a secure pipe for SMB that can tunnel into any device in the world, therebye create a protected P2P network drive.  
+The technology usually used to create a Windows network drive is called "SMB" - the [Server Message Block](https://www.techtarget.com/searchnetworking/definition/Server-Message-Block-Protoco) protocol.  We can use Diode to create a secure pipe for SMB that can tunnel into any device in the world, thereby creating a protected P2P network drive.  
 
 This approach allows you to "Map Network Drive" on Windows to access the remote files as if they were on a hard-drive on the local computer.  The remote files can be on a Linux "Samba" share or on another Windows system.
 
