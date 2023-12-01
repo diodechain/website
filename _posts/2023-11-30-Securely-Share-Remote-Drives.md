@@ -27,8 +27,4 @@ This approach allows you to "Map Network Drive" on Windows to access the remote 
 
 If you're interested in using Diode in this way, please see the [technical support article](https://support.diode.io/article/mrebw2fgxw-remote-windows-smb-shares) or [get in touch](https://t.me/diode_chain)!
 
-<div class="story__buttons">
-  <a href="{{"/solutions/cli/" | prepend: path | relative_url}}" class="btn" target="">Find Out More</a>
-  <a href="#download-app" class="btn popup-open" target="">{{ site.links.download.title }}</a>
-</div>
 
