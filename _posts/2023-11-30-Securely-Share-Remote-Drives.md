@@ -4,7 +4,7 @@ title: Securely Share Remote Drives
 description: share remote smb samba shares for Windows Linux or Mac
 date: 2023-12-01 11:25
 categories: [Self-Custody]
-tags: [Security, Use Case, Regulated Data, Self-Custody]
+tags: [Self-Custody, Security, Use Case, Regulated Data]
 author: HR
 image: Securely Share Remote Drives.jpeg
 
