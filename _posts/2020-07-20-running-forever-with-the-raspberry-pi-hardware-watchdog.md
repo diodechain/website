@@ -90,3 +90,9 @@ echo 'interface = wlan0' >> /etc/watchdog.conf
 ```
 
 With this additional configuration line, the watchdog will also power cycle the Raspberry Pi when the wifi interface _wlan0_ gets into trouble.
+
+## Use your Raspberry Pi to:
+
+1) [ Host a decentralized website ](https://support.diode.io/article/r62bhcnax0-host-a-public-wordpress-site-on-a-raspberry-pi)
+2) [ Replace Dropbox / Google Drive ](https://support.diode.io/article/ad7s45khyq)
+3) [ Be a private chat server ](https://support.diode.io/article/6y61v0vt03-use-your-raspberry-pi-as-a-private-chat-server)
