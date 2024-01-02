@@ -61,6 +61,8 @@ nav:
   url: "https://diodedemo.paperform.co/"
   target: _blank
   class: "demo"
+- title: Vaults
+  url: "/vaults/"  
 - title: Support
   url: "https://support.diode.io/"
   target: _blank

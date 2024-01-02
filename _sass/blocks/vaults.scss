@@ -1,0 +1,42 @@
+/* ==========================================================================
+   JOINZONE
+   ========================================================================== */
+.vaults {
+  .title {
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+    color: #2d3e50;
+    font-weight: 400;
+    margin-bottom: 20px;
+
+    &_line {
+      width: 150px;
+      height: 1px;
+      margin: auto; 
+      margin-bottom: 37px;
+    }
+  }
+
+  p.text-left {
+    text-align:left;
+  }
+
+  .subtitle {
+    font-size: 16pt;
+  }
+
+  .vaultinfo {
+      /* width: 400px; */
+      word-wrap: break-word;
+      padding-right: 30px;
+      font-size: 13pt;
+      color: #54595e;
+  }
+
+  .download-prompt {
+    margin-top: 30px;
+  }
+}
