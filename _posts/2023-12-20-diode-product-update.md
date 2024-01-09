@@ -6,7 +6,7 @@ date: 2023-12-20 11:25
 categories: [Diode]
 tags: [Diode, Diode Drive]
 author: MNJR
-image: Product Update.jpeg
+image: Product Update.jpg
 
 ---
 ## Diode Product Update - December 2023
