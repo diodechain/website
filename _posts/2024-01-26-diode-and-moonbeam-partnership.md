@@ -6,7 +6,7 @@ date: 2024-01-26 11:25
 categories: [Diode]
 tags: [Diode, Diode Drive]
 author: Hans Rempel
-image: 
+image: Moonbeam.jpg
 
 ---
 ## Diode and Moonbeam Partnership
