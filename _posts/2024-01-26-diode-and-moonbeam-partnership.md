@@ -2,7 +2,7 @@
 layout: post
 title: Diode and Moonbeam Partnership
 description: diode and moonbeam partnership
-date: 2024-01-26 11:25
+date: 2024-01-26 17:25
 categories: [Diode]
 tags: [Diode, Diode Drive]
 author: Hans Rempel
