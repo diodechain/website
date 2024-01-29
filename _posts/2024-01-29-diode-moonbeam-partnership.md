@@ -2,7 +2,7 @@
 layout: post
 title: Diode and Moonbeam Partnership
 description: diode and moonbeam partnership
-date: 2024-01-25 15:09
+date: 2024-01-29 11:09
 categories: [Press]
 tags: [Press, DePIN, Zero Trust, Decentralization]
 author: Hans Rempel
