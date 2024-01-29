@@ -2,9 +2,9 @@
 layout: post
 title: Diode and Moonbeam Partnership
 description: diode and moonbeam partnership
-date: 2024-01-30 17:25
-categories: [Diode]
-tags: [Diode, Diode Drive]
+date: 2024-01-29 14:25
+categories: [Press]
+tags: [Press, DePIN, Zero Trust, Decentralization]
 author: Hans Rempel
 image: Moonbeam.jpg
 
