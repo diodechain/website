@@ -6,7 +6,7 @@ date: 2024-01-30 02:00
 categories: [Press]
 tags: [Press, DePIN, Zero Trust, Decentralization]
 author: Hans Rempel
-image: ThinMoonbeam.jpg
+image: Moonbeam2.jpg
 
 ---
 
