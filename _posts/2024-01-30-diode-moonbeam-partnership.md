@@ -10,19 +10,19 @@ image: Moonbeam.jpg
 
 ---
 
-# Moonbeam and Diode Collaborate on DePIN Platform for Zero Trust Network Access (ZTNA)
+# Diode and Moonbeam Collaborate on DePIN Platform for Zero Trust Network Access (ZTNA)
 
 **_Diode partners with Moonbeam to deploy suite of blockchain communication solutions that align with Polkadot founder Gavin Woods’ original vision for Web3_**
 
-SINGAPORE and ROSEBURG, Ore.,  January 30, 2024 –  [Moonbeam Network](https://moonbeam.network), a smart contract platform for building cross-chain connected applications, and [Diode](https://diode.io), the innovation leader in Zero Trust Network Access software, today announced a partnership  to deploy a suite of blockchain-enabled secure communication solutions. 
+ROSEBURG, Ore. and SINGAPORE,  January 30, 2024 –  [Diode](https://diode.io), the innovation leader in Zero Trust Network Access software, and [Moonbeam Network](https://moonbeam.network), a smart contract platform for building cross-chain connected applications, today announced a partnership  to deploy a suite of blockchain-enabled secure communication solutions. 
 
 Diode’s approach uses [DePIN](https://www.coindesk.com/consensus-magazine/2024/01/29/how-ai-and-depin-will-change-web3/), or “Decentralized Physical Infrastructure,” where blockchain protocols choreograph real-world infrastructure in an autonomous and decentralized manner.  Diode’s massively scalable secure communication platform, which includes solutions for messaging, storage, and web tunneling, helps to bring about the original vision for Web3 created by Gavin Woods, the co-founder of Ethereum and founder of Polkadot. 
 
 Ethereum co-founder Vitalik Buterin recently referenced Woods’ vision for Web3, where Ethereum is more than “Bitcoin plus smart contracts,” but becomes a foundation for a “public decentralized shared hard drive.”  Conversely, as Buterin describes, today’s Internet users’ data gets routed through centralized servicers run by entities that have the arbitrary power to monitor, censor, and deplatform.  Diode’s DePIN solution addresses these issues by providing a secure, trustless, and decentralized medium for people and companies to communicate. 
 
-“_In 2023, we started looking for a partner to accelerate our roadmap for deploying high-performance communication infrastructure into new regions. Moonbeam’s shared vision, world-scale distributed infrastructure, amazing team, and access to cross-chain projects make them the perfect partner. Our partnership with Moonbeam helps achieve our vision of empowering the next generation of secure Internet communications,_” said Hans Rempel, CEO of Diode.
+“_In 2023, we began looking for a partner to accelerate our roadmap for deploying high-performance zero trust communication infrastructure into new regions. Moonbeam’s shared vision, world-scale distributed infrastructure, amazing team, and access to cross-chain projects make them a perfect partner. Our partnership with Moonbeam helps achieve our vision of empowering the next generation of secure Internet communications,_” said Hans Rempel, CEO of Diode.
 
-Appropriately, the Ethereum Virtual Machine (EVM)-compatible parachain Moonbeam links the Ethereum and Polkadot ecosystems. As a truly decentralized network with a DAO governance structure, the Moonbeam project has also maintained the ethos of Web3 at its core.
+Appropriately, the Ethereum Virtual Machine (EVM)-compatible parachain Moonbeam links the Ethereum and Polkadot ecosystems. As a truly decentralized network with a DAO governance structure, the Moonbeam project also maintains the ethos of Web3 at its core.
 
 “_Moonbeam is excited to partner with a technically sophisticated team like Diode. They understand deeply how vital it is for businesses and individuals to transition to ZTNA in order to own and protect their data. Diode’s platform is demonstrable proof that blockchain’s core principles of decentralization and data ownership pave the way for better, more secure user-centric solutions in the real world,_” said Sicco Naets, Head of Ecosystem Development at the Moonbeam Foundation.
 
