@@ -18,7 +18,7 @@ The app (finally) has “Search” for your DMs, channel chats, and file/folder 
 
 **Chat Integrations** 
 
-We introduced our first chat integration capability!  You can now configure external services to send messages to chat channels - for example: an IT monitoring outage alerts sent to an #incidents channel.  An unique thing about our integrations is the integration can be done via full E2E security (other chat apps break encryption at the server).  This is just the start of our integration features.  Self custody LLM anyone?
+We introduced our first chat integration capability!  You can now configure external services to send messages to chat channels - for example: an IT monitoring outage alert sent to an #incidents channel.  An unique thing about our integrations is the integration can be done via full E2E security from your external service to your team (other chat apps break encryption at the server).  This is just the start of our integration features.  Self custody LLM anyone?
 
 **Improved Bookmarks** 
 
