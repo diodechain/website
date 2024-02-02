@@ -2,11 +2,11 @@
 layout: post
 title: Diode Product Update - January 2024
 description: January product update
-date: 2024-01-31 17:00
+date: 2024-02-02 17:00
 categories: [Diode]
 tags: [Diode, Diode Drive]
 author: MNJR
-image: 
+image: Product Update.jpeg
 
 ---
 
