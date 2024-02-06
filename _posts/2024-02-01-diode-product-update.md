@@ -9,6 +9,7 @@ author: MNJR
 image: Product Update.jpeg
 
 ---
+## Diode Product Update - January 2024
 
 We are making good headway on our roadmap for 2024!  Here are some updates we rolled out in January for the Diode App ([v1.9.0 - 1.9.3](https://support.diode.io/category/9gss923s33-diode-app-updates-versions)):
 
