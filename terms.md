@@ -11,7 +11,7 @@ hero:
   animated: true
   class: hero--right
   heading: Master Services Agreement
-  subheading: This Master Services Agreement is effective as of March 10, 2021.
+  subheading: This Master Services Agreement is effective as of March 10, 2021 and updates as of February 22, 2024.
   image: hero/download.webp
 
 ---
