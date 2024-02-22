@@ -17,7 +17,7 @@ Diode offers a VPN-like capability by employing a secure tunneling method that i
 
 While Diode's feature benefit organizations anywhere seeking security solutions for financial information and personal identifiable information (PII), the secure tunneling is especially beneficial for international teams.  Diode's tool enables secure tunneling for teams working across different geographic locations, ensuring that IP addresses and data remain confidential during transmission.  
 
-The global extension of resources by Diode not only ensures security but also offers a user-friendly experience surpassing costly traditional enterprise VPNs or off-the-shelf consumer VPNs. By prioritizing ease of use and comprehensive protection, Diode is a reliable solution for organizations wanting to safeguard their intellectual property and sensitive data while opperating and collaborating internationally.
+The global extension of resources by Diode not only ensures security but also offers a user-friendly experience surpassing costly traditional enterprise VPNs or off-the-shelf consumer VPNs. By prioritizing ease of use and comprehensive protection, Diode is a reliable solution for organizations wanting to safeguard their intellectual property and sensitive data while operating and collaborating internationally.
 
 [Contact us](https://diode.io/about/) for more information or a demo on how your organization could utilize these tunneling features.
 
