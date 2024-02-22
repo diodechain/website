@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Replacing VPN Internationally
+title: Replacing VPN For International Teams
 description: VPN replacement, replacing VPN, replace VPN internationally, international teams
 date: 2024-02-22 16:00
 categories: [Diode]
