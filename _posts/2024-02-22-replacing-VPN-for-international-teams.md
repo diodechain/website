@@ -11,7 +11,7 @@ image: internationalvpn.jpeg
 ---
 ### Replacing VPNs for International Companies and NGOs
 
-Diode's features benefit organizations everywhere seeking data security solutions for personally identifiable information (PII), financial, or other sensitive and regulated information.  However, the secure tunneling is particularly beneficial for international teams.  Diode's secure tunnels enable teams working across different geographic locations, ensuring that IP addresses, websites being accessed, and other data remain confidential during transmission.  
+Diode's features benefit organizations everywhere seeking data security solutions for personally identifiable information (PII), health, financial, or other sensitive and regulated information.  However, the secure tunneling is particularly beneficial for international teams.  Diode's secure tunnels enable teams working across different geographic locations, ensuring that IP addresses, websites being accessed, and other data remain confidential during transmission.  
 
 Diode’s tunneling capability secures access to common tools like Microsoft Teams or Google Workspace for international companies and NGOs. This capability can replace the need for VPNs, reducing cost and IT department configuration, while allowing precise and safe access to organizational resources in all regions of the world.
 
