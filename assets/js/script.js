@@ -139,12 +139,12 @@ function initPopup() {
   }
 
   function acceptConsent(event) {
-    setCookie('acceptCookies', true, 90);
+    setCookie('Consent_Status', 'granted', 90);
     closePopups.call(this, event);
   }
 
   function rejectConsent(event) {
-    setCookie('acceptCookies', false, 90);
+    setCookie('Consent_Status', 'denied', 90);
     closePopups.call(this, event);
   }
 
@@ -181,7 +181,7 @@ function initPopup() {
     }
   });
 
-  let c = getCookie('acceptCookies');
+  let c = getCookie('Consent_Status');
   if (!c) {
     document.querySelectorAll('.cookies-consent').forEach((consent) => {
       consent.querySelector('.cookie-accept').addEventListener('click', acceptConsent, false);
