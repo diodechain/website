@@ -21,14 +21,14 @@ hero:
 ### Landing
 landing:
   heading: Secure NGO Mission Teams
-  title: Serve, equip, and empower people in the most sensitive countries around the world with a "military-grade" secure application. 
+  title: Serve, equip, and empower people in the most sensitive countries around the world with an accessible and highly secure application. 
   columns:
   - title: Fulfill your Mission
-    text: Called to serve people of every nation – we want to help catalyze a movement. 
+    text: Dedicated to serving people of every nation – we want to help catalyze a movement. 
   - title: Protect your Team
     text: Encrypt sensitive communications and information to protect your people and their contacts.  
   - title: Replace VPNs
-    text: Secure team training, collaborations, and sensitive information without highly detectable and expensive VPNs. 
+    text: Secure remote access for team training, collaborations, and internet connection without a highly detectable or expensive VPNs. 
 
 
 ### Video
