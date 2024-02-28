@@ -32,6 +32,11 @@
     right: 10px;
     z-index: 10;
     cursor: pointer;
+    @include media-breakpoint-down(xss) {
+      + .popup__header {
+        margin-top: 30px;
+      }
+    }
     @include media-breakpoint-up(lg) {
       top: 20px;
       right: 20px;
@@ -54,6 +59,31 @@
     &::after {transform: rotate(-45deg);}
   }
 
+  &__header {
+    font-size: 14px;
+    margin-bottom: 20px;
+    @include media-breakpoint-up(xss) {
+      font-size: 15px;
+    }
+    @include media-breakpoint-up(md) {
+      margin-bottom: 24px;
+      font-size: 16px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    h2, h3 {margin-bottom: .25em;}
+    h3 {
+      @include media-breakpoint-down(xss) {
+        font-size: 22px;
+      }
+    }
+    &:last-child {margin-bottom: 0;}
+
+  }
+
   &__space {
     height: 100%;
     padding: 15px;
@@ -66,7 +96,7 @@
     position: relative;
     z-index: 5;
     transition: opacity $effect;
-    background: rgba(black, .8);
+    background: rgba(black, .5);
     opacity: 0;
     -webkit-overflow-scrolling: touch;
 
@@ -80,7 +110,7 @@
 
   &__content {
     max-width: 100%;
-    padding: 50px 15px 20px;
+    padding: 20px 15px;
     margin-right: auto;
     margin-left: auto;
     position: relative;
@@ -89,41 +119,22 @@
     @include media-breakpoint-up(xss) {
       padding: 30px 20px;
     }
-    @include media-breakpoint-up(xss) {
+    @include media-breakpoint-up(xsl) {
+      max-width: 560px;
       padding-right: 25px;
       padding-left: 25px;
     }
-    @include media-breakpoint-up(xsl) {
-      max-width: 560px;
+    @include media-breakpoint-up(md) {
+      max-width: 680px;
       padding-right: 30px;
       padding-left: 30px;
     }
-    @include media-breakpoint-up(md) {
-      max-width: 680px;
-    }
     @include media-breakpoint-up(lg) {
       max-width: 840px;
+      #cookies-consent & {max-width: 680px;}
     }
     @include media-breakpoint-up(xl) {
       max-width: 920px;
     }
-  }
-
-  &__header {
-    font-size: 14px;
-    margin-bottom: 30px;
-    @include media-breakpoint-up(xss) {
-      font-size: 15px;
-    }
-    @include media-breakpoint-up(md) {
-      font-size: 16px;
-    }
-    @include media-breakpoint-up(xl) {
-      font-size: 18px;
-    }
-
-    h2 {margin-bottom: .25em;}
-    &:last-child {margin-bottom: 0;}
-
   }
 }

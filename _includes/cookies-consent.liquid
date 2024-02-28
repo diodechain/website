@@ -1,0 +1,24 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.popup %}
+{% endif %}
+
+<div class="popup" id="{{ include.id }}">
+    <div class="popup__space">
+        <aside class="popup__content">
+            <header class="popup__header">
+                <h3 class="popup__title">Cookie consent</h3>
+            </header>
+            <div class="cookies-consent">
+                <p>Cookies help us to know which of our marketing efforts are working.  Click Accept if you want to help us figure that out.  Click Reject if you'd rather just do your thing.</p>
+                <p>By clicking "Accept", you consent to our use of cookies. <a href="{{ site.links.privacy.url }}">Privacy Policy</a>.</p>
+                <hr>
+                <div class="cookies-consent__buttons">
+                    <button type="button" class="btn cookie-accept">Accept</button>
+                    <button type="button" class="btn btn--bordered cookie-reject">Reject</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>

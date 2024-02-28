@@ -61,8 +61,7 @@ function initPopup() {
     }
   }
 
-  function toggleClick(event) {
-   
+  function togglePopup(event) {
     var target = event.currentTarget.area, isNavbar = event.currentTarget.navbar;
     if (target) {
       if (target.classList.contains('visible')) {
@@ -92,35 +91,106 @@ function initPopup() {
     return false;
   }
 
+  function showPopup(target) {
+    target.classList.add('visible');
+    setTimeout(function () {
+      target.classList.add('open');
+    }, 25);
+    setTimeout(function () {
+      if (isNavbar) {
+        document.body.classList.add('menu-open');
+      }
+    }, 300);
+    return false;
+  }
+
+  function closePopups(event) {
+    var target = event.target.closest('.popup');
+    setTimeout(function () {
+      target.classList.remove('open');
+      setTimeout(function () {
+        target.classList.remove('visible');
+      }, 250);
+    }, 25);
+    return false;
+  }
+
+  function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function acceptConsent(event) {
+    setCookie('Consent_Status', 'granted', 90);
+    closePopups.call(this, event);
+  }
+
+  function rejectConsent(event) {
+    setCookie('Consent_Status', 'denied', 90);
+    closePopups.call(this, event);
+  }
+
   var navbar = document.querySelector('.header__nav'),
     toggle = document.querySelector('.header__toggle'),
     close = navbar.querySelector('.header__close');
 
   toggle.area = navbar;
   toggle.navbar = true;
-  toggle.addEventListener('click', toggleClick, false);
+  toggle.addEventListener('click', togglePopup, false);
 
   close.area = navbar;
   close.navbar = true;
-  close.addEventListener('click', toggleClick, false);
+  close.addEventListener('click', togglePopup, false);
 
   document.querySelectorAll('.close-nav').forEach((link) => {
     link.area = navbar;
-    link.addEventListener('click', toggleClick, false);
+    link.addEventListener('click', togglePopup, false);
     link.navbar = true;
   });
 
   document.querySelectorAll('.popup-open').forEach((link) => {
     var target = link.getAttribute('href'),
       popup = document.querySelector(target);
-
     link.area = popup;
-    link.addEventListener('click', toggleClick, false);
-
-    var close = popup.querySelector('.popup__close');
-    close.area = popup;
-    close.addEventListener('click', toggleClick, false);
+    link.addEventListener('click', togglePopup, false);
   });
+
+  document.querySelectorAll('.popup').forEach((popup) => {
+    let link = popup.querySelector('.popup__close');
+    if (link) {
+      link.area = popup;
+      link.addEventListener('click', closePopups, false);
+    }
+  });
+
+  let c = getCookie('Consent_Status');
+  if (!c) {
+    document.querySelectorAll('.cookies-consent').forEach((consent) => {
+      consent.querySelector('.cookie-accept').addEventListener('click', acceptConsent, false);
+      consent.querySelector('.cookie-reject').addEventListener('click', rejectConsent, false);
+    });
+
+    let t = document.querySelector('#cookies-consent');
+    showPopup(t);
+  }
 }
 
 function initTestimonials() {
@@ -212,9 +282,7 @@ function initTags() {
     let updating = false
     const handleScroll = () => {
       if (window.scrollY >= offsetTop || window.pageYOffset >= offsetTop) {
-        console.log(offsetTop, allHeight);
         tags.classList.add(fixedClass);
-        console.log(window.scrollY, allHeight)
         if (window.scrollY >= allHeight || window.pageYOffset >= allHeight) {
           tags.classList.add(fixedClassBottom);
         } else {
