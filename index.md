@@ -10,8 +10,8 @@ redirect_from:
 hero:
   class: hero--homepage
   animated: true
-  heading: Secure your collaborations
-  subheading: Diode protects your team with end-to-end encrypted messaging and tunneled access to tools.
+  heading: Secure your collaboration
+  subheading: Diode protects your team with end-to-end encrypted messaging and tunneled access to their tools.
   buttons:
   - title: FIND OUT MORE
     url: "/solutions/"
