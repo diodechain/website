@@ -15,13 +15,13 @@ The Diode team continues to work hard as another round of updates have made thei
 
 *   Thanks to a dedicated community collaborator, our app now features a Chinese translation! Currently available in traditional characters (Taiwan/Hong Kong), a simplified version is in the works. 
 *   French and Italian languages are also now integrated into the app, alongside updates to the German translation, automatically adapting to your operating system's settings; share your language preferences or improvement suggestions in this [article](https://support.diode.io/article/9mfd8sacll)!
-*   If you're interested in contributing to the simplified character translation of Chineses (or other languages), please join [our project](https://crowdin.com/project/diode-drive/zh-CN).
+*   If you're interested in contributing to the simplified character translation of Chinese (or other languages), please join [our project](https://crowdin.com/project/diode-drive/zh-CN).
 
 **Private Chat Channels Upgrade** 
-Diode now offers private channels in beta for Enterprise Zones, allowing teams to create exclusive group chats, enhancing conversation segmentation.
+Diode now supports fully E2E private channels in Enterprise Zones, allowing teams to create exclusive group chats, enhancing conversation and privacy.
 
 **File Backup Improvement** 
-File backup now includes a 0 byte write condition, providing an extra layer of protection for accidentally deleted file contents in addition to the existing backup-upon-delete feature.
+File backup now also triggers on a 0 byte write condition, providing an extra layer of protection for accidentally deleted file contents in addition to the existing backup-upon-delete feature.
 
 **Read-Only Team Members** 
 We've introduced a "Read Only" role for new Team Members, set by default to enhance ease of managing larger Zones, restricting file modification and visibility while allowing access to Broadcast Channels and DM with Zone Owner or Admins.
