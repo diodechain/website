@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Executive Order To Protect Sensitive Data
+title: Protecting Sensitive Data
 description: Diode on the executive order to protect sensitive data
 date: 2024-03-01 8:00
 categories: [Diode]
 tags: [Diode, Diode Drive]
 author: MNJR
-image: Product Update.jpeg
+image: informativeblog.png
 
 ---
 As concerns for communication security rise globally, the federal government recently issued [new guidelines](https://www.cnbc.com/2024/02/28/biden-executive-order-aims-to-protect-americans-sensitive-data-from-china-russia.html?__source=iosappshare%7Ccom.apple.UIKit.activity.Mail) aimed at protecting Americans' sensitive data, specifically against potential threats from nation state actors. This not only addresses the immediate challenges presented by external threats, but also sets the stage for a system that will manage such issues in an evolving landscape of data exploitation.
