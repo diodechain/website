@@ -11,26 +11,22 @@ image: AMA.png
 ---
 On March 1st and March 4th Diode hosted a live AMA on the Ambassador Program on our [X account](https://twitter.com/diode_chain)'s Space. CEO Hans Rempel led the AMA discussing the overview of the program and how people can get involved as well as answered a few questions, which we'll answer below.
 
+*   **Overview of the Ambassador Program and Bandwidth Growth Program**
+    *   In short, the [Ambassador Program](https://diode.foundation/docs/programs/ambassador_program.html) is an interactive tool that we will be using to assist in the promotion of Diode software and the Diode Network as well as the supplying of DePIN infrastructure (Relay Nodes) to the Diode Network. People can [register](https://diode.foundation/docs/programs/ambassador_program.html#registration) to be Ambassadors to promote Diode within their own region. Once registered as an Ambassador, you can participate in the [Bandwidth Growth Program](https://diode.foundation/docs/programs/bandwidth_growth_program.html), where the goal is to promote the growth of high-quality regional network bandwidth around the world.
+*   **Why Diode?**
+    *   The [Diode Network](https://diode.io/solutions/network/) is a tunneling network that allows people to have ownership and self custody over their own data as a capable security network where you can communicate with any other individual or device in the world. Then, Diode itself has added applications on top to allow you to do that such as the [Diode CLI](https://diode.io/solutions/cli/) (more IT based) to connect devices and servers through the Diode Network and the [Diode App](https://diode.io/solutions/app/) which is a decentralized and encrypted messaging application that can be used as a replacement for Slack and Discord.
 *   **What is the Ambassador Program?**
-    *   In short, the [Ambassador Program](https://diode.foundation/docs/programs/ambassador_program.html) is an interactive tool that we will be using to assist in the promotion of Diode software and the Diode Network as well as the supplying of DePIN infrastructure (Relay Nodes) to the Diode Network. People can register to be “Ambassadors” to promote Diode in their own region.
+    *   The program is set up to where there are the Seed Ambassadors in different regions who have referral codes which they will hand out to others who want to be Ambassadors themselves, who can then hand out their own referral codes as a referral system. The Ambassadors that refer other Ambassadors to join the network then receive rewards from not only their Relay Node traffic, but also from the Relay Node traffic of the Ambassador they gave a referral code to. 
+*   **What is the Diode Foundation and the Diode Community DAO?**
+    *   The [Diode Foundation](https://diode.foundation/) oversees the Diode token and its utilization to support growth initiatives, including the Bandwidth Growth Program and the Ambassador Program. These programs will fall under the purview of The Diode Foundation, separate from the Diode operating entity. Additionally, there will be a [Diode Community DAO](https://diode.foundation/docs/dao.html), acting as the governing body of the foundation, where members propose and decide on programs.
 *   **Who are the Seed Ambassadors?**
-    *   The Seed Ambassadors are the small group of regional ambassadors that Diode is choosing who are the only Ambassadors that will not need a referral code from other Ambassadors, nor will they need to host a Relay Node.
-*   **How do referral codes work?**
-    *   Referral codes are given from another Ambassador to someone who wants to register to be an Ambassador and host a Relay Node. The Ambassadors that refer other Ambassadors to join the network then receive rewards from not only their Relay Node traffic, but also from the Relay Node traffic of the Ambassador they gave a referral code to.
-*   **What’s the difference between the Diode Network versus other communication networks when it comes to Relay Nodes?**
-    *   To use an example: When communicating with someone in a place like Mexico City with the closest server in Dallas, traditional networks lead to slower and less secure communication because the communication has to go all the way from Mexico City to Dallas and back again. Diode's solution involves strategically placing relay nodes, such as one _directly_ in Mexico City, to ensure faster and more secure regional data transmission.
-*   **I’m all in and ready to host a Relay Node…what do I need?**
-    *   The Moonbeam partnership streamlines chain work to create lightweight Relay Nodes, needing fewer resources and adaptable to diverse hosting environments. Because of this, you can actually run your Relay Nodes on a home connection. While there are options such as regional VM providers and major platforms like AWS or Google, the preference is for regional providers to ensure widespread network presence, boosting overall efficiency.
-*   **How will I know if I’m going to get my $20 back from hosting the node?**
-    *   Every app that wants to communicate with the Diode network is being charged through the fleet contracts, acting as sponsorship pools for associated devices. Monthly, these contracts allocate funds as rewards for services. Relay providers get a share of rewards based on the ratio of devices using their service—e.g., if half use relay A and half use relay B, rewards are split equally.
-*   **What happens to the current Diode miners with the move to Moonbeam?**
+    *   The Seed Ambassadors are the small group of regional ambassadors that Diode is choosing who are the only Ambassadors that will not need a referral code from other Ambassadors, nor will they need to host a Relay Node. They receive their rewards from any of the Ambassadors that branched off of their referral codes.
+*   **How to host a Relay Node**
+    *   With a reliable static IP, whether from a residential connection or a data center, and a Linux system, you can host the Diode Relay Node. To run the Relay Node effectively, the static IP address is essential. Without one, your node may not handle much traffic and as a result not earn significant token rewards.  While current Diode server setups demand hosting a L1 blockchain node, an update within the next month will remove this requirement, simplifying deployment to various platforms like virtual machines, Raspberry Pi, or older systems, making the resource requirements to hosting low.
+*   **What happens to the current Diode L1 miners with the move to Moonbeam?**
     *   The Diode L1 (current Diode Chain) is shifting to Moonbeam, a faster network with significant on-chain innovations. Moonbeam will become the primary platform for interacting with Diode tokens through the process of slowing down L1, but as of now there is no exact date that miners need to move. Rewards, including those from the bandwidth growth program, are exclusively in the new Diode token on Moonbeam.
-*   **What are “quests" and how will they be managed?**
-    *   As a part of promoting the usage of this program within Diode, we will provide some quests for additional engagement. From time to time quests will appear and once they are completed they will provide rewards to people who achieve the quests.
 *   **Timing?**
     *   Our goal is to have the Seed Ambassadors who have registered for a Seed Ambassador slot receive their answer shortly. We want to begin giving referral codes for people to begin signing up other Ambassadors underneath the Seed Ambassadors by mid March. In regards to the transition from the Diode L1 mining to the Moonbeam Network, we do not have a set date in mind but if there is a date that is decided on, all users will know well in advance. 
-*   **New Telegram Channel**
-    *   We will be introducing a new Diode Community channel on Telegram alongside the currently existing Diode Telegram channel. As we anticipate newcomers with limited tech knowledge who have keen interests in relay nodes, we're also preparing resources on the [Diode Foundation](https://diode.foundation/docs/about.html). Token whitepapers and information on various growth programs will be available upon request to help users get started.
 
 
 To explore further please:
@@ -38,3 +34,4 @@ To explore further please:
   <a href="{{"https://contactdiode.paperform.co"}}" class="btn" target="">Get in Touch</a>
   <a href="#download-app" class="btn popup-open" target="">Try it Out</a>
 </div>
+
