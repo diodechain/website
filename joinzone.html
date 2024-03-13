@@ -10,7 +10,7 @@ nav:
 
 <script>
   var url = new URL(document.location.toString());
-  if (url.hash.slice(1).length != 75) {
+  if (url.hash.slice(1).length < 32) {
       window.location.replace((url.origin + url.pathname).replace("/joinzone/", "/"));
   }
 </script>
