@@ -128,12 +128,12 @@ h2, .h2 {
     line-height: 50px;
   }
   @include media-breakpoint-up(xl) {
-    font-size: 64px;
-    line-height: 64px;
+    font-size: 54px;
+    line-height: 54px;
   }
   @include media-breakpoint-up(xxl) {
-    font-size: 85px;
-    line-height: 90px;
+    font-size: 64px;
+    line-height: 64px;
   }
 }
 

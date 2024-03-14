@@ -388,12 +388,21 @@
       max-width: 360px;
       @include media-breakpoint-up(md) {
         max-width: 500px;
+        font-size: 64px;
+        padding-bottom: 10px;
+        line-height: 57px;
+      }
+      @include media-breakpoint-up(xl) {
+        max-width: 800px;
+        font-size: 64px;
+        padding-bottom: 10px;
+        line-height: 57px;
       }
       @include media-breakpoint-up(xxl) {
-        max-width: 800px;
-        font-size: 127px;
+        max-width: 900px;
+        font-size: 84px;
         padding-bottom: 10px;
-        line-height: 114px;
+        line-height: 75px;
       }
     }
 

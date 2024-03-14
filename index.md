@@ -10,50 +10,85 @@ redirect_from:
 hero:
   class: hero--homepage
   animated: true
-  heading: Secure your collaboration
-  subheading: Diode protects your team with end-to-end encrypted messaging and tunneled access to their tools.
+  heading: Privacy-first collaboration for executives and teams
+  subheading: Communicate with colleagues and access corporate tools.  No data stored on any server.
   buttons:
-  - title: FIND OUT MORE
-    url: "/solutions/"
-  - title: DOWNLOAD HUB
+  - title: Request Demo
+    url: "https://diodedemo.paperform.co/"
+  - title: Learn More
     class: btn--bordered
-    url: "/download/"
+    url: "/solutions/"
   image: hero/default.webp
 
 
-### Headline below Hero
-headline:
+### Testimonial logos
+customer-props:
   animated: false
-  title: A changing security landscape
-  text: We work with teams every day who are responsible for protecting information, many of whom operate in sensitive environments.  <br/><br/>Diode’s zero trust application deploys in minutes. 
-  buttons:
-  - title: Find Out More
-    class: btn--blank btn--arrow
-    url: "/solutions/app/"
-
-
-### Story: What is Diode
-app:
-  class: "story--homepage"
-  animated: false
-  title: Leave no trace
-  heading: Protect your digital footprint
-  content: |
-    Remove third parties from your data equation.  No information to be hacked, no identities to be leaked, no data to be scraped.  Just you, your people, and your assets - the way humans naturally work.
+  title: "Diode is amazing. - USSF"
+  logos:
+  - image: partners/deraconnect.svg
+    alt: Deraconnect
+    url: "https://deraconnect.com"
     
-    Your device becomes a cryptographic data safe that can communicate with other devices as if you own the fiber Internet cable connecting them.
-  buttons:
-  - title: Read More
-    url: "/solutions/app/"
-  image:
-    src: story/app-homepage.webp
-    alt: Diode App
+  - image: partners/ironwood.svg
+    alt: Ironwood Cyber
+    url: "https://ironwoodcyber.com"
+    
+  - image: partners/axellio.svg
+    alt: Axellio
+    url: "https://www.axellio.com"
+    
+  - image: partners/syllab.svg
+    alt: Syllab
+    url: "https://www.syllab.io"
+    
+  - image: partners/rebelspace.svg
+    alt: Rebel Space
+    url: "https://www.rebelspacetech.com"
 
+
+### Box: Why Diode
+why-diode:
+  class: box--orange
+  animated: false
+  title: Why choose Diode for executive protection?
+  heading: Protect from risks and harms
+  solutions:
+  - title: Regulatory Compliance
+    icon: icons/app.svg
+    content: The Diode App is for your team. Whether replacing a leaky chat app, sharing files E2EE, securing a server dashboard, or deploying advanced OT assets, our app unlocks the power of Diode for people.
+    button:
+      title: Request Demo
+      class: "btn--blank btn--arrow"
+      url: "https://diodedemo.paperform.co/"
+  - title: Eliminate Surveillance
+    icon: icons/cli.svg
+    content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone to secure autonomous systems, and/or in concert with team members using the Diode App.
+    button:
+      title: Request Demo
+      class: "btn--blank btn--arrow"
+      url: "https://diodedemo.paperform.co/"
+  - title: Guarantee Privacy
+    icon: icons/vault.svg
+    content: The Diode Vault is an autonomous tool that combines both App and CLI features in a small box or cloud appliance. 24-7 availability, backup, and geo-access for your team and assets.
+    button:
+      title: Request Demo
+      class: "btn--blank btn--arrow"
+      url: "https://diodedemo.paperform.co/"
+
+
+### Box: Designed
+designed:
+  class: "box--network"
+  animated: false
+  title: Designed for collaboration where security is essential.
+
+  
 
 ### Story: Fort Knox protection
 protected:
   animated: false
-  title: Security that works for you
+  title: Communicate securely across organizations
   heading: Lower the <br/>cost of collaboration
   content: |
     Diode’s security saves dollars today and mitigates expensive risks tomorrow.  There are no storage fees, no chat history limits, and no bandwidth restrictions.    
@@ -80,7 +115,7 @@ protected:
 ### Story: From anywhere, whenever
 anywhere:
   animated: false
-  title: Ditch the VPN
+  title: Safer than VPN for remote access to applications
   heading: Stay connected  globally
   content: |
     Your traveling and remote teams can stay connected without complicated VPNs, and can access your cloud software, hosted tools, and other resources just as if they are in the home office. 
@@ -100,7 +135,7 @@ anywhere:
 developers:
   class: "story--homepage"
   animated: false
-  title: Zero trust under the hood
+  title: Easily manage who can access people and assets
   heading: Extend your security perimeter
   content: |
     Diode's zero trust data fabric makes it easy extend the secure collaboration environment with E2EE video conferencing, operational technology tools, custom web applications, devops interfaces, API tunneling, and more.
@@ -141,24 +176,23 @@ testimonials:
 solutions:
   class: box--orange
   animated: false
-  title: No third parties means Zero&nbsp;Leakage&trade;
-  heading: Our solutions.
+  heading: What makes Diode different?
   solutions:
-  - title: App
+  - title: No data on servers
     icon: icons/app.svg
     content: The Diode App is for your team. Whether replacing a leaky chat app, sharing files E2EE, securing a server dashboard, or deploying advanced OT assets, our app unlocks the power of Diode for people.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
       url: "/solutions/app/"
-  - title: CLI
+  - title: Team environment
     icon: icons/cli.svg
     content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone to secure autonomous systems, and/or in concert with team members using the Diode App.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
       url: "/solutions/cli/"
-  - title: Vault
+  - title: Replaces VPN
     icon: icons/vault.svg
     content: The Diode Vault is an autonomous tool that combines both App and CLI features in a small box or cloud appliance. 24-7 availability, backup, and geo-access for your team and assets.
     button:
@@ -167,90 +201,18 @@ solutions:
       url: "/solutions/vault/"
 
 
-### Box: Our Network
-our-network:
-  class: "box--network"
-  animated: false
-  icon: icons/network.svg
-  title: A better way
-  heading: Our network.
-  content: |
-    The Diode Network is the world’s leading Smart Network - a new generation of zero trust software defined networks based on hardened blockchain technology. Think ad hoc E2EE perimeters.
-  buttons:
-  - title: Find Out More
-    url: "/solutions/network/"
-
-
-### Box: How Diode works
-how-works:
-  class: "box--orange box--how"
-  animated: false
-  title: Behind the scenes
-  heading: How Diode works.
-  content: |
-    Diode uses Blockchain Defined Perimeters™ that define and enforce end-to-end encrypted application zones without managed servers.
-  buttons:
-  - title: Find Out More
-    class: "btn--bordered"
-    url: "/how-it-works/"
-
-
-### Partners
-partners:
-  animated: false
-  title: World-changing collaborations
-  heading: Our Partners.
-  logos:
-  - image: partners/deraconnect.svg
-    alt: Deraconnect
-    url: "https://deraconnect.com"
-    
-  - image: partners/ironwood.svg
-    alt: Ironwood Cyber
-    url: "https://ironwoodcyber.com"
-    
-  - image: partners/axellio.svg
-    alt: Axellio
-    url: "https://www.axellio.com"
-    
-  - image: partners/syllab.svg
-    alt: Syllab
-    url: "https://www.syllab.io"
-    
-  - image: partners/rebelspace.svg
-    alt: Rebel Space
-    url: "https://www.rebelspacetech.com"
-
-
-  - image: partners/compendium.svg
-    alt: Compendium
-    
-  - image: partners/YETi-CGI.svg
-    alt: YETi CGI
-    url: "http://yeticgi.com"
-    
-  - image: partners/GEN.svg
-    alt: Global Enterprise Network
-
-  - image: partners/iPS.svg
-    alt: iPS
-    url: "https://www.intelpayloads.com/"
-
-  - image: partners/context.svg
-    alt: Context
-    url: "https://bycontxt.com/"
-
-  - image: partners/exosite.svg
-    alt: Exosite
-    url: "https://www.exosite.com"
 
 ---
 
 {%- include hero.liquid -%}
 
-{%- include headline.liquid -%}
+<!-- {%- include headline.liquid -%} -->
 
-{%- include story.liquid data="app" -%}
+{%- include partners.liquid data="customer-props" -%}
+
+{%- include box.liquid data="why-diode" -%}
+
+{%- include box.liquid data="designed" -%}
 
 {%- include story.liquid data="protected" -%}
 
@@ -262,8 +224,3 @@ partners:
 
 {%- include box.liquid data="solutions" -%}
 
-{%- include box.liquid data="our-network" -%}
-
-{%- include box.liquid data="how-works" -%}
-
-{%- include partners.liquid -%}
