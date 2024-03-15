@@ -6,7 +6,7 @@ date: 2024-03-01 8:00
 categories: [Diode]
 tags: [Diode, Diode Drive]
 author: MNJR
-image: informativeblog.png
+image: blogpost.jpeg
 
 ---
 As concerns for communication security rise globally, the federal government recently issued [new guidelines](https://www.cnbc.com/2024/02/28/biden-executive-order-aims-to-protect-americans-sensitive-data-from-china-russia.html?__source=iosappshare%7Ccom.apple.UIKit.activity.Mail) aimed at protecting Americans' sensitive data, specifically against potential threats from nation state actors. 
