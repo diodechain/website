@@ -1,5 +1,5 @@
 ---
-title: Reclaim Your Digital Sovereignty
+title: Privacy-first Collaboration & Communications
 layout: page
 class: page--homepage header--dark
 redirect_from:
@@ -11,7 +11,7 @@ hero:
   class: hero--homepage
   animated: true
   heading: Privacy-first collaboration for executives and teams
-  subheading: Communicate with colleagues and access corporate tools.  No data stored on any server.
+  subheading: Messaging with colleagues and remote acceess to applications when security of comunications and data is paramount. We never store any of your sensitive information on our servers or in the cloud.
   buttons:
   - title: Request Demo
     url: "https://diodedemo.paperform.co/"
@@ -24,7 +24,7 @@ hero:
 ### Testimonial logos
 customer-props:
   animated: false
-  title: "Diode is amazing. - USSF"
+  title: "In our highly regulated market, it is imperative that our online disucssions wiht colleagues and partners are strictly private. We trust Diode to protect us from harms that could occur if we were compromised by malicious actors.  - Managing Partner, Financial Services Industry"
   logos:
   - image: partners/deraconnect.svg
     alt: Deraconnect
@@ -52,25 +52,25 @@ why-diode:
   class: box--orange
   animated: false
   title: Why choose Diode for executive protection?
-  heading: Protect from risks and harms
+  heading: Protects your organization, and yourself, from risks of harm
   solutions:
   - title: Regulatory Compliance
     icon: icons/app.svg
-    content: The Diode App is for your team. Whether replacing a leaky chat app, sharing files E2EE, securing a server dashboard, or deploying advanced OT assets, our app unlocks the power of Diode for people.
+    content: With privacy laws like GDPR and HIPAA, and oversight by regulatory authorities including the SEC, HHS, and U.S. Attorneys General, it is key that you do everything possible to avoid a breach of protected data.
     button:
       title: Request Demo
       class: "btn--blank btn--arrow"
       url: "https://diodedemo.paperform.co/"
   - title: Eliminate Surveillance
     icon: icons/cli.svg
-    content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone to secure autonomous systems, and/or in concert with team members using the Diode App.
+    content: The world can be a dangeroiyus place. Surveillance by nation-states can lead to danger for your team, and risks to your organization.
     button:
       title: Request Demo
       class: "btn--blank btn--arrow"
       url: "https://diodedemo.paperform.co/"
   - title: Guarantee Privacy
     icon: icons/vault.svg
-    content: The Diode Vault is an autonomous tool that combines both App and CLI features in a small box or cloud appliance. 24-7 availability, backup, and geo-access for your team and assets.
+    content: Executives collaborate with trusted advisors every day. In your line of work, it is essential that those discxussions and documents remain strictly private.
     button:
       title: Request Demo
       class: "btn--blank btn--arrow"
@@ -88,15 +88,15 @@ designed:
 ### Story: Fort Knox protection
 protected:
   animated: false
-  title: Communicate securely across organizations
-  heading: Lower the <br/>cost of collaboration
+  title: 
+  heading: Communicate securely <br/>across organizations
   content: |
-    Diode’s security saves dollars today and mitigates expensive risks tomorrow.  There are no storage fees, no chat history limits, and no bandwidth restrictions.    
+    You discuss sensitive matters with your team, as well as with trusted advisors outside of your organization.     
     
-    Diode can be deployed for specific teams in a way that addresses their unique security needs, yet keeps them connected with your existing software systems.
+    Strict confidentiality in discussions with lawyers, advisors, and consultants is essential for your projects.
   buttons:
-  - title: Find Out More
-    url: "/teams/"
+  - title: Request Demo
+    url: "https://diodedemo.paperform.co/"
   teams:
   - title: Back Office Security
     photo: team/product-development.webp
@@ -115,15 +115,15 @@ protected:
 ### Story: From anywhere, whenever
 anywhere:
   animated: false
-  title: Safer than VPN for remote access to applications
-  heading: Stay connected  globally
+  title: 
+  heading: File sharing without cloud storage
   content: |
-    Your traveling and remote teams can stay connected without complicated VPNs, and can access your cloud software, hosted tools, and other resources just as if they are in the home office. 
+    Most executives share files, even sensitive ones, as email attachments. But unintended disclosure can lead to regulatory issues.
   
-    Diode’s border crossing features protect your people, their contacts, and your intellectual property, no matter the situation.
+    With Diode's decentralized architecture, you share files with simple folders, but we never have access to or store your files — so no one else can either. 
   buttons:
-  - title: Find Out More
-    url: "/how-it-works/"
+  - title: Learn More
+    url: "/solutions/app/"
   image:
     src: story/around.svg
     class: circle
@@ -135,15 +135,15 @@ anywhere:
 developers:
   class: "story--homepage"
   animated: false
-  title: Easily manage who can access people and assets
-  heading: Extend your security perimeter
+  title:  
+  heading: Safer than VPNs for accessing applications
   content: |
-    Diode's zero trust data fabric makes it easy extend the secure collaboration environment with E2EE video conferencing, operational technology tools, custom web applications, devops interfaces, API tunneling, and more.
+    You probably access various applications when working remote. At home or around the world.
     
-    A key focus of compliance regimes is to ensure the security of your server assets.  Diode's serverless environment can accelerate, simplify, and fulfill your compliance requirements.
+    GMail, Dropbox, and the like just don’t have military-grade security like we provide It is practically impossible for you to be hacked.
   buttons:
-  - title: Read More
-    url: "/solutions/app/"
+  - title: Contact Sales
+    url: "https://contactdiode.paperform.co/"
   image:
     src: story/network-full.webp
     alt: Diode App
@@ -178,27 +178,27 @@ solutions:
   animated: false
   heading: What makes Diode different?
   solutions:
-  - title: No data on servers
+  - title: No cloud storage
     icon: icons/app.svg
-    content: The Diode App is for your team. Whether replacing a leaky chat app, sharing files E2EE, securing a server dashboard, or deploying advanced OT assets, our app unlocks the power of Diode for people.
+    content: The cloud is great. But hackers and malicious actors love it too. We never store any of your messages or files in the cloud. That’s our decentralized technology at work.
     button:
-      title: Find Out More
+      title: Contact Sales
       class: "btn--blank btn--arrow"
-      url: "/solutions/app/"
-  - title: Team environment
+      url: "https://contactdiode.paperform.co/"
+  - title: Miliary-grade security
     icon: icons/cli.svg
-    content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone to secure autonomous systems, and/or in concert with team members using the Diode App.
+    content: From the beginning, Diode has been designed using world-changing technology to ensure privacy and security in your communications and sharing. No compromises.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
       url: "/solutions/cli/"
-  - title: Replaces VPN
+  - title: No access to your data
     icon: icons/vault.svg
-    content: The Diode Vault is an autonomous tool that combines both App and CLI features in a small box or cloud appliance. 24-7 availability, backup, and geo-access for your team and assets.
+    content: Diode never has access to any of your messages or files that you and your team share. This provides you with another level of security that most cloud providers can’t offer.
     button:
-      title: Find Out More
+      title: Request Demo
       class: "btn--blank btn--arrow"
-      url: "/solutions/vault/"
+      url: "https://diodedemo.paperform.co/"
 
 
 
