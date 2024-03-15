@@ -3,7 +3,7 @@ layout: post
 title: Silent Threats - The Cybersecurity Risks in Executive Communications & Collaboration
 description: Cybersecurity risks and concersn in executive communications
 date: 2024-03-13 8:00
-categories: [Diode]
+categories: [Diode, Security]
 tags: [Diode, Diode Drive]
 author: Doug Pollack, CIPP/US
 image: blogpost.jpeg
