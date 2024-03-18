@@ -24,7 +24,7 @@ hero:
 ### Testimonial logos
 customer-props:
   animated: false
-  title: "In our highly regulated market, online discussions with colleagues and partners must be strictly private. We trust Diode to protect us from harms that could occur if we were compromised by malicious actors. <br/><br/> - Managing Partner, Financial Services Industry"
+  title: "In our highly regulated market, online discussions with colleagues and partners must be strictly private. Diode protects us from malicous actors. <br/><br/> - Managing Partner, Financial Services Industry"
   logos:
   - image: partners/deraconnect.svg
     alt: Deraconnect
@@ -56,14 +56,14 @@ why-diode:
   solutions:
   - title: Guarantee Privacy
     icon: icons/vault.svg
-    content: Executives collaborate with trusted advisors every day. In your line of work, it is essential that those discxussions and documents remain strictly private.
+    content: Executives collaborate with trusted advisors every day. In your line of work, it is essential that those discussions and documents remain strictly private.
     button:
       title: Request Demo
       class: "btn--blank btn--arrow"
       url: "https://diodedemo.paperform.co/"
   - title: Eliminate Surveillance
     icon: icons/cli.svg
-    content: The world can be a dangeroiyus place. Surveillance by nation-states can lead to danger for your team, and risks to your organization.
+    content: The world can be a dangerous place. Surveillance by nation-states can lead to cyber threats to your team, and risks to your organization.
     button:
       title: Request Demo
       class: "btn--blank btn--arrow"
