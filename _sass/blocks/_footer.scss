@@ -72,7 +72,6 @@
   }
 
   &__menu {
-    height: 266px;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -92,32 +91,52 @@
       -webkit-column-gap: 45px;
       -moz-column-gap: 45px;
       column-gap: 45px;
+      height: 266px;
     }
     @include media-breakpoint-up(lg) {
       -webkit-column-gap: 45px;
       -moz-column-gap: 45px;
       column-gap: 45px;
+      height: 266px;
     }
     @include media-breakpoint-up(xl) {
       -webkit-column-gap: 45px;
       -moz-column-gap: 45px;
       column-gap: 45px;
+      height: 166px;
     }
 
     ul {
       padding: 0;
       margin-bottom: 24px;
       list-style: none;
-    }
-
-    a {
-      color: $color-orange;
-      text-decoration: none;
-      transition: color $effect-s;
-      @media (hover: hover) {
-        &:hover, &:focus {color: black;}
+      &:first-of-type {
+        li {
+          a {
+            color: $color-orange;
+            text-decoration: none;
+            font-weight: normal;
+            transition: color $effect-s;
+            @media (hover: hover) {
+              &:hover, &:focus {color: black;}
+            } 
+         }
+       }
       }
     }
+
+    li {
+      a {
+        color: $color-orange;
+        text-decoration: none;
+        transition: color $effect-s;
+        @media (hover: hover) {
+          &:hover, &:focus {color: black;}
+        }      
+      }
+    }
+
+
 
     .demo {
       margin-top: 24px;

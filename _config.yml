@@ -53,16 +53,6 @@ nav:
     url: "/teams/#devsecops"
   - title: Connected Products
     url: "/teams/#products"
-- title: About Us
-  url: "/about/"
-- title: Pricing
-  url: "/pricing/"
-- title: Schedule Demo
-  url: "https://diodedemo.paperform.co/"
-  target: _blank
-  class: "demo"
-- title: Vaults
-  url: "/vaults/"  
 - title: Support
   url: "https://support.diode.io/"
   target: _blank
@@ -75,7 +65,10 @@ nav:
     url: "/prenet/"
   - title: Blog
     url: "/blog/"
-
+- title: Pricing
+  url: "/pricing/" 
+- title: About Us
+  url: "/about/"
 
 # Other Links
 links:

@@ -11,11 +11,11 @@ redirect_from:
 hero:
   class: hero--rounded hero--smaller
   animated: true
-  heading: Team collaboration on&nbsp;Diode&nbsp;App.
+  heading: Team collaboration on&nbsp;Diode&nbsp;
   subheading: Secure collaboration around IT/OT/IP work product.
   buttons:
   - title: Request Demo
-     url: "https://diodedemo.paperform.co/"
+    url: "https://diodedemo.paperform.co/"
   image: hero/app.webp
 
 
@@ -26,7 +26,7 @@ story:
   title: Operate protected
   heading: For teams.
   content: |
-    The Diode App creates secure tunnels between your team members that form a "security perimeter" (a Zone).  Each Zone has built-in collaboration and visualization capabilities. Diode is a decentralized solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
+    Diode creates secure tunnels between your team members that form a "security perimeter" (a Zone).  Each Zone has built-in collaboration and visualization capabilities. It is a decentralized “local first” solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
   
     The Diode network ensures that not even Diode has access to your team’s communications, information, or activity.
   buttons:
@@ -49,7 +49,7 @@ features:
   list:
   - title: Secure Chat and Files
     content: |
-      Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of the Diode. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available. 
+      Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of Diode. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available. 
 
   - title: Use for
     content: |
@@ -58,7 +58,7 @@ features:
       Communicate, reference, annotate, manage, and collaborate - everything a team working with real world IT, OT, or web assets requires.
     buttons:
     - title: CONTACT SALES
-      url: "https://diodedemo.paperform.co/"
+      url: "https://contactdiode.paperform.co/"
     - title: HOW IT WORKS
       url: "/how-it-works/"
     - title: REQUEST A DEMO

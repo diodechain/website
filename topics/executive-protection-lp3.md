@@ -1,30 +1,24 @@
 ---
-title: Privacy-first Collaboration & Communications
+title: Executive Protection
 layout: page
-class: page--homepage header--dark
+class: header--dark
+permalink: /topics/executive-protection-lp3/
 redirect_from:
-- /newsletter/welcome.html
-
 
 ### Hero
 hero:
-  class: hero--homepage
-  animated: true
-  heading: Privacy-first collaboration for executives and teams
-  subheading: Messaging and remote access when security is paramount.
+  class: hero--align
+  heading: Heading <span>that reflects</span> <span>ad copy</span>.
   buttons:
   - title: Request Demo
     url: "https://diodedemo.paperform.co/"
-  - title: Learn More
-    class: btn--bordered
-    url: "/solutions/"
-  image: hero/default.webp
+  image: hero/landing.webp
 
 
 ### Testimonial logos
 customer-props:
   animated: false
-  outro: "In our highly regulated market, online discussions with colleagues and partners must be strictly private. Diode protects us from malicous actors. <br/><br/> - Managing Partner, Financial Services Industry"
+  outro: "In our highly regulated market, online discussions with colleagues and partners must be strictly private. We trust Diode to protect us from harms that could occur if we were compromised by malicious actors. <br/><br/> - Managing Partner, Financial Services Industry"
   logos:
   - image: partners/deraconnect.svg
     alt: Deraconnect
@@ -65,25 +59,22 @@ why-diode:
     icon: icons/cli.svg
     content: The world can be a dangerous place. Surveillance by nation-states can lead to cyber threats to your team, and risks to your organization.
     button:
-      title: Request Demo
+      title: Contact Sales
       class: "btn--blank btn--arrow"
-      url: "https://diodedemo.paperform.co/"
+      url: "https://contactdiode.paperform.co/"
   - title: Data Compliance
     icon: icons/app.svg
     content: With privacy laws like GDPR and HIPAA, and oversight by regulatory authorities including the SEC, HHS, and U.S. Attorneys General, it is key that you do everything possible to avoid a breach of protected data.
     button:
-      title: Request Demo
+      title: Learn More
       class: "btn--blank btn--arrow"
-      url: "https://diodedemo.paperform.co/"
-
+      url: "/solutions/app/"
 
 ### Box: Designed
 designed:
   class: "box--network"
   animated: false
   title: Designed for collaboration where security is essential.
-
-  
 
 ### Story: Fort Knox protection
 protected:
@@ -149,6 +140,43 @@ developers:
     alt: Diode App
 
 
+pricing:
+  animated: false
+  title: Executives, team members, and business associates can start collaborating with DIode for under $10 a month
+  heading: Pricing and Packages
+
+  plans:
+
+  - title: Business
+    description: for organizations securing their remote teams.
+    price:
+      yearly: 80
+      year: 960
+      monthly: 100
+    features: |
+      - 10 team members
+      - $10 per additional team
+      - 10 chat channels
+      - 20 web links
+      - Invitation codes
+      - Standard support
+    button: Order
+    id:
+      yearly: "https://buy.stripe.com/bIY5n6gzq42ycLufZ3"
+      monthly: "https://buy.stripe.com/8wMeXGfvmfLgbHq28e"
+
+  - title: Enterprise
+    description: for enterprises expanding their security perimeter.
+    features: |
+      All Business plus:
+      - Secure web browser
+      - Regional access tunnels
+      - Asset management
+      - Whitelabeling
+      - Enterprise integrations
+      - Premium support SLA
+    button: Contact Sales
+    action: "https://contactdiode.paperform.co/"
 
 ### Box: What teams are saying
 testimonials:
@@ -200,8 +228,6 @@ solutions:
       class: "btn--blank btn--arrow"
       url: "https://diodedemo.paperform.co/"
 
-
-
 ---
 
 {%- include hero.liquid -%}
@@ -218,7 +244,8 @@ solutions:
 
 {%- include story.liquid data="developers" -%}
 
+{%- include pricing.liquid -%}
+
 {%- include box.liquid data="testimonials" -%}
 
 {%- include box.liquid data="solutions" -%}
-
