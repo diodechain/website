@@ -67,7 +67,7 @@ why-diode:
     button:
       title: FIND OUT MORE
       class: "btn--blank btn--arrow"
-       url: "/solutions/app/"
+      url: "/solutions/app/"
   - title: Data Compliance
     icon: icons/app.svg
     content: With privacy laws like GDPR and HIPAA, and oversight by regulatory authorities including the SEC, HHS, and U.S. Attorneys General, it is key that you do everything possible to avoid a breach of protected data.
