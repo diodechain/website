@@ -15,7 +15,7 @@ hero:
   subheading: Secure collaboration around IT/OT/IP work product.
   buttons:
   - title: Request Demo
-    "https://diodedemo.paperform.co/"
+     url: "https://diodedemo.paperform.co/"
   image: hero/app.webp
 
 
