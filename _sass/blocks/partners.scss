@@ -2,12 +2,12 @@
    PARTNERS
    ========================================================================== */
 .partners {
-  padding: 70px 0;
+  padding: 50px 0;
   @include media-breakpoint-up(xl) {
-    padding-top: 100px;
+    padding-top: 50px;
   }
   @include media-breakpoint-up(xxl) {
-    padding-top: 145px;
+    padding-top: 50px;
   }
 
   &__title {
@@ -19,6 +19,20 @@
       margin-bottom: 11px;
       font-size: 22px;
       line-height: 24px;
+      text-align: left;
+    }
+  }
+
+  &__outro {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font: 600 17px/18px $font-default;
+    font-style: italic;
+    text-align: center;
+    @include media-breakpoint-up(xl) {
+      padding-left: 8px;
+      font-size: 17px;
+      line-height: 18px;
       text-align: left;
     }
   }

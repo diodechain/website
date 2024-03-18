@@ -8,44 +8,244 @@ redirect_from:
 ### Hero
 hero:
   class: hero--align
-  heading: Transfer <span>files privately</span> <span>and securely</span>.
+  heading: Communicate <span>privately with</span> <span>other executives</span>.
   buttons:
-  - title: DOWNLOAD
-    url: "/download/#app"
-  - title: LEARN MORE
-    class: btn--blank btn--arrow
-    url: "/solutions/app/"
+  - title: Request Demo
+    url: "https://diodedemo.paperform.co/"
   image: hero/landing.webp
 
 
-### Landing
-landing:
-  heading: Secure File Transfer
-  title: Securely send and receive confidential files with zero IT setup.
-  columns:
-  - title: No Cloud Uploads
-    text: Files are shared directly between you and the other party - without using email attachments and without uploading to cloud storage.
-  - title: Easy Browser Access
-    text: Send a link to the file or folder via email, chat, or other method - your client can download and upload via their web browser.
-  - title: Secure Without IT Setup
-    text: Permissions and security can be configured for each share link - all without IT setup or maintenance.
+### Testimonial logos
+customer-props:
+  animated: false
+  outro: "In our highly regulated market, online discussions with colleagues and partners must be strictly private. We trust Diode to protect us from harms that could occur if we were compromised by malicious actors. <br/><br/> - Managing Partner, Financial Services Industry"
+  logos:
+  - image: partners/deraconnect.svg
+    alt: Deraconnect
+    url: "https://deraconnect.com"
+    
+  - image: partners/ironwood.svg
+    alt: Ironwood Cyber
+    url: "https://ironwoodcyber.com"
+    
+  - image: partners/axellio.svg
+    alt: Axellio
+    url: "https://www.axellio.com"
+    
+  - image: partners/syllab.svg
+    alt: Syllab
+    url: "https://www.syllab.io"
+    
+  - image: partners/rebelspace.svg
+    alt: Rebel Space
+    url: "https://www.rebelspacetech.com"
 
 
-### Video
-video:
-  heading: Get going in less than 2 minutes!
-  video:
-    src: "https://player.vimeo.com/video/562684103"
+### Box: Why Diode
+why-diode:
+  class: box--orange
+  animated: false
+  title: Why choose Diode for executive protection?
+  heading: Protects your organization, and yourself, from risks of harm
+  solutions:
+  - title: Guarantee Privacy
+    icon: icons/vault.svg
+    content: Executives collaborate with trusted advisors every day. In your line of work, it is essential that those discxussions and documents remain strictly private.
+    button:
+      title: Request Demo
+      class: "btn--blank btn--arrow"
+      url: "https://diodedemo.paperform.co/"
+  - title: Eliminate Surveillance
+    icon: icons/cli.svg
+    content: The world can be a dangeroiyus place. Surveillance by nation-states can lead to danger for your team, and risks to your organization.
+    button:
+      title: Request Demo
+      class: "btn--blank btn--arrow"
+      url: "https://diodedemo.paperform.co/"
+  - title: Data Compliance
+    icon: icons/app.svg
+    content: With privacy laws like GDPR and HIPAA, and oversight by regulatory authorities including the SEC, HHS, and U.S. Attorneys General, it is key that you do everything possible to avoid a breach of protected data.
+    button:
+      title: Request Demo
+      class: "btn--blank btn--arrow"
+      url: "https://diodedemo.paperform.co/"
+
+### Box: Designed
+designed:
+  class: "box--network"
+  animated: false
+  title: Designed for collaboration where security is essential.
+
+### Story: Fort Knox protection
+protected:
+  animated: false
+  title: 
+  heading: Communicate securely <br/>across organizations
   content: |
-    Traditional secure file transfer solutions, like FTP, are costly to setup and maintain. Modern cloud storage solutions don't have the level of security and privacy required.If you need to share sensitive files and data with your clients, Diode Drive may be the perfect solution.
+    You discuss sensitive matters with your team, as well as with trusted advisors outside of your organization.     
+    
+    Strict confidentiality in discussions with lawyers, advisors, and consultants is essential for your projects.
   buttons:
-  - title: Download App
-    url: "/download/#app"
+  - title: Request Demo
+    url: "https://diodedemo.paperform.co/"
+  teams:
+  - title: Back Office Security
+    photo: team/product-development.webp
+    alt: Operational Technology
+  - title: Remote Teams
+    photo: team/ip-and-content.webp
+    alt: Product Development
+  - title: Traveling Expats
+    photo: team/developer-operations.webp
+    alt: Developer Operations
+  - title: Training Cohorts
+    photo: team/operational-technology.webp
+    alt: IP and Sensitive Content
+
+
+### Story: From anywhere, whenever
+anywhere:
+  animated: false
+  title: 
+  heading: File sharing without cloud storage
+  content: |
+    Most executives share files, even sensitive ones, as email attachments. But unintended disclosure can lead to regulatory issues.
+  
+    With Diode's decentralized architecture, you share files with simple folders, but we never have access to or store your files — so no one else can either. 
+  buttons:
+  - title: Learn More
+    url: "/solutions/app/"
+  image:
+    src: story/around.svg
+    class: circle
+    alt: Protected no matter what
+  mirrored: true
+
+
+### Story: From anywhere, whenever
+developers:
+  class: "story--homepage"
+  animated: false
+  title:  
+  heading: Safer than VPNs for accessing applications
+  content: |
+    You probably access various applications when working remote. At home or around the world.
+    
+    GMail, Dropbox, and the like just don’t have military-grade security like we provide It is practically impossible for you to be hacked.
+  buttons:
+  - title: Contact Sales
+    url: "https://contactdiode.paperform.co/"
+  image:
+    src: story/network-full.webp
+    alt: Diode App
+
+
+pricing:
+  animated: false
+  title: Executives, team members, and business associates can start collaborating with DIode for under $10 a month
+  heading: Pricing and Packages
+
+  plans:
+
+  - title: Business
+    description: for organizations securing their remote teams.
+    price:
+      yearly: 80
+      year: 960
+      monthly: 100
+    features: |
+      - 10 team members
+      - $10 per additional team
+      - 10 chat channels
+      - 20 web links
+      - Invitation codes
+      - Standard support
+    button: Order
+    id:
+      yearly: "https://buy.stripe.com/bIY5n6gzq42ycLufZ3"
+      monthly: "https://buy.stripe.com/8wMeXGfvmfLgbHq28e"
+
+  - title: Enterprise
+    description: for enterprises expanding their security perimeter.
+    features: |
+      All Business plus:
+      - Secure web browser
+      - Regional access tunnels
+      - Asset management
+      - Whitelabeling
+      - Enterprise integrations
+      - Premium support SLA
+    button: Contact Us
+    action: "https://contactdiode.paperform.co/"
+
+### Box: What teams are saying
+testimonials:
+  class: box--testimonials
+  animated: false
+  title: What teams are saying
+  quotes:
+  - quote: Diode is an amazing technology and product - it unlocks our software for use in regulated and sensitive environments.
+    author: Erich, CEO Compendium
+  - quote: I like very much the approach you are following at **diode.io** and am migrating to diode to have full remote control via ssh.
+    author: Ettoire, Modosmart
+  - quote: Diode's response to my support requests makes me know they really care about all of their customers.
+    author: Krista, RPG
+  - quote: Diode just works.
+    author: Joey, Exosite
+  - quote: Diode has changed the way we do business - we are able to deploy MES components and environments fully GDPR compliant and have created a Diode-based product line.
+    author: Omer, Dera Technologies
+  - quote: We are now using Diode for both our administration of the network and for our financial interactions with portfolio companies.  This tool has changed how we do business.
+    author: Eric, Global Enterprise Network
+  - quote: Diode allows us to move quickly while achieving the level of information protection for the communities and industries we serve.
+    author: Josh, YetiCGI
+
+
+### Box: Our solutions
+solutions:
+  class: box--orange
+  animated: false
+  heading: What makes Diode different?
+  solutions:
+  - title: No cloud storage
+    icon: icons/app.svg
+    content: The cloud is great. But hackers and malicious actors love it too. We never store any of your messages or files in the cloud. That’s our decentralized technology at work.
+    button:
+      title: Contact Sales
+      class: "btn--blank btn--arrow"
+      url: "https://contactdiode.paperform.co/"
+  - title: Miliary-grade security
+    icon: icons/cli.svg
+    content: From the beginning, Diode has been designed using world-changing technology to ensure privacy and security in your communications and sharing. No compromises.
+    button:
+      title: Find Out More
+      class: "btn--blank btn--arrow"
+      url: "/solutions/cli/"
+  - title: No access to your data
+    icon: icons/vault.svg
+    content: Diode never has access to any of your messages or files that you and your team share. This provides you with another level of security that most cloud providers can’t offer.
+    button:
+      title: Request Demo
+      class: "btn--blank btn--arrow"
+      url: "https://diodedemo.paperform.co/"
 
 ---
 
 {%- include hero.liquid -%}
 
-{%- include three.liquid data="landing" -%}
+{%- include partners.liquid data="customer-props" -%}
 
-{%- include video.liquid -%}
+{%- include box.liquid data="why-diode" -%}
+
+{%- include box.liquid data="designed" -%}
+
+{%- include story.liquid data="protected" -%}
+
+{%- include story.liquid data="anywhere" -%}
+
+{%- include story.liquid data="developers" -%}
+
+{%- include pricing.liquid -%}
+
+{%- include box.liquid data="testimonials" -%}
+
+{%- include box.liquid data="solutions" -%}

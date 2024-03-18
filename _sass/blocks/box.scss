@@ -282,7 +282,8 @@
       line-height: 18px;
     }
     @include media-breakpoint-up(xl) {
-      padding-top: 140px;
+      padding-top: 50px;
+      padding-bottom: 50px;
       font-size: 22px;
       line-height: 24px;
       .box__content {margin: 0 -65px;}
@@ -311,11 +312,13 @@
   &--testimonials {
     position: relative;
     z-index: 1;
+    padding-top: 50px;
+    padding-bottom: 50px;
     @include media-breakpoint-up(xl) {
-      margin-top: 185px;
+      margin-top: 100px;
     }
     @include media-breakpoint-up(xxl) {
-      padding-bottom: 130px;
+      padding-bottom: 50px;
     }
 
     &::before {

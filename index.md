@@ -11,7 +11,7 @@ hero:
   class: hero--homepage
   animated: true
   heading: Privacy-first collaboration for executives and teams
-  subheading: Messaging with colleagues and remote acceess to applications when security of comunications and data is paramount. We never store any of your sensitive information on our servers or in the cloud.
+  subheading: Messaging and remote access when security is paramount.
   buttons:
   - title: Request Demo
     url: "https://diodedemo.paperform.co/"
@@ -24,7 +24,7 @@ hero:
 ### Testimonial logos
 customer-props:
   animated: false
-  title: "In our highly regulated market, it is imperative that our online disucssions wiht colleagues and partners are strictly private. We trust Diode to protect us from harms that could occur if we were compromised by malicious actors.  - Managing Partner, Financial Services Industry"
+  title: "In our highly regulated market, online discussions with colleagues and partners must be strictly private. We trust Diode to protect us from harms that could occur if we were compromised by malicious actors. <br/><br/> - Managing Partner, Financial Services Industry"
   logos:
   - image: partners/deraconnect.svg
     alt: Deraconnect
@@ -54,9 +54,9 @@ why-diode:
   title: Why choose Diode for executive protection?
   heading: Protects your organization, and yourself, from risks of harm
   solutions:
-  - title: Regulatory Compliance
-    icon: icons/app.svg
-    content: With privacy laws like GDPR and HIPAA, and oversight by regulatory authorities including the SEC, HHS, and U.S. Attorneys General, it is key that you do everything possible to avoid a breach of protected data.
+  - title: Guarantee Privacy
+    icon: icons/vault.svg
+    content: Executives collaborate with trusted advisors every day. In your line of work, it is essential that those discxussions and documents remain strictly private.
     button:
       title: Request Demo
       class: "btn--blank btn--arrow"
@@ -68,9 +68,9 @@ why-diode:
       title: Request Demo
       class: "btn--blank btn--arrow"
       url: "https://diodedemo.paperform.co/"
-  - title: Guarantee Privacy
-    icon: icons/vault.svg
-    content: Executives collaborate with trusted advisors every day. In your line of work, it is essential that those discxussions and documents remain strictly private.
+  - title: Data Compliance
+    icon: icons/app.svg
+    content: With privacy laws like GDPR and HIPAA, and oversight by regulatory authorities including the SEC, HHS, and U.S. Attorneys General, it is key that you do everything possible to avoid a breach of protected data.
     button:
       title: Request Demo
       class: "btn--blank btn--arrow"
