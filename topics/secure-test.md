@@ -8,7 +8,7 @@ redirect_from:
 ### Hero
 hero:
   class: hero--align
-  heading: Communicate <span>privately with</span> <span>other executives</span>.
+  heading: Heading <span>that reflects</span> <span>ad copy</span>.
   buttons:
   - title: Request Demo
     url: "https://diodedemo.paperform.co/"
@@ -50,25 +50,25 @@ why-diode:
   solutions:
   - title: Guarantee Privacy
     icon: icons/vault.svg
-    content: Executives collaborate with trusted advisors every day. In your line of work, it is essential that those discxussions and documents remain strictly private.
+    content: Executives collaborate with trusted advisors every day. In your line of work, it is essential that those discussions and documents remain strictly private.
     button:
       title: Request Demo
       class: "btn--blank btn--arrow"
       url: "https://diodedemo.paperform.co/"
   - title: Eliminate Surveillance
     icon: icons/cli.svg
-    content: The world can be a dangeroiyus place. Surveillance by nation-states can lead to danger for your team, and risks to your organization.
+    content: The world can be a dangerous place. Surveillance by nation-states can lead to cyber threats to your team, and risks to your organization.
     button:
-      title: Request Demo
+      title: Contact Sales
       class: "btn--blank btn--arrow"
-      url: "https://diodedemo.paperform.co/"
+      url: "https://contactdiode.paperform.co/"
   - title: Data Compliance
     icon: icons/app.svg
     content: With privacy laws like GDPR and HIPAA, and oversight by regulatory authorities including the SEC, HHS, and U.S. Attorneys General, it is key that you do everything possible to avoid a breach of protected data.
     button:
-      title: Request Demo
+      title: Learn More
       class: "btn--blank btn--arrow"
-      url: "https://diodedemo.paperform.co/"
+      url: "/solutions/app/"
 
 ### Box: Designed
 designed:
@@ -175,7 +175,7 @@ pricing:
       - Whitelabeling
       - Enterprise integrations
       - Premium support SLA
-    button: Contact Us
+    button: Contact Sales
     action: "https://contactdiode.paperform.co/"
 
 ### Box: What teams are saying
