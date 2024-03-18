@@ -17,7 +17,7 @@ hero:
     url: "https://diodedemo.paperform.co/"
   - title: Learn More
     class: btn--bordered
-    url: "/solutions/"
+    url: "/solutions/app/"
   image: hero/default.webp
 
 
@@ -65,16 +65,16 @@ why-diode:
     icon: icons/cli.svg
     content: The world can be a dangerous place. Surveillance by nation-states can lead to cyber threats to your team, and risks to your organization.
     button:
-      title: Request Demo
+      title: FIND OUT MORE
       class: "btn--blank btn--arrow"
-      url: "https://diodedemo.paperform.co/"
+       url: "/solutions/app/"
   - title: Data Compliance
     icon: icons/app.svg
     content: With privacy laws like GDPR and HIPAA, and oversight by regulatory authorities including the SEC, HHS, and U.S. Attorneys General, it is key that you do everything possible to avoid a breach of protected data.
     button:
-      title: Request Demo
+      title: CONTACT SALES
       class: "btn--blank btn--arrow"
-      url: "https://diodedemo.paperform.co/"
+      url: "https://contactdiode.paperform.co/"
 
 
 ### Box: Designed
