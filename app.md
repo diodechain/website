@@ -16,7 +16,6 @@ hero:
   buttons:
   - title: Request Demo
      url: "https://diodedemo.paperform.co/"
-  image: hero/app.webp
 
 
 ### Story: For Teams
