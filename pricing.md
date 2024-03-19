@@ -17,10 +17,10 @@ hero:
 
 pricing:
   animated: false
-  title: E2EE from the core
-  heading: Secure your team today.
+  title: Privacy-first collaboration for your organization
+  heading: Protection for executives and teams where security is paramount.
 
-  blurb: <br/>Every Zone can use the "Nomad" plan when first created, and can be later upgraded as desired.
+  blurb: <br/>Choose the plan that best meets your needs. Or contact our Sales team for a custom quote.
 
   plans:
   - title: Nomad
@@ -50,7 +50,7 @@ pricing:
       - Invitation codes
       - 10 chat channels
       - 20 web links
-      - 20 team members
+      - 10 team members
       - $5 per additional team
       - Standard support
     button: Order
