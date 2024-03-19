@@ -8,7 +8,8 @@ redirect_from:
 ### Hero
 hero:
   class: hero--align
-  heading: Heading <span>that reflects</span> <span>ad copy</span>.
+  heading: Heading that reflects ad copy.
+  subheading: Messaging and remote access when security is paramount.
   buttons:
   - title: Request Demo
     url: "https://diodedemo.paperform.co/"
