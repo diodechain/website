@@ -24,7 +24,6 @@ hero:
 ### Testimonial logos
 customer-props:
   animated: false
-  outro: "In our highly regulated market, online discussions with colleagues and partners must be strictly private. Diode protects us from malicous actors. <br/><br/> - Managing Partner, Financial Services Industry"
   logos:
   - image: partners/deraconnect.svg
     alt: Deraconnect
@@ -52,7 +51,7 @@ why-diode:
   class: box--orange
   animated: false
   title: Why choose Diode for executive protection?
-  heading: Protects your organization, and yourself, from risks of harm
+  heading: Protect your organization, and yourself, against risks from cyber threats
   solutions:
   - title: Guarantee Privacy
     icon: icons/vault.svg
@@ -140,7 +139,7 @@ developers:
   content: |
     You probably access various applications when working remote. At home or around the world.
     
-    GMail, Dropbox, and the like just don’t have military-grade security like we provide It is practically impossible for you to be hacked.
+    GMail, Dropbox, and the like just don’t have military-grade security like we provide. It is practically impossible for you to be hacked.
   buttons:
   - title: Contact Sales
     url: "https://contactdiode.paperform.co/"
