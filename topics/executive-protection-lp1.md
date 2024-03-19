@@ -19,7 +19,6 @@ hero:
 ### Testimonial logos
 customer-props:
   animated: false
-  outro: "In our highly regulated market, online discussions with colleagues and partners must be strictly private. We trust Diode to protect us from harms that could occur if we were compromised by malicious actors. <br/><br/> - Managing Partner, Financial Services Industry"
   logos:
   - image: partners/deraconnect.svg
     alt: Deraconnect
@@ -156,7 +155,7 @@ pricing:
       monthly: 100
     features: |
       - 10 team members
-      - $10 per additional team
+      - $10 per additional user
       - 10 chat channels
       - 20 web links
       - Invitation codes
@@ -168,7 +167,7 @@ pricing:
 
   - title: Enterprise
     description: for enterprises expanding their security perimeter.
-    features: |
+    available features: |
       All Business plus:
       - Secure web browser
       - Regional access tunnels
@@ -187,9 +186,9 @@ testimonials:
   quotes:
   - quote: Diode is an amazing technology and product - it unlocks our software for use in regulated and sensitive environments.
     author: Erich, CEO Compendium
-  - quote: I like very much the approach you are following at **diode.io** and am migrating to diode to have full remote control via ssh.
+  - quote: I really like the approach you are taking at **diode.io** and am migrating to Diode to have secure remote control capabilities.
     author: Ettoire, Modosmart
-  - quote: Diode's response to my support requests makes me know they really care about all of their customers.
+  - quote: Diode's response to my support requests highlights how much they really care about all of their customers.
     author: Krista, RPG
   - quote: Diode just works.
     author: Joey, Exosite
