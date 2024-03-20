@@ -10,8 +10,8 @@ redirect_from:
 ### Hero
 hero:
   animated: true
-  heading: A little bit <br>about us.
-  subheading: How we started, what we believe in, <br>and where we’re going.
+  heading: A little bit <br>about us
+  subheading: How we started, what we believe in, <br>and where we’re going
   image: hero/about.webp
 
 
@@ -73,7 +73,7 @@ team:
 ### Article: Our desire
 article:
   animated: false
-  heading: Our desire to upgrade the internet.
+  heading: Our vision is to transform the Internet into everyone's private network
   content: |
     At Diode, we love how the Internet is a wonderful tool that can enable free, civil, and thriving collaboration. However, it is has become increasingly difficult to leverage the Internet’s benefits without risking privacy or sustainability. 
   

@@ -8,8 +8,8 @@ permalink: /teams/
 ### Hero
 hero:
   animated: true
-  heading: Secure assets and protect your team.
-  subheading: How different teams are using Diode.
+  heading: Secure assets and protect your team
+  subheading: How different teams are using Diode
   image: hero/teams.webp
 
 
@@ -18,7 +18,7 @@ teams:
   animated: false
   list:
   - title: Encrypt IP and customer information
-    heading: Sensitive Data.
+    heading: Sensitive Data
     anchor: regulated
     content: |
       Limit your cloud data footprint and make your customers’ confident in your security by keeping sensitive content under your full control.
@@ -37,7 +37,7 @@ teams:
       target: _blank
 
   - title: Secure remote asset management
-    heading: Operational Technology.
+    heading: Operational Technology
     anchor: OT
     content: |
       Give your team highly secure remote access to assets in hard-to-reach locations. Expand your OT security boundary without custom IT!
@@ -54,7 +54,7 @@ teams:
       target: _blank
       
   - title: Protect world wide teams
-    heading: Team Collaboration.
+    heading: Team Collaboration
     anchor: collaboration
     content: |
       Establish full custody of your organization's data and communications and eliminate data, identity, and behavioural leakages that could unintentionally violate regional data restrictions.
@@ -73,7 +73,7 @@ teams:
       target: _blank
 
   - title: Provide access for stakeholders
-    heading: DevSec Operations.
+    heading: DevSec Operations
     anchor: devsecops
     content: |
       Isolate server interfaces, dashboards, and network cyber operation tools from attack vectors while providing secure and easy access for the team and stakeholders.
@@ -93,7 +93,7 @@ teams:
 
 
   - title: Integrate in-house and 3rd party systems
-    heading: Product Development.
+    heading: Product Development
     anchor: products
     content: |
       Create highly secure connected products without needing a cloud service.  You can easily integrate partner components as your ecosystem matures - every piece of the system is explicitly identified and managed with Zero Trust security.

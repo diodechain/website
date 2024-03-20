@@ -12,8 +12,8 @@ redirect_from:
 hero:
   animated: true
   class: hero--rounded
-  heading: How Diode works.
-  subheading: A look at what makes Diode tick.
+  heading: How Diode works
+  subheading: A look at what makes Diode tick
   image: hero/how-it-works.webp
 
 
@@ -32,7 +32,7 @@ story:
 ### Features: The moving pieces
 features:
   animated: false
-  heading: The moving pieces.
+  heading: The moving pieces
   actions:
   - title: Read support articles
     class: btn--blank btn--arrow

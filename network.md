@@ -11,8 +11,8 @@ redirect_from:
 hero:
   animated: true
   class: hero--rounded
-  heading: Build on top&nbsp;of&nbsp;Diode Network.
-  subheading: Expand your team’s security perimeter.
+  heading: Build on top&nbsp;of&nbsp;Diode Network
+  subheading: Expand your team’s security perimeter
   buttons:
   - title: RUN A NODE
     url: "https://support.diode.io/article/y9hxzsbhg8"
@@ -24,7 +24,7 @@ story:
   animated: false
   class: story--dash
   title: Zero trust data fabric
-  heading: Security and Access.
+  heading: Security and Access
   content: |
     The Diode Network is the world’s most advanced Smart Network. It is an open-source web3 communications network that combines the highest security with the best accessibility. And it’s available off-the-shelf as a service to the world.
   
@@ -79,7 +79,7 @@ solutions:
   animated: false
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
-  heading: Our solutions.
+  heading: Our solutions
   solutions:
   - title: App
     icon: "icons/app.svg"

@@ -19,8 +19,8 @@ redirect_from:
 ### Hero
 hero:
   animated: true
-  heading: Connect securely with our solutions.
-  subheading: For teams who care about the security of their operations from the ground up.
+  heading: Connect securely with Diode's solutions
+  subheading: For teams who care about the security of their operations, from the ground up
   image: hero/solutions.webp
 
 

@@ -9,8 +9,8 @@ permalink: /solutions/vault/
 hero:
   animated: true
   class: hero--rounded
-  heading: Extend team reach with Diode Vault.
-  subheading: A small but powerful tool that helps keep your remote teams connected.
+  heading: Extend team reach with Diode Vault
+  subheading: A small but powerful tool that helps keep your remote teams connected
   image: hero/vault.webp
 
 
@@ -41,7 +41,7 @@ solutions:
   animated: false
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
-  heading: Our solutions.
+  heading: Our solutions
   solutions:
   - title: App
     icon: "icons/app.svg"
