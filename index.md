@@ -62,7 +62,7 @@ why-diode:
       url: "https://diodedemo.paperform.co/"
   - title: Eliminate Surveillance
     icon: icons/cli.svg
-    content: The world can be a dangerous place. Surveillance by nation-states can lead to cyber threats to your team, and risks to your organization.
+    content: The world can be a dangerous place. Surveillance by nation-states and other threat actors can lead to cyber threats to your team, and risks to your organization.
     button:
       title: FIND OUT MORE
       class: "btn--blank btn--arrow"
@@ -90,14 +90,16 @@ protected:
   title: 
   heading: Communicate securely <br/>across organizations
   content: |
-    You discuss sensitive matters with your team, as well as with trusted advisors outside of your organization.     
-    
-    Strict confidentiality in discussions with lawyers, advisors, and consultants is essential for your projects.
+    You discuss sensitive matters with your team, as well as with trusted advisors outside of your organization. 
+
+    Strict confidentiality in discussions with lawyers, advisors, and consultants is essential to protect your projects.
+
+    With Diode, only the people included in the communication have access to the messages.  It is like having a VPN tunnel between each team member.
   buttons:
   - title: Request Demo
     url: "https://diodedemo.paperform.co/"
   teams:
-  - title: Back Office Security
+  - title: Back Office Security 
     photo: team/product-development.webp
     alt: Operational Technology
   - title: Remote Teams
@@ -117,9 +119,11 @@ anywhere:
   title: 
   heading: File sharing without cloud storage
   content: |
-    Most executives share files, even sensitive ones, as email attachments. But unintended disclosure can lead to regulatory issues.
+    You need to share files, sometimes even sensitive ones, as you collaborate with your peers.  
+
+    Email attachments are convenient, but not secure enough - you know unintended disclosure can lead to regulatory issues.
   
-    With Diode's decentralized architecture, you share files with simple folders, but we never have access to or store your files — so no one else can either. 
+    With Diode's decentralized architecture, you can share files directly with your team - neither Diode, nor anyone else, has access to them. 
   buttons:
   - title: Learn More
     url: "/solutions/app/"
@@ -137,9 +141,11 @@ developers:
   title:  
   heading: Safer than VPNs for accessing applications
   content: |
-    You probably access various applications when working remote. At home or around the world.
+    You need access to various applications when working remotely - from home or around the world.
     
-    GMail, Dropbox, and the like just don’t have military-grade security like we provide. It is practically impossible for you to be hacked.
+    GMail, Dropbox, and the like just don’t have military-grade security like we provide. 
+
+    With Diode, you can tunnel directly to your tools, or ensure you are always accessing them from a "safe" region - all from bookmark links built into the app.
   buttons:
   - title: Contact Sales
     url: "https://contactdiode.paperform.co/"

@@ -11,47 +11,49 @@ redirect_from:
 hero:
   animated: true
   class: hero--right
-  heading: Plans and pricing.
-  subheading: Start today at the level you need.
+  heading: Plans and pricing
+  subheading: Start today at the level that fits your organization
   image: hero/pricing.webp
 
 pricing:
   animated: false
-  title: Privacy-first collaboration for your organization
-  heading: Protection for executives and teams where security is paramount.
+  title: Privacy-first collaboration and remote access
+  heading: Protect executives and teams
+  include: All plans include serverless E2EE joy, and
 
-  blurb: <br/>Choose the plan that best meets your needs. Or contact our Sales team for a custom quote.
 
   plans:
-  - title: Nomad
-    description: a free plan for private collaboration.
-    price:
-      yearly: 0
-      year: 0
-      monthly: 0
-    features: |
-      - E2EE file sharing
-      - E2EE group chat and DMs
-      - E2EE asset connectivity
-      - Browser upload/download
-      - Unlimited storage
-      - 5 team members
-    button: Download
-    action: "https://diode.io/download/#app"
-
-  - title: Business
-    description: for organizations securing their remote teams.
+  - title: Team
+    description: secure collaboration for executives and teams
     price:
       yearly: 80
       year: 960
       monthly: 100
     features: |
-      All Nomad plus:
       - Invitation codes
       - 10 chat channels
       - 20 web links
       - 10 team members
-      - $5 per additional team
+      - $10 per additional team
+      - Standard support
+    button: Order
+    id:
+      yearly: "https://buy.stripe.com/bIY5n6gzq42ycLufZ3"
+      monthly: "https://buy.stripe.com/8wMeXGfvmfLgbHq28e"
+
+
+  - title: Business
+    description: secure collaboration and remote access
+    price:
+      yearly: 150
+      year: 1800
+      monthly: 150
+    features: |
+      All Team plus:
+      - Secure server access
+      - Regional access tunnels
+      - 10 team members
+      - $15 per additional team
       - Standard support
     button: Order
     id:
@@ -59,12 +61,11 @@ pricing:
       monthly: "https://buy.stripe.com/8wMeXGfvmfLgbHq28e"
 
   - title: Enterprise
-    description: for enterprises expanding their security perimeter.
+    description: expanded security perimeters and integrations
     features: |
       All Business plus:
-      - Secure web browser
-      - Regional access tunnels
-      - Asset management
+      - OT/IT asset management
+      - Application and fleet management
       - Whitelabeling
       - Enterprise integrations
       - Premium support SLA
@@ -77,7 +78,7 @@ note:
   subheading: |
     [Watch a video for how this works.](https://support.diode.io/article/pr3fytz8sq){:target="_blank"} 
 
-    Please connect with us if you don't see a good plan for your community! 
+    Please connect with us if you don't see a plan that fits a community who would benefit from Diode's unique security! 
     
   buttons:
   - title: Get in Touch

@@ -13,17 +13,39 @@ nav:
   if (url.hash.slice(1).length < 32) {
       window.location.replace((url.origin + url.pathname).replace("/joinzone/", "/"));
   }
+
+  function CopyToClipboard(id)
+  {
+    var r = document.createRange();
+    r.selectNode(document.getElementById(id));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    document.querySelector("#notify").style.display = "";
+    setTimeout(function(){
+      document.querySelector("#notify").style.display = "none";
+    }, 3000);
+  }
+
 </script>
 
 <div class="text-center joinzone">
   <h2 class="title">Join Code</h2>
   <hr class="title_line">
   <p class="subtitle">Click the "Join" button on the Zones page of the Diode App and enter this Join Code!</p>
-  <h3 class="joincode">
+  <h3 type="text" class="joincode" id="joincode">
       <script>
-          trim(document.write(url.hash.slice(1)))
+          document.write(url.hash.slice(1))
       </script>
   </h3>
+  <button onclick="CopyToClipboard('joincode')" class="btn popup-open" id="cc-copy">
+    Copy to Clipboard
+  </button>
+  <div class="download-prompt" id="notify" role="alert" style="display: none;">
+    Copied!
+  </div>
+  <br/><br/>
   <img style="display:block; margin-left:auto; margin-right: auto; width: 520px;" src="{{ "joinzone/joincode-entry-example.gif" | prepend: site.path.images | relative_url}}" alt="how to join zone with join code">
   <p class="download-prompt">Need the Diode App?</p>
   <div>
