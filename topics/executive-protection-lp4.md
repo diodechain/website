@@ -147,35 +147,52 @@ pricing:
 
   plans:
 
-  - title: Business
-    description: for organizations securing their remote teams.
+  - title: Team
+    description: secure collaboration for executives and teams
     price:
       yearly: 80
       year: 960
       monthly: 100
     features: |
-      - 10 team members
-      - $10 per additional team
+      - Invitation codes
       - 10 chat channels
       - 20 web links
-      - Invitation codes
+      - 10 team members
+      - $10 per additional team
       - Standard support
     button: Order
     id:
-      yearly: "https://buy.stripe.com/bIY5n6gzq42ycLufZ3"
-      monthly: "https://buy.stripe.com/8wMeXGfvmfLgbHq28e"
+      yearly: "https://buy.stripe.com/7sI5n60As6aG12MeVg"
+      monthly: "https://buy.stripe.com/28o16Q3ME1UqbHq3cx"
+
+
+  - title: Business
+    description: secure collaboration and remote access
+    price:
+      yearly: 138
+      year: 1650
+      monthly: 150
+    features: |
+      All Team plus:
+      - Secure server access
+      - Regional access tunnels
+      - $15 per additional team
+      - Standard support
+    button: Order
+    id:
+      yearly: "https://buy.stripe.com/8wM7ve96YfLg7racNb"
+      monthly: "https://buy.stripe.com/fZe2aU82U7eK3aUeVi"
 
   - title: Enterprise
-    description: for enterprises expanding their security perimeter.
+    description: expanded security perimeters and integrations
     features: |
       All Business plus:
-      - Secure web browser
-      - Regional access tunnels
-      - Asset management
+      - OT/IT asset management
+      - Application and fleet management
       - Whitelabeling
       - Enterprise integrations
       - Premium support SLA
-    button: Contact Sales
+    button: Contact Us
     action: "https://contactdiode.paperform.co/"
 
 ### Box: What teams are saying

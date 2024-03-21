@@ -26,7 +26,7 @@ headline:
 story:
   animated: false
   title: The beginning of Diode
-  heading: It all started with fixing a web2 leak.
+  heading: It all started with fixing a web2 leak
   content: |
     Diode was born when co-founder Dominic Letz needed to solve for a Man in the Middle attack against Internet time - a prerequisite for a legacy Web2 PKI-based security issue that had bricked millions of devices.
     
@@ -41,7 +41,7 @@ story:
 team:
   animated: false
   title: Our Team
-  heading: The Diode team has collaborated for over 10 years on high availability software that helps organizations transform their industries.
+  heading: The Diode team has collaborated for over 10 years on high availability software that helps organizations transform their industries
   members:
   - name: Hans
     title: CEO and Co-Founder

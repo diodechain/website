@@ -19,7 +19,7 @@ pricing:
   animated: false
   title: Privacy-first collaboration and remote access
   heading: Protect executives and teams
-  include: All plans include serverless E2EE joy, and
+  include: All plans include
 
 
   plans:
@@ -45,8 +45,8 @@ pricing:
   - title: Business
     description: secure collaboration and remote access
     price:
-      yearly: 150
-      year: 1800
+      yearly: 138
+      year: 1650
       monthly: 150
     features: |
       All Team plus:
@@ -56,7 +56,7 @@ pricing:
       - Standard support
     button: Order
     id:
-      yearly: "https://buy.stripe.com/3cs9Dm2IA1Uq6n65kH"
+      yearly: "https://buy.stripe.com/8wM7ve96YfLg7racNb"
       monthly: "https://buy.stripe.com/fZe2aU82U7eK3aUeVi"
 
   - title: Enterprise

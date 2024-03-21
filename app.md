@@ -12,7 +12,7 @@ hero:
   class: hero--rounded hero--smaller
   animated: true
   heading: Team collaboration on&nbsp;Diode&nbsp;
-  subheading: Secure collaboration around IT/OT/IP work product.
+  subheading: Secure collaboration around IT/OT/IP work product
   buttons:
   - title: Request Demo
     url: "https://diodedemo.paperform.co/"
@@ -24,7 +24,7 @@ story:
   animated: false
   class: story--next
   title: Operate protected
-  heading: For teams.
+  heading: For teams
   content: |
     Diode creates secure tunnels between your team members that form a "security perimeter" (a Zone).  Each Zone has built-in collaboration and visualization capabilities. It is a decentralized “local first” solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
   
@@ -88,7 +88,7 @@ solutions:
   animated: false
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
-  heading: Our solutions.
+  heading: Our solutions
   solutions:
   - title: CLI
     icon: "icons/cli.svg"

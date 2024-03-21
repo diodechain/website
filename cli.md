@@ -11,8 +11,8 @@ redirect_from:
 hero:
   animated: true
   class: hero--rounded
-  heading: Manage assets with Diode CLI.
-  subheading: Access and manage servers and OT assets.
+  heading: Manage assets with Diode CLI
+  subheading: Access and manage servers and OT assets
   buttons:
   - title: GET THE CLI
     url: "/download/#cli"
@@ -23,7 +23,7 @@ hero:
 story:
   animated: false
   title: Precise global access
-  heading: For assets.
+  heading: For assets
   content: |
     The Diode CLI makes your IT, OT, or IoT assets both smart and secure. Every CLI-enabled asset is globally accessible to authorized parties and is 256-bit E2EE secured.
   
@@ -79,7 +79,7 @@ solutions:
   animated: false
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
-  heading: Our solutions.
+  heading: Our solutions
   solutions:
   - title: App
     icon: "icons/app.svg"
