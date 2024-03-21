@@ -360,6 +360,7 @@
     }
 
     &::before {
+      background: url('') no-repeat top left;
       @include media-breakpoint-down(lg) {
         height: 600px;
       }

@@ -1,5 +1,5 @@
 ---
-title: Privacy-first Collaboration & Communications
+title: Privacy-first Collaboration & Remote Access
 layout: page
 class: page--homepage header--dark
 redirect_from:
@@ -18,7 +18,7 @@ hero:
   - title: Learn More
     class: btn--bordered
     url: "/solutions/app/"
-  image: hero/default.webp
+  image: hero/home.webp
 
 
 ### Testimonial logos
