@@ -143,8 +143,7 @@ developers:
 pricing:
   animated: false
   title: Executives, team members, and business associates can start collaborating with DIode for under $10 a month
-  heading: Pricing and Packages. 
-  Can't Decide? Contact Us.
+  heading: Pricing and Packages. Can't Decide? Contact Us.
 
   plans:
   - title: Team
