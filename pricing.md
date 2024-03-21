@@ -38,8 +38,8 @@ pricing:
       - Standard support
     button: Order
     id:
-      yearly: "https://buy.stripe.com/bIY5n6gzq42ycLufZ3"
-      monthly: "https://buy.stripe.com/8wMeXGfvmfLgbHq28e"
+      yearly: "https://buy.stripe.com/7sI5n60As6aG12MeVg"
+      monthly: "https://buy.stripe.com/28o16Q3ME1UqbHq3cx"
 
 
   - title: Business
@@ -52,13 +52,12 @@ pricing:
       All Team plus:
       - Secure server access
       - Regional access tunnels
-      - 10 team members
       - $15 per additional team
       - Standard support
     button: Order
     id:
-      yearly: "https://buy.stripe.com/bIY5n6gzq42ycLufZ3"
-      monthly: "https://buy.stripe.com/8wMeXGfvmfLgbHq28e"
+      yearly: "https://buy.stripe.com/3cs9Dm2IA1Uq6n65kH"
+      monthly: "https://buy.stripe.com/fZe2aU82U7eK3aUeVi"
 
   - title: Enterprise
     description: expanded security perimeters and integrations
