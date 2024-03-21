@@ -8,8 +8,8 @@ redirect_from:
 ### Hero
 hero:
   class: hero--align
-  heading: Heading that reflects ad copy.
-  subheading: Messaging and remote access when security is paramount.
+  heading: Privacy-first protection for executive collaboration
+  subheading: You frequently share sensitive information with colleagues and partners. With Diode, you do this with military-grade security not found in other tools.
   buttons:
   - title: Request Demo
     url: "https://diodedemo.paperform.co/"
