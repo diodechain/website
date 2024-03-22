@@ -10,11 +10,11 @@ image: zoomreplacement.jpeg
 
 ---
 
-The ultimate Zoom alternative is a secure and reliable solution for video conferencing - which can be found right with Diode. The Diode App prioritizes **data** safety in virtual meetings, providing a user-friendly experience while maintaining the highest level of security. In response to the growing concern for secure communications, Diode not only safeguards files and chats but now also facilitates secure video chats.
+The ultimate Zoom alternative is a secure and reliable solution for video calling - which can be found right with Diode. The Diode App prioritizes **data** safety in virtual meetings, providing a user-friendly experience while maintaining the highest level of security. In response to the growing concern for secure communications, Diode not only safeguards files and chats, but now also facilitates secure video chats.
 
-This feature is advantageous for discussing sensitive information without the risk of leaks or **data scraping**, and it allows connections to individuals in restricted regions without the need for expensive and **blockable** VPNs. **The video conferencing is** accessible through the Brave Browser via a Web2 tunneled link within your Diode Bookmarks in your selected Zone, this tool guarantees the security and encryption of your calls.
+This feature is advantageous for discussing sensitive information without the risk of leaks or data scraping, and it allows connections to individuals in restricted regions without the need for expensive and blockable VPNs. The video conferencing is accessible through the Brave Browser via a Web2 tunneled link within your Diode Bookmarks in your selected Zone and this tool guarantees the security and encryption of your calls.
 
-Some things Diode does to keep your calls **secure**:
+Some things Diode does to keep your calls secure:
 
 1.  **End-To-End Encyrption**
     1.  All capabilities within the Diode App are fully end-to-end encrypted, ensuring complete security.
