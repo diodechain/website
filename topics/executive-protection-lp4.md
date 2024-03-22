@@ -146,12 +146,11 @@ pricing:
   heading: Pricing and Packages
 
   plans:
-
   - title: Team
     description: secure collaboration for executives and teams
     price:
-      yearly: 80
-      year: 960
+      yearly: 100
+      year: 1200
       monthly: 100
     features: |
       - Invitation codes
@@ -162,15 +161,15 @@ pricing:
       - Standard support
     button: Order
     id:
-      yearly: "https://buy.stripe.com/7sI5n60As6aG12MeVg"
+      yearly: "https://buy.stripe.com/4gwaHq5UM2YueTC6oP"
       monthly: "https://buy.stripe.com/28o16Q3ME1UqbHq3cx"
 
 
   - title: Business
     description: secure collaboration and remote access
     price:
-      yearly: 138
-      year: 1650
+      yearly: 150
+      year: 1800
       monthly: 150
     features: |
       All Team plus:
@@ -180,7 +179,7 @@ pricing:
       - Standard support
     button: Order
     id:
-      yearly: "https://buy.stripe.com/8wM7ve96YfLg7racNb"
+      yearly: "https://buy.stripe.com/6oE7ve1Ew2YufXGaF4"
       monthly: "https://buy.stripe.com/fZe2aU82U7eK3aUeVi"
 
   - title: Enterprise

@@ -98,19 +98,9 @@ protected:
   buttons:
   - title: Request Demo
     url: "https://diodedemo.paperform.co/"
-  teams:
-  - title: Back Office Security 
-    photo: team/product-development.webp
-    alt: Operational Technology
-  - title: Remote Teams
-    photo: team/ip-and-content.webp
-    alt: Product Development
-  - title: Traveling Expats
-    photo: team/developer-operations.webp
-    alt: Developer Operations
-  - title: Training Cohorts
-    photo: team/operational-technology.webp
-    alt: IP and Sensitive Content
+  image:
+    src: story/communicate_securely.webp
+    alt: Protected no matter what
 
 
 ### Story: From anywhere, whenever
@@ -128,8 +118,7 @@ anywhere:
   - title: Learn More
     url: "/solutions/app/"
   image:
-    src: story/around.svg
-    class: circle
+    src: story/file_sharing.webp
     alt: Protected no matter what
   mirrored: true
 
