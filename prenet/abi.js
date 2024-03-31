@@ -198,8 +198,52 @@ var dnsMethods = {
         name: 'names',
         type: 'function',
         inputs: [{
-            type: 'string',
-            name: 'name'
+            type: 'bytes32',
+            name: 'hash'
+        }],
+        outputs: [{
+            components: [
+                {
+                    internalType: "address",
+                    name: "destination",
+                    type: "address"
+                },
+                {
+                    internalType: "address",
+                    name: "owner",
+                    type: "address"
+                },
+                {
+                    internalType: "string",
+                    name: "name",
+                    type: "string"
+                },
+                {
+                    internalType: "uint256",
+                    name: "lockEnd",
+                    type: "uint256"
+                },
+                {
+                    internalType: "uint256",
+                    name: "leaseEnd",
+                    type: "uint256"
+                }
+            ],
+            internalType: "struct IBNS.BNSEntry",
+            name: "",
+            type: "tuple"
+        }],
+    },
+    "namesIndex": {
+        name: 'namesIndex',
+        type: 'function',
+        inputs: [{
+            type: 'uint256',
+            name: 'index'
+        }],
+        outputs: [{
+            type: 'bytes32',
+            name: 'hash'
         }]
     }
 }

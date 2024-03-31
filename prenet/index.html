@@ -36,6 +36,7 @@
     {% include_relative vue/fleet_registration.vue %}
     {% include_relative vue/dns.vue %}
     {% include_relative vue/dns_list.vue %}
+    {% include_relative vue/dns_list_moonbeam.vue %}
     {% include_relative vue/power_distribution.vue %}
     {% include_relative vue/account.vue %}
     {% include_relative vue/accounts.vue %}
@@ -161,6 +162,11 @@
             name: 'BNS',
             path: '/dns',
             component: DNSList,
+        },
+        {
+            name: false,
+            path: '/mdns',
+            component: MDNSList,
         },
         {
             name: false,
