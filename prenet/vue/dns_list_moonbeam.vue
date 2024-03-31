@@ -85,7 +85,6 @@ var MDNSList = Vue.component("dns_list_mb", {
       })
 
       if (abi.outputs) {
-        console.log(abi.outputs[0], data);
         if (abi.outputs[0].components) {
           data = this.web3.eth.abi.decodeParameters(abi.outputs[0].components, data);
         } else {
