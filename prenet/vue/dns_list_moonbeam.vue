@@ -56,7 +56,7 @@ var MDNSList = Vue.component("dns_list_mb", {
       hashes: [],
       names: [],
       version: 0,
-      web3: new Web3("wss://wss.api.moonbeam.network")
+      web3: new Web3("wss://moonbeam.api.onfinality.io/ws?apikey=49e8baf7-14c3-4d0f-916a-94abf1c4c14a")
     };
   },
 
