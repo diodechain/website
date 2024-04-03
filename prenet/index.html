@@ -37,6 +37,7 @@
     {% include_relative vue/dns.vue %}
     {% include_relative vue/dns_list.vue %}
     {% include_relative vue/dns_list_moonbeam.vue %}
+    {% include_relative vue/moonbeam.vue %}
     {% include_relative vue/power_distribution.vue %}
     {% include_relative vue/account.vue %}
     {% include_relative vue/accounts.vue %}
@@ -170,8 +171,8 @@
         },
         {
             name: false,
-            path: '//mdns',
-            component: MDNSList,
+            path: '/moonbeam',
+            component: Moonbeam,
         },
         {
             name: false,
