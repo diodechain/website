@@ -245,6 +245,24 @@ var dnsMethods = {
             type: 'bytes32',
             name: 'hash'
         }]
+    },
+    "AllNames": {
+        name: 'AllNames',
+        type: 'function',
+        inputs: [],
+        outputs: [{
+            type: 'bytes32[]',
+            name: 'hashes'
+        }]
+    },
+    "AllNamesLength": {
+        name: 'AllNamesLength',
+        type: 'function',
+        inputs: [],
+        outputs: [{
+            type: 'uint256',
+            name: 'length'
+        }]
     }
 }
 

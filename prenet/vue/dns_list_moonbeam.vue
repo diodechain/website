@@ -6,11 +6,11 @@
       </div>
     </div>
     <div class="page-content">
-      <div v-if="Object.entries(names).length == 0">
+      <div v-if="names.length == 0">
         <b class="loading">Loading...</b>
       </div>
       <div v-else class="row align-start">
-        <div class="col-md-9 col-sm-9" v-if="Object.entries(names).length !== 0">
+        <div class="col-md-9 col-sm-9" v-if="names.length !== 0">
           <table class="data" id="blockchain-names">
             <caption>
               <div class="col-md-12 no-padding">
@@ -65,17 +65,19 @@ var MDNSList = Vue.component("dns_list_mb", {
     
     let index = 0;
     let hash = "0x";
-    do {
-      hash = await this.callDNS("namesIndex", [index++]);
-      this.hashes.push(hash);
+    let hashes = await this.callDNS("AllNames", []);
+    console.log(hashes);
+    let names = hashes.map(async (hash) => {
       let name = await this.callDNS("names", [hash]);
       let block = await this.web3.eth.getBlock(name.leaseEnd - 518400);
       name.registration = new Date(block.timestamp * 1000).toLocaleString();
-      this.names.push(name);
-    } while (hash != "0x");
+      return name;
+    });
+
+    this.names = (await Promise.all(names)).reverse();
   },
   methods: {
-    callDNS: async function (method, params, callback) {
+    callDNS: async function (method, params) {
       let abi = dnsMethods[method];
       let call = this.web3.eth.abi.encodeFunctionCall(abi, params)
       let data = await this.web3.eth.call({
