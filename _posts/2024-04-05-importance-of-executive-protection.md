@@ -1,8 +1,8 @@
 ---
 layout: post
-title: The Importance of Exeuctive Protection
+title: The Importance of Executive Protection
 description: The executive protection series
-date: 2024-04-04 8:00
+date: 2024-04-05 18:00
 categories: [Diode, Security]
 tags: [Diode, Diode Drive, Executive Protection, Security]
 author: MNJR
