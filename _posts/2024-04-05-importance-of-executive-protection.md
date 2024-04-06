@@ -14,11 +14,10 @@ Today, [digital executive protection](https://blackcloak.io/what-is-it-digital-
 
 Executives collaborate with colleagues, partners, board members, and professional services providers (such as lawyers, consultants, bankers, or accountants). This is often done without using the secure technologies used in other parts of an organization.
 
-Therefore, protecting an executive's digital footprint must include securing both business and personal activities.  This requires the use of secure messaging and secure remote access technologies in both environments.  Without a holistic approach, executives and teams tempt fate as hackers seek to exploit ever point of vulnerability to compromise sensitive and regulated data entrusted to their organization.  
+Therefore, protecting an executive's digital footprint must include securing both business and personal activities.  This requires the use of secure messaging and secure remote access technologies in both environments.  Without a holistic approach, executives and teams tempt fate as hackers seek to exploit every point of vulnerability to compromise sensitive and regulated data entrusted to their organization.  
 
-Diode uses such an approach where there is no third-party access when using any of the collaboration tools to where Diode itself doesn’t even have access to your information.  
+Diode's tools never store data on a server and ensure the communications and information-sharing are all end-to-end encrypted between the executive and their collaborators.
 
-**To explore further please:**
 <div class="story__buttons">
   <a href="{{"https://contactdiode.paperform.co"}}" class="btn" target="">Get in Touch</a>
   <a href="#download-app" class="btn popup-open" target="">Try Diode Out</a>
