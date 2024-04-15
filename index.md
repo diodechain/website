@@ -86,6 +86,7 @@ designed:
 
 ### Story: Fort Knox protection
 protected:
+  class: "story--homepage"
   animated: false
   title: 
   heading: Communicate securely <br/>across organizations

@@ -380,6 +380,33 @@
     }
   }
 
+  // Homepage version
+  &--homepage-l {
+    .story__image {
+      @include media-breakpoint-up(lg) {
+        width: 50vw;
+        margin-left: -15px;
+        overflow: hidden;
+        img {
+          width: 900px;
+          max-width: none;
+        }
+      }
+      @include media-breakpoint-up(xxl) {
+        margin-bottom: -100px;
+        img {
+          width: 1220px;
+        }
+      }
+    }
+
+    & + .story + .story {
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 110px;
+      }
+    }
+  }
+
   // Stories version
   .stories > .row > .col:nth-child(2) & {
     @include media-breakpoint-up(xl) {
