@@ -2,7 +2,7 @@
 layout: post
 title: Diode - Secure Zoom Alternative
 description: Diode as a secure Zoom alternative for video calling
-date: 2024-04-22 12:00
+date: 2024-05-22 12:00
 categories: [Diode, Security]
 tags: [Diode, Diode Drive, How To, Security]
 author: MNJR
