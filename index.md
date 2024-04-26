@@ -100,7 +100,7 @@ protected:
   - title: Request Demo
     url: "https://diodedemo.paperform.co/"
   image:
-    src: story/communicate_securely.webp
+    src: story/app-homepage.webp
     alt: Protected no matter what
 
 
