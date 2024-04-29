@@ -1,0 +1,275 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diode™ Network</title>
+    <meta charset="utf-8">
+    <base href="{{ site.github.url }}/" target="_self">
+    </base>
+    <script src="dist/vue.min.js"></script>
+    <script src="dist/vue-router.min.js"></script>
+    <script src="dist/web3.min.js"></script>
+    <script src="dist/axios.min.js"></script>
+    <script src="dist/d3.v3.min.js"></script>
+    <script src="network/abi.js"></script>
+    <script src="network/wallet.js"></script>
+    <script src="network/geo.js"></script>
+    <script src="network/storage.js"></script>
+    <script src="network/donut.js"></script>
+    <script src="network/blocklist.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    </link>
+    <link rel="shortcut icon" href="images/favicon.png" title="Favicon">
+    </link>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </link>
+</head>
+
+<body class="prenet">
+    {% include_relative vue/network.vue %}
+    {% include_relative vue/bridge.vue %}
+    <div id="app">
+        <div class="header">
+            <div class="logo">
+                <a href="{{ site.github.url }}"><img src="images/logo.svg" /></a>
+            </div>
+            <ul class="navbar">
+                <li v-for="r in routes" v-if="r.name">
+                    <!-- this is kind of workaround since the base path - '/' is matched partially always -->
+                    <router-link v-if="r.path==='/'" :to="r" exact><% r.name %></router-link>
+                    <router-link v-else :to="r"><% r.name %></router-link>
+                </li>
+            </ul>
+        </div>
+        <transition>
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
+        </transition>
+    </div>
+
+
+    <script>
+        let app = {};
+        let url = 'wss://prenet.diode.io:8443/ws'
+        // let url = 'ws://localhost:8545/ws'
+        let web3 = NewWeb3(url);
+        let web3_subscriptions = [];
+
+        function subscribe(event, callback) {
+            web3_subscriptions.push([event, callback])
+            if (web3.currentProvider.connected && app.connected == 1) web3.eth.subscribe(event, callback);
+        }
+
+        var routes = [{
+            name: 'Map',
+            path: '/network',
+            component: Network
+        },
+
+        {
+            name: 'Bridge',
+            path: '/bridge/',
+            component: Bridge
+        },
+        {
+            name: 'Overview',
+            path: '/',
+            component: Network
+        },
+        ];
+        const router = new VueRouter({
+            routes,
+            base: '/network/',
+            duplicateNavigationPolicy: 'reload'
+        });
+
+        router.beforeEach((to, from, next) => {
+            if (Object.values(to.params).length) {
+                for (i = 0; i < routes.length; i++) {
+                    let route = routes[i];
+                    if (route.name == to.name) {
+                        route.params = to.params
+                        if (app && app.$set) app.$set(app.routes, i, route)
+                        else routes[i] = route
+                    }
+                }
+            }
+            next()
+        })
+        app = new Vue({
+            data: {
+                routes,
+                initial: 0,
+                connected: 0,
+                ticker: 1,
+            },
+            router,
+            delimiters: ["<%", "%>"]
+        })
+        app.$mount('#app')
+
+        function valueToAddress(value) {
+            if (value == undefined) return undefined
+            let addr
+            if (value.length == 42)
+                addr = value;
+            else if (!value.startsWith('0x000000000000000000000000'))
+                return undefined;
+            else
+                addr = '0x' + value.substr(26, 40)
+
+            if (!isAddress(addr))
+                return undefined;
+
+            return Web3.utils.toChecksumAddress(addr)
+        }
+
+        function addressAdd(bn, num) {
+            return '0x' + bn.add(web3.utils.toBN(num)).toString(16).padStart(64, '0')
+        }
+
+        function valueToString(value) {
+            let ret = value.match(/^0x(([0-9A-F][1-9A-F]|[1-9A-F][0-9A-F])+)0+([0-9A-F]{2})$/i);
+            if (ret) {
+                let string = ret[1]
+                let len = web3.utils.hexToNumber('0x' + ret[3])
+                if (string.length == len) {
+                    return web3.utils.hexToString('0x' + string)
+                }
+            }
+            return undefined
+        }
+
+        function getBase(callback) {
+            web3.eth.getCoinbase().then((base) => {
+                callback(base);
+            });
+        }
+
+        function balanceStringToValue(balance) {
+            return web3.utils.fromWei(balance);
+        }
+
+        function getRandomColor() {
+            return "#" + ((1 << 24) * Math.random() | 0).toString(16);
+        }
+
+        function valueToBalance(balance) {
+            if (balance == undefined) return 'error loading';
+            let value = web3.utils.fromWei(balance)
+            let unit = ' DIODE'
+
+            // if (value == 0) {
+            //     value = web3.utils.hexToNumber(balance)
+            //     unit = ' WEI'
+            // }
+
+            // Adding thousands separators
+            value = value.toString()
+
+            let [front, back] = value.split(".")
+
+            front = front.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+            if (back != undefined) {
+                back = back.split("").reverse().join("");
+                back = back.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                back = "." + back.split("").reverse().join("");
+                // cutting down to the most significant digits
+                back = back.replace(/(0[1-9][1-9]|[1-9][1-9]0|[1-9]0[1-9]|00[1-9]|[1-9]00|0[1-9]0).*/, "$1")
+            } else {
+                back = "";
+            }
+
+            if (front.length > 4)
+                return front + unit
+            else
+                return front + back + unit
+        }
+
+        function isAddress(value) {
+            return value == '0x0000000000000000000000000000000000000000' ||
+                (web3.utils.isAddress(value) && !value.startsWith('0x000000'))
+        }
+
+        function formatStorageKey(key) {
+            if (key.startsWith('0x000000000000000000000000000000000000000'))
+                return web3.utils.hexToNumber(key)
+            return key.substr(0, 5) + "..." + key.substr(64, 2)
+        }
+
+        function resolveName(name) {
+            if (!name) return "null"
+            let key = name.toLowerCase()
+            if (DNSAlias[key]) return DNSAlias[key]
+            if (DNSCache[key]) return DNSCache[key].name
+            return name;
+        }
+
+        function fetchStake(address, callback) {
+            if (!address) return
+            CallRegistry('MinerValue', [0, address], callback)
+        }
+
+        function shorten(str, length) {
+            if (!length) length = 10;
+            if (str.length > length) return str.substr(0, length - 3) + '...';
+            return str;
+        }
+
+        function formatNumber(num) {
+            // return Math.floor(num).toString()
+            return Math.floor(num).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+        }
+
+        function formatAddr(addr, mode, length) {
+            if (mode == 'address')
+                return shorten(addr, length);
+
+            let alias = resolveName(addr);
+            if (mode == 'full' && alias != addr)
+                return shorten(addr, length) + ' (' + alias + ')';
+            return shorten(alias, length);
+        }
+
+        function formatTime(unix_timestamp) {
+            return formatDateTime(unix_timestamp, 'time')
+        }
+
+        function formatDate(unix_timestamp) {
+            return formatDateTime(unix_timestamp, 'date')
+        }
+
+        function formatDateTime(unix_timestamp, mode) {
+            let format = (str) => {
+                return ("0" + str).substr(-2)
+            }
+
+            // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
+            let date = new Date(unix_timestamp * 1000);
+            let year = date.getFullYear();
+            let month = format(date.getMonth() + 1);
+            let day = format(date.getDate());
+            let hours = format(date.getHours());
+            let minutes = format(date.getMinutes());
+            let seconds = format(date.getSeconds());
+
+            switch (mode) {
+                case 'date':
+                    return year + '/' + month + '/' + day;
+                case 'time':
+                    return hours + ':' + minutes + ':' + seconds;
+                case 'datetime':
+                default:
+                    return hours + ':' + minutes + ':' + seconds + ' ' + year + '/' + month + '/' + day;
+            }
+        }
+    </script>
+
+</body>
+</html>
