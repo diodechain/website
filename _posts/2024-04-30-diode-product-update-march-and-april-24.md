@@ -15,10 +15,6 @@ The Diode team continues to work hard as two months worth of updates are now run
 <br>
 Newly created tunnels in the Brave browser automatically include a default "What's my IP?" bookmark for a quick Internet exit location checks for users.
 
-**Windows: Bring App to Foreground on Startup** 
-<br>
-The Diode App will open on Windows upon startup so that it is easy to find and access rather than just loading in the taskbar.
-
 **API: Subscribe to All Channels** 
 <br>The API now supports subscribing to all channels, enabling the creation of chat bots and integrations that can interact with a user's direct messages, responding to any DM from any other member.
 
@@ -49,7 +45,7 @@ The Diode App will open on Windows upon startup so that it is easy to find and a
 **Reduce Energy Consumption** 
 <br>We've reduced the processing of encrypted messages so that the app doesn't use as much energy.
 
-**Bug Fixes:** 
+**Bug Fixes** 
 <br>
 The team addressed various bugs such as visible notification flash messages on mobile home, duplicate folders being displayed in non-sync mode, backup feature breaking certain Zones on Windows, Zone joining reliability, faster direct messaging, Android system audio playback, and Windows direct messaging images. 
 
