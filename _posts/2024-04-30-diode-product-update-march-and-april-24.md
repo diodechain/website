@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Diode Product Update - March and April 2024
-description: March adn April Product Update
+description: March and April Product Update
 date: 2024-04-30 17:00
 categories: [Diode]
 tags: [Diode, Diode Drive]
