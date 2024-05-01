@@ -10,7 +10,7 @@ redirect_from:
 hero:
   class: hero--homepage
   animated: true
-  heading: Privacy-first collaboration for executives and teams
+  heading: Collaboration for executives, expats, and ops teams
   subheading: Messaging and remote access when security is paramount.
   buttons:
   - title: Request Demo
@@ -21,53 +21,28 @@ hero:
   image: hero/home.webp
 
 
-### Testimonial logos
-customer-props:
-  animated: false
-  logos:
-  - image: partners/deraconnect.svg
-    alt: Deraconnect
-    url: "https://deraconnect.com"
-    
-  - image: partners/ironwood.svg
-    alt: Ironwood Cyber
-    url: "https://ironwoodcyber.com"
-    
-  - image: partners/axellio.svg
-    alt: Axellio
-    url: "https://www.axellio.com"
-    
-  - image: partners/syllab.svg
-    alt: Syllab
-    url: "https://www.syllab.io"
-    
-  - image: partners/rebelspace.svg
-    alt: Rebel Space
-    url: "https://www.rebelspacetech.com"
-
-
 ### Box: Why Diode
 why-diode:
   class: box--orange
   animated: false
-  title: Why choose Diode for executive protection?
-  heading: Protect your organization, and yourself, against risks from cyber threats
+  title: Protect your organization, and yourself, against risks from cyber threats
+  heading: I trust Diode to protect my messaging and to secure access to the Internet and corporate tools
   solutions:
   - title: Guarantee Privacy
     icon: icons/vault.svg
-    content: Executives collaborate with trusted advisors every day. In your line of work, it is essential that those discussions and documents remain strictly private.
+    content: You collaborate with trusted advisors every day. In your line of work, it is essential that those discussions and documents remain strictly private - from cybercriminals, nation-states, and other threat actors.
     button:
       title: Request Demo
       class: "btn--blank btn--arrow"
       url: "https://diodedemo.paperform.co/"
-  - title: Eliminate Surveillance
+  - title: Global Access
     icon: icons/cli.svg
-    content: The world can be a dangerous place. Surveillance by nation-states and other threat actors can lead to cyber threats to your team, and risks to your organization.
+    content: No matter where you go in the world, your access to the Internet, corporate assets, and team members are seamlessly delivered with Diode.  There are few things more frustrating than to lose access to your team, tools, or family members when abroad.
     button:
       title: FIND OUT MORE
       class: "btn--blank btn--arrow"
       url: "/solutions/app/"
-  - title: Data Compliance
+  - title: Regulated Data
     icon: icons/app.svg
     content: With privacy laws like GDPR and HIPAA, and oversight by regulatory authorities including the SEC, HHS, and U.S. Attorneys General, it is key that you do everything possible to avoid a breach of protected data.
     button:
@@ -200,8 +175,6 @@ solutions:
 ---
 
 {%- include hero.liquid -%}
-
-{%- include partners.liquid data="customer-props" -%}
 
 {%- include box.liquid data="why-diode" -%}
 
