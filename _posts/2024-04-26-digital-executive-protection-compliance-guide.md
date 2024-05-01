@@ -42,7 +42,7 @@ Sponsored by Senator Maria Cantwell (D-Wash.) and Rep. Cathy McMorris Rodgers (R
 
 [Worldwide Privacy Laws Comparison](#general-data-protection-regulation): Beyond GDPR, nations around the globe are adopting similar stringent measures. Brazil's LGPD and India's SPDI rules reflect a growing trend towards enhancing data protection frameworks, requiring businesses to reevaluate their global compliance strategies continually.
 
-### Enforcement and Compliance: Expanding the Scope
+### Enforcement and Compliance
 
 [HIPAA](#hipaa-and-hitech-act-compliance): Recent enforcement actions under HIPAA demonstrate its reach and impact, emphasizing the need for healthcare organizations to maintain airtight security practices.
 
