@@ -5,7 +5,7 @@ description: The executive protection series
 date: 2024-04-26 17:00
 categories: [Diode, Security]
 tags: [Diode, Diode Drive, Executive Protection, Security]
-author: MNJR
+author: Doug Pollack, CIPP/US
 image: exeuctiveblog1.jpeg
 
 ---
