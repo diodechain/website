@@ -104,7 +104,6 @@ Wallet.runTransaction = async function (name, abi, target, args, value) {
     let call = web3.eth.abi.encodeFunctionCall(abi, args);
     Wallet.runningTX = true;
 
-    let confirmation;
     try {
         let tx = await window.ethereum.request({
             method: "eth_sendTransaction",
@@ -114,15 +113,12 @@ Wallet.runTransaction = async function (name, abi, target, args, value) {
             from: Wallet.account,
         })
         console.log("tx", tx)
-
-        confirmation = await Wallet.isTxConfirmed(tx)
-        console.log("confirmation", confirmation)
+        return [true, tx];
     }
     catch (err) {
         console.log("[Transaction] error: ", name, args, err);
+        return [false, err];
     }
-    Wallet.runningTX = false;
-    return confirmation;
 }
 
 Wallet.isTxConfirmed = (txHash) => {

@@ -77,6 +77,15 @@
             component: Bridge
         },
         {
+            name: false,
+            path: '/bridge/:txid',
+            component: Bridge,
+            params: {
+                txid: ''
+            },
+            props: true
+        },
+        {
             name: 'Overview',
             path: '/',
             component: Network

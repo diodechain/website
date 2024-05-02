@@ -266,6 +266,157 @@ var dnsMethods = {
     }
 }
 
+var bridgeInMethods = {
+	"inTxsAt" : {
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "chain",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "inTxsAt",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "destination",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "historyHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct BridgeIn.InTransaction",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	"inTxsLength": {
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "chain",
+				"type": "uint256"
+			}
+		],
+		"name": "inTxsLength",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+}
+
+var bridgeOutMethods = {
+	"txsAt": {
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "chain",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "txsAt",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "destination",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "historyHash",
+						"type": "bytes32"
+					}
+				],
+				"internalType": "struct BridgeOutNative.Transaction",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	"txsLength": {
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "chain",
+				"type": "uint256"
+			}
+		],
+		"name": "txsLength",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+}
+
 function call(abi, to, args, callback) {
     let call = web3.eth.abi.encodeFunctionCall(abi, args)
     web3.eth.call({
@@ -278,6 +429,19 @@ function call(abi, to, args, callback) {
         }
         callback(data)
     })
+}
+
+async function async_call(abi, to, args) {
+    let call = web3.eth.abi.encodeFunctionCall(abi, args)
+    let data = await web3.eth.call({
+        to: to,
+        data: call,
+        gasPrice: 0
+    })
+    if (abi.outputs) {
+        data = web3.eth.abi.decodeParameter(abi.outputs[0], data)
+    }
+    return data;
 }
 
 function CallDNS(name, args, callback) {
