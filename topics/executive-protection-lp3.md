@@ -142,7 +142,7 @@ developers:
 
 pricing:
   animated: false
-  title: Executives, team members, and business associates can start collaborating with DIode for under $10 a month
+  title: Executives, team members, and business associates can start collaborating with Diode for under $10 a month
   heading: Pricing and Packages
 
   plans:
@@ -229,7 +229,7 @@ solutions:
       title: Contact Sales
       class: "btn--blank btn--arrow"
       url: "https://contactdiode.paperform.co/"
-  - title: Miliary-grade security
+  - title: Military-grade security
     icon: icons/cli.svg
     content: From the beginning, Diode has been designed using world-changing technology to ensure privacy and security in your communications and sharing. No compromises.
     button:

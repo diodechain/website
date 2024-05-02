@@ -29,19 +29,19 @@ Diode is an integrated Blockchain implementation of the Web3, the server-less in
 
 ### Where did the name "Diode" come from?
 
-We went back and forth with a ton of different potential names. We wanted the name of the technology and network etc… to connote something that really small things could interact with, and something that was secure. We wanted it to have some sort of face value to both Blockchain and IoT folks. It was a small electrical component that is fundamental to all electrical systems, and the use of the letters in the word kind of made a acronym for “Distributed Interent Of DEvices”
+We went back and forth with a ton of different potential names. We wanted the name of the technology and network etc… to connote something that really small things could interact with, and something that was secure. We wanted it to have some sort of face value to both Blockchain and IoT folks. It was a small electrical component that is fundamental to all electrical systems, and the use of the letters in the word kind of made a acronym for “Distributed Internet Of Devices”
 
-With the Diode tech, now all sorts of apps/devices/systems can interact directly with a public blockchain - cell phones, laptops, Raspberry Pis, Arduinos, etc… can all interact as part of a decentralized Web3 ecosystem.
+With the Diode tech, now all sorts of apps/devices/systems can interact directly with a public blockchain - cell phones, laptops, Raspberry Pis, Arduino's, etc… can all interact as part of a decentralized Web3 ecosystem.
 
 
 ### What is a fleet contract?
 
-A fleet contract is a smart contract that stores the identidies of clients (public keys) that have permissions to communicate. What is a smart contract? When we talk about smart contracts, we are not referring to legally binding contracts. A fleet contract is a smart contract; a smart contract is essentailly a set of instructions written in computer code that is stored on a blockchain.
+A fleet contract is a smart contract that stores the identities of clients (public keys) that have permissions to communicate. What is a smart contract? When we talk about smart contracts, we are not referring to legally binding contracts. A fleet contract is a smart contract; a smart contract is essentially a set of instructions written in computer code that is stored on a blockchain.
 
 A smart contract is a computer program, and smart contracts store data. The logic of smart contract is enforced by the full nodes involved; the data is kept by the full nodes. So in our context, this means that the full nodes running on Diode blockchain are storing all the data.
 
 ### What does a Diode's fleet contract do?
-What a Diode’s fleet contract does is it manages the whitelist of idendities (public keys) of clients who can communicate with each other. It provides a number of functions to facilitate secure communications, including client registration, client deregistration, protected or private connections, and other functions.
+What a Diode’s fleet contract does is it manages the whitelist of identities (public keys) of clients who can communicate with each other. It provides a number of functions to facilitate secure communications, including client registration, client deregistration, protected or private connections, and other functions.
 
 ### Is Diode something similar to IPFS?
 
@@ -94,7 +94,7 @@ The Diode Network is an implementation of a truly decentralized internet replace
 *   Diode is the only Blockchain with super-light clients that:
     *   Works in Browsers
     *   Works on Mobile
-    *   Works on Embedded Devices (RaspberryPi, Arduino, ESP32...)
+    *   Works on Embedded Devices (Raspberry Pi, Arduino, ESP32...)
 *   Diode has an incentive model for Data traffic built-in
 
 
@@ -124,10 +124,10 @@ NOTE: Currently we are still working on fundamental changes regularly and would 
 To mine in the test network you can checkout the mining software from [https://github.com/diodechain/diode_server_ex](https://github.com/diodechain/diode_server_ex). Put it up on your server and start.
 
 As a Maker with an embedded project:
-We are currently working on a README to get started. Come October onboarding and getting your devices into the Web3 should be straight forward on our test network.
+We are currently working on a README to get started. Come October on-boarding and getting your devices into the Web3 should be straight forward on our test network.
 
 As a Code Contributor:
-Check out our source code on Github [https://github.com/diodechain](https://github.com/diodechain). There is tons to do both in research and development. We’re working on publishing a list of tickets and tasks in the meantime. Contact us via Telegram group @diode_chain if you’re curious to help.
+Check out our source code on GitHub [https://github.com/diodechain](https://github.com/diodechain). There is tons to do both in research and development. We’re working on publishing a list of tickets and tasks in the meantime. Contact us via Telegram group @diode_chain if you’re curious to help.
 
 
 ### How can Diode compete with IOTA?

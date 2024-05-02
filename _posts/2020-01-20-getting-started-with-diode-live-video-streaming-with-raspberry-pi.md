@@ -30,9 +30,9 @@ To get started, here are the steps to follow:
 
 ![](../assets/img/blog/Diode_demo_00.png)
 
-Go to Diode’s [Github page](https://github.com/diodechain); install the [Diode go client](https://github.com/diodechain/diode_go_client). You need to have the [Go](https://golang.org/) programming language installed on your computer. It would be best to use the newer versions of Go. Go to Diode’s [prenet website](/prenet/); register your fleet contract. To run the diode_go_client, use the command: make build.
+Go to Diode’s [GitHub page](https://github.com/diodechain); install the [Diode go client](https://github.com/diodechain/diode_go_client). You need to have the [Go](https://golang.org/) programming language installed on your computer. It would be best to use the newer versions of Go. Go to Diode’s [prenet website](/prenet/); register your fleet contract. To run the diode_go_client, use the command: make build.
 
-Add your device to the Whitelist. Confirm the [Metamask](https://metamask.io/) transaction. It takes about 40 seconds or less for the new block to be added to the Diode Chain. What goes behind is the [Blockquick](https://eprint.iacr.org/2019/579.pdf) algorithm doing its work in finalizing a block.
+Add your device to the Whitelist. Confirm the [MetaMask](https://metamask.io/) transaction. It takes about 40 seconds or less for the new block to be added to the Diode Chain. What goes behind is the [Blockquick](https://eprint.iacr.org/2019/579.pdf) algorithm doing its work in finalizing a block.
 
 How do we know if the device has been added to the Whitelist? One way to check is to notice whether any error messages appear. If you still see messages like “Device was not whitelisted,” it means it has not been properly set up yet. If you stop seeing these kinds of error messages, it means you’re good to go!
 
@@ -46,7 +46,7 @@ There’s a proxy.pac file from our project’s GitHub repository; it is used to
 
 Now that we know the local server IP, back to our browser to see what our Raspberry Pi’s website looks like. Next search for a client address. Once you’ve set up everything, we want to use a proxy server to connect to the Pi address. Go back to our Firefox browser. Enter rw dash 0x7809… your Pi address. Paste the client address with dot diode. Let’s take a look at the video streaming. So, type 0x7809… the Pi address, then Port 3030, then Start. We can also use “diode.link”. 
 
-In the [demo video](https://youtu.be/Zibg-6CClc4) we talked about how to use Diode’s Go client do a live video streaming. Go check out our [Github repository](https://github.com/diodechain), try it out, and let us know how it goes! We look forward to seeing issues and pull requests.
+In the [demo video](https://youtu.be/Zibg-6CClc4) we talked about how to use Diode’s Go client do a live video streaming. Go check out our [GitHub repository](https://github.com/diodechain), try it out, and let us know how it goes! We look forward to seeing issues and pull requests.
 
 At Diode, we are constantly thinking about how to build a better Internet. How can we bring value to the web? We are seeing a trend of moving away from the client-server model towards peer-to-peer networks, and that's what Diode is all about. It’s about imaging and building a new way of thinking about the web. 
 

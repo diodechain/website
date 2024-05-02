@@ -17,7 +17,7 @@ Although the [Diode App](https://diode.io/solutions/app) is great way to securel
 
 Some applications are created intentionally to only run on a Local Area Network, or on a single computer - often for security, compliance, or other legacy reasons.  They are not cloud-native applications.  However, in our connected world, there are growing use cases in which these stand-alone applications need to securely interact with remote systems or between multiple users who are in different locations.
 
-The traditional way of supporting this type of environment is by configuring VPN for all of the pieces.  However, VPN requires IT setup and ongoing managemenet, and can even [introduce unintended risks](https://ir.zscaler.com/news-releases/news-release-details/zscaler-vpn-report-finds-nearly-half-organizations-are-concerned).  
+The traditional way of supporting this type of environment is by configuring VPN for all of the pieces.  However, VPN requires IT setup and ongoing management, and can even [introduce unintended risks](https://ir.zscaler.com/news-releases/news-release-details/zscaler-vpn-report-finds-nearly-half-organizations-are-concerned).  
 
 Diode can replace VPN for these applications without the [ongoing management or risk](https://diode.io/blog/zero-trust-replacing-vpn).
 

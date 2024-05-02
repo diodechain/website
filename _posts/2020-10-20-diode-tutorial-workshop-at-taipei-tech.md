@@ -32,7 +32,7 @@ The Custom RPC setup step involves one to manually type in the following details
 
 Once you've got your MetaMask set up, go to Diode’s [prenet](/prenet/#/dns) site and register your custom Blockchain Name System (BNS) name. Put your BNS name on our workshop's dedicated [HackMD notes](https://hackmd.io/zrrhlsUHTTee2xLY8awLpw) - it's where we gather all the BNS names registered by the workshop participants. The fun part is if you get your BNS names before the workshop, you'll be able to win more diode tokens that'd be useful for interacting with our smart contracts.
 
-The second part of the workshop will be the playing and experimenting part. It’s going to happen on the day of the workshop event. Peter Lai, Diode blockchain engineer, the instructor of the Wednesday tutorial workshop, will be using the codes he wrote specifically for the Taipei Tech Blockchain Research Club. The sample codes will be able to allow workshop participants to interact with the dapp smart contracts.
+The second part of the workshop will be the playing and experimenting part. It’s going to happen on the day of the workshop event. Peter Lai, Diode blockchain engineer, the instructor of the Wednesday tutorial workshop, will be using the codes he wrote specifically for the Taipei Tech Blockchain Research Club. The sample codes will be able to allow workshop participants to interact with the Dapp smart contracts.
 
 At the workshop, Peter will be giving an overview of what Diode CLI is about, what makes it an interesting tool to use, and how to use it. If you’d like to give it a go yourself, go to Diode’s [Download](/download/#cli) and grab Diode CLI today! 
 

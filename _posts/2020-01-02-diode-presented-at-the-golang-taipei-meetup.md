@@ -22,7 +22,7 @@ Presentations at the meetup were incredibly interesting and inspiring. First up 
 
 We were honored to be able to present [Diode](https://github.com/diodechain) at the event. In his presentation, blockchain engineer [Peter Lai](https://twitter.com/alk03073135) talked about why Diode client was written in Go, discussed concurrency bugs in Go, gave a live demo of Diode network using a Raspberry Pi that’d been previously set up from the Taipei office, and ended the talk with a Q&A session. 
 
-View the [presentation slides](https://github.com/diodechain/presentations/blob/master/Golang_Taipei_Meetup_2019/Golang%20Taipei%20Meetup%202019%20Peter%20Lai_%20Why%20Diode%20client%20uses%20Go%20language.pdf) on Github.
+View the [presentation slides](https://github.com/diodechain/presentations/blob/master/Golang_Taipei_Meetup_2019/Golang%20Taipei%20Meetup%202019%20Peter%20Lai_%20Why%20Diode%20client%20uses%20Go%20language.pdf) on GitHub.
 
 ![](../assets/img/blog/Golang_04.png)
 
@@ -63,4 +63,4 @@ Yes, we use CGo to call C functions.
 
 ![](../assets/img/blog/Golang_09.jpg)
 
-If you're interested in being an alpha tester of the Diode network, sign up on our [Telegram](http://t.me/diode_chain) group, or reach out to us on [Github](https://github.com/diodechain/diode_go_client) or [Twitter](https://twitter.com/diode_chain).
+If you're interested in being an alpha tester of the Diode network, sign up on our [Telegram](http://t.me/diode_chain) group, or reach out to us on [GitHub](https://github.com/diodechain/diode_go_client) or [Twitter](https://twitter.com/diode_chain).

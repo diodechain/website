@@ -50,6 +50,6 @@ However, they share the shortcomings of traditional Zero Trust networks in that 
 
 Diode is the only Zero Trust security network that mathematically secures the [Trust Broker](https://diode.io/blog/trust-broker-security).  This allows Diode to be deployed at high scale, in any region, without creating security vulnerabilities.
 
-Diode’s innovations not only eliminate the Trust Broker security challenges, but they are also easy to implement for teams collaborating on content, remotely accessing corporate environements, or managing OT assests.
+Diode’s innovations not only eliminate the Trust Broker security challenges, but they are also easy to implement for teams collaborating on content, remotely accessing corporate environments, or managing OT assets.
 
 If your company is ready to get started with Zero Trust networking, but wants a flexible solution that grows with you, please [get in touch](https://diode.io/about/)!

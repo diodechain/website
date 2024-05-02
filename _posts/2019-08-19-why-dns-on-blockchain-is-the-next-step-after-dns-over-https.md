@@ -11,7 +11,7 @@ redirect_from:
 
 Last month, the trade association for internet service providers in the U.K. has [nominated Mozilla for this year’s award of Internet Villain](https://www.zdnet.com/article/uk-isp-group-names-mozilla-internet-villain-for-supporting-dns-over-https/) because Mozilla plans to support DNS-over-HTTPS that would bypass U.K. filtering obligations and parental controls, undermining internet standards in the U.K.
 
-At Diode, we think Mozilla's DNS-over-HTTPS in general is a good move for increasing the privacy of end-users; however, it is not the best option for protecting an open internet as DNS-over-HTTPS, at least currently, is heavily centralized by CloudFlare and Google. Therefore, we would like to suggest "DNS-on-Blockchain," an alternative for secure, privacy-preserving and decentralized DNS, and here’s why.
+At Diode, we think Mozilla's DNS-over-HTTPS in general is a good move for increasing the privacy of end-users; however, it is not the best option for protecting an open internet as DNS-over-HTTPS, at least currently, is heavily centralized by Cloudflare and Google. Therefore, we would like to suggest "DNS-on-Blockchain," an alternative for secure, privacy-preserving and decentralized DNS, and here’s why.
 
 ### What is DNS?
 

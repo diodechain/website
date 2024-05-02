@@ -39,6 +39,6 @@ Having implemented all protocols, the next step is to have a great user experien
 
 ![](../assets/img/blog/Devcon_8.jpg)
 
-At Devcon, Slock.it meetup, Solana events, Cryptoeconomics Lab’s Layer 2 events, and many other off-devcon events, we spoke about how Diode Chain and the BlockQuick super light client can help make Web3 a reality. We look forward to seeing a continuous growth in the blockchain community as we move towards building blockchain-based decentralized PKI for IoT devices.
+At Devcon, SlockIt meetup, Solana events, Cryptoeconomics Lab’s Layer 2 events, and many other off-devcon events, we spoke about how Diode Chain and the BlockQuick super light client can help make Web3 a reality. We look forward to seeing a continuous growth in the blockchain community as we move towards building blockchain-based decentralized PKI for IoT devices.
 
 Finally, check out our [Github](https://github.com/diodechain) and the BlockQuick [paper](https://eprint.iacr.org/2019/579.pdf) to be among the first to learn about the details of the Diode Chain.

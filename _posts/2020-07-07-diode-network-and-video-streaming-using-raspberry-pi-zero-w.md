@@ -12,7 +12,7 @@ redirect_from:
 
 Diode’s second livestream meetup event went live on Tuesday (June 30). The 30-minute online event drew some 20 engineers, developers, makers, Raspberry Pi enthusiasts from countries across the globe. CTO Dominic Letz and blockchain engineer Peter Lai were the featured speakers. 
 
-The meetup topic was about how to perform video streaming using Raspberry Pi Zero W via Diode network. Check out the Diode meetup presentation slides on [Github](https://github.com/diodechain/presentations/blob/master/Diode_Online_Event_June_2020/Diode%20Tuesday%20online%20event%20%232_%20Diode%20Network%20and%20Video%20Streaming%20Using%20Raspberry%20Pi%20Zero%20W.pdf). Watch the livestream-ed meetup on[ YouTube](https://youtu.be/4VnDFfqQl3w).
+The meetup topic was about how to perform video streaming using Raspberry Pi Zero W via Diode network. Check out the Diode meetup presentation slides on [GitHub](https://github.com/diodechain/presentations/blob/master/Diode_Online_Event_June_2020/Diode%20Tuesday%20online%20event%20%232_%20Diode%20Network%20and%20Video%20Streaming%20Using%20Raspberry%20Pi%20Zero%20W.pdf). Watch the livestream-ed meetup on[ YouTube](https://youtu.be/4VnDFfqQl3w).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4VnDFfqQl3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -44,7 +44,7 @@ You can go to our website’s download page, and download Diode client’s the l
 
 Once Diode is set up on Pi, you can open Terminal and type diode publish -public 3030:3030 to publish video streaming to Diode Network. You can use our diode_poc_website to play with the video streaming in a web browser (which is what we showed in the demo.). 
 
-We have bundled and released the files of diode_poc_website. Go to our github release page and download it. Note that you have to host the website first. Choose your favorite web host service, for example, Apache, lighttpd, Nginx. You can use rsync or scp command to upload the diode_poc_website to Pi.
+We have bundled and released the files of diode_poc_website. Go to our GitHub release page and download it. Note that you have to host the website first. Choose your favorite web host service, for example, Apache, lighttpd, Nginx. You can use rsync or scp command to upload the diode_poc_website to Pi.
 
 We’ve collected several questions prior to the event and provided answers during the discussion session.
 

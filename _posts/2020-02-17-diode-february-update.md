@@ -79,7 +79,7 @@ For creating human readable links instead of above hex based addresses we deploy
 
 ![Prenet BNS](../assets/img/blog/feb_dns.png)
 
-If you feel curious about trying it yourself checkout our [tutorial on how to setup Metamask](https://support.diode.io/article/uec3mloh9z-metamask).
+If you feel curious about trying it yourself checkout our [tutorial on how to setup MetaMask](https://support.diode.io/article/uec3mloh9z-metamask).
 
 ### Client Updates
 
@@ -95,7 +95,7 @@ You can checkout the full list of command line parameters [here in our new docs]
 
 ### Uptime Monitor
 
-While were developing the BlockQuick clients and making further changes we're keeping score based on the uptime of deployed devices. For this we have created a [prenet status dashboard](/status/) that keeps track of the uptime of two selected devices. Over the coming weeks as we roll out new releases this will be our continous score board.
+While were developing the BlockQuick clients and making further changes we're keeping score based on the uptime of deployed devices. For this we have created a [prenet status dashboard](/status/) that keeps track of the uptime of two selected devices. Over the coming weeks as we roll out new releases this will be our continuous score board.
 
 ![](../assets/img/blog/feb_status.png "Status Monitor")
 

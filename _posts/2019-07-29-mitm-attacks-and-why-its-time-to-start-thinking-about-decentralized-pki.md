@@ -9,9 +9,9 @@ redirect_from:
 - /blockchain/MITM-attacks-and-why-it's-time-to-start-thinking-about-decentralized-PKI-19210/
 ---
 
-Picture this: you’re sitting in a coffee shop with your laptop, and find yourself trying to connect to the internet, like most people, using a public wifi connection provided by the coffee shop. Wouldn’t it be nice to book a hotel room over the weekend, you ask your partner?
+Picture this: you’re sitting in a coffee shop with your laptop, and find yourself trying to connect to the internet, like most people, using a public WiFi connection provided by the coffee shop. Wouldn’t it be nice to book a hotel room over the weekend, you ask your partner?
 
-You click on an online reservation website, search for a hotel room to book, and you’re looking forward to the vacation. You may not be aware that the corner sits a stranger using a laptop spoofing the public wifi connections. This is a common cyber attack scenario known as [Man-In-The-Middle (MITM) attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack).
+You click on an online reservation website, search for a hotel room to book, and you’re looking forward to the vacation. You may not be aware that the corner sits a stranger using a laptop spoofing the public WiFi connections. This is a common cyber attack scenario known as [Man-In-The-Middle (MITM) attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack).
 
 A MITM attack is when an attacker intercepts a communication between the two parties. Your personal data such as your credit card numbers and your social media user login credentials can easily be intercepted if not properly protected in a MITM attack.
 
@@ -25,7 +25,7 @@ When you connect to your website using HTTPS, there’s a green padlock icon loc
 
 ### Why the current PKI is not enough
 
-The above scheme looks unbreakable, but it's in fact vulnerable! The problem is that it relies on trust of a certificate authority. Many attack incidents have successfully exploited the type of vulnerability. For instance, in 2017 an [incident](https://www.wired.com/2017/04/hackers-hijacked-banks-entire-online-operation/) occured when attackers took control of Brazilian banks DNS server and tricked a certificate authority into issuing a valid certificate to them.
+The above scheme looks unbreakable, but it's in fact vulnerable! The problem is that it relies on trust of a certificate authority. Many attack incidents have successfully exploited the type of vulnerability. For instance, in 2017 an [incident](https://www.wired.com/2017/04/hackers-hijacked-banks-entire-online-operation/) occurred when attackers took control of Brazilian banks DNS server and tricked a certificate authority into issuing a valid certificate to them.
 
 The centralized trust model employed in the current PKI is the fundamental problem that needs to be solved. To minimize the trust of centralized parties, we need to change our mindset from a centralized model to a decentralized model. This is when blockchain comes into play.
 

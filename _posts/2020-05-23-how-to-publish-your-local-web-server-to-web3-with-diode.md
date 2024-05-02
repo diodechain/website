@@ -18,11 +18,11 @@ We gave a demo of Diode client showcasing how to easily publish a local webserve
 
 ![](../assets/img/blog/Diode_May_Event_Demo_Steps.png)
 
-Watch Diode Tuesday online meetup on [YouTube](https://youtu.be/B-YzxaKpEJQ). Presentation slides are now publicly available on [Github](https://github.com/diodechain/presentations/blob/master/Diode_Online_Event_May_2020/Diode%20Tuesday%20Online%20Event_%20Publish%20Your%20Local%20Web%20Server%20to%20Web3%20with%20Diode%20May%2019%202020.pdf). Download Diode Client on our [website](/download/#cli).
+Watch Diode Tuesday online meetup on [YouTube](https://youtu.be/B-YzxaKpEJQ). Presentation slides are now publicly available on [GitHub](https://github.com/diodechain/presentations/blob/master/Diode_Online_Event_May_2020/Diode%20Tuesday%20Online%20Event_%20Publish%20Your%20Local%20Web%20Server%20to%20Web3%20with%20Diode%20May%2019%202020.pdf). Download Diode Client on our [website](/download/#cli).
 
 In the demo, we used a Ghost website as an example. [Ghost](https://ghost.org/) is a popular modern open-source publishing platform. It’s beautifully designed and easy to use. So, we've got a Ghost blog running on a local computer; the audience could access the blog via the Diode network. 
 
-__Note: since we didn't modify the header from http proxy request, and Ghost api will validate whether the host is equal to the url in configuration, you should use http:// instead of https:// in the url configuration.__
+__Note: since we didn't modify the header from http proxy request, and Ghost API will validate whether the host is equal to the url in configuration, you should use http:// instead of https:// in the url configuration.__
 
 It was something interesting to developers, because for app developers, or web developers, there would be times when you need to demo your work. But you would like to demo it without actually deploying. For developers, it would be perfect if you are able to give a URL to anyone. And that URL would allow them to try out the website you’re building without doing any deployment. Diode is really great for that. So, you wonder, where do I Start?
 
@@ -54,7 +54,7 @@ Now that you've published your local port to the Diode network, you can demo you
 
 In your terminal window, look for the line “Client address: <address>”. Copy the <address> part. Paste it into your webbrowser’s address bar, and add “.diode.link” afterwards. You can see your website live from anywhere in the world!
 
-You can also configure a domain name if you like. Your website address can use a human readable name. Go to Diode's [prenet website](/prenet/#/dns), register your Blockchain Name System (BNS) custom domain. It requires [Metamask](https://metamask.io/).
+You can also configure a domain name if you like. Your website address can use a human readable name. Go to Diode's [prenet website](/prenet/#/dns), register your Blockchain Name System (BNS) custom domain. It requires [MetaMask](https://metamask.io/).
 
 ![](../assets/img/blog/Diode_May_Event_bns.png)
 

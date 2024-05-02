@@ -57,7 +57,7 @@ teams:
     heading: Team Collaboration
     anchor: collaboration
     content: |
-      Establish full custody of your organization's data and communications and eliminate data, identity, and behavioural leakages that could unintentionally violate regional data restrictions.
+      Establish full custody of your organization's data and communications and eliminate data, identity, and behavioral leakages that could unintentionally violate regional data restrictions.
       
       #### Remove points of vulnerability
       Give your most vulnerable people the tools they need to operate securely in their persons, data, and communications.

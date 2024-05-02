@@ -54,7 +54,7 @@ The Raspberry Pi distribution comes with both the _OS kernel_ as well as a _Vide
 
 Luckily it can easily be updated. In our cases we found that just ensuring that the most recent stable version is installed solved for us the red led of death.
 
-And this is what you do on ther Raspberry:
+And this is what you do on the Raspberry:
 
 ```
 sudo apt-get update

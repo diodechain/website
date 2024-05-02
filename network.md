@@ -45,7 +45,7 @@ features:
   list:
   - title: Automated Security
     content: |
-      The Diode Network uses hardened smart contracts running on a blockchain network to automate provisioning and to guarantee security. This means you can use it like a SaaS product and operate your appliclation like an air-gapped security environment.
+      The Diode Network uses hardened smart contracts running on a blockchain network to automate provisioning and to guarantee security. This means you can use it like a SaaS product and operate your application like an air-gapped security environment.
 
   - title: Use for
     content: |

@@ -46,7 +46,7 @@ If the team's core focus includes accessing secure dynamic content - like access
 ### Never Holds Your Data Hostage
 Most chat apps have to restrict storage / history in their free plans so that their "freebie" cloud server bill remains at a dull roar. This means that teams need to subscribe to higher priced plans when they need more storage or longer history. 
 
-For example, if you need more than 90 days of chat history with Slack, you need to pay a minimum of $7.25 USD per team member for that privelege.
+For example, if you need more than 90 days of chat history with Slack, you need to pay a minimum of $7.25 USD per team member for that privilege.
 
 Diode is different - it is a self-custody solution that has no cloud server bills related to storage and chat history. We pass this benefit directly to our users by having free unlimited history and chat content storage.  
 

@@ -10,7 +10,7 @@ image: Screen Shot 2023-08-09 at 3.34.45 PM.png
 ---
 ### Trust Brokers Make Zero Trust Possible
 
-Zero Trust communications rely on secure communications between continuosly-validated parties.  In Zero Trust, the communications are often end-to-end encrypted (E2EE).  E2EE protects data by encrypting it with a key that is only known to the parties who would like to communicate. However, a universal challenge to establishing E2EE communications across the Internet is in establishing an initial connection between the two parties.  
+Zero Trust communications rely on secure communications between continuously-validated parties.  In Zero Trust, the communications are often end-to-end encrypted (E2EE).  E2EE protects data by encrypting it with a key that is only known to the parties who would like to communicate. However, a universal challenge to establishing E2EE communications across the Internet is in establishing an initial connection between the two parties.  
 
 Zero Trust introduces the concept of a Trust Broker to enable establishing connections, to ensure that connections are only made between authorized parties, and to keep communications session intact.  In order to do this, the Trust Broker maintains “Access Control Lists” that specify who can talk to who, and also handles metadata about the identities and connections.
 
@@ -42,6 +42,6 @@ When a Trust Broker is compromised, it can look something like this:
 
 ### Diode Secures the Trust Broker
 
-Although the Trust Broker is core to the significant advantages to Zero Trust networks, it is also the network’s achilles heal.  Diode’s Zero Trust network solves this problem: Instead of requiring advanced physical and cyber security for the Trust Broker servers, Diode mathematically secures the Trust Broker.  This eliminates the key vulnerabilities that exist in traditional Zero Trust network infrastructure, making all the benefits of Zero Trust communications accessible to many new markets and uses cases.
+Although the Trust Broker is core to the significant advantages to Zero Trust networks, it is also the network’s Achilles heal.  Diode’s Zero Trust network solves this problem: Instead of requiring advanced physical and cyber security for the Trust Broker servers, Diode mathematically secures the Trust Broker.  This eliminates the key vulnerabilities that exist in traditional Zero Trust network infrastructure, making all the benefits of Zero Trust communications accessible to many new markets and uses cases.
 
 You can experience the difference by using Diode ([Diode App](https://diode.io/#download-app) or [Diode CLI](https://diode.io/#download-cli)) today to keep your fast moving teams secure.

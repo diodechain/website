@@ -10,7 +10,7 @@ image: zoomreplacement.jpeg
 
 ---
 
-Many people are looking for a secure alternative to Zoom for video and audio conferencing.  Diode has a solution that prioritizes data safety in virtual meetings, providing a user-friendly experience while maintaining security. In response to the growing concern for secure communications, the Diode now integrates with secure video calling within the app. Diode's commitment to privacy and security is different from other [organisations](https://www.bitdefender.com/blog/hotforsecurity/zoom-rectifies-ai-data-collection-policy-after-raising-privacy-concerns/) who may have other priorities when it comes to their customer's data.
+Many people are looking for a secure alternative to Zoom for video and audio conferencing.  Diode has a solution that prioritizes data safety in virtual meetings, providing a user-friendly experience while maintaining security. In response to the growing concern for secure communications, the Diode now integrates with secure video calling within the app. Diode's commitment to privacy and security is different from other [organizations](https://www.bitdefender.com/blog/hotforsecurity/zoom-rectifies-ai-data-collection-policy-after-raising-privacy-concerns/) who may have other priorities when it comes to their customer's data.
 
 <div class="story__buttons">
   <a href="{{"https://contactdiode.paperform.co"}}" class="btn" target="">Get in Touch</a>

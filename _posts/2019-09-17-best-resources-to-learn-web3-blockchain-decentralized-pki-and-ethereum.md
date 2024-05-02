@@ -85,7 +85,7 @@ Development tools
 
 *   Remix — a browser-based Ethereum IDE [https://remix.ethereum.org/](https://remix.ethereum.org/)
 
-*   Metamask — a browser extension that allows you to interact with Ethereum dApps [https://metamask.io/](https://metamask.io/)
+*   MetaMask — a browser extension that allows you to interact with Ethereum dApps [https://metamask.io/](https://metamask.io/)
 
 *   Solidity — a  popular programming language for implementing smart contracts [https://solidity.readthedocs.io/en/v0.5.11/](https://solidity.readthedocs.io/en/v0.5.11/)
 

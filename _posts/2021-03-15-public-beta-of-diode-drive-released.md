@@ -26,7 +26,7 @@ Just a couple of days after the beta was released, Diode Drive was posted to [Ha
 
 ### Feedback
 
-For technically-oriented Beta users, please consider adding feature requests and bug reports on our [github feedback page](https://github.com/diodechain/diode_drive_feedback).
+For technically-oriented Beta users, please consider adding feature requests and bug reports on our [GitHub feedback page](https://github.com/diodechain/diode_drive_feedback).
 
 Others can join our [Telegram channel](https://t.me/diode_chain) to discuss, or [contact us](https://contactdiode.paperform.co/) directly.
 

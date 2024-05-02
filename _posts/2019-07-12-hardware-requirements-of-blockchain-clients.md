@@ -158,7 +158,7 @@ There are fundamentally different means of implementing super light clients. Tod
 </div>
 
 1. For FlyClient there is no implementation yet, the bandwidth is taken from the paper
-2. [Numbers from slock.it video](https://www.youtube.com/watch?time_continue=107&v=EDJWb3fWB1w), the nano client is not yet available for testing.
+2. [Numbers from SlockIt video](https://www.youtube.com/watch?time_continue=107&v=EDJWb3fWB1w), the nano client is not yet available for testing.
 3. IOTA itself is currently centralized on its coordinator nodes. [Numbers from FAQ](https://www.iota.org/get-started/faqs)
 
 ---

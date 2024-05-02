@@ -16,22 +16,22 @@ Since our last development update in February we're now just getting over the ex
 
 ### Network Growth
 
-We have been working more on visualizing our growing mesh network and better tools to inspect the network behaviour. On the prenet browser you can now find [the network tab](/prenet/#/network) that displays information on the current network nodes and their connectivity. 
+We have been working more on visualizing our growing mesh network and better tools to inspect the network behavior. On the prenet browser you can now find [the network tab](/prenet/#/network) that displays information on the current network nodes and their connectivity. 
 
 ![Network View](../assets/img/blog/dev-june/image4.png)
 
 ### CLI Usability
 
-As the Diode overlay network becomes more mature we have started making the network easier accessible for concrete use cases. Currently the [Didoe command line client](https://github.com/diodechain/diode_go_client) is the primary way of interacting with the network. So time went into making it easier to use and easen the installation process.
+As the Diode overlay network becomes more mature we have started making the network easier accessible for concrete use cases. Currently the [Diode command line client](https://github.com/diodechain/diode_go_client) is the primary way of interacting with the network. So time went into making it easier to use and easen the installation process.
 
-*   Most importantly there are now **regular binary releases** that you can [download from our homepage](/download/) or from [github directly](https://github.com/diodechain/diode_go_client/releases) for all three major platforms Linux, macOS and Windows.
+*   Most importantly there are now **regular binary releases** that you can [download from our homepage](/download/) or from [GitHub directly](https://github.com/diodechain/diode_go_client/releases) for all three major platforms Linux, macOS and Windows.
 
 ![Download Page](../assets/img/blog/dev-june/image1.png)
 
-![Github Releases](../assets/img/blog/dev-june/image5.png)
+![GitHub Releases](../assets/img/blog/dev-june/image5.png)
 
 *   Secondly there is an easy setup **installer script** for Linux and macOS, and Windows installations with a bash terminal. `curl -Ssf https://diode.io/install.sh | bash` will install the client into your machine
-*   Third, we have changed the compilation of openssl so that the **application is packaged into a single file**. This makes updating the application easier and removes problems users had with missing or misplaced dependencies. This change will be rolled out with version v0.3.6
+*   Third, we have changed the compilation of OpenSSL so that the **application is packaged into a single file**. This makes updating the application easier and removes problems users had with missing or misplaced dependencies. This change will be rolled out with version v0.3.6
 *   Fourth, the command line **flag documentation** has been updated to fit on a single page and be easier consumable. 
 
 ![Flag Documentation](../assets/img/blog/dev-june/image8.png)
@@ -91,10 +91,10 @@ With all that in place we can now open TLS encrypted connections between two mac
 *   Address	- The Ethereum Address you're known by
 *   BNS Name	- Blockchain Name Service Name, mapping a name to an Address.
 
-In the Diode network clients can explicitly create connections by providing an Ethereum Address such as 0x780980bfc0aa56ceb1417e87912e54b759463090.diode or alternatively a bns name pi-taipei.diode as indicated by ***** on the diagram. Clients using Diode are enabled to check the identity of their communication counterpart by extracting the public key from the self-signed certificate that they receive and hashing that into an Ethereum Address. So every network user's wallet turns into an unforgeable identification mechanism. Be it human users or robotic network participants. This check can be made in both directions. Below is a flow diagram showing how this check could look like when a user wants to to use an invite only service.
+In the Diode network clients can explicitly create connections by providing an Ethereum Address such as 0x780980bfc0aa56ceb1417e87912e54b759463090.diode or alternatively a BNS name pi-taipei.diode as indicated by ***** on the diagram. Clients using Diode are enabled to check the identity of their communication counterpart by extracting the public key from the self-signed certificate that they receive and hashing that into an Ethereum Address. So every network user's wallet turns into an unforgable identification mechanism. Be it human users or robotic network participants. This check can be made in both directions. Below is a flow diagram showing how this check could look like when a user wants to to use an invite only service.
 
 ![](../assets/img/blog/dev-june/image6.png)
 
 In this diagram we can see that both the User (Client) and the Service are checking authenticity. The “Invite Only Service” has a pre-approved list of invitees that is used to check if he allows communication. The Client on the other hand already knows the BNS name “my-service.diode” and is using that to resolve the address and check whether the answering service identity is corresponding to the address that it should be. All of this is of course happening behind the scenes and transparent for the user.
 
-Let us know if you have any questions on our [twitter channel](https://t.me/diode_chain) or via [github issues](https://github.com/diodechain/diode_go_client/issues), we're happy to discuss more on this approach.
+Let us know if you have any questions on our [twitter channel](https://t.me/diode_chain) or via [GitHub issues](https://github.com/diodechain/diode_go_client/issues), we're happy to discuss more on this approach.

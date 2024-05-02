@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -name "*.md" | xargs -o -n1 aspell check "$@" --master=en_US --lang=en_US  --sug-mode=slow -x --mode=markdown --personal ./.aspell.en.pws

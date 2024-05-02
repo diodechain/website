@@ -22,7 +22,7 @@ Diode addresses this by safeguarding people, contacts, and communication, fillin
 
 **Encrypted Teams:** 
 
-Diode introduces [end-to-end encrypted](https://diode.io/how-it-works/) (E2EE) features that fortify an organization's online communication. Mission teams can utilise anonymous and secure chat, group communication, online training, file collaborations, information wikis, repositories, and websites. Every aspect is designed to protect teams and their contacts, ensuring the utmost confidentiality.
+Diode introduces [end-to-end encrypted](https://diode.io/how-it-works/) (E2EE) features that fortify an organization's online communication. Mission teams can utilize anonymous and secure chat, group communication, online training, file collaborations, information wikis, repositories, and websites. Every aspect is designed to protect teams and their contacts, ensuring the utmost confidentiality.
 
 **Zero Data Leakage:** 
 

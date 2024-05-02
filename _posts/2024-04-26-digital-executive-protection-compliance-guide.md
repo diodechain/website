@@ -46,7 +46,7 @@ Sponsored by Senator Maria Cantwell (D-Wash.) and Rep. Cathy McMorris Rodgers (R
 
 [HIPAA](#hipaa-and-hitech-act-compliance): Recent enforcement actions under HIPAA demonstrate its reach and impact, emphasizing the need for healthcare organizations to maintain airtight security practices.
 
-[FTC](#federal-trade-commission-cybersecurity-practices): The FTC has been instrumental in policing [privacy policies](#-FTC-:-Protecting-Consumer-Privacy) and data securitycommitments. High-profile cases, such as the $5 billion fine levied against Facebook for privacy violations, underscore the FTC's role in shaping cybersecurity practices.
+[FTC](#federal-trade-commission-cybersecurity-practices): The FTC has been instrumental in policing [privacy policies](#-FTC-:-Protecting-Consumer-Privacy) and data security commitments. High-profile cases, such as the $5 billion fine levied against Facebook for privacy violations, underscore the FTC's role in shaping cybersecurity practices.
 
 [SEC](#sec-cybersecurity-guidelines): Analysis of the SEC's initiatives, like the recent amendments to enhance information about issuers' cybersecurity risks and incidents, shows its critical role in maintaining corporate transparency.
 

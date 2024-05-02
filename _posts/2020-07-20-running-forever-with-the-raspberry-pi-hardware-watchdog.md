@@ -22,7 +22,7 @@ That's the point the Pi froze, and only manual powering down, and powering up ag
 
 ## Enter Watchdog
 
-But the Pis are very resourcefull tools. And one of their underdocumented features is a builtin hardware watchdog. This little hardware service will _once enabled_ watch the system activity and automatically power cycle the Raspberry Pi once it gets stuck. 
+But the Pis are very resourceful tools. And one of their underdocumented features is a builtin hardware watchdog. This little hardware service will _once enabled_ watch the system activity and automatically power cycle the Raspberry Pi once it gets stuck. 
 
 So if you're running your Raspberry Pi as a remote sensor reachable remotely from any place in the world with Diode network, then we recommend to enable this hardware watchdog for your devices as well. 
 
@@ -62,7 +62,7 @@ sudo systemctl start watchdog
 sudo systemctl status watchdog
 ```
 
-If everything worked then you should after the last command output similiar to this:
+If everything worked then you should after the last command output similar to this:
 
 ![Watchdog service running](../assets/img/blog/watchdog/image2.png)
 
@@ -73,7 +73,7 @@ If you want to test this you can try running a _fork bomb_ on your shell:
 ```
 sudo bash -c ':(){ :|:& };:'
 ```
-__WARNING__ _Running this code will render your Raspberry Pi unaccessible until it's reset by the watchdog._ __/WARNING__
+__WARNING__ _Running this code will render your Raspberry Pi inaccessible until it's reset by the watchdog._ __/WARNING__
 
 
 If you got any troubles with your Pi or running Diode on the Pi feel free to reach out to us on [Telegram and ask questions directly there.](https://t.me/diode_chain)
@@ -82,14 +82,14 @@ And if you want to learn more about Diode be sure to check out the [Diode FAQs](
 
 ### Update: July 21st 
 
-In some cases our [_Raspberry Pi Zero W_](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) would crash it's wifi driver but not completely go down. This wouldn't trigger the watchdog, because the device is still running - just not communicating anymore... To handle this case we added one more line to the _watchdog.conf_ configuration file. Like this:
+In some cases our [_Raspberry Pi Zero W_](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) would crash it's WiFi driver but not completely go down. This wouldn't trigger the watchdog, because the device is still running - just not communicating anymore... To handle this case we added one more line to the _watchdog.conf_ configuration file. Like this:
 
 ```
 sudo su
 echo 'interface = wlan0' >> /etc/watchdog.conf
 ```
 
-With this additional configuration line, the watchdog will also power cycle the Raspberry Pi when the wifi interface _wlan0_ gets into trouble.
+With this additional configuration line, the watchdog will also power cycle the Raspberry Pi when the WiFi interface _wlan0_ gets into trouble.
 
 ## Use your Raspberry Pi to:
 

@@ -50,7 +50,7 @@ app:
     class: app
 
 
-### Solution: CLi
+### Solution: CLI
 cli:
   animated: false
   title: Connecting Things

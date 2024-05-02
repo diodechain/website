@@ -30,7 +30,7 @@ Twitter just showed the impact such a social engineering attack can have. It dir
 
 ![](../assets/img/blog/Bangkok_03.png)
 
-_"The Admin"_ problem is just the peak of the iceberg here, but it is one that is widely prevalent and the easiest to attack. In many companies employess in support and technical capabilities have direct control of critical infrastructure. We believe that only Blockchains have the ability to resolve this finally. A multi-signature smart contract used to control changes, has no backdoor, and no admin who can change values. All other database based solutions even if they implement multi-signature steps on the outside, still have somewhere in the system an admin role who is tasked with maintenance for backup & restore and finally has the ability to make any change.  We're a big believer of _end-to-end (E2E) blockchain_ meaning that there is no middleware that can be compromised, and end-to-end encryption meaning that there is no decryption anywhere in the transport channel. In both areas we're seeing often solution that go half the way. E.g. they start using encryption on the way to the server, but the server can actually read all data. Or we see blockchain deployments in which middleware servers enable the communication. Diode is unique as it's _the only network that implements E2E blockchain_ (even small IoT devices connect directly to the blockchain without middleware servers) and E2E encryption.
+_"The Admin"_ problem is just the peak of the iceberg here, but it is one that is widely prevalent and the easiest to attack. In many companies employees in support and technical capabilities have direct control of critical infrastructure. We believe that only Blockchains have the ability to resolve this finally. A multi-signature smart contract used to control changes, has no backdoor, and no admin who can change values. All other database based solutions even if they implement multi-signature steps on the outside, still have somewhere in the system an admin role who is tasked with maintenance for backup & restore and finally has the ability to make any change.  We're a big believer of _end-to-end (E2E) blockchain_ meaning that there is no middleware that can be compromised, and end-to-end encryption meaning that there is no decryption anywhere in the transport channel. In both areas we're seeing often solution that go half the way. E.g. they start using encryption on the way to the server, but the server can actually read all data. Or we see blockchain deployments in which middleware servers enable the communication. Diode is unique as it's _the only network that implements E2E blockchain_ (even small IoT devices connect directly to the blockchain without middleware servers) and E2E encryption.
 
 ## Open Discussion
 
@@ -56,7 +56,7 @@ Secondly, the public Diode routing networks allow you to do a single low-powered
 
 And lastly, we hope that with technology such as Diode, deploying large amounts of IoT fleets becomes a much easy, and much cheaper task. We look forward to seeing many more deployments and much more security especially from small and mid-tier companies.
 
-__A question asked about our plans to follow Ethereum’s recent development, such as Eth2.__
+__A question asked about our plans to follow Ethereums recent development, such as Eth2.__
 
 We’re definitely watching Eth2 closely. We think the Eth2 development is generally moving toward the right direction and we will be ready to follow Eth2 when it’s working well. 
 

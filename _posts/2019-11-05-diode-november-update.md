@@ -36,7 +36,7 @@ But running our prenet and scaling up transaction processing last month we ran i
 
 ![](../assets/img/blog/November3.png "Tech Stack")
 
-To focus purely on the CPU bound performance of the EVM, we constructed a new smart contract with one of our favourite functions. The very slow recursive fibonacci implementation. In the fibonacci function, each number is the sum of its two predecessors, starting in our case with 1, 1 and then continuing 2, 3, 5, 8 and so forth.
+To focus purely on the CPU bound performance of the EVM, we constructed a new smart contract with one of our favorite functions. The very slow recursive Fibonacci implementation. In the Fibonacci function, each number is the sum of its two predecessors, starting in our case with 1, 1 and then continuing 2, 3, 5, 8 and so forth.
 
 ![](../assets/img/blog/November1.png "Fibonacci Formula")
 
@@ -107,6 +107,6 @@ Just this week we filed an Ethereum Improvement Proposal (EIP) for a new EVM opc
 
 #### TravisCI
 
-Last but not least, we finally enabled continuous testing for our [server implementation](https://github.com/diodechain/diode_server_ex). We initially had some problems getting Travis to run the most recent software versions until we realised that Travis does not yet support Ubuntu 18.04 for Elixir as one of their build options, and had to do some work-arounds in our [travis.yml](https://github.com/diodechain/diode_server_ex/blob/master/.travis.yml) to use a recent C++ compiler for our new AlethVM. We are full believers in continuous automated testing and will keep rolling this out to other tools as well in the future. Until then enjoy the green build flag on our repository:
+Last but not least, we finally enabled continuous testing for our [server implementation](https://github.com/diodechain/diode_server_ex). We initially had some problems getting Travis to run the most recent software versions until we realized that Travis does not yet support Ubuntu 18.04 for Elixir as one of their build options, and had to do some work-arounds in our [travis.yml](https://github.com/diodechain/diode_server_ex/blob/master/.travis.yml) to use a recent C++ compiler for our new AlethVM. We are full believers in continuous automated testing and will keep rolling this out to other tools as well in the future. Until then enjoy the green build flag on our repository:
 
 ![](../assets/img/blog/November4.png "CircleCI Icon")

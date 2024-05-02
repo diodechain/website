@@ -18,7 +18,7 @@ This capability is important both today, and in the future:
 
 This immediately enables all types of web hosting solutions without requiring a static IP address.  By creating a [Web3 host](https://support.diode.io/article/ss32engxlq-publish-your-local-webserver), your hosting hardware (anything from a Raspberry Pi under your desk, to your laptop on your desk, to a machine in a factory, to a full server in a datacenter) can be online from anywhere in the world without a static IP address, and can be accessed by a full Web2.0 domain name (e.g. www.acme.com). 
 
-While we have found that hobbyists and web developers love this capability (it gives them easy capabilities to provide/roll-their-own web hosting services), it also immediately expands the IPv4 address space for hosting activites.  
+While we have found that hobbyists and web developers love this capability (it gives them easy capabilities to provide/roll-their-own web hosting services), it also immediately expands the IPv4 address space for hosting activities.  
 
 ### Future
 
@@ -32,7 +32,7 @@ With this capability, Diode has removed significant amounts of centralization fr
 
 ### How to Get Started?
 
-It is easy to enable a Web2.0 domain to serve Web3 content - all that has to be done is to register the domain name (without the TLD) as a [BNS name](https://support.diode.io/article/5nsoxvhug1) and point a DNS A record to one fo the Diode IPs. 
+It is easy to enable a Web2.0 domain to serve Web3 content - all that has to be done is to register the domain name (without the TLD) as a [BNS name](https://support.diode.io/article/5nsoxvhug1) and point a DNS A record to one of                            the Diode IPs. 
 
 ![](../assets/img/blog/bns-screenshot.png)
   

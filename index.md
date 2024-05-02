@@ -155,7 +155,7 @@ solutions:
       title: Contact Sales
       class: "btn--blank btn--arrow"
       url: "https://contactdiode.paperform.co/"
-  - title: Miliary-grade security
+  - title: Military-grade security
     icon: icons/cli.svg
     content: From the beginning, Diode has been designed using world-changing technology to ensure privacy and security in your communications and sharing. No compromises.
     button:

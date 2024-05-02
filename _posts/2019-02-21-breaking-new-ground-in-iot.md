@@ -13,4 +13,4 @@ redirect_from:
 
 After months of incubation we're excited to start talking about our new, we believe groundbreaking, initiative: Diode<sup>SM</sup> Incubating within [Exosite](https://exosite.com), we've been working hard to fix some of the fundamental shortcomings of PKI that are underlying 99% of all Internet communication today.
 
-For the first time now it becomes practical, with Diode, to use blockchain technology to eradicate the issues with PKI for IoT devices.  Our technologies work even on low-end embedded devices and increase the security of existing and new solutions manyfold. Follow us here on the journey in the weeks to come as we chart a new course for IoT Device security!
+For the first time now it becomes practical, with Diode, to use blockchain technology to eradicate the issues with PKI for IoT devices.  Our technologies work even on low-end embedded devices and increase the security of existing and new solutions manifold. Follow us here on the journey in the weeks to come as we chart a new course for IoT Device security!

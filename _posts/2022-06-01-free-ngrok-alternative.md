@@ -27,7 +27,7 @@ The Diode CLI is [free for all use cases](/pricing/), regardless if you are usin
 ### 2)	Open Source
 An [early version of ngrok is open source](https://github.com/inconshreveable/ngrok), but ngrok 2.0 and later is not.
 
-The [Diode CLI](https://github.com/diodechain/diode_client) and [Diode Network server](https://github.com/diodechain/diode_server) applications are open source and available on [Diode’s github](https://github.com/diodechain). We encourage you to contribute.
+The [Diode CLI](https://github.com/diodechain/diode_client) and [Diode Network server](https://github.com/diodechain/diode_server) applications are open source and available on [Diode’s GitHub](https://github.com/diodechain). We encourage you to contribute.
 
 ### 3)	Secure Tunnels
 
@@ -39,7 +39,7 @@ All traffic routed via the Diode CLI is [out of the box end-to-end encrypted usi
 
 The ngrok agent can be [remotely updated](https://ngrok.com/docs/secure-tunnels#automatic-updates) if you are subscribed to the top paid plan.
 
-All Diode CLI installs have access to automatic updates as soon as they are available – this is the default behaviour of the client (also can be disabled if desired). Also, the Diode CLI can be made persistent on any system by using system tools – e.g. on Linux, [systemd](https://support.diode.io/article/gmo8f1f4ys-start-on-bootup)) – a paid feature with ngrok.
+All Diode CLI installs have access to automatic updates as soon as they are available – this is the default behavior of the client (also can be disabled if desired). Also, the Diode CLI can be made persistent on any system by using system tools – e.g. on Linux, [systemd](https://support.diode.io/article/gmo8f1f4ys-start-on-bootup)) – a paid feature with ngrok.
 
 ### 5)	End to End Encryption
 

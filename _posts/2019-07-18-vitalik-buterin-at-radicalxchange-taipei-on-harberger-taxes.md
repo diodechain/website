@@ -31,7 +31,7 @@ We love quadratic funding (yay, more money for public good projects!) but the fu
 Often, charging fees decreases efficiency (eg. charging $10 to download a movie hurts everyone who is not willing to pay $10 and this is pure deadweight loss), but well-designed fees can increase efficiency
 
 In a perfect economy...
-"Tax the congestible and subsidize the increasing returns" - Glen Weyl
+"Tax the congestable and subsidize the increasing returns" - Glen Weyl
 
 ### The monopoly problem
 

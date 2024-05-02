@@ -75,4 +75,4 @@ While IPFS is perfect for hosting static websites, the Diode blockchain network 
 
 Currently, we are developing a Firefox browser plugin to allow more users to be able to access the first Web3 Network Diode. The goal is to make the system easily accessible to website providers, makers, hackers, and the general public. Because it is using the BlockQuick algorithm it is able to run fully decentralized on a wide range of devices including Arduino, Raspberry Pi and ESP32.
 
-Check out our [Github](https://github.com/diodechain) and the BlockQuick [paper](https://eprint.iacr.org/2019/579.pdf) to be among the first to learn about the details of the Diode Chain. Follow [Twitter](https://twitter.com/diode_chain) for updates, news, and tips.
+Check out our [GitHub](https://github.com/diodechain) and the BlockQuick [paper](https://eprint.iacr.org/2019/579.pdf) to be among the first to learn about the details of the Diode Chain. Follow [Twitter](https://twitter.com/diode_chain) for updates, news, and tips.

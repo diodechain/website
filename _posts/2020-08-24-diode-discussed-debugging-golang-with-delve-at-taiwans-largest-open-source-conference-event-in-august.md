@@ -22,7 +22,7 @@ The 30-minute discussion, led by Peter as part of the sessions in the Effective 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MVcWLd5YbMc?start=133" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Peter’s Debugging Golang Program with Delve presentation slides are now publicly available on [Github](https://github.com/diodechain/presentations/blob/master/COSCUP_2020/Debug-golang-program-with-Delve%20.pdf). Watch his presentation at COSCUP on [YouTube](https://youtu.be/MVcWLd5YbMc).
+Peter’s Debugging Golang Program with Delve presentation slides are now publicly available on [GitHub](https://github.com/diodechain/presentations/blob/master/COSCUP_2020/Debug-golang-program-with-Delve%20.pdf). Watch his presentation at COSCUP on [YouTube](https://youtu.be/MVcWLd5YbMc).
 
 ![](../assets/img/blog/coscup_recap_03.png)
 

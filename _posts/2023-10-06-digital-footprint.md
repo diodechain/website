@@ -3,7 +3,7 @@ layout: post
 title: Protect Your Digital Footprint
 date: 2023-10-06 13:45
 categories: [Security]
-tags: [Security, Decentralisation]
+tags: [Security, Decentralization]
 author: MNJR
 image: cloudless footprint.jpeg
 

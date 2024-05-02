@@ -18,7 +18,7 @@ ROSEBURG, Ore. and SINGAPORE,  January 30, 2024 –  [Diode](https://diode.io), 
 
 Diode’s approach uses [DePIN](https://www.coindesk.com/consensus-magazine/2024/01/29/how-ai-and-depin-will-change-web3/), or “Decentralized Physical Infrastructure,” where blockchain protocols choreograph real-world infrastructure in an autonomous and decentralized manner.  Diode’s massively scalable secure communication platform, which includes solutions for messaging, storage, and web tunneling, helps to bring about the original vision for Web3 created by Gavin Woods, the co-founder of Ethereum and founder of Polkadot. 
 
-Ethereum co-founder Vitalik Buterin recently referenced Woods’ vision for Web3, where Ethereum is more than “Bitcoin plus smart contracts,” but becomes a foundation for a “public decentralized shared hard drive.”  Conversely, as Buterin describes, today’s Internet users’ data gets routed through centralized servicers run by entities that have the arbitrary power to monitor, censor, and deplatform.  Diode’s DePIN solution addresses these issues by providing a secure, trustless, and decentralized medium for people and companies to communicate. 
+Ethereum co-founder Vitalik Buterin recently referenced Woods’ vision for Web3, where Ethereum is more than “Bitcoin plus smart contracts,” but becomes a foundation for a “public decentralized shared hard drive.”  Conversely, as Buterin describes, today’s Internet users’ data gets routed through centralized services run by entities that have the arbitrary power to monitor, censor, and deplatform.  Diode’s DePIN solution addresses these issues by providing a secure, trustless, and decentralized medium for people and companies to communicate. 
 
 “_In 2023, we began looking for a partner to accelerate our roadmap for deploying high-performance zero trust communication infrastructure into new regions. Moonbeam’s shared vision, world-scale distributed infrastructure, amazing team, and access to cross-chain projects make them a perfect partner. Our partnership with Moonbeam helps achieve our vision of empowering the next generation of secure Internet communications,_” said Hans Rempel, CEO of Diode.
 
@@ -30,7 +30,7 @@ Appropriately, the Ethereum Virtual Machine (EVM)-compatible parachain Moonbeam 
 
 The Diode solution includes the following offerings:
 
-* [Diode App](https://diode.io/solutions/app) – Messaging app that is similar to Slack or Discord, but is more secure than Signal. Teams can share chats, files, notes, wikis and secure Web accesss.
+* [Diode App](https://diode.io/solutions/app) – Messaging app that is similar to Slack or Discord, but is more secure than Signal. Teams can share chats, files, notes, wikis and secure Web access.
 * [Diode CLI](https://diode.io/solutions/cli) – Headless tool that enables edge device connectivity with zero leakage. Used to securely connect assets anywhere in the world, including for IoT/OT data, SSH, websites and server administration.
 * [Diode Vault](https://diode.io/solutions/vault) – DePIN solution that ensures 100% availability of team chats, files and assets. Supports backup, time zone-bridging, and Internet/network exit nodes.
 * [Diode Network](https://diode.io/solutions/network) – The only ZTNA network anchored in blockchain technology, whose regional DePIN nodes provide communication infrastructure to apps like the Diode App and  others.

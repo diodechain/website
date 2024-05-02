@@ -3,7 +3,7 @@ title: Secure Communication for Mission Teams
 layout: page
 class: header--dark
 permalink: /use-case/secure-communication-for-missions-teams/
-description: Secure anonymous chat and file collaboration for missons teams and NGO's
+description: Secure anonymous chat and file collaboration for missions teams and NGO's
 
 
 ### Hero
@@ -37,7 +37,7 @@ video:
   video: 
     src: "https://player.vimeo.com/video/825246709"
   content: |
-    International NGOs, organizations and mission groups require a specialized security.  We get it, we've lived it for most of our lives.  Our desire is to help protect your people, contacts and communication while supporting your purposes to bless people around the world. Traditional VPNs and modern cloud storage solutions are costly and don't have the level of communication security or privacy required. If you need a secure communication solution for restricted or sensitive enviroments around the world, please contact us or read more on the blog, Diode may be the perfect app.
+    International NGOs, organizations and mission groups require a specialized security.  We get it, we've lived it for most of our lives.  Our desire is to help protect your people, contacts and communication while supporting your purposes to bless people around the world. Traditional VPNs and modern cloud storage solutions are costly and don't have the level of communication security or privacy required. If you need a secure communication solution for restricted or sensitive environments around the world, please contact us or read more on the blog, Diode may be the perfect app.
   buttons:
   - title: Download App
     url: "/download/#app"

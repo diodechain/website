@@ -59,7 +59,7 @@ The Streamr platform is an open source, blockchain-backed data marketplace that 
 
 [Waltonchain](https://www.waltonchain.org/en/)
 
-Waltonchain leverages RFID technology to create an ecosystem that mechants can build upon to create their own tamper-resistant sub-chains to send, store and retrieve data.
+Waltonchain leverages RFID technology to create an ecosystem that merchants can build upon to create their own tamper-resistant sub-chains to send, store and retrieve data.
 
 [MXC](https://www.mxc.org/)
 
@@ -71,9 +71,9 @@ MXC is building a global data network that allows the devices to connect, commit
 
 Atonomi Embedded SDK provides IoT developers and manufacturers with an embedded solution to secure devices with blockchain-based immutable identity and reputation tracking with a footprint under 100 KB..
 
-[Slock.it](https://slock.it/)
+[SlockIt](https://slock.it/)
 
-Slock.it enables devices of any size to access blockchain data securely, take payments autonomously and interact with humans, machines and anything in between.
+SlockIt enables devices of any size to access blockchain data securely, take payments autonomously and interact with humans, machines and anything in between.
 
 [Xage](https://xage.com/)
 
@@ -103,7 +103,7 @@ Blocklet, a blockchain hardware wallet for machines, provides a secure contract 
 
 [Ambrosus](https://ambrosus.com/)
 
-Ambrosus enables secure and frictionless dialogue between sensors, distributed ledgers and databases to optimise supply chain visibility, quality assurance and reduce counterfeit for food and pharmaceutical enterprises.
+Ambrosus enables secure and frictionless dialogue between sensors, distributed ledgers and databases to optimize supply chain visibility, quality assurance and reduce counterfeit for food and pharmaceutical enterprises.
 
 [DiscoveryIoT](https://discoveryiot.com/) (India)
 
