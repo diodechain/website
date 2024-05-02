@@ -10,8 +10,8 @@ redirect_from:
 hero:
   class: hero--homepage
   animated: true
-  heading: Collaboration for executives, expats, and ops teams
-  subheading: Messaging and remote access when security is paramount.
+  heading: Privacy-first collaboration for you and your team
+  subheading: Messaging and remote access for executives, expats, and ops teams - for when security is paramount.
   buttons:
   - title: Request Demo
     url: "https://diodedemo.paperform.co/"
@@ -26,7 +26,7 @@ why-diode:
   class: box--orange
   animated: false
   title: Protect your organization, and yourself, against risks from cyber threats
-  heading: I trust Diode to protect my messaging and to secure access to the Internet and corporate tools
+  heading: "\"I trust Diode for private messaging and secure access to the web and corporate resources\" <br><br>- VP, Multinational"
   solutions:
   - title: Guarantee Privacy
     icon: icons/vault.svg
@@ -37,14 +37,14 @@ why-diode:
       url: "https://diodedemo.paperform.co/"
   - title: Global Access
     icon: icons/cli.svg
-    content: No matter where you go in the world, your access to the Internet, corporate assets, and team members are seamlessly delivered with Diode.  There are few things more frustrating than to lose access to your team, tools, or family members when abroad.
+    content: No matter where you go in the world, protected access to the Internet, corporate assets, and team members is seamlessly delivered with Diode.  There are few things more frustrating than to lose access to your team, tools, or family members when abroad.
     button:
       title: FIND OUT MORE
       class: "btn--blank btn--arrow"
       url: "/solutions/app/"
   - title: Regulated Data
     icon: icons/app.svg
-    content: With privacy laws like GDPR and HIPAA, and oversight by regulatory authorities including the SEC, HHS, and U.S. Attorneys General, it is key that you do everything possible to avoid a breach of protected data.
+    content: With privacy laws like GDPR and HIPAA, and oversight by regional regulatory authorities including the SEC, HHS, and other geopolitical-specific bodies, it is key that you do everything possible to avoid a breach of protected data.
     button:
       title: CONTACT SALES
       class: "btn--blank btn--arrow"

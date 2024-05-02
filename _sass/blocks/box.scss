@@ -59,6 +59,26 @@
     @include media-breakpoint-up(xl) {
       margin-bottom: 28px;
     }
+
+    @include media-breakpoint-up(xss) {
+      font-size: 24px;
+      line-height: 24px;
+    }
+    @include media-breakpoint-up(md) {
+      font-size: 32px;
+      line-height: 30px;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 36px;
+      line-height: 36px;
+    }
+    @include media-breakpoint-up(xxl) {
+      font-size: 48px;
+      line-height: 48px;
+    }
+    
+
+
   }
 
   &__buttons {
