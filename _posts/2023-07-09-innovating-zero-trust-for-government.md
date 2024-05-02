@@ -34,7 +34,7 @@ In addition, we found the following engagement "windows" to be actionable:
 
 * **The tried-and-true SBIR program**.  While a smaller Phase I program can be helpful in "finding the customer", if you have connections to interested buyers, it can be easier for commercially deployed companies to go the "Direct to Phase II" approach.  Not all SBIR programs are created equal - each will have its own requirements, so read the fine print!
 
-* **"Other Transaction Authority" entities**.  Programs like the [Defense Innovation Unit](https://www.diu.mil/) and [Trade Wind](https://www.tradewindai.com) have identified that the SBIR program can be too slow and that the FAR/DFAR regulatory approach can be too burdensome.  To make collaboration more impact, these entities have aligned funded contract vehicles behind directly engaging with existing commercial capabilities.
+* **"Other Transaction Authority" entities**.  Programs like the [Defense Innovation Unit](https://www.diu.mil/) and [Trade Wind](https://www.tradewindai.com) have identified that the SBIR program can be too slow and that the FAR/DFAR regulatory approach can be too burdensome.  To make collaboration more impactful, these entities have aligned funded contract vehicles behind directly engaging with existing commercial capabilities.
 
 * **Primes and existing contractors**.  Certain government contractors already have funded contracts and need technologies to fulfill the contractual requirements.  While it can be challenging to find the right partner who can have an open goal-oriented conversation, this can provide a short time to engagement if a partner with the right culture and incentives is identified.
 

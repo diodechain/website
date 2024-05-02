@@ -31,7 +31,7 @@ Diode is an integrated Blockchain implementation of the Web3, the server-less in
 
 We went back and forth with a ton of different potential names. We wanted the name of the technology and network etc… to connote something that really small things could interact with, and something that was secure. We wanted it to have some sort of face value to both Blockchain and IoT folks. It was a small electrical component that is fundamental to all electrical systems, and the use of the letters in the word kind of made a acronym for “Distributed Internet Of Devices”
 
-With the Diode tech, now all sorts of apps/devices/systems can interact directly with a public blockchain - cell phones, laptops, Raspberry Pis, Arduino's, etc… can all interact as part of a decentralized Web3 ecosystem.
+With the Diode tech, now all sorts of apps/devices/systems can interact directly with a public blockchain - cell phones, laptops, Raspberry Pis, Arduinos, etc… can all interact as part of a decentralized Web3 ecosystem.
 
 
 ### What is a fleet contract?

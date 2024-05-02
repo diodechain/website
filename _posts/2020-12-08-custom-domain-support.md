@@ -32,7 +32,7 @@ With this capability, Diode has removed significant amounts of centralization fr
 
 ### How to Get Started?
 
-It is easy to enable a Web2.0 domain to serve Web3 content - all that has to be done is to register the domain name (without the TLD) as a [BNS name](https://support.diode.io/article/5nsoxvhug1) and point a DNS A record to one of                            the Diode IPs. 
+It is easy to enable a Web2.0 domain to serve Web3 content - all that has to be done is to register the domain name (without the TLD) as a [BNS name](https://support.diode.io/article/5nsoxvhug1) and point a DNS A record to one of the Diode IPs. 
 
 ![](../assets/img/blog/bns-screenshot.png)
   

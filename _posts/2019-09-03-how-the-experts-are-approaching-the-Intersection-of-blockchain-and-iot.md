@@ -35,7 +35,7 @@ The major categories that Blockchain IoT projects tend to fall into are applicat
 
 [Diode](https://diode.io/)
 
-The Diode Network provides an unforgable proof-of-time and network-device authentication. The network has higher security than public key infrastructure (PKI) with lower overhead and maintenance cost. Developers can build new IoT applications on top of the Diode network or migrate existing workloads.
+The Diode Network provides an unforgeable proof-of-time and network-device authentication. The network has higher security than public key infrastructure (PKI) with lower overhead and maintenance cost. Developers can build new IoT applications on top of the Diode network or migrate existing workloads.
 
 [IoT Chain](https://iotchain.io/)
 

@@ -91,7 +91,7 @@ With all that in place we can now open TLS encrypted connections between two mac
 *   Address	- The Ethereum Address you're known by
 *   BNS Name	- Blockchain Name Service Name, mapping a name to an Address.
 
-In the Diode network clients can explicitly create connections by providing an Ethereum Address such as 0x780980bfc0aa56ceb1417e87912e54b759463090.diode or alternatively a BNS name pi-taipei.diode as indicated by ***** on the diagram. Clients using Diode are enabled to check the identity of their communication counterpart by extracting the public key from the self-signed certificate that they receive and hashing that into an Ethereum Address. So every network user's wallet turns into an unforgable identification mechanism. Be it human users or robotic network participants. This check can be made in both directions. Below is a flow diagram showing how this check could look like when a user wants to to use an invite only service.
+In the Diode network clients can explicitly create connections by providing an Ethereum Address such as 0x780980bfc0aa56ceb1417e87912e54b759463090.diode or alternatively a BNS name pi-taipei.diode as indicated by ***** on the diagram. Clients using Diode are enabled to check the identity of their communication counterpart by extracting the public key from the self-signed certificate that they receive and hashing that into an Ethereum Address. So every network user's wallet turns into an unforgeable identification mechanism. Be it human users or robotic network participants. This check can be made in both directions. Below is a flow diagram showing how this check could look like when a user wants to to use an invite only service.
 
 ![](../assets/img/blog/dev-june/image6.png)
 
