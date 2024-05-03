@@ -1,7 +1,7 @@
 <template id="bridge">
     <div class="bridge prenet">
         <div class="title row">
-            <h1>Bridge Account: <% account || "Not connected" %>
+            <h1>Bridge Account: <% account || "Connect MetaMask" %>
             </h1>
         </div>
         <div class="page-content">
@@ -20,9 +20,19 @@
                         <button style="position: absolute; transform: translate(-200%,50%);" class="button"
                             v-on:click="amount = web3.utils.fromWei(Wallet.balance)">Max</button>
                     </div>
-                    <label for="amount">You receive</label>
+                    <label for="amount">Destination receives</label>
                     <input type="text" id="amount_out" disabled :value="amount + ' DIODE'" />
 
+                    <label for="destination">You send to</label>
+                    <div style="position: relative">
+                        <input :disabled="samedestination" step="0.1" id="destination" v-model="destination" class="form-control"
+                            placeholder="Destination" />
+                        <div style="display: inline-flex; position: absolute; transform: translate(-110%,75%);">
+                            <input id="samedestination" type="checkbox" class="button" v-model="samedestination" />
+                            <label for="samedestination">Yourself</label>
+                        </div>
+                    </div>
+                    
                     <button v-if="enabled" v-on:click="bridge()" class="button">Bridge</button>
                     <button v-else v-on:click="Wallet.enable()" class="button">Connect Wallet</button>
                     <div v-if="error" v-html="error" class="error"></div>
@@ -76,6 +86,8 @@ var Bridge = Vue.component("bridge", {
     props: { txid: Number },
     data: () => {
         return {
+            samedestination: true,
+            destination: null,
             account: null,
             enabled: false,
             amount: 0,
@@ -97,6 +109,17 @@ var Bridge = Vue.component("bridge", {
     watch: {
         txid: async function (txid) {
             await this.updateTxid(txid);
+        },
+        account: async function () {
+            this.samedestination = true;
+            this.destination = this.account || "Connect MetaMask";
+        },
+        samedestination: async function () {
+            if (this.samedestination) {
+                this.destination = this.account || "Connect MetaMask";
+            } else {
+                this.destination = "";
+            }
         }
     },
 
@@ -107,7 +130,8 @@ var Bridge = Vue.component("bridge", {
             this.txStep = 0;
             this.txsLength = await async_call(bridgeOutMethods["txsLength"], "0x2c303A315a1Ee4c377E28121BaF30146e229731b", [1284]);
 
-            if (txid == null || txid >= this.txsLength) {
+            if (txid == null) return;
+            if (txid >= this.txsLength) {
                 this.error = "Invalid bridge transaction number";
                 return;
             }
@@ -147,6 +171,10 @@ var Bridge = Vue.component("bridge", {
                 this.error = "Amount must be greater than 0.1";
                 return;
             }
+            if (!web3.utils.isAddress(this.destination)) {
+                this.error = "Invalid destination address";
+                return;
+            }
 
             let [ok, ret] = await Wallet.runTransaction(
                 "bridgeOut",
@@ -156,7 +184,7 @@ var Bridge = Vue.component("bridge", {
                     inputs: [{ type: "address", name: "destination" }, { type: "uint256", name: "destinationChain" }]
                 },
                 "0x2c303A315a1Ee4c377E28121BaF30146e229731b",
-                [this.account, 1284],
+                [this.destination, 1284],
                 web3.utils.numberToHex(web3.utils.toWei(this.amount))
             );
 

@@ -10259,6 +10259,10 @@ body.prenet .progress-step.is-complete:after {
   animation-fill-mode: forwards;
 }
 
+body.prenet :disabled {
+  background-color: darkgray;
+}
+
 
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(15, 94, 166, 0.9); }
