@@ -14,7 +14,7 @@
           <table class="data" id="blockchain-names">
             <caption>
               <div class="col-md-12 no-padding">
-                Registered Blockchain Names
+                Registered Blockchain Names (<% names.length %>)
                 <br />
                 <br />
               </div>
