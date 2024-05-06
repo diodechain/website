@@ -39,7 +39,7 @@
                 <% acc.pbalance %> GLMR
               </td>
               <td v-else style="color: red">
-                <% acc.balance %>
+                <% acc.pbalance %> GLMR
               </td>
             </tr>
           </table>
