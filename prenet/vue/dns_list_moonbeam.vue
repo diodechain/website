@@ -14,7 +14,7 @@
           <table class="data" id="blockchain-names">
             <caption>
               <div class="col-md-12 no-padding">
-                Registered Blockchain Names (<% names.length %>)
+                Registered Blockchain Names (<% names.length %>/<% size %>)
                 <br />
                 <br />
               </div>
@@ -53,9 +53,11 @@ var MDNSList = Vue.component("dns_list_mb", {
   delimiters: ["<%", "%>"],
   data: () => {
     return {
+      blocks: {},
       hashes: [],
       names: [],
       version: 0,
+      size: "loading",
       web3: new Web3("wss://moonbeam.api.onfinality.io/ws?apikey=49e8baf7-14c3-4d0f-916a-94abf1c4c14a")
     };
   },
@@ -63,20 +65,25 @@ var MDNSList = Vue.component("dns_list_mb", {
   created: async function () {
     this.version = web3.utils.hexToNumber(await this.callDNS("Version", []));
     
-    let index = 0;
-    let hash = "0x";
     let hashes = await this.callDNS("AllNames", []);
+    this.size = hashes.length;
     console.log(hashes);
-    let names = hashes.map(async (hash) => {
-      let name = await this.callDNS("names", [hash]);
-      let block = await this.web3.eth.getBlock(name.leaseEnd - 518400);
-      name.registration = new Date(block.timestamp * 1000).toLocaleString();
-      return name;
-    });
-
-    this.names = (await Promise.all(names)).reverse();
+    this.resolve(hashes.map((hash) => hash));
   },
   methods: {
+    resolve: async function (hashes) {
+      for (let i = 0; i < 10; i++) {
+        if (hashes.length == 0) return;
+        let hash = hashes.pop();
+        let name = await this.callDNS("names", [hash]);
+        let nr = name.leaseEnd - 518400;
+        let block = this.blocks[nr];
+        if (!block) block = this.blocks[nr] = await this.web3.eth.getBlock(nr);
+        name.registration = new Date(block.timestamp * 1000).toLocaleString();
+        this.names.push(name);
+      }
+      await this.resolve(hashes);
+    },
     callDNS: async function (method, params) {
       let abi = dnsMethods[method];
       let call = this.web3.eth.abi.encodeFunctionCall(abi, params)
