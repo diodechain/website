@@ -6,7 +6,7 @@ date: 2024-05-22 12:00
 categories: [Diode, Security]
 tags: [Diode, Diode Drive, How To, Security]
 author: MNJR
-image: zoomreplacement.jpeg
+image: assets/img/blog/zoomreplacement.jpeg
 
 ---
 

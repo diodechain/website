@@ -5,7 +5,7 @@ date: 2020-02-29 01:09
 categories: [Diode]
 tags: [Diode, Blockchain, Events]
 author: Yahsin Huang
-image: SustainWeb3_Denver_01.jpg
+image: assets/img/blog/SustainWeb3_Denver_01.jpg
 redirect_from:
 - /diode/Highlights-of-SustainWeb3-Event-in-Denver-Colorado-20060/
 ---

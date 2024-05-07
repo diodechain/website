@@ -4,7 +4,7 @@ date: 2019-08-19 11:41
 categories: [Decentralization]
 tags: [Decentralization, Security, Blockchain]
 author: Peter Lai
-image: Why-DNS3.png
+image: assets/img/blog/Why-DNS3.png
 redirect_from:
 - /distributed-infrastructure/Why-DNS-on-Blockchain-is-the-next-step-after-DNS-over-HTTPS-19231/
 ---

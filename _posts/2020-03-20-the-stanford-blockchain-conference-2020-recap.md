@@ -5,7 +5,7 @@ date: 2020-03-20 00:24
 categories: [Diode]
 tags: [Diode, Blockchain, Events]
 author: Yahsin Huang
-image: StanfordBC_01.jpg
+image: assets/img/blog/StanfordBC_01.jpg
 redirect_from:
 - /diode/the-stanford-blockchain-conference-2020-recap-20080/
 ---

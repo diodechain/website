@@ -5,7 +5,7 @@ date: 2020-05-06 00:10
 categories: [Diode]
 tags: [Diode, Blockchain, Events]
 author: Yahsin Huang
-image: Diode_Meetup_01.jpg
+image: assets/img/blog/Diode_Meetup_01.jpg
 redirect_from:
 - /diode/Diode-Meetup-Event-Recap-20127/
 ---

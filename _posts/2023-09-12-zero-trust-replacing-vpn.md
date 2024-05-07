@@ -5,7 +5,7 @@ date: 2023-09-13 07:45
 categories: [Zero Trust]
 tags: [Zero Trust, Security]
 author: MNJR
-image: vpn.jpeg
+image: assets/img/blog/vpn.jpeg
 
 ---
 

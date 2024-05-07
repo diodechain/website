@@ -6,7 +6,7 @@ date: 2024-02-28 8:00
 categories: [Diode]
 tags: [Diode, Diode Drive]
 author: MNJR
-image: Product Update.jpeg
+image: assets/img/blog/Product Update.jpeg
 
 ---
 The Diode team continues to work hard as another round of updates have made their way through the app this month! Here are some of the updates that were made in February for the Diode App (v1.9.4 - 1.10.4).

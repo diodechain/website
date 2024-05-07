@@ -4,7 +4,7 @@ date: 2019-05-28 15:54
 categories: [PKI]
 tags: [PKI, Blockchain, Security, Decentralization]
 author: Yahsin Huang
-image: dpki.jpg
+image: assets/img/blog/dpki.jpg
 redirect_from:
 - /dpki/how-decentralized-public-key-infrastructure-will-be-the-future-for-the-web-19148/
 ---

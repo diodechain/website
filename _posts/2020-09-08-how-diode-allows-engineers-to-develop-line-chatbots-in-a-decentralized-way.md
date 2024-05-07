@@ -5,7 +5,7 @@ date: 2020-09-08 03:06
 categories: [Diode]
 tags: [Diode]
 author: Yahsin Huang
-image: diode_client_flow.png
+image: assets/img/blog/diode_client_flow.png
 redirect_from:
 - /diode/How-Diode-Allows-Engineers-to-Develop-LINE-Chatbots-in-a-Decentralized-Way-20252/
 ---

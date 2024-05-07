@@ -3,7 +3,7 @@
         {% if page.image %}
             <div class="col col-12">
                 <figure class="post__image">
-                    <img src="{{ page.image | prepend: 'blog/' | prepend: site.path.images | relative_url }}" alt="{{ page.title }}">
+                    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
                 </figure>
             </div>
             <div class="col col-12">

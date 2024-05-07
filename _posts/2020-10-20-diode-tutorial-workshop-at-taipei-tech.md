@@ -5,7 +5,7 @@ date: 2020-10-20 02:12
 categories: [Diode]
 tags: [Diode]
 author: Yahsin Huang
-image: Diode_Workshop.png
+image: assets/img/blog/Diode_Workshop.png
 redirect_from:
 - /diode/Diode-Tutorial-Workshop-at-Taipei-Tech-20294/
 ---

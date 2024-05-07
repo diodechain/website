@@ -6,7 +6,7 @@ date: 2023-12-01 11:25
 categories: [Self-Custody]
 tags: [Self-Custody, Security, Use Case, Regulated Data]
 author: HR
-image: Securely Share Remote Drives.jpeg
+image: assets/img/blog/Securely Share Remote Drives.jpeg
 
 ---
 ## Remote drive sharing and mapping

@@ -5,7 +5,7 @@ tagline: "Hello World. This is Diode"
 date: 2019-01-21 13:23
 categories: [Press]
 tags: [Press, Blockchain]
-image: groundbreaking.jpg
+image: assets/img/blog/groundbreaking.jpg
 redirect_from:
 - /news/2019/01/21/hello-world.html
 - /news/breaking-new-ground-in-iot-19021/

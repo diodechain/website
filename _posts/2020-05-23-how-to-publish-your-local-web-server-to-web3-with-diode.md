@@ -5,7 +5,7 @@ date: 2020-05-23 19:01
 categories: [Diode]
 tags: [Diode, Blockchain, Events]
 author: Yahsin Huang
-image: Diode_May_Image.png
+image: assets/img/blog/Diode_May_Image.png
 redirect_from:
 - /diode/How-to-Publish-Your-Local-Web-Server-to-Web3-with-Diode-20144/
 ---

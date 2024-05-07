@@ -6,7 +6,7 @@ date: 2024-03-13 8:00
 categories: [Diode]
 tags: [Diode, Diode Drive]
 author: MNJR
-image: AMA.jpeg
+image: assets/img/blog/AMA.jpeg
 
 ---
 The Diode Ambassador Program is an invite-only referral program that provides Ambassadors with opportunities to promote Diode and to sign up their friends as Ambassadors.

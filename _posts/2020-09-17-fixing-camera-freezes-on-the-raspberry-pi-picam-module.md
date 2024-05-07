@@ -5,7 +5,7 @@ date: 2020-09-17 00:43
 categories: [How To]
 tags: [How To]
 author: Dominic Letz
-image: pi/camera1.jpg
+image: assets/img/blog/pi/camera1.jpg
 redirect_from:
 - /raspberry%20pi/fixing-camera-freezes-on-the-raspberry-pi-picam-module-20261/
 ---

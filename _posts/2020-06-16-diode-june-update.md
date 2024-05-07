@@ -5,7 +5,7 @@ date: 2020-06-16 9:10
 categories: [Diode]
 tags: [Diode, Development, Blockchain, IoT]
 author: Dominic Letz
-image: dev-june/header.png
+image: assets/img/blog/dev-june/header.png
 redirect_from:
 - /diode/Diode-June-Update-20168/
 ---

@@ -5,7 +5,7 @@ date: 2023-06-27 16:45
 categories: [Zero Trust]
 tags: [Zero Trust, Security]
 author: MNJR
-image: pillars.png
+image: assets/img/blog/pillars.png
 
 ---
 ## Pillars of Zero Trust Architecture

@@ -6,7 +6,7 @@ date: 2024-02-22 16:00
 categories: [Diode]
 tags: [Diode, Diode Drive, Security, Web3]
 author: MNJR
-image: internationalvpn.jpeg
+image: assets/img/blog/internationalvpn.jpeg
 
 ---
 ### Replacing VPNs for International Companies and NGOs

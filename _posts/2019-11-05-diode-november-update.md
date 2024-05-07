@@ -5,7 +5,7 @@ date: 2019-11-05 17:10
 categories: [Diode]
 tags: [Diode, Development, Blockchain, IoT]
 author: Dominic Letz
-image: NovemberT.jpg
+image: assets/img/blog/NovemberT.jpg
 redirect_from:
 - /diode/Diode-November-Update-19309/
 ---

@@ -4,7 +4,7 @@ date: 2019-07-01 14:35
 categories: [Blockquick]
 tags: [Blockquick, Blockchain, Development]
 author: Yahsin Huang
-image: Blockquick-RT0.jpg
+image: assets/img/blog/Blockquick-RT0.jpg
 redirect_from:
 - /blockquick/blockquick-consensus-reputation-table-explained-19182/
 ---

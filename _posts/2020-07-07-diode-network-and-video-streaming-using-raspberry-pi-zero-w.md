@@ -5,7 +5,7 @@ date: 2020-07-07 00:30
 categories: [Diode]
 tags: [Diode, Blockchain, Events]
 author: Yahsin Huang
-image: June_Meetup_Event.png
+image: assets/img/blog/June_Meetup_Event.png
 redirect_from:
 - /diode/Diode-Network-and-Video-Streaming-Using-Raspberry-Pi-Zero-W-20189/
 ---

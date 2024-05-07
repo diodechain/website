@@ -5,7 +5,7 @@ date: 2020-06-13 14:31
 categories: [Diode]
 tags: [Diode, Blockchain]
 author: Yahsin Huang
-image: Letz_podcast.png
+image: assets/img/blog/Letz_podcast.png
 redirect_from:
 - /diode/diode-cto-dominic-letz-featured-on-the-weekly-defi-podcast-20165/
 ---

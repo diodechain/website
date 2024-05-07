@@ -5,7 +5,7 @@ date: 2022-10-28 16:44
 categories: [Diode Drive]
 tags: [Collaboration, Self-Custody, Web3, Chat, Team, Office Tools]
 author: Hans Rempel
-image: free-slack-alternative.png
+image: assets/img/blog/free-slack-alternative.png
 redirect_from:
 - /diode%20drive/free-slack-alternative-22301/
 ---

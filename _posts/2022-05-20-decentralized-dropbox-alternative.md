@@ -5,7 +5,7 @@ date: 2022-05-20 15:44
 categories: [Web3, Diode Drive]
 tags: [Web3, Self-Custody, Decentralization, Decentralized Dropbox Alternative]
 author: Allen M
-image: decentralized-dropbox-alternative.png
+image: assets/img/blog/decentralized-dropbox-alternative.png
 redirect_from:
 - /web3/diode%20drive/decentralized-dropbox-alternative-22140/
 ---

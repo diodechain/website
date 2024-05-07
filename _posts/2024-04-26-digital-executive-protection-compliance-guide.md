@@ -6,7 +6,7 @@ date: 2024-04-26 17:00
 categories: [Diode, Security]
 tags: [Diode, Diode Drive, Executive Protection, Security]
 author: Doug Pollack, CIPP/US
-image: exeuctiveblog1.jpeg
+image: assets/img/blog/exeuctiveblog1.jpeg
 
 ---
 

@@ -5,7 +5,7 @@ date: 2022-02-2 22:22
 categories: [DiodeDrive]
 tags: [Diode, Diode Drive, Decentralization]
 author: Allen M
-image: direct-connections.png
+image: assets/img/blog/direct-connections.png
 redirect_from:
 - /diodedrive/diodedriveupdate-directconnect-22033/
 ---

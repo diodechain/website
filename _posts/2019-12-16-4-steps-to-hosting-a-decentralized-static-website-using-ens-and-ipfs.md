@@ -5,7 +5,7 @@ date: 2019-12-16 00:20
 categories: [Diode]
 tags: [Diode, Decentralization, Blockchain, IoT]
 author: Yahsin Huang
-image: ens-ipfs1.jpg
+image: assets/img/blog/ens-ipfs1.jpg
 redirect_from:
 - /diode/4-steps-to-hosting-a-decentralized-static-website-using-ens-and-ipfs-19350/
 ---

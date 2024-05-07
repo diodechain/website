@@ -4,7 +4,7 @@ date: 2019-07-15 11:06
 categories: [IoT]
 tags: [IoT, Blockquick, Development, Blockchain]
 author: Dominic Letz
-image: Hardware0.png
+image: assets/img/blog/Hardware0.png
 redirect_from:
 - /iot/hardware-requirements-of-blockchain-clients-19196/
 ---

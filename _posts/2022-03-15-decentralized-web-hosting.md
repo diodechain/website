@@ -5,7 +5,7 @@ date: 2022-03-15 16:33
 categories: [Web3]
 tags: [Web3, Self-Custody, Decentralization, Decentralized Web Hosting]
 author: Allen M
-image: web3_host.png
+image: assets/img/blog/web3_host.png
 redirect_from:
 - /web3/decentralized-web-hosting-22074/
 ---

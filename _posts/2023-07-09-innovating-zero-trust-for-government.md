@@ -5,7 +5,7 @@ date: 2023-07-09 09:45
 categories: [Press]
 tags: [Press, Defense, Cyber, Use Case]
 author: MNJR
-image: cadco-cohort.jpg
+image: assets/img/blog/cadco-cohort.jpg
 
 ---
 We [wrote in March](https://diode.io/blog/defensive-cyber-operations) that Diode was honored to be selected as the emerging Zero Trust communications company to participate in the Defensive Cyber Operations (DCO) for Space cohort program, held at the [Catalyst Campus for Technology and Innovation](https://catalystcampus.org/) (CCTI) in Colorado Springs, CO.  The Catalyst program is a partnership between the [Air Force Research Laboratory](https://www.afrl.af.mil/) (AFRL) and CCTI, and its objective is to integrate nontraditional tech companies into the national security ecosystem.  

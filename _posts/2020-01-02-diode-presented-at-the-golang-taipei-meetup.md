@@ -5,7 +5,7 @@ date: 2020-01-02 22:59
 categories: [Diode]
 tags: [Diode, Blockchain, Events]
 author: Yahsin Huang
-image: Golang_feature01.jpg
+image: assets/img/blog/Golang_feature01.jpg
 redirect_from:
 - /diode/Diode-Presented-at-the-Golang-Taipei-Meetup-20002/
 ---

@@ -4,7 +4,7 @@ date: 2019-07-08 18:06
 categories: [Blockquick]
 tags: [Blockquick, Blockchain]
 author: Yahsin Huang
-image: Blockquick-Re0.jpg
+image: assets/img/blog/Blockquick-Re0.jpg
 redirect_from:
 - /blockquick/blockquick-reputation-system-19189/
 ---

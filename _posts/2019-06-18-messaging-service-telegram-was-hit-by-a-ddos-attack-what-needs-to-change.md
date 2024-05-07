@@ -5,7 +5,7 @@ title: "Messaging Service Telegram Was Hit By a DDoS Attack, What Needs to Chang
 categories: [Security]
 tags: [Security, Web3, Blockchain]
 author: Yahsin Huang
-image: Telegram-DDoS.jpg
+image: assets/img/blog/Telegram-DDoS.jpg
 redirect_from:
 - /security/messaging-service-telegram-was-hit-by-a-ddos-attack-what-needs-to-change-19169/
 ---

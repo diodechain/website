@@ -4,7 +4,7 @@ date: 2019-06-17 17:46
 categories: [Blockchain]
 tags: [Blockchain]
 author: Greg Belcher
-image: POSW-Community3.jpg
+image: assets/img/blog/POSW-Community3.jpg
 redirect_from:
 - /mining/proof-of-stakework-a-community-vision-19168/
 ---

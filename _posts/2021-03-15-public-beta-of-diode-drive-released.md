@@ -5,7 +5,7 @@ date: 2021-03-15 14:16
 categories: [DiodeDrive]
 tags: [Diode, Diode Drive]
 author: Hans Rempel
-image: diode-drive-download.png
+image: assets/img/blog/diode-drive-download.png
 redirect_from:
 - /diodedrive/public-beta-of-diode-drive-released-21074/
 ---

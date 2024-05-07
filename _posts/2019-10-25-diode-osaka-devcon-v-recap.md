@@ -4,7 +4,7 @@ date: 2019-10-25 10:43
 categories: [Events]
 tags: [Events, Diode, Blockchain, Web3]
 author: Yahsin Huang
-image: Devcon_1.jpg
+image: assets/img/blog/Devcon_1.jpg
 redirect_from:
 - /devcon/Diode-Osaka-Devcon-V-Recap-19298/
 ---

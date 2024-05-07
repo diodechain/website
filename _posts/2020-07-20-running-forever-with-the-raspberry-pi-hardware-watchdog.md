@@ -5,7 +5,7 @@ date: 2020-07-20 19:45
 categories: [How To]
 tags: [How To]
 author: Dominic Letz
-image: watchdog/image1.png
+image: assets/img/blog/watchdog/image1.png
 redirect_from:
 - /raspberry%20pi/running-forever-with-the-raspberry-pi-hardware-watchdog-20202/
 ---

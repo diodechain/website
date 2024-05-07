@@ -4,7 +4,7 @@ date: 2019-07-18 00:40
 categories: [Blockchain]
 tags: [Blockchain, Decentralization]
 author: Yahsin Huang
-image: V-Taipei-event1.jpg
+image: assets/img/blog/V-Taipei-event1.jpg
 redirect_from:
 - /blockchain/Vitalik-Buterin-at-RadicalxChange-Taipei-on-Harberger-Taxes-19199/
 ---

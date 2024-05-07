@@ -5,7 +5,7 @@ date: 2023-09-01 16:45
 categories: [Security]
 tags: [Security]
 author: MNJR
-image: communications.jpeg
+image: assets/img/blog/communications.jpeg
 
 ---
 ### Secure Redzone Collaboration

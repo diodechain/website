@@ -4,7 +4,7 @@ date: 2019-05-24 19:12
 categories: [Burning-Platform-PKI]
 tags: [Burning Platform, Security, Time, Blockchain]
 author: Dominic Letz
-image: blockquick.jpg
+image: assets/img/blog/blockquick.jpg
 redirect_from:
 - /burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/
 ---

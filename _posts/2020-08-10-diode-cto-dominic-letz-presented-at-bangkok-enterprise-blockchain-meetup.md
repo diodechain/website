@@ -5,7 +5,7 @@ date: 2020-08-10 04:09
 categories: [Security]
 tags: [Security]
 author: Yahsin Huang
-image: Bangkok_01.png
+image: assets/img/blog/Bangkok_01.png
 redirect_from:
 - /security/Diode-CTO-Dominic-Letz-Presented-at-Bangkok-Enterprise-Blockchain-Meetup-20223/
 ---

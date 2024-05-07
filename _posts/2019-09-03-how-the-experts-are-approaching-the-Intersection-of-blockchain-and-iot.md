@@ -4,7 +4,7 @@ date: 2019-09-03 14:06
 categories: [Blockchain]
 tags: [Blockchain, IoT]
 author: Greg Belcher
-image: IOT-Industry1.jpg
+image: assets/img/blog/IOT-Industry1.jpg
 redirect_from:
 - /blockchain/How-the-Experts-are-Approaching-the-Intersection-of-Blockchain-and-IoT-19246/
 ---

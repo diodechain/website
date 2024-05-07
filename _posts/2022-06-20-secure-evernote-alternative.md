@@ -5,7 +5,7 @@ date: 2022-06-20 15:55
 categories: [Diode Drive]
 tags: [Self-Custody, Web3, Notes, Team, Office Tools, Collaboration]
 author: Hans Rempel
-image: secure-evernote-alternative.png
+image: assets/img/blog/secure-evernote-alternative.png
 redirect_from:
 - /diode%20drive/secure-evernote-alternative-22171/
 ---

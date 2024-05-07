@@ -5,7 +5,7 @@ date: 2020-01-20 01:39
 categories: [Diode]
 tags: [Diode, Blockchain, How To, IoT, Decentralization, Web3]
 author: Yahsin Huang
-image: Diode_demo_feature_size.png
+image: assets/img/blog/Diode_demo_feature_size.png
 redirect_from:
 - /diode/Getting-Started-with-Diode-Live-Video-Streaming-with-Raspberry-Pi-20020/
 ---

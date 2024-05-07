@@ -5,7 +5,7 @@ date: 2023-10-06 13:45
 categories: [Security]
 tags: [Security, Decentralization]
 author: MNJR
-image: cloudless footprint.jpeg
+image: assets/img/blog/cloudless footprint.jpeg
 
 ---
 ## **Your Digital Footprint**

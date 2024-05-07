@@ -5,7 +5,7 @@ date: 2022-01-25 18:03
 categories: [Diode Drive]
 tags: [Diode, Diode Drive, Editor]
 author: Allen M
-image: diodedrive-zone-homepage.png
+image: assets/img/blog/diodedrive-zone-homepage.png
 redirect_from:
 - /diode%20drive/diodedriveupdate-homepages-22025/
 ---

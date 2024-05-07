@@ -6,7 +6,7 @@ date: 2024-02-01 19:00
 categories: [Diode]
 tags: [Diode, Diode Drive]
 author: MNJR
-image: Product Update.jpeg
+image: assets/img/blog/Product Update.jpeg
 
 ---
 ## Diode Product Update - January 2024

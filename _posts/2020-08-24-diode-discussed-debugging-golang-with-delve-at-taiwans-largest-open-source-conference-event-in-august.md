@@ -5,7 +5,7 @@ date: 2020-08-24 00:30
 categories: [Diode]
 tags: [Diode]
 author: Yahsin Huang
-image: coscup_recap_01.jpg
+image: assets/img/blog/coscup_recap_01.jpg
 redirect_from:
 - /diode/diode-discussed-debugging-golang-with-delve-at-taiwans-largest-open-source-conference-event-in-august-20237/
 ---

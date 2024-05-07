@@ -5,7 +5,7 @@ date: 2022-02-01 10:03
 categories: [Diode Drive]
 tags: [Diode Drive, Self-Custody]
 author: Dominic Letz
-image: self-custody/safe.jpg
+image: assets/img/blog/self-custody/safe.jpg
 redirect_from:
 - /diode%20drive/self-custody-for-data-22032/
 ---

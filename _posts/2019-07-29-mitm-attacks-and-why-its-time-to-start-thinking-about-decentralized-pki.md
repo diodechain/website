@@ -4,7 +4,7 @@ date: 2019-07-29 15:00
 categories: [Blockchain]
 tags: [Blockchain, PKI, Decentralization, Security]
 author: Yahsin Huang
-image: MITM-DPKI-feature.jpg
+image: assets/img/blog/MITM-DPKI-feature.jpg
 redirect_from:
 - /blockchain/MITM-attacks-and-why-it's-time-to-start-thinking-about-decentralized-PKI-19210/
 ---

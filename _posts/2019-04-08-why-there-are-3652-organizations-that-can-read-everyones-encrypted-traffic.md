@@ -4,7 +4,7 @@ title: "Why there are 3652 organizations that can read everyone's encrypted traf
 date: 2019-04-08 13:23
 categories: [Burning-Platform-PKI]
 tags: [Burning Platform, Security, PKI]
-image: Netscape-and.png
+image: assets/img/blog/Netscape-and.png
 author: Dominic Letz
 redirect_from:
 - /burning-platform-pki/2019/04/08/why-there-are-3652-organizations-that-can-read-your-traffic.html

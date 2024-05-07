@@ -4,7 +4,7 @@ date: 2019-06-24 10:02
 categories: [Security]
 tags: [Security, Blockchain]
 author: Yahsin Huang
-image: BGP0.jpg
+image: assets/img/blog/BGP0.jpg
 redirect_from:
 - /security/why-the-internet-infrastructure-is-vulnerable-to-bgp-hijacking-attacks-19175/
 ---

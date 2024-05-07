@@ -6,7 +6,7 @@ date: 2024-04-05 18:00
 categories: [Diode, Security]
 tags: [Diode, Diode Drive, Executive Protection, Security]
 author: MNJR
-image: exeuctiveblog1.jpeg
+image: assets/img/blog/exeuctiveblog1.jpeg
 
 ---
 

@@ -5,7 +5,7 @@ date: 2023-03-02 12:45
 categories: [Press, Diode Drive]
 tags: [Press, Defense, Security, Use Case]
 author: Allen M
-image: cadco.png
+image: assets/img/blog/cadco.png
 redirect_from:
 - /press/diode%20drive/catalyst-accelerator-23061/
 ---

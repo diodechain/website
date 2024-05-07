@@ -5,7 +5,7 @@ date: 2021-10-02 18:37
 categories: [Diode Drive]
 tags: [Diode, Diode Drive, File, How To]
 author: Allen M
-image: all-my-files-in-one-place.png
+image: assets/img/blog/all-my-files-in-one-place.png
 redirect_from:
 - /diode%20drive/all-my-files-in-one-place-21275/
 ---

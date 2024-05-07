@@ -4,7 +4,7 @@ date: 2019-06-10 14:24
 categories: [Blockchain]
 tags: [Blockchain, Security]
 author: Yahsin Huang
-image: Eclipse-Attacks2.jpg
+image: assets/img/blog/Eclipse-Attacks2.jpg
 redirect_from:
 - /blockchain/how-blockquick-super-light-client-protocol-can-help-mitigate-eclipse-attacks-19161/
 ---
@@ -15,7 +15,7 @@ To shed some light on the issue, we describe what an eclipse attack is, some of 
 
 ![](../assets/img/blog/Eclipse-Attacks1.png)
 
-Image: Aviv Zohar’s [website](https://www.avivz.net)
+image: assets/img/blog/Aviv Zohar’s [website](https://www.avivz.net)
 
 ### What is an Eclipse Attack?
 

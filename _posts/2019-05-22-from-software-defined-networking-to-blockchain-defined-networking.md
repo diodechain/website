@@ -4,7 +4,7 @@ title: "From Software Defined Networking to Blockchain Defined Networking"
 date: 2019-05-22 17:02
 categories: [Decentralization]
 tags: [Decentralization, Blockchain, Security]
-image: Blockchain-Defined.jpg
+image: assets/img/blog/Blockchain-Defined.jpg
 author: Dominic Letz
 redirect_from:
 - /distributed-infrastructure/from-software-defined-networking-to-blockchain-defined-networking-19142/

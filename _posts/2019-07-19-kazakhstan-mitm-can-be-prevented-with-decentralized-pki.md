@@ -4,7 +4,7 @@ date: 2019-07-19 10:20
 categories: [Burning Platform]
 tags: [Burning Platform, Decentralization, PKI]
 author: Dominic Letz
-image: Kazhakstan0.png
+image: assets/img/blog/Kazhakstan0.png
 redirect_from:
 - /burning%20platform/Kazakhstan-MITM-can-be-prevented-with-Decentralized-PKI-19200/
 ---

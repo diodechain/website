@@ -4,7 +4,7 @@ date: 2019-09-19 17:30
 categories: [Blockchain]
 tags: [Blockchain, Web3, PKI, Decentralization]
 author: Yahsin Huang
-image: Best-R1.jpg
+image: assets/img/blog/Best-R1.jpg
 redirect_from:
 - /blockchain/Best-Resources-to-Learn-Web3-Blockchain-Decentralized-PKI-and-Ethereum-19262/
 ---

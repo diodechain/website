@@ -19,7 +19,7 @@
     {% if post.image %}
         <figure class="blog__image {{ post.imageclass }}">
             <a href="{{ post.url | relative_url }}">
-                <img src="{{ post.image | prepend: 'blog/' | prepend: site.path.images | relative_url }}" alt="{{ post.title }}">
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
             </a>
         </figure>
     {% endif %}

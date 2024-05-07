@@ -5,7 +5,7 @@ date: 2019-05-06 13:42
 categories: [Blockchain]
 tags: [Blockchain]
 author: Greg Belcher
-image: StakeWork0.jpg
+image: assets/img/blog/StakeWork0.jpg
 redirect_from:
 - /mining/introducing-proof-of-stakework-19126/
 - /mining/2019/05/06/introducing-proof-of-stakework.html

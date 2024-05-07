@@ -5,7 +5,7 @@ date: 2020-03-30 23:36
 categories: [Diode]
 tags: [Diode, Blockchain, Events]
 author: Yahsin Huang
-image: EthCC_01.jpg
+image: assets/img/blog/EthCC_01.jpg
 redirect_from:
 - /diode/EthCC-Paris-Recap-20090/
 ---

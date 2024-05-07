@@ -4,7 +4,7 @@ title:  "Decentralized PKI in a nutshell"
 date: 2019-03-20 16:58
 categories: [Burning-Platform-PKI]
 tags: [Burning Platform, Development, Security, PKI, Decentralization]
-image: conflict.png
+image: assets/img/blog/conflict.png
 author: Dominic Letz
 redirect_from:
 - /burning-platform-pki/2019/03/20/decentralized-pki.html

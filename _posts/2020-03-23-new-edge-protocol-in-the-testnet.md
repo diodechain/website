@@ -4,7 +4,7 @@ date: 2020-03-23 11:29
 categories: [Development]
 tags: [Development, IoT, Web3]
 author: Dominic Letz
-image: edge_proto.png
+image: assets/img/blog/edge_proto.png
 redirect_from:
 - /development/New-Edge-Protocol-In-The-Testnet-20083/
 ---

@@ -5,7 +5,7 @@ date: 2020-07-14 01:30
 categories: [Diode]
 tags: [Diode, Blockchain, Use case]
 author: Yahsin Huang
-image: diode_ngrok_alt_f.png
+image: assets/img/blog/diode_ngrok_alt_f.png
 redirect_from:
 - /diode/diode-the-first-open-source-blockchain-based-alternative-to-ngrok-20196/
 ---

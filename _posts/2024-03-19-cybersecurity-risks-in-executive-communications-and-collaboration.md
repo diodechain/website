@@ -6,7 +6,7 @@ date: 2024-03-19 8:00
 categories: [Diode, Security]
 tags: [Diode, Diode Drive]
 author: Doug Pollack, CIPP/US
-image: CybersecurityRisks.jpeg
+image: assets/img/blog/CybersecurityRisks.jpeg
 
 ---
 It is ironic in many ways that some of the most significant cyber and regulatory risks that occur in enterprises and other organizations with national and global footprints are caused by insecure communications between executives, board members, and trusted advisors like lawyers and consultants. This topic was explored at some length in a recent Wall Street Journal article titled ["As Boards Focus More on Cybersecurity, Are they Missing One of the Biggest Threats?"](https://www.wsj.com/tech/cybersecurity/cyber-security-internal-threats-4d4c70dd)

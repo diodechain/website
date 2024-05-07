@@ -5,7 +5,7 @@ date: 2020-12-08 02:12
 categories: [Diode]
 tags: [Diode]
 author: Hans Rempel
-image: web3-sticker-lo.png
+image: assets/img/blog/web3-sticker-lo.png
 redirect_from:
 - /diode/Custom-Domain-Support-20343/
 ---

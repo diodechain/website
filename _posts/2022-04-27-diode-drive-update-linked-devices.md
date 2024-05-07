@@ -5,7 +5,7 @@ date: 2022-04-27 23:12
 categories: [DiodeDrive]
 tags: [Diode, Diode Drive, Decentralization]
 author: Allen M
-image: linked-devices.png
+image: assets/img/blog/linked-devices.png
 redirect_from:
 - /diodedrive/diodedriveupdate-linkeddevices-22117/
 ---

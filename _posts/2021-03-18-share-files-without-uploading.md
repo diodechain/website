@@ -5,7 +5,7 @@ date: 2021-03-18 13:12
 categories: [Diode Drive]
 tags: [Diode, Diode Drive, File]
 author: Hans Rempel
-image: file-sharing-via-diode-drive.png
+image: assets/img/blog/file-sharing-via-diode-drive.png
 redirect_from:
 - /diode%20drive/Share-Files-Without-Uploading-21077/
 ---

@@ -5,7 +5,7 @@ date: 2023-08-09 14:45
 categories: [Zero Trust]
 tags: [Zero Trust]
 author: MNJR
-image: Screen Shot 2023-08-09 at 3.34.45 PM.png
+image: assets/img/blog/Screen Shot 2023-08-09 at 3.34.45 PM.png
 
 ---
 ### Trust Brokers Make Zero Trust Possible
