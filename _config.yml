@@ -113,22 +113,22 @@ download:
     android: "https://play.google.com/store/apps/details?id=io.diode.drive"
     android-checksum: 
   cli:
-    macos: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_darwin_amd64.zip"
+    macos: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.7/diode_darwin_amd64.zip"
     macos-checksum:
-    macos-package: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_darwin.pkg"
+    macos-package: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.7/diode_darwin.pkg"
     macos-package-checksum:
-    windows: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_windows_amd64.zip"
+    windows: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.7/diode_windows_amd64.zip"
     windows-checksum:
-    linux: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_linux_amd64.zip"
+    linux: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.7/diode_linux_amd64.zip"
     linux-checksum: 
-    raspberry-pi: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_linux_arm.zip"
+    raspberry-pi: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.7/diode_linux_arm.zip"
     raspberry-pi-checksum: 
-    raspberry-pi-64: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.0/diode_linux_arm64.zip"
+    raspberry-pi-64: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.7/diode_linux_arm64.zip"
     raspberry-pi-64-checksum: 
 
 
 # Footer
-copyright: "DIODE &copy; 2023, All Rights Reserved"
+copyright: "DIODE &copy; 2024, All Rights Reserved"
 security:
   title: "Secure your perimeter."
   content: "We’re governed by the belief that technology should help people thrive. It should enhance our ability to operate, create, explore, educate, and innovate - unhindered."
