@@ -24,7 +24,7 @@ Newly created tunnels in the Brave browser automatically include a default "What
 **Remote API v2.1** 
 <br>The newest version of the [API]([https://support.diode.io/article/u2888tkk38) was released and it supports more varieties of channel names.
 
-**Default Moonbeam Profiles:** 
+**Default Moonbeam Profiles** 
 <br>Upon signing up, new users automatically also get a Moonbeam profile identity. 
 
 **Share Log Files to Chat**
