@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What Risks Cost
+title: What Data Breaches Cost
 description: executive protection series
 date: 2024-05-14 9:00
 categories: [Diode, Security]
