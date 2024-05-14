@@ -22,9 +22,11 @@ While we typically think of these types of risks in the context of larger enterp
 
 <br>
 
+![image](https://github.com/diodechain/website_dev_2023/assets/134106471/3708bc37-7b3b-4edb-9f69-e1d4236185a0)
+
 **Financial**
 
-Although not an SME, the [Change Healthcare ransomware attack](https://healthitsecurity.com/news/change-healthcare-disconnects-system-amid-cyberattack) has encountered issues recently after experiencing weeks of system and service downtime. The threat actors remotely accessed a Change Healthcare Citrix portal using compromised credentials that did not have strong enough security. To avoid prolonging the downtime, their parent company, UnitedHealth Group, chose to pay the $22 million USD demanded by the ransomware group, resulting in a significant financial loss that directly impacted the company’s bottom line.
+The [Change Healthcare ransomware attack](https://healthitsecurity.com/news/change-healthcare-disconnects-system-amid-cyberattack) has encountered issues recently after experiencing weeks of system and service downtime. The threat actors remotely accessed a Change Healthcare Citrix portal using compromised credentials that did not have strong enough security. To avoid prolonging the downtime, their parent company, UnitedHealth Group, chose to pay the $22 million USD demanded by the ransomware group, resulting in a significant financial loss that directly impacted the company’s bottom line.
 
 In [2023](https://www.business.com/articles/smb-budget-for-cybersecurity/), cyberattacks on companies with fewer than 500 employees resulted in a $3.31 million USD impact, averaging $164 per breached record. These costs include managing immediate damages, paying ransoms, maintaining customer service, offering discounts, and covering fines. Additional expenses also occur from hiring auditors, lawyers, accountants, and various consultants, and the downtime caused by these breaches can lead to indirect costs due to halted productivity in services or product production. Many smaller businesses will end up [raising the price](https://www.ibm.com/downloads/cas/3R8N1DZJ) of their product or service to try and regain their lost revenue, but they will often lose customers in the process.
 
@@ -55,8 +57,6 @@ In anticipation of these costly risks, approximately [34% of companies](https:/
 **Summary**
 
 Data breaches and cyberattacks pose significant threats to SMEs, amplified by their limited resources and security measures. As highlighted throughout this series, the financial, reputational, and operational impacts of these breaches are substantial, with SMEs facing unique challenges in recovery. With almost half of data breaches involving SMEs, businesses must prioritize the protection of executive data to mitigate these risks and safeguard their operations.
-
-![image](https://github.com/diodechain/website_dev_2023/assets/134106471/3708bc37-7b3b-4edb-9f69-e1d4236185a0)
 
 To explore further please:
 <div class="story__buttons">
