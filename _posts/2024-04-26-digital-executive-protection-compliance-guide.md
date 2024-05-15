@@ -75,12 +75,12 @@ The landscape of digital executive protection is dynamic and requires that organ
 #####  HIPAA and HITECH Act Compliance:
 
 *   [U.S. Department of Health & Human Services: HIPAA for Professionals](https://www.hhs.gov/hipaa/for-professionals/index.html)
-*   [Centers for Medicare and Medicaid Services: HITECH Act Enforcement Interim Final Rule](https://www.cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/downloads/hipaaii_enforcementrule.pdf)
+*   [Centers for Medicare and Medicaid Services: HITECH Act Enforcement Interim Final Rule](https://www.hhs.gov/hipaa/for-professionals/special-topics/hitech-act-enforcement-interim-final-rule/index.html)
 
 #####  SEC Cybersecurity Guidelines:
 
 *   [U.S. Securities and Exchange Commission: Cybersecurity, the SEC and You](https://www.sec.gov/spotlight/cybersecurity)
-*   [SEC Final Rule on Cybersecurity Risk Management, Enhancements and Standardizations](https://www.sec.gov/rules/final/2021/33-10933.pdf)
+*   [SEC Final Rule on Cybersecurity Risk Management, Enhancements and Standardizations](https://www.sec.gov/corpfin/secg-cybersecurity#:~:text=On%20July%2026%2C%202023%2C%20the,Exchange%20Act%20of%201934%20)
 
 #####  General Data Protection Regulation:
 
@@ -94,17 +94,17 @@ The landscape of digital executive protection is dynamic and requires that organ
 
 #####  Global Privacy Laws Comparison:
 
-*   [IAPP: Global Privacy Law Comparison Chart](https://iapp.org/resources/article/global-privacy-law-comparison-chart/)
-*   [Comparitech: GDPR versus Other Data Protection Laws, A Comparative Analysis](https://www.comparitech.com/blog/vpn-privacy/gdpr-compliance-world/)
+*   [IAPP: Global Privacy Law Comparison Chart](https://iapp.org/resources/global-privacy-directory/)
+*   [Fieldfisher: GDPR and Other Data Protection Laws, A Comparative Analysis](https://www.fieldfisher.com/en/insights/gdpr-vs-u-s-state-privacy-laws-how-do-they-measure)
 
 ##### Emerging Cybersecurity Threats and Trends:
 
-*   [Cybersecurity & Infrastructure Security Agency (CISA) Emerging Threats](https://www.cisa.gov/emerging-threats)
+*   [Cybersecurity & Infrastructure Security Agency (CISA) Emerging Threats](https://www.cisa.gov/topics/cyber-threats-and-advisories)
 *   [World Economic Forum: Global Risks Report 2021](https://www.weforum.org/reports/the-global-risks-report-2021)
 
 ##### Advanced Cybersecurity Technologies:
 
-*  [Forbes: How AI Is Enhancing Cybersecurity](https://www.forbes.com/sites/forbestechcouncil/2020/10/13/how-ai-is-enhancing-cybersecurity/)
-*   [IBM Research: Blockchain for Enhanced Security](https://www.ibm.com/blogs/research/2018/04/blockchain-security/)
+*  [Forbes: How AI Is Enhancing Cybersecurity](https://www.forbes.com/sites/forbesbusinesscouncil/2020/10/13/how-criminals-use-artificial-intelligence-to-fuel-cyber-attacks/?sh=78db5ee05012)
+*   [IBM Research: Blockchain for Enhanced Security](https://www.ibm.com/topics/benefits-of-blockchain)
 
 
