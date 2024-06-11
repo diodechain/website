@@ -26,7 +26,7 @@ What started with individual requests for data in emergencies turned rapidly int
 
 Facebook too is now processing requests for around half a million accounts yearly. Numbers growing quickly.
 
-In addition to these explicit requests, the cloud providers are [scanning their user's content in ahead-of-time policing](https://www.infoworld.com/article/3115779/dont-trust-your-cloud-service-until-youve-read-the-terms.html). Sometimes these algorithms go wrong and (ban wrong documents)[https://uk.pcmag.com/old-cloud-file-storage-for-business/138342/google-drive-flags-text-files-containing-1-as-a-copyright-infringement]
+In addition to these explicit requests, the cloud providers are [scanning their user's content in ahead-of-time policing](https://www.infoworld.com/article/3115779/dont-trust-your-cloud-service-until-youve-read-the-terms.html). Sometimes these algorithms go wrong and [ban wrong documents](https://uk.pcmag.com/old-cloud-file-storage-for-business/138342/google-drive-flags-text-files-containing-1-as-a-copyright-infringement).
 
 Lawmakers are still in the progress of creating new regulations but the general direction is clear. *Data in the cloud does not enjoy the same legal protection that privately-held data has.* At the moment you are handing your data over to a cloud provider, you are reducing the privacy of your documents, files, and photos. In the worst case, it's not considered your exclusive content anymore.
 
