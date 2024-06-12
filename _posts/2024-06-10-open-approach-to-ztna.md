@@ -38,25 +38,25 @@ One of the significant drawbacks of traditional ZTNA solutions is the risk of [v
 
 ### Blockchain as Platform for Open ZTNA
 
-Decentralized Physical Infrastructure Networks (DePIN) represent a transformative approach to building and managing physical network infrastructure using blockchain technology. Blockchain smart contracts are at the heart of a well formed DePIN network - these smart contracts [automate the business logic and the operation of a ZTNA](https://www.forbes.com/sites/forbesbusinesscouncil/2023/12/21/five-ways-to-use-smart-contracts-to-revolutionize-your-business/).  By automating control and management, DePIN offers several compelling benefits that align perfectly with the principles of ZTNA.
+Decentralized Physical Infrastructure Networks (DePIN) represent a transformative approach to building and managing physical network infrastructure using blockchain technology. Blockchain smart contracts are at the heart of a well formed DePIN network - these smart contracts [automate the business logic and the operation of a ZTNA](https://www.forbes.com/sites/forbesbusinesscouncil/2023/12/21/five-ways-to-use-smart-contracts-to-revolutionize-your-business/).  By automating control and management, DePIN offers several compelling benefits that align perfectly with the principles of ZTNA.  Let's explore four of these benefits next:
 
-***Automation and Enhanced Resilience***
+***1. Automation and Enhanced Resilience***
 
 DePIN ensures that the authority and management of a network is transparent and rules based.  This eliminates variance in how each node operates, resulting in a more resilient infrastructure - one that is not subject to IT administrator mistakes, insider threats, or supply chain attacks.  This automation is deployed to every part of the decentralized network - eliminating single points of failure and reduces the risk of large-scale outages or attacks. This model enhances the reliability and security of the network by ensuring that no single point of compromise can undermine the entire system ([ar5iv](https://arxiv.org/abs/2104.00460)).
 
 An example of this in operation in another sector is a decentralized energy grid.  A decentralized grid has very simple automation rules (power in, power out) so it does not need smart contracts to operate.  However, because of the same autonmous nature of the rules, it allow individual homes to produce and trade electricity.  This reduces dependence on centralized power plants and promoting the use of renewable energy sources ([Cointelegraph](https://cointelegraph.com/explained/decentralized-physical-infrastructure-network-depin-explained)) ([Binance Academy](https://academy.binance.com/en/articles/what-is-depin-in-crypto)).
 
-***Incentivizing Network Growth through Automated Rewards***
+***2. Incentivizing Network Growth through Automated Rewards***
 
 A ZTNA network is only as useful as its availability - if a ZTNA network node is not readily available to a user, the ZTNA might as well not even exist.  However, because ["Trust Broker Security is ZTNA Security"](https://diode.io/blog/trust-broker-security), traditional ZTNAs must host their nodes in Tier 4 data centers (or other similarly locked-down environments).  
 
 When Diode's [blockchain validation capabilities](https://eprint.iacr.org/2019/579.pdf)(which mathematically secures the Trust Broker) are paired with bandwidth incentives in an open DePIN ZTNA, all of a sudden the regional availability of a ZTNA can increase by orders of magnitude.  A heterogeneous collection of third parties can now assist with network growth and availability.
 
-In the last years, we have seen how companies like Uber and AirBnB have allowed third parties to leverage underutilized resources as a global service.  This same economic system is "baked in" with DePIN networks - it is as if the economic infrastructure deployed by Uber can now be weilded to create value from any latent participant resource.  
+In the last years, we have seen how companies like Uber and AirBnB have allowed third parties to leverage underutilized resources as a global service.  This same economic system is "baked in" with DePIN networks - it is as if the economic infrastructure deployed by Uber can now be wielded to create value from any latent participant resource.  
 
 In a DePIN, participants, such as those providing storage space in a decentralized cloud storage network like Filecoin, are rewarded with cryptocurrency for their contributions. In a ZTNA DePIN, a core resource provided by participants are Point of Presence nodes, who are rewarded for their contributions to bandwidth in the network. This incentivization not only supports the growth and sustainability of the network but also democratizes access to infrastructure resources, allowing a broader range of stakeholders to benefit from the system ([Decrypt](https://decrypt.co/resources/what-is-depin-physical-infrastructure-blockchain)) ([Binance Academy](https://academy.binance.com/en/articles/what-is-depin-in-crypto)).
 
-***Transparency and Trust through Blockchain***
+***3. Transparency and Trust through Blockchain***
 
 One of the core advantages of integrating blockchain with physical infrastructure is the enhanced transparency and trust it provides. In a traditional ZTNA, there is a lot of trust being given to the ZTNA vendor's servers and IT administrators that the "access control lists", and other permission details, are not being tampered with or otherwise vulnerable to attack.  Group membership, for example, is [a known vulnerability for traditionally managed E2EE networks](https://www.tripwire.com/state-of-security/whatsapp-flaw-could-allow-anyone-to-sneak-into-your-private-group-chat).
 
@@ -64,7 +64,7 @@ In a DePIN ZTNA, the way in which the network uses blockchain data is open sourc
 
 The additional ability of application-specific use cases to leverage blockchain infrastructure for logging and other event memorialization is a natural out growth of the architecture.  This can be particularly valuable in regulated industries like supply chain management and energy trading ([Cointelegraph](https://cointelegraph.com/explained/decentralized-physical-infrastructure-network-depin-explained)) ([DoomDroom](https://droomdroom.com/decentralized-physical-infrastructure-networks/)).
 
-***Economic Empowerment and Community Participation***
+***4. Economic Empowerment and Community Participation***
 
 DePIN can significantly empower local communities by enabling them to control and benefit from their infrastructure. For instance, decentralized energy grids allow homeowners to sell excess energy to their neighbors, creating a more equitable and sustainable energy ecosystem. In a ZTNA environment, individuals and enterprise can BYON (“Bring Your Own Node”) to optimize their quality of service and transparency requirements, while also contributing back to the overall network. This community-driven approach fosters economic empowerment and encourages innovation and entrepreneurship, especially in underserved areas ([Binance Academy](https://academy.binance.com/en/articles/what-is-depin-in-crypto)) ([DoomDroom](https://droomdroom.com/decentralized-physical-infrastructure-networks/)).
 
