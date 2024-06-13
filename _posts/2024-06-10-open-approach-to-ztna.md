@@ -46,13 +46,13 @@ Let's explore four of these benefits next:
 
 DePIN ensures that the authority and management of a network is transparent and rules based.  This eliminates variance in how each node operates, resulting in a more resilient infrastructure - one that is not subject to IT administrator mistakes, insider threats, or supply chain attacks.  This automation is deployed to every part of the decentralized network - eliminating single points of failure and reduces the risk of large-scale outages or attacks. This model enhances the reliability and security of the network by ensuring that no single point of compromise can undermine the entire system ([ar5iv](https://arxiv.org/abs/2104.00460)).
 
-An example of this in operation in another sector is a decentralized energy grid.  A decentralized grid has very simple automation rules (power in, power out) so it does not need smart contracts to operate.  However, because of the same autonmous nature of the rules, it allow individual homes to produce and trade electricity.  This reduces dependence on centralized power plants and promoting the use of renewable energy sources ([Cointelegraph](https://cointelegraph.com/explained/decentralized-physical-infrastructure-network-depin-explained)) ([Binance Academy](https://academy.binance.com/en/articles/what-is-depin-in-crypto)).
+An example of this in operation in another sector is a decentralized energy grid.  A decentralized grid has very simple automation rules (power in, power out) so it does not need smart contracts to operate.  However, because of the same autonmous nature of the rules, it allows individual homes to produce and trade electricity.  This reduces dependence on centralized power plants and promoting the use of renewable energy sources ([Cointelegraph](https://cointelegraph.com/explained/decentralized-physical-infrastructure-network-depin-explained)) ([Binance Academy](https://academy.binance.com/en/articles/what-is-depin-in-crypto)).
 
 ***2. Incentivizing Network Growth through Automated Rewards***
 
 A ZTNA network is only as useful as its availability - if a ZTNA network node is not readily available to a user, the ZTNA might as well not even exist.  However, because ["Trust Broker Security is ZTNA Security"](https://diode.io/blog/trust-broker-security), traditional ZTNAs must host their nodes in Tier 4 data centers (or other similarly locked-down environments).  
 
-When Diode's [blockchain validation capabilities](https://eprint.iacr.org/2019/579.pdf)(which mathematically secures the Trust Broker) are paired with bandwidth incentives in an open DePIN ZTNA, all of a sudden the regional availability of a ZTNA can increase by orders of magnitude.  A heterogeneous collection of third parties can now assist with network growth and availability.
+When Diode's [blockchain validation capabilities](https://eprint.iacr.org/2019/579.pdf) (which mathematically secures the Trust Broker) are paired with bandwidth incentives in an open DePIN ZTNA, all of a sudden the regional availability of a ZTNA can increase by orders of magnitude.  A heterogeneous collection of third parties can now assist with network growth and availability.
 
 In the last years, we have seen how companies like Uber and AirBnB have allowed third parties to leverage underutilized resources as a global service.  This same economic system is "baked in" with DePIN networks - it is as if the economic infrastructure deployed by Uber can now be wielded to create value from any latent participant resource.  
 
@@ -138,37 +138,37 @@ As organizations continue to navigate the challenges of digital transformation, 
 
 ### References
 
-**CrowdStrike**: "What is Zero Trust Network Access (ZTNA)? Zero Trust Network Access Explained" - https://www.crowdstrike.com/cybersecurity-101/zero-trust-security/ztna/
+**CrowdStrike**: ["What is Zero Trust Network Access (ZTNA)? Zero Trust Network Access Explained"](https://www.crowdstrike.com/cybersecurity-101/zero-trust-security/ztna/)
 
-**Zscaler**: "What Is a Zero Trust Architecture? Understanding the Need for Zero Trust Architecture" - https://www.zscaler.com/resources/white- papers/zero-trust-architecture.pdf
+**Zscaler**: ["What Is a Zero Trust Architecture? Understanding the Need for Zero Trust Architecture"](https://www.zscaler.com/resources/security-terms-glossary/what-is-zero-trust)
 
-**MDPI**: "Enhancing Zero Trust Models in the Financial Industry through Blockchain Integration: A Proposed Framework" - https://www.mdpi.com/1999-4893/14/2/76
+**MDPI**: ["Enhancing Zero Trust Models in the Financial Industry through Blockchain Integration: A Proposed Framework"](https://www.mdpi.com/2079-9292/13/5/865) 
 
-**Open Systems**: "What is Zero Trust Network Access (ZTNA)? Providing Secure Access to Anyone Anywhere" - https://www.open- systems.com/solutions/zero-trust-network-access-ztna/
+**Open Systems**: ["What is Zero Trust Network Access (ZTNA)? Providing Secure Access to Anyone Anywhere"](https://www.open-systems.com/sase/ztna/) 
 
-**arXiv**: "Augmenting Zero Trust Architecture to Endpoints Using Blockchain: A State-of-The-Art Review" - https://arxiv.org/abs/2104.00460
+**arXiv**: ["Augmenting Zero Trust Architecture to Endpoints Using Blockchain: A State-of-The-Art Review"](https://arxiv.org/abs/2104.00460) 
 
-**Cointelegraph**: "Decentralized physical infrastructure network (DePIN), explained" - https://cointelegraph.com/news/decentralized-physical- infrastructure-network-depin-explained
+**Cointelegraph**: ["Decentralized physical infrastructure network (DePIN), explained"](https://cointelegraph.com/explained/decentralized-physical-infrastructure-network-depin-explained)
 
-**Decrypt**: "What is DePIN? Bringing Physical Infrastructure to Blockchain" - https://decrypt.co/69917/what-is-depin-bringing-physical-infrastructure- to-blockchain
+**Decrypt**: ["What is DePIN? Bringing Physical Infrastructure to Blockchain"](https://decrypt.co/resources/what-is-depin-physical-infrastructure-blockchain)
 
-**DroomDroom**: "Guide to DePIN: Decentralized Physical Infrastructure Networks" - https://droomdroom.com/guide-to-depin-decentralized- physical-infrastructure-networks/
+**DroomDroom**: ["Guide to DePIN: Decentralized Physical Infrastructure Networks"](https://droomdroom.com/decentralized-physical-infrastructure-networks/)
 
-**Binance Academy**: "What Is DePIN in Crypto?" - https://academy.binance.com/en/articles/what-is-depin-in-crypto
+**Binance Academy**: ["What Is DePIN in Crypto?"](https://academy.binance.com/en/articles/what-is-depin-in-crypto)
 
-**Diode.io**: "Diode and Moonbeam Partnership" - https://diode.io/blog/diode-moonbeam-partnership
+**Diode.io**: ["Diode and Moonbeam Partnership"](https://diode.io/blog/diode-moonbeam-partnership)
 
-**Copenhagen INK**: "Diode and Moonbeam Collaborate on DePIN Platform for Zero Trust Network Access (ZTNA)" - https://cph-ink.dk/diode-and- moonbeam-collaborate-on-depin-platform-for-zero-trust-network-access- ztna/
+**Copenhagen INK**: ["Diode and Moonbeam Collaborate on DePIN Platform for Zero Trust Network Access (ZTNA)"](https://www.cph-ink.dk/diode-and-moonbeam-collaborate-on-depin-platform-for-zero-trust-network-access-ztna/)
 
-**Plato Data Intelligence**: "Moonbeam, Diode Collaborate On Launch Of DePIN Platform" - https://platodata.io/moonbeam-diode-collaborate-on- launch-of-depin-platform/
+**Plato Data Intelligence**: ["Moonbeam, Diode Collaborate On Launch Of DePIN Platform"](https://platodata.io/moonbeam-diode-collaborate-on-launch-of-depin-platform-to-replace-traditional-vpn-web2-products/)
 
-**SecureWorld**: "Realizing the Benefits of Zero Trust Architecture" -https://www.secureworld.io/realizing-the-benefits-of-zero-trust- architecture
+**SecureWorld**: ["Realizing the Benefits of Zero Trust Architecture"](https://www.secureworld.io/industry-news/benefits-zero-trust-architecture#:~:text=One%20of%20the%20fundamental%20advantages,lateral%20movement%20within%20a%20network.)
 
-**Tripwire**: "5 Long-term Benefits of Adopting Zero Trust Architecture" -https://www.tripwire.com/state-of-security/security-data-protection/5- long-term-benefits-of-adopting-zero-trust-architecture/
+**Tripwire**: ["5 Long-term Benefits of Adopting Zero Trust Architecture"](https://www.tripwire.com/state-of-security/long-term-benefits-adopting-zero-trust-architecture)
 
-**Zscaler**: "What is Zero Trust Security? Principles & Benefits" -https://www.zscaler.com/blogs/research/what-zero-trust-security- principles-benefits
+**Zscaler**: ["What is Zero Trust Security? Principles & Benefits"](https://www.zscaler.com/resources/security-terms-glossary/what-is-zero-trust) 
 
-**Cimcor**: "5 Zero Trust Architecture Benefits You Can't Afford To Miss" -https://www.cimcor.com/blog/5-zero-trust-architecture-benefits-you- cant-afford-to-miss
+**Cimcor**: ["5 Zero Trust Architecture Benefits You Can't Afford To Miss"](https://www.cimcor.com/blog/zero-trust-architecture-benefits) 
 
 To explore further please:
 <div class="story__buttons">
