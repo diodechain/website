@@ -38,7 +38,9 @@ One of the significant drawbacks of traditional ZTNA solutions is the risk of [v
 
 ### Blockchain as Platform for Open ZTNA
 
-Decentralized Physical Infrastructure Networks (DePIN) represent a transformative approach to building and managing physical network infrastructure using blockchain technology. Blockchain smart contracts are at the heart of a well formed DePIN network - these smart contracts [automate the business logic and the operation of a ZTNA](https://www.forbes.com/sites/forbesbusinesscouncil/2023/12/21/five-ways-to-use-smart-contracts-to-revolutionize-your-business/).  By automating control and management, DePIN offers several compelling benefits that align perfectly with the principles of ZTNA.  Let's explore four of these benefits next:
+Decentralized Physical Infrastructure Networks (DePIN) represent a transformative approach to building and managing physical network infrastructure using blockchain technology. Blockchain smart contracts are at the heart of a well formed DePIN network - these smart contracts [automate the business logic and the operation of a ZTNA](https://www.forbes.com/sites/forbesbusinesscouncil/2023/12/21/five-ways-to-use-smart-contracts-to-revolutionize-your-business/).  By automating control and management, DePIN offers several compelling benefits that align perfectly with the principles of ZTNA.  
+
+Let's explore four of these benefits next:
 
 ***1. Automation and Enhanced Resilience***
 
@@ -66,7 +68,9 @@ The additional ability of application-specific use cases to leverage blockchain 
 
 ***4. Economic Empowerment and Community Participation***
 
-DePIN can significantly empower local communities by enabling them to control and benefit from their infrastructure. For instance, decentralized energy grids allow homeowners to sell excess energy to their neighbors, creating a more equitable and sustainable energy ecosystem. In a ZTNA environment, individuals and enterprise can BYON (“Bring Your Own Node”) to optimize their quality of service and transparency requirements, while also contributing back to the overall network. This community-driven approach fosters economic empowerment and encourages innovation and entrepreneurship, especially in underserved areas ([Binance Academy](https://academy.binance.com/en/articles/what-is-depin-in-crypto)) ([DoomDroom](https://droomdroom.com/decentralized-physical-infrastructure-networks/)).
+DePIN can significantly empower local communities by enabling them to control and benefit from their infrastructure. For instance, decentralized energy grids allow homeowners to sell excess energy to their neighbors, creating a more equitable and sustainable energy ecosystem. In a ZTNA environment, individuals and enterprise can BYON (“Bring Your Own Node”) to optimize their quality of service and transparency requirements, while also contributing back to the overall network. 
+
+This community-driven approach fosters economic empowerment and encourages innovation and entrepreneurship, especially in underserved areas ([Binance Academy](https://academy.binance.com/en/articles/what-is-depin-in-crypto)) ([DoomDroom](https://droomdroom.com/decentralized-physical-infrastructure-networks/)).
 
 ### Real-World Application: Diode's Open ZTNA Solution
 
@@ -76,7 +80,7 @@ Diode.io exemplifies the power of open architecture in ZTNA by leveraging a dece
 
 Diode's strategic choice to build on the Moonbeam network further enhances its capabilities. Moonbeam, a smart contract platform, offers seamless cross-chain connectivity, integrating functionalities from Ethereum, Cosmos, Polkadot, and more. This alignment allows Diode to leverage an established infrastructure and positions it well within the growing ecosystem of DeFi and DePIN blockchain use cases. Moonbeam's EVM compatibility and decentralized governance model ensure that Diode's solutions remain flexible, secure, and scalable ([DiodeTM](https://diode.io/blog/diode-moonbeam-partnership)) ([Zephyrnet](https://zephyrnet.com/moonbeam-diode-collaborate-on-launch-of-depin-platform-to-replace-traditional-vpn-web2-products/)).
 
-Sicco Naets, Head of Ecosystem Development at the Moonbeam Foundation, highlighted the significance of this collaboration: "Diode’s platform is demonstrable proof that blockchain’s core principles of decentralization and data ownership pave the way for better, more secure user-centric solutions in the real world" ([DiodeTM](https://diode.io/blog/diode-moonbeam-partnership)).
+Sicco Naets, Head of Ecosystem Development at the Moonbeam Foundation, highlighted the significance of this collaboration: "Diode’s platform is demonstrable proof that blockchain’s core principles of decentralization and data ownership pave the way for better, more secure user-centric solutions in the real world" ([Diode](https://diode.io/blog/diode-moonbeam-partnership)).
 
 ***Open ZTNA Customer Benefits***
 
@@ -84,11 +88,17 @@ By embracing open architecture and blockchain integration, Diode's solution addr
 
 - **Eliminating Vendor Lock-In:** Diode's open-source framework allows organizations to avoid being locked into limited options from a single vendor, providing the flexibility to adapt and evolve their security strategies as needed.
 
+A growing number of application providers have deployed and are building on the Diode Network.
+
 - **Enhancing Security through Decentralization:** The decentralized nature of Diode's network mitigates the risks associated with centralized control and single points of failure.
 
-- **Promoting Transparency and Trust:** By using blockchain for logging and verification, Diode ensures that all network activities are transparent and tamper-proof, thereby fostering greater trust among users.
+Diode's (https://diode.io/download#node)[Lite Node] makes it possible for anyone to contribute to the network.
+
+- **Promoting Transparency and Trust:** By using blockchain to anchor key parts of the network definitions, Diode ensures that network participants are tamper-proof and auditable on an application-specific basis, thereby fostering greater trust among users.
 
 - **Increasing Accessibility:** Diode’s unique implementation of application- sponsorship for secure bandwidth creates a marketplace dynamic for network resources. This reduces the cost and increases the accessibility of the ZTNA solution for all types of businesses and organizations.
+
+The [Diode Foundation's Bandwidth Growth Program](https://diode.foundation/docs/programs/bandwidth_growth_program.html) is an example of a third party inititave that increases accessibility of zero trust network security around the world.
 
 ### Benefits to Organizations of Adopting Open ZTNA Products
 
