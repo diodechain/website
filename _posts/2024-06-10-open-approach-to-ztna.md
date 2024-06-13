@@ -18,9 +18,9 @@ An open architecture is needed for ZTNA to achieve its potential.
 
 ### First, what is ZTNA?
 
-Traditional security models, like VPNs, rely on a walled-garden approach, which grants broad access once a user is inside of the "garden" (e.g. if a device has access to the local network, then all resources on the local network are accessbile to the device). This "trust anyone with physical access" method is becoming obsolete in an era where cloud services, remote work, and interconnected devices dominate. Instead, ZTNA operates on the principle of "never trust, always verify," treating every user, device, and network connection as potentially compromised until proven otherwise.
+Traditional security models, like VPNs, rely on a walled-garden approach, which grants broad access once a user is inside of the "garden" (e.g. if a device has access to the local network, then all resources on the local network are accessbile to the device). This "trust anyone with physical access" method is becoming obsolete in an era where cloud services, remote work, and interconnected devices dominate. 
 
-This has [many benefits](https://diode.io/blog/zero-trust-replacing-vpn) for an organization's security and the ability for team members to access information.
+ZTNA architecture is designed for modern, dynamic operations.  It is based on the principle of "never trust, always verify," treating every user, device, and network connection as potentially compromised until proven otherwise.  This has [many benefits](https://diode.io/blog/zero-trust-replacing-vpn) for an organization's security and the ability for team members to access information.
 
 ### The Case for Open Architecture in ZTNA 
 
