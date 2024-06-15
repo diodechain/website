@@ -92,7 +92,7 @@ A growing number of application providers have deployed and are building on the 
 
 - **Enhancing Security through Decentralization:** The decentralized nature of Diode's network mitigates the risks associated with centralized control and single points of failure.
 
-Diode's (https://diode.io/download#node)[Lite Node] makes it possible for anyone to contribute to the network.
+Diode's [Lite Node](https://diode.io/download#node) makes it possible for anyone to contribute to the network.
 
 - **Promoting Transparency and Trust:** By using blockchain to anchor key parts of the network definitions, Diode ensures that network participants are tamper-proof and auditable on an application-specific basis, thereby fostering greater trust among users.
 
