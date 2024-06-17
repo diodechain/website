@@ -32,6 +32,7 @@
 <body class="prenet">
     {% include_relative vue/network.vue %}
     {% include_relative vue/bridge.vue %}
+    {% include_relative vue/node.vue %}
     <div id="app">
         <div class="header">
             <div class="logo">
@@ -71,6 +72,14 @@
             component: Network
         },
 
+        {
+            name: false,
+            path: '/node/:nodeid',
+            component: DiodeNode,
+            params: {
+                nodeid: ''
+            }
+        },
         {
             name: 'Bridge',
             path: '/bridge/',
