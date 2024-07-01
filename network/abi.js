@@ -460,33 +460,45 @@ function NewWeb3(url) {
     let obj = new Web3(url)
     obj.extend({
         property: 'eth',
-        methods: [{
+        methods: [
+        {
+            name: 'traffic',
+            call: 'dio_traffic',
+            params: 1,
+            inputFormatter: [(chain_id) => chain_id]
+        },
+        {
+            name: 'usage',
+            call: 'dio_usage',
+            params: 0,
+        },
+        {
+            name: 'usageHistory',
+            call: 'dio_usageHistory',
+            params: 3,
+            inputFormatter: [(from) => from, (to) => to, (stepping) => stepping]
+        },
+        {
             name: 'getNode',
             call: 'dio_getNode',
             params: 1,
             inputFormatter: [obj.extend.formatters.inputAddressFormatter]
-            // outputFormatter: obj.utils.hexToNumberString
         },
         {
             name: 'getPool',
             call: 'dio_getPool',
             params: 0,
-            // inputFormatter: [obj.extend.formatters.inputAddressFormatter]
-            // outputFormatter: obj.utils.hexToNumberString
         },
         {
             name: 'network',
             call: 'dio_network',
             params: 0,
-            // inputFormatter: [obj.extend.formatters.inputAddressFormatter]
-            // outputFormatter: obj.utils.hexToNumberString
         },
         {
             name: 'getObject',
             call: 'dio_getObject',
             params: 1,
             inputFormatter: [obj.extend.formatters.inputAddressFormatter]
-            // outputFormatter: obj.utils.hexToNumberString
         }]
     })
     obj.extend({
@@ -496,14 +508,12 @@ function NewWeb3(url) {
             call: 'eth_getCodeHash',
             params: 2,
             inputFormatter: [obj.extend.formatters.inputAddressFormatter, obj.extend.formatters.inputDefaultBlockNumberFormatter]
-            // outputFormatter: obj.utils.hexToNumberString
         },
         {
             name: 'getStorage',
             call: 'eth_getStorage',
             params: 2,
             inputFormatter: [obj.extend.formatters.inputAddressFormatter, obj.extend.formatters.inputDefaultBlockNumberFormatter]
-            // outputFormatter: obj.utils.hexToNumberString
         }]
     });
     return obj;

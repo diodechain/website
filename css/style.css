@@ -10404,3 +10404,98 @@ select:focus {
     }
 
 } */
+
+
+
+svg {
+  .gridline {
+      stroke: lightgrey;
+      stroke-width: 1;
+  }
+
+  .axisline-x {
+      stroke: black;
+      stroke-width: 2;
+      stroke-linecap: round;
+  }
+
+  .axisline-y {
+      stroke: black;
+      stroke-width: 2;
+      stroke-linecap: round;
+  }
+
+  .axisline-y2 {
+      stroke: black;
+      stroke-width: 2;
+      stroke-linecap: round;
+  }
+
+  .axismark-main {
+      stroke: black;
+      stroke-width: 1;
+  }
+
+  .axismark-second {
+      stroke: black;
+      stroke-width: 1;
+  }
+
+  .axistitle-x {
+      font-size: 18px;
+  }
+
+  .axisnumber-x {
+      font-size: 15px;
+  }
+
+  .axistitle-y {
+      font-size: 18px;
+  }
+
+  .axisnumber-y {
+      font-size: 15px;
+  }
+
+  .series-lines-general {
+      stroke-width: 1;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      fill: none;
+  }
+
+  /*-- series 1 --*/
+  .series1 {
+      stroke: rgb(0, 0, 255);
+      stroke-width: 1;
+  }
+
+  /*-- series 2 --*/
+  .series2 {
+      stroke: rgb(0, 192, 0);
+      stroke-width: 1;
+  }
+
+  .legendbox {
+      stroke: black;
+      stroke-width: 1;
+      fill: white;
+  }
+
+  .legendtext {
+      font-size: 15px;
+      text-anchor: start;
+  }
+}
+
+.node_stats {
+  th {
+      vertical-align: middle;
+  }
+
+  table {
+    td {
+      padding: 0.5em;
+    }
+  }
+}
