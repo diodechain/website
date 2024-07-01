@@ -1,19 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
 body {
     font: 16px/1.4em "Titillium Web", Arial, sans-serif;
-    margin: 0 auto;
-    max-width: 1024px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .banner {
-    text-align: center;
+    text-align: left;  
+    padding-left: 2em;
     color: white;
-    margin: 0 0 2em;
-    padding: 2em 0;
+    margin: 0 0 1em;
+    padding: 0 0 0 2em;
     width: 100%;
     background-color: #F15C2E
 }
@@ -27,20 +22,20 @@ body {
 }
 
 svg {
+    position: absolute;
+    top: -20px;
     height: 80px;
     width: 100%;
 }
 
 .svg {
     position: relative;
-}
-
-.svg:hover #hover {
-    display: block;
+    overflow: hidden;
+    height: 40px;
+    width: 90%;
 }
 
 #hover {
-    display: none;
     position: absolute;
     min-width: 100px;
     border: 1px #aaaaaa solid;
@@ -55,27 +50,31 @@ svg {
 
 .host {
     text-align: left;
-    margin: 5px 1px;
+    margin: 1%;
     padding: 0.2em 0;
     background-color: rgb(240, 240, 240);
     border: 2px solid gray;
     border-radius: 0.2em;
-    width: 49%;
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .host .body {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
 }
 .host .head {
+    width: 100%;
     padding: 1em;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     text-align: center;
     font-weight: bold;
-    margin-bottom: 1em;
 }
 
 .Up .head .status {

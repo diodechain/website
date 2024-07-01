@@ -17,18 +17,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <div class="banner">
-        <h1>Diode℠ Prenet Status</h1>
-    </div>
-    <div id="app">
+<body style="margin: 0">
+    <div id="app" style="position: relative; width: 100vw">
+        <div :style="{ left: left, top: top }" id="hover" v-html="descr" v-show="descr.length > 0"></div>
+        <div class="banner">
+            <h1>Diode Status Page</h1>
+        </div>
         <div class="host" v-bind:class="host.status" v-for="host in hosts" v-key="host.name">
             <div class="head">
-                <div class="title"><% host.name %></div>
+                <div class="title" :title="host.url"><% host.name %></div>
                 <div class="status"><% host.status %></div>
             </div>
             <div class="svg">
-                <div :style="{ left: left, top: top }" id="hover" v-html="descr" v-show="descr.length > 0"></div>
                 <svg :view-box.camel="'0 0 ' + (host.data.length*4) + ' ' + 100" :transform="'scale(1 ' + Math.max(1, (host.data.length/250)) + ')'" @mouseOver="mouseOver(event, host)">
                     <line :x1="i*4" :x2="i*4" y1="1" y2="100" v-bind:class="status" :key="i" v-for="(status, i) in host.data"></line>
                     <line v-for="i in host.days" :x1="i*4" :x2="i*4" y1="1" y2="100" class="day"></line>
@@ -56,11 +56,6 @@
                 mouseOver: _.throttle(function(evt, host) {
                     evt.preventDefault();
                     evt.stopPropagation();
-                    let div = evt.target.parentElement;
-                    while (div.className != 'svg') {
-                        div = div.parentElement;
-                    }
-                    let rect = div.getBoundingClientRect();
                     let target = evt.target;
                     let desc = '';
                     if (target.tagName === 'line') {
@@ -69,15 +64,18 @@
                         this.descr = '';
                         return;
                     }
-                    let x = (evt.clientX - rect.left + 10);
-                    if (x + rect.left + 150 > document.documentElement.clientWidth) {
-                        x = document.body.clientWidth - 150 - rect.left;
-                    }
-                    this.left = x + 'px';
-                    this.top = (evt.clientY - rect.top - 60) + 'px';
-                    x = (host.data.length*host.interval) * evt.layerX/rect.width;
 
-                    let t = new Date((host.start + x) * 1000);
+                    let div = evt.target.parentElement;
+                    while (div.className != 'svg') {
+                        div = div.parentElement;
+                    }
+                    let rect = div.getBoundingClientRect();
+
+                    this.left = (evt.clientX + 10) + 'px';
+                    this.top = (evt.clientY + 10 + window.visualViewport.pageTop) + 'px';
+                    
+                    let value = (host.data.length*host.interval) * evt.layerX/rect.width;
+                    let t = new Date((host.start + value) * 1000);
                     desc += t.toISOString().slice(5, 16);
                     this.descr = desc;
                 }, 100)
@@ -91,86 +89,85 @@
         }
 
         function refresh() {
-            axios.get(url + "/", opt).then(response => {
+            axios.get(url + "/", opt).then(async response => {
                 // console.log("Got", response.data)
+                let i = 0;
                 for (let k in response.data) {
-                    if (app.hosts[k]) continue;
-                    let entry = { name: response.data[k], data: [], status: 'Unknown' }
-                    // app.hosts[k] = entry
-                    app.$set(app.hosts, k, entry)
-                    refreshHost(k)
+                    if (!app.hosts[k]) {
+                        let entry = { name: k, url: response.data[k], data: [], status: 'Unknown' }
+                        app.$set(app.hosts, k, entry)
+                    }
+                    await refreshHost(k)
                 }
-                setTimeout(refresh, 25000)
             })
+            setTimeout(refresh, 60000)
         }
-        function refreshHost(name) {
-            axios.get(url + "/" + name, opt).then(response => {
-                let up = 0;
-                let uptime = 0;
-                let interval = 60;
-                let start = response.data.start;
-                let end = Math.floor(Date.now() / 1000)
-                let data = []
-                let days = []
-                let status = "Unknown"
-                for (let i = 0; start + (i * interval) < end; i++) {
-                    status = "Unknown"
-                    if (Math.round(start/interval + i) % 1440 == 0) {
-                        days.push(i)
-                    }
-                    switch (response.data.data[i]) {
-                        default:
-                            if (start + ((i + 1) * interval) >= end) {
-                                continue;
-                            }
-                            status = "Unknown";
-                            uptime = 0;
-                            break;
-                        case 1:
-                            up++;
-                            uptime++;
-                            status = "Up";
-                            break;
-                        case 2:
-                            status = "Slow";
-                            uptime = 0;
-                            break;
-                        case 3:
-                            status = "Problem";
-                            uptime = 0;
-                            break;
-                        case 4:
-                            status = "Problem2";
-                            uptime = 0;
-                            break;
-                    }
-                    data.push(status)
+        async function refreshHost(name) {
+            let response = await axios.get(url + "/" + name, opt)
+            let up = 0;
+            let uptime = 0;
+            let interval = 60;
+            let start = response.data.start;
+            let end = Math.floor(Date.now() / 1000)
+            let data = []
+            let days = []
+            let status = "Unknown"
+            for (let i = 0; start + (i * interval) < end; i++) {
+                status = "Unknown"
+                if (Math.round(start/interval + i) % 1440 == 0) {
+                    days.push(i)
                 }
-                up = up / data.length;
-
-                let target = 1000;
-                let sampling = data.length > target;
-                if (sampling) {
-                    let samples = []
-                    let sample_rate = data.length/target;
-                    for (let i = 0; i < data.length; i += sample_rate) {
-                        samples.push(data[Math.round(i)])
-                    }
-                    interval = interval * sample_rate
-                    data = samples;
-                    days = days.map(i => i / sample_rate)
+                switch (response.data.data[i]) {
+                    default:
+                        if (start + ((i + 1) * interval) >= end) {
+                            continue;
+                        }
+                        status = "Unknown";
+                        uptime = 0;
+                        break;
+                    case 1:
+                        up++;
+                        uptime++;
+                        status = "Up";
+                        break;
+                    case 2:
+                        status = "Slow";
+                        uptime = 0;
+                        break;
+                    case 3:
+                        status = "Problem";
+                        uptime = 0;
+                        break;
+                    case 4:
+                        status = "Problem2";
+                        uptime = 0;
+                        break;
                 }
+                data.push(status)
+            }
+            up = up / data.length;
+
+            let target = 1000;
+            let sampling = data.length > target;
+            if (sampling) {
+                let samples = []
+                let sample_rate = data.length/target;
+                for (let i = 0; i < data.length; i += sample_rate) {
+                    samples.push(data[Math.round(i)])
+                }
+                interval = interval * sample_rate
+                data = samples;
+                days = days.map(i => i / sample_rate)
+            }
 
 
-                app.$set(app.hosts[name], 'start', start);
-                app.$set(app.hosts[name], 'data', data);
-                app.$set(app.hosts[name], 'days', days);
-                app.$set(app.hosts[name], 'interval', interval);
-                app.$set(app.hosts[name], 'status', status);
-                app.$set(app.hosts[name], 'uptime', up);
-                app.$set(app.hosts[name], 'longest', uptime);
-                setTimeout(() => refreshHost(name), 60000)
-            })
+            app.$set(app.hosts[name], 'start', start);
+            app.$set(app.hosts[name], 'data', data);
+            app.$set(app.hosts[name], 'days', days);
+            app.$set(app.hosts[name], 'interval', interval);
+            app.$set(app.hosts[name], 'status', status);
+            app.$set(app.hosts[name], 'uptime', up);
+            app.$set(app.hosts[name], 'longest', uptime);
         }
         refresh()
     </script>
