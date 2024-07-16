@@ -463,31 +463,33 @@ function NewWeb3(url) {
         methods: [
         {
             name: 'traffic',
-            call: 'dio_traffic',
-            params: 1,
-            inputFormatter: [(chain_id) => chain_id]
+            call: 'dio_proxy|dio_traffic',
+            params: 2,
+            inputFormatter: [(node_id) => node_id, (chain_id) => chain_id]
+        },
+        {
+            name: 'traffic2',
+            call: 'dio_proxy|dio_traffic',
+            params: 3,
+            inputFormatter: [(node_id) => node_id, (chain_id) => chain_id, (epoch) => epoch]
         },
         {
             name: 'usage',
-            call: 'dio_usage',
-            params: 0,
+            call: 'dio_proxy|dio_usage',
+            params: 1,
+            inputFormatter: [(node_id) => node_id]
         },
         {
             name: 'usageHistory',
-            call: 'dio_usageHistory',
-            params: 3,
-            inputFormatter: [(from) => from, (to) => to, (stepping) => stepping]
+            call: 'dio_proxy|dio_usageHistory',
+            params: 4,
+            inputFormatter: [(node_id) => node_id, (from) => from, (to) => to, (stepping) => stepping]
         },
         {
             name: 'getNode',
             call: 'dio_getNode',
             params: 1,
             inputFormatter: [obj.extend.formatters.inputAddressFormatter]
-        },
-        {
-            name: 'getPool',
-            call: 'dio_getPool',
-            params: 0,
         },
         {
             name: 'network',

@@ -29,7 +29,7 @@
     </link>
 </head>
 
-<body class="prenet">
+<body class="network">
     {% include_relative vue/network.vue %}
     {% include_relative vue/bridge.vue %}
     {% include_relative vue/node.vue %}
@@ -78,10 +78,11 @@
             component: DiodeNode,
             params: {
                 nodeid: ''
-            }
+            },
+            props: true
         },
         {
-            name: 'Bridge',
+            name: false,
             path: '/bridge/',
             component: Bridge
         },
@@ -177,6 +178,14 @@
             return "#" + ((1 << 24) * Math.random() | 0).toString(16);
         }
 
+        function getAddressLink(address) {
+            if (window.location.pathname !== '/') {
+                return `${window.location.pathname}#/node/${address}`;
+            } else {
+                return `/#/address/${address}`;
+            }
+        }
+
         function valueToBalance(balance) {
             if (balance == undefined) return 'error loading';
             let value = web3.utils.fromWei(balance)
@@ -199,7 +208,7 @@
                 back = back.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 back = "." + back.split("").reverse().join("");
                 // cutting down to the most significant digits
-                back = back.replace(/(0[1-9][1-9]|[1-9][1-9]0|[1-9]0[1-9]|00[1-9]|[1-9]00|0[1-9]0).*/, "$1")
+                back = back.replace(/([1-9][1-9][1-9]|0[1-9][1-9]|[1-9][1-9]0|[1-9]0[1-9]|00[1-9]|[1-9]00|0[1-9]0).*/, "$1")
             } else {
                 back = "";
             }
