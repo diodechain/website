@@ -466,6 +466,11 @@
             CallRegistry('MinerValue', [0, address], callback)
         }
 
+        function fetchStakeN(address, callback, n) {
+            if (!address) return
+            CallRegistry('MinerValue', [n, address], callback)
+        }
+
         function shorten(str, length) {
             if (!length) length = 10;
             if (str.length > length) return str.substr(0, length - 3) + '...';

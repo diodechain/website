@@ -69,7 +69,12 @@
         </tr>
         <tr>
           <th>Stake</th>
-          <td><% valueToBalance(stake) %></td>
+          <td>
+            <p><% valueToBalance(stake) %> Staked</p>
+            <p v-if="notnull(stake1)"><% valueToBalance(stake1) %> Staking</p>
+            <p v-if="notnull(stake2)"><% valueToBalance(stake2) %> Unstaking</p>
+            <p v-if="notnull(stake3)"><% valueToBalance(stake3) %> Withdrawable</p>
+          </td>
         </tr>
         <tr>
           <th>Nonce</th>
@@ -183,6 +188,9 @@ var VAccount = Vue.component("account", {
       error: undefined,
       balance: undefined,
       stake: undefined,
+      stake1: undefined,
+      stake2: undefined,
+      stake3: undefined,
       rawcode: undefined,
       codehash: undefined,
       storage: [],
@@ -218,6 +226,9 @@ var VAccount = Vue.component("account", {
     this.update();
   },
   methods: {
+    notnull: function (amount) {
+      return amount != undefined && amount != "0x0000000000000000000000000000000000000000000000000000000000000000";
+    },
     update: function () {
       this.acc = undefined;
       web3.eth.getBalance(this.hash, (err, ret) => {
@@ -262,9 +273,10 @@ var VAccount = Vue.component("account", {
         if (err) this.error = err;
         else this.nonce = ret;
       });
-      fetchStake(this.hash, (stake) => {
-        this.stake = stake;
-      });
+      fetchStakeN(this.hash, (stake) => { this.stake = stake; },  0);
+      fetchStakeN(this.hash, (stake) => { this.stake1 = stake; }, 1);
+      fetchStakeN(this.hash, (stake) => { this.stake2 = stake; }, 2);
+      fetchStakeN(this.hash, (stake) => { this.stake3 = stake; }, 3);
     },
   },
   watch: {
