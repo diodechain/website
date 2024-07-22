@@ -47,17 +47,17 @@
                     <div class="doclet">
                         <h2>Uptime</h2>
                         <div style="margin-top: 11px">
-                            <% uptime %>
+                            <nobr><% uptime %></nobr>
                         </div>
                     </div>
                 </div>
                 <div class="headtable" style="width: 55%">
                     <svg v-if="typeof (usageHistory) != 'string'" id="head" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" font-family="Helvetica, Arial"
-                        width="760" height="401" viewBox="-28 0 692 401">
+                        width="750" height="391" viewBox="-65 -35 672 436">
 
                         <!-- image background -->
-                        <rect id="imagebackground" x="0" y="0" width="692" height="401" stroke-width="1" stroke="none"
+                        <rect id="imagebackground" x="-75" y="0" width="682" height="391" stroke-width="1" stroke="none"
                             fill="white" />
 
                         <defs>
@@ -110,7 +110,7 @@
                                 <% chart.value(i/16) %>
                             </text>
                         </g>
-                        <g id="axis-y-values2" class="axisnumber-y" transform="translate(554, 367)" text-anchor="start">
+                        <g id="axis-y-values2" class="axisnumber-y" transform="translate(561, 367)" text-anchor="start">
                             <text v-for=" i  in  [...Array(17).keys()] " :y="-chart.scale(0, 350, i / 16)">
                                 <% deviceChart.value(i/16) %>
                             </text>
@@ -133,8 +133,8 @@
 
                         <!-- == legend == -->
 
-                        <g id="legend" transform="translate(563, 47)">
-                            <rect id="legend-background" class="legendbox" x="0" y="0" width="123" height="54" />
+                        <g id="legend" transform="translate(250, -25)">
+                            <rect id="legend-background" class="legendbox" x="0" y="0" width="126" height="54" />
 
                             <polyline id="legend-line1" class="series-lines-general series1" transform="scale(1, -1)"
                                 points="6,-14 21,-14 36,-14" />
@@ -278,7 +278,10 @@ var DiodeNode = Vue.component("diode_node", {
 
             let usage = await web3.eth.usage(nodeid)
             if (usage && usage["uptime"] != null) {
-                this.uptime = this.number(usage["uptime"]) + 's';
+                let seconds = Math.floor(this.number(usage["uptime"])/1000)
+                let hours = Math.floor(seconds / 3600) % 24
+                let days = Math.floor(seconds / (3600 * 24))
+                this.uptime = days + "d " + hours + "h " + (seconds % 60) + "s"
             } else {
                 this.uptime = 'unable to load';
             }

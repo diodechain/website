@@ -10785,6 +10785,7 @@ body.network table .empty-search {
 
 body.network table.data {
   margin-top: 25px;
+  margin-bottom: 25px;
   border: 1px solid #ddd;
   width: 100%;
   background-color: #ffffff;
@@ -11094,18 +11095,10 @@ body.network .button[disabled] {
 
 body.network .headtable {
   width: 50%;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-orient: inherit;
-  -webkit-box-direction: inherit;
-  -webkit-flex-direction: inherit;
-      -ms-flex-direction: inherit;
-          flex-direction: inherit;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  flex-direction: inherit;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 body.network .headtable figure {
