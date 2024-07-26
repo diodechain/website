@@ -36,7 +36,7 @@ features:
   actions:
   - title: Read support articles
     class: btn--blank btn--arrow
-    url: "https://support.diode.io/article/lsr4tkzz8t-getting-started"
+    url: "https://docs.diode.io"
     target: _blank
   list:
   - title: Clients

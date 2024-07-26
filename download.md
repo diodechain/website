@@ -59,7 +59,7 @@ network:
   subheading: You can deepen the security of your zero trust perimeters by hosting a node.
   buttons:
   - title: Run a Node
-    url: "https://support.diode.io/article/y9hxzsbhg8"
+    url: "https://network.docs.diode.io/docs/"
     target: _blank
   - title: Learn More
     url: "/solutions/network/"

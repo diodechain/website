@@ -422,6 +422,63 @@
     }
   }
 
+  &__node {
+    min-width: 80px;
+    padding: 5px 19px;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 300;
+    position: absolute;
+    z-index: 5;
+    @include media-breakpoint-down(md) {
+      display: block;
+      top: 28px;
+      right: 105px;
+    }
+    @include media-breakpoint-down(sm) {
+      display: block;
+      top: 28px;
+      right: 105px;
+    }
+    @include media-breakpoint-down(xss) {
+      display: block;
+      top: 28px;
+      right: 105px;
+    }
+    @include media-breakpoint-up(md) {
+      display: block;
+      top: 28px;
+      right: 187px;
+    }
+    @include media-breakpoint-up(xl) {
+      top: 65px;
+    }
+    @include media-breakpoint-up(xxl) {
+      right: 232px;
+    }
+    @media (hover: hover) {
+      &:hover, &:focus {color: black}
+    }
+
+    .header--dark & {
+      @media (hover: hover) {
+        &:hover, &:focus {
+          color: white;
+        }
+      }
+    }
+    .header--white & {
+      @media (hover: hover) {
+        &:hover, &:focus {
+          color: white;
+          @include media-breakpoint-up(md) {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
   &__space &__download {
     @include media-breakpoint-down(md) {
       right: 55px;

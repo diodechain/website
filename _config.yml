@@ -53,8 +53,8 @@ nav:
     url: "/teams/#devsecops"
   - title: Connected Products
     url: "/teams/#products"
-- title: Support
-  url: "https://support.diode.io/"
+- title: Docs
+  url: "https://docs.diode.io/"
   target: _blank
   sub:
   - title: Download
@@ -73,8 +73,11 @@ nav:
 # Other Links
 links:
   download:
-    title: Download
+    title: Get the App
     url: "/download/"
+  node:
+    title: Run a Node
+    url: "https://network.docs.diode.io/docs/"
   terms:
     title: Terms
     url: "/terms/"

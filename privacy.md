@@ -43,7 +43,7 @@ We obtain some data when You complete activities like browsing Our website or in
 ### 5. THIRD PARTIES THAT PROCESS YOUR DATA
 We work with the following third-party services and they may process Your data on Our behalf:
     
-- **Support:** Helpdocs
+- **Documentation:** Helpdocs
 - **Analytics:** Google
 - **Communications:** Telegram
 - **Invoicing & Payments:** Stripe

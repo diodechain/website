@@ -15,7 +15,7 @@ hero:
   subheading: Expand your team’s security perimeter
   buttons:
   - title: RUN A NODE
-    url: "https://support.diode.io/article/y9hxzsbhg8"
+    url: "https://network.docs.diode.io/docs/"
   image: hero/network.webp
 
 
@@ -54,7 +54,7 @@ features:
       Use the public network off the shelf, extend with your own relay node, or connect with us about private network options.
     buttons:
     - title: RUN A NODE
-      url: "https://support.diode.io/article/y9hxzsbhg8"
+      url: "https://network.docs.diode.io/docs/"
       target: _blank
     - title: HOW IT WORKS
       url: "/how-it-works/"
