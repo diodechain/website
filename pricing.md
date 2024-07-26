@@ -75,9 +75,9 @@ pricing:
 note:
   animated: false
   subheading: |
-    [Watch a video for how this works.](https://support.diode.io/article/pr3fytz8sq){:target="_blank"} 
+    Did you know there is a free plan?  <a href="https://app.docs.diode.io/docs/faq/what-can-i-do-with-the-free-version/">See here</a>.
 
-    Please connect with us if you don't see a plan that fits a community who would benefit from Diode's unique security! 
+    [Watch a video for how our plans work.](https://support.diode.io/article/pr3fytz8sq){:target="_blank"} 
     
   buttons:
   - title: Get in Touch
