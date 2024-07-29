@@ -23,7 +23,7 @@ The Diode team has been working on great new features and fixes this July for ou
 
 **Bug Fixes** 
 <br>
-The team addressed various bugs, such as updating the 'mark message as unread' feature in chat, removing the 'new message' notification in an active chat so that it now auto-clears, fixing a permissions issue that sometimes prevented devices from sending messages in private chats, ensuring directories with more than 50 files list the full contents in the application's file browser, and allowing systems to access the Invite Codes settings page for the Zone when enabling multiple join codes.
+The team addressed various bugs, such as updating the 'mark message as unread' feature in chat, removing the 'new message' notification in an active chat so that it now auto-clears, fixing a permissions issue that sometimes prevented devices from sending messages in private chats, and allowing systems to access the Invite Codes settings page for the Zone when enabling multiple join codes.
 
 If you want to read more about the specifics of each update, to go our [App Versions](https://support.diode.io/category/9gss923s33-diode-app-updates-version) page and check out the specific version details.
 
