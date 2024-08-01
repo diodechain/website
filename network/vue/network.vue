@@ -542,14 +542,14 @@
           <line v-if="points[baseIp] != undefined" v-for="point in points" v-bind:class="point.type" :key="point.ip"
             v-bind:x1="point.x" v-bind:y1="point.y" v-bind:x2="points[baseIp].x" v-bind:y2="points[baseIp].y" />
           <circle v-for="point in points" v-bind:class="point.type" @mouseover="tooltip(point, event, true)"
-            @click="tooltip(point, event, false)" :key="point.ip" v-bind:cx="point.x" v-bind:cy="point.y" r="8" />
+            @click="tooltip(point, event, false)" :key="point.ip" v-bind:cx="point.x" v-bind:cy="point.y" r="6" />
         </g>
         <g transform="translate(50, 550)" id="labels">
-          <circle class="self" r="8" cy="10" />
+          <circle class="self" r="6" cy="10" />
           <text dominant-baseline="middle" y="10" x="12">Current node</text>
-          <circle class="connected" r="8" cy="30" />
+          <circle class="connected" r="6" cy="30" />
           <text dominant-baseline="middle" y="30" x="12">Connected nodes</text>
-          <circle class="notConnected" r="8" cy="50" />
+          <circle class="notConnected" r="6" cy="50" />
           <text dominant-baseline="middle" y="50" x="12">Not connected nodes</text>
         </g>
       </svg>

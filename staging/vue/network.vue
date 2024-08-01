@@ -1141,15 +1141,15 @@
               :key="point.ip"
               v-bind:cx="point.x"
               v-bind:cy="point.y"
-              r="8"
+              r="6"
             />
           </g>
           <g transform="translate(100, 500)" id="labels">
-            <circle class="self" r="8" cy="10" />
+            <circle class="self" r="6" cy="10" />
             <text dominant-baseline="middle" y="10" x="10">Current node</text>
-            <circle class="connected" r="8" cy="30" />
+            <circle class="connected" r="6" cy="30" />
             <text dominant-baseline="middle" y="30" x="10">Connected nodes</text>
-            <circle class="notConnected" r="8" cy="50" />
+            <circle class="notConnected" r="6" cy="50" />
             <text dominant-baseline="middle" y="50" x="10">Not connected nodes</text>
           </g>
         </svg>

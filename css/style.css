@@ -10024,13 +10024,13 @@ body.prenet .network path {
 }
 
 body.prenet .network text {
-  font-size: 120%;
+  font-size: 80%;
 }
 
 body.prenet .network circle {
   fill: #3437e2;
   stroke: black;
-  stroke-width: 2px;
+  stroke-width: 1px;
 }
 
 body.prenet .network circle.self {
@@ -10043,12 +10043,12 @@ body.prenet .network circle.connected {
 
 body.prenet .network line {
   stroke: none;
-  stroke-width: 3px;
+  stroke-width: 1px;
 }
 
 body.prenet .network line.connected {
   stroke: #8ae234;
-  stroke-width: 3px;
+  stroke-width: 1px;
 }
 
 body.prenet .network circle.notConnected {
@@ -10058,6 +10058,7 @@ body.prenet .network circle.notConnected {
 body.prenet .tooltip {
   display: none;
   z-index: 10000;
+  font-size: medium;
   min-width: 350px;
   height: 82px;
   position: absolute;
@@ -11182,7 +11183,7 @@ body.network .network path {
 }
 
 body.network .network text {
-  font-size: 120%;
+  font-size: 80%;
   stroke: white;
   fill: white;
 }
@@ -11190,7 +11191,7 @@ body.network .network text {
 body.network .network circle {
   fill: #3437e2;
   stroke: black;
-  stroke-width: 2px;
+  stroke-width: 1px;
 }
 
 body.network .network circle.self {
@@ -11203,12 +11204,12 @@ body.network .network circle.connected {
 
 body.network .network line {
   stroke: none;
-  stroke-width: 3px;
+  stroke-width: 1px;
 }
 
 body.network .network line.connected {
   stroke: #8ae234;
-  stroke-width: 3px;
+  stroke-width: 1px;
 }
 
 body.network .network circle.notConnected {
@@ -11218,11 +11219,12 @@ body.network .network circle.notConnected {
 body.network .tooltip {
   display: none;
   z-index: 10000;
+  font-size: medium;
   min-width: 350px;
   height: 82px;
   position: absolute;
   will-change: transform;
-  bottom: 100px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
 }

@@ -806,11 +806,11 @@ body.prenet {
     line {
       &.connected {
         stroke: #8ae234;
-        stroke-width: 3px;
+        stroke-width: 1px;
       }
 
       stroke: none;
-      stroke-width: 3px;
+      stroke-width: 1px;
     }
 
     circle.notConnected {
