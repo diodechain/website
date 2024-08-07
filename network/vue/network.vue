@@ -545,6 +545,7 @@
             @click="tooltip(point, event, false)" :key="point.ip" v-bind:cx="point.x" v-bind:cy="point.y" r="6" />
         </g>
         <g transform="translate(50, 550)" id="labels">
+          <text dominant-baseline="middle" y="-10" x="-10" ref="num_nodes">Mapped nodes: </text>
           <circle class="self" r="6" cy="10" />
           <text dominant-baseline="middle" y="10" x="12">Current node</text>
           <circle class="connected" r="6" cy="30" />
@@ -553,6 +554,7 @@
           <text dominant-baseline="middle" y="50" x="12">Not connected nodes</text>
         </g>
       </svg>
+      <p style="font-size:x-large;color:white;z-index:99999999999999999;position:absolute;top:100px;left:100px;">{{ num_nodes }}</p>
     </div>
     <div class="tooltip vue-tooltip-theme" id="map-tooltip"></div>
     <div class="page-content"></div>
@@ -641,10 +643,14 @@ var Network = Vue.component("network", {
         console.log("network error:", err);
         return;
       }
+
       for (entry of ret) {
         let type = entry.connected ? "connected" : "notConnected";
         this.putPoint(entry.node_id, entry.node, type, entry.retries);
       }
+      setTimeout(() => {
+        this.$refs.num_nodes.textContent = "Mapped nodes: " + Object.keys(this.points).length + " ("+ (ret.length - Object.keys(this.points).length) + " hidden)"
+      }, 500);  
     },
 
     makeDraggable: function (svg) {
@@ -697,11 +703,11 @@ var Network = Vue.component("network", {
     },
 
     putPoint: function (node_id, serverObj, type, retries) {
+      
       resolveIP(serverObj[1], (location) => {
         let ip = location.ip;
         let lat = Math.round(location.latitude * 1000) / 1000;
-        let lon = Math.round(location.longitude * 1000) / 1000;
-
+        let lon = Math.round(location.longitude * 1000) / 1000;        
         let point = this.mapLatLon(lat, lon);
         point.ip = ip;
         if (serverObj.length > 5) {
