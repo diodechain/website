@@ -650,7 +650,7 @@ var Network = Vue.component("network", {
       }
       setTimeout(() => {
         this.$refs.num_nodes.textContent = "Mapped nodes: " + Object.keys(this.points).length + " ("+ (ret.length - Object.keys(this.points).length) + " hidden)"
-      }, 500);  
+      }, 1500);  
     },
 
     makeDraggable: function (svg) {
