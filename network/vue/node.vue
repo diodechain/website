@@ -279,9 +279,7 @@ var DiodeNode = Vue.component("diode_node", {
             let usage = await web3.eth.usage(nodeid)
             if (usage && usage["uptime"] != null) {
                 let seconds = Math.floor(this.number(usage["uptime"])/1000)
-                let hours = Math.floor(seconds / 3600) % 24
-                let days = Math.floor(seconds / (3600 * 24))
-                this.uptime = days + "d " + hours + "h " + (seconds % 60) + "s"
+                this.uptime = uptime(seconds)
             } else {
                 this.uptime = 'unable to load';
             }

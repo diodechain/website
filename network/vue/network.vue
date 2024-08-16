@@ -595,9 +595,11 @@ var Network = Vue.component("network", {
       let text = "Location: " + (point.city || "Unknown") + " (" + point.ip + ")</br>";
       text += "Version: " + point.version + " </br>";
 
-      if (point.uptime) text += "Uptime: " + point.uptime + "s uptime / ";
-
-      text += point.retries + " reconnects";
+      if (point.last_seen && point.type == "notConnected") text += "Last Seen: " + point.last_seen + "</br>";
+      if (point.uptime && point.type != "notConnected") {
+        text += "Uptime: " + point.uptime + " / ";
+        text += point.retries + " reconnects";
+      }
 
       let tooltipContent = `<div class="tooltip-inner">
                                 <a target="_blank" href="${getAddressLink(point.node_id)}">${point.name}</a>
@@ -645,7 +647,7 @@ var Network = Vue.component("network", {
 
       for (entry of ret) {
         let type = entry.connected ? "connected" : "notConnected";
-        this.putPoint(entry.node_id, entry.node, type, entry.retries);
+        this.putPoint(entry.node_id, entry.node, type, entry.retries, entry);
       }
       setTimeout(() => {
         this.$refs.num_nodes.textContent = "Total nodes: " + Object.keys(this.points).length + " public, "+ (ret.length - Object.keys(this.points).length) + " private"
@@ -701,8 +703,7 @@ var Network = Vue.component("network", {
       // svg.addEventListener('mouseleave', endDrag);
     },
 
-    putPoint: function (node_id, serverObj, type, retries) {
-      
+    putPoint: function (node_id, serverObj, type, retries, extra) {
       resolveIP(serverObj[1], (location) => {
         let ip = location.ip;
         let lat = Math.round(location.latitude * 1000) / 1000;
@@ -716,9 +717,7 @@ var Network = Vue.component("network", {
             extra[key] = value;
           }
           point.tickets = web3.utils.hexToNumberString(extra["tickets"]);
-          point.uptime = Math.round(
-            web3.utils.hexToNumber(extra["uptime"]) / 1000
-          );
+          point.uptime = uptime(Math.floor(web3.utils.hexToNumber(extra["uptime"]) / 1000));
         } else {
           point.version = "ExDiode <= 2.3";
           point.tickets = false;
@@ -729,6 +728,11 @@ var Network = Vue.component("network", {
         point.node_id = node_id;
         point.name = resolveName(node_id);
         point.retries = web3.utils.hexToNumber(retries);
+        if (extra && type == "notConnected") {
+          point.last_seen = formatDateTime(extra.last_seen);
+        } else {
+          point.last_seen = "Now"
+        }
 
         let dist = 15;
         let key = Math.floor(point.x / dist) + "+" + Math.floor(point.y / dist);

@@ -296,6 +296,12 @@
                     return hours + ':' + minutes + ':' + seconds + ' ' + year + '/' + month + '/' + day;
             }
         }
+
+        function uptime(seconds) {
+            let hours = Math.floor(seconds / 3600) % 24
+            let days = Math.floor(seconds / (3600 * 24))
+            return days + "d " + hours + "h " + (seconds % 60) + "s"
+        }
     </script>
 
 </body>
