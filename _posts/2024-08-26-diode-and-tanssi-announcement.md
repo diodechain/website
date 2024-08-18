@@ -6,7 +6,7 @@ date: 2024-08-16 08:00
 categories: [Press]
 tags: [Diode, Diode Drive, Press, Blockchain, Self-Custody, Zero Trust]
 author: Hans Rempel
-image: tanssixdiode.jpg
+image: tanssi&diode.jpeg
 
 ---
 
