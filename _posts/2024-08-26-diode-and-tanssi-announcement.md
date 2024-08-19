@@ -12,7 +12,7 @@ image: assets/img/blog/tanssi&diode.jpeg
 
 Diode and Tanssi are exploring a partnership that will bring Diode-enabled secure communications to Tanssi-enabled appchains, thereby reducing the effort to deploy industry-ready appchains. 
 
-A growing number of organizations are deploying blockchain projects, but the amount of effort to integrate them securely with other blockchains, and with existing infrastructure, is high. A collaboration between Diode and Tanssi would make this process both easy and secure. 
+A growing number of organizations are deploying blockchain projects, but the amount of effort to integrate them securely with other blockchains, and with existing infrastructure, is high. A collaboration between Diode and Tanssi would make the process of bringing decentralized communication to appchain deployments both easy and secure. 
 
 ## Diode: Simplifying Decentralized Communications
 
@@ -28,7 +28,7 @@ Tanssi's mission is to simplify these complexities, streamlining the deployment 
 
 ## Tanssi x Diode: Shaping the Future of Decentralized Digital Environments
 
-Diode and Tanssi have the potential to collaborate on deploying a proof-of-concept (POC) appchain that combines Tanssi’s easy blockchain deployment with Diode’s secure communications. This POC is an EVM appchain based on Moonbeam that could evaluate how a rapidly deployable blockchain can securely integrate with existing Web2 infrastructure using zero trust networking. This off-the-shelf integration would allow industry to tune, deploy, and iterate the digital environments of the future. It would create the ultimate form of 'self custody,' where integrations with outside vendors and cloud assets can be automated and secured, enabling enterprises to exercise full control of their digital assets.
+Diode and Tanssi have the potential to collaborate on deploying a proof-of-concept (POC) appchain that combines Tanssi’s easy blockchain deployment with Diode’s secure communications, enabling Diode's capabilities to all Tanssi appchains. This POC is an EVM appchain based on Moonbeam that could evaluate how a rapidly deployable blockchain can securely integrate with existing Web2 infrastructure using zero trust networking. This off-the-shelf integration would allow industry to tune, deploy, and iterate the digital environments of the future. It would create the ultimate form of 'self custody,' where integrations with outside vendors and cloud assets can be automated and secured, enabling enterprises to exercise full control of their digital assets.
 
 Diode is also joining "Let's Forkin Dance," Tanssi's incentivized testnet campaign that features both on-chain and off-chain quests. Discover their quests and join the adventure at [lfd.tanssi.network/diode](https://lfd.tanssi.network/diode).  (Readers who may be in a blocked region can access the campaign via the [Diode Community Zone](https://diode.io/joinzone/#tB0kOiAdLwJs7CGXhZXtWy4VlVWhqb094hgKktTOCkJFF-8VMA91SoferyZv) “Tanssi LFD” bookmark).
 
