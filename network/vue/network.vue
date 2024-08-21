@@ -545,7 +545,7 @@
             @click="tooltip(point, event, false)" :key="point.ip" v-bind:cx="point.x" v-bind:cy="point.y" r="6" />
         </g>
         <g transform="translate(50, 550)" id="labels">
-          <text dominant-baseline="middle" y="-10" x="-10" ref="num_nodes">Total nodes: </text>
+          <text dominant-baseline="middle" y="-10" x="-10" ref="num_nodes">Total nodes: <% total_nodes %></text>
           <circle class="self" r="6" cy="10" />
           <text dominant-baseline="middle" y="10" x="12">Current node</text>
           <circle class="connected" r="6" cy="30" />
@@ -566,6 +566,8 @@ var Network = Vue.component("network", {
   data: () => {
     return {
       base: "",
+      total_nodes: "",
+      network: [],
       nodes: {},
       points: {},
       collisionMap: {},
@@ -589,6 +591,11 @@ var Network = Vue.component("network", {
   },
   mounted: function () {
     this.makeDraggable(this.$refs.svg);
+  },
+  watch: {
+    points: function() {
+        this.total_nodes = Object.keys(this.points).length + " public, "+ (this.network.length - Object.keys(this.points).length) + " private"
+    }
   },
   methods: {
     tooltip(point, event, hovered) {
@@ -639,19 +646,16 @@ var Network = Vue.component("network", {
       this.baseIp = ret[1];
       this.putPoint(base, ret, "self", 0);
       try {
-        ret = await web3.eth.network();
+        this.network = await web3.eth.network();
       } catch (err) {
         console.log("network error:", err);
         return;
       }
 
-      for (entry of ret) {
+      for (entry of this.network) {
         let type = entry.connected ? "connected" : "notConnected";
         this.putPoint(entry.node_id, entry.node, type, entry.retries, entry);
       }
-      setTimeout(() => {
-        this.$refs.num_nodes.textContent = "Total nodes: " + Object.keys(this.points).length + " public, "+ (ret.length - Object.keys(this.points).length) + " private"
-      }, 1500);  
     },
 
     makeDraggable: function (svg) {
