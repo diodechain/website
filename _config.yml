@@ -91,11 +91,12 @@ links:
 
 # Social Networks
 social:
+  discord: "https://discord.gg/qdGCAKJdHs"
   youtube: "https://www.youtube.com/channel/UC3b5voADiipUmq1Q-vtPKsA"
-  telegram: "https://t.me/diode_chain"
+  # telegram: "https://t.me/diode_chain"
   twitter: "https://twitter.com/diode_chain"
   github: "https://github.com/diodechain"
-  matrix: "https://matrix.to/#/#diodechain:matrix.org"
+  # matrix: "https://matrix.to/#/#diodechain:matrix.org"
 
 
 # Download Links

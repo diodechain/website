@@ -26,7 +26,7 @@ thanks:
   - title: More Articles
     link: https://support.diode.io/category/njb9fd8sl9-diode-drive
   - title: Contact Us!
-    link: https://t.me/diode_chain
+    link: https://discord.gg/qdGCAKJdHs
 ---
 
 {%- include hero.liquid -%}
