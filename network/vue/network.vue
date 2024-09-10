@@ -539,19 +539,23 @@
           <path
             d="M526.514546,330.272084L526.043011,327.042094L523.697231,329.882600L524.339321,332.390830L525.598564,333.144597L526.514546,330.272084Z M504.545742,294.693876L503.713031,298.269753L497.255724,301.616249L494.637487,299.782003L495.516634,304.587806L490.859115,303.505116L487.263194,304.420930L487.542747,307.462380L491.781403,309.049348L493.826991,311.119300L496.689022,315.350948L496.160874,323.169113L494.726634,325.471030L495.832090,326.950935L500.937567,328.669016L501.945850,327.853307L505.066581,329.556861L508.281618,329.069932L508.598937,326.794608L512.638659,325.559419L518.108753,326.590655L520.621361,324.433687L520.938679,322.762639L519.435357,322.271911L518.720888,319.255765L519.682447,318.057316L518.866218,316.570988L518.980591,315.445861L518.027918,313.688299L516.703607,314.317879L516.744597,312.493530L519.947453,309.544379L520.708932,308.842660L521.060935,305.890936L522.463214,303.014738L518.466489,302.234417L517.157656,301.120001L516.357337,301.210175L515.736888,300.839529L513.310561,298.882307L511.887213,299.217952L508.662286,295.424381L506.971353,293.803166L504.545742,294.693876Z "
             data-id="FR" data-name="France" id="FR" />
-          <line v-if="points[baseIp] != undefined" v-for="point in points" v-bind:class="point.type" :key="point.ip"
-            v-bind:x1="point.x" v-bind:y1="point.y" v-bind:x2="points[baseIp].x" v-bind:y2="points[baseIp].y" />
+          <!--
+            <line v-if="points[baseIp] != undefined" v-for="point in points" v-bind:class="point.type" :key="point.ip"
+              v-bind:x1="point.x" v-bind:y1="point.y" v-bind:x2="points[baseIp].x" v-bind:y2="points[baseIp].y" />
+          -->
           <circle v-for="point in points" v-bind:class="point.type" @mouseover="tooltip(point, event, true)"
-            @click="tooltip(point, event, false)" :key="point.ip" v-bind:cx="point.x" v-bind:cy="point.y" r="6" />
+            @click="tooltip(point, event, false)" :key="point.ip" v-bind:cx="point.x" v-bind:cy="point.y" r="4" />
         </g>
         <g transform="translate(50, 550)" id="labels">
           <text dominant-baseline="middle" y="-10" x="-10" ref="num_nodes">Total nodes: <% total_nodes %></text>
-          <circle class="self" r="6" cy="10" />
-          <text dominant-baseline="middle" y="10" x="12">Current node</text>
-          <circle class="connected" r="6" cy="30" />
-          <text dominant-baseline="middle" y="30" x="12">Connected nodes</text>
-          <circle class="notConnected" r="6" cy="50" />
-          <text dominant-baseline="middle" y="50" x="12">Not connected nodes</text>
+          <!-- removing current node for now
+            <circle class="self" r="6" cy="10" />
+            <text dominant-baseline="middle" y="10" x="12">Current node</text>
+          -->
+          <circle class="connected" r="6" cy="10" />
+          <text dominant-baseline="middle" y="10" x="12">Connected nodes</text>
+          <circle class="notConnected" r="6" cy="30" />
+          <text dominant-baseline="middle" y="30" x="12">Not connected nodes</text>
         </g>
       </svg>
     </div>

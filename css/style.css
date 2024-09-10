@@ -10028,13 +10028,13 @@ body.prenet .network text {
 }
 
 body.prenet .network circle {
-  fill: #3437e2;
+  fill: #8ae234;
   stroke: black;
   stroke-width: 1px;
 }
 
 body.prenet .network circle.self {
-  fill: #3437e2;
+  fill: #8ae234;
 }
 
 body.prenet .network circle.connected {
@@ -11189,13 +11189,13 @@ body.network .network text {
 }
 
 body.network .network circle {
-  fill: #3437e2;
-  stroke: black;
-  stroke-width: 1px;
+  fill: #8ae234;
+  stroke: white;
+  stroke-width: 0.5px;
 }
 
 body.network .network circle.self {
-  fill: #3437e2;
+  fill: #8ae234;
 }
 
 body.network .network circle.connected {
