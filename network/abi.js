@@ -486,6 +486,12 @@ function NewWeb3(url) {
             inputFormatter: [(node_id) => node_id, (from) => from, (to) => to, (stepping) => stepping]
         },
         {
+            name: 'connectivity',
+            call: 'dio_proxy|dio_checkConnectivity',
+            params: 1,
+            inputFormatter: [(node_id) => node_id]
+        },
+        {
             name: 'getNode',
             call: 'dio_getNode',
             params: 1,

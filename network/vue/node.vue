@@ -6,7 +6,7 @@
         </div>
         <div v-if="node != 'invalid'" class="page-content">
             <div style="display: flex">
-                <div class="headtable" style="width: 45%;">
+                <div class="headtable" v-bind:style="{width: typeof (usageHistory) != 'string' ? '45%' : '100%'}">
                     <div class="doclet">
                         <h2>Name</h2>
                         <div style="margin-top: 11px">
@@ -23,6 +23,31 @@
                         <h2>Address</h2>
                         <div style="margin-top: 11px">
                             <% nodeid %>
+                        </div>
+                    </div>
+                    <div class="doclet">
+                        <h2>Connectivity</h2>
+                        <div v-if="connectivity == 'loading'" style="margin-top: 11px">
+                            loading
+                        </div>
+                        <div v-else-if="connectivity == null">
+                            <h3 style="margin-bottom: 0; color: red;">firewalled</h3>
+                            Couldn't contact node for connectivity status on port <b>8545</b>. Ensure the node is running and accessible on <% node[1] %>:8545.
+                            Check your firewall settings if you have them enabled.
+                        </div>
+                        <div v-else-if="connectivity.status.failed_ports.length == 0">
+                            <h3 style="color: green;">Connected</h3>
+                        </div>
+                        <div v-else>
+                            <h3 style="color: orange;">Partially Connected</h3>
+                            <ul style="margin: 0.8em;">
+                                <li v-for="port in connectivity.status.failed_ports">
+                                    Port <% port[0] %>: <span style="color: red;">failed</span>
+                                </li>
+                            </ul>
+
+                            <p>Please check your firewall settings for the ports listed above.</p>
+                            <p>Last check: <% formatDateTime(number(connectivity.timestamp)) %></p>
                         </div>
                     </div>
                     <div class="doclet">
@@ -51,8 +76,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="headtable" style="width: 55%">
-                    <svg v-if="typeof (usageHistory) != 'string'" id="head" xmlns="http://www.w3.org/2000/svg"
+                <div v-if="typeof (usageHistory) != 'string'" class="headtable" style="width: 55%">
+                    <svg id="head" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" font-family="Helvetica, Arial"
                         width="750" height="391" viewBox="-65 -35 672 436">
 
@@ -191,6 +216,7 @@ var DiodeNode = Vue.component("diode_node", {
     props: { nodeid: String },
     data: () => {
         return {
+            connectivity: 'loading',
             balance: 'loading',
             node: 'loading',
             nodeid: this.nodeid,
@@ -268,7 +294,7 @@ var DiodeNode = Vue.component("diode_node", {
                 for (let [key, value] of node[5]) {
                     extra[key] = value;
                 }
-                console.log(extra)
+                console.log("NodeExtra:",extra)
             } else {
                 this.node = 'unable to load';
             }
@@ -276,7 +302,14 @@ var DiodeNode = Vue.component("diode_node", {
             let from = Math.floor(Date.now() / 1000) - (60 * 60 * 8)
             let to = Math.floor(Date.now() / 1000)
 
-            let usage = await web3.eth.usage(nodeid)
+            let connectivity = await web3.eth.connectivity(nodeid)
+            console.log("connectivity", connectivity)
+            if (connectivity) {
+                connectivity.status.failed_ports = Object.entries(connectivity.status.ports).filter(([port, state]) => state === false)
+            }
+            this.connectivity = connectivity;
+
+            let usage = this.connectivity ? await web3.eth.usage(nodeid) : null
             if (usage && usage["uptime"] != null) {
                 let seconds = Math.floor(this.number(usage["uptime"])/1000)
                 this.uptime = uptime(seconds)
@@ -287,17 +320,17 @@ var DiodeNode = Vue.component("diode_node", {
             if (usage && usage["name"] != null) {
                 this.name = usage["name"];
             } else {
-                this.uptime = extra["name"] || 'unable to load';
+                this.name = extra["name"] || 'unable to load';
             }
 
-            let traffic = await web3.eth.traffic(nodeid, 1284);
+            let traffic = this.connectivity ? await web3.eth.traffic(nodeid, 1284) : null;
             if (traffic) {
                 this.traffic = traffic;
             } else {
                 this.traffic = 'unable to load';
             }
 
-            let prev_traffic = await web3.eth.traffic2(nodeid, 1284, this.number(this.traffic["epoch"]) - 1)
+            let prev_traffic = this.connectivity ? await web3.eth.traffic2(nodeid, 1284, this.number(this.traffic["epoch"]) - 1) : null;
             if (prev_traffic) {
                 this.prev_traffic = prev_traffic;
             } else {
@@ -305,8 +338,8 @@ var DiodeNode = Vue.component("diode_node", {
                 return;
             }
 
-            let usageHistory = Object.entries(await web3.eth.usageHistory(nodeid, from, to, 60 * 5)).sort();
-            console.log(usageHistory)
+            let usageHistory = this.connectivity ? Object.entries(await web3.eth.usageHistory(nodeid, from, to, 60 * 5)).sort() : null;
+            console.log("usageHistory", usageHistory)
             let chartData = usageHistory.map(([time, value]) => ({ time, value: this.number(value["edge_traffic_in"]) + this.number(value["edge_traffic_out"]) }));
             this.chart = {
                 maxTime: Math.max(...chartData.map(({ time }) => time)),
