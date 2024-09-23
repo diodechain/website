@@ -31,9 +31,18 @@
                             loading
                         </div>
                         <div v-else-if="connectivity == null">
-                            <h3 style="margin-bottom: 0; color: red;">firewalled</h3>
+                            <h3 style="margin-bottom: 0; color: red;">Connection Failed</h3>
                             Couldn't contact node for connectivity status on port <b>8545</b>. Ensure the node is running and accessible on <% node[1] %>:8545.
                             Check your firewall settings if you have them enabled.
+                        </div>
+                        <div v-else-if="typeof(connectivity.status) == 'string'">
+                            <h3 style="color: orange;">Partially Connected</h3>
+                            <p>Status: <% connectivity.status %>. Please reload this page to check again later.</p>
+                            <p>Last check: <% formatDateTime(number(connectivity.timestamp)) %></p>
+
+                        </div>
+                        <div v-else-if="connectivity.status.failed_ports.length == 0">
+                            <h3 style="color: green;">Connected</h3>
                         </div>
                         <div v-else-if="connectivity.status.failed_ports.length == 0">
                             <h3 style="color: green;">Connected</h3>
@@ -305,7 +314,9 @@ var DiodeNode = Vue.component("diode_node", {
             let connectivity = await web3.eth.connectivity(nodeid)
             console.log("connectivity", connectivity)
             if (connectivity) {
-                connectivity.status.failed_ports = Object.entries(connectivity.status.ports).filter(([port, state]) => state === false)
+                if (typeof(connectivity.status) != 'string') {
+                    connectivity.status.failed_ports = Object.entries(connectivity.status.ports).filter(([port, state]) => state === false)
+                }
             }
             this.connectivity = connectivity;
 
