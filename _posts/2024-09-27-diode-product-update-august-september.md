@@ -33,12 +33,6 @@ The Diode team has published some great updates during the months of August and 
 - **Users Can Remove Themselves From a Zone** 
 <br> In Zone Settings there's now a "Leave Zone" button for users to completely remove themselves from the Zone, both unlinking the Zone and fully removing the Zone membership for the user.
 
-- **Summarize Team Members in Zone Settings** 
-<br> The “Team Members” Zone Settings item now shows the total number of members (of all roles) in parentheses. The summary block will only show the names of the first 10 members - clicking the summary block will open the complete list.
-
-- **Order Team Members by Last Chat Message** 
-<br> Team Members in the Quick Access bar within the Zone, and other lists, are now listed by last-chat interaction first. This is helpful, especially in large Zones, to pick conversations back up.
-
 - **Allow Changing Member Role When Other Transactions Are Processing** 
 <br>The App now allows an admin or owner to update Member Roles even when other transactions are processing, making it much faster to modify roles as well as support modifying many member roles one after the other if desired.
 
@@ -46,23 +40,14 @@ The Diode team has published some great updates during the months of August and 
 - **Auto Re-Direct to New Zone** 
 <br>The system will now pop up a notification when it has successfully joined a Zone, allowing you to go to the new Zone or continue working.
 
-- **New Zones Appear At Top**
-<br>When joining or adding a new Zone, it now appears at the top of the Zone selector bar for easier access, instead of being placed at the bottom.
+- **“Banners** 
+<br> The sign up process is even more simple and now shows an “onboarding banner” to prompt users to complete onboarding tasks. The "You Are Joining a Zone" banner now stays visible the entire time the new Zone is syncing until it fully appears on the side bar/Zone list.
 
-- **“You Are Joining a Zone” Banner** 
-<br>The "You Are Joining a Zone" banner now stays visible the entire time the new Zone is syncing until it fully appears on the side bar/Zone list.
-
-- **Onboarding Banner** 
-<br>The sign up process is even more simple and now shows an “onboarding banner” to prompt users to complete onboarding tasks.
-
-- **Show Better Name Validation When Signing Up** 
-<br>In the past if a user typed a username that was too short, the app would just tell them to “try again." Now, if the username is not accepted, the app tells the user specifically why the signup process didn’t work. 
+**“Notification Preferences” Setting for Mobile** 
+<br> Mobile now has a "Notification Preferences" setting to enable or disable push notifications for each device. Notifications are off by default, in Beta, and currently only supported on Android. A Play Store update to v1.12.10 is required.
 
 **Notation of Current Device**
 <br> Accounts with multiple linked devices can now see which device they are currently using in the Account Details page. The device you are viewing the page from will be labeled with "(This Device)" next to it.
-
-**Show “Restarting” When Switching Profiles or Updating The App** 
-<br>A “Restarting” splash screen is now shown when switching profiles or after clicking “Update” on the app so users have an idea of what their App is doing.
 
 **Load Exiting Account If Username is Entered** 
 <br>If a user enters an existing username on the Sign Up or Log In pages, the app now loads the account directly, simplifying multi-profile switching.
@@ -70,17 +55,12 @@ The Diode team has published some great updates during the months of August and 
 **File Copies Instead of Moving** 
 <br>In the past, when you right-clicked a file on Desktop and selected "Open With Diode" when using the OS share-file function, the file clicked would be moved into the Diode Zone you selected. Now, it just copies the file to Zone you select.
 
-**Long File Names More Presentable** 
-<br>We now use an ellipse to shorten file names that are lengthy.
-
 **Extend API with Polling Features** 
 <br> The API has been extended to include channel team and message polling which allows remotely connected integration to “catch up” with any messages it may have missed during any outages of the connected peer.
 
 **Doc Link Updates** 
 <br> The doc links in the app have been updated to the new https://docs.diode.io site.
 
-**“Notification Preferences” Setting for Mobile** 
-<br> Mobile now has a "Notification Preferences" setting to enable or disable push notifications for each device. Notifications are off by default, in Beta, and currently only supported on Android. A Play Store update to v1.12.10 is required.
 
 **Bug Fixes** 
 <br>
