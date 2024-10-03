@@ -10,10 +10,10 @@ image: 	assets/img/blog/Product Update.jpeg
 
 ---
 
-The Diode team has published some great updates during the months of August and September that are now running on the Diode App (v1.12.3 - 1.13.0).
+The Diode team has published some great updates during the months of August and September released in Diode app v1.12.3 - 1.13.0.
 
-**Enable ZTN (Web3 Regional Tunnels) in Free Zones**
-<br>Due to the increasing challenges with access websites securely in many world regions, we’ve decided to enable [Diode ZTN - Web3 regional tunnels](https://app.docs.diode.io/docs/features/regional-tunnels/) - in all free Zones. This currently works on desktop operating and Android systems that have the [Brave Browser](https://app.docs.diode.io/docs/faq/why-does-the-diode-app-use-the-brave-browser-for-some-bookmarks/) installed. 
+**Free Zones now have access to ZTN (Web3 Regional Tunnels)**
+<br><br>Due to the increasing challenges with access websites securely in many world regions, we’ve decided to enable [Diode ZTN - Web3 regional tunnels](https://app.docs.diode.io/docs/features/regional-tunnels/) - in all free Zones. This currently works on desktop operating and Android systems that have the [Brave Browser](https://app.docs.diode.io/docs/faq/why-does-the-diode-app-use-the-brave-browser-for-some-bookmarks/) installed. 
 
 **Bookmark Updates:**
 - **Detect and Repair Broken Bookmark Connections**
@@ -40,25 +40,26 @@ The Diode team has published some great updates during the months of August and 
 - **Auto Re-Direct to New Zone** 
 <br>The system will now pop up a notification when it has successfully joined a Zone, allowing you to go to the new Zone or continue working.
 
-- **“Banners** 
-<br> The sign up process is even more simple and now shows an “onboarding banner” to prompt users to complete onboarding tasks. The "You Are Joining a Zone" banner now stays visible the entire time the new Zone is syncing until it fully appears on the side bar/Zone list.
+- **Banners** 
+<br> The sign up process was simplified and now shows an “onboarding banner” to prompt users to complete onboarding tasks. The "You Are Joining a Zone" banner now stays visible the entire time the new Zone is syncing until it fully appears on the side bar/Zone list.
 
-**“Notification Preferences” Setting for Mobile** 
+**Other Updates:**
+- **“Notification Preferences” Setting for Mobile** 
 <br> Mobile now has a "Notification Preferences" setting to enable or disable push notifications for each device. Notifications are off by default, in Beta, and currently only supported on Android. A Play Store update to v1.12.10 is required.
 
-**Notation of Current Device**
+- **Notation of Current Device**
 <br> Accounts with multiple linked devices can now see which device they are currently using in the Account Details page. The device you are viewing the page from will be labeled with "(This Device)" next to it.
 
 **Load Exiting Account If Username is Entered** 
 <br>If a user enters an existing username on the Sign Up or Log In pages, the app now loads the account directly, simplifying multi-profile switching.
 
-**File Copies Instead of Moving** 
+- **File Copies Instead of Moving** 
 <br>In the past, when you right-clicked a file on Desktop and selected "Open With Diode" when using the OS share-file function, the file clicked would be moved into the Diode Zone you selected. Now, it just copies the file to Zone you select.
 
-**Extend API with Polling Features** 
+- **Extend API with Polling Features** 
 <br> The API has been extended to include channel team and message polling which allows remotely connected integration to “catch up” with any messages it may have missed during any outages of the connected peer.
 
-**Doc Link Updates** 
+- **Doc Link Updates** 
 <br> The doc links in the app have been updated to the new https://docs.diode.io site.
 
 
