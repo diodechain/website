@@ -12,11 +12,11 @@ image: 	assets/img/blog/vpn-protect-information-blog.jpg
 
 When it comes to privacy, many people turn to VPNs to protect their information and data. Unfortunately, traditional VPNs have a few shortcomings that most people aren't aware of. 
 
-Diode addresses each of these main issues.
+Diode addresses each of these key issues.
 
 ### Four Key Issues with VPN:
 
-**VPN Servers Have Access to Some of You Information**
+**VPN Servers Have Access to Some of Your Information**
 
 Every VPN service has access to two important pieces of information about you: 1) What websites you visit 2) Who you are (via your billing data).  Sometimes, depending on the security of the websites you visit, the VPN service will also have access to more information than that.
 
