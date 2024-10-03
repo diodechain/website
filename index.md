@@ -108,7 +108,7 @@ developers:
   content: |
     You need access to various applications when working remotely - from home or around the world.
     
-    GMail, Dropbox, and the like just don’t have military-grade security like we provide. 
+    GMail, Dropbox, and the like just don’t have end-to-end encrypted security like we provide. 
 
     With Diode, you can tunnel directly to your tools, or ensure you are always accessing them from a "safe" region - all from bookmark links built into the app.
   buttons:
@@ -155,7 +155,7 @@ solutions:
       title: Contact Sales
       class: "btn--blank btn--arrow"
       url: "https://contactdiode.paperform.co/"
-  - title: Military-grade security
+  - title: Highly secure (256bit E2EE)
     icon: icons/cli.svg
     content: From the beginning, Diode has been designed using world-changing technology to ensure privacy and security in your communications and sharing. No compromises.
     button:
