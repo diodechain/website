@@ -50,7 +50,7 @@ The Diode team has published some great updates during the months of August and 
 - **Notation of Current Device**
 <br> Accounts with multiple linked devices can now see which device they are currently using in the Account Details page. The device you are viewing the page from will be labeled with "(This Device)" next to it.
 
-**Load Exiting Account If Username is Entered** 
+- **Load Exiting Account If Username is Entered** 
 <br>If a user enters an existing username on the Sign Up or Log In pages, the app now loads the account directly, simplifying multi-profile switching.
 
 - **File Copies Instead of Moving** 
