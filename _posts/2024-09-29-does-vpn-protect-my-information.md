@@ -59,7 +59,7 @@ The Diode connection from your computers blends into the background of all the o
 
 **Browsing-specific Tunneling**
 
-The Diode App doesn't take over your network connection.  Instead, it simply connects each Bookmarked link in its own "TLS" tunnel without impacting any of your other Internet connectivity.  Just like a VPN connection, that specific bookmarked browsing session may be somewhat slower, but the reset of your connections will remain fast.
+The Diode App doesn't take over your network connection.  Instead, it simply connects each Bookmarked link in its own "TLS tunnel" without impacting any of your other Internet connectivity.  Just like a VPN connection, that specific bookmarked browsing session may be somewhat slower, but the rest of your connections will remain fast.
 
 **Secure Infrastructure**
 
