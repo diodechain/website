@@ -8,14 +8,14 @@ permalink: /download/thanks/
 hero:
   class: hero--right
   heading: Thanks
-  subheading: Thank you for downloading Diode Drive!
+  subheading: Thank you for downloading Diode Collab!
   scroll: "#thanks"
   image: hero/download.webp
 
 thanks:
   title: Here are some links to help you get started
   items:
-  - title: Setup Diode Drive
+  - title: Setup Diode Collab
     link: https://support.diode.io/article/d3eguu0pem-setup-diode-drive
   - title: Share a File or Folder
     link: https://support.diode.io/article/v428b36e31

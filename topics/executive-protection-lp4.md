@@ -137,7 +137,7 @@ developers:
     url: "https://contactdiode.paperform.co/"
   image:
     src: story/network-full.webp
-    alt: Diode App
+    alt: Diode Collab&trade;
 
 
 pricing:

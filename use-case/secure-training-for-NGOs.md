@@ -37,9 +37,9 @@ video:
   video: 
     src: "https://player.vimeo.com/video/826987217"
   content: |
-    Traditional secure communication solutions, like VPN, are costly to setup and maintain. Modern cloud storage solutions don't have the level of security and privacy required. If you need to share sensitive files and data across your team, Diode Drive may be the perfect solution.
+    Traditional secure communication solutions, like VPN, are costly to setup and maintain. Modern cloud storage solutions don't have the level of security and privacy required. If you need to share sensitive files and data across your team, Diode Collab may be the perfect solution.
   buttons:
-  - title: Download App
+  - title: Download Diode Collab
     url: "/download/#app"
 
 ---

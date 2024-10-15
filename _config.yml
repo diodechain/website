@@ -32,7 +32,7 @@ nav:
 - title: Solutions
   url: "/solutions/"
   sub:
-  - title: App
+  - title: Diode Collab
     url: "/solutions/app/"
   - title: CLI
     url: "/solutions/cli/"

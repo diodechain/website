@@ -1,5 +1,5 @@
 ---
-title: Diode App
+title: Diode Collab&trade;
 layout: page
 class: header--white
 permalink: /solutions/app/
@@ -11,7 +11,7 @@ redirect_from:
 hero:
   class: hero--rounded hero--smaller
   animated: true
-  heading: Team collaboration on&nbsp;Diode&nbsp;
+  heading: Protected team collaboration
   subheading: Secure collaboration around IT/OT/IP work product
   buttons:
   - title: Request Demo
@@ -26,9 +26,9 @@ story:
   title: Operate protected
   heading: For teams
   content: |
-    Diode creates secure tunnels between your team members that form a "security perimeter" (a Zone).  Each Zone has built-in collaboration and visualization capabilities. It is a decentralized “local first” solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
+    Diode Collab&trade; creates secure tunnels between your team members in a "security perimeter" (a Zone).  Each Zone has built-in chat, file, and web browsing capabilities. It is a decentralized “local first” solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
   
-    The Diode network ensures that not even Diode has access to your team’s communications, information, or activity.
+    The Diode Network&trade; ensures that not even Diode has access to your team’s communications, information, or activity.
   buttons:
   - title: See how teams are using Diode
     class: btn--blank btn--arrow
@@ -49,7 +49,7 @@ features:
   list:
   - title: Secure Chat and Files
     content: |
-      Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of Diode. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available. 
+      Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of Diode Collab. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available. 
 
   - title: Use for
     content: |
@@ -68,19 +68,19 @@ features:
 
   - title: Connect From Anywhere
     content: |
-      Collaborating with Diode is like using a VPN and collaboration tool built in one.  This allows your team to connect from anywhere in the world. And, if they happen to be in the same office, their devices direct-connect to carry on the conversation without even touching the Internet.
+      Collaborating with Diode Collab is like using a VPN and collaboration tool built in one.  This allows your team to connect from anywhere in the world. And, if they happen to be in the same office, their devices direct-connect to carry on the conversation without even touching the Internet.
       
   -
 
   - title: Secure Web Portals
     content: |
-      Sometimes you need to share, or collect, information with people who don't have Diode installed - via a share link accessible from any web browser. This is a great way to exchange information securely with customers, partners, and vendors when operating in a regulated industry. Creating a secure web portal can be done with a single click on any file or folder you'd like to make available.
+      Sometimes you need to share, or collect, information with people who don't have Diode Collab installed - via a share link accessible from any web browser. This is a great way to exchange information securely with customers, partners, and vendors when operating in a regulated industry. Creating a secure web portal can be done with a single click on any file or folder you'd like to make available.
       
   -
 
   - title: Protected Identities
     content: |
-      Diode doesn’t require any personally identifiable information from you or your team to sign up and get going - all a Diode account requires is a pseudo anonymous username. Whether your team members use a single device or multiple linked devices, they can all be managed via self-custody credentials that are never stored on a server. 
+      Diode Collab doesn’t require any personally identifiable information from you or your team to sign up and get going - all a Diode account requires is a pseudo anonymous username. Whether your team members use a single device or multiple linked devices, they can all be managed via self-custody credentials that are never stored on a server. 
 
 
 ### Box: Our solutions
@@ -92,7 +92,7 @@ solutions:
   solutions:
   - title: CLI
     icon: "icons/cli.svg"
-    content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone to secure autonomous systems, and/or in concert with team members using the Diode App.
+    content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone to secure autonomous systems, and/or in concert with team members using Diode Collab.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"

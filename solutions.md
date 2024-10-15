@@ -32,7 +32,7 @@ app:
   heading: App
   icon: icons/app.svg
   content: |
-    The Diode App is a small application for computers and mobile devices that connects teams to each other, their information, and their assets. 
+    Diode Collab is a small application for computers and mobile devices that connects teams to each other, their information, and their assets. 
     
     It’s easy for non-techies to install and use and teammates can collaborate with each other at the same level of security used to access assets and work products.
     
@@ -100,7 +100,7 @@ network:
   heading: Network
   icon: icons/network.svg
   content: |
-    The Diode Network is the world’s leading Smart Network. Smart Networks are a new generation of zero trust software defined networks based on hardened blockchain technology. It is the fabric that allows the Diode App and CLI to create, provision, and use E2EE perimeters without requiring IT resources.
+    The Diode Network&trade; is the world’s leading Smart Network. Smart Networks are a new generation of zero trust software defined networks based on hardened blockchain technology. It is the fabric that allows Diode Collab and the CLI to create, provision, and use E2EE perimeters without requiring IT resources.
   
     You can host your own server node to help expand the core Diode Network’s points of presence, or even deploy your own stand- alone private network.
     #### Use for

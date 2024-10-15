@@ -13,7 +13,7 @@ hero:
   class: hero--right
   heading: Download Hub
   small: Your spot for downloading Diode's security solutions
-  subheading: Download our zero trust collaboration App, asset management CLI, and network node below.
+  subheading: Download our zero trust collaboration app, asset management CLI, and network node below.
   scroll: "#app"
   image: hero/download.webp
 
@@ -22,10 +22,10 @@ hero:
 app:
   animated: false
   title: For your people
-  heading: Get the App
-  subheading: Chat, files, assets, and more - replace your leaky team collaboration app with Diode.
+  heading: Get Diode Collab
+  subheading: Chat, files, assets, and more - replace your leaky team collaboration app with Diode Collab.
   buttons:
-  - title: Download Diode
+  - title: Download
     url: "#download-app"
     class: popup-open
   - title: Learn More
@@ -35,7 +35,7 @@ app:
 
 ### Popup: App
 popup:
-  title: Get the App
+  title: Diode Collab
 
 
 ### Download: CLI

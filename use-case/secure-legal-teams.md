@@ -39,7 +39,7 @@ video:
   content: |
     Traditional secure file transfer solutions, like FTP or VPNs, are costly to setup and maintain. Modern cloud storage solutions don't have the level of security and privacy required for client-attorney privileges. If you need to share or receive sensitive files and data with your clients, Diode may be the perfect solution.
   buttons:
-  - title: Download App
+  - title: Download Diode Collab
     url: "/download/#app"
 
 ---
