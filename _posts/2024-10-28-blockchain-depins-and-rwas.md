@@ -2,7 +2,7 @@
 layout: post
 title: Blockchain DePINs and RWAs
 description: What are DePINs and RWAs and how is Diode innovating the categories
-date: 2024-10-20 12:00
+date: 2024-10-28 12:00
 categories: [Diode]
 tags: [Diode, Decentralization, DePIN, RWA]
 author: Hans Rempel
