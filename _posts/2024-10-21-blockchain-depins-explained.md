@@ -29,7 +29,7 @@ Diode nodes are emerging in [every region of the world](https://diode.io/network
 
 The nodes of the Diode Network make up an open, permissionless Zero Trust communication network. It is kind of as if the popular chat app, Signal, figured out how to make their E2EE infrastructure expandable by a community, and then also made it available for everyone to build on top of.
 
-Diode nodes are rewarded for the bandwidth they transfer by the [$DIODE token](https://diode.foundation/docs/token.html).
+For the blockchain back-end, Diode leverages both its own L1, and also [Moonbeam](https://moonbeam.network) - an EVM compatible, low gas chain with DePIN friendly features.  Nodes are rewarded for the bandwidth they transfer by the [$DIODE token](https://diode.foundation/docs/token.html) which today has a one-way bridge from the Diode L1 to the [Moonbeam ERC-20](https://moonscan.io/token/0x434116a99619f2B465A137199C38c1Aab0353913).
 
 # DePIN use cases
 
