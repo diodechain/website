@@ -33,7 +33,7 @@ Diode nodes are rewarded for the bandwidth they transfer by the [$DIODE token](h
 
 # DePIN use cases
 
-A use case may be a fit for DePIN if regional distribution of nodes is key to the success of the project.  If regional distribution doesn’t matter, a DePIN approach could still make sense, but it is usually more about financing at that point - which could be a differentiated strategy depending on a few factors (see “Other use cases" below).
+A use case may be a fit for DePIN if regional distribution of nodes is key to the success of the project.  If regional distribution doesn’t matter, a DePIN approach could still make sense, but it is usually more about financing - which could be a differentiated strategy depending on a few factors (see “Other use cases" below).
 
 Today's practical DePIN use cases are three:
 
