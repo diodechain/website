@@ -19,7 +19,7 @@ Read below for more information and emerging use cases.
 
 DePIN (Decentralized Physical Infrastructure) is basically the deployment of useful devices that are inseparably tied to blockchain wallets.  These useful devices provide some sort of service and are automatically rewarded by a blockchain token.  Sort of blockchain “Layer 2” services that are focused on a particular utility.  
 
-The devices are almost always deployed and maintained by an ecosystem of third parties.  Helium is an early example of one of the first successful DePINs (LoRA, WiFi, and cellular nodes-as-a-service) - their node operators provide wireless service to others, and are reward by receiving the Helium token.
+The devices are almost always deployed and maintained by an ecosystem of third parties.  [Helium](https://www.helium.com/) is an early example of one of the first successful DePINs (LoRA, WiFi, and cellular nodes-as-a-service) - their node operators provide wireless service to others, and are reward by receiving the [Helium token](https://www.helium.com/token).
 
 # What is the Diode DePIN?
 
@@ -27,7 +27,7 @@ Diode is also a DePIN - instead of wireless service like Helium, Diode provides 
 
 Diode nodes are emerging in every region of the world, providing better security (all in-region connections, blockchain perimeter anchoring can’t be tampered) and faster performance (shorter hops) than anything else in existence today.  
 
-The nodes of the Diode Network make up an open, permissionless zero trust communication network.  It is kind of as if the popular chat app, Signal, figured out how to make their E2EE infrastructure expandable by a community, and then made it available for everyone to build on top of.
+The nodes of the Diode Network make up an open, permissionless Zero Trust communication network. It is kind of as if the popular chat app, Signal, figured out how to make their E2EE infrastructure expandable by a community, and then made it available for everyone to build on top of.
 
 Diode nodes are rewarded for the bandwidth they transfer by the $DIODE token.
 
@@ -37,11 +37,11 @@ A use case may be a fit for DePIN if regional distribution of nodes is key to th
 
 Today's practical DePIN use cases are three:
 
-- **IoT sensor services** - IoT devices that gather data about their environment and crowd source that data back to an aggregated view of the information can be a powerful DePIN.  A great example of this is the QuakeCore Network - they need to sense seismic activity in a region, but the devices need to be placed and maintained by someone.  The geographic distribution of sensing nodes is critical, as is the rewards for sensing activities to keep the node hosts interested in ensuring their nodes are up and running at all times.
+- **IoT sensor services** - IoT devices that gather data about their environment and crowd source that data back to an aggregated view of the information can be a powerful DePIN.  A great example of this is the [QuakeCore Network](https://quakecore.com/) - they need to sense seismic activity in a region, but the devices need to be placed and maintained by someone.  The geographic distribution of sensing nodes is critical, as is the rewards for sensing activities to keep the node hosts interested in ensuring their nodes are up and running at all times.
 
-- **Compute services** - unused compute (graphics cards, servers) are interesting use cases.  Geographic location sometimes makes a difference in these systems (e.g. Internet egress location, regional cost of power, ISP co-location for speed), and certainly making underutilized compute available for a fee is an attractive offering to those owning the computing systems.  A great example of this is Akash - they have a compute DePIN that is essentially a distributed data center that anyone can leverage.
+- **Compute services** - Unused compute (graphics cards, servers) are interesting use cases.  Geographic location sometimes makes a difference in these systems (e.g. Internet egress location, regional cost of power, ISP co-location for speed), and certainly making underutilized compute available for a fee is an attractive offering to those owning the computing systems.  A notable example of this is [Akash](https://akash.network/) - they have a compute DePIN that is essentially a distributed data center that anyone can leverage.
 
-- **Network services** - the ability to deploy network nodes geographically addresses a core of a key challenge in network engineering - that of coverage.  The more coverage your network has, the better service the network can provide to end-users.  A great example of this for wireless networks is Helium, and a great example for IP-based communication networks is Diode.
+- **Network services** - The ability to deploy network nodes geographically addresses a core of a key challenge in network engineering - that of coverage.  The more coverage your network has, the better service the network can provide to end-users.  A clear example of this for wireless networks is [Helium](https://www.helium.com/), and a great example for IP-based communication networks is [Diode](https://diode.io/).
 
 ## Other use cases
 
