@@ -6,7 +6,7 @@ date: 2024-10-21 12:00
 categories: [Diode]
 tags: [Diode, Decentralization, DePIN]
 author: Hans Rempel
-image: 	assets/img/blog/vpn-protect-information-blog.jpg
+image: 	assets/img/blog/depin blog.jpg
 
 ---
 
@@ -17,7 +17,7 @@ Read below for more information and emerging use cases.
 
 # What are blockchain DePINS?
 
-DePIN (Decentralized Physical Inrastructure) is basically the deployment of useful devices that are inseparably tied to blockchain wallets.  These useful devices provide some sort of service and are automatically rewarded by a blockchain token.  Sort of blockchain “Layer 2” services that are focused on a particular utility.  
+DePIN (Decentralized Physical Infrastructure) is basically the deployment of useful devices that are inseparably tied to blockchain wallets.  These useful devices provide some sort of service and are automatically rewarded by a blockchain token.  Sort of blockchain “Layer 2” services that are focused on a particular utility.  
 
 The devices are almost always deployed and maintained by an ecosystem of third parties.  Helium is an early example of one of the first successful DePINs (LoRA, WiFi, and cellular nodes-as-a-service) - their node operators provide wireless service to others, and are reward by receiving the Helium token.
 
@@ -27,7 +27,7 @@ Diode is also a DePIN - instead of wireless service like Helium, Diode provides 
 
 Diode nodes are emerging in every region of the world, providing better security (all in-region connections, blockchain perimeter anchoring can’t be tampered) and faster performance (shorter hops) than anything else in existence today.  
 
-The nodes of the Diode Network make up an open, permissionaless zero trust communication network.  It is kind of as if the popular chat app, Signal, figured out how to make their E2EE infrastructure expandable by a community, and then made it available for everyone to build on top of.
+The nodes of the Diode Network make up an open, permissionless zero trust communication network.  It is kind of as if the popular chat app, Signal, figured out how to make their E2EE infrastructure expandable by a community, and then made it available for everyone to build on top of.
 
 Diode nodes are rewarded for the bandwidth they transfer by the $DIODE token.
 
