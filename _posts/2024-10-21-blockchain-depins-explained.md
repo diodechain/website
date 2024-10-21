@@ -17,9 +17,9 @@ Read below for more information and emerging use cases.
 
 # What are blockchain DePINS?
 
-DePIN (Decentralized Physical Infrastructure) is basically the deployment of useful devices that are inseparably tied to blockchain wallets.  These useful devices provide some sort of service and are automatically rewarded by a blockchain token.  They are sort of blockchain “Layer 2” real-world utility services.  
+DePINs (Decentralized Physical Infrastructure Networks) work by deploying useful devices that are inseparably tied to blockchain wallets.  These useful devices provide some sort of service and are automatically rewarded by a blockchain token.  They can be thought of as blockchain “Layer 2” real-world utility services.  
 
-The devices are almost always deployed and maintained by an ecosystem of third parties.  [Helium](https://www.helium.com/) is an early example of one of the first successful DePINs (LoRA, WiFi, and cellular nodes-as-a-service) - their node operators provide wireless service to others, and are rewarded by receiving the [Helium token](https://www.helium.com/token).
+The devices are almost always deployed and maintained by an ecosystem of third parties.  [Helium](https://www.helium.com/) is an early example of one of the first successful DePINs (LoRA, WiFi, and cellular nodes-as-a-service).  Helium has an Internet-connected wireless node that is operated by a node operator - the node provides wireless connectivity to others, and the nodes are rewarded by receiving the [Helium token](https://www.helium.com/token).
 
 # What is the Diode DePIN?
 
