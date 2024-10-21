@@ -29,7 +29,7 @@ Diode nodes are emerging in every region of the world, providing better security
 
 The nodes of the Diode Network make up an open, permissionless Zero Trust communication network. It is kind of as if the popular chat app, Signal, figured out how to make their E2EE infrastructure expandable by a community, and then made it available for everyone to build on top of.
 
-Diode nodes are rewarded for the bandwidth they transfer by the $DIODE token.
+Diode nodes are rewarded for the bandwidth they transfer by the [$DIODE token](https://diode.foundation/docs/token.html).
 
 # DePIN use cases
 
