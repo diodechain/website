@@ -23,7 +23,7 @@ The devices are almost always deployed and maintained by an ecosystem of third p
 
 # What is the Diode DePIN?
 
-Diode is also a DePIN - instead of wireless service like Helium, Diode provides end-to-end encrypted routing services - a new type of secure infrastructure that can be used to connect any type of device and any type of application using end to end encryption.  All a device needs to communicate is its blockchain wallet - no other third parties are involved with the communication.
+Diode is also a DePIN - instead of wireless service like Helium, Diode provides end-to-end encrypted routing services.  The Diode Network is a new type of secure infrastructure that can be used to connect any type of device and any type of application using end to end encryption.  All a device needs to securely communicate is its blockchain wallet - no other third parties are involved with the communication.
 
 Diode nodes are emerging in [every region of the world](https://diode.io/network), providing better security (all in-region connections, blockchain perimeter anchoring can’t be tampered) and faster performance (shorter hops) than anything else in existence today.  
 
