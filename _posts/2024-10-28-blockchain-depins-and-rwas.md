@@ -6,13 +6,13 @@ date: 2024-10-28 12:00
 categories: [Diode]
 tags: [Diode, Decentralization, DePIN, RWA]
 author: Hans Rempel
-image: 	assets/img/blog/vpn-protect-information-blog.jpg
+image: 	assets/img/blog/rwa.jpg
 
 ---
 
 # Blockchain DePIN and RWA
 
-[DePIN](https://cointelegraph.com/explained/decentralized-physical-infrastructure-network-depin-explained) and [RWA](https://www.rwa.world/about) are two exciting Web3 categories that are focused on use cases for blockchain in traditional business.  Before “DePIN” and “RWA”, traditional use cases for blockchain had to stand on their own - a common example being supply chain tracking.  These new categories are building momentum in Web3, creating a blockchain-native ecosystem and supporting technologies that are make deploying DePIN and RWA solutions easier and commonplace.
+[DePIN](https://cointelegraph.com/explained/decentralized-physical-infrastructure-network-depin-explained) and [RWA](https://www.rwa.world/about) are two exciting Web3 categories that are focused on use cases for blockchain in traditional business.  Before “DePIN” and “RWA," traditional use cases for blockchain had to stand on their own - a common example being supply chain tracking.  These new categories are building momentum in Web3, creating a blockchain-native ecosystem and supporting technologies that are make deploying DePIN and RWA solutions easier and commonplace.
 
 Let’s break it down.
 
@@ -38,7 +38,7 @@ A core question for all DePINs is “what metric is being incentivized”?  Like
 
 # Diode as an RWA
 
-Unlike Helium, whose nodes require a physical device with a wireless antenna of some flavor, Diode nodes can be hosted anywhere - including in data centers on cheap virtual machines.  The smallest “droplet” or even “spot VM” is sufficent to run a Diode node.  If the region in which the node is running has lots of people using the network, but does not have that many nodes, there is a supply-demand relationship that drives up the cost of bandwidth demoninated in $DIODE.  This incentivizes the ecosystem to bring more nodes online.  If there is an over-supply of nodes in a region, then the cost of bandwidth will be driven down until it reaches a point that some node operators are no longer willing to maintain nodes.  This market-driven approach to regional supply and demand means that every region will modulate the amount of $DIODE per amount of bandwidth, and that changing demand will generate a response in supply.
+Unlike [Helium](https://www.helium.com/), whose nodes require a physical device with a wireless antenna of some flavor, Diode nodes can be hosted anywhere - including in data centers on cheap virtual machines.  The smallest “droplet” or even “spot VM” is sufficent to run a Diode node.  If the region in which the node is running has lots of people using the network, but does not have that many nodes, there is a supply-demand relationship that drives up the cost of bandwidth demoninated in [$DIODE](https://diode.foundation/docs/token.html).  This incentivizes the ecosystem to bring more nodes online.  If there is an over-supply of nodes in a region, then the cost of bandwidth will be driven down until it reaches a point that some node operators are no longer willing to maintain nodes.  This market-driven approach to regional supply and demand means that every region will modulate the amount of $DIODE per amount of bandwidth, and that changing demand will generate a response in supply.
 
 Since bandwidth also has a known commodity cost (ranging from $0.01 USD to $0.15 USD depending on the region and datacenter), the amount of $DIODE paid for an amount of bandwidth to node operators, will approach that of the commodity value for that amount of bandwidth.  This will strongly influence the exchange rate of $DIODE to USD, and will also allow the $DIODE token to be used as a proxy for bandwidth prices.  Therefore, Diode, in addition to being a DePIN, is also an RWA whose asset is bandwidth.  Because all of the network and rewards are automated via smart contracts, there are no legal agreements other than the node operator’s acceptance of, and agreement to, the way the system works.
 
