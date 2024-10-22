@@ -16,15 +16,15 @@ thanks:
   title: Here are some links to help you get started
   items:
   - title: Setup Diode Collab
-    link: https://support.diode.io/article/d3eguu0pem-setup-diode-drive
+    link: https://app.docs.diode.io/docs/
   - title: Share a File or Folder
-    link: https://support.diode.io/article/v428b36e31
+    link: https://app.docs.diode.io/docs/using/share-a-file-or-folder-via-web-browser/
   - title: Backup Confidential Files
-    link: https://support.diode.io/article/x859ax5avc
+    link: https://app.docs.diode.io/docs/using/backup-your-confidential-files/
   - title: Add a Team Member or Device
-    link: https://support.diode.io/article/jkzakxo7a0
+    link: https://app.docs.diode.io/docs/using/add-a-team-member-or-additional-device/
   - title: More Articles
-    link: https://support.diode.io/category/njb9fd8sl9-diode-drive
+    link: https://app.docs.diode.io/
   - title: Contact Us!
     link: https://discord.gg/qdGCAKJdHs
 ---
