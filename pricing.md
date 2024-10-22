@@ -77,7 +77,7 @@ note:
   subheading: |
     Did you know there is a free plan?  <a href="https://app.docs.diode.io/docs/faq/what-can-i-do-with-the-free-version/">See here</a>.
 
-    [Watch a video for how our plans work.](https://support.diode.io/article/pr3fytz8sq){:target="_blank"} 
+    [Watch a video for how our plans work.](https://app.docs.diode.io/docs/features/pricing-and-plans/){:target="_blank"} 
     
   buttons:
   - title: Get in Touch
