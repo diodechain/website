@@ -22,7 +22,7 @@
             If you don’t have MetaMask installed, follow
             <a
               target="_blank"
-              href="https://support.diode.io/article/uec3mloh9z-metamask"
+              href="https://network.docs.diode.io/docs/faq/configure-metamask/"
               >these instructions</a
             >
             to get started.
