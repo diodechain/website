@@ -25,5 +25,5 @@ Here is a recap of the updates we’ve released in the last month (1.8.12 - 1.8.
 *   **PIN Code Protection** You can now add a PIN code to your profile so that Diode cannot be loaded without first entering the PIN code. This is important if you may be in a situation in which you cannot be sure of the physical security of your device.
 *   **Many bug fixes and improvements** The team released over 100 bug fixes and improvements to the app that may not be visible in your everyday usage. Things like Linux media file previews, aligning nickname/username usage, and making updates more performant.
 
-If you want to read more about the specifics of each update, to go our [App Versions page](https://support.diode.io/category/9gss923s33-diode-app-updates-versions) and check out the specific version details.
+If you want to read more about the specifics of each update, to go our [App Versions page](https://app.docs.diode.io/docs/versions/1-12-0/) and check out the specific version details.
 
