@@ -12,7 +12,7 @@ image: assets/img/blog/Product Update.jpeg
 The Diode team has been working on great new features and fixes this July for our Diode users (v1.11.14 - 1.12.02).
 
 **Multiple Profiles**
-<br> We now support multiple profiles! You can create multiple usernames and choose which to use for different Zones, keeping your username isolated to specific interactions. This is especially useful for managing separate accounts for work, personal, or other purposes. Read more details [here](https://support.diode.io/article/8qay9fyh9v-working-with-multiple-profiles-accounts). 
+<br> We now support multiple profiles! You can create multiple usernames and choose which to use for different Zones, keeping your username isolated to specific interactions. This is especially useful for managing separate accounts for work, personal, or other purposes. Read more details [here](https://app.docs.diode.io/docs/features/working-with-multiple-profiles-accounts/). 
 
 **Easy-To-Copy Invite Codes**
 <br> There is now a copy icon for each invite code so you can quickly copy a given invite code to the clipboard.
@@ -42,7 +42,7 @@ The Diode team has been working on great new features and fixes this July for ou
 <br>
 The team addressed various bugs, such as updating the 'mark message as unread' feature in chat, removing the 'new message' notification in an active chat so that it now auto-clears, fixing a permissions issue that sometimes prevented devices from sending messages in private chats, allowing systems to access the Invite Codes settings page for the Zone when enabling multiple join codes, and ensuring the selected chat is always used when sharing a file via the OS "share file" feature.
 
-If you want to read more about the specifics of each update or fix, to go our [App Versions](https://support.diode.io/category/9gss923s33-diode-app-updates-version) page and check out the specific version details.
+If you want to read more about the specifics of each update or fix, to go our [App Versions](https://app.docs.diode.io/docs/versions/1-12-0/) page and check out the specific version details.
 
 To explore further please:
 <div class="story__buttons">
