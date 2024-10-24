@@ -22,7 +22,7 @@ Read below for how Diode Drive can be a more secure, confidential, and affordabl
 
 Dropbox has a [number of plans](https://dropbox.com/plans), including a basic free plan that has up to 2GB of storage. The highest plan has unlimited storage, and costs $20/user/month.
 
-Diode Drive has [no fees for storage size](https://support.diode.io/article/vr156n18cf-is-diodedrive-unlimited-storage) – you can store as much data as your devices can handle for free.
+Diode Drive has [no fees for storage size](https://app.docs.diode.io/docs/features/is-diode-drive-unlimited-storage/) – you can store as much data as your devices can handle for free.
 
 ### 2) Data Confidentiality
 
@@ -34,7 +34,7 @@ Diode Drive, on the other hand, has no servers that store your data, and file tr
 
 As with all web services, Dropbox can email you a “reset password” link to enable you to regain access to your account. However, server-based account credentials, and other customer or product support features intended to help you, can sometimes be used to [compromise your account](https://www.theguardian.com/technology/2016/aug/31/dropbox-hack-passwords-68m-data-breach).
 
-Diode Drive accounts use a [Backup Code](https://support.diode.io/article/l7noragxyj-diode-drive-backup-codes) approach that enables a fully decentralized method of account security. Not only is Diode unable to reset the credentials for your account, no one at Diode can use a backdoor to gain access to your account or data.
+Diode Drive accounts use a [Backup Code](https://app.docs.diode.io/docs/features/diode-drive-backup-codes/) approach that enables a fully decentralized method of account security. Not only is Diode unable to reset the credentials for your account, no one at Diode can use a backdoor to gain access to your account or data.
 
 ### 4) Personal Information
 
@@ -62,13 +62,13 @@ Diode Drive’s file synchronization works like a "private bit torrent" - Team M
 
 Dropbox uses [user-to-server encryption](https://www.dropboxforum.com/t5/Dropbox-files-folders/end-to-end-encryption/td-p/325994) for transferring files. The server always terminates the encryption. 
 
-Diode uses [end to end encryption (user to user)](https://support.diode.io/article/pvmzyqlesq-how-it-works) for transferring files, chat, and other communications. This removes a number of attack vectors that can be used to compromise your information, communications, or team members.
+Diode uses [end to end encryption (user to user)](https://app.docs.diode.io/docs/using/how-it-works/) for transferring files, chat, and other communications. This removes a number of attack vectors that can be used to compromise your information, communications, or team members.
 
 ### 8)	Share Without the App
 
 [Dropbox allows you to share files and folders read-only](https://help.dropbox.com/files-folders/share/view-only-access) to someone who does not have Dropbox installed via shared link. To do this, you must upload the file to Dropbox servers and send the person the read-only link to the file.
 
-Diode Drive allows you to [share a read or edit link to a file or folder without even uploading to the cloud](/diode%20drive/Share-Files-Without-Uploading-21077/). Further, you can customize the sharing page with your [custom organization name and logo](https://support.diode.io/article/ssnzo09rzv-share-page-information). 
+Diode Drive allows you to [share a read or edit link to a file or folder without even uploading to the cloud](/diode%20drive/Share-Files-Without-Uploading-21077/). Further, you can customize the sharing page with your [custom organization name and logo](https://app.docs.diode.io/docs/using/how-to-customize-share-page-information/). 
 
 ---
 
