@@ -38,4 +38,4 @@ Diode Drive is an E2E encrypted file collaboration tool that also allows sharing
 
 ### Documentation
 
-Please check out our [Diode Drive documentation category](https://support.diode.io/category/njb9fd8sl9) on our docs site for more details.
+Please check out our [Diode Drive documentation category](https://app.docs.diode.io/) on our docs site for more details.
