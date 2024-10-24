@@ -26,7 +26,7 @@ A Raspberry Pi is a low cost, reliable, and remotely manageable device that can 
 
 ![](../assets/img/blog/rpifileserver-synced-trio.png)
 
-We recently posted an article that [describes how to configure a Raspberry Pi for this purpose](https://support.diode.io/article/ad7s45khyq).
+We recently posted an article that [describes how to configure a Raspberry Pi for this purpose](https://app.docs.diode.io/raspberry-pi/use-your-raspberry-pi-as-a-remote-file-server-backup-device/).
 
 These are early days in the deployment of Web3-based [Local First](https://www.inkandswitch.com/local-first.html) applications! The Raspberry Pi Team Member solution is a functional stop gap – it is not the end game. Its role as a regional, secure, and persistent peer is informing the evolution of Diode’s R&D as we work to make high security Web3-based collaboration even easier to use, and even easier to deploy, than traditional cloud based applications. 
 
