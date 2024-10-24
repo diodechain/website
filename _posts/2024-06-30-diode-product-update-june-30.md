@@ -28,7 +28,7 @@ The Diode team has been working hard to transform the Internet into everyone's p
 <br>
 The team addressed various bugs such as removing the ability to go back to a file that no longer exists, handling delayed block state updates that caused occasional missed Zone settings, elminating a condition that created malformed databases for new Zones, a quicker way to join Zone conversations or private chats... 
 
-If you want to read more about the specifics of each update, to go our [App Versions](https://support.diode.io/category/9gss923s33-diode-app-updates-version) page and check out the specific version details.
+If you want to read more about the specifics of each update, to go our [App Versions](https://app.docs.diode.io/docs/versions/1-12-0/) page and check out the specific version details.
 
 To explore further please:
 <div class="story__buttons">
