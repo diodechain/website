@@ -14,7 +14,7 @@ The Diode team continues to work hard as another round of updates have made thei
 **Language Translation**
 
 *   Thanks to a dedicated community collaborator, our app now features a Chinese translation! Currently available in traditional characters (Taiwan/Hong Kong), a simplified version is in the works. 
-*   French and Italian languages are also now integrated into the app, alongside updates to the German translation, automatically adapting to your operating system's settings; share your language preferences or improvement suggestions in this [article](https://support.diode.io/article/9mfd8sacll)!
+*   French and Italian languages are also now integrated into the app, alongside updates to the German translation, automatically adapting to your operating system's settings; share your language preferences or improvement suggestions in this [article](https://app.docs.diode.io/docs/features/languages-on-the-diode-app/)!
 *   If you're interested in contributing to the simplified character translation of Chinese (or other languages), please join [our project](https://crowdin.com/project/diode-drive/zh-CN).
 
 **Private Chat Channels Upgrade** 
@@ -39,7 +39,7 @@ Introducing support for a websockets connection in our API, facilitating bidirec
 
 The team addressed various bugs: File capitalization sync error, mention popups and double checkmarks show immediately, improvements to chat and file sync reliability, and internal browser javascript handling. 
 
-If you want to read more about the specifics of each update, to go our [App Versions page](https://support.diode.io/category/9gss923s33-diode-app-updates-versions) and check out the specific version details.
+If you want to read more about the specifics of each update, to go our [App Versions page](https://app.docs.diode.io/docs/versions/1-12-0/) and check out the specific version details.
 
 <div class="story__buttons">
   <a href="{{"/solutions/app/" | prepend: path | relative_url}}" class="btn" target="">Find Out More</a>
