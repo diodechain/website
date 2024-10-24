@@ -10,7 +10,7 @@ redirect_from:
 - /diode%20drive/secure-evernote-alternative-22171/
 ---
 
-[Diode Drive](/solutions/app/) can be used as a [secure note taking application for multiple devices](https://support.diode.io/article/nwoi0x3d67-take-secure-notes-with-diode-drive). Many of us at Diode are ex Evernote users, and have been frustrated with the lack of quality [secure Evernote alternatives](https://dataoverhaulers.com/secure-note-taking-apps/).
+[Diode Drive](/solutions/app/) can be used as a [secure note taking application for multiple devices](https://app.docs.diode.io/docs/features/take-secure-notes-with-diode-drive/). Many of us at Diode are ex Evernote users, and have been frustrated with the lack of quality [secure Evernote alternatives](https://dataoverhaulers.com/secure-note-taking-apps/).
 
 With Diode Drive's recent introduction of a note editor, we feel for the first time ever that confidential/sensitive information can be quickly, conveniently, and securely stored in our notes. Read below for how Diode Drive can be used a secure Evernote alternative!
 
@@ -40,7 +40,7 @@ A note taking application has to be available on all your devices.
 
 Editing notes should be intuitive! 
 
-We recently introduced a [Markdown file editor](https://support.diode.io/article/o6o86kafiy-file-editors) that allows you to edit your notes without ever leaving Diode Drive’s secure application and synchronization environment.
+We recently introduced a [Markdown file editor](https://app.docs.diode.io/docs/using/file-editors/) that allows you to edit your notes without ever leaving Diode Drive’s secure application and synchronization environment.
 
 The editor uses a Markdown “WYSIWYG” interface that allows you to compose formatted notes.
 
@@ -62,7 +62,7 @@ Further, Diode supports a team environment right out of the box – something th
 
 Sync should just work and it should be bomb proof secure. 
 
-Diode Drive is a [peer-to-peer encrypted](https://support.diode.io/article/jieo6utgv9-are-my-communications-via-the-diode-network-encrypted) sync environment, and allows you to [link all of your devices](/diodedrive/diodedriveupdate-linkeddevices-22117/) so that your notes are always accessible. Every update to your notes is quickly and efficiently synchronized over a 256bit encrypted connection to your other devices.
+Diode Drive is a [peer-to-peer encrypted](https://cli.docs.diode.io/docs/faq/are-my-communications-via-the-diode-network-encrypted/) sync environment, and allows you to [link all of your devices](/diodedrive/diodedriveupdate-linkeddevices-22117/) so that your notes are always accessible. Every update to your notes is quickly and efficiently synchronized over a 256bit encrypted connection to your other devices.
 
 ![](../assets/img/blog/secure-evernote-alternative_devices.png)
 
@@ -74,13 +74,13 @@ Your note taking app shouldn’t be spying on you, and should safeguard other ap
 
 Diode Drive doesn’t require any special permissions on your device, and all data is isolated in the application’s virtual file system (iOS/Android). 
 
-Since Diode Drive does not use [cloud-based user accounts](https://support.diode.io/article/l7noragxyj-diode-drive-backup-codes), there are no credentials to hack to gain unauthorized access to your account. And, since Diode Drive [never stores your notes on a server or cloud environment](https://support.diode.io/article/vr156n18cf-is-diodedrive-unlimited-storage), your notes can never be stolen or viewed by anyone except you (and those you share them with).
+Since Diode Drive does not use [cloud-based user accounts](https://app.docs.diode.io/docs/features/diode-drive-backup-codes/), there are no credentials to hack to gain unauthorized access to your account. And, since Diode Drive [never stores your notes on a server or cloud environment](https://app.docs.diode.io/docs/features/is-diode-drive-unlimited-storage/), your notes can never be stolen or viewed by anyone except you (and those you share them with).
 
 ### 6)	Share and collaborate
 
 It should be easy to share your notes with collaborators.
 
-Diode Drive is organized in [Zones](https://support.diode.io/article/k1diuzadd8-create-your-first-zone). If you are collaborating with a team, you can have a Zone that has many other files and information in it, with notes interspersed in the folders, that is shared with your team.
+Diode Drive is organized in [Zones](https://app.docs.diode.io/docs/using/create-a-zone/). If you are collaborating with a team, you can have a Zone that has many other files and information in it, with notes interspersed in the folders, that is shared with your team.
 
 ![](../assets/img/blog/secure-evernote-alternative_team.png)
 
@@ -104,6 +104,6 @@ In Diode Drive, all notes can include links to other notes or other files – th
 
 You’ve probably heard of [de-googling](https://www.reddit.com/r/degoogle/) – a process that you can also do for [Google Drive or Dropbox by deploying Diode Drive](/web3/diode%20drive/decentralized-dropbox-alternative-22140/). We at Diode have now “de-evernoted” our notes and are not looking back! 
 
-For a how-to on Diode Drive secure note taking, see the [support article](https://support.diode.io/article/nwoi0x3d67-take-secure-notes-with-diode-drive).
+For a how-to on Diode Drive secure note taking, see the [support article](https://app.docs.diode.io/docs/features/take-secure-notes-with-diode-drive/).
 
 Diode Drive is bringing a whole new approach to collaboration – please [download it](/download/) and [let us know what you think](https://t.me/diode_chain)!
