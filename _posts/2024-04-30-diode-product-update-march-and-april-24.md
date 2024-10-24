@@ -22,7 +22,7 @@ Newly created tunnels in the Brave browser automatically include a default "What
 <br>New invite codes default to using the "Read Only" role for newly joining team members.
 
 **Remote API v2.1** 
-<br>The newest version of the [API]([https://support.diode.io/article/u2888tkk38) was released and it supports more varieties of channel names.
+<br>The newest version of the [API](https://app.docs.diode.io/docs/admin/diode-api-docs/) was released and it supports more varieties of channel names.
 
 **Default Moonbeam Profiles** 
 <br>Upon signing up, new users automatically also get a Moonbeam profile identity. 
@@ -49,7 +49,7 @@ Newly created tunnels in the Brave browser automatically include a default "What
 <br>
 The team addressed various bugs such as visible notification flash messages on mobile home, duplicate folders being displayed in non-sync mode, backup feature breaking certain Zones on Windows, Zone joining reliability, faster direct messaging, Android system audio playback, and Windows direct messaging images. 
 
-If you want to read more about the specifics of each update, to go our [App Versions](https://support.diode.io/category/9gss923s33-diode-app-updates-version) page and check out the specific version details.
+If you want to read more about the specifics of each update, to go our [App Versions](https://app.docs.diode.io/docs/versions/1-12-0/) page and check out the specific version details.
 
 To explore further please:
 <div class="story__buttons">
