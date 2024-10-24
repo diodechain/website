@@ -34,7 +34,7 @@ If a bug is discovered, there are now several options that allow the user to ret
 <br>
 The team addressed various bugs such as the markdown viewer no longer crashing if breaking non-Unicode characters are present, the About Page is now always synced to all members in a Zone, and Zone invites are now being accepted regardless of potentially duplicated folder names.  
 
-If you want to read more about the specifics of each update, to go our [App Versions](https://support.diode.io/category/9gss923s33-diode-app-updates-version) page and check out the specific version details.
+If you want to read more about the specifics of each update, to go our [App Versions](https://app.docs.diode.io/docs/versions/1-12-0/) page and check out the specific version details.
 
 To explore further please:
 <div class="story__buttons">
