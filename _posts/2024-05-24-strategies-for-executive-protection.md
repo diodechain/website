@@ -39,7 +39,7 @@ Diode provides this important security feature for direct messaging and group ch
 
 A large issue with data security is when sensitive information, such as that handled by executives, is shared and intercepted, particularly through cloud and centralized servers. Storing data in these systems makes it vulnerable to external providers and susceptible to single-point failures. Disruptions to the cloud server, whether due to delays or cyberattacks, can lead to data exposure and disruptions in processing.
 
-To mitigate the issue of sensitive data being put at risk, there must be a secure file-sharing and content collaboration process used by executives within their companies. Diode has developed this solution through integrating decentralized storage features that eliminate centralized servers, and safeguard data from third party access while providing speedy file transfers. For account security, it uses a [Backup Code approach](https://support.diode.io/article/zjud05ha10-what-is-the-diode-drive-backup-code-used-for), further reducing the risk of server-based compromises. 
+To mitigate the issue of sensitive data being put at risk, there must be a secure file-sharing and content collaboration process used by executives within their companies. Diode has developed this solution through integrating decentralized storage features that eliminate centralized servers, and safeguard data from third party access while providing speedy file transfers. For account security, it uses a [Backup Code approach](https://app.docs.diode.io/docs/faq/what-is-the-diode-drive-backup-code-used-for/), further reducing the risk of server-based compromises. 
 
 **Secure Web Portal**
 
