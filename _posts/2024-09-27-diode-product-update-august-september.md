@@ -67,7 +67,7 @@ The Diode team has published some great updates during the months of August and 
 <br>
 The team addressed various bugs such as Web2 and Web3 tunnel disruptions, file sync failures during interruptions, incorrect Zone initialization progress, un-clickable links in tooltips, lost log view on mobile after deleting logs, and CPU overconsumption during permission checks.
 
-If you want to read more about the specifics of each update, to go our [App Versions](https://support.diode.io/category/9gss923s33-diode-app-updates-version) page and check out the specific version details.
+If you want to read more about the specifics of each update, to go our [App Versions](https://app.docs.diode.io/docs/versions/1-12-0/) page and check out the specific version details.
 
 To explore further please:
 <div class="story__buttons">
