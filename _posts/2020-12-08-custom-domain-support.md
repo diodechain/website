@@ -10,13 +10,13 @@ redirect_from:
 - /diode/Custom-Domain-Support-20343/
 ---
 
-In an important step for evolving Web2.0 to Web3, Diode has released the ability to [map a Web2.0 domain to a Diode Web3 Client Address](https://support.diode.io/article/6pctb40wj8)!  This enables any Web3 publisher to publish content on a Web2.0 domain.  All 2, 3, and 4 letter [Top Level Domains](https://en.wikipedia.org/wiki/Top-level_domain) are supported.  Previous to this release, Web3 content could  be published only to other Web3 clients or via the https://{clientname}.diode.link Web2.0 subdomain.
+In an important step for evolving Web2.0 to Web3, Diode has released the ability to [map a Web2.0 domain to a Diode Web3 Client Address](https://network.docs.diode.io/docs/using/configure-custom-domain-name/)!  This enables any Web3 publisher to publish content on a Web2.0 domain.  All 2, 3, and 4 letter [Top Level Domains](https://en.wikipedia.org/wiki/Top-level_domain) are supported.  Previous to this release, Web3 content could  be published only to other Web3 clients or via the https://{clientname}.diode.link Web2.0 subdomain.
   
 This capability is important both today, and in the future:
 
 ### Today
 
-This immediately enables all types of web hosting solutions without requiring a static IP address.  By creating a [Web3 host](https://support.diode.io/article/ss32engxlq-publish-your-local-webserver), your hosting hardware (anything from a Raspberry Pi under your desk, to your laptop on your desk, to a machine in a factory, to a full server in a datacenter) can be online from anywhere in the world without a static IP address, and can be accessed by a full Web2.0 domain name (e.g. www.acme.com). 
+This immediately enables all types of web hosting solutions without requiring a static IP address.  By creating a [Web3 host](https://cli.docs.diode.io/docs/using/publish-a-local-webserver/), your hosting hardware (anything from a Raspberry Pi under your desk, to your laptop on your desk, to a machine in a factory, to a full server in a datacenter) can be online from anywhere in the world without a static IP address, and can be accessed by a full Web2.0 domain name (e.g. www.acme.com). 
 
 While we have found that hobbyists and web developers love this capability (it gives them easy capabilities to provide/roll-their-own web hosting services), it also immediately expands the IPv4 address space for hosting activities.  
 
@@ -32,8 +32,8 @@ With this capability, Diode has removed significant amounts of centralization fr
 
 ### How to Get Started?
 
-It is easy to enable a Web2.0 domain to serve Web3 content - all that has to be done is to register the domain name (without the TLD) as a [BNS name](https://support.diode.io/article/5nsoxvhug1) and point a DNS A record to one of the Diode IPs. 
+It is easy to enable a Web2.0 domain to serve Web3 content - all that has to be done is to register the domain name (without the TLD) as a [BNS name](https://network.docs.diode.io/docs/faq/what-is-bns/) and point a DNS A record to one of the Diode IPs. 
 
 ![](../assets/img/blog/bns-screenshot.png)
   
-To setup your Web3 host with a custom Web2.0 domain, follow the guide at [https://support.diode.io/article/6pctb40wj8](https://support.diode.io/article/6pctb40wj8)!
+To setup your Web3 host with a custom Web2.0 domain, follow the guide at [https://support.diode.io/article/6pctb40wj8](https://network.docs.diode.io/docs/using/configure-custom-domain-name/)](https://network.docs.diode.io/docs/using/configure-custom-domain-name/)!
