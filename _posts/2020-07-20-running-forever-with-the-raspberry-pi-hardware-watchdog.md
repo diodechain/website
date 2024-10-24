@@ -93,6 +93,6 @@ With this additional configuration line, the watchdog will also power cycle the 
 
 ## Use your Raspberry Pi to:
 
-1) [ Host a decentralized website ](https://support.diode.io/article/r62bhcnax0-host-a-public-wordpress-site-on-a-raspberry-pi)
-2) [ Replace Dropbox / Google Drive ](https://support.diode.io/article/ad7s45khyq)
-3) [ Be a private chat server ](https://support.diode.io/article/6y61v0vt03-use-your-raspberry-pi-as-a-private-chat-server)
+1) [ Host a decentralized website ](https://app.docs.diode.io/raspberry-pi/host-a-public-wordpress-website-on-raspberry-pi/)
+2) [ Replace Dropbox / Google Drive ](https://app.docs.diode.io/raspberry-pi/use-your-raspberry-pi-as-a-remote-file-server-backup-device/)
+3) [ Be a private chat server ](https://app.docs.diode.io/raspberry-pi/use-your-raspberry-pi-as-a-private-chat-server/)
