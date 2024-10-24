@@ -27,6 +27,6 @@ The technology usually used to access a Windows network drive is called "SMB" - 
 
 This approach allows you to "Map Network Drive" on Windows (or Mac or Linux!) to access the remote files as if they were on the hard-drive on the local computer.  The remote files can be on another Windows system, on a Linux "Samba" share, or on any other device that can support running both Diode and SMB.
 
-If you're interested in using Diode in this way, please see the [technical support article](https://support.diode.io/article/mrebw2fgxw-remote-windows-smb-shares) or [get in touch](https://t.me/diode_chain)!
+If you're interested in using Diode in this way, please see the [technical support article](https://cli.docs.diode.io/docs/using/tunneled-p2p-dashboards/) or [get in touch](https://t.me/diode_chain)!
 
 
