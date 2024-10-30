@@ -32,7 +32,7 @@ RWA (Real World Assets, aka Real World Adoption) is the ability to memorialize o
 
 One of the biggest advantages of RWAs is an auditable fractional ownership record that can be easily bought and sold.  At the recent [RWA.day](https://rwa.day) event, two of the speakers highlighted collectible alcohol as the example: not everyone will buy a cask of [1975 Ardberg Whiskey](https://whiskymag.com/articles/record-breaking-cask-of-ardbeg-1975-single-malt-scotch-sells-for-16-million/), but if it is an asset that will continue to increase in value, many people would potentially like to buy a fractional share in a cask.
 
-Diode’s CEO, Hans Rempel, and [Moonbeam’s](https://moonbeam.network) Director of Business Development, Ryan Levy, also [presented at RWA.day](https://www.youtube.com/watch?v=aqWTHA8P1cY) about how Diode is an example of both a DePIN and an RWA - in a way that may hold the secret for scaling RWA adoption.  
+Diode’s CEO, Hans Rempel, and [Moonbeam’s](https://moonbeam.network) Director of Business Development, Ryan Levy, also [presented at RWA.day](https://www.youtube.com/watch?v=aqWTHA8P1cY) about how Diode is an example of both a DePIN and an RWA - in a way that may hold a clue for scaling RWA adoption.  
 
 # Diode as a DePIN
 
