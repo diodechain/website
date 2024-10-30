@@ -6,6 +6,7 @@ permalink: /products/collab/
 redirect_from:
 - /products/d-drive/
 - /solutions/app/
+- /products/app/
 
 
 ### Hero
@@ -25,7 +26,7 @@ story:
   animated: false
   class: story--next
   title: Operate protected
-  heading: For teams
+  heading: Chat and VPN
   content: |
     Diode Collab&trade; creates secure tunnels between your team members in a "security perimeter" (a Zone).  Each Zone has built-in chat, file, and web browsing capabilities. It is a decentralized “local first” solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
   
@@ -52,9 +53,9 @@ features:
 
   - title: Use for
     content: |
-      Chat, files, notes, wiki, secure sites, web portals
+      Chat, VPN, files, notes, wiki, secure sites, dashboards
   
-      Communicate, reference, annotate, manage, and collaborate - everything a team working with real world IT, OT, or web assets requires.
+      Communicate, reference, annotate, manage, and collaborate - everything a team working with real world sensitive data requires.
     buttons:
     - title: CONTACT SALES
       url: "https://contactdiode.paperform.co/"
@@ -65,15 +66,15 @@ features:
       url: "https://diodedemo.paperform.co/"
       target: _blank
 
-  - title: Connect From Anywhere
+  - title: Access the Internet from Anywhere
     content: |
       Collaborating with Diode Collab is like using a VPN and collaboration tool built in one.  This allows your team to connect from anywhere in the world. And, if they happen to be in the same office, their devices direct-connect to carry on the conversation without even touching the Internet.
       
   -
 
-  - title: Secure Web Portals
+  - title: Secure Upload Sites
     content: |
-      Sometimes you need to share, or collect, information with people who don't have Diode Collab installed - via a share link accessible from any web browser. This is a great way to exchange information securely with customers, partners, and vendors when operating in a regulated industry. Creating a secure web portal can be done with a single click on any file or folder you'd like to make available.
+      Sometimes you need to share, or collect, information with people who don't have Diode Collab installed - via a share link accessible from any web browser. This is a great way to exchange information securely with customers, partners, and vendors when operating in a regulated industry. Creating a secure upload site can be done with a single click on any file or folder you'd like to make available.
       
   -
 

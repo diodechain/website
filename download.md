@@ -29,7 +29,7 @@ app:
     url: "#download-app"
     class: popup-open
   - title: Learn More
-    url: "/products/app/"
+    url: "/products/collab/"
     class: "btn--blank btn--arrow"
 
 
