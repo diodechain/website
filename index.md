@@ -17,7 +17,7 @@ hero:
     url: "https://diodedemo.paperform.co/"
   - title: Learn More
     class: btn--bordered
-    url: "/solutions/app/"
+    url: "/products/collab/"
   image: hero/home.webp
 
 
@@ -41,7 +41,7 @@ why-diode:
     button:
       title: FIND OUT MORE
       class: "btn--blank btn--arrow"
-      url: "/solutions/app/"
+      url: "/products/collab/"
   - title: Regulated Data
     icon: icons/app.svg
     content: With privacy laws like GDPR and HIPAA, and oversight by regional regulatory authorities including the SEC, HHS, and other geopolitical-specific bodies, it is key that you do everything possible to avoid a breach of protected data.
@@ -92,7 +92,7 @@ anywhere:
     With Diode's decentralized architecture, you can share files directly with your team - neither Diode, nor anyone else, has access to them. 
   buttons:
   - title: Learn More
-    url: "/solutions/app/"
+    url: "/products/collab/"
   image:
     src: story/file_sharing.webp
     alt: Protected no matter what
@@ -161,7 +161,7 @@ solutions:
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/cli/"
+      url: "/products/cli/"
   - title: No access to your data
     icon: icons/vault.svg
     content: Diode never has access to any of your messages or files that you and your team share. This provides you with another level of security that most cloud providers can’t offer.

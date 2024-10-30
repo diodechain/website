@@ -3,6 +3,7 @@
    ========================================================================== */
 .story {
   margin-bottom: 80px;
+  padding-top: 20px;
   @include media-breakpoint-up(md) {
     margin-bottom: 100px;
   }

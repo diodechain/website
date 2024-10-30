@@ -29,7 +29,7 @@ app:
     url: "#download-app"
     class: popup-open
   - title: Learn More
-    url: "/solutions/app/"
+    url: "/products/app/"
     class: "btn--blank btn--arrow"
 
 
@@ -47,7 +47,7 @@ cli:
   install: true
   buttons:
   - title: Learn More
-    url: "/solutions/cli/"
+    url: "/products/cli/"
     class: "btn--blank btn--arrow"
 
 
@@ -62,7 +62,7 @@ network:
     url: "https://network.docs.diode.io/docs/"
     target: _blank
   - title: Learn More
-    url: "/solutions/network/"
+    url: "/products/network/"
     class: "btn--blank btn--arrow"
 
 ---

@@ -2,9 +2,10 @@
 title: Diode Network
 layout: page
 class: header--white
-permalink: /solutions/network/
+permalink: /products/network/
 redirect_from:
 - /products/diode-network/
+- /solutions/network/
 
 
 ### Hero
@@ -32,7 +33,7 @@ story:
   buttons:
   - title: See how teams are using Diode
     class: btn--blank btn--arrow
-    url: "/teams/"
+    url: "/usecases/"
   image:
     src: story/network-full.webp
     alt: Network
@@ -79,7 +80,7 @@ solutions:
   animated: false
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
-  heading: Our solutions
+  heading: Our products
   solutions:
   - title: App
     icon: "icons/app.svg"
@@ -87,21 +88,21 @@ solutions:
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/app/"
+      url: "/products/collab/"
   - title: CLI
     icon: "icons/cli.svg"
     content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone to secure autonomous systems, and/or in concert with team members using Diode Collab.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/cli/"
+      url: "/products/cli/"
   - title: Vault
     icon: "icons/vault.svg"
     content: The Diode Vault is an autonomous tool that combines both App and CLI features in a small box or cloud appliance. 24-7 availability, backup, and geo-access for your team and assets.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/vault/"
+      url: "/products/vault/"
 
 ---
 

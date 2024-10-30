@@ -2,17 +2,18 @@
 title: Diode Collab&trade;
 layout: page
 class: header--white
-permalink: /solutions/app/
+permalink: /products/collab/
 redirect_from:
 - /products/d-drive/
+- /solutions/app/
 
 
 ### Hero
 hero:
   class: hero--rounded hero--smaller
   animated: true
-  heading: Protected team collaboration
-  subheading: Secure collaboration around IT/OT/IP work product
+  heading: Stay connected with Diode Collab
+  subheading: Secure chat and system access for teams
   buttons:
   - title: Request Demo
     url: "https://diodedemo.paperform.co/"
@@ -32,7 +33,7 @@ story:
   buttons:
   - title: See how teams are using Diode
     class: btn--blank btn--arrow
-    url: "/teams/"
+    url: "/usecases/"
   image:
     src: story/app-full.webp
     alt: App
@@ -42,8 +43,6 @@ story:
 ### Features
 features:
   animated: false
-  image:
-    src: story/for-teams.webp
   after:
     src: story/protected.svg
   list:
@@ -88,7 +87,7 @@ solutions:
   animated: false
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
-  heading: Our solutions
+  heading: Our products
   solutions:
   - title: CLI
     icon: "icons/cli.svg"
@@ -96,21 +95,21 @@ solutions:
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/cli/"
+      url: "/products/cli/"
   - title: Vault
     icon: "icons/vault.svg"
     content: The Diode Vault is an autonomous tool that combines both App and CLI features in a small box or cloud appliance. 24-7 availability, backup, and geo-access for your team and assets.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/vault/"
+      url: "/products/vault/"
   - title: Network
     icon: "icons/network.svg"
     content: The Diode Network is the world’s leading Smart Network - a new generation of zero trust software defined networks based on hardened blockchain technology. Think ad hoc E2EE perimeters.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/network/"
+      url: "/products/network/"
 
 ---
 

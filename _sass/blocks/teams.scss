@@ -4,6 +4,7 @@
 .teams {
   position: relative;
   z-index: 1;
+  padding-top: 20px;
   @include media-breakpoint-up(md) {
     margin-bottom: 60px;
   }

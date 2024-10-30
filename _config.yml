@@ -29,19 +29,19 @@ path:
 
 # Navigation
 nav:
-- title: Solutions
-  url: "/solutions/"
+- title: Products
+  url: "/products/"
   sub:
   - title: Diode Collab
-    url: "/solutions/app/"
+    url: "/products/collab/"
   - title: CLI
-    url: "/solutions/cli/"
+    url: "/products/cli/"
   - title: Vault
-    url: "/solutions/vault/"
+    url: "/products/vault/"
   - title: Network
-    url: "/solutions/network/"
+    url: "/products/network/"
 - title: Use Cases
-  url: "/teams/"
+  url: "/usecases/"
   sub:
   - title: Sensitive Data
     url: "/teams/#regulated"

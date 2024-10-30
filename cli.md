@@ -2,9 +2,10 @@
 title: Diode CLI
 layout: page
 class: header--white
-permalink: /solutions/cli/
+permalink: /products/cli/
 redirect_from:
 - /products/diode-cli/
+- /solutions/cli/
 
 
 ### Hero
@@ -31,7 +32,7 @@ story:
   buttons:
   - title: See how teams are using Diode
     class: btn--blank btn--arrow
-    url: "/teams/"
+    url: "/usecases/"
   image:
     src: story/cli-full.webp
     alt: Diode CLI
@@ -79,7 +80,7 @@ solutions:
   animated: false
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
-  heading: Our solutions
+  heading: Our products
   solutions:
   - title: App
     icon: "icons/app.svg"
@@ -87,21 +88,21 @@ solutions:
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/app/"
+      url: "/products/collab/"
   - title: Vault
     icon: "icons/vault.svg"
     content: The Diode Vault is an autonomous tool that combines both App and CLI features in a small box or cloud appliance. 24-7 availability, backup, and geo-access for your team and assets.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/vault/"
+      url: "/products/vault/"
   - title: Network
     icon: "icons/network.svg"
     content: The Diode Network is the world’s leading Smart Network - a new generation of zero trust software defined networks based on hardened blockchain technology. Think ad hoc E2EE perimeters.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/network/"
+      url: "/products/network/"
 
 ---
 

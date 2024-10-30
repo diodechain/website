@@ -18,7 +18,7 @@ hero:
     url: "/download/#app"
   - title: LEARN MORE
     class: btn--blank btn--arrow
-    url: "/solutions/app/"
+    url: "/products/collab/"
   image: hero/landing.webp
 
 

@@ -2,9 +2,9 @@
 title: Solutions
 layout: page
 class: header--dark
-permalink: /solutions/
+permalink: /products/
 redirect_from:
-- /products/
+- /solutions/
 - /solutions/asset-management/
 - /solutions/backup/
 - /solutions/file-sharing/
@@ -19,7 +19,7 @@ redirect_from:
 ### Hero
 hero:
   animated: true
-  heading: Connect securely with Diode's solutions
+  heading: Connect securely with Diode's products
   subheading: For teams who care about the security of their operations, from the ground up
   image: hero/solutions.webp
 
@@ -29,7 +29,7 @@ app:
   animated: false
   class: story--app
   title: Connecting People
-  heading: App
+  heading: Diode Collab&trade;
   icon: icons/app.svg
   content: |
     Diode Collab is a small application for computers and mobile devices that connects teams to each other, their information, and their assets. 
@@ -42,7 +42,7 @@ app:
     Chat, files, notes, wiki, secure web access
   buttons:
   - title: Find Out More
-    url: "/solutions/app/"
+    url: "/products/collab/"
   - title: Download
     url: "/download/#app"
   image:
@@ -66,7 +66,7 @@ cli:
     IoT/OT data, SSH, Websites, Server Admin
   buttons:
   - title: Find Out More
-    url: "/solutions/cli/"
+    url: "/products/cli/"
   image:
     src: story/cli.webp
     class: cli
@@ -107,7 +107,7 @@ network:
     Custom apps, traffic SLA, private networks
   buttons:
   - title: Find Out More
-    url: "/solutions/network/"
+    url: "/products/network/"
   image:
     src: story/network.webp
     class: network

@@ -2,13 +2,15 @@
 title: For Teams
 layout: page
 class: header--dark
-permalink: /teams/
+permalink: /usecases/
+redirect_from:
+- /teams/
 
 
 ### Hero
 hero:
   animated: true
-  heading: Secure assets and protect your team
+  heading: Protect assets and information
   subheading: How different teams are using Diode
   image: hero/teams.webp
 
@@ -17,6 +19,70 @@ hero:
 teams:
   animated: false
   list:
+  - title: Remote OT / IoT access
+    heading: Equipment access
+    content: |
+      Access and maintain remote equipment through easy to manage 256-bit end to end encrypted connections.
+    buttons:
+    - title: Read the case study
+      class: btn--blank btn--arrow
+      url: "https://docs.diode.io/docs/usecases/equipment_access/"
+      target: _blank
+
+  - title: Teams in sensitive regions
+    heading: Sensitive Regions
+    content: |
+      Diode Collab is a secure replacement for Slack and Discord - it stores no data on a server and includes "ZTN" access for your team.  No self hosting required.
+    buttons:
+    - title: Read the case study
+      class: btn--blank btn--arrow
+      url: "https://docs.diode.io/docs/usecases/teams_in_sensitive_regions/"
+      target: _blank
+
+  - title: PII, HIPAA, and sensitive information
+    heading: Regulated Data
+    content: |
+      Diode Collab is a great way to keep your current regulated environments intact, while providing remote access to your suppliers and extended team.
+    buttons:
+    - title: Read the case study
+      class: btn--blank btn--arrow
+      url: "https://docs.diode.io/docs/usecases/regulated_data/"
+      target: _blank
+
+  - title: Software entitlement provisioning 
+    heading: License Management
+    content: |
+      Diode equips every software installation with its own self-custody encryption keys that can be used to provision and manage software licenses.  
+    buttons:
+    - title: Read the case study
+      class: btn--blank btn--arrow
+      url: "https://docs.diode.io/docs/usecases/license_provisioning/"
+      target: _blank
+
+
+  - title: Remove assets from the Internet
+    heading: Isolated server systems
+    content: |
+      One of the largest sources of data breach is through a web portal.  Isolate your Wordpress site, business information dashboard, or other sensitive system yet provide full access to your users. 
+    buttons:
+    - title: Read the case study
+      class: btn--blank btn--arrow
+      url: "https://docs.diode.io/docs/usecases/isolated_server_assets/"
+      target: _blank
+
+  - title: Vet financial applications
+    heading: Due dilligence
+    content: |
+      It is quick and easy to use Diode Collab for due dilligence on debt, equity, and insurance applications without exposing information to server environments that may retain it indefinitely.
+    buttons:
+    - title: Read the case study
+      class: btn--blank btn--arrow
+      url: "https://docs.diode.io/docs/usecases/financial_due_diligence/"
+      target: _blank
+
+
+[//]: # (old below)
+
   - title: Encrypt IP and customer information
     heading: Sensitive Data
     anchor: regulated
@@ -109,6 +175,8 @@ teams:
       class: btn--blank btn--arrow
       url: "https://contactdiode.paperform.co/"
       target: _blank
+
+
 
 ---
 

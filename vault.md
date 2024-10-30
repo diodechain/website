@@ -2,8 +2,9 @@
 title: Diode Vault
 layout: page
 class: header--white
-permalink: /solutions/vault/
-
+permalink: /products/vault/
+redirect_from:
+- /solutions/vault/
 
 ### Hero
 hero:
@@ -41,7 +42,7 @@ solutions:
   animated: false
   class: box--orange
   title: No third parties means Zero&nbsp;Leakage&trade;
-  heading: Our solutions
+  heading: Our products
   solutions:
   - title: App
     icon: "icons/app.svg"
@@ -49,21 +50,21 @@ solutions:
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/app/"
+      url: "/products/collab/"
   - title: CLI
     icon: "icons/cli.svg"
     content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone to secure autonomous systems, and/or in concert with team members using Diode Collab.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/cli/"
+      url: "/products/cli/"
   - title: Network
     icon: "icons/network.svg"
     content: The Diode Network&trade; is the world’s leading Smart Network - a new generation of zero trust software defined networks based on hardened blockchain technology. Think ad hoc E2EE perimeters.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
-      url: "/solutions/network/"
+      url: "/products/network/"
 
 ---
 
