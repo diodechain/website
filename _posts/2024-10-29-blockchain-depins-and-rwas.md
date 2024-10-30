@@ -56,11 +56,11 @@ Therefore, Diode, in addition to being a DePIN, is also an RWA whose asset is ba
 
 # Diode as a model for scalable RWAs
 
-The Diode model is significantly different than the current state of RWA (which requires legally binding agreements to record fractional shares in a high-dollar asset on-chain).  This difference can be largely attributed to one important feature: the underlying asset is already traded in the token.  
+The Diode model is significantly different than the current state of most RWAs (which require legally binding agreements to record fractional shares in a high-dollar asset on-chain).  This difference can be largely attributed to one important feature: the underlying asset is already traded in the token.  
 
 For the collectible alcohol example, it would be as if the distillery was already selling its casks in tokens (or, for tokens OR for fiat).  In that case, it would be trivial then to buy a portion of the token as a way to own a fractional part of the casks.  This shifts the complexity of the legal and functional systems to the actual supplier and buyer of the asset.  Fractional buyers can simply just buy or sell the token on an exchange.  This, of course, introduces the additional complexity of external influences on the token economics, and even on the exchange rate of tokens to other currencies.  But, it does so in a real-world-asset-backed way, and in a way that is much more dynamic, derivative-ready, and innovation friendly.
 
-As one can imagine, interesting variants can be created  - e.g. by issuing tokens for a specific asset type, by focusing on asset buyers who are not the actual consumers of the product, by exploring sustainable ratios of real-world-asset to circulating token supply, etc.
+As one can imagine, interesting variants can be created - e.g. by issuing tokens for a specific asset type, by focusing on asset buyers who are not the actual consumers of the product, by exploring sustainable ratios of real-world-asset to circulating token supply, etc.
 
 # In Summary
 
