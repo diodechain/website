@@ -10,7 +10,7 @@ redirect_from:
 hero:
   class: hero--homepage
   animated: true
-  heading: Privacy-first collaboration for you and your team
+  heading: Privacy-first collaboration
   subheading: Messaging and remote access for executives, expats, and ops teams - for when security is paramount.
   buttons:
   - title: Request Demo

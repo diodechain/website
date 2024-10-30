@@ -42,17 +42,6 @@ nav:
     url: "/products/network/"
 - title: Use Cases
   url: "/usecases/"
-  sub:
-  - title: Sensitive Data
-    url: "/teams/#regulated"
-  - title: OT and IoT
-    url: "/teams/#OT"
-  - title: Team Collaboration
-    url: "/teams/#collaboration"
-  - title: DevSec Operations
-    url: "/teams/#devsecops"
-  - title: Connected Products
-    url: "/teams/#products"
 - title: Docs
   url: "https://docs.diode.io/"
   target: _blank
