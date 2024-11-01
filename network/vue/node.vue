@@ -36,13 +36,10 @@
                             Check your firewall settings if you have them enabled.
                         </div>
                         <div v-else-if="typeof(connectivity.status) == 'string'">
-                            <h3 style="color: orange;">Partially Connected</h3>
+                            <h3 style="color: orange;">Started connection test</h3>
                             <p>Status: <% connectivity.status %>. Please reload this page to check again later.</p>
                             <p>Last check: <% formatDateTime(number(connectivity.timestamp)) %></p>
 
-                        </div>
-                        <div v-else-if="connectivity.status.failed_ports.length == 0">
-                            <h3 style="color: green;">Connected</h3>
                         </div>
                         <div v-else-if="connectivity.status.failed_ports.length == 0">
                             <h3 style="color: green;">Connected</h3>
@@ -66,10 +63,10 @@
                         </div>
                     </div>
                     <div class="doclet">
-                        <h2>Epoch</h2>
-                        <div style="margin-top: 11px" v-if="typeof (traffic) != 'string'">
-                            <% formatDateTime(number(traffic["epoch_time"]), 'date' ) %>
-                                <% number(traffic["epoch"]) %>
+                        <h2>Epoch Progress</h2>
+                        <div style="margin-top: 11px">
+                            <progress :value="epochPercentage" max="100"></progress>
+                            <% epochPercentage %>%
                         </div>
                     </div>
                     <div class="doclet">
@@ -183,27 +180,27 @@
             </div>
 
             <div v-if="typeof (traffic) != 'string' && prev_traffic != null">
-                <table class="data">
+                <table class="data" style="table-layout: auto; width: auto;">
                     <caption>Current Epoch Fleet Activity</caption>
                     <tr>
                         <th>Fleet</th>
                         <th>Devices</th>
-                        <th>Ticket Score</th>
-                        <th>Fleet Score</th>
+                        <th>Bandwidth Collected</th>
+                        <th>Total Fleet Bandwidth Submitted</th>
                         <th>Estimated Reward</th>
                     </tr>
                     <tr v-for="fleet in traffic['fleets'] ">
                         <td>
-                            <% fleet["fleet"] %>
+                            <a :href="'https://moonscan.io/address/' + fleet['fleet']" target="_blank"><% fleet['fleet'].substring(0,10) %></a>
                         </td>
                         <td>
                             <% number(fleet.total_tickets) %>
                         </td>
                         <td>
-                            <% bn(fleet.total_score).toString() %>
+                            <% Math.round(bn(fleet.total_score)/(1024*1024)) %> MB
                         </td>
                         <td>
-                            <% fleet_score(fleet) %>
+                            <% (Math.round(fleet_score(fleet)/(1024*1024*1024) * 100) / 100).toFixed(2) %> GB
                         </td>
                         <td v-if="last_score(fleet).gt(bn(fleet.total_score))">
                             <% estimated_value(fleet) %> *Estimate based on previous epoch
@@ -224,7 +221,16 @@ var DiodeNode = Vue.component("diode_node", {
     delimiters: ["<%", "%>"],
     props: { nodeid: String },
     data: () => {
+        let now = Math.floor(Date.now() / 1000);
+        let epoch = Math.floor(now / 2_592_000);
+        let epoch_start = epoch * 2_592_000;
+        let epoch_end = epoch_start + 2_592_000;
+        let epoch_percentage = Math.floor(100 * (now - epoch_start) / 2_592_000);
+
         return {
+            epochPercentage: epoch_percentage,
+            epochStart: epoch_start,
+            epochEnd: epoch_end,
             connectivity: 'loading',
             balance: 'loading',
             node: 'loading',
@@ -405,4 +411,4 @@ var DiodeNode = Vue.component("diode_node", {
         },
     },
 });
-</script>
+</script> 
