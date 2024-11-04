@@ -31,6 +31,7 @@
 
 <body class="network">
     {% include_relative vue/network.vue %}
+    {% include_relative vue/dashboard.vue %}
     {% include_relative vue/bridge.vue %}
     {% include_relative vue/node.vue %}
     <div id="app">
@@ -56,10 +57,10 @@
 
     <script>
         let app = {};
-        let url = 'wss://us1.prenet.diode.io:8443/ws'
-        // let url = 'ws://localhost:8545/ws'
-        let web3 = NewWeb3(url);
+        let web3 = NewWeb3('wss://prenet.diode.io:8443/ws');
         let web3_subscriptions = [];
+        let url = "wss://moonbeam.api.onfinality.io/ws?apikey=49e8baf7-14c3-4d0f-916a-94abf1c4c14a";
+        let moonbeam = new Web3(url);
 
         function subscribe(event, callback) {
             web3_subscriptions.push([event, callback])
@@ -99,6 +100,11 @@
             name: 'Overview',
             path: '/',
             component: Network
+        },
+        {
+            name: 'Dashboard',
+            path: '/dashboard',
+            component: Dashboard
         },
         ];
         const router = new VueRouter({
@@ -236,11 +242,6 @@
             if (DNSAlias[key]) return DNSAlias[key]
             if (DNSCache[key]) return DNSCache[key].name
             return name;
-        }
-
-        function fetchStake(address, callback) {
-            if (!address) return
-            CallRegistry('MinerValue', [0, address], callback)
         }
 
         function shorten(str, length) {

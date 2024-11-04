@@ -96,8 +96,7 @@ var Bridge = Vue.component("bridge", {
             txBlock: null,
             txStep: 0,
             txPending: 50,
-            txSender: "(loading)",
-            moonbeam: new Web3("wss://moonbeam.api.onfinality.io/ws?apikey=49e8baf7-14c3-4d0f-916a-94abf1c4c14a")
+            txSender: "(loading)"
         };
     },
 

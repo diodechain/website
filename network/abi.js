@@ -1,5 +1,5 @@
 const DNSAddr = "0xaf60faa5cd840b724742f1af116168276112d6a6"
-const Registry = "0x5000000000000000000000000000000000000000"
+const Registry = "0xD78653669fd3df4dF8F3141Ffa53462121d117a4"
 let DNSActive = {};
 let DNSCache = {}
 let DNSAlias = {
@@ -87,15 +87,103 @@ var fleetMethods = {
 
 }
 var registryMethods = {
-    "MinerValue": {
-        name: 'MinerValue',
-        type: 'function',
+    "Version": {
+        name: "Version",
+        type: "function",
+        inputs: [],
+        outputs: [{
+            type: "uint256",
+            name: "version"
+        }]
+    },
+    "Epoch": {
+        name: "Epoch",
+        type: "function",
+        inputs: [],
+        outputs: [{
+            type: "uint256",
+            name: "epoch"
+        }]
+    },
+    "FleetArray": {
+        name: "FleetArray",
+        type: "function",
+        inputs: [],
+        outputs: [{
+            type: "address[]",
+            name: "fleets"
+        }]
+    },
+    "GetFleet": {
+        name: "GetFleet",
+        type: "function",
         inputs: [{
-            type: 'uint8',
-            name: 'mode'
-        }, {
-            type: 'address',
-            name: 'miner'
+            type: "address",
+            name: "fleet"
+        }],
+        outputs: [{
+            internalType: "struct Fleet",
+            name: "",
+            type: "tuple",
+            components: [
+                { type: "bool", name: "exists" },
+                { type: "uint256", name: "currentBalance" },
+                { type: "uint256", name: "withdrawRequestSize" },
+                { type: "uint256", name: "withdrawableBalance" },
+                { type: "uint256", name: "currentEpoch" },
+                { type: "uint256", name: "score" }
+            ]
+        }]
+    },
+    "GetClientScore": {
+        name: "GetClientScore",
+        type: "function",
+        inputs: [
+            { type: "address", name: "fleet" },
+            { type: "address", name: "nodeAdress" },
+            { type: "address", name: "clientAddress" }
+        ],
+        outputs: [{
+            type: "uint256",
+            name: "score"
+        }]
+    },
+    "RelayArray": {
+        name: "RelayArray",
+        type: "function",
+        inputs: [],
+        outputs: [{
+            type: "address[]",
+            name: "relays"
+        }]
+    },
+    "RelayRewards": {
+        name: "RelayRewards",
+        type: "function",
+        inputs: [{
+            type: "address",
+            name: "relay"
+        }],
+        outputs: [{
+            type: "uint256",
+            name: "rewards"
+        }]
+    },
+    "GetNode": {
+        name: 'GetNode',
+        type: 'function',
+        inputs: [
+            { type: 'address', name: 'fleet' },
+            { type: 'address', name: 'node' }
+        ],
+        outputs: [{
+            internalType: "struct Node",
+            name: "",
+            type: "tuple",
+            components: [
+                { type: "address", name: "node" },
+                { type: "uint256", name: "score" }
+            ]
         }]
     }
 }
@@ -417,6 +505,24 @@ var bridgeOutMethods = {
 	}
 }
 
+async function callMoonbeam(abi, to, args) {
+    let call = moonbeam.eth.abi.encodeFunctionCall(abi, args)
+    let data = await moonbeam.eth.call({
+        to: to,
+        data: call,
+        gasPrice: 0
+    })
+
+    if (abi.outputs) {
+        if (abi.outputs[0].components) {
+            data = moonbeam.eth.abi.decodeParameters(abi.outputs[0].components, data);
+        } else {
+            data = moonbeam.eth.abi.decodeParameter(abi.outputs[0], data);
+        }
+    }
+    return data;
+}
+
 function call(abi, to, args, callback) {
     let call = web3.eth.abi.encodeFunctionCall(abi, args)
     web3.eth.call({
@@ -448,8 +554,8 @@ function CallDNS(name, args, callback) {
     call(dnsMethods[name], DNSAddr, args, callback)
 }
 
-function CallRegistry(name, args, callback) {
-    call(registryMethods[name], Registry, args, callback)
+async function CallRegistry(name, args) {
+    return await callMoonbeam(registryMethods[name], Registry, args)
 }
 
 function CallFleet(name, to, args, callback) {
