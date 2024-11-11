@@ -21,7 +21,7 @@ The Diode team has been working hard at updates and has published some great new
 **List Nickname in Chat Mentions**
 <br> The nickname of a Team Member mentioned in chat is now listed in addition to the username.
 
-**Redirect to home**
+**Redirect to Home**
 <br> The chat message “Mark unread” now redirects the main view to the Zone home when marking a message unread to help with unintended clearing of the unread notification bubble.
 
 **Emojis in Nicknames** 
@@ -53,7 +53,7 @@ The Diode team has been working hard at updates and has published some great new
 <br>
 The team addressed various bugs such as layout issues on mobile pages, alignment of quick access bar titles on Android and Windows, broken channel icons, missing file viewing in private chats, and disrupted Web2/Web3 tunnels. Fixes also included preventing accidental zone deletion, correcting chat input errors when adding images, and ensuring reliable Zone folder creation during new joins.
 
-If you want to read more about the specifics of each update, to go our [App Versions](https://app.docs.diode.io/docs/versions/1-12-0/) page and check out the specific version details.
+If you want to read more about the specifics of each update, go to our [App Versions](https://app.docs.diode.io/docs/versions/1-12-0/) page and check out the specific version details.
 
 To explore further please:
 <div class="story__buttons">
