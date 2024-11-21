@@ -181,7 +181,7 @@
 
             <div v-if="typeof (traffic) != 'string' && prev_traffic != null">
                 <table class="data" style="table-layout: auto; width: auto;">
-                    <caption>Current Epoch Fleet Activity</caption>
+                    <caption>Epoch <% number(traffic['epoch']) %> Fleet Activity</caption>
                     <tr>
                         <th>Fleet</th>
                         <th>Devices</th>
@@ -197,10 +197,10 @@
                             <% number(fleet.total_tickets) %>
                         </td>
                         <td>
-                            <% Math.round(bn(fleet.total_score)/(1024*1024)) %> MB
+                            <% Math.round(bn(fleet.total_score)/(1024*1024*1024)) %> GB
                         </td>
                         <td>
-                            <% (Math.round(fleet_score(fleet)/(1024*1024*1024) * 100) / 100).toFixed(2) %> GB
+                            0 GB
                         </td>
                         <td v-if="last_score(fleet).gt(bn(fleet.total_score))">
                             <% estimated_value(fleet) %> *Estimate based on previous epoch
@@ -208,6 +208,33 @@
                         <td v-else>
                             <% estimated_value(fleet) %> *Estimate is inaccurate as the previous epoch showed
                                 much less or no activity
+                        </td>
+                    </tr>
+                </table>
+                <table class="data" style="table-layout: auto; width: auto;">
+                    <caption>Epoch <% number(prev_traffic['epoch']) %> Fleet Activity</caption>
+                    <tr>
+                        <th>Fleet</th>
+                        <th>Devices</th>
+                        <th>Bandwidth Collected</th>
+                        <th>Total Fleet Bandwidth Submitted</th>
+                        <th>Estimated Reward</th>
+                    </tr>
+                    <tr v-for="fleet in prev_traffic['fleets'] ">
+                        <td>
+                            <a :href="'https://moonscan.io/address/' + fleet['fleet']" target="_blank"><% fleet['fleet'].substring(0,10) %></a>
+                        </td>
+                        <td>
+                            <% number(fleet.total_tickets) %>
+                        </td>
+                        <td>
+                            <% Math.round(bn(fleet.total_score)/(1024*1024*1024)) %> GB
+                        </td>
+                        <td>
+                            <% (Math.round(fleet_score(fleet)/(1024*1024*1024) * 100) / 100).toFixed(2) %> GB
+                        </td>
+                        <td>
+                            <% estimated_value(fleet) %>
                         </td>
                     </tr>
                 </table>
@@ -275,6 +302,9 @@ var DiodeNode = Vue.component("diode_node", {
 
         estimated_value(fleet) {
             let score = this.fleet_score(fleet)
+            if (score.isZero()) {
+                return "0"
+            }
             let total_score = this.bn(fleet["total_score"])
             if (total_score.gt(score)) {
                 // If the score of all collected tickets is higher than the fleet score
