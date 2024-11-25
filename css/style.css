@@ -11440,3 +11440,18 @@ body.network {
     background-color: #262e2b;
   }
 }
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  animation: rotateMe 2s linear infinite;
+}
+
+@keyframes rotateMe {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

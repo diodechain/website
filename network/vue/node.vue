@@ -268,7 +268,6 @@ var DiodeNode = Vue.component("diode_node", {
             uptime: 'loading',
             name: this.nodeid,
             prev_traffic: null,
-            // moonbeam: new Web3("wss://moonbeam.api.onfinality.io/ws?apikey=49e8baf7-14c3-4d0f-916a-94abf1c4c14a")
         };
     },
 
@@ -419,25 +418,6 @@ var DiodeNode = Vue.component("diode_node", {
             }).join('\n');
 
             this.usageHistory = usageHistory;
-        },
-
-        async callMoonbeam(method, params) {
-            let abi = bridgeInMethods[method];
-            let call = this.moonbeam.eth.abi.encodeFunctionCall(abi, params)
-            let data = await this.moonbeam.eth.call({
-                to: "0xA32a9eD71fBF22e6D197c13725Ad61958e9a4499",
-                data: call,
-                gasPrice: 0
-            })
-
-            if (abi.outputs) {
-                if (abi.outputs[0].components) {
-                    data = this.moonbeam.eth.abi.decodeParameters(abi.outputs[0].components, data);
-                } else {
-                    data = this.moonbeam.eth.abi.decodeParameter(abi.outputs[0], data);
-                }
-            }
-            return data;
         },
     },
 });

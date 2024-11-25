@@ -33,7 +33,16 @@
                         </div>
                     </div>
                     
-                    <button v-if="enabled" v-on:click="bridge()" class="button">Bridge</button>
+                    <button v-if="enabled" v-on:click="bridge()" class="button" :disabled="pending" style="display: flex; align-items: center;">
+                        <span v-if="txStep == 0">Bridge</span>
+                        <span v-else-if="txStep == 1">Signing</span>
+                        <span v-else-if="txStep == 2">Confirming</span>
+                        <span v-else-if="txStep == 3">Awaiting</span>
+                        <span v-else>Complete</span>
+                        <div v-if="pending" class="spinner"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg></div>
+                    </button>
                     <button v-else v-on:click="Wallet.enable()" class="button">Connect Wallet</button>
                     <div v-if="error" v-html="error" class="error"></div>
                 </form>
@@ -93,6 +102,7 @@ var Bridge = Vue.component("bridge", {
             amount: 0,
             error: null,
             balance: 0,
+            pending: false,
             txBlock: null,
             txStep: 0,
             txPending: 50,
@@ -151,9 +161,9 @@ var Bridge = Vue.component("bridge", {
             this.txPending = "~" + Math.floor(txPending * 12 / 60) + " minutes";
             console.log("currentBlock", this.currentBlock, "txBlock", this.txBlock, "txPending", this.txPending);
 
-            let moonLen = await this.callMoonbeam("inTxsLength", [15]);
+            let moonLen = await this.callBridge("inTxsLength", [15]);
             if (moonLen > this.txid) {
-                let moonTx = await this.callMoonbeam("inTxsAt", [15, this.txid]);
+                let moonTx = await this.callBridge("inTxsAt", [15, this.txid]);
                 console.log(moonTx.historyHash, this.tx[5]);
                 if (moonTx.historyHash == this.tx[5]) {
                     this.txStep = 4;
@@ -166,6 +176,17 @@ var Bridge = Vue.component("bridge", {
 
         async bridge() {
             this.error = null;
+            this.pending = true;
+            try {
+                await this.doBridge();
+            } catch (error) {
+                this.error = error;
+                // pass
+            }
+            this.pending = false;
+        },
+
+        async doBridge() {
             if (this.amount < 0.1) {
                 this.error = "Amount must be greater than 0.1";
                 return;
@@ -174,7 +195,6 @@ var Bridge = Vue.component("bridge", {
                 this.error = "Invalid destination address";
                 return;
             }
-
             let [ok, ret] = await Wallet.runTransaction(
                 "bridgeOut",
                 {
@@ -205,23 +225,9 @@ var Bridge = Vue.component("bridge", {
             }
         },
 
-        async callMoonbeam(method, params) {
+        async callBridge(method, params) {
             let abi = bridgeInMethods[method];
-            let call = this.moonbeam.eth.abi.encodeFunctionCall(abi, params)
-            let data = await this.moonbeam.eth.call({
-                to: "0xA32a9eD71fBF22e6D197c13725Ad61958e9a4499",
-                data: call,
-                gasPrice: 0
-            })
-
-            if (abi.outputs) {
-                if (abi.outputs[0].components) {
-                    data = this.moonbeam.eth.abi.decodeParameters(abi.outputs[0].components, data);
-                } else {
-                    data = this.moonbeam.eth.abi.decodeParameter(abi.outputs[0], data);
-                }
-            }
-            return data;
+            return await callMoonbeam(abi, "0xA32a9eD71fBF22e6D197c13725Ad61958e9a4499", params);
         }
     },
 });
