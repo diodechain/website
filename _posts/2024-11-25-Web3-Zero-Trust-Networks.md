@@ -4,7 +4,7 @@ title: Web3 Zero Trust Networks
 description: Web3 Zero Trust Networks
 date: 2024-11-25 12:00
 categories: [Diode, Security, Web3, Zero Trust, Blockchain]
-tags: [Diode, Diode Drive]
+tags: [Diode, Web3, Zero Trust, Blockchain, Security]
 author: MNJR
 image: 	assets/img/blog/web3-ztna.jpg
 
