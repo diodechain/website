@@ -93,7 +93,7 @@ download:
   app:
     macos: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.12.4.dmg"
     macos-checksum:
-    windows: "https://share.diode.link/zip/drive-uu7nc1mj9pk4nv2vghsc/szgrwl66ba0azru2/dDrive-1.13.5.exe"
+    windows: "https://download.diode.io/downloads/collab/dDrive-1.13.5.exe"
     windows-checksum:
     linux: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.12.4-linux-x86_64.run"
     linux-checksum: d989d71f503e69b5b1efb3456ac7b6c5e39afba8
