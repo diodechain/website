@@ -16,8 +16,9 @@ hero:
   heading: Stay connected with Diode Collab
   subheading: Secure chat and system access for teams
   buttons:
-  - title: Request Demo
-    url: "https://diodedemo.paperform.co/"
+  - title: Download
+    url: "#download-app"
+    class: popup-open
   image: hero/app.webp
 
 
