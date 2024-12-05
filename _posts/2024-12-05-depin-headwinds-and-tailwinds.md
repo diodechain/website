@@ -2,7 +2,7 @@
 layout: post
 title: DePIN Tailwinds and Headwinds
 description: DePIN Tailwinds and Headwinds
-date: 2024-12-02 12:00
+date: 2024-12-05 12:00
 categories: [Diode, Security, Web3, Zero Trust, Blockchain]
 tags: [Diode, Web3, Zero Trust, Blockchain, Security]
 author: Hans Rempel
@@ -11,7 +11,7 @@ image: 	assets/img/blog/tailwinds-blog.jpg
 ---
 ## **DePIN Tailwinds and Headwinds**
 
-Blockchain DePINs are changing the way that IoT sensors, communication services, and compute resources are deployed and managed. As described above, DePINs create better services for end users, and many DePINs can become an RWA, unlocking additional innovation and vibrancy for the project.
+Blockchain DePINs are changing the way that IoT sensors, communication services, energy supplies, and compute resources are deployed and managed. As described above, DePINs create better services for end users, and many DePINs can become an RWA, unlocking additional innovation and vibrancy for the project.
 
 However, DePINs are complicated to successfully deploy because they require advanced knowledge across multiple disciplines.  
 
