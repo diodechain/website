@@ -26,38 +26,41 @@ pricing:
   - title: Team
     description: secure collaboration for executives and teams
     price:
-      yearly: 100
-      year: 1200
-      monthly: 100
+      yearly: 8.50
+      year: 100
+      monthly: 10
     features: |
       - Invitation codes
       - 10 chat channels
       - 20 web links
-      - 10 team members
-      - $10 per additional team
+      - File backup 
+      - File sync policy
+      - Admin role
       - Standard support
     button: Order
     id:
-      yearly: "https://buy.stripe.com/4gwaHq5UM2YueTC6oP"
-      monthly: "https://buy.stripe.com/28o16Q3ME1UqbHq3cx"
+      yearly: "/plans/team_yearly"
+      monthly: "/plans/team_monthly"
 
 
   - title: Business
     description: secure collaboration and remote access
     price:
-      yearly: 150
-      year: 1800
-      monthly: 150
+      yearly: 12.50
+      year: 150
+      monthly: 15
     features: |
       All Team plus:
+      - 100 chat channels
+      - 100 web links
       - Secure server access
       - Regional access tunnels
-      - $15 per additional team
+      - Custom endpoints
       - Standard support
     button: Order
     id:
-      yearly: "https://buy.stripe.com/6oE7ve1Ew2YufXGaF4"
-      monthly: "https://buy.stripe.com/fZe2aU82U7eK3aUeVi"
+      yearly: "/plans/business_yearly"
+      monthly: "/plans/business_monthly"
 
   - title: Enterprise
     description: expanded security perimeters and integrations
