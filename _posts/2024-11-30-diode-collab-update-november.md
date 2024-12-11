@@ -6,7 +6,7 @@ date: 2024-10-31 12:00
 categories: [Diode, Security]
 tags: [Diode, Diode Drive]
 author: MNJR
-image: 	assets/img/blog/Product Update.jpeg
+image: 	assets/img/blog/collab product update.jpg
 
 ---
 
