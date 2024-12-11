@@ -11,7 +11,7 @@ image: 	assets/img/blog/tailwinds-blog.jpg
 ---
 ## **DePIN Tailwinds and Headwinds**
 
-Blockchain DePINs are changing the way that IoT sensors, communication services, energy supplies, and compute resources are deployed and managed. As described above, DePINs create better services for end users, and many DePINs can become an RWA, unlocking additional innovation and vibrancy for the project.
+Blockchain DePINs are changing the way that IoT sensors, communication services, energy supplies, and compute resources are deployed and managed. By creating better services for end users, they can also transform into RWAs, unlocking additional innovation and vibrancy for their projects.
 
 However, DePINs are complicated to successfully deploy because they require advanced knowledge across multiple disciplines.  
 
@@ -25,7 +25,7 @@ DePINs can create more available, more pertinent, more secure, more performant, 
 
 DePINs are regionally distributed - they occupy many locations as a decentralized ecosystem of nodes deployed by various “Node Hosts”.  This means DePIN nodes, and therefore the DePIN service, will usually be available in many more locations (and regions) than a centralized service provider could hope to deploy and maintain.  
 
-In the example of an E2EE communication network DePIN like Diode, a DePIN node can be located in any city - not just in the nearest Tier 4 data center.  As can be seen in a map of the Diode Network ([https://diode.io/network](https://diode.io/network)), while some nodes are in data centers, many other nodes are in office spaces, homes, and ISP closets.
+In the example of an [E2EE communication network](https://diode.io/blog/trust-broker-security#:~:text=In%20Zero%20Trust%2C%20the%20communications,who%20would%20like%20to%20communicate.) DePIN like Diode, a DePIN node can be located in any city - not just in the nearest Tier 4 data center.  As can be seen in a map of the Diode Network ([https://diode.io/network](https://diode.io/network)), while some nodes are in data centers, many other nodes are in office spaces, homes, and ISP closets.
 
 ### **More pertinent**
 
@@ -33,13 +33,13 @@ Because of the geographic proximity of the nodes to their users, the service is 
 
 ### **More secure**
 
-Not all DePINs can boast “more secure” services than their centralized competitors.  However, because physical security of the DePIN nodes is not guaranteed, DePIN services must approach security with the lack of physical security as a constraint.  This means that they will often ensure the mathematical security (or a combination of mathematical and electromechanical security) of sensitive information to ensure the integrity and privacy of the service (Diode’s DePIN is fully mathematically secured).  This approach can eliminate the potential of hosting provider data leaks (whether intentional or unintentional).
+Not all DePINs can boast “more secure” services than their centralized competitors.  However, because physical security of the DePIN nodes is not guaranteed, DePIN services must approach security with the lack of physical security as a constraint.  This means that they will often ensure the mathematical security (or a combination of mathematical and electromechanical security) of sensitive information to ensure the integrity and privacy of the service (Diode’s DePIN is fully [mathematically secured](https://diode.io/blog/trust-broker-security#:~:text=In%20Zero%20Trust%2C%20the%20communications,who%20would%20like%20to%20communicate.)).  This approach can eliminate the potential of hosting provider data leaks (whether intentional or unintentional).
 
 ### **More performant**
 
 Decentralization and regional co-location of services can provide much better performance for service delivery.  For example, this is why Netflix co-locates caching systems in regional ISPs, and why Uber can generally provide a much faster pickup time than a taxi.  DePINs are the same.  Diode’s regional co-location of communication nodes means that the shorter round-trip time for communications is faster than centralized alternatives.
 
-### **More Sustainable**
+### **More sustainable**
 
 DePINs provide benefits to a wider ecosystem of participants.  Where-as centralized service providers aggregate service value solely to the centrally managed service nexus’, DePINs automatically distribute value to regional node hosts.  Additionally, since an element of free market decision making is often used by the node hosts to determine if the rewards are sufficient to provide the service, the overall cost to deliver the service quickly finds a market-driven level.  Since the DePIN take-rate is also built into the system, the overall service can be delivered for a lower price than competing centralized services.  
 
@@ -63,7 +63,7 @@ Because deployments are ecosystem-led, the node management interface and dashboa
 
 ### **May not achieve economies of scale**
 
-Data centers enjoy economies of scale - they can purchase compute systems in bulk and engage in volume buying contracts for energy.  Node hosts, on the other hand, must operate in the “unused capacity” headroom.  Node hosts are happy to provide some unused asset capacity to the DePIN service, but otherwise must pay “retail” rate for any asset needed in addition.  This retail rate must be reimbursed to the Node host in a reasonable time – usually within 3 months for a capital asset and within 30 days for an operational cost.  This additional cost can increase the price of the DePIN service above that of centralized services, and is an important consideration.  For example, if an Akash node operator has to rent a VM from Contabo to resell the same VM through Akash, a decentralized Akash VM will always be higher cost than a centralized Contabo VM.  Due to token economics, even resale of retail services can be sustainable in the early days of a project, but must be addressed to achieve long term sustainability.
+Data centers enjoy economies of scale - they can purchase compute systems in bulk and engage in volume buying contracts for energy.  Node hosts, on the other hand, must operate in the “unused capacity” headroom.  Node hosts are happy to provide some unused asset capacity to the DePIN service, but otherwise must pay “retail” rate for any asset needed in addition.  This retail rate must be reimbursed to the Node host in a reasonable time – usually within 3 months for a capital asset and within 30 days for an operational cost.  This additional cost can increase the price of the DePIN service above that of centralized services, and is an important consideration.  For example, if an [Akash node](https://akash.network/docs/architecture/akash-node/) operator has to rent a VM from Contabo to resell the same VM through Akash, a decentralized Akash VM will always be higher cost than a centralized Contabo VM.  Due to token economics, even resale of retail services can be sustainable in the early days of a project, but must be addressed to achieve long term sustainability.
 
 ## **Takeaway**
 
