@@ -11,7 +11,7 @@ image: 	assets/img/blog/tailwinds-blog.jpg
 ---
 ## **DePIN Tailwinds and Headwinds**
 
-Blockchain DePINs are changing the way that IoT sensors, communication services, energy supplies, and compute resources are deployed and managed. By creating better services for end users, they can also transform into RWAs, unlocking additional innovation and vibrancy for their projects.
+Blockchain DePINs are changing the way that [IoT sensors, communication services, energy supplies, and compute resources are deployed and managed](/blog/blockchain-depins-explained). By creating better services for end users, [they can also transform into RWAs](/blog/blockchain-depins-and-rwas), unlocking additional innovation and vibrancy for their projects.
 
 However, DePINs are complicated to successfully deploy because they require advanced knowledge across multiple disciplines.  
 
@@ -25,7 +25,7 @@ DePINs can create more available, more pertinent, more secure, more performant, 
 
 DePINs are regionally distributed - they occupy many locations as a decentralized ecosystem of nodes deployed by various “Node Hosts”.  This means DePIN nodes, and therefore the DePIN service, will usually be available in many more locations (and regions) than a centralized service provider could hope to deploy and maintain.  
 
-In the example of an [E2EE communication network](https://diode.io/blog/trust-broker-security#:~:text=In%20Zero%20Trust%2C%20the%20communications,who%20would%20like%20to%20communicate.) DePIN like Diode, a DePIN node can be located in any city - not just in the nearest Tier 4 data center.  As can be seen in a map of the Diode Network ([https://diode.io/network](https://diode.io/network)), while some nodes are in data centers, many other nodes are in office spaces, homes, and ISP closets.
+In the example of an [E2EE communication network DePIN like Diode](/blog/Web3-Zero-Trust-Networks), a DePIN node can be located in any city - not just in the nearest Tier 4 data center.  As can be seen in a map of the [Diode Network](https://diode.io/network), while some nodes are in data centers, many other nodes are in office spaces, homes, and ISP closets.
 
 ### **More pertinent**
 
@@ -33,7 +33,7 @@ Because of the geographic proximity of the nodes to their users, the service is 
 
 ### **More secure**
 
-Not all DePINs can boast “more secure” services than their centralized competitors.  However, because physical security of the DePIN nodes is not guaranteed, DePIN services must approach security with the lack of physical security as a constraint.  This means that they will often ensure the mathematical security (or a combination of mathematical and electromechanical security) of sensitive information to ensure the integrity and privacy of the service (Diode’s DePIN is fully [mathematically secured](https://diode.io/blog/trust-broker-security#:~:text=In%20Zero%20Trust%2C%20the%20communications,who%20would%20like%20to%20communicate.)).  This approach can eliminate the potential of hosting provider data leaks (whether intentional or unintentional).
+Not all DePINs can boast “more secure” services than their centralized competitors.  However, because physical security of the DePIN nodes is not guaranteed, DePIN services must approach security with the lack of physical security as a constraint.  This means that they will often ensure the mathematical security (or a combination of mathematical and electromechanical security) of sensitive information to ensure the integrity and privacy of the service (Diode’s DePIN is [mathematically secured](/blog/trust-broker-security)).  This approach can eliminate the potential of hosting provider data leaks (whether intentional or unintentional).
 
 ### **More performant**
 
