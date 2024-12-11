@@ -17,7 +17,7 @@ hero:
 
 {%- include hero.liquid -%}
 
-Whereas, Diode has developed and desires to advertise, promote, market and distribute its Services, and whereas Affiliate desires to obtain the right to act as an independent affiliate of Diode with the non-exclusive right to market, promote and refer Customers to the Services. Therefore, by engaging with [the Diode Referral Program](https://diode.foundation/docs/programs/terms.html) and subsequently using a Diode Referral Code to register Customer Leads or Subscriptions, Affiliate agrees to participate in Diode’s Affiliate Program (“Program”) in accordance with the terms and conditions set forth in the following sections.
+Whereas, Diode has developed and desires to advertise, promote, market and distribute its Services, and whereas Affiliate desires to obtain the right to act as an independent affiliate of Diode with the non-exclusive right to market, promote and refer Customers to the Services. Therefore, by engaging with [the Diode Foundation's Referral Program](https://diode.foundation/docs/programs/terms.html) and subsequently using a Diode Referral Code to register Customer Leads or Subscriptions, Affiliate agrees to participate in Diode’s Affiliate Program (“Program”) in accordance with the terms and conditions set forth in the following sections.
 
 ### 1. Appointment
 
