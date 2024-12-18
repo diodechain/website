@@ -91,7 +91,7 @@ social:
 # Download Links
 download:
   app:
-    macos: "https://download.diode.io/downloads/collab/dDrive-1.14.0.dmg"
+    macos: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.12.4.dmg"
     macos-checksum:
     windows: "https://download.diode.io/downloads/collab/dDrive-1.14.0.exe"
     windows-checksum:
