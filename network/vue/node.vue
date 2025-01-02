@@ -329,7 +329,7 @@ var DiodeNode = Vue.component("diode_node", {
 
         async doUpdateNode(nodeid) {
             console.log("Updating node", nodeid);
-            this.balance = await web3.eth.getBalance(nodeid);
+            this.balance = valueToBalance(await CallToken("balanceOf", [nodeid]))
             let node = await web3.eth.getNode(nodeid);
             let extra = {};
 

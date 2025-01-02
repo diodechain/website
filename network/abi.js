@@ -1,5 +1,6 @@
 const DNSAddr = "0xaf60faa5cd840b724742f1af116168276112d6a6"
 const Registry = "0xD78653669fd3df4dF8F3141Ffa53462121d117a4"
+const DiodeToken = "0x434116a99619f2B465A137199C38c1Aab0353913"
 let DNSActive = {};
 let DNSCache = {}
 let DNSAlias = {
@@ -85,6 +86,20 @@ var fleetMethods = {
         }]
     },
 
+}
+var tokenMethods = {
+    "balanceOf": {
+        name: "balanceOf",
+        type: "function",
+        inputs: [{
+            type: "address",
+            name: "account"
+        }],
+        outputs: [{
+            type: "uint256",
+            name: "balance"
+        }]
+    }
 }
 var registryMethods = {
     "Version": {
@@ -556,6 +571,10 @@ function CallDNS(name, args, callback) {
 
 async function CallRegistry(name, args) {
     return await callMoonbeam(registryMethods[name], Registry, args)
+}
+
+async function CallToken(name, args) {
+    return await callMoonbeam(tokenMethods[name], DiodeToken, args)
 }
 
 function CallFleet(name, to, args, callback) {
