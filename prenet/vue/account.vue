@@ -84,7 +84,7 @@
           <th>Last Transaction (UTC)</th>
           <td><% JSON.stringify(transaction) %></td>
         </tr> -->
-        <tr v-if="object && object[0] == 'ticket'">
+        <tr v-if="object">
           <th>Device Data</th>
           <td class="big">
             <table class="data nested">
@@ -99,30 +99,34 @@
               <tr>
                 <th>Last Relay</th>
                 <td>
-                  <account-link :hash="object[1]" />
+                  <account-link :hash="object.server_id" />
                 </td>
               </tr>
-              <tr>
+              <tr v-if="object.block_number">
                 <th>Last Block</th>
-                <td><% web3.utils.hexToNumber(object[2]) %></td>
+                <td><% web3.utils.hexToNumber(object.block_number) %></td>
+              </tr>
+              <tr v-if="object.epoch">
+                <th>Epoch</th>
+                <td><% web3.utils.hexToNumber(object.epoch) %></td>
               </tr>
               <tr>
                 <th>Fleet</th>
                 <td>
-                  <account-link :hash="object[3]" />
+                  <account-link :hash="object.fleet_contract" />
                 </td>
               </tr>
               <tr>
                 <th>Connections</th>
-                <td><% web3.utils.hexToNumber(object[4]) %></td>
+                <td><% web3.utils.hexToNumber(object.total_connections) %></td>
               </tr>
               <tr>
                 <th>Bytes</th>
-                <td><% web3.utils.hexToNumber(object[5]) %></td>
+                <td><% web3.utils.hexToNumber(object.total_bytes) %></td>
               </tr>
               <tr>
-                <th>Address</th>
-                <td><% object[6] %></td>
+                <th>Preferred Servers</th>
+                <td><% object.local_address %></td>
               </tr>
             </table>
           </td>
@@ -238,13 +242,46 @@ var VAccount = Vue.component("account", {
       });
       web3.eth.getNode(this.hash, true, (err, ret) => {
         this.err = undefined;
-        if (err) this.error = err;
-        else this.node = ret;
+        if (err || ret[0] != "server") {
+          this.node = undefined;
+          return;
+        }
+        this.node = ret;
       });
       web3.eth.getObject(this.hash, true, (err, ret) => {
         this.err = undefined;
-        if (err) this.error = err;
-        else this.object = ret;
+        if (err || (ret[0] != "ticketv2" && ret[0] != "ticket")) return;
+
+        switch (ret[0]) {
+          case "ticketv2":
+            this.object = {
+              server_id: ret[1],
+              chain_id: ret[2],
+              epoch: ret[3],
+              fleet_contract: ret[4],
+              total_connections: ret[5],
+              total_bytes: ret[6],
+              local_address: ret[7],
+              device_signature: ret[8],
+              server_signature: ret[9],
+            };
+            break;
+          case "ticket":
+            this.object = {
+              server_id: ret[1],
+              block_number: ret[2],
+              fleet_contract: ret[3],
+              total_connections: ret[4],
+              total_bytes: ret[5],
+              local_address: ret[6],
+              device_signature: ret[7],
+              server_signature: ret[7],
+            };
+            break;
+          default:
+            this.object = undefined;
+            break;
+        }
       });
       web3.eth.getCodeHash(this.hash, (err, ret) => {
         this.err = undefined;
