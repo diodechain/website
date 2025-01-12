@@ -11441,6 +11441,11 @@ body.network {
   }
 }
 
+body.network .bridge_list table {
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+
 .spinner {
   width: 24px;
   height: 24px;

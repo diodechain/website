@@ -52,6 +52,8 @@
                 <h3>Transaction: <% txid %>
                 </h3>
                 <p>Sender: <% txSender %>
+                <p>Destination: <% destination %>
+                <p>Amount: <% valueToBalance(amount) %>
                 </p>
                 <div v-if="error" v-html="error" class="error"></div>
 

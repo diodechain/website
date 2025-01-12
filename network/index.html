@@ -33,6 +33,7 @@
     {% include_relative vue/network.vue %}
     {% include_relative vue/dashboard.vue %}
     {% include_relative vue/bridge.vue %}
+    {% include_relative vue/bridge_list.vue %}
     {% include_relative vue/node.vue %}
     <div id="app">
         <div class="header">
@@ -86,6 +87,12 @@
             name: false,
             path: '/bridge/',
             component: Bridge
+        },
+        {
+            name: false,
+            path: '/bridge_list',
+            component: BridgeList,
+            props: true
         },
         {
             name: false,
