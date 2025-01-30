@@ -17,6 +17,9 @@ hero:
     class: popup-open
   image: hero/app.webp
 
+### Youtube Playlist Collab
+heading: Check out our Youtube tutorials to help you get started 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=hUAkSD58MRXK_Acu&amp;list=PLbTQ2A9hMXgGWU5oGlwVow-yGtoWIyNlG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Story: For Teams
 story:
