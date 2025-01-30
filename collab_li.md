@@ -9,8 +9,8 @@ permalink: /products/collab-li/
 hero:
   class: hero--rounded hero--smaller
   animated: true
-  heading: Stay connected with Diode Collab
-  subheading: Get started with the free Nomad plan today
+  heading: Secure Messaging with Diode Collab
+  subheading: Get started with the free Nomad plan today!
   buttons:
   - title: Download
     url: "#download-app"
