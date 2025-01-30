@@ -3,7 +3,7 @@ title: Diode Collab&trade;
 layout: page
 class: header--white
 permalink: /products/collab-li/
-
+noindex: true
 
 ### Hero
 hero:
