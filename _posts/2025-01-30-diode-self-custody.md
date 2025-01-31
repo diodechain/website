@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Diode's Self-Custody"
-date: 2019-01-27 12:11
+date: 2025-01-30 12:11
 categories: [Self-Custody]
 tags: [self-custody, blockchain, security, diode drive]
 image: assets/img/blog/self-custody.jpg
