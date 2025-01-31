@@ -44,4 +44,8 @@ Zone Availability Canisters, hosted on the ICP blockchain, solve this by ensurin
 
 All data is encrypted, ensuring privacy and security. The best part? Organizations fully control their canisters, and the source code is open for auditing on GitHub.
 
-To learn more join our [Telegram](https://t.me/diode_chain), follow us on [Twitter](https://twitter.com/diode_chain) and sign up for email notifications.
+To explore further please:
+<div class="story__buttons">
+  <a href="{{"https://contactdiode.paperform.co"}}" class="btn" target="">Get in Touch</a>
+  <a href="#download-app" class="btn popup-open" target="">Try Diode Out</a>
+</div>
