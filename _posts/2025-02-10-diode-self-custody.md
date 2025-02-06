@@ -10,39 +10,55 @@ image: assets/img/blog/self-custody.jpg
 
 **Diode Collab: Secure Collaboration, Redefined**
 
-After three years of development, we're excited to launch a major update to Diode Collab: our next-gen collaboration suite designed for seamless, secure teamwork.
+We're excited to announce a major update to Diode Collab&trade; - our next-gen collaboration suite designed for seamless, secure teamwork.
 
-With chat, file sharing, note-taking, and remote access, Diode Collab ensures teams stay connected while maintaining full data self-custody. For example, if your team works remotely but needs secure access to an on-premises GitLab instance, Diode Collab provides easy, encrypted access-without relying on third parties.
+[Diode Collab](https://diode.io/products/collab) ensures teams stay connected while maintaining full data self-custody - all without self-hosted servers or network supplier risk!
+
+Diode Collab v.1.15.0 introduces:
+
+* Always-on presence (by leveraging the [Internet Computer](https://internetcomputer.org/) - see below!)
+* Full push notifications for both iOS and Android
+* Advanced file policy permissions for organizations and large groups.  
+
+The combination of these features is a game changer for those who care about protecting their information.
 
 **What is Full Self-Custody?**
 
-Full self-custody means no third-party access to your data. Originating from Web3 and crypto, it ensures that only you hold the keys-just like owning Bitcoin. Diode applies this to communication and collaboration, giving organizations sole control over their data while keeping it globally accessible and always available. Security is mathematically guaranteed by blockchain, ensuring that only you can access, delete, and manage your data-without relying on third parties.
+Full self-custody means no third-party access to your data or credentials or credential groups. Originating from Web3, it ensures that only YOU hold the keys - just like owning Bitcoin. Diode applies this to communication and collaboration, giving organizations sovereign control over their data.  All while keeping it globally accessible and always available. Security is mathematically guaranteed by Diode's Blockquick&trade; and system of smart contracts, ensuring that only you can access, modify, and administrate your data.
 
-**Simplicity and Cost Efficiency**
+**Simple and Cost Effective**
 
-Diode Collab simplifies security with cryptographic keys instead of passwords, making access safer and more reliable. It also cuts costs by replacing multiple tools-cloud storage, communication, and VPNs-with one solution. Running on a decentralized network, it eliminates server and maintenance expenses, directly benefitting users with the reduced costs.
+Diode Collab simplifies security with cryptographic keys (aka passkeys) instead of passwords, making access safer and more reliable. It reduces costs by replacing multiple tools: storage, communication, and VPN. By leveraging the decentralized and automated Diode Network, it eliminates server and maintenance expenses, directly benefitting users with the reduced costs.
 
-**Reliability and Uptime**
+**Reliable and Always Up**
 
-Another major advantage is increased uptime. Blockchains, by their nature, have little to no downtime. Compare this with cloud providers or self-hosted on-premise solutions, which can experience outages due to server failures or regional catastrophes like storms or tornadoes. With a chain-based system like Diode Collab, your data remains accessible no matter what.
+Another major advantage of Diode Collab is increased uptime. Blockchains, because of their decentralized and permissionless nature, have little to no downtime. Compare this with cloud providers or self-hosted on-premise solutions, which can experience outages due to server failures or regional catastrophes. With a blockchain-anchored self-custody system like Diode Collab, your data remains accessible no matter what.
 
-**Example of Diode Collab**
+**Always-on Presence**
 
-By taking a look at the app, you can easily create a Zone and can edit it to your liking. Within your Zone, you can take notes, share them with a team, chat, and exchange documents and files—all within a fully self-custodied environment.
+Diode and the [Internet Computer](https://internetcomputer.org/) have partnered to provide self-custody always-on presence to Diode Collab!  
 
-**Introducing Zone Availability Canisters**
+_Before:_
 
-ICP and Diode Canisters enable seamless messaging in Diode Collab. When you send a message, it’s stored on your device-but what if you go offline before the recipient comes online?
+Since Diode Collab is a fully peer-to-peer system, if team members were not online at the same time, they would not be able to communicate - their "presence" was mismatched.  To mitigate this,  we recommended users leverage DIY "presence peers" or [vaults](https://diode.io/products/vault) to overcome potential presence issues.  Although this is still the most self-custody approach, it wasn't easy enough for most Zone owners.  
 
-Zone Availability Canisters, hosted on the ICP blockchain, solve this by ensuring message syncing. Here’s how it works:
+_Now:_
 
-1.  **Diode Collab creates a canister** through a factory.
-2.  **The factory generates a child canister**, one per organizational Zone.
-3.  **The canister is fully owned by the organization**, not Diode.
-4.  **A child history mechanism refills canisters with cycles** (ICP’s resource allocation system).
+Zones can now deploy self-custody Zone Availability Canisters, hosted on the ICP blockchain, to ensure message syncing. Here’s how it works:
+
+1.  **Your Zone creates a canister**, one per organizational Zone.
+3.  **The canister is fully owned by the Zone**, not Diode.
 5.  **The canister syncs messages**, so users can retrieve them even if others are offline.
+4.  **If needed, canisters are auto-refilled with cycles**, ICP’s resource allocation system.
 
-All data is encrypted, ensuring privacy and security. The best part? Organizations fully control their canisters, and the source code is open for auditing on GitHub.
+All data is encrypted with the Zone's self-custody credentials, which also fully controls the canister lifecycle.  Everything is automated, and the source code is open for auditing on GitHub.
+
+**Diode Collab Leading the Way**
+
+Diode Collab is a unique self-custody solution for those wanting to take back control and privacy of their information.  Diode Collab is designed from the ground up so that neither Diode, nor any other provider, can access your data.  We live by "Not your keys, not your data."  This is revolutionary for your data protection - no other solution provides this.  
+
+Your team can securely take notes, share files, chat, interact with AI models, and access remote assets - all validated by their self-custody credentials and accessible ONLY on their authorized devices.
+
 
 To explore further please:
 <div class="story__buttons">
