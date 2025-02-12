@@ -18,7 +18,7 @@ Diode Collab v.1.15.0 introduces:
 
 * Always-on presence (by leveraging the [Internet Computer](https://internetcomputer.org/) - see below!)
 * Full push notifications for both iOS and Android
-* Advanced file policy permissions for organizations and large groups.  
+* Advanced file policy permissions for organizations and large groups
 
 The combination of these features is a game changer for those who care about protecting their information.
 
