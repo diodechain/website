@@ -1,7 +1,7 @@
 ---
 title: Diode Collab&trade;
 layout: page
-class: header--white
+class: 
 permalink: /products/collab-li/
 noindex: true
 
@@ -9,10 +9,10 @@ noindex: true
 hero:
   class: hero--rounded hero--smaller
   animated: true
-  heading: Secure Messaging with Diode Collab
+  heading: Teams Messaging, no Data on Servers
   subheading: Get started with the free Nomad plan today!
   buttons:
-  - title: Download
+  - title: Try Now
     url: "#download-app"
     class: popup-open
   image: hero/app.webp
@@ -22,16 +22,13 @@ hero:
 story:
   animated: false
   class: story--next
-  title: Operate protected
-  heading: Chat and VPN
+  title: End-to-End Encrypted
+  heading: No Personal Information Required
   content: |
-    Diode Collab&trade; creates secure tunnels between your team members in a "security perimeter" (a Zone).  Each Zone has built-in chat, file, and web browsing capabilities. It is a decentralized “local first” solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
+    Communications and structured information are at the core of everything teams do. That’s why we built direct messaging, group chat, and file syncing into the core of Diode Collab. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available.
   
     The Diode Network&trade; ensures that not even Diode has access to your team’s communications, information, or activity.
-  buttons:
-  - title: See how teams are using Diode
-    class: btn--blank btn--arrow
-    url: "/usecases/"
+
   image:
     src: story/app-full.webp
     alt: App
