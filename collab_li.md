@@ -25,7 +25,7 @@ story:
   title: End-to-End Encrypted
   heading: No Personal Information Required
   content: |
-    Communications and structured information are at the core of everything teams do. That’s why we built direct messaging, group chat, and file syncing into the core of Diode Collab. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available.
+    No compromises, secure messaging that works for your team. When it comes to business, there are two non-negotiables: the security of your data and the ease of communication for your team. That’s where Diode stands out. Unlike other messaging apps that either ask for personal details or lack full encryption, Diode gives you both—end-to-end encryption with no need for employees to share their phone numbers. It’s the secure messaging solution your business deserves. 
   
     The Diode Network&trade; ensures that not even Diode has access to your team’s communications, information, or activity.
 
@@ -51,10 +51,6 @@ features:
   
       Communicate, reference, annotate, manage, and collaborate - everything a team working with real world sensitive data requires.
     buttons:
-    - title: CONTACT SALES
-      url: "https://contactdiode.paperform.co/"
-    - title: HOW IT WORKS
-      url: "/how-it-works/"
     - title: REQUEST A DEMO
       class: btn--blank btn--arrow
       url: "https://diodedemo.paperform.co/"
