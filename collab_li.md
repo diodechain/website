@@ -14,8 +14,8 @@ noindex: true
 hero:
   class: hero--rounded hero--smaller
   animated: true
-  heading: Teams Messaging, no Data on Servers
-  subheading: Get started with the free Nomad plan today!
+  heading: Team Messaging - No Data on Servers
+  subheading: Get started with the free plan!
   buttons:
   - title: Try Now
     url: "#download-app"
