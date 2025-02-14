@@ -1,9 +1,14 @@
 ---
 title: Diode Collab&trade;
 layout: page
-class: 
+class: header--white
 permalink: /products/collab-li/
 noindex: true
+---
+
+<style>
+  .header--white { display: none; }
+</style>
 
 ### Hero
 hero:
@@ -15,6 +20,7 @@ hero:
   - title: Try Now
     url: "#download-app"
     class: popup-open
+    id: linked-in-download
   image: hero/app.webp
 
 
