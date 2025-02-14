@@ -4,11 +4,6 @@ layout: page
 class: header--white
 permalink: /products/collab-li/
 noindex: true
----
-
-<style>
-  .header--white { display: none; }
-</style>
 
 ### Hero
 hero:
