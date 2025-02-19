@@ -10,8 +10,13 @@ nav:
 
 <script>
   var url = new URL(document.location.toString());
-  if (url.hash.slice(1).length < 32) {
+  let code = url.hash.slice(1)
+  if (code.length < 32) {
       window.location.replace((url.origin + url.pathname).replace("/joinzone/", "/"));
+  } else {
+      // After 2 seconds, open the invite link
+      // Not enabled for now
+      // setTimeout(function() { window.location.href = "ddrive://invite/" + code }, 2000);
   }
 
   function CopyToClipboard(id)
@@ -36,7 +41,7 @@ nav:
   <p class="subtitle">Click the "Join" button on the Zones page in Diode and enter this Join Code!</p>
   <h3 type="text" class="joincode" id="joincode">
       <script>
-          document.write(url.hash.slice(1))
+          document.write(code)
       </script>
   </h3>
   <button onclick="CopyToClipboard('joincode')" class="btn popup-open" id="cc-copy">
