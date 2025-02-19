@@ -52,8 +52,8 @@
                 <h3>Transaction: <% txid %>
                 </h3>
                 <p>Sender: <% txSender %>
-                <p>Destination: <% destination %>
-                <p>Amount: <% valueToBalance(amount) %>
+                <p>Destination: <% txDestination %>
+                <p>Amount: <% valueToBalance(txAmount) %>
                 </p>
                 <div v-if="error" v-html="error" class="error"></div>
 
@@ -151,6 +151,8 @@ var Bridge = Vue.component("bridge", {
             this.tx = await async_call(bridgeOutMethods["txsAt"], "0x2c303A315a1Ee4c377E28121BaF30146e229731b", [1284, txid]);
             this.txBlock = Number(this.tx[4]);
             this.txSender = this.tx[0];
+            this.txDestination = this.tx[1];
+            this.txAmount = this.tx[2];
             this.currentBlock = await web3.eth.getBlockNumber();
             await this.updateTxPending();
         },
