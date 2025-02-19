@@ -9,28 +9,26 @@ noindex: true
 hero:
   class: hero--rounded hero--smaller
   animated: true
-  heading: Secure Messaging with Diode Collab
-  subheading: Get started with the free Nomad plan today!
+  heading: Most secure team messaging
+  subheading: Unlimited free users, no data on servers
   buttons:
-  - title: Download
+  - title: Try Now
     url: "#download-app"
     class: popup-open
+    id: x-download-1
   image: hero/app.webp
-
+  
 ### Story: For Teams
 story:
   animated: false
   class: story--next
-  title: Operate protected
-  heading: Chat and VPN
+  title: End-to-End Encrypted
+  heading: No Personal Information Required
   content: |
-    Diode Collab&trade; creates secure tunnels between your team members in a "security perimeter" (a Zone).  Each Zone has built-in chat, file, and web browsing capabilities. It is a decentralized “local first” solution that doesn’t rely on third party servers - your team will be operating in one of the most protected environments possible.
+    No compromises, secure messaging that works for your team. When it comes to business, there are two non-negotiables: the security of your data and the ease of communication for your team. That’s where Diode stands out. Unlike other messaging apps that either ask for personal details or lack full encryption, Diode gives you both—end-to-end encryption with no need for employees to share their phone numbers. It’s the secure messaging solution your business deserves. 
   
     The Diode Network&trade; ensures that not even Diode has access to your team’s communications, information, or activity.
-  buttons:
-  - title: See how teams are using Diode
-    class: btn--blank btn--arrow
-    url: "/usecases/"
+
   image:
     src: story/app-full.webp
     alt: App
@@ -53,10 +51,6 @@ features:
   
       Communicate, reference, annotate, manage, and collaborate - everything a team working with real world sensitive data requires.
     buttons:
-    - title: CONTACT SALES
-      url: "https://contactdiode.paperform.co/"
-    - title: HOW IT WORKS
-      url: "/how-it-works/"
     - title: REQUEST A DEMO
       class: btn--blank btn--arrow
       url: "https://diodedemo.paperform.co/"

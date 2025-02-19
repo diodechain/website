@@ -9,8 +9,8 @@ noindex: true
 hero:
   class: hero--rounded hero--smaller
   animated: true
-  heading: Team Messaging - No Data on Servers
-  subheading: Get started with the free plan!
+  heading: Most secure team messaging
+  subheading: Unlimited free users, no data on servers
   buttons:
   - title: Try Now
     url: "#download-app"
