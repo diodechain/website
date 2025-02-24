@@ -12,30 +12,50 @@ hero:
   animated: true
   class: hero--right
   heading: Plans and pricing
-  subheading: Start today at the level that fits your organization
+  subheading: Start today at the level that fits your team
   image: hero/pricing.webp
 
 pricing:
   animated: false
-  title: Privacy-first collaboration and remote access
-  heading: Protect executives and teams
-  include: All plans include
+  title: Privacy-first communication
+  heading: Protect your collaboration
+  include: <a href="https://app.docs.diode.io/docs/faq/what-can-i-do-with-the-free-version/" target="_blank">Free plans include</a>
 
 
   plans:
+  - title: Group
+    description: secure messaging
+    price:
+      yearly: 2.50
+      year: 30
+      monthly: 3
+    features: |
+      - Private invitation codes
+      - New user moderation
+      - Admin role
+      - Private chat channels
+      - Chat visibility policy
+      - 10 chat channels
+      - 10 web links
+      - Standard support
+    button: Order
+    id:
+      yearly: "/plans/group_yearly"
+      monthly: "/plans/group_monthly"
+
   - title: Team
-    description: secure collaboration for executives and teams
+    description: secure messaging and files
     price:
       yearly: 8.50
       year: 100
       monthly: 10
     features: |
-      - Invitation codes
-      - 10 chat channels
-      - 20 web links
-      - File backup 
+      All Group plus:
+      - Member file collaboration
       - File sync policy
-      - Admin role
+      - File backup
+      - Team markdown docs
+      - 20 web links
       - Standard support
     button: Order
     id:
@@ -44,44 +64,37 @@ pricing:
 
 
   - title: Business
-    description: secure collaboration and remote access
+    description: secure messaging, files, and remote access
     price:
       yearly: 12.50
       year: 150
       monthly: 15
     features: |
       All Team plus:
-      - 100 chat channels
-      - 100 web links
-      - Secure server access
+      - Secure equipment access
       - Regional access tunnels
       - Custom endpoints
+      - 100 chat channels
+      - 100 web links
       - Standard support
     button: Order
     id:
       yearly: "/plans/business_yearly"
       monthly: "/plans/business_monthly"
 
-  - title: Enterprise
-    description: expanded security perimeters and integrations
-    features: |
-      All Business plus:
-      - OT/IT asset management
-      - Application and fleet management
-      - Whitelabeling
-      - Enterprise integrations
-      - Premium support SLA
-    button: Contact Us
-    action: "https://contactdiode.paperform.co/"
-
-
 note:
   animated: false
   subheading: |
-    Did you know there is a free plan?  <a href="https://app.docs.diode.io/docs/faq/what-can-i-do-with-the-free-version/">See here</a>.
-
     [Watch a video for how our plans work.](https://app.docs.diode.io/docs/features/pricing-and-plans/){:target="_blank"} 
-    
+
+    <a href="https://contactdiode.paperform.co/">Contact us for:</a><br>
+      <br>Enterprise integrations
+      <br>Full Diode Network access
+      <br>OT/IT asset management
+      <br>Whitelabeling
+      <br>Premium supprt SLA
+      <br>and more...
+
   buttons:
   - title: Get in Touch
     url: "https://contactdiode.paperform.co/"
