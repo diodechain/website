@@ -11,6 +11,9 @@
         {%- if data.blurb -%}<p class="pricing__title">{{ data.blurb }}</p>{% endif %}
     </header>
 
+    <dl class="pricing__include">
+        <a href="#download-app" class="btn popup-open">Download</a>
+    </dl>
     {%- if data.include -%}
         <dl class="pricing__include">
             <dd>{{ data.include }}:</dd>
@@ -21,7 +24,7 @@
                     <li>File sharing</li>
                     <li>Secure markdown editor</li>
                     <li>Browser upload/download</li>
-                    <li>Unlimited storage</li>
+                    <li>Unlimited storage</li><br>
                 </ul>
             </dt>
         </dl>
