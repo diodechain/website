@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Diode Collab Update - February and January
-description: Diode Collab's updates for February and January
+title: Diode Collab Update - January and February
+description: Diode Collab's updates for January and February
 date: 2025-02-28 12:00
 categories: [Diode, Security]
 tags: [Diode, Diode Drive]
