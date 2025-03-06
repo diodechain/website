@@ -3,20 +3,22 @@ layout: post
 title: Diode Collab Update - January and February
 description: Diode Collab's updates for January and February
 date: 2025-02-28 12:00
-categories: [Diode, Security]
-tags: [Diode, Diode Drive]
+categories: [Diode, Roadmap]
+tags: [Diode, Diode Collab, Diode Drive]
 author: MNJR
 image: 	assets/img/blog/collab product update.jpg
 
 ---
 
-The Diode team has has published some great exciting new updates during the months of January and February, meeting some big milestones. These have been released in Diode Collab v1.14.2 - 1.15.1.
+The Diode team has has published some exciting new updates during the months of January and February, hitting some big milestones! These have been released in Diode Collab v1.14.2 - 1.15.1.
 
 **Unlimited Member Free Zones**
-<br>In partnership with [Moonbeam](https://moonbeam.network/), we’ve made every newly created Zone FREE for an unlimited number of users! We have also retroactively applied the user limit upgrade to all existing Nomad zones. Diode and Moonbeam have a passion for how decentralized technologies can improve security, global access, and collaboration!
+<br>In partnership with [Moonbeam](https://moonbeam.network/), we’ve made every newly created Zone FREE for an unlimited number of users! 
+
+We have also retroactively applied the user limit upgrade to all existing Nomad zones. Diode and Moonbeam have a passion for how decentralized technologies can improve security, global access, and collaboration!
 
 **iOS Push Notifications**
-<br>Push notifications are now supported in iOS! To enable push notifications on iOS, see [this article](https://app.docs.diode.io/docs/using/enable-push-notifications/).
+<br>End to end encrypted push notifications are now supported in iOS! To enable push notifications on iOS, see [this article](https://app.docs.diode.io/docs/using/enable-push-notifications/).
 
 **Chat Policy**
 <br>Zone admins can now control if Members can DM others or view public chats. Members always see Announcements and their private chats, even with public chat visibility off.
@@ -44,7 +46,7 @@ The Diode team has has published some great exciting new updates during the mont
 <br>
 The team addressed various bugs including the reduction of duplicate notifications, navigation to unsynced file locations, reduced battery usage on devices, and the improvement of the global page load time.  
 
-If you want to read more about the specifics of each update and read through the additional updates, go to our [App Versions](https://app.docs.diode.io/docs/versions/1-12-0/) page and check out the specific version details.
+If you want to read more about the specifics of each update and read through the additional updates, go to our [App Versions](https://app.docs.diode.io/docs/versions/1-15-1/) page and check out the specific version details.
 
 To explore further please:
 <div class="story__buttons">
