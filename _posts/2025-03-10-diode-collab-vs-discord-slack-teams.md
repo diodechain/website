@@ -2,7 +2,7 @@
 layout: post
 title: Diode Collab vs. Slack, Discord, and Teams
 description: Diode Collab compared to Slack, Discord, and Microsoft Teams
-date: 2025-03-05 12:00
+date: 2025-03-10 12:00
 categories: [Diode, Security]
 tags: [Diode, Diode Drive, Security, Decentraliztion]
 author: MNJR
