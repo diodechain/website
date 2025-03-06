@@ -37,7 +37,7 @@ If you share sensitive information, we argue that you should not trust platforms
 
 #### Conclusion:
 
-Collaboration tools should empower teams without compromising security or control. While Slack and Discord excel in usability and integration, they rely on centralized infrastructure, leaving businesses vulnerable to data access concerns, censorship, and outages.
+Collaboration tools should empower teams without compromising security or control. While Slack, Discord, and Teams excel in usability and integration, they rely on centralized infrastructure, leaving businesses vulnerable to data access concerns, censorship, and outages.
 
 Diode redefines secure communication by putting ownership back in the hands of organizations with full self-custody and Zero Trust principles. It's decentralized, end-to-end encrypted, and secure architecture ensures teams can collaborate freely - no compromises, no leaks, and nobody looking over your shoulder.
 
