@@ -45,19 +45,20 @@ nav:
 - title: Docs
   url: "https://docs.diode.io/"
   target: _blank
+- title: Pricing
+  url: "/pricing/" 
+- title: About Us
+  url: "/about/"
   sub:
   - title: Download
     url: "/download/"
   - title: How it works
     url: "/how-it-works/"
-  - title: Explorer
-    url: "/prenet/"
+  - title: Explore the network
+    url: "https://diodenetwork.io"
+    target: _blank
   - title: Blog
     url: "/blog/"
-- title: Pricing
-  url: "/pricing/" 
-- title: About Us
-  url: "/about/"
 
 # Other Links
 links:

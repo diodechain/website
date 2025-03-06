@@ -15,8 +15,9 @@ hero:
   heading: Build on top&nbsp;of&nbsp;Diode Network
   subheading: Expand your team’s security perimeter
   buttons:
-  - title: RUN A NODE
-    url: "https://network.docs.diode.io/docs/"
+  - title: SEE THE NETWORK
+    url: "https://diodenetwork.io"
+    target: _blank
   image: hero/network.webp
 
 
@@ -54,15 +55,15 @@ features:
   
       Use the public network off the shelf, extend with your own relay node, or connect with us about private network options.
     buttons:
+    - title: SEE THE NETWORK
+      url: "https://diodenetwork.io"
+      target: _blank
     - title: RUN A NODE
       url: "https://network.docs.diode.io/docs/"
       target: _blank
     - title: HOW IT WORKS
-      url: "/how-it-works/"
-    - title: SCHEDULE A DEMO
       class: btn--blank btn--arrow
-      url: "https://diodedemo.paperform.co/"
-      target: _blank
+      url: "/how-it-works/"
 
   - title: Your Own Relay Node
     content: |
