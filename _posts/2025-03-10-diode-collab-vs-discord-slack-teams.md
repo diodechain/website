@@ -4,7 +4,7 @@ title: Diode Collab vs. Slack, Discord, and Teams
 description: Diode Collab compared to Slack, Discord, and Microsoft Teams
 date: 2025-03-10 12:00
 categories: [Diode, Security]
-tags: [Diode, Diode Drive, Security, Decentraliztion]
+tags: [Diode, Diode Collab, Security, Decentraliztion]
 author: MNJR
 image: 	assets/img/blog/diode versus discord slack teams.jpg
 
@@ -45,42 +45,43 @@ Teams need to use a team-oriented chat app that has **better** security guarante
   <tr>
     <td>Feature</td><td><strong>Diode Collab</strong></td><td><strong>Slack</strong></td><td><strong>Discord</strong></td><td><strong>Teams</strong></td>
   </tr>
-  <tr>
-    <td><strong>Data Integrity</strong></td>
-    <td>Data is only on the user's devices, and admins can set the "file sync policy"</td>
-    <td>Breaks message & file encryption at the server</td>
-    <td>Breaks message & file encryption at the server</td>
-    <td>Breaks message & file encryption at the server</td>
-  </tr>
-  <tr>
-    <td><strong>Censorship Resistance</strong></td>
-    <td>Decentralized infrastructure means no single entity can control or block access</td>
-    <td>Access can be suspended subject to platform-imposed restrictions</td>
-    <td>Access can be suspended subject to platform-imposed restrictions</td>
-    <td>Access can be suspended subject to platform-imposed restrictions</td>
-  </tr>
-  <tr>
-    <td><strong>Offline Access</strong></td>
-    <td>Local first design allows functionality in low-bandwidth or disconnected environments</td>
-    <td>Dependent on accessible cloud infrastructure</td>
-    <td>Dependent on accessible cloud infrastructure</td>
-    <td>Dependent on accessible cloud infrastructure</td>
-  </tr>
-  <tr>
-    <td><strong>Physical Security</strong></td>
-    <td>On-disk encryption and sophisticated PIN system</td>
-    <td>Unencrypted on disk, no app PIN</td>
-    <td>Unencrypted on disk, no app PIN</td>
-    <td>Unencrypted on disk, no app PIN</td>
-  </tr>
-  <tr>
+ <tr>
+  <td><strong>Data Integrity</strong></td>
+  <td>$$\color{green} \text{Data is only on the user's devices,}$$ $$\color{green} \text{and admins can set the}$$ $$\color{green} \text{"file sync policy"}$$<sup>1</sup></td> 
+  <td>$$\color{red} \text{Breaks message \& file encryption}$$ $$\color{red} \text{at the server}$$</td>
+  <td>$$\color{red} \text{Breaks message \& file encryption}$$ $$\color{red} \text{at the server}$$</td>
+  <td>$$\color{red} \text{Breaks message \& file encryption}$$ $$\color{red} \text{at the server}$$</td>
+</tr>
+<tr>
+  <td><strong>Censorship Resistance</strong></td>
+  <td>$$\color{green} \text{Decentralized infrastructure means}$$ $$\color{green} \text{no single entity can control}$$ $$\color{green} \text{or block access}$$<sup>2</sup></td>
+  <td>$$\color{red} \text{Access can be suspended}$$ $$\color{red} \text{subject to platform-imposed}$$ $$\color{red} \text{restrictions}$$</td>
+  <td>$$\color{red} \text{Access can be suspended}$$ $$\color{red} \text{subject to platform-imposed}$$ $$\color{red} \text{restrictions}$$</td>
+  <td>$$\color{red} \text{Access can be suspended}$$ $$\color{red} \text{subject to platform-imposed}$$ $$\color{red} \text{restrictions}$$</td>
+</tr>
+<tr>
+  <td><strong>Offline Access</strong></td>
+  <td>$$\color{green} \text{Local first design allows}$$ $$\color{green} \text{functionality in low-bandwidth}$$ $$\color{green} \text{or disconnected}$$ $$\color{green} \text {environments}$$<sup>3</sup></td>
+  <td>$$\color{red} \text{Dependent on accessible}$$ $$\color{red} \text{cloud infrastructure}$$</td>
+  <td>$$\color{red} \text{Dependent on accessible}$$ $$\color{red} \text{cloud infrastructure}$$</td>
+  <td>$$\color{red} \text{Dependent on accessible}$$ $$\color{red} \text{cloud infrastructure}$$</td>
+</tr>
+<tr>
+  <td><strong>Physical Security</strong></td>
+  <td>$$\color{green} \text{On-disk encryption and}$$ $$\color{green} \text{sophisticated PIN system}$$<sup>4</sup></td>
+  <td>$$\color{red} \text{Unencrypted on disk,}$$ $$\color{red} \text{no app PIN}$$</td>
+  <td>$$\color{red} \text{Unencrypted on disk,}$$ $$\color{red} \text{no app PIN}$$</td>
+  <td>$$\color{red} \text{Unencrypted on disk,}$$ $$\color{red} \text{no app PIN}$$</td>
+</tr>
+<tr>
     <td><strong>Use Cases</strong></td>
-    <td>Best for use cases involving sensitive data, sensitive regions, or potential for lack of physical security</td>
+    <td>Best for use cases involving sensitive data, sensitive regions, or potential for lack of physical security<sup>5</sup></td>
     <td>Great for desktop-based collaboration on low sensitivity topics in a secure physical and geo environment</td>
     <td>Great for ecosystem and gamer collaboration on low sensitivity topics in a secure physical and geo environment</td>
     <td>Great for Microsoft-centric companies who have desktop-based collaboration on low sensitivity topics in a secure physical and geo environment</td>
   </tr>
 </tbody></table>
+
 
 #### Conclusion:
 
@@ -93,4 +94,9 @@ To explore further please:
   <a href="{{"https://contactdiode.paperform.co"}}" class="btn" target="">Get in Touch</a>
   <a href="#download-app" class="btn popup-open" target="">Try Diode Out</a>
 </div>
-
+<br>
+<sup>1</sup> Operating on decentralized infrastructure, Diode Collab ensures censorship-resistant communication with no central authority. In contrast, Slack, Discord, and Teams are centralized, giving their companies the power to impose censorship or restrict access. <br>
+<sup>2</sup> Users of Diode Collab retain full control over their data through self-hosting or decentralized storage options, while Slack, Discord, and Teams store data on centralized servers, allowing the platforms access to messages and files. <br>
+<sup>3</sup> The peer-to-peer network of Diode Collab remains functional in low-bandwidth or disconnected environments, offering resiliency during outages. Other platforms depend on cloud infrastructure, making them vulnerable to disruptions and internet censorship. <br>
+<sup>4</sup> With end-to-end encryption and decentralized infrastructure, Diode Collab ensures secure and private communication. The other platforms lack this encryption and rely on centralized servers, increasing vulnerability to censorship. <br>
+<sup>5</sup> Diode Collab is tailored for secure communication, supporting sensitive data, remote teams, and decentralized collaboration, while other apps fall short in security and decentralization for business use. 
