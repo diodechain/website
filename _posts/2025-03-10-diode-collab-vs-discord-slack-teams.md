@@ -69,9 +69,9 @@ Teams need to use a team-oriented chat app that has **better** security guarante
   <tr>
     <td><strong>Endpoint Physical Security</strong><sup>4</sup></td>
     <td>&#128994;</td>
-    <td>&#128993;</td>
     <td>&#128308;</td>
-    <td>&#128993;</td>
+    <td>&#128308;</td>
+    <td>&#128308;</td>
   </tr>
   <tr>
     <td><strong>Sensitive Use Cases</strong><sup>5</sup></td>
