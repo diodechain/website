@@ -46,56 +46,56 @@ Teams need to use a team-oriented chat app that has **better** security guarante
     <td>Feature</td><td><strong>Diode Collab</strong></td><td><strong>Slack</strong></td><td><strong>Discord</strong></td><td><strong>Teams</strong></td>
   </tr>
   <tr>
-    <td><strong>Data Integrity</strong></td>
-    <td>&#128994;<sup>1</sup></td> 
+    <td><strong>Data Custody</strong><sup>1</sup></td>
+    <td>&#128994;</td> 
     <td>&#128308;</td>
     <td>&#128308;</td>
     <td>&#128308;</td>
   </tr>
   <tr>
-    <td><strong>Censorship Resistance</strong></td>
-    <td>&#128994;<sup>2</sup></td>
+    <td><strong>Censorship Resistance</strong><sup>2</sup></td>
+    <td>&#128994;</td>
     <td>&#128308;</td>
     <td>&#128308;</td>
     <td>&#128308;</td>
   </tr>
   <tr>
-    <td><strong>Offline Access</strong></td>
-    <td>&#128994;<sup>3</sup></td>
+    <td><strong>Offline Access</strong><sup>3</sup></td>
+    <td>&#128994;</td>
+    <td>&#128993;</td>
     <td>&#128308;</td>
-    <td>&#128308;</td>
-    <td>&#128308;</td>
+    <td>&#128993;</td>
   </tr>
   <tr>
-    <td><strong>Physical Security</strong></td>
-    <td>&#128994;<sup>4</sup></td>
+    <td><strong>Endpoint Physical Security</strong><sup>4</sup></td>
+    <td>&#128994;</td>
+    <td>&#128993;</td>
     <td>&#128308;</td>
-    <td>&#128308;</td>
-    <td>&#128308;</td>
+    <td>&#128993;</td>
   </tr>
   <tr>
-    <td><strong>Use Cases</strong></td>
-    <td>&#128994;<sup>5</sup></td>
+    <td><strong>Sensitive Use Cases</strong><sup>5</sup></td>
+    <td>&#128994;</td>
+    <td>&#128993;</td>
     <td>&#128308;</td>
-    <td>&#128308;</td>
-    <td>&#128308;</td>
+    <td>&#128993;</td>
   </tr>
 </tbody></table>
 
 <br>
-<sup>1</sup> Operating on decentralized infrastructure, Diode Collab ensures censorship-resistant communication with no central authority. In contrast, Slack, Discord, and Teams are centralized, giving their companies the power to impose censorship or restrict access. 
+<sup>1 - Users of Diode Collab retain full control over their data by only using the storage on the team's own devices.  The other apps store data on centralized servers where the platforms are able to access information. </sup>
 <br>
 <br>
-<sup>2</sup> Users of Diode Collab retain full control over their data through self-hosting or decentralized storage options, while Slack, Discord, and Teams store data on centralized servers, allowing the platforms access to messages and files. 
+<sup>2 - Diode Collab operates on decentralized infrastructure, ensuring censorship-resistant communication with no central authority. In contrast, Slack, Discord, and Teams are centralized, creating a cloud data footprint and infrastructure that is vulnerable to censorship and deplatforming. </sup> 
 <br>
 <br>
-<sup>3</sup> The peer-to-peer network of Diode Collab remains functional in low-bandwidth or disconnected environments, offering resiliency during outages. Other platforms depend on cloud infrastructure, making them vulnerable to disruptions and internet censorship. 
+<sup>3 - Diode Collab is a local first application which allows it to remain functional in low-bandwidth or disconnected environments. Other platforms rely on cloud infrastructure which severely restricts functionality when the Internet is not available. </sup>
 <br>
 <br>
-<sup>4</sup> With end-to-end encryption and decentralized infrastructure, Diode Collab ensures secure and private communication. The other platforms lack this encryption and rely on centralized servers, increasing vulnerability to censorship. 
+<sup>4 - Diode Collab encrypts contents on the end devices and has a sophisticated PIN protection system that can be enabled.  The other platforms do not encrypt information on disk, leaving your information vulnerable to endpoint breaches and the loss of physical security of a device (e.g. border crossings, muggings, theft). </sup>
 <br>
 <br>
-<sup>5</sup> Diode Collab is tailored for secure communication, supporting sensitive data, remote teams, and decentralized collaboration, while other apps fall short in security and decentralization for business use. 
+<sup>5 - Diode Collab is designed from the bottom-up to strengthen existing security policies, while the other platforms rely on complex checklists, special plans, and configurations to support sensitive applications.</sup>
 
 #### Conclusion:
 
