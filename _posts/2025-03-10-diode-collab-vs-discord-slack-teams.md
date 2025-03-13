@@ -80,6 +80,13 @@ Teams need to use a team-oriented chat app that has **better** security guarante
     <td>&#128308;</td>
     <td>&#128993;</td>
   </tr>
+  <tr>
+    <td><strong>E2EE API</strong><sup>6</sup></td>
+    <td>&#128994;</td>
+    <td>&#128308;</td>
+    <td>&#128308;</td>
+    <td>&#128308;</td>
+  </tr>
 </tbody></table>
 
 <br>
@@ -96,6 +103,9 @@ Teams need to use a team-oriented chat app that has **better** security guarante
 <br>
 <br>
 <sup>5 - Diode Collab is designed from the bottom-up to strengthen existing security policies, while the other platforms rely on complex checklists, special plans, and configurations to support sensitive applications.</sup>
+<br>
+<br>
+<sup>5 - The E2EE API in Diode Collab allows you to integrate internal business tools without exposing those systems to Diode or anyone else.  The other app APIs not only expose system data to the provider, they sometimes create unintended information leakage to other integrations.</sup>
 
 #### Conclusion:
 
