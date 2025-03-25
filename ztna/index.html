@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZTNA Perimeter Manager</title>
+  <!-- Vue 3 -->
+  <script src="./assets/vue.global.js"></script>
+  <!-- Web3.js -->
+  <script src="./assets/web3.min.js"></script>
+  <script src="./assets/metamask-sdk.js"></script>
+  <!-- Tailwind CSS for styling -->
+  <script src="./assets/tailwindcss.min.js"></script>
+  <style>
+    .nav-active {
+      background-color: rgb(241, 92, 46);
+      color: white;
+    }
+    .nav-link:hover {
+      background-color: rgba(241, 92, 46, 0.7);
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <div id="app" class="flex h-screen overflow-hidden">
+    <!-- Left Navigation Sidebar -->
+    <div class="w-64 bg-[rgb(45,62,80)] text-white flex flex-col h-full">
+      <!-- Logo Section -->
+      <div class="p-4 flex justify-center border-b border-gray-700">
+        <img src="./assets/diode.png" alt="Diode Logo" class="h-12">
+      </div>
+      
+      <!-- Navigation Links -->
+      <div class="flex-1 overflow-y-auto py-4">
+        <h3 class="px-4 text-sm uppercase text-gray-400 font-semibold mb-2">Navigation</h3>
+        
+        <!-- Dashboard Link -->
+        <a href="#" @click.prevent="showDashboard" 
+           class="nav-link px-4 py-2 flex items-center text-white hover:bg-opacity-80 mb-1"
+           :class="{'nav-active': activePage === 'dashboard'}">
+          <span>Dashboard</span>
+        </a>
+        
+        <!-- Your Fleets Section -->
+        <div class="mt-4">
+          <h3 class="px-4 text-sm uppercase text-gray-400 font-semibold mb-2">Your Perimeters</h3>
+          
+          <!-- Create Fleet Link - Updated with special styling -->
+          <a href="#" @click.prevent="showCreateFleetView" 
+             class="nav-link px-4 py-2 flex items-center text-white hover:bg-opacity-80 mb-3 bg-blue-600 mx-2 rounded-md"
+             :class="{'nav-active': activePage === 'createFleet'}">
+            <span class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
+              Create New Perimeter
+            </span>
+          </a>
+          
+          <!-- Loading State -->
+          <div v-if="isLoading" class="px-4 py-2 text-gray-400">
+            <span>Loading perimeters...</span>
+          </div>
+          
+          <!-- No Fleets State -->
+          <div v-else-if="ownFleets.length === 0 && !isLoading" class="px-4 py-2 text-gray-400">
+            <span>No perimeters found</span>
+          </div>
+          
+          <!-- Fleet List -->
+          <div v-else class="space-y-1">
+            <a href="#" 
+               v-for="fleet in ownFleets" 
+               :key="fleet.fleet"
+               @click.prevent="showPerimeterManagement(fleet.fleet)"
+               class="nav-link px-4 py-2 flex items-center text-white hover:bg-opacity-80 truncate"
+               :class="{'nav-active': activePage === 'fleetManagement' && managedFleet === fleet.fleet}">
+              <span class="truncate">{{ fleet.label || shortenAddress(fleet.fleet) }}</span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Shared Fleets Section -->
+        <div class="mt-4" v-if="Object.keys(groupedSharedFleets).length > 0">
+          <h3 class="px-4 text-sm uppercase text-gray-400 font-semibold mb-2">Shared Perimeters</h3>
+          
+          <!-- Shared Fleet Groups -->
+          <div v-for="(fleets, owner) in groupedSharedFleets" :key="owner" class="mb-2">
+            <div class="px-4 py-1 text-xs text-gray-400">
+              From: {{ shortenAddress(owner) }}
+            </div>
+            
+            <!-- Shared Fleet List -->
+            <div class="space-y-1">
+              <a href="#" 
+                 v-for="fleet in fleets" 
+                 :key="fleet.fleet"
+                 @click.prevent="showPerimeterManagement(fleet.fleet)"
+                 class="nav-link px-4 py-2 flex items-center text-white hover:bg-opacity-80 truncate"
+                 :class="{'nav-active': activePage === 'fleetManagement' && managedFleet === fleet.fleet}">
+                <span class="truncate">{{ fleet.label || shortenAddress(fleet.fleet) }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- User Account Section -->
+      <div class="p-4 border-t border-gray-700">
+        <div v-if="isConnected" class="flex flex-col">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-gray-400">Connected as:</span>
+            <button @click="changeAccount" class="text-xs text-blue-400 hover:text-blue-300">Change Account</button>
+          </div>
+          
+          <!-- Account Selector -->
+          <div v-if="availableAccounts.length > 1" class="mb-2">
+            <select 
+              v-model="selectedAccountIndex" 
+              @change="switchAccount(selectedAccountIndex)"
+              class="w-full bg-gray-700 text-white rounded px-2 py-1 text-sm">
+              <option 
+                v-for="(acc, index) in availableAccounts" 
+                :key="acc" 
+                :value="index">
+                {{ shortenAddress(acc) }}
+              </option>
+            </select>
+          </div>
+          
+          <!-- Single Account Display -->
+          <div v-else class="text-sm font-mono bg-gray-700 rounded px-2 py-1 truncate mb-2">
+            {{ shortenAddress(account) }}
+          </div>
+          
+          <!-- Network Selector - Added new section -->
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-gray-400">Network:</span>
+            <button @click="showNetworkSelector = !showNetworkSelector" class="text-xs text-blue-400 hover:text-blue-300">
+              Change Network
+            </button>
+          </div>
+          
+          <!-- Network Dropdown -->
+          <div v-if="showNetworkSelector" class="mb-2">
+            <select 
+              v-model="selectedNetworkIndex" 
+              @change="switchNetwork(selectedNetworkIndex)"
+              class="w-full bg-gray-700 text-white rounded px-2 py-1 text-sm">
+              <option 
+                v-for="(network, index) in networks" 
+                :key="network.chainId" 
+                :value="network.index"
+                :selected="selectedNetworkIndex === network.index">
+                {{ network.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Connect Wallet Button -->
+        <button 
+          v-else
+          @click="connectWallet" 
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          :disabled="isLoading">
+          {{ isLoading ? 'Connecting...' : 'Connect Wallet' }}
+        </button>
+      </div>
+      
+      <!-- Partner Branding Section -->
+      <div class="mt-auto p-4 border-t border-gray-700 flex flex-col items-center">
+        <div class="text-xs text-gray-400 mb-1">Powered By</div>
+        <img src="./assets/sapphire.png" alt="Sapphire Logo" class="h-6">
+      </div>
+    </div>
+    
+    <!-- Main Content Area -->
+    <div class="flex-1 overflow-hidden flex flex-col">
+      <!-- Top Navigation Bar -->
+      <div class="bg-white shadow-sm border-b px-6 py-2 flex items-center justify-between">
+        <h1 class="text-xl font-semibold text-gray-800">
+          <!-- Dynamic Title based on current view -->
+          <span v-if="activePage === 'dashboard'">ZTNA Perimeter Dashboard</span>
+          <span v-else-if="activePage === 'createFleet'">Create New Perimeter</span>
+          <span v-else-if="activePage === 'fleetManagement'">
+            Perimeter Management: {{ fleetLabel || shortenAddress(managedFleet) }}
+          </span>
+        </h1>
+        
+        <!-- Action Buttons -->
+        <div class="flex items-center space-x-2">
+          <!-- Perimeter Management Actions -->
+          <div v-if="activePage === 'fleetManagement'" class="flex items-center space-x-2">
+            <button 
+              @click="openAddUserModal(managedFleet)"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm">
+              Add User
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="flex-1 overflow-auto p-6">
+        <!-- Dashboard View -->
+        <div v-if="activePage === 'dashboard'" class="space-y-6">
+          <div v-if="!isConnected" class="bg-white rounded-lg shadow p-6 text-center">
+            <h2 class="text-xl font-semibold mb-4">ZTNA Perimeter Manager</h2>
+            <p class="mb-4">Connect your wallet to get started managing your ZTNA Perimeters.</p>
+            <button 
+              @click="connectWallet" 
+              class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded"
+              :disabled="isLoading">
+              {{ isLoading ? 'Connecting...' : 'Connect Wallet' }}
+            </button>
+          </div>
+          
+          <div v-else class="space-y-6">
+            <!-- Your Fleets Section -->
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+              <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+                <h2 class="text-lg font-semibold text-gray-800">Your Perimeters</h2>
+                <button 
+                  @click="showCreateFleetView" 
+                  class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm">
+                  Create New Perimeter
+                </button>
+              </div>
+              
+              <div v-if="isLoading" class="p-6 text-center text-gray-500">
+                <p>Loading your perimeters...</p>
+              </div>
+              
+              <div v-else-if="ownFleets.length === 0" class="p-6 text-center text-gray-500">
+                <p>You don't have any perimeters yet. Create one to get started!</p>
+              </div>
+              
+              <div v-else class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Perimeter Address</th>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created</th>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Updated</th>
+                      <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y divide-gray-200">
+                    <tr v-for="fleet in ownFleets" :key="fleet.fleet">
+                      <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-900">{{ shortenAddress(fleet.fleet) }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ formatDate(fleet.createdAt) }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ formatDate(fleet.updatedAt) }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <button 
+                          @click="showPerimeterManagement(fleet.fleet)" 
+                          class="text-blue-600 hover:text-blue-900 mr-3">
+                          Manage
+                        </button>
+                        <button 
+                          @click="openAddUserModal(fleet.fleet)" 
+                          class="text-green-600 hover:text-green-900">
+                          Add User
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <!-- Shared Fleets Section -->
+            <div v-if="sharedFleets.length > 0" class="bg-white rounded-lg shadow overflow-hidden">
+              <div class="px-6 py-4 border-b border-gray-200">
+                <h2 class="text-lg font-semibold text-gray-800">Shared Perimeters</h2>
+              </div>
+              
+              <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Owner</th>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Perimeter Address</th>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created</th>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Updated</th>
+                      <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y divide-gray-200">
+                    <tr v-for="fleet in sharedFleets" :key="fleet.fleet">
+                      <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-900">{{ shortenAddress(fleet.owner) }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-900">{{ shortenAddress(fleet.fleet) }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ formatDate(fleet.createdAt) }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ formatDate(fleet.updatedAt) }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <button 
+                          @click="showPerimeterManagement(fleet.fleet)" 
+                          class="text-blue-600 hover:text-blue-900">
+                          Manage
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Create Fleet View -->
+        <div v-else-if="activePage === 'createFleet'" class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-semibold mb-4">Create New Perimeter</h2>
+          
+          <div v-if="!isConnected" class="text-center py-4">
+            <p class="mb-4">Please connect your wallet to create a perimeter.</p>
+            <button 
+              @click="connectWallet" 
+              class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded"
+              :disabled="isLoading">
+              {{ isLoading ? 'Connecting...' : 'Connect Wallet' }}
+            </button>
+          </div>
+          
+          <form v-else @submit.prevent="createFleet" class="space-y-4">
+            <div>
+              <label for="fleetLabel" class="block text-sm font-medium text-gray-700">Perimeter Label (Optional)</label>
+              <input 
+                type="text" 
+                id="fleetLabel" 
+                v-model="newFleetLabel" 
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                placeholder="Enter a label for your perimeter">
+            </div>
+            
+            <div class="pt-2">
+              <button 
+                type="submit" 
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                :disabled="isCreatingFleet">
+                {{ isCreatingFleet ? 'Creating Perimeter...' : 'Create Perimeter' }}
+              </button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Perimeter Management View -->
+        <div v-else-if="activePage === 'fleetManagement'" class="space-y-6">
+          <!-- Fleet Details Card -->
+          <div class="bg-white rounded-lg shadow overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-200">
+              <div class="flex justify-between items-center">
+                <h2 class="text-lg font-semibold text-gray-800">Perimeter Details</h2>
+                
+                <!-- Edit Label Form -->
+                <div class="flex items-center space-x-2">
+                  <input 
+                    type="text" 
+                    v-model="fleetLabel" 
+                    class="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm"
+                    placeholder="Perimeter Label">
+                  <button 
+                    @click="updateFleetLabel" 
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm"
+                    :disabled="isUpdatingLabel">
+                    {{ isUpdatingLabel ? 'Updating...' : 'Update Label' }}
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <p class="text-sm text-gray-500">Perimeter Address:</p>
+                  <p class="font-mono">{{ managedFleet }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tabs Navigation -->
+          <div class="border-b border-gray-200">
+            <nav class="-mb-px flex space-x-8">
+              <a 
+                href="#" 
+                @click.prevent="activeTab = 'users'; loadAllUsers()"
+                class="py-2 px-1 border-b-2 font-medium text-sm"
+                :class="activeTab === 'users' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'">
+                Users
+              </a>
+              <a 
+                href="#" 
+                @click.prevent="activeTab = 'userGroups'; loadUserGroups()"
+                class="py-2 px-1 border-b-2 font-medium text-sm"
+                :class="activeTab === 'userGroups' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'">
+                User Groups
+              </a>
+              <a 
+                href="#" 
+                @click.prevent="activeTab = 'devices'; loadDevices()"
+                class="py-2 px-1 border-b-2 font-medium text-sm"
+                :class="activeTab === 'devices' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'">
+                Devices
+              </a>
+              <a 
+                href="#" 
+                @click.prevent="activeTab = 'tags'; loadTags()"
+                class="py-2 px-1 border-b-2 font-medium text-sm"
+                :class="activeTab === 'tags' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'">
+                Tags
+              </a>
+            </nav>
+          </div>
+          
+          <!-- Tab Content -->
+          <div class="bg-white rounded-lg shadow overflow-hidden">
+            <!-- Users Tab -->
+            <div v-if="activeTab === 'users'" class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold">Users</h3>
+                <button 
+                  @click="openAddUserModal(managedFleet)" 
+                  class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm">
+                  Add User
+                </button>
+              </div>
+              
+              <div v-if="isLoading" class="text-center py-4 text-gray-500">
+                <p>Loading users...</p>
+              </div>
+              
+              <div v-else-if="managedFleetUsers.length === 0" class="text-center py-4 text-gray-500">
+                <p>No users found for this fleet.</p>
+              </div>
+              
+              <div v-else class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User Address</th>
+                      <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y divide-gray-200">
+                    <tr v-for="user in managedFleetUsers" :key="user.userAddress">
+                      <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-900">{{ user.userAddress }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <button 
+                          @click="removeFleetUser(managedFleet, user.userAddress)" 
+                          class="text-red-600 hover:text-red-900">
+                          Remove
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <!-- User Groups Tab -->
+            <div v-if="activeTab === 'userGroups'" class="p-6">
+              <!-- User Groups content will be implemented here -->
+              <p>User Groups management will be implemented in a future update.</p>
+            </div>
+            
+            <!-- Devices Tab -->
+            <div v-if="activeTab === 'devices'" class="p-6">
+              <device-management-component 
+                :managed-fleet="managedFleet"
+                :is-loading="isLoading"
+                @show-toast="showToastMessage">
+              </device-management-component>
+            </div>
+            
+            <!-- Tags Tab -->
+            <div v-if="activeTab === 'tags'" class="p-6">
+              <tag-management-component 
+                :managed-fleet="managedFleet"
+                :is-loading="isLoading"
+                @show-toast="showToastMessage">
+              </tag-management-component>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Add User Modal -->
+    <div v-if="showingAddUserModal" class="fixed inset-0 overflow-y-auto z-50 flex items-center justify-center">
+      <div class="fixed inset-0 bg-black opacity-50"></div>
+      <div class="relative bg-white rounded-lg shadow-xl max-w-md w-full mx-4">
+        <div class="px-6 py-4 border-b border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800">Add User to Perimeter</h3>
+        </div>
+        
+        <div class="p-6">
+          <form @submit.prevent="addFleetUser">
+            <div class="mb-4">
+              <label for="userAddress" class="block text-sm font-medium text-gray-700 mb-1">User Address</label>
+              <input 
+                type="text" 
+                id="userAddress" 
+                v-model="newUserAddress" 
+                class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                placeholder="0x...">
+            </div>
+            
+            <div class="flex justify-end space-x-2">
+              <button 
+                type="button" 
+                @click="closeAddUserModal" 
+                class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded">
+                Cancel
+              </button>
+              <button 
+                type="submit" 
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                :disabled="isAddingUser">
+                {{ isAddingUser ? 'Adding...' : 'Add User' }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- MetaMask Interaction Overlay -->
+    <div v-if="isLocked > 0" class="fixed inset-0 bg-gray-800 bg-opacity-75 z-50 flex items-center justify-center">
+      <div class="bg-white rounded-lg shadow-xl p-8 text-center max-w-md">
+        <div class="animate-pulse mb-4">
+          <img src="./assets/metamask-fox.svg" alt="MetaMask" class="h-16 mx-auto">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Awaiting MetaMask Interaction</h3>
+        <p class="text-gray-600">Please check your MetaMask extension to complete the requested action.</p>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div 
+      v-if="showToast" 
+      class="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded shadow-lg z-50 transition-opacity duration-300"
+      :class="{ 'opacity-100': showToast, 'opacity-0': !showToast }">
+      {{ toastMessage }}
+    </div>
+  </div>
+
+  <!-- Import our JavaScript modules -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html> 
