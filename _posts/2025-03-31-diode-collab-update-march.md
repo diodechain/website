@@ -4,7 +4,7 @@ title: Diode Collab Update - March
 description: Diode Collab's update for March
 date: 2025-03-31 12:00
 categories: [Diode, Roadmap]
-tags: [Diode, Diode Collab, Diode Drive]
+tags: [Diode, Diode Collab]
 author: MNJR
 image: 	assets/img/blog/collab product update.jpg
 
