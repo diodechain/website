@@ -2,7 +2,7 @@
 layout: post
 title: Diode Collab Update - March
 description: Diode Collab's update for March
-date: 2025-03-31 12:00
+date: 2025-03-27 12:00
 categories: [Diode, Roadmap]
 tags: [Diode, Diode Collab]
 author: MNJR
@@ -34,7 +34,7 @@ The Diode team has has published some great new updates for March, making the Di
 <br>
 The team addressed various bugs including warning when a member is no longer in a Zone, accidentally duplicated join transactions, and hiding the Zone progress banner on global pages.  
 
-If you want to read more about the specifics of each update and read through the additional updates, go to our [App Versions](https://app.docs.diode.io/docs/versions/1-15-2/) page and check out the specific version details.
+If you want to read more about the specifics of each update and read through the additional updates, go to our [App Versions](https://app.docs.diode.io/docs/versions/1-15-3/) page and check out the specific version details.
 
 To explore further please:
 <div class="story__buttons">
