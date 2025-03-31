@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1cb20269d994abaeaa656d8207f926fd",
+    "revision": "bd88d2c831baa2dac1a9005d566c23ed",
     "url": "/vesting/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vesting/static/css/2.37c3a404.chunk.css"
   },
   {
-    "revision": "481b931d78ddccde89ca",
+    "revision": "4d60acd4c0b11ed7e09d",
     "url": "/vesting/static/css/main.329e29d2.chunk.css"
   },
   {
@@ -20,12 +20,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vesting/static/js/2.42077921.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "481b931d78ddccde89ca",
-    "url": "/vesting/static/js/main.02a304b2.chunk.js"
+    "revision": "4d60acd4c0b11ed7e09d",
+    "url": "/vesting/static/js/main.e24b05ee.chunk.js"
   },
   {
     "revision": "4e0e34f265fae8f33b01b27ae29d9d6f",
-    "url": "/vesting/static/js/main.02a304b2.chunk.js.LICENSE.txt"
+    "url": "/vesting/static/js/main.e24b05ee.chunk.js.LICENSE.txt"
   },
   {
     "revision": "14ffbe1b5f1c34c5926e",
