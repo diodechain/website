@@ -167,6 +167,7 @@ var DNSList = Vue.component("dns_list", {
       balance: 0,
       tableHeight: 300,
       version: 0,
+      refreshed: false,
     };
   },
 
@@ -214,6 +215,10 @@ var DNSList = Vue.component("dns_list", {
     },
 
     refreshNames: function () {
+      if (!this.refreshed) {
+        this.refreshed = DNSRefresh(true);
+      }
+
       for (key in DNSCache) {
         let name = DNSCache[key].name;
         if (this.names[name]) continue;

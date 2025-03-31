@@ -38,6 +38,7 @@
     {% include_relative vue/dns_list.vue %}
     {% include_relative vue/dns_list_moonbeam.vue %}
     {% include_relative vue/moonbeam.vue %}
+    {% include_relative vue/foundation.vue %}
     {% include_relative vue/power_distribution.vue %}
     {% include_relative vue/account.vue %}
     {% include_relative vue/accounts.vue %}
@@ -176,6 +177,11 @@
         },
         {
             name: false,
+            path: '/foundation',
+            component: Foundation,
+        },
+        {
+            name: false,
             path: '/dns/:name',
             // params: {
             //     name: ''
@@ -223,7 +229,6 @@
             router,
             delimiters: ["<%", "%>"]
         })
-        app.$mount('#app')
 
         let ReSubscribe = () => {
             app.ticker++;
@@ -251,9 +256,12 @@
         }
         setInterval(ReSubscribe, 1000)
 
-        let DNSRefresh = () => {
+        let DNSRefresh = (force) => {
             if (!app.connected) {
-                return
+                return false;
+            }
+            if (!force) {
+                return false;
             }
 
             web3.eth.getStorage(DNSAddr, (err, arr) => {
@@ -286,6 +294,7 @@
                     }
                 }
             })
+            return true;
         }
         DNSRefresh()
         // subscribe("newBlockHeaders", DNSRefresh)
@@ -524,8 +533,9 @@
                     return hours + ':' + minutes + ':' + seconds + ' ' + year + '/' + month + '/' + day;
             }
         }
+
+        app.$mount('#app')
     </script>
 
 </body>
-
 </html>
