@@ -6,7 +6,7 @@
         </div>
         <div class="page-content">
             <div v-if="txid == null" class="box"
-                style="width: 600px; background-color: aliceblue; border: 3px solid gray; border-radius: 15px; margin: 2em auto auto auto; padding: 1em;">
+                style="width: 600px; background-color: aliceblue; border: 1px solid black; margin: 2em auto auto auto; padding: 1em;">
                 <div class="box-header">
                     <h3 class="box-title">Diode L1 => Moonbeam</h3>
                 </div>
@@ -17,7 +17,7 @@
                     <div style="position: relative">
                         <input type="number" step="0.1" id="amount_in" v-model="amount" class="form-control"
                             placeholder="Enter amount" />
-                        <button style="position: absolute; transform: translate(-200%,50%);" class="button"
+                        <button style="position: absolute; transform: translate(-200%,0%);" class="button"
                             v-on:click="amount = web3.utils.fromWei(Wallet.balance)">Max</button>
                     </div>
                     <label for="amount">Destination receives</label>
@@ -27,7 +27,7 @@
                     <div style="position: relative">
                         <input :disabled="samedestination" step="0.1" id="destination" v-model="destination" class="form-control"
                             placeholder="Destination" />
-                        <div style="display: inline-flex; position: absolute; transform: translate(-110%,75%);">
+                        <div style="display: inline-flex; position: absolute; transform: translate(-110%,25%);">
                             <input id="samedestination" type="checkbox" class="button" v-model="samedestination" />
                             <label for="samedestination">Yourself</label>
                         </div>
@@ -83,7 +83,7 @@
                 </div>
 
                 <div v-if="txStep == 4" class="box"
-                    style="width: 600px; background-color: aliceblue; border: 3px solid gray; border-radius: 15px; margin: 2em auto auto auto; padding: 1em;">
+                    style="width: 600px; background-color: aliceblue; border: 1px solid black; margin: 2em auto auto auto; padding: 1em;">
                     <a :href="'https://moonbeam.moonscan.io/token/0x434116a99619f2B465A137199C38c1Aab0353913?a=' + this.tx[0]">See on Moonscan</a>
                 </div>
             </div>

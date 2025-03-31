@@ -87,20 +87,7 @@ var fleetMethods = {
     },
 
 }
-var tokenMethods = {
-    "balanceOf": {
-        name: "balanceOf",
-        type: "function",
-        inputs: [{
-            type: "address",
-            name: "account"
-        }],
-        outputs: [{
-            type: "uint256",
-            name: "balance"
-        }]
-    }
-}
+
 var registryMethods = {
     "Version": {
         name: "Version",
@@ -370,154 +357,154 @@ var dnsMethods = {
 }
 
 var bridgeInMethods = {
-	"inTxsAt" : {
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "chain",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "inTxsAt",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "address",
-						"name": "destination",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bytes32",
-						"name": "historyHash",
-						"type": "bytes32"
-					},
-					{
-						"internalType": "uint256",
-						"name": "timestamp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "blockNumber",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct BridgeIn.InTransaction",
-				"name": "",
-				"type": "tuple"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	"inTxsLength": {
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "chain",
-				"type": "uint256"
-			}
-		],
-		"name": "inTxsLength",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
+    "inTxsAt": {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "chain",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "index",
+                "type": "uint256"
+            }
+        ],
+        "name": "inTxsAt",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "destination",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "amount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "historyHash",
+                        "type": "bytes32"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "timestamp",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "blockNumber",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct BridgeIn.InTransaction",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    "inTxsLength": {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "chain",
+                "type": "uint256"
+            }
+        ],
+        "name": "inTxsLength",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
 }
 
 var bridgeOutMethods = {
-	"txsAt": {
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "chain",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "txsAt",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "address",
-						"name": "sender",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "destination",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "timestamp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "blockNumber",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bytes32",
-						"name": "historyHash",
-						"type": "bytes32"
-					}
-				],
-				"internalType": "struct BridgeOutNative.Transaction",
-				"name": "",
-				"type": "tuple"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	"txsLength": {
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "chain",
-				"type": "uint256"
-			}
-		],
-		"name": "txsLength",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
+    "txsAt": {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "chain",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "index",
+                "type": "uint256"
+            }
+        ],
+        "name": "txsAt",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "sender",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "destination",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "amount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "timestamp",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "blockNumber",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "historyHash",
+                        "type": "bytes32"
+                    }
+                ],
+                "internalType": "struct BridgeOutNative.Transaction",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    "txsLength": {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "chain",
+                "type": "uint256"
+            }
+        ],
+        "name": "txsLength",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
 }
 
 async function callMoonbeam(abi, to, args) {
@@ -574,7 +561,7 @@ async function CallRegistry(name, args) {
 }
 
 async function CallToken(name, args) {
-    return await callMoonbeam(tokenMethods[name], DiodeToken, args)
+    return await callMoonbeam(erc20Abi.find(m => m.name === name), DiodeToken, args)
 }
 
 function CallFleet(name, to, args, callback) {
@@ -582,57 +569,62 @@ function CallFleet(name, to, args, callback) {
 }
 
 function NewWeb3(url) {
-    let obj = new Web3(url)
+    let options = {
+        clientConfig: { keepalive: true, keepaliveInterval: 60000 },
+        reconnect: { auto: true, delay: 5000, maxAttempts: 5, onTimeout: false }
+    };
+    let provider = new Web3.providers.WebsocketProvider(url, options);
+    let obj = new Web3(provider);
     obj.extend({
         property: 'eth',
         methods: [
-        {
-            name: 'traffic',
-            call: 'dio_proxy|dio_traffic',
-            params: 2,
-            inputFormatter: [(node_id) => node_id, (chain_id) => chain_id]
-        },
-        {
-            name: 'traffic2',
-            call: 'dio_proxy|dio_traffic',
-            params: 3,
-            inputFormatter: [(node_id) => node_id, (chain_id) => chain_id, (epoch) => epoch]
-        },
-        {
-            name: 'usage',
-            call: 'dio_proxy|dio_usage',
-            params: 1,
-            inputFormatter: [(node_id) => node_id]
-        },
-        {
-            name: 'usageHistory',
-            call: 'dio_proxy|dio_usageHistory',
-            params: 4,
-            inputFormatter: [(node_id) => node_id, (from) => from, (to) => to, (stepping) => stepping]
-        },
-        {
-            name: 'connectivity',
-            call: 'dio_proxy|dio_checkConnectivity',
-            params: 1,
-            inputFormatter: [(node_id) => node_id]
-        },
-        {
-            name: 'getNode',
-            call: 'dio_getNode',
-            params: 1,
-            inputFormatter: [obj.extend.formatters.inputAddressFormatter]
-        },
-        {
-            name: 'network',
-            call: 'dio_network',
-            params: 0,
-        },
-        {
-            name: 'getObject',
-            call: 'dio_getObject',
-            params: 1,
-            inputFormatter: [obj.extend.formatters.inputAddressFormatter]
-        }]
+            {
+                name: 'traffic',
+                call: 'dio_proxy|dio_traffic',
+                params: 2,
+                inputFormatter: [(node_id) => node_id, (chain_id) => chain_id]
+            },
+            {
+                name: 'traffic2',
+                call: 'dio_proxy|dio_traffic',
+                params: 3,
+                inputFormatter: [(node_id) => node_id, (chain_id) => chain_id, (epoch) => epoch]
+            },
+            {
+                name: 'usage',
+                call: 'dio_proxy|dio_usage',
+                params: 1,
+                inputFormatter: [(node_id) => node_id]
+            },
+            {
+                name: 'usageHistory',
+                call: 'dio_proxy|dio_usageHistory',
+                params: 4,
+                inputFormatter: [(node_id) => node_id, (from) => from, (to) => to, (stepping) => stepping]
+            },
+            {
+                name: 'connectivity',
+                call: 'dio_proxy|dio_checkConnectivity',
+                params: 1,
+                inputFormatter: [(node_id) => node_id]
+            },
+            {
+                name: 'getNode',
+                call: 'dio_getNode',
+                params: 1,
+                inputFormatter: [obj.extend.formatters.inputAddressFormatter]
+            },
+            {
+                name: 'network',
+                call: 'dio_network',
+                params: 0,
+            },
+            {
+                name: 'getObject',
+                call: 'dio_getObject',
+                params: 1,
+                inputFormatter: [obj.extend.formatters.inputAddressFormatter]
+            }]
     })
     obj.extend({
         property: 'eth',
