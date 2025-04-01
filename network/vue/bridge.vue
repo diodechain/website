@@ -88,7 +88,7 @@
 
                 <div v-if="txStep == 4" class="box"
                     style="width: 600px; background-color: aliceblue; border: 1px solid black; margin: 2em auto auto auto; padding: 1em;">
-                    <a :href="'/#/vault/' + this.txSender">See your Moonbeam Vault</a>
+                    <a :href="'/network/#/vault/' + this.txSender">See your Moonbeam Vault</a>
                 </div>
             </div>
         </div>
