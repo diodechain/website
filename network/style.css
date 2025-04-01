@@ -10,6 +10,7 @@ body.network input, body.network textarea {
 
 body.network h1, body.network h2, body.network h3, body.network h4, body.network h5, body.network h6 {
   color: black;
+  margin-bottom: 0.2em;
 }
 
 body.network #app {

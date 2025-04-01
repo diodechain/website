@@ -1,12 +1,12 @@
 <template id="vault">
     <div class="vault prenet">
-        <div class="title row"><div>
+        <div class="title row" style="display: flex; flex-direction: column;">
             <div style="display: flex; align-items: center;">
-                <h1>Active Account: <% account || "Connect MetaMask" %></h1>
+                <h1>Account: <% account || "Connect MetaMask" %></h1>
                 <button style="text-decoration: underline;" v-on:click="walletProvider.switchAccount()" class="button">Switch Account</button>
             </div>
             <h2>Gas token balance: <% formatAmount(balance) %> GLMR</h2>
-        </div></div>
+        </div>
         <div class="page-content">
             <!-- Vault Information Box -->
             <div class="box" style="width: 80%; background-color: #f0f8ff; border: 1px solid black; margin: 2em auto auto auto; padding: 1em;">
@@ -33,10 +33,13 @@
             <div class="box" v-if="!pendingTx"
                 style="width: 80%; background-color: aliceblue; border: 1px solid black; margin: 2em auto auto auto; padding: 1em;">
                 <div class="box-header">
-                    <h3 class="box-title">Create New '<% tokenName %>' Token Yield Vault</h3>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <h3 class="box-title">Create New <% tokenName %> Vault</h3>
+                        <button v-if="!enabled" v-on:click="walletProvider.enable()" class="button">Connect to Moonbeam</button>
+                    </div>
                 </div>
 
-                <form>
+                <form v-if="enabled">
                     <div style="margin-bottom: 10px;">
                         <strong>Your Balance:</strong> <% formatAmount(tokenBalance) %> <% tokenSymbol %>
                     </div>
@@ -46,7 +49,7 @@
                         <input type="number" step="0.1" id="amount" v-model="amount" class="form-control"
                             placeholder="Enter amount" />
                         <button style="position: absolute; transform: translate(-200%,0%);" class="button"
-                            v-on:click="setMaxAmount" :disabled="!enabled" type="button">Max</button>
+                            v-on:click="setMaxAmount" type="button">Max</button>
                     </div>
 
                     <!-- Projection Details -->
@@ -75,14 +78,13 @@
                         </div>
                     </div>
 
-                    <button v-if="enabled" v-on:click="createVault" class="button" :disabled="txPending" 
+                    <button v-on:click="createVault" class="button" :disabled="txPending" 
                         style="display: flex; align-items: center; margin-top: 1em;">
                         <span>Create Vault</span>
                         <div v-if="txPending" class="spinner"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                         </svg></div>
                     </button>
-                    <button v-else v-on:click="walletProvider.enable()" class="button">Connect to Moonbeam</button>
                     <div v-if="error" v-html="error" class="error"></div>
                 </form>
             </div>
@@ -118,7 +120,7 @@
             <div v-if="vaults.length > 0" class="box" 
                 style="width: 80%; background-color: aliceblue; border: 1px solid black; margin: 2em auto auto auto; padding: 1em;">
                 <div class="box-header">
-                    <h3 class="box-title">Your Vaults</h3>
+                    <h3 class="box-title">Existing Vaults</h3>
                 </div>
                 <div class="vault-list">
                     <div v-for="(vault, index) in vaults" :key="index" class="vault-item" 
@@ -143,6 +145,7 @@
 var Vault = Vue.component("vault", {
     template: document.getElementById("vault").innerHTML,
     delimiters: ["<%", "%>"],
+    props: { address: String },
     data: () => {
         return {
             // Set by wallet provider
@@ -153,7 +156,7 @@ var Vault = Vue.component("vault", {
             enabled: false,
 
             // Controlled by vue component
-            amount: 0,
+            amount: '0',
             pendingTx: false,
             tokenContractAddress: null,
             tokenDecimals: null,
@@ -178,17 +181,31 @@ var Vault = Vue.component("vault", {
     async created() {
         this.walletProvider.subscribe(this);
         await this.loadVaultContract();
+        if (this.address && !this.account) {
+            this.account = web3.utils.toChecksumAddress(this.address);
+        }
     },
 
     watch: {
         account: async function() {
             if (this.account) {
+                if (this.address && web3.utils.toChecksumAddress(this.address) != this.account) {
+                    this.$router.push(`/vault/`);
+                } 
                 await this.loadUser();
             } else {
                 this.vaults = [];
                 this.vaultsLoaded = false;
             }
-        }
+        },
+        '$route': async function() {
+            console.log("Address: " + this.$route.params.address);
+            
+            this.address = this.$route.params.address;
+            if (this.address && !this.enabled) {
+                this.account = web3.utils.toChecksumAddress(this.address);
+            }
+        },
     },
 
     methods: {
@@ -211,6 +228,10 @@ var Vault = Vue.component("vault", {
             try {
                 if (this.amount <= 0) {
                     throw new Error("Amount must be greater than 0");
+                }
+
+                if (this.amount > this.tokenBalance) {
+                    throw new Error("Amount must be less than your balance");
                 }
 
                 const amountWei = web3.utils.toWei(this.amount.toString());

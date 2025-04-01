@@ -10,7 +10,7 @@
         <b class="loading">Loading...</b>
       </div>
       <div v-else class="row align-start">
-        <div class="col-md-12" v-if="accounts.length !== 0">
+        <div class="col-md-12">
           <table class="data" id="blockchain-accounts">
             <caption>
               <div class="col-md-12 no-padding">
@@ -46,16 +46,6 @@
                 <% formatNumber(acc.stake[3]) %> DIODE
               </td>
             </tr>
-          </table>
-        </div>
-        <div v-else class="col-md-9 col-sm-9">
-          <table class="data" style="width: 100%">
-            <caption>No BNS available</caption>
-            <tbody>
-              <tr>
-                <td></td>
-              </tr>
-            </tbody>
           </table>
         </div>
       </div>

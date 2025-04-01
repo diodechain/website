@@ -1,14 +1,18 @@
 <template id="bridge">
     <div class="bridge prenet">
-        <div class="title row">
-            <h1>Bridge Account: <% account || "Connect MetaMask" %>
-            </h1>
+        <div class="title row" style="display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: center;">
+                <h1>Active Account: <% account || "Connect MetaMask" %></h1>
+                <button style="text-decoration: underline;" v-on:click="Wallet.switchAccount()" class="button">Switch Account</button>
+            </div>
+            <h2>Token balance: <% web3.utils.fromWei(balance) %> DIODE</h2>
         </div>
         <div class="page-content">
             <div v-if="txid == null" class="box"
                 style="width: 600px; background-color: aliceblue; border: 1px solid black; margin: 2em auto auto auto; padding: 1em;">
                 <div class="box-header">
-                    <h3 class="box-title">Diode L1 => Moonbeam</h3>
+                    <h3 class="box-title">Bridge Diode L1 to Moonbeam</h3>
+                    <p>This bridge allows you to bridge your Diode Tokens from Diode L1 to Moonbeam. All tokens are bridged into a Moonbeam vault with a 24 month lockup.</p>
                 </div>
 
                 <!-- Form showing Diode -> Moonbeam and allow to enter amount -->
@@ -18,7 +22,7 @@
                         <input type="number" step="0.1" id="amount_in" v-model="amount" class="form-control"
                             placeholder="Enter amount" />
                         <button style="position: absolute; transform: translate(-200%,0%);" class="button"
-                            v-on:click="amount = web3.utils.fromWei(Wallet.balance)">Max</button>
+                            v-on:click="amount = web3.utils.fromWei(Wallet.balance)" :disabled="!enabled">Max</button>
                     </div>
                     <label for="amount">Destination receives</label>
                     <input type="text" id="amount_out" disabled :value="amount + ' DIODE'" />
@@ -84,7 +88,7 @@
 
                 <div v-if="txStep == 4" class="box"
                     style="width: 600px; background-color: aliceblue; border: 1px solid black; margin: 2em auto auto auto; padding: 1em;">
-                    <a :href="'https://moonbeam.moonscan.io/token/0x434116a99619f2B465A137199C38c1Aab0353913?a=' + this.tx[0]">See on Moonscan</a>
+                    <a :href="'/#/vault/' + this.txSender">See your Moonbeam Vault</a>
                 </div>
             </div>
         </div>

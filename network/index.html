@@ -93,12 +93,21 @@
             props: true
         },
         {
-            name: false,
+            name: "Vault",
             path: '/vault/',
             component: Vault
         },
         {
             name: false,
+            path: '/vault/:address',
+            component: Vault,
+            params: {
+                address: ''
+            },
+            props: true
+        },
+        {
+            name: "Bridge",
             path: '/bridge/',
             component: Bridge
         },
