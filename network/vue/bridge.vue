@@ -12,7 +12,7 @@
                 style="width: 600px; background-color: aliceblue; border: 1px solid black; margin: 2em auto auto auto; padding: 1em;">
                 <div class="box-header">
                     <h3 class="box-title">Bridge Diode L1 to Moonbeam</h3>
-                    <p>This bridge allows you to bridge your Diode Tokens from Diode L1 to Moonbeam. All tokens are bridged into a Moonbeam vault with a 24 month lockup.</p>
+                    <p>This bridge allows you to bridge your Diode Tokens from Diode L1 to Moonbeam. All tokens are bridged into a <a href="/network/#/vault">Moonbeam Vault</a> with a 24 month lock.</p>
                 </div>
 
                 <!-- Form showing Diode -> Moonbeam and allow to enter amount -->
