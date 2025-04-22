@@ -5,66 +5,93 @@ let Wallet = {
     enabled: false,
     error: false,
     subs: [],
-    initialized: false
+    initialized: false,
+    initializing: false
 };
 
-Wallet.enable = () => {
+Wallet.enable = async () => {
     if (Wallet.enabled) return;
     if (Wallet.initializing) return;
     Wallet.initializing = true;
-    if (!window.ethereum || !window.ethereum.isMetaMask) {
-        Wallet.error = "Please install <a href='https://metamask.io/'>MetaMask</a>";
-        return;
-    }
-
-    const data = [{
-        chainId: '0xf',
-        chainName: 'Diode Prenet',
-        nativeCurrency:
-        {
-            name: 'Diodes',
-            symbol: 'DIODE',
-            decimals: 18
-        },
-        rpcUrls: ['wss://prenet.diode.io:8443/ws', 'https://prenet.diode.io:8443/'],
-        blockExplorerUrls: ['https://diode.io/prenet/#/'],
-    }]
-    window.ethereum.request({ method: 'wallet_addEthereumChain', params: data }).then((what, error) => {
-        if (error) {
+    
+    try {
+        if (!window.ethereum || !window.ethereum.isMetaMask) {
+            Wallet.error = "Please install <a href='https://metamask.io/'>MetaMask</a>";
             Wallet.initializing = false;
             return;
         }
-        window.ethereum.enable().then((accounts, error) => {
-            if (!accounts || error) {
-                Wallet.error = "Enable error: " + error.toString();
-                Wallet.initializing = false;
-                return;
-            }
-            // let currentChainId = null
-            Wallet.account = valueToAddress(accounts[0]);
-            Wallet.update(true)
 
-            web3.eth.getBalance(Wallet.account, (err, ret) => {
-                if (err) Wallet.error = err;
-                else Wallet.balance = ret;
-            });
+        const data = [{
+            chainId: '0xf',
+            chainName: 'Diode Prenet',
+            nativeCurrency: {
+                name: 'Diodes',
+                symbol: 'DIODE',
+                decimals: 18
+            },
+            rpcUrls: ['wss://prenet.diode.io:8443/ws', 'https://prenet.diode.io:8443/'],
+            blockExplorerUrls: ['https://diode.io/prenet/#/'],
+            iconUrls: ['https://diode.io/assets/favicon/android-chrome-512x512.png']
+        }];
 
-            if (!Wallet.initialized) {
-                Wallet.initialized = true
-                window.ethereum.on("chainChanged", (chainId) =>
-                    Wallet.handleChainChanged(chainId)
-                );
+        let chainId = await window.ethereum.request({ method: 'eth_chainId' });
+        if (chainId !== data[0].chainId) {
+            try {
+                await window.ethereum.request({ 
+                    method: 'wallet_addEthereumChain', 
+                    params: data 
+                });
+            } catch (error) {
+                console.error("Error adding chain:", error);
             }
-            Wallet.handleChainChanged(window.ethereum.networkVersion);
-            Wallet.initializing = false;
-            // Until eth_chainId calls actually works...
-            // window.ethereum
-            //   .send({ method: "eth_chainId" })
-            //   .then((chainId) => Wallet.handleChainChanged(chainId))
-            //   .catch(err => console.error(err))
+        }
+        
+        const accounts = await window.ethereum.request({ 
+            method: 'eth_requestAccounts'
         });
-    })
+        
+        if (!accounts || accounts.length === 0) {
+            Wallet.error = "No accounts found or access denied";
+            Wallet.initializing = false;
+            return;
+        }
+        
+        Wallet.account = valueToAddress(accounts[0]);
+        Wallet.update(true);
+
+        try {
+            const balance = await web3.eth.getBalance(Wallet.account);
+            Wallet.balance = balance;
+        } catch (error) {
+            Wallet.error = error.message || error;
+        }
+
+        if (!Wallet.initialized) {
+            Wallet.initialized = true;
+            window.ethereum.on("chainChanged", (chainId) => {
+                Wallet.handleChainChanged(parseInt(chainId, 16));
+            });
+            
+            window.ethereum.on("accountsChanged", (accounts) => {
+                if (accounts.length > 0) {
+                    Wallet.account = valueToAddress(accounts[0]);
+                    Wallet.update(true);
+                } else {
+                    Wallet.update(false);
+                }
+            });
+        }
+        
+        chainId = await window.ethereum.request({ method: 'eth_chainId' });
+        Wallet.handleChainChanged(parseInt(chainId, 16));
+    } catch (error) {
+        Wallet.error = error.message || "Failed to connect to MetaMask";
+        console.error("MetaMask connection error:", error);
+    } finally {
+        Wallet.initializing = false;
+    }
 }
+
 Wallet.handleChainChanged = (chainId) => {
     if (chainId != CHAIN_ID) {
         Wallet.error = "MetaMask is not connected to the Diode Network (" + chainId + ")";

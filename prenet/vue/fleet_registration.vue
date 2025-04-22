@@ -1,25 +1,26 @@
 <template id="fleet_registration">
-  <div>
-    <div class="title row">
-      <div class="col-md-3 no-padding">
-        <h1>Fleet Management</h1>
+  <div >
+   
+      <div class="title row" style="margin-bottom: 1.5rem;">
+        <div class="col-md-3 no-padding">
+          <h1>Fleet Management</h1>
+        </div>
+        <div class="col-md-3">
+          <search-bar
+            v-bind:results.sync="searchResults"
+            v-model="searchTerm"
+            v-bind:activated.sync="searchActivated"
+            v-bind:finished.sync="searchFinished"
+          />
+        </div>
+        <div class="col-md-4 col-md-offset-2">
+          <p>
+            connected to
+            <account-link :hash="base" :length="15" :only-alias="true" />
+          </p>
+        </div>
       </div>
-      <div class="col-md-3">
-        <search-bar
-          v-bind:results.sync="searchResults"
-          v-model="searchTerm"
-          v-bind:activated.sync="searchActivated"
-          v-bind:finished.sync="searchFinished"
-        />
-      </div>
-      <div class="col-md-4 col-md-offset-2">
-        <p>
-          connected to
-          <account-link :hash="base" :length="15" :only-alias="true" />
-        </p>
-      </div>
-    </div>
-    <div class="page-content">
+       <div class="content">
       <table class="data" v-if="searchTerm && searchActivated">
         <caption>
           <% searchResults.length %> Search Results
@@ -72,112 +73,183 @@
           </tr>
         </tbody>
       </table>
-      <div v-else class="row align-start">
-        <account-info>
-          <div v-if="contracts" class="marginized">
-            Select Fleet:
-            <br />
-            <select
-              name="contracts-select"
-              @change="onContractChange($event)"
-              class="full-width"
-              v-model="contract"
-            >
-              <option v-for="c in contracts" v-bind:key="c" :value="c">
-                <% c %>
-              </option>
-            </select>
+      
+      <div v-else class="grid">
+        <div class="space-y">
+          <div class="card">
+            <div class="flex mb-4">
+              <i class="pe-7s-credit text-blue mr-2" style="font-size: 20px; color: #2d3e50;  "></i>
+              <h2 class="font-medium">Your Account</h2>
+            </div>
+            
+            <div v-if="enabled" class="space-y">
+              <div class="flex-col">
+                <span class="text-sm text-gray">Name</span>
+                <div class="account-name flex">
+                  <account-link :hash="account" :length="20"></account-link>
+                  <button 
+                    class="copy-button"
+                    @click="copyToClipboard(account)"
+                  >
+                    <i class="pe-7s-copy-file" style="font-size: 16px;"></i>
+                  </button>
+                </div>
+              </div>
+              
+              <div class="flex-col">
+                <span class="text-sm text-gray">Balance</span>
+                <span class="font-medium"><% valueToBalance(balance) %></span>
+              </div>
+            </div>
+            <div v-else class="not-enabled">
+              <button class="button button-primary" v-on:click="enable()">Enable MetaMask</button>
+              <div v-if="error" v-html="error" class="error"></div>
+              <div class="message">
+                The Diode Network Explorer uses
+                <a target="_blank" href="https://metamask.io">MetaMask</a> to
+                authenticate your account. Please enable MetaMask to manage your
+                settings. <br /><br />
+                If you don't have MetaMask installed, follow
+                <a
+                  target="_blank"
+                  href="https://network.docs.diode.io/docs/faq/configure-metamask/"
+                >these instructions</a>
+                to get started.
+              </div>
+            </div>
           </div>
-          <div class="text-centered marginized-top-2">
-            <button class="button" v-on:click="createFleet()">
+
+          <div class="card" v-if="enabled">
+            <h2 class="font-medium mb-4">Select Fleet</h2>
+            
+            <div class="dropdown">
+              <select
+                name="contracts-select"
+                @change="onContractChange($event)"
+                class="dropdown-button"
+                v-model="contract"
+              >
+                <option value="" disabled>
+                  {{ (!contracts || contracts.length === 0) ? 'No Fleets' : 'Select a fleet...' }}
+                </option>
+                
+                <option v-for="c in contracts" v-bind:key="c" :value="c">
+                  <% abbreviateAddress(c) %>
+                </option>
+              </select>
+            </div>
+
+            <button
+                class="button button-primary" 
+                style="margin-top: 1.5rem;"
+              v-on:click="createFleet()"
+            >
+              <i class="pe-7s-plus mr-2" style="font-size: 16px;"></i>
+              <span>Create New Fleet</span>
               <img
                 v-show="submitFleet"
                 class="btn-loading"
                 src="images/spinning.gif"
               />
-              <span>Create New Fleet</span>
             </button>
           </div>
-        </account-info>
-        <div class="col-md-9 col-sm-9">
-          <table class="data" v-if="enabled">
-            <caption>
-              <span v-if="contracts && contracts.length > 0">
-                <div class="col-md-12 no-padding">
-                  Fleet:
-                  <account-link :hash="contract" :length="50"></account-link>
-                </div>
-                <div class="col-md-4 no-padding">
-                  <div class="input-button marginized-top">
-                    <input
-                      type="text"
-                      class="no-icon"
-                      v-model="deviceId"
-                      placeholder="Enter Device ID"
-                    />
+        </div>
+
+        <div v-if="enabled && contracts && contracts.length > 0" class="card">
+          <div class="mb-6">
+            <h2 class="font-medium">Devices</h2>
+            <p class="text-sm text-gray mt-4">
+              Fleet: <span class="font-mono"><account-link :hash="contract" :length="20"></account-link></span>
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <div class="flex">
+              <input
+                type="text"
+                class="input"
+                v-model="deviceId"
+                placeholder="Enter Device ID"
+                @input="validateDeviceId"
+              />
+              <button
+                class="button button-primary ml-2"
+                style="transition: all 0.2s; &:hover { box-shadow: none; }" 
+                @click="addDeviceFromInput"
+                :disabled="!deviceId || !isValidAddress(deviceId)"
+                title="Enter a valid Ethereum address to enable this button"
+              >
+                Add Device
+              </button>
+            </div>
+            <div v-if="deviceId && !isValidAddress(deviceId)" class="text-sm text-error mt-2">
+              Please enter a valid Ethereum address (0x followed by 40 hexadecimal characters)
+            </div>
+            <div v-else-if="deviceId && isValidAddress(deviceId)" class="text-sm text-success mt-2">
+              Valid Ethereum address ✓
+            </div>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Device ID</th>
+                <th>Canonical Member</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="device in devices" :key="device.id">
+                <td class="font-mono text-sm">
+                  <account-link :hash="device.id" :length="20"></account-link>
+                </td>
+                <td>
+                  <div class="device-actions" style="display: flex; align-items: center;">
+                    <span :class="device.allowed ? 'badge badge-success' : 'badge badge-neutral'">
+                      <% device.allowed ? 'Yes' : 'No' %>
+                    </span>
                     <button
-                      class="button"
-                      v-on:click="addDevice(deviceId, true)"
-                      :disabled="!web3.utils.isAddress(deviceId)"
+                      class="button button-primary ml-2"
+                      v-if="device.allowed == false"
+                      v-on:click="whitelistDevice(device.id, true)"
                     >
-                      Add
+                      <img
+                        v-show="isDeviceSubmited(device)"
+                        class="btn-loading"
+                        src="images/spinning.gif"
+                      />
+                      <span>Add</span>
+                    </button>
+                    <button
+                      class="button ml-2"
+                      v-else
+                      v-on:click="whitelistDevice(device.id, false)"
+                    >
+                      <img
+                        v-show="submitDevices[device.id]"
+                        class="btn-loading"
+                        src="images/spinning.gif"
+                      />
+                      <span>Remove</span>
                     </button>
                   </div>
-                </div>
-              </span>
-              <span v-else>Your Fleet</span>
-            </caption>
-            <tr>
-              <th>Device ID</th>
-              <th>Canonical Member</th>
-            </tr>
-
-            <tr v-for="device in devices" :key="device.id">
-              <td>
-                <account-link :hash="device.id" :length="50"></account-link>
-              </td>
-              <td>
-                &nbsp;&nbsp; <% device.allowed ? 'Yes' : 'No' %>&nbsp;
-                <button
-                  class="button"
-                  v-if="device.allowed == false"
-                  v-on:click="whitelistDevice(device.id, true)"
-                >
-                  <img
-                    v-show="isDeviceSubmited(device)"
-                    class="btn-loading"
-                    src="images/spinning.gif"
-                  />
-                  <span>Add</span>
-                </button>
-                <button
-                  class="button"
-                  v-else
-                  v-on:click="whitelistDevice(device.id, false)"
-                >
-                  <img
-                    v-show="submitDevices[device.id]"
-                    class="btn-loading"
-                    src="images/spinning.gif"
-                  />
-                  <span>Remove</span>
-                </button>
-              </td>
-            </tr>
-            <tr v-if="Object.keys(devices).length === 0">
-              <td colspan="2">No devices. Add devices above.</td>
-            </tr>
-          </table>
-          <table class="data" v-else>
-            <caption>
-              No Fleets available
-            </caption>
-            <tbody>
-              <tr>
-                <td></td>
+                </td>
+              </tr>
+              <tr v-if="Object.keys(devices).length === 0">
+                <td colspan="2" style="text-align: center; padding: 2rem;">
+                  <span class="text-sm text-gray">No devices. Add devices above.</span>
+                </td>
               </tr>
             </tbody>
           </table>
+        </div>
+        
+        <div v-else-if="enabled" class="card">
+          <div class="mb-6">
+            <h2 class="font-medium">Devices</h2>
+            <p class="text-sm text-gray mt-4">
+              No Fleets available. Please create a new fleet.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -195,7 +267,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
       balance: undefined,
       codehash: undefined,
       contracts: [],
-      contract: null,
+      contract: null, 
       error: undefined,
       deviceId: undefined,
       clientId: undefined,
@@ -224,6 +296,169 @@ var FleetRegistration = Vue.component("fleet_registration", {
     },
   },
   methods: {
+    enable: async function () {
+      if (!window.ethereum || !window.ethereum.isMetaMask) {
+        this.error =
+          "Please install <a href='https://metamask.io/'>MetaMask</a>";
+        return;
+      }
+      
+      try {
+        let isConnected = false;
+        try {
+          isConnected = await window.ethereum._metamask.isUnlocked();
+          console.log("MetaMask unlocked state:", isConnected);
+        } catch (unlockError) {
+          console.warn("Could not check MetaMask unlock state:", unlockError);
+        }
+
+        const diodeChainData = [{
+          chainId: '0xf',
+          chainName: 'Diode Prenet',
+          nativeCurrency: {
+            name: 'Diodes',
+            symbol: 'DIODE',
+            decimals: 18
+          },
+          rpcUrls: ['https://prenet.diode.io:8443/', 'wss://prenet.diode.io:8443/ws'],
+          blockExplorerUrls: ['https://diode.io/prenet/#/'],
+          iconUrls: ['https://diode.io/assets/favicon/android-chrome-512x512.png']
+        }];
+        
+        let chainId = null;
+        try {
+          chainId = await window.ethereum.request({ method: 'eth_chainId' });
+          console.log("Current chain ID from eth_chainId:", chainId);
+        } catch (chainIdError) {
+          console.warn("eth_chainId error:", chainIdError);
+          
+          try {
+            const provider = window.ethereum;
+            if (provider.networkVersion) {
+              chainId = '0x' + parseInt(provider.networkVersion).toString(16);
+              console.log("Chain ID from networkVersion:", chainId);
+            }
+          } catch (altChainError) {
+            console.warn("Alternative chain ID detection failed:", altChainError);
+          }
+        }
+        
+        if (chainId && chainId !== diodeChainData[0].chainId) {
+          console.log("Need to switch chains from", chainId, "to", diodeChainData[0].chainId);
+          
+          try {
+            await window.ethereum.request({
+              method: 'wallet_switchEthereumChain',
+            });
+            console.log("Successfully switched to Diode Prenet chain");
+          } catch (switchError) {
+            if (switchError.code === 4902 || switchError.message.includes("wallet_addEthereumChain")) {
+              try {
+                await window.ethereum.request({ 
+                  method: 'wallet_addEthereumChain', 
+                  params: diodeChainData 
+                });
+                console.log("Successfully added Diode Prenet chain");
+              } catch (addError) {
+                console.error("Error adding chain:", addError);
+                alert("Could not add Diode Prenet network to MetaMask. Please add it manually in your MetaMask settings.");
+              }
+            } else {
+              console.error("Error switching chain:", switchError);
+            }
+          }
+        }
+        
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+          .catch(e => {
+            if (e.code === 4001) {
+              this.error = "You need to allow MetaMask access to use this feature";
+            } else {
+              this.error = "There was an error connecting to MetaMask: " + e.message;
+            }
+            throw e;
+          });
+        
+        if (!accounts || accounts.length === 0) {
+          this.error = "No accounts found or access denied";
+          return;
+        }
+        
+        this.enabled = true;
+        this.account = accounts[0];
+        
+        if (!this.initialized) {
+          this.initialized = true;
+          
+          window.ethereum.on("chainChanged", (chainId) => {
+            console.log("Chain changed to:", chainId);
+            try {
+              this.handleChainChanged(parseInt(chainId, 16));
+            } catch (e) {
+              console.error("Error handling chain change:", e);
+            }
+          });
+          
+          window.ethereum.on("accountsChanged", (accounts) => {
+            console.log("Accounts changed:", accounts);
+            if (accounts.length > 0) {
+              this.account = accounts[0];
+              this.getBalance();
+              this.getContracts();
+            } else {
+              this.enabled = false;
+              console.log("No accounts available after account change");
+            }
+          });
+          
+          window.ethereum.on("disconnect", (error) => {
+            console.log("MetaMask disconnected:", error);
+            this.enabled = false;
+          });
+        }
+        
+        await this.getBalanceWithRetry();
+        
+        let finalChainId;
+        try {
+          finalChainId = await window.ethereum.request({ method: 'eth_chainId' });
+          this.handleChainChanged(parseInt(finalChainId, 16));
+        } catch (chainError) {
+          console.warn("Could not get final chainId:", chainError);
+        }
+        
+      } catch (error) {
+        console.error("MetaMask connection error:", error);
+        
+        if (error.code === -32002) {
+          this.error = "MetaMask connection request already pending. Please open MetaMask.";
+        } else if (error.code === 4001) {
+          this.error = "You rejected the connection request. Please try again.";
+        } else {
+          this.error = error.message || "Failed to connect to MetaMask";
+        }
+      }
+    
+    getBalanceWithRetry: async function(retries = 3) {
+      let attempt = 0;
+      while (attempt < retries) {
+        try {
+          const balance = await web3.eth.getBalance(this.account);
+          console.log("Account balance:", balance);
+          this.balance = balance;
+          return;
+        } catch (error) {
+          console.warn(`Balance fetch attempt ${attempt + 1} failed:`, error);
+          attempt++;
+          if (attempt >= retries) {
+            console.error("Failed to get balance after multiple attempts");
+            this.balance = "0";
+          } else {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+          }
+        }
+      }
+    },
     onContractChange: function (event) {
       this.loadDevivesInMemory();
     },
@@ -249,6 +484,17 @@ var FleetRegistration = Vue.component("fleet_registration", {
       if (saveInStorage) {
         this.setDeviceInStorage(id);
       }
+    },
+    addDeviceFromInput: function () {
+      if (this.deviceId && this.isValidAddress(this.deviceId)) {
+        this.addDevice(this.deviceId, true);
+        this.deviceId = "";
+      }
+    },
+    isValidAddress: function (address) {
+      return web3.utils.isAddress(address);
+    },
+    validateDeviceId: function () {
     },
     reloadDevice: function (id) {
       this.isWhiteListed(id, (allowed) => {
@@ -302,24 +548,9 @@ var FleetRegistration = Vue.component("fleet_registration", {
         this.contracts.push(addrs[i]);
       }
 
-      // for (id in this.devices) {
-      //   this.reloadDevice(id);
-      // }
-
       this.contract = this.contracts[indexDefaultHash];
 
       this.loadDevivesInMemory();
-      // if (ret.indexOf(FleetHash) >= 0) {
-      //   this.contracts = [this.generateContractAddress(ret.indexOf(FleetHash))];
-
-      //   for (id in this.devices) {
-      //     this.reloadDevice(id);
-      //   }
-
-      //   this.contract = this.contracts[0];
-      // } else {
-      //   this.contracts = [];
-      // }
     },
     generateContractAddress: function (nonce) {
       // This hack only works for nonces <= 16
@@ -342,37 +573,103 @@ var FleetRegistration = Vue.component("fleet_registration", {
       );
       let code = contract + constructor.substr(2);
       this.submitFleet = true;
-      window.ethereum.sendAsync(
-        {
-          method: "eth_sendTransaction",
-          params: [{ from: this.account, data: code, gasPrice: 0 }],
-          from: this.account,
-        },
-        (err, ret) => {
-          if (err) {
-            console.log("[SubmitFleet] error: ", err);
+      
+      try {
+        try {
+          const networkId = await window.ethereum.request({ method: 'net_version' });
+          console.log("Current network ID:", networkId);
+          if (networkId !== "15") { // Diode Prenet is network ID 15
+            alert("Please switch to the Diode Prenet network in MetaMask");
             this.submitFleet = false;
-          }
-          if (ret.result) {
-            this.isTxConfirmed(ret.result)
-              .then(
-                function (tx) {
-                  this.loadNewFleet();
-
-                  this.submitFleet = false;
-                }.bind(this)
-              )
-              .catch(
-                function (err) {
-                  console.log("[SubmitFleet] error: ", err);
-                  this.submitFleet = false;
-                }.bind(this)
-              );
             return;
           }
-          this.submitFleet = false;
+        } catch (networkErr) {
+          console.warn("Could not verify network:", networkErr);
         }
-      );
+        
+        let retryCount = 0;
+        const maxRetries = 2;
+        let success = false;
+        let tx;
+        
+        while (!success && retryCount <= maxRetries) {
+          try {
+            console.log(`Attempt ${retryCount + 1} to send transaction...`);
+            
+            const txParams = {
+              from: this.account,
+              data: code,
+            };
+            
+            try {
+              const gasEstimate = await window.ethereum.request({
+                method: "eth_estimateGas",
+                params: [txParams]
+              });
+              console.log("Gas estimate:", gasEstimate);
+              txParams.gas = gasEstimate;
+            } catch (gasError) {
+              console.warn("Gas estimation failed:", gasError);
+            }
+            
+            console.log("Sending transaction with params:", txParams);
+            tx = await window.ethereum.request({
+              method: "eth_sendTransaction",
+              params: [txParams],
+            });
+            
+            if (tx) {
+              success = true;
+              console.log("Transaction hash:", tx);
+            }
+          } catch (err) {
+            console.error(`Attempt ${retryCount + 1} failed:`, err);
+            
+            if (err.message && err.message.includes("JsonRpcEngine")) {
+              retryCount++;
+              if (retryCount <= maxRetries) {
+                console.log(`Retrying in 1 second... (${retryCount}/${maxRetries})`);
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                continue;
+              }
+            } else {
+              throw err;
+            }
+          }
+        }
+        
+        if (success && tx) {
+          let pendingTx = {
+            hash: tx,
+            type: 'createFleet',
+            timestamp: Date.now()
+          };
+          this.storePendingTransaction(pendingTx);
+          
+          alert("Transaction submitted! It may take a few minutes to confirm. You can refresh the page later to see your new fleet.");
+          
+          this.submitFleet = false;
+          
+          this.checkTransactionStatusInBackground(tx);
+        } else {
+          throw new Error("Failed to submit transaction after multiple attempts");
+        }
+      } catch (err) {
+        console.error("[SubmitFleet] Send error: ", err);
+        this.submitFleet = false;
+        
+        if (err.message && err.message.includes("connection not open")) {
+          alert("Network connection to Diode Prenet is unavailable. Please check your internet connection and try again later.");
+        } else if (err.message && err.message.includes("JsonRpcEngine")) {
+          alert("Network issue detected. Your transaction may still be processed. Please wait a few minutes and check if your fleet appears. If not, please try again.");
+        } else if (err.message && err.message.includes("insufficient funds")) {
+          alert("Your account doesn't have enough funds to create a fleet. You need some DIODE tokens in your account.");
+        } else if (err.message && err.message.includes("User denied")) {
+          alert("Transaction was rejected in your wallet. Please try again and approve the transaction.");
+        } else {
+          alert("Transaction failed: " + (err.message || "Unknown error") + ". Please try again later.");
+        }
+      }
     },
     loadNewFleet: async function () {
       let addr = this.generateContractAddress(this.contractsCount);
@@ -398,40 +695,123 @@ var FleetRegistration = Vue.component("fleet_registration", {
         [device, allowed]
       );
       this.$set(this.submitDevices, device, true);
-      window.ethereum.sendAsync(
-        {
-          method: "eth_sendTransaction",
-          params: [
-            { from: this.account, to: contract, data: call, gasPrice: 0 },
-          ],
-          from: this.account,
-        },
-        (err, ret) => {
-          if (err) {
-            console.log("[WhitelistDevice] error: ", err);
-            this.$set(this.submitDevices, device, false);
-            return;
-          }
-          if (ret.result) {
-            let { result } = ret;
-            this.isTxConfirmed(result)
-              .then(
-                function (tx) {
-                  this.$set(this.submitDevices, device, false);
-                  this.reloadDevice(device);
-                }.bind(this)
-              )
-              .catch(
-                function (err) {
-                  console.log("[WhitelistDevice] error: ", err);
-                  this.$set(this.submitDevices, device, false);
-                }.bind(this)
-              );
-            return;
-          }
-          this.$set(this.submitDevices, device, false);
+      
+      try {
+        const isConnected = await this.checkNetworkConnection();
+        if (!isConnected) {
+          console.warn("Network connectivity check failed");
         }
-      );
+        
+        let retryCount = 0;
+        const maxRetries = 2;
+        let success = false;
+        let tx;
+        
+        while (!success && retryCount <= maxRetries) {
+          try {
+            console.log(`Whitelist attempt ${retryCount + 1} for device ${device}...`);
+            
+            const txParams = {
+              from: this.account,
+              to: contract,
+              data: call,
+            };
+            
+            try {
+              const gasEstimate = await window.ethereum.request({
+                method: "eth_estimateGas",
+                params: [txParams]
+              });
+              console.log("Gas estimate for whitelist:", gasEstimate);
+              txParams.gas = gasEstimate;
+            } catch (gasError) {
+              console.warn("Gas estimation failed for whitelist:", gasError);
+            }
+            
+            console.log("Sending whitelist transaction:", txParams);
+            tx = await window.ethereum.request({
+              method: "eth_sendTransaction",
+              params: [txParams],
+            });
+            
+            if (tx) {
+              success = true;
+              console.log("Whitelist transaction hash:", tx);
+            }
+          } catch (err) {
+            console.error(`Whitelist attempt ${retryCount + 1} failed:`, err);
+            
+            if (err.message && (
+                err.message.includes("JsonRpcEngine") || 
+                err.message.includes("connection not open"))) {
+              retryCount++;
+              if (retryCount <= maxRetries) {
+                console.log(`Retrying whitelist in 1 second... (${retryCount}/${maxRetries})`);
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                continue;
+              }
+            } else {
+              throw err;
+            }
+          }
+        }
+        
+        if (success && tx) {
+          let pendingTx = {
+            hash: tx,
+            type: 'whitelist',
+            device: device,
+            allowed: allowed,
+            timestamp: Date.now()
+          };
+          this.storePendingTransaction(pendingTx);
+          
+          alert(`Device ${allowed ? 'added to' : 'removed from'} whitelist! It may take a few minutes to confirm.`);
+          
+          this.$set(this.submitDevices, device, false);
+          
+          this.checkWhitelistTransactionInBackground(tx, device);
+        } else {
+          throw new Error("Failed to submit whitelist transaction after multiple attempts");
+        }
+      } catch (err) {
+        console.error("[WhitelistDevice] send error:", err);
+        this.$set(this.submitDevices, device, false);
+        
+        if (err.message && err.message.includes("connection not open")) {
+          alert("Network connection to Diode Prenet is unavailable. Please check your internet connection and try again later.");
+        } else if (err.message && err.message.includes("JsonRpcEngine")) {
+          alert("Network issue detected. Your whitelist operation may still be processed. Please wait a few minutes and check the device status again.");
+        } else if (err.message && err.message.includes("insufficient funds")) {
+          alert("Your account doesn't have enough funds for this operation. You need some DIODE tokens in your account.");
+        } else if (err.message && err.message.includes("User denied")) {
+          alert("Transaction was rejected in your wallet. Please try again and approve the transaction.");
+        } else {
+          alert("Whitelist operation failed: " + (err.message || "Unknown error") + ". Please try again later.");
+        }
+      }
+    },
+    checkWhitelistTransactionInBackground(txHash, device) {
+      const checkInterval = setInterval(() => {
+        web3.eth.getTransactionReceipt(txHash)
+          .then(receipt => {
+            if (receipt) {
+              console.log("Whitelist transaction confirmed in background:", receipt);
+              clearInterval(checkInterval);
+              
+              if (receipt.status) {
+                this.reloadDevice(device);
+              }
+            }
+          })
+          .catch(err => {
+            console.log("Background whitelist check error (can be ignored):", err);
+          });
+      }, 10000); 
+      
+      setTimeout(() => {
+        clearInterval(checkInterval);
+      }, 300000);
     },
     execAfter: function (callback, time) {
       return new Promise(function (resolve, reject) {
@@ -441,7 +821,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
       });
     },
     isTxConfirmed: function (txHash) {
-      // const self = this
       return new Promise(
         function (resolve, reject) {
           if (
@@ -478,6 +857,117 @@ var FleetRegistration = Vue.component("fleet_registration", {
     },
     isDeviceSubmited: function (device) {
       return this.submitDevices[device.id];
+    },
+    copyToClipboard: function (text) {
+      navigator.clipboard.writeText(text).then(function () {
+        alert('Address copied to clipboard!');
+      }).catch(function (err) {
+        console.error('Could not copy text: ', err);
+      });
+    },
+    checkNetworkConnection: async function() {
+      if (!window.ethereum) {
+        console.warn("MetaMask not detected");
+        return false;
+      }
+      
+      try {
+        const accounts = await window.ethereum.request({
+          method: 'eth_accounts'
+        });
+        
+        if (accounts && accounts.length > 0) {
+          console.log("Network connection test succeeded");
+          return true;
+        } else {
+          console.warn("Network connection test failed - no accounts available");
+          return false;
+        }
+      } catch (error) {
+        console.warn("Network connection test failed:", error);
+        return false;
+      }
+    },
+    
+    storePendingTransaction: function(tx) {
+      let pendingTxs = JSON.parse(localStorage.getItem('pendingTransactions') || '[]');
+      pendingTxs.push(tx);
+      localStorage.setItem('pendingTransactions', JSON.stringify(pendingTxs));
+      console.log("Stored pending transaction in local storage:", tx);
+    },
+    
+    checkTransactionStatusInBackground: function(txHash) {
+      console.log("Starting background check for transaction:", txHash);
+      
+      if (!this.backgroundChecks) {
+        this.backgroundChecks = {};
+      }
+      
+      if (this.backgroundChecks[txHash]) {
+        console.log("Background check already running for this transaction");
+        return;
+      }
+      
+      this.backgroundChecks[txHash] = true;
+      
+      let checkCount = 0;
+      const maxChecks = 30; 
+      let delay = 5000; 
+      
+      const checkReceipt = () => {
+        if (checkCount >= maxChecks) {
+          console.log("Abandoning background check after maximum attempts");
+          delete this.backgroundChecks[txHash];
+          return;
+        }
+        
+        checkCount++;
+        console.log(`Background check attempt ${checkCount}/${maxChecks} for tx: ${txHash}`);
+        
+        setTimeout(() => {
+          web3.eth.getTransactionReceipt(txHash)
+            .then(receipt => {
+              if (receipt) {
+                console.log("Transaction confirmed:", receipt);
+                
+                if (receipt.status) {
+                  this.loadNewFleet()
+                    .then(() => {
+                      console.log("New fleet loaded successfully");
+                    })
+                    .catch(err => {
+                      console.error("Error loading new fleet:", err);
+                    });
+                } else {
+                  console.error("Transaction failed on-chain");
+                }
+                
+                delete this.backgroundChecks[txHash];
+              } else {
+                delay = Math.min(delay * 1.5, 60000); 
+                setTimeout(checkReceipt, delay);
+              }
+            })
+            .catch(err => {
+              console.warn("Error checking transaction receipt:", err);
+              
+              if (err.message && (
+                  err.message.includes("connection not open") || 
+                  err.message.includes("JsonRpcEngine"))) {
+                setTimeout(checkReceipt, 10000); 
+              } else {
+                delay = Math.min(delay * 1.5, 60000);
+                setTimeout(checkReceipt, delay);
+              }
+            });
+        }, 0);
+      };
+      
+      checkReceipt();
+    },
+    abbreviateAddress: function (address) {
+      if (!address) return '';
+      return address.slice(0, 6) + '...' + address.slice(-4);
     },
   },
 });

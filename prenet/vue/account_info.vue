@@ -2,13 +2,13 @@
   <div class="col-md-3 col-sm-3 padding-right-10">
     <table class="data" :style="'width: 100%;min-height:' + tableHeight + 'px'">
       <caption>
-        <div class="marginized-bottom">Your Account</div>
+        <div class="marginized-bottom" style="font-size: 1.5rem; font-weight: bold;">Your Account</div>
         <div v-if="enabled">
           <div class="marginized">
-            Name:
+            <strong>Name:</strong>
             <account-link :hash="account" :length="20"></account-link>
           </div>
-          <div class="marginized">Balance: <% valueToBalance(balance) %></div>
+            <div class="marginized"><strong>Balance:</strong> <% valueToBalance(balance) %></div> 
           <slot></slot>
         </div>
         <div class="not-enabled" v-else>
