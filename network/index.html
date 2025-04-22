@@ -39,6 +39,7 @@
     {% include_relative vue/bridge_list.vue %}
     {% include_relative vue/node.vue %}
     {% include_relative vue/vault.vue %}
+    {% include_relative vue/fleet_registration.vue %}
     <div id="app">
         <div class="header">
             <div class="logo">
@@ -135,6 +136,11 @@
             name: 'Dashboard',
             path: '/dashboard',
             component: Dashboard
+        },
+        {
+            name: 'Fleets',
+            path: '/fleets',
+            component: FleetRegistration
         },
         ];
         const router = new VueRouter({

@@ -9,7 +9,7 @@ body.network input, body.network textarea {
 }
 
 body.network h1, body.network h2, body.network h3, body.network h4, body.network h5, body.network h6 {
-  color: black;
+  color: #5e5e5e;
   margin-bottom: 0.2em;
 }
 
@@ -546,6 +546,7 @@ body.network .button {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
+  margin-left: 20px !important;
   line-height: 16px;
   -webkit-box-align: center;
   -webkit-align-items: center;

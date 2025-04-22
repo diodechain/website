@@ -9304,7 +9304,7 @@ body.prenet .column {
 }
 
 body.prenet a {
-  color: #f15c2e;
+  color: #5e5e5e;
   cursor: pointer;
   z-index: 100;
 }
@@ -10500,6 +10500,7 @@ svg {
 
 .content {
   max-width: 1200px;
+  padding: 30px;
   margin: 0 auto;
 }
 
@@ -10516,7 +10517,8 @@ svg {
 }
 
 .card {
-  background: white;
+  background: #f0f8ff;
+  margin-bottom: 30px;
   border-radius: 0.75rem;
   padding: 1.5rem;
   border: 1px solid #e5e7eb;
@@ -10531,6 +10533,7 @@ svg {
 .flex {
   display: flex;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .flex-col {
@@ -10580,6 +10583,7 @@ svg {
 
 .font-medium {
   font-weight: 500;
+  
 }
 
 .dropdown-button {
@@ -10600,6 +10604,7 @@ svg {
 
 select.dropdown-button {
   color: #2d3e50; 
+  background-color: white;
 }
 
 .dropdown-button:focus {
@@ -10650,6 +10655,7 @@ select.dropdown-button {
   border-radius: 0.5rem;
   width: 100%;
   outline: none;
+  background: #fff;
 }
 
 .input:focus {
@@ -10670,7 +10676,7 @@ select.dropdown-button {
 }
 
 .table th {
-  background: #f9fafb;
+  background: #fff !important;
   font-size: 0.75rem;
   text-transform: uppercase;
   color: #6b7280;

@@ -79,14 +79,14 @@
           <div class="card">
             <div class="flex mb-4">
               <i class="pe-7s-credit text-blue mr-2" style="font-size: 20px; color: #2d3e50;  "></i>
-              <h2 class="font-medium">Your Account</h2>
+              <h2 class="font-medium"  >Your Account</h2>
             </div>
             
             <div v-if="enabled" class="space-y">
               <div class="flex-col">
                 <span class="text-sm text-gray">Name</span>
                 <div class="account-name flex">
-                  <account-link :hash="account" :length="20"></account-link>
+                  <span class="font-mono"><% account ? account.substring(0, 8) + '...' + account.substring(account.length - 6) : '' %></span>
                   <button 
                     class="copy-button"
                     @click="copyToClipboard(account)"
@@ -98,7 +98,7 @@
               
               <div class="flex-col">
                 <span class="text-sm text-gray">Balance</span>
-                <span class="font-medium"><% valueToBalance(balance) %></span>
+                <span class="font-medium"  ><% valueToBalance(balance) %></span>
               </div>
             </div>
             <div v-else class="not-enabled">
@@ -159,7 +159,7 @@
           <div class="mb-6">
             <h2 class="font-medium">Devices</h2>
             <p class="text-sm text-gray mt-4">
-              Fleet: <span class="font-mono"><account-link :hash="contract" :length="20"></account-link></span>
+              Fleet: <span class="font-mono"><% contract ? contract.substring(0, 8) + '...' + contract.substring(contract.length - 6) : '' %></span>
             </p>
           </div>
 
@@ -200,7 +200,7 @@
             <tbody>
               <tr v-for="device in devices" :key="device.id">
                 <td class="font-mono text-sm">
-                  <account-link :hash="device.id" :length="20"></account-link>
+                  <span><% device.id ? device.id.substring(0, 8) + '...' + device.id.substring(device.id.length - 6) : '' %></span>
                 </td>
                 <td>
                   <div class="device-actions" style="display: flex; align-items: center;">
@@ -260,6 +260,19 @@ var FleetRegistration = Vue.component("fleet_registration", {
   template: document.getElementById("fleet_registration").innerHTML,
   delimiters: ["<%", "%>"],
   data: () => {
+    if (!localStorage.getObject) {
+      Storage.prototype.getObject = function(key) {
+        var value = this.getItem(key);
+        return value && JSON.parse(value);
+      };
+    }
+    
+    if (!localStorage.setObject) {
+      Storage.prototype.setObject = function(key, value) {
+        this.setItem(key, JSON.stringify(value));
+      };
+    }
+    
     return {
       base: "",
       enabled: false,
@@ -288,7 +301,22 @@ var FleetRegistration = Vue.component("fleet_registration", {
     getBase(function (base) {
       self.base = base;
     });
-    Wallet.subscribe(this);
+    
+    try {
+      if (typeof Wallet !== 'undefined') {
+        Wallet.subscribe(this);
+      } else {
+        console.error("Wallet object not found. Fleet management may not work properly.");
+      }
+    } catch (e) {
+      console.error("Error initializing with Wallet:", e);
+    }
+    
+    if (window.ethereum && window.ethereum.isMetaMask) {
+      setTimeout(() => {
+        this.enable();
+      }, 500);
+    }
   },
   watch: {
     account: function () {
@@ -580,7 +608,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
         try {
           const networkId = await window.ethereum.request({ method: 'net_version' });
           console.log("Current network ID:", networkId);
-          if (networkId !== "15") { // Diode Prenet is network ID 15
+          if (networkId !== "15") { 
             alert("Please switch to the Diode Prenet network in MetaMask");
             this.submitFleet = false;
             return;
