@@ -161,7 +161,7 @@
                 @input="validateDeviceId"
               />
               <button
-                class="button button-primary ml-2"
+                class="button"
                 style="transition: all 0.2s; &:hover { box-shadow: none; }" 
                 @click="addDeviceFromInput"
                 :disabled="!deviceId || !isValidAddress(deviceId)"
@@ -280,7 +280,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
       searchFinished: false,
       searchResults: [],
       tableHeight: 300,
-      contractsCount: localStorage.fleetsCount || 10,
+      contractsCount: 100,
     };
   },
 
@@ -469,7 +469,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
       let attempt = 0;
       while (attempt < retries) {
         try {
-          const balance = await web3.eth.getBalance(this.account);
+          const balance = await MoonbeamWallet.web3().eth.getBalance(this.account);
           console.log("Account balance:", balance);
           this.balance = balance;
           return;
@@ -559,33 +559,46 @@ var FleetRegistration = Vue.component("fleet_registration", {
       if (!this.account) return;
       let proms = [];
       let addrs = [];
-
       for (let i = 0; i < this.contractsCount; i++) {
         let addr = this.generateContractAddress(i);
-        proms.push(web3.eth.getCodeHash(addr));
+        proms.push(MoonbeamWallet.web3().eth.getCode(addr));
         addrs.push(addr);
       }
 
       let fleets = await Promise.all(proms);
-      let indexDefaultHash = fleets.indexOf(FleetHash);
-
+      
+      let uniqueContracts = new Set(); 
+      
       for (let i = 0; i < fleets.length; i++) {
-        if (fleets[i] == NullHash) continue;
-        this.contracts.push(addrs[i]);
+        if (fleets[i] && fleets[i].length > 2) {
+          console.log(`Valid fleet found at ${addrs[i]}`);
+          uniqueContracts.add(addrs[i]); 
+        }
       }
+      
+      this.contracts = Array.from(uniqueContracts);
+      console.log(`Found ${this.contracts.length} unique fleet contracts`);
 
-      this.contract = this.contracts[indexDefaultHash];
+      if (this.contracts.length > 0) {
+        this.contract = this.contracts[0];
+      }
 
       this.loadDevivesInMemory();
     },
     generateContractAddress: function (nonce) {
       // This hack only works for nonces <= 16
+
       let hex = "0xd694" + this.account.substr(2);
       if (nonce == 0) {
         hex += "80";
-      } else {
+      }
+      else if (nonce > 15) {
+          hex += web3.utils.toHex(nonce).substr(2);
+      }
+       else {
         hex += "0" + web3.utils.toHex(nonce).substr(2);
       }
+
       return (addr = "0x" + web3.utils.keccak256(hex).slice(12).substring(14));
     },
     createFleet: async function () {
@@ -593,7 +606,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
         "0x608060405234801561001057600080fd5b506040516060806102d383398101604090815281516020830151919092015160018054600160a060020a03938416600160a060020a03199182161790915560008054948416948216949094179093556002805492909116919092161790556102568061007d6000396000f3006080604052600436106100775763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416633c5f7d46811461007c5780634ef1aee4146100a45780634fb3ccc5146100df578063504f04b714610110578063570ca7351461013c578063d90bd65114610151575b600080fd5b34801561008857600080fd5b506100a2600160a060020a03600435166024351515610172565b005b3480156100b057600080fd5b506100cb600160a060020a036004358116906024351661019d565b604080519115158252519081900360200190f35b3480156100eb57600080fd5b506100f46101bd565b60408051600160a060020a039092168252519081900360200190f35b34801561011c57600080fd5b506100a2600160a060020a036004358116906024351660443515156101cc565b34801561014857600080fd5b506100f4610206565b34801561015d57600080fd5b506100cb600160a060020a0360043516610215565b600160a060020a03919091166000908152600660205260409020805460ff1916911515919091179055565b600760209081526000928352604080842090915290825290205460ff1681565b600254600160a060020a031681565b600160a060020a03928316600090815260076020908152604080832094909516825292909252919020805460ff1916911515919091179055565b600154600160a060020a031681565b60066020526000908152604090205460ff16815600a165627a7a723058208df217001cef7e510f8f0352585a03e46b30eba1feaeaf76becbe261832a627f0029";
 
       let args = [Registry, this.account, this.account];
-      let constructor = web3.eth.abi.encodeParameters(
+      let constructor = MoonbeamWallet.web3().eth.abi.encodeParameters(
         ["address", "address", "address"],
         args
       );
@@ -699,16 +712,25 @@ var FleetRegistration = Vue.component("fleet_registration", {
     },
     loadNewFleet: async function () {
       let addr = this.generateContractAddress(this.contractsCount);
-      let promise = web3.eth.getCodeHash(addr);
-
-      let fleet = await Promise.resolve(promise);
-
-      this.contracts.push(this.generateContractAddress(this.contractsCount));
-
-      this.contract = this.contracts[this.contractsCount];
-      this.loadDevivesInMemory();
-      this.contractsCount += 1;
-      localStorage.fleetsCount = this.contractsCount;
+      
+      try {
+        let code = await MoonbeamWallet.web3().eth.getCode(addr);
+        
+        if (code && code.length > 2) {
+          if (!this.contracts.includes(addr)) {
+            this.contracts.push(addr);
+          }
+          
+          this.contract = addr;
+          this.loadDevivesInMemory();
+          this.contractsCount += 1;
+          localStorage.fleetsCount = this.contractsCount;
+        } else {
+          console.log("No code found at address, skipping");
+        }
+      } catch (error) {
+        console.error("Error checking new fleet:", error);
+      }
     },
     isWhiteListed(device, callback) {
       if (!this.contracts[0]) return;
@@ -716,7 +738,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
     },
     whitelistDevice: async function (device, allowed) {
       let contract = this.contracts[0];
-      let call = web3.eth.abi.encodeFunctionCall(
+      let call = MoonbeamWallet.web3().eth.abi.encodeFunctionCall(
         fleetMethods["SetDeviceWhitelist"],
         [device, allowed]
       );
@@ -819,7 +841,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
     },
     checkWhitelistTransactionInBackground(txHash, device) {
       const checkInterval = setInterval(() => {
-        web3.eth.getTransactionReceipt(txHash)
+        MoonbeamWallet.web3().eth.getTransactionReceipt(txHash)
           .then(receipt => {
             if (receipt) {
               console.log("Whitelist transaction confirmed in background:", receipt);
@@ -856,7 +878,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
           ) {
             reject(false);
           }
-          web3.eth
+          MoonbeamWallet.web3().eth
             .getTransactionReceipt(txHash)
             .then(
               function (tx) {
@@ -953,7 +975,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
         console.log(`Background check attempt ${checkCount}/${maxChecks} for tx: ${txHash}`);
         
         setTimeout(() => {
-          web3.eth.getTransactionReceipt(txHash)
+          MoonbeamWallet.web3().eth.getTransactionReceipt(txHash)
             .then(receipt => {
               if (receipt) {
                 console.log("Transaction confirmed:", receipt);
@@ -996,6 +1018,9 @@ var FleetRegistration = Vue.component("fleet_registration", {
     abbreviateAddress: function (address) {
       if (!address) return '';
       return address.slice(0, 6) + '...' + address.slice(-4);
+    },
+    handleChainChanged: function(chainId) {
+      this.getContracts();
     },
   },
 });

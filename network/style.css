@@ -545,6 +545,8 @@ body.network button {
 body.network .button {
   font-style: normal;
   font-weight: normal;
+  padding: 4px;
+  width: 180px;
   font-size: 14px;
   margin-left: 20px !important;
   line-height: 16px;
