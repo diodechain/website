@@ -1,25 +1,13 @@
 <template id="fleet_registration">
   <div >
    
-      <div class="title row" style="margin-bottom: 1.5rem;">
-        <div class="col-md-3 no-padding">
-          <h1>Fleet Management</h1>
+       <div class="title row" style="display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: center;">
+                <h1>Account: <% account || "Connect MetaMask" %></h1>
+                <button style="text-decoration: underline;" v-on:click="walletProvider.switchAccount()" class="button">Switch Account</button>
+            </div>
+            <h2>Gas token balance: <% formatAmount(balance) %> GLMR</h2>
         </div>
-        <div class="col-md-3">
-          <search-bar
-            v-bind:results.sync="searchResults"
-            v-model="searchTerm"
-            v-bind:activated.sync="searchActivated"
-            v-bind:finished.sync="searchFinished"
-          />
-        </div>
-        <div class="col-md-4 col-md-offset-2">
-          <p>
-            connected to
-            <account-link :hash="base" :length="15" :only-alias="true" />
-          </p>
-        </div>
-      </div>
        <div class="content">
       <table class="data" v-if="searchTerm && searchActivated">
         <caption>
@@ -340,17 +328,17 @@ var FleetRegistration = Vue.component("fleet_registration", {
           console.warn("Could not check MetaMask unlock state:", unlockError);
         }
 
-        const diodeChainData = [{
-          chainId: '0xf',
-          chainName: 'Diode Prenet',
+        const moonbeamChainData = [{
+          chainId: '0x504',
+          chainName: 'Moonbeam',
           nativeCurrency: {
-            name: 'Diodes',
-            symbol: 'DIODE',
+            name: 'Glimmer',
+            symbol: 'GLMR',
             decimals: 18
           },
-          rpcUrls: ['https://prenet.diode.io:8443/', 'wss://prenet.diode.io:8443/ws'],
-          blockExplorerUrls: ['https://diode.io/prenet/#/'],
-          iconUrls: ['https://diode.io/assets/favicon/android-chrome-512x512.png']
+          rpcUrls: ['https://rpc.api.moonbeam.network', 'wss://wss.api.moonbeam.network'],
+          blockExplorerUrls: ['https://moonbeam.moonscan.io/'],
+          iconUrls: ['https://moonbeam.network/wp-content/uploads/2020/03/Moonbeam-Favicon-550px-1-32x32.png']
         }];
         
         let chainId = null;
@@ -371,26 +359,26 @@ var FleetRegistration = Vue.component("fleet_registration", {
           }
         }
         
-        if (chainId && chainId !== diodeChainData[0].chainId) {
-          console.log("Need to switch chains from", chainId, "to", diodeChainData[0].chainId);
+        if (chainId && chainId !== moonbeamChainData[0].chainId) {
+          console.log("Need to switch chains from", chainId, "to", moonbeamChainData[0].chainId);
           
           try {
             await window.ethereum.request({
               method: 'wallet_switchEthereumChain',
-              params: [{ chainId: diodeChainData[0].chainId }],
+              params: [{ chainId: moonbeamChainData[0].chainId }],
             });
-            console.log("Successfully switched to Diode Prenet chain");
+            console.log("Successfully switched to Moonbeam chain");
           } catch (switchError) {
             if (switchError.code === 4902 || switchError.message.includes("wallet_addEthereumChain")) {
               try {
                 await window.ethereum.request({ 
                   method: 'wallet_addEthereumChain', 
-                  params: diodeChainData 
+                  params: moonbeamChainData 
                 });
-                console.log("Successfully added Diode Prenet chain");
+                console.log("Successfully added Moonbeam chain");
               } catch (addError) {
                 console.error("Error adding chain:", addError);
-                alert("Could not add Diode Prenet network to MetaMask. Please add it manually in your MetaMask settings.");
+                alert("Could not add Moonbeam network to MetaMask. Please add it manually in your MetaMask settings.");
               }
             } else {
               console.error("Error switching chain:", switchError);
@@ -447,6 +435,14 @@ var FleetRegistration = Vue.component("fleet_registration", {
         }
         
         await this.getBalanceWithRetry();
+        
+        const networkId = await window.ethereum.request({ method: 'net_version' });
+        console.log("Current network ID:", networkId);
+        if (networkId !== "1284") { // Moonbeam is network ID 1284
+          alert("Please switch to the Moonbeam network in MetaMask");
+          this.submitFleet = false;
+          return;
+        }
         
         let finalChainId;
         try {
@@ -608,8 +604,8 @@ var FleetRegistration = Vue.component("fleet_registration", {
         try {
           const networkId = await window.ethereum.request({ method: 'net_version' });
           console.log("Current network ID:", networkId);
-          if (networkId !== "15") { 
-            alert("Please switch to the Diode Prenet network in MetaMask");
+          if (networkId !== "1284") { // Moonbeam is network ID 1284
+            alert("Please switch to the Moonbeam network in MetaMask");
             this.submitFleet = false;
             return;
           }
@@ -689,11 +685,11 @@ var FleetRegistration = Vue.component("fleet_registration", {
         this.submitFleet = false;
         
         if (err.message && err.message.includes("connection not open")) {
-          alert("Network connection to Diode Prenet is unavailable. Please check your internet connection and try again later.");
+          alert("Network connection to Moonbeam is unavailable. Please check your internet connection and try again later.");
         } else if (err.message && err.message.includes("JsonRpcEngine")) {
           alert("Network issue detected. Your transaction may still be processed. Please wait a few minutes and check if your fleet appears. If not, please try again.");
         } else if (err.message && err.message.includes("insufficient funds")) {
-          alert("Your account doesn't have enough funds to create a fleet. You need some DIODE tokens in your account.");
+          alert("Your account doesn't have enough funds to create a fleet. You need some GLMR tokens in your account.");
         } else if (err.message && err.message.includes("User denied")) {
           alert("Transaction was rejected in your wallet. Please try again and approve the transaction.");
         } else {
@@ -809,11 +805,11 @@ var FleetRegistration = Vue.component("fleet_registration", {
         this.$set(this.submitDevices, device, false);
         
         if (err.message && err.message.includes("connection not open")) {
-          alert("Network connection to Diode Prenet is unavailable. Please check your internet connection and try again later.");
+          alert("Network connection to Moonbeam is unavailable. Please check your internet connection and try again later.");
         } else if (err.message && err.message.includes("JsonRpcEngine")) {
           alert("Network issue detected. Your whitelist operation may still be processed. Please wait a few minutes and check the device status again.");
         } else if (err.message && err.message.includes("insufficient funds")) {
-          alert("Your account doesn't have enough funds for this operation. You need some DIODE tokens in your account.");
+          alert("Your account doesn't have enough funds for this operation. You need some GLMR tokens in your account.");
         } else if (err.message && err.message.includes("User denied")) {
           alert("Transaction was rejected in your wallet. Please try again and approve the transaction.");
         } else {
@@ -918,7 +914,9 @@ var FleetRegistration = Vue.component("fleet_registration", {
         return false;
       }
     },
-    
+    formatAmount(amountWei) {
+            return web3.utils.fromWei(amountWei);
+        },
     storePendingTransaction: function(tx) {
       let pendingTxs = JSON.parse(localStorage.getItem('pendingTransactions') || '[]');
       pendingTxs.push(tx);
