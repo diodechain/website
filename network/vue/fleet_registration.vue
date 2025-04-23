@@ -86,7 +86,7 @@
               
               <div class="flex-col">
                 <span class="text-sm text-gray">Balance</span>
-                <span class="font-medium"  ><% valueToBalance(balance) %></span>
+                <span class="font-medium"><% valueToBalance(balance) %> GLMR</span>
               </div>
             </div>
             <div v-else class="not-enabled">
@@ -937,8 +937,12 @@ var FleetRegistration = Vue.component("fleet_registration", {
       }
     },
     formatAmount(amountWei) {
-            return web3.utils.fromWei(amountWei);
-        },
+      return web3.utils.fromWei(amountWei);
+    },
+    valueToBalance(value) {
+      if (!value) return "0";
+      return parseFloat(web3.utils.fromWei(value)).toFixed(4);
+    },
     storePendingTransaction: function(tx) {
       let pendingTxs = JSON.parse(localStorage.getItem('pendingTransactions') || '[]');
       pendingTxs.push(tx);
