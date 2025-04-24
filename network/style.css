@@ -953,6 +953,26 @@ body.network {
   .map {
     background-color: #262e2b;
   }
+  
+  .info-blurb {
+    background-color: #f8f9fa;
+    border-left: 4px solid #f15c2e;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .info-blurb a {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
+  .info-blurb a:hover {
+    color: #d6442e;
+  }
 }
 
 body.network .bridge_list table {

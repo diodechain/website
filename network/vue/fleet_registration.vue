@@ -9,6 +9,10 @@
             <h2>Gas token balance: <% formatAmount(balance) %> GLMR</h2>
         </div>
        <div class="content">
+          <div class="info-blurb">
+            App builders, enterprises, and other permissionless security systems can create their own Fleet Contract and underwrite their device / user traffic on the Diode Network. <a href="https://network.docs.diode.io/docs/features/what-is-a-fleet-contract/" target="_blank">Read more here.</a>
+          </div>
+          
       <table class="data" v-if="searchTerm && searchActivated">
         <caption>
           <% searchResults.length %> Search Results
