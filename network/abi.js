@@ -137,6 +137,15 @@ var registryMethods = {
             ]
         }]
     },
+    "ContractStake": {
+        name: "ContractStake",
+        type: "function",
+        inputs: [
+            { type: "address", name: "fleet" },
+            { type: "uint256", name: "amount" }
+        ],
+        outputs: []
+    },
     "GetClientScore": {
         name: "GetClientScore",
         type: "function",
@@ -249,6 +258,7 @@ var dnsMethods = {
             type: "tuple"
         }],
     },
+   
     "Register": {
         name: 'Register',
         type: 'function',

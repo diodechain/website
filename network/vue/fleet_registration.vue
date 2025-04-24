@@ -6,7 +6,10 @@
                 <h1>Account: <% account || "Connect MetaMask" %></h1>
                 <button style="text-decoration: underline;" v-on:click="walletProvider.switchAccount()" class="button">Switch Account</button>
             </div>
-            <h2>Gas token balance: <% formatAmount(balance) %> GLMR</h2>
+            <div style="display: flex; justify-content: space-between;">
+                <h2>Gas token balance: <% formatAmount(balance) %> GLMR</h2>
+                <h2 style="margin-left: 32px;">DIODE token balance: <% formatAmount(diodeBalance) %> DIODE</h2>
+            </div>
         </div>
        <div class="content">
           <div class="info-blurb">
@@ -92,6 +95,11 @@
                 <span class="text-sm text-gray">Balance</span>
                 <span class="font-medium"><% valueToBalance(balance) %> GLMR</span>
               </div>
+              
+              <div class="flex-col">
+                <span class="text-sm text-gray">Staked Tokens</span>
+                <span class="font-medium"><% formatAmount(stakedTokens) %> DIODE</span>
+              </div>
             </div>
             <div v-else class="not-enabled">
               <button class="button button-primary" v-on:click="enable()">Enable MetaMask</button>
@@ -145,6 +153,34 @@
               />
             </button>
           </div>
+          <div class="card">
+            <h2 class="font-medium">Add Stake</h2>
+            <div class="flex items-center">
+              <input 
+              style="margin-top: 8px; background-color: white; border-radius: 6px; "
+                type="number" 
+                v-model="stakeAmount" 
+                placeholder="Amount of DIODE to stake" 
+                class="form-input" 
+                min="0"
+                step="0.1"
+              />
+              <button 
+                class="button button-primary ml-2" 
+                v-on:click="addStake()"
+                :disabled="!stakeAmount || stakeAmount <= 0 || submitStake"
+              >
+                <i class="pe-7s-plus mr-2" style="font-size: 16px;"></i>
+                <span>Add Stake</span>
+                <img
+                  v-show="submitStake"
+                  class="btn-loading"
+                  src="images/spinning.gif"
+                />
+              </button>
+            </div>
+            <p v-if="stakeError" class="text-red-500 mt-2">{{ stakeError }}</p>
+          </div>
         </div>
 
         <div v-if="enabled && contracts && contracts.length > 0" class="card">
@@ -181,6 +217,8 @@
               Valid Ethereum address ✓
             </div>
           </div>
+          
+          
 
           <table class="table">
             <thead>
@@ -270,6 +308,8 @@ var FleetRegistration = Vue.component("fleet_registration", {
       enabled: false,
       account: false,
       balance: undefined,
+      diodeBalance: "0", 
+      stakedTokens: "0",
       codehash: undefined,
       contracts: [],
       contract: null, 
@@ -279,12 +319,16 @@ var FleetRegistration = Vue.component("fleet_registration", {
       devices: {},
       submitFleet: false,
       submitDevices: {},
+      stakeAmount: "", 
+      submitStake: false, 
+      stakeError: "", 
       searchTerm: "",
       searchActivated: false,
       searchFinished: false,
       searchResults: [],
       tableHeight: 300,
       contractsCount: 100,
+      diodeRegistryAddress: "0xD78653669fd3df4dF8F3141Ffa53462121d117a4"
     };
   },
 
@@ -439,6 +483,10 @@ var FleetRegistration = Vue.component("fleet_registration", {
         }
         
         await this.getBalanceWithRetry();
+        await this.getDiodeBalanceWithRetry(); 
+        if (this.contract) {
+          await this.getStakedTokens();
+        }
         
         const networkId = await window.ethereum.request({ method: 'net_version' });
         console.log("Current network ID:", networkId);
@@ -489,8 +537,31 @@ var FleetRegistration = Vue.component("fleet_registration", {
         }
       }
     },
+    
+    getDiodeBalanceWithRetry: async function(retries = 3) {
+      let attempt = 0;
+      while (attempt < retries) {
+        try {
+          const balance = await CallToken("balanceOf", [this.account]);
+          console.log("DIODE token balance:", balance);
+          this.diodeBalance = balance;
+          return;
+        } catch (error) {
+          console.warn(`DIODE balance fetch attempt ${attempt + 1} failed:`, error);
+          attempt++;
+          if (attempt >= retries) {
+            console.error("Failed to get DIODE balance after multiple attempts");
+            this.diodeBalance = "0";
+          } else {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+          }
+        }
+      }
+    },
+    
     onContractChange: function (event) {
       this.loadDevivesInMemory();
+      this.getStakedTokens();
     },
     addDevice: function (id, saveInStorage) {
       if (this.devices[id] || !web3.utils.isAddress(id)) return;
@@ -865,6 +936,145 @@ var FleetRegistration = Vue.component("fleet_registration", {
         clearInterval(checkInterval);
       }, 300000);
     },
+    addStake: async function() {
+      console.log("addStake function called");
+      console.log("Current state:", {
+        account: this.account,
+        fleet: this.contract,
+        stakeAmount: this.stakeAmount,
+        diodeRegistryAddress: this.diodeRegistryAddress
+      });
+      
+      if (!this.stakeAmount || this.stakeAmount <= 0) {
+        console.log("Invalid stake amount:", this.stakeAmount);
+        this.stakeError = "Please enter a valid amount to stake";
+        return;
+      }
+      
+      if (!this.contract) {
+        console.log("No fleet contract selected");
+        this.stakeError = "Please select a fleet contract first";
+        return;
+      }
+      
+      if (!window.ethereum || !window.ethereum.isMetaMask) {
+        console.error("MetaMask not available");
+        this.stakeError = "MetaMask not available";
+        return;
+      }
+      
+      try {
+        const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+        console.log("Current chainId:", chainId);
+        if (chainId !== '0x504') { // Moonbeam
+          console.error("Wrong network - expected Moonbeam (0x504), got", chainId);
+          this.stakeError = "Please switch to Moonbeam network in MetaMask";
+          return;
+        }
+      } catch (error) {
+        console.error("Error checking chain:", error);
+      }
+      
+      this.submitStake = true;
+      this.stakeError = "";
+      
+      try {
+        // Convert stake amount to wei
+        const amountInWei = MoonbeamWallet.web3().utils.toWei(this.stakeAmount.toString(), 'ether');
+        console.log("Amount in wei:", amountInWei);
+        
+        console.log("Registry contract:", this.diodeRegistryAddress);
+        
+        try {
+          const registryCode = await MoonbeamWallet.web3().eth.getCode(this.diodeRegistryAddress);
+          console.log("Registry contract code length:", registryCode.length);
+          if (registryCode.length <= 2) {
+            throw new Error("DiodeRegistry contract not deployed at specified address");
+          }
+        } catch (codeError) {
+          console.error("Error checking registry contract:", codeError);
+          throw new Error("Could not verify DiodeRegistry contract: " + codeError.message);
+        }
+        
+        const stakeMethod = registryMethods["ContractStake"];
+        console.log("Stake method:", stakeMethod);
+        if (!stakeMethod) {
+          throw new Error("Could not find ContractStake method in registryMethods");
+        }
+        
+        const stakeData = MoonbeamWallet.web3().eth.abi.encodeFunctionCall(
+          stakeMethod, 
+          [this.contract, amountInWei]
+        );
+        console.log("Stake data:", stakeData);
+        
+        const stakeTxParams = {
+          from: this.account,
+          to: this.diodeRegistryAddress,
+          data: stakeData
+        };
+        console.log("Stake transaction params:", stakeTxParams);
+        
+        let gasEstimate;
+        try {
+          gasEstimate = await window.ethereum.request({
+            method: "eth_estimateGas",
+            params: [stakeTxParams]
+          });
+          console.log("Gas estimate for staking:", gasEstimate);
+          stakeTxParams.gas = gasEstimate;
+        } catch (gasError) {
+          console.error("Gas estimation failed for staking:", gasError);
+          console.log("Proceeding without gas estimate");
+        }
+        
+        console.log("Sending stake transaction...");
+        const stakeTx = await window.ethereum.request({
+          method: "eth_sendTransaction",
+          params: [stakeTxParams]
+        });
+        
+        console.log("Stake transaction submitted:", stakeTx);
+        
+        let pendingTx = {
+          hash: stakeTx,
+          type: 'addStake',
+          amount: this.stakeAmount,
+          fleet: this.contract,
+          timestamp: Date.now()
+        };
+        this.storePendingTransaction(pendingTx);
+        
+        alert(`Successfully initiated staking of ${this.stakeAmount} DIODE tokens to fleet ${this.abbreviateAddress(this.contract)}`);
+        
+        this.stakeAmount = "";
+        
+        await this.getDiodeBalanceWithRetry();
+        await this.getStakedTokens();
+      } catch (error) {
+        console.error("Error staking tokens:", error);
+        this.stakeError = `Failed to stake tokens: ${error.message || "Unknown error"}`;
+        
+        if (error.message && error.message.includes("insufficient funds")) {
+          this.stakeError = "Insufficient DIODE tokens for staking";
+        } else if (error.message && error.message.includes("User denied")) {
+          this.stakeError = "Transaction was rejected in your wallet";
+        }
+      } finally {
+        this.submitStake = false;
+      }
+    },
+    
+    getTokenBalance: async function() {
+      try {
+        const balance = await CallToken("balanceOf", [this.account]);
+        return balance;
+      } catch (error) {
+        console.error("Error getting token balance:", error);
+        return "0";
+      }
+    },
+    
     execAfter: function (callback, time) {
       return new Promise(function (resolve, reject) {
         window.setTimeout(() => {
@@ -1029,6 +1239,33 @@ var FleetRegistration = Vue.component("fleet_registration", {
     },
     handleChainChanged: function(chainId) {
       this.getContracts();
+      this.getDiodeBalanceWithRetry();
+      if (this.contract) {
+        this.getStakedTokens();
+      }
+    },
+    getStakedTokens: async function() {
+      if (!this.contract || !this.account) {
+        this.stakedTokens = "0";
+        return;
+      }
+      
+      try {
+        console.log("Getting staked tokens for fleet:", this.contract);
+        const fleetData = await CallRegistry("GetFleet", [this.contract]);
+        
+        if (fleetData && fleetData[0] === true) { 
+          const stakedAmount = fleetData[1]; 
+          console.log("Staked tokens:", stakedAmount);
+          this.stakedTokens = stakedAmount;
+        } else {
+          console.log("Fleet not found or doesn't exist");
+          this.stakedTokens = "0";
+        }
+      } catch (error) {
+        console.error("Error getting staked tokens:", error);
+        this.stakedTokens = "0";
+      }
     },
   },
 });
