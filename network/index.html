@@ -78,12 +78,7 @@
             if (web3.currentProvider.connected && app.connected == 1) web3.eth.subscribe(event, callback);
         }
 
-        var routes = [{
-            name: 'Map',
-            path: '/network',
-            component: Network
-        },
-
+        var routes = [
         {
             name: false,
             path: '/node/:nodeid',
@@ -92,6 +87,21 @@
                 nodeid: ''
             },
             props: true
+        },
+        {
+            name: 'Dashboard',
+            path: '/dashboard',
+            component: Dashboard
+        },
+        {
+            name: 'Overview',
+            path: '/',
+            component: Network
+        },
+        {
+            name: 'Fleets',
+            path: '/fleets',
+            component: FleetRegistration
         },
         {
             name: "Vault",
@@ -127,21 +137,13 @@
             },
             props: true
         },
+       
         {
-            name: 'Overview',
-            path: '/',
+            name: 'Map',
+            path: '/network',
             component: Network
         },
-        {
-            name: 'Dashboard',
-            path: '/dashboard',
-            component: Dashboard
-        },
-        {
-            name: 'Fleets',
-            path: '/fleets',
-            component: FleetRegistration
-        },
+
         ];
         const router = new VueRouter({
             routes,
