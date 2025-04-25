@@ -675,16 +675,6 @@ async function CallFleetFactory(name, args) {
     }
 }
 
-async function getContractABI(contractAddress) {
-    console.log(`Attempting to fetch ABI for contract: ${contractAddress}`);
-    try {
-        return null;
-    } catch (error) {
-        console.error("Error fetching contract ABI:", error);
-        return null;
-    }
-}
-
 function NewWeb3(url) {
     let options = {
         clientConfig: { keepalive: true, keepaliveInterval: 60000 },

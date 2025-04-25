@@ -660,29 +660,8 @@ var FleetRegistration = Vue.component("fleet_registration", {
           throw factoryError;
         }
       } catch (error) {
-        let proms = [];
-        let addrs = [];
-        for (let i = 0; i < this.contractsCount; i++) {
-          let addr = this.generateContractAddress(i);
-          proms.push(MoonbeamWallet.web3().eth.getCode(addr));
-          addrs.push(addr);
-        }
-
-        try {
-          let fleets = await Promise.all(proms);
-          
-          let uniqueContracts = new Set(); 
-          
-          for (let i = 0; i < fleets.length; i++) {
-            if (fleets[i] && fleets[i].length > 2) {
-              uniqueContracts.add(addrs[i]); 
-            }
-          }
-          
-          this.contracts = Array.from(uniqueContracts);
-        } catch (fallbackError) {
-          this.contracts = [];
-        }
+        console.error("Error fetching fleet contracts:", error);
+        this.contracts = [];
       }
       
       if (this.contracts.length > 0) {
@@ -690,20 +669,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
         this.loadDevivesInMemory();
         this.getStakedTokens();
       }
-    },
-    generateContractAddress: function (nonce) {
-      let hex = "0xd694" + this.account.substr(2);
-      if (nonce == 0) {
-        hex += "80";
-      }
-      else if (nonce > 15) {
-          hex += web3.utils.toHex(nonce).substr(2);
-      }
-       else {
-        hex += "0" + web3.utils.toHex(nonce).substr(2);
-      }
-
-      return (addr = "0x" + web3.utils.keccak256(hex).slice(12).substring(14));
     },
     createFleet: async function () {
       this.submitFleet = true;
