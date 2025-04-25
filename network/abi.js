@@ -1,6 +1,7 @@
 const DNSAddr = "0xaf60faa5cd840b724742f1af116168276112d6a6"
 const Registry = "0xD78653669fd3df4dF8F3141Ffa53462121d117a4"
 const DiodeToken = "0x434116a99619f2B465A137199C38c1Aab0353913"
+const FleetFactory = "0xa21D0a54dFee3Ff4B9f82959C09B538863744839"
 let DNSActive = {};
 let DNSCache = {}
 let DNSAlias = {
@@ -517,6 +518,93 @@ var bridgeOutMethods = {
     }
 }
 
+var fleetFactoryMethods = {
+    "CreateFleetContract": {
+        name: "CreateFleetContract",
+        type: "function",
+        inputs: [
+            { type: "address", name: "_operator" },
+            { type: "address", name: "_accountant" }
+        ],
+        outputs: [{
+            type: "address",
+            name: ""
+        }]
+    },
+    "GetCreatorFleetContractCount": {
+        name: "GetCreatorFleetContractCount",
+        type: "function",
+        inputs: [{
+            type: "address",
+            name: "_creator"
+        }],
+        outputs: [{
+            type: "uint256",
+            name: ""
+        }]
+    },
+    "GetCreatorFleetContract": {
+        name: "GetCreatorFleetContract",
+        type: "function",
+        inputs: [
+            { type: "address", name: "_creator" },
+            { type: "uint256", name: "_index" }
+        ],
+        outputs: [{
+            type: "address",
+            name: ""
+        }]
+    },
+    "GetOperatorFleetContractCount": {
+        name: "GetOperatorFleetContractCount",
+        type: "function",
+        inputs: [{
+            type: "address",
+            name: "_operator"
+        }],
+        outputs: [{
+            type: "uint256",
+            name: ""
+        }]
+    },
+    "GetOperatorFleetContract": {
+        name: "GetOperatorFleetContract",
+        type: "function",
+        inputs: [
+            { type: "address", name: "_operator" },
+            { type: "uint256", name: "_index" }
+        ],
+        outputs: [{
+            type: "address",
+            name: ""
+        }]
+    },
+    "GetAccountantFleetContractCount": {
+        name: "GetAccountantFleetContractCount",
+        type: "function",
+        inputs: [{
+            type: "address",
+            name: "_accountant"
+        }],
+        outputs: [{
+            type: "uint256",
+            name: ""
+        }]
+    },
+    "GetAccountantFleetContract": {
+        name: "GetAccountantFleetContract",
+        type: "function",
+        inputs: [
+            { type: "address", name: "_accountant" },
+            { type: "uint256", name: "_index" }
+        ],
+        outputs: [{
+            type: "address",
+            name: ""
+        }]
+    }
+}
+
 async function callMoonbeam(abi, to, args) {
     let call = moonbeam.eth.abi.encodeFunctionCall(abi, args)
     let data = await moonbeam.eth.call({
@@ -576,6 +664,25 @@ async function CallToken(name, args) {
 
 function CallFleet(name, to, args, callback) {
     call(fleetMethods[name], to, args, callback)
+}
+
+async function CallFleetFactory(name, args) {
+    try {
+        return await callMoonbeam(fleetFactoryMethods[name], FleetFactory, args);
+    } catch (error) {
+        console.error(`CallFleetFactory(${name}) error:`, error);
+        throw error;
+    }
+}
+
+async function getContractABI(contractAddress) {
+    console.log(`Attempting to fetch ABI for contract: ${contractAddress}`);
+    try {
+        return null;
+    } catch (error) {
+        console.error("Error fetching contract ABI:", error);
+        return null;
+    }
 }
 
 function NewWeb3(url) {

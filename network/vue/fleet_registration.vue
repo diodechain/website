@@ -1,21 +1,20 @@
 <template id="fleet_registration">
-  <div >
-   
-       <div class="title row" style="display: flex; flex-direction: column;">
-            <div style="display: flex; align-items: center;">
-                <h1>Account: <% account || "Connect MetaMask" %></h1>
-                <button style="text-decoration: underline;" v-on:click="walletProvider.switchAccount()" class="button">Switch Account</button>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-                <h2>Gas token balance: <% formatAmount(balance) %> GLMR</h2>
-                <h2 style="margin-left: 32px;">DIODE token balance: <% formatAmount(diodeBalance) %> DIODE</h2>
-            </div>
-        </div>
-       <div class="content">
-          <div class="info-blurb">
-            App builders, enterprises, and other permissionless security systems can create their own Fleet Contract and underwrite their device / user traffic on the Diode Network. <a href="https://network.docs.diode.io/docs/features/what-is-a-fleet-contract/" target="_blank">Read more here.</a>
-          </div>
-          
+  <div>
+    <div class="title row" style="display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center;">
+        <h1>Account: <% account || "Connect MetaMask" %></h1>
+        <button style="text-decoration: underline;" v-on:click="walletProvider.switchAccount()" class="button">Switch Account</button>
+      </div>
+      <div style="display: flex; justify-content: space-between;">
+        <h2>Gas token balance: <% formatAmount(balance) %> GLMR</h2>
+        <h2 style="margin-left: 32px;">DIODE token balance: <% formatAmount(diodeBalance) %> DIODE</h2>
+      </div>
+    </div>
+    <div class="content">
+      <div class="info-blurb">
+        App builders, enterprises, and other permissionless security systems can create their own Fleet Contract and underwrite their device / user traffic on the Diode Network. <a href="https://network.docs.diode.io/docs/features/what-is-a-fleet-contract/" target="_blank">Read more here.</a>
+      </div>
+
       <table class="data" v-if="searchTerm && searchActivated">
         <caption>
           <% searchResults.length %> Search Results
@@ -68,15 +67,15 @@
           </tr>
         </tbody>
       </table>
-      
+
       <div v-else class="grid">
         <div class="space-y">
           <div class="card">
             <div class="flex mb-4">
-              <i class="pe-7s-credit text-blue mr-2" style="font-size: 20px; color: #2d3e50;  "></i>
-              <h2 class="font-medium"  >Your Account</h2>
+              <i class="pe-7s-credit text-blue mr-2" style="font-size: 20px; color: #2d3e50;"></i>
+              <h2 class="font-medium">Your Account</h2>
             </div>
-            
+
             <div v-if="enabled" class="space-y">
               <div class="flex-col">
                 <span class="text-sm text-gray">Name</span>
@@ -90,12 +89,12 @@
                   </button>
                 </div>
               </div>
-              
+
               <div class="flex-col">
                 <span class="text-sm text-gray">Balance</span>
                 <span class="font-medium"><% valueToBalance(balance) %> GLMR</span>
               </div>
-              
+
               <div class="flex-col">
                 <span class="text-sm text-gray">Staked Tokens</span>
                 <span class="font-medium"><% formatAmount(stakedTokens) %> DIODE</span>
@@ -121,7 +120,7 @@
 
           <div class="card" v-if="enabled">
             <h2 class="font-medium mb-4">Select Fleet</h2>
-            
+
             <div class="dropdown">
               <select
                 name="contracts-select"
@@ -132,7 +131,7 @@
                 <option value="" disabled>
                   {{ (!contracts || contracts.length === 0) ? 'No Fleets' : 'Select a fleet...' }}
                 </option>
-                
+
                 <option v-for="c in contracts" v-bind:key="c" :value="c">
                   <% abbreviateAddress(c) %>
                 </option>
@@ -157,7 +156,7 @@
             <h2 class="font-medium">Add Stake</h2>
             <div class="flex items-center">
               <input 
-              style="margin-top: 8px; background-color: white; border-radius: 6px; "
+              style="margin-top: 8px; background-color: white; border-radius: 6px;"
                 type="number" 
                 v-model="stakeAmount" 
                 placeholder="Amount of DIODE to stake" 
@@ -217,8 +216,6 @@
               Valid Ethereum address ✓
             </div>
           </div>
-          
-          
 
           <table class="table">
             <thead>
@@ -272,7 +269,7 @@
             </tbody>
           </table>
         </div>
-        
+
         <div v-else-if="enabled" class="card">
           <div class="mb-6">
             <h2 class="font-medium">Devices</h2>
@@ -296,13 +293,13 @@ var FleetRegistration = Vue.component("fleet_registration", {
         return value && JSON.parse(value);
       };
     }
-    
+
     if (!localStorage.setObject) {
       Storage.prototype.setObject = function(key, value) {
         this.setItem(key, JSON.stringify(value));
       };
     }
-    
+
     return {
       base: "",
       enabled: false,
@@ -328,7 +325,8 @@ var FleetRegistration = Vue.component("fleet_registration", {
       searchResults: [],
       tableHeight: 300,
       contractsCount: 100,
-      diodeRegistryAddress: "0xD78653669fd3df4dF8F3141Ffa53462121d117a4"
+      diodeRegistryAddress: "0xD78653669fd3df4dF8F3141Ffa53462121d117a4",
+      fleetFactoryAddress: "0xa21D0a54dFee3Ff4B9f82959C09B538863744839"
     };
   },
 
@@ -337,17 +335,15 @@ var FleetRegistration = Vue.component("fleet_registration", {
     getBase(function (base) {
       self.base = base;
     });
-    
+
     try {
       if (typeof Wallet !== 'undefined') {
         Wallet.subscribe(this);
-      } else {
-        console.error("Wallet object not found. Fleet management may not work properly.");
       }
     } catch (e) {
       console.error("Error initializing with Wallet:", e);
     }
-    
+
     if (window.ethereum && window.ethereum.isMetaMask) {
       setTimeout(() => {
         this.enable();
@@ -366,12 +362,11 @@ var FleetRegistration = Vue.component("fleet_registration", {
           "Please install <a href='https://metamask.io/'>MetaMask</a>";
         return;
       }
-      
+
       try {
         let isConnected = false;
         try {
           isConnected = await window.ethereum._metamask.isUnlocked();
-          console.log("MetaMask unlocked state:", isConnected);
         } catch (unlockError) {
           console.warn("Could not check MetaMask unlock state:", unlockError);
         }
@@ -392,30 +387,16 @@ var FleetRegistration = Vue.component("fleet_registration", {
         let chainId = null;
         try {
           chainId = await window.ethereum.request({ method: 'eth_chainId' });
-          console.log("Current chain ID from eth_chainId:", chainId);
         } catch (chainIdError) {
           console.warn("eth_chainId error:", chainIdError);
-          
-          try {
-            const provider = window.ethereum;
-            if (provider.networkVersion) {
-              chainId = '0x' + parseInt(provider.networkVersion).toString(16);
-              console.log("Chain ID from networkVersion:", chainId);
-            }
-          } catch (altChainError) {
-            console.warn("Alternative chain ID detection failed:", altChainError);
-          }
         }
         
         if (chainId && chainId !== moonbeamChainData[0].chainId) {
-          console.log("Need to switch chains from", chainId, "to", moonbeamChainData[0].chainId);
-          
           try {
             await window.ethereum.request({
               method: 'wallet_switchEthereumChain',
               params: [{ chainId: moonbeamChainData[0].chainId }],
             });
-            console.log("Successfully switched to Moonbeam chain");
           } catch (switchError) {
             if (switchError.code === 4902 || switchError.message.includes("wallet_addEthereumChain")) {
               try {
@@ -423,13 +404,9 @@ var FleetRegistration = Vue.component("fleet_registration", {
                   method: 'wallet_addEthereumChain', 
                   params: moonbeamChainData 
                 });
-                console.log("Successfully added Moonbeam chain");
               } catch (addError) {
-                console.error("Error adding chain:", addError);
                 alert("Could not add Moonbeam network to MetaMask. Please add it manually in your MetaMask settings.");
               }
-            } else {
-              console.error("Error switching chain:", switchError);
             }
           }
         }
@@ -456,7 +433,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
           this.initialized = true;
           
           window.ethereum.on("chainChanged", (chainId) => {
-            console.log("Chain changed to:", chainId);
             try {
               this.handleChainChanged(parseInt(chainId, 16));
             } catch (e) {
@@ -465,19 +441,16 @@ var FleetRegistration = Vue.component("fleet_registration", {
           });
           
           window.ethereum.on("accountsChanged", (accounts) => {
-            console.log("Accounts changed:", accounts);
             if (accounts.length > 0) {
               this.account = accounts[0];
               this.getBalance();
               this.getContracts();
             } else {
               this.enabled = false;
-              console.log("No accounts available after account change");
             }
           });
           
           window.ethereum.on("disconnect", (error) => {
-            console.log("MetaMask disconnected:", error);
             this.enabled = false;
           });
         }
@@ -489,7 +462,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
         }
         
         const networkId = await window.ethereum.request({ method: 'net_version' });
-        console.log("Current network ID:", networkId);
         if (networkId !== "1284") { // Moonbeam is network ID 1284
           alert("Please switch to the Moonbeam network in MetaMask");
           this.submitFleet = false;
@@ -505,8 +477,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
         }
         
       } catch (error) {
-        console.error("MetaMask connection error:", error);
-        
         if (error.code === -32002) {
           this.error = "MetaMask connection request already pending. Please open MetaMask.";
         } else if (error.code === 4001) {
@@ -522,14 +492,11 @@ var FleetRegistration = Vue.component("fleet_registration", {
       while (attempt < retries) {
         try {
           const balance = await MoonbeamWallet.web3().eth.getBalance(this.account);
-          console.log("Account balance:", balance);
           this.balance = balance;
           return;
         } catch (error) {
-          console.warn(`Balance fetch attempt ${attempt + 1} failed:`, error);
           attempt++;
           if (attempt >= retries) {
-            console.error("Failed to get balance after multiple attempts");
             this.balance = "0";
           } else {
             await new Promise(resolve => setTimeout(resolve, 1000));
@@ -543,14 +510,11 @@ var FleetRegistration = Vue.component("fleet_registration", {
       while (attempt < retries) {
         try {
           const balance = await CallToken("balanceOf", [this.account]);
-          console.log("DIODE token balance:", balance);
           this.diodeBalance = balance;
           return;
         } catch (error) {
-          console.warn(`DIODE balance fetch attempt ${attempt + 1} failed:`, error);
           attempt++;
           if (attempt >= retries) {
-            console.error("Failed to get DIODE balance after multiple attempts");
             this.diodeBalance = "0";
           } else {
             await new Promise(resolve => setTimeout(resolve, 1000));
@@ -632,37 +596,102 @@ var FleetRegistration = Vue.component("fleet_registration", {
     getContracts: async function () {
       this.contracts = [];
       if (!this.account) return;
-      let proms = [];
-      let addrs = [];
-      for (let i = 0; i < this.contractsCount; i++) {
-        let addr = this.generateContractAddress(i);
-        proms.push(MoonbeamWallet.web3().eth.getCode(addr));
-        addrs.push(addr);
-      }
 
-      let fleets = await Promise.all(proms);
-      
-      let uniqueContracts = new Set(); 
-      
-      for (let i = 0; i < fleets.length; i++) {
-        if (fleets[i] && fleets[i].length > 2) {
-          console.log(`Valid fleet found at ${addrs[i]}`);
-          uniqueContracts.add(addrs[i]); 
+      try {
+        try {
+          const fleetCount = await CallFleetFactory("GetCreatorFleetContractCount", [this.account]);
+          
+          if (fleetCount && parseInt(fleetCount) > 0) {
+            const count = parseInt(fleetCount);
+            let fleets = [];
+            
+            for (let i = 0; i < count; i++) {
+              try {
+                const fleetAddress = await CallFleetFactory("GetCreatorFleetContract", [this.account, i]);
+                if (fleetAddress && fleetAddress !== '0x0000000000000000000000000000000000000000') {
+                  fleets.push(fleetAddress);
+                }
+              } catch (indexError) {
+              }
+            }
+            
+            this.contracts = fleets;
+          } else {
+            const operatorFleetCount = await CallFleetFactory("GetOperatorFleetContractCount", [this.account]);
+            
+            if (operatorFleetCount && parseInt(operatorFleetCount) > 0) {
+              const count = parseInt(operatorFleetCount);
+              let fleets = [];
+              
+              for (let i = 0; i < count; i++) {
+                try {
+                  const fleetAddress = await CallFleetFactory("GetOperatorFleetContract", [this.account, i]);
+                  if (fleetAddress && fleetAddress !== '0x0000000000000000000000000000000000000000') {
+                    fleets.push(fleetAddress);
+                  }
+                } catch (indexError) {
+                }
+              }
+              
+              this.contracts = fleets;
+            }
+            
+            const accountantFleetCount = await CallFleetFactory("GetAccountantFleetContractCount", [this.account]);
+            
+            if (accountantFleetCount && parseInt(accountantFleetCount) > 0) {
+              const count = parseInt(accountantFleetCount);
+              let accountantFleets = [];
+              
+              for (let i = 0; i < count; i++) {
+                try {
+                  const fleetAddress = await CallFleetFactory("GetAccountantFleetContract", [this.account, i]);
+                  if (fleetAddress && fleetAddress !== '0x0000000000000000000000000000000000000000' && 
+                      !this.contracts.includes(fleetAddress)) {
+                    accountantFleets.push(fleetAddress);
+                  }
+                } catch (indexError) {
+                }
+              }
+              
+              this.contracts = [...this.contracts, ...accountantFleets];
+            }
+          }
+        } catch (factoryError) {
+          throw factoryError;
+        }
+      } catch (error) {
+        let proms = [];
+        let addrs = [];
+        for (let i = 0; i < this.contractsCount; i++) {
+          let addr = this.generateContractAddress(i);
+          proms.push(MoonbeamWallet.web3().eth.getCode(addr));
+          addrs.push(addr);
+        }
+
+        try {
+          let fleets = await Promise.all(proms);
+          
+          let uniqueContracts = new Set(); 
+          
+          for (let i = 0; i < fleets.length; i++) {
+            if (fleets[i] && fleets[i].length > 2) {
+              uniqueContracts.add(addrs[i]); 
+            }
+          }
+          
+          this.contracts = Array.from(uniqueContracts);
+        } catch (fallbackError) {
+          this.contracts = [];
         }
       }
       
-      this.contracts = Array.from(uniqueContracts);
-      console.log(`Found ${this.contracts.length} unique fleet contracts`);
-
       if (this.contracts.length > 0) {
         this.contract = this.contracts[0];
+        this.loadDevivesInMemory();
+        this.getStakedTokens();
       }
-
-      this.loadDevivesInMemory();
     },
     generateContractAddress: function (nonce) {
-      // This hack only works for nonces <= 16
-
       let hex = "0xd694" + this.account.substr(2);
       if (nonce == 0) {
         hex += "80";
@@ -677,82 +706,58 @@ var FleetRegistration = Vue.component("fleet_registration", {
       return (addr = "0x" + web3.utils.keccak256(hex).slice(12).substring(14));
     },
     createFleet: async function () {
-      let contract =
-        "0x608060405234801561001057600080fd5b506040516060806102d383398101604090815281516020830151919092015160018054600160a060020a03938416600160a060020a03199182161790915560008054948416948216949094179093556002805492909116919092161790556102568061007d6000396000f3006080604052600436106100775763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416633c5f7d46811461007c5780634ef1aee4146100a45780634fb3ccc5146100df578063504f04b714610110578063570ca7351461013c578063d90bd65114610151575b600080fd5b34801561008857600080fd5b506100a2600160a060020a03600435166024351515610172565b005b3480156100b057600080fd5b506100cb600160a060020a036004358116906024351661019d565b604080519115158252519081900360200190f35b3480156100eb57600080fd5b506100f46101bd565b60408051600160a060020a039092168252519081900360200190f35b34801561011c57600080fd5b506100a2600160a060020a036004358116906024351660443515156101cc565b34801561014857600080fd5b506100f4610206565b34801561015d57600080fd5b506100cb600160a060020a0360043516610215565b600160a060020a03919091166000908152600660205260409020805460ff1916911515919091179055565b600760209081526000928352604080842090915290825290205460ff1681565b600254600160a060020a031681565b600160a060020a03928316600090815260076020908152604080832094909516825292909252919020805460ff1916911515919091179055565b600154600160a060020a031681565b60066020526000908152604090205460ff16815600a165627a7a723058208df217001cef7e510f8f0352585a03e46b30eba1feaeaf76becbe261832a627f0029";
-
-      let args = [Registry, this.account, this.account];
-      let constructor = MoonbeamWallet.web3().eth.abi.encodeParameters(
-        ["address", "address", "address"],
-        args
-      );
-      let code = contract + constructor.substr(2);
       this.submitFleet = true;
       
       try {
         try {
           const networkId = await window.ethereum.request({ method: 'net_version' });
-          console.log("Current network ID:", networkId);
           if (networkId !== "1284") { // Moonbeam is network ID 1284
             alert("Please switch to the Moonbeam network in MetaMask");
             this.submitFleet = false;
             return;
           }
         } catch (networkErr) {
-          console.warn("Could not verify network:", networkErr);
         }
         
-        let retryCount = 0;
-        const maxRetries = 2;
-        let success = false;
-        let tx;
-        
-        while (!success && retryCount <= maxRetries) {
-          try {
-            console.log(`Attempt ${retryCount + 1} to send transaction...`);
-            
-            const txParams = {
-              from: this.account,
-              data: code,
-            };
-            
-            try {
-              const gasEstimate = await window.ethereum.request({
-                method: "eth_estimateGas",
-                params: [txParams]
-              });
-              console.log("Gas estimate:", gasEstimate);
-              txParams.gas = gasEstimate;
-            } catch (gasError) {
-              console.warn("Gas estimation failed:", gasError);
-            }
-            
-            console.log("Sending transaction with params:", txParams);
-            tx = await window.ethereum.request({
-              method: "eth_sendTransaction",
-              params: [txParams],
-            });
-            
-            if (tx) {
-              success = true;
-              console.log("Transaction hash:", tx);
-            }
-          } catch (err) {
-            console.error(`Attempt ${retryCount + 1} failed:`, err);
-            
-            if (err.message && err.message.includes("JsonRpcEngine")) {
-              retryCount++;
-              if (retryCount <= maxRetries) {
-                console.log(`Retrying in 1 second... (${retryCount}/${maxRetries})`);
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                continue;
-              }
-            } else {
-              throw err;
-            }
+        try {
+          const code = await MoonbeamWallet.web3().eth.getCode(this.fleetFactoryAddress);
+          if (code.length <= 2) {
+            throw new Error("Factory contract not found at specified address");
           }
+        } catch (codeError) {
         }
         
-        if (success && tx) {
+        const methodAbi = fleetFactoryMethods["CreateFleetContract"];
+        if (!methodAbi) {
+          throw new Error("CreateFleetContract method not found in ABI definitions");
+        }
+        
+        const methodCall = MoonbeamWallet.web3().eth.abi.encodeFunctionCall(
+          methodAbi, [this.account, this.account]
+        );
+        
+        const txParams = {
+          from: this.account,
+          to: this.fleetFactoryAddress,
+          data: methodCall,
+          gas: "1500000"
+        };
+        
+        try {
+          const gasEstimate = await window.ethereum.request({
+            method: "eth_estimateGas",
+            params: [txParams]
+          });
+          txParams.gas = gasEstimate;
+        } catch (gasError) {
+        }
+        
+        const tx = await window.ethereum.request({
+          method: "eth_sendTransaction",
+          params: [txParams],
+        });
+        
+        if (tx) {
           let pendingTx = {
             hash: tx,
             type: 'createFleet',
@@ -760,21 +765,20 @@ var FleetRegistration = Vue.component("fleet_registration", {
           };
           this.storePendingTransaction(pendingTx);
           
-          alert("Transaction submitted! It may take a few minutes to confirm. You can refresh the page later to see your new fleet.");
+          alert("Fleet creation transaction submitted! It may take a few minutes to confirm. You can refresh the page later to see your new fleet.");
           
           this.submitFleet = false;
           
           this.checkTransactionStatusInBackground(tx);
         } else {
-          throw new Error("Failed to submit transaction after multiple attempts");
+          throw new Error("Failed to submit transaction");
         }
       } catch (err) {
-        console.error("[SubmitFleet] Send error: ", err);
         this.submitFleet = false;
         
         if (err.message && err.message.includes("connection not open")) {
           alert("Network connection to Moonbeam is unavailable. Please check your internet connection and try again later.");
-        } else if (err.message && err.message.includes("JsonRpcEngine")) {
+        } else if (err.message && (err.message.includes("JsonRpcEngine") || err.message.includes("Internal JSON-RPC error"))) {
           alert("Network issue detected. Your transaction may still be processed. Please wait a few minutes and check if your fleet appears. If not, please try again.");
         } else if (err.message && err.message.includes("insufficient funds")) {
           alert("Your account doesn't have enough funds to create a fleet. You need some GLMR tokens in your account.");
@@ -785,32 +789,78 @@ var FleetRegistration = Vue.component("fleet_registration", {
         }
       }
     },
-    loadNewFleet: async function () {
-      let addr = this.generateContractAddress(this.contractsCount);
-      
-      try {
-        let code = await MoonbeamWallet.web3().eth.getCode(addr);
-        
-        if (code && code.length > 2) {
-          if (!this.contracts.includes(addr)) {
-            this.contracts.push(addr);
-          }
-          
-          this.contract = addr;
-          this.loadDevivesInMemory();
-          this.contractsCount += 1;
-          localStorage.fleetsCount = this.contractsCount;
-        } else {
-          console.log("No code found at address, skipping");
-        }
-      } catch (error) {
-        console.error("Error checking new fleet:", error);
+
+    checkTransactionStatusInBackground: function(txHash) {
+      if (!this.backgroundChecks) {
+        this.backgroundChecks = {};
       }
+      
+      if (this.backgroundChecks[txHash]) {
+        return;
+      }
+      
+      this.backgroundChecks[txHash] = true;
+      
+      let checkCount = 0;
+      const maxChecks = 30; 
+      let delay = 5000; 
+      
+      const checkReceipt = () => {
+        if (checkCount >= maxChecks) {
+          delete this.backgroundChecks[txHash];
+          return;
+        }
+        
+        checkCount++;
+        
+        setTimeout(() => {
+          MoonbeamWallet.web3().eth.getTransactionReceipt(txHash)
+            .then(receipt => {
+              if (receipt) {
+                clearInterval(checkInterval);
+                
+                if (receipt.status) {
+                  if (receipt.contractAddress) {
+                    if (!this.contracts.includes(receipt.contractAddress)) {
+                      this.contracts.push(receipt.contractAddress);
+                      this.contract = receipt.contractAddress;
+                    }
+                  }
+                  
+                  setTimeout(() => {
+                    this.getContracts()
+                      .then(() => {
+                        alert("Fleet creation was successful! Your new fleet is now available in the dropdown.");
+                      })
+                      .catch(err => {
+                      });
+                  }, 5000);
+                } else {
+                  alert("Fleet creation failed on the blockchain. Please try again.");
+                }
+                
+                delete this.backgroundChecks[txHash];
+              } else {
+                delay = Math.min(delay * 1.5, 60000); 
+                setTimeout(checkReceipt, delay);
+              }
+            })
+            .catch(err => {
+              if (err.message && (
+                  err.message.includes("connection not open") || 
+                  err.message.includes("JsonRpcEngine"))) {
+                setTimeout(checkReceipt, 10000); 
+              } else {
+                delay = Math.min(delay * 1.5, 60000);
+                setTimeout(checkReceipt, delay);
+              }
+            });
+        }, 0);
+      };
+      
+      checkReceipt();
     },
-    isWhiteListed(device, callback) {
-      if (!this.contracts[0]) return;
-      CallFleet("deviceWhitelist", this.contracts[0], [device], callback);
-    },
+    
     whitelistDevice: async function (device, allowed) {
       let contract = this.contracts[0];
       let call = MoonbeamWallet.web3().eth.abi.encodeFunctionCall(
@@ -822,7 +872,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
       try {
         const isConnected = await this.checkNetworkConnection();
         if (!isConnected) {
-          console.warn("Network connectivity check failed");
         }
         
         let retryCount = 0;
@@ -832,8 +881,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
         
         while (!success && retryCount <= maxRetries) {
           try {
-            console.log(`Whitelist attempt ${retryCount + 1} for device ${device}...`);
-            
             const txParams = {
               from: this.account,
               to: contract,
@@ -845,13 +892,10 @@ var FleetRegistration = Vue.component("fleet_registration", {
                 method: "eth_estimateGas",
                 params: [txParams]
               });
-              console.log("Gas estimate for whitelist:", gasEstimate);
               txParams.gas = gasEstimate;
             } catch (gasError) {
-              console.warn("Gas estimation failed for whitelist:", gasError);
             }
             
-            console.log("Sending whitelist transaction:", txParams);
             tx = await window.ethereum.request({
               method: "eth_sendTransaction",
               params: [txParams],
@@ -859,17 +903,14 @@ var FleetRegistration = Vue.component("fleet_registration", {
             
             if (tx) {
               success = true;
-              console.log("Whitelist transaction hash:", tx);
             }
           } catch (err) {
-            console.error(`Whitelist attempt ${retryCount + 1} failed:`, err);
             
             if (err.message && (
                 err.message.includes("JsonRpcEngine") || 
                 err.message.includes("connection not open"))) {
               retryCount++;
               if (retryCount <= maxRetries) {
-                console.log(`Retrying whitelist in 1 second... (${retryCount}/${maxRetries})`);
                 await new Promise(resolve => setTimeout(resolve, 1000));
                 continue;
               }
@@ -898,7 +939,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
           throw new Error("Failed to submit whitelist transaction after multiple attempts");
         }
       } catch (err) {
-        console.error("[WhitelistDevice] send error:", err);
         this.$set(this.submitDevices, device, false);
         
         if (err.message && err.message.includes("connection not open")) {
@@ -919,7 +959,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
         MoonbeamWallet.web3().eth.getTransactionReceipt(txHash)
           .then(receipt => {
             if (receipt) {
-              console.log("Whitelist transaction confirmed in background:", receipt);
               clearInterval(checkInterval);
               
               if (receipt.status) {
@@ -928,7 +967,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
             }
           })
           .catch(err => {
-            console.log("Background whitelist check error (can be ignored):", err);
           });
       }, 10000); 
       
@@ -937,122 +975,152 @@ var FleetRegistration = Vue.component("fleet_registration", {
       }, 300000);
     },
     addStake: async function() {
-      console.log("addStake function called");
-      console.log("Current state:", {
-        account: this.account,
-        fleet: this.contract,
-        stakeAmount: this.stakeAmount,
-        diodeRegistryAddress: this.diodeRegistryAddress
-      });
-      
       if (!this.stakeAmount || this.stakeAmount <= 0) {
-        console.log("Invalid stake amount:", this.stakeAmount);
         this.stakeError = "Please enter a valid amount to stake";
         return;
       }
       
       if (!this.contract) {
-        console.log("No fleet contract selected");
         this.stakeError = "Please select a fleet contract first";
         return;
       }
       
       if (!window.ethereum || !window.ethereum.isMetaMask) {
-        console.error("MetaMask not available");
         this.stakeError = "MetaMask not available";
         return;
       }
       
       try {
         const chainId = await window.ethereum.request({ method: 'eth_chainId' });
-        console.log("Current chainId:", chainId);
         if (chainId !== '0x504') { // Moonbeam
-          console.error("Wrong network - expected Moonbeam (0x504), got", chainId);
           this.stakeError = "Please switch to Moonbeam network in MetaMask";
           return;
         }
       } catch (error) {
-        console.error("Error checking chain:", error);
       }
       
       this.submitStake = true;
       this.stakeError = "";
       
       try {
-        // Convert stake amount to wei
         const amountInWei = MoonbeamWallet.web3().utils.toWei(this.stakeAmount.toString(), 'ether');
-        console.log("Amount in wei:", amountInWei);
-        
-        console.log("Registry contract:", this.diodeRegistryAddress);
         
         try {
-          const registryCode = await MoonbeamWallet.web3().eth.getCode(this.diodeRegistryAddress);
-          console.log("Registry contract code length:", registryCode.length);
-          if (registryCode.length <= 2) {
-            throw new Error("DiodeRegistry contract not deployed at specified address");
+          const allowanceMethod = erc20Abi.find(m => m.name === "allowance");
+          if (!allowanceMethod) {
+            throw new Error("Could not find allowance method in ERC20 ABI");
           }
-        } catch (codeError) {
-          console.error("Error checking registry contract:", codeError);
-          throw new Error("Could not verify DiodeRegistry contract: " + codeError.message);
-        }
-        
-        const stakeMethod = registryMethods["ContractStake"];
-        console.log("Stake method:", stakeMethod);
-        if (!stakeMethod) {
-          throw new Error("Could not find ContractStake method in registryMethods");
-        }
-        
-        const stakeData = MoonbeamWallet.web3().eth.abi.encodeFunctionCall(
-          stakeMethod, 
-          [this.contract, amountInWei]
-        );
-        console.log("Stake data:", stakeData);
-        
-        const stakeTxParams = {
-          from: this.account,
-          to: this.diodeRegistryAddress,
-          data: stakeData
-        };
-        console.log("Stake transaction params:", stakeTxParams);
-        
-        let gasEstimate;
-        try {
-          gasEstimate = await window.ethereum.request({
-            method: "eth_estimateGas",
+          
+          const allowanceCall = MoonbeamWallet.web3().eth.abi.encodeFunctionCall(
+            allowanceMethod, 
+            [this.account, this.diodeRegistryAddress]
+          );
+          
+          const currentAllowance = await MoonbeamWallet.web3().eth.call({
+            to: DiodeToken,
+            data: allowanceCall
+          });
+          
+          const decodedAllowance = MoonbeamWallet.web3().eth.abi.decodeParameter('uint256', currentAllowance);
+          
+          const needsApproval = BigInt(decodedAllowance) < BigInt(amountInWei);
+          
+          if (needsApproval) {
+            const approveMethod = erc20Abi.find(m => m.name === "approve");
+            if (!approveMethod) {
+              throw new Error("Could not find approve method in ERC20 ABI");
+            }
+            
+            const approveCall = MoonbeamWallet.web3().eth.abi.encodeFunctionCall(
+              approveMethod, 
+              [this.diodeRegistryAddress, amountInWei]
+            );
+            
+            const approveTxParams = {
+              from: this.account,
+              to: DiodeToken,
+              data: approveCall
+            };
+            
+            try {
+              const approveGasEstimate = await window.ethereum.request({
+                method: "eth_estimateGas",
+                params: [approveTxParams]
+              });
+              approveTxParams.gas = approveGasEstimate;
+            } catch (gasError) {
+              approveTxParams.gas = "100000";
+            }
+            
+            alert("You'll need to approve two transactions. First to authorize token spending, then to complete the staking.");
+            
+            const approveTx = await window.ethereum.request({
+              method: "eth_sendTransaction",
+              params: [approveTxParams]
+            });
+            
+            const approvalReceipt = await this.waitForTransactionReceipt(approveTx);
+            
+            if (!approvalReceipt || !approvalReceipt.status) {
+              throw new Error("Token approval transaction failed");
+            }
+          }
+          
+          const stakeMethod = registryMethods["ContractStake"];
+          if (!stakeMethod) {
+            throw new Error("Could not find ContractStake method in registryMethods");
+          }
+          
+          const stakeData = MoonbeamWallet.web3().eth.abi.encodeFunctionCall(
+            stakeMethod, 
+            [this.contract, amountInWei]
+          );
+          
+          const stakeTxParams = {
+            from: this.account,
+            to: this.diodeRegistryAddress,
+            data: stakeData
+          };
+          
+          try {
+            const gasEstimate = await window.ethereum.request({
+              method: "eth_estimateGas",
+              params: [stakeTxParams]
+            });
+            stakeTxParams.gas = gasEstimate;
+          } catch (gasError) {
+            stakeTxParams.gas = "300000";
+          }
+          
+          if (needsApproval) {
+            alert("Now please confirm the second transaction to complete the staking process.");
+          }
+          
+          const stakeTx = await window.ethereum.request({
+            method: "eth_sendTransaction",
             params: [stakeTxParams]
           });
-          console.log("Gas estimate for staking:", gasEstimate);
-          stakeTxParams.gas = gasEstimate;
-        } catch (gasError) {
-          console.error("Gas estimation failed for staking:", gasError);
-          console.log("Proceeding without gas estimate");
+          
+          let pendingTx = {
+            hash: stakeTx,
+            type: 'addStake',
+            amount: this.stakeAmount,
+            fleet: this.contract,
+            timestamp: Date.now()
+          };
+          this.storePendingTransaction(pendingTx);
+          
+          alert(`Successfully initiated staking of ${this.stakeAmount} DIODE tokens to fleet ${this.abbreviateAddress(this.contract)}`);
+          
+          this.stakeAmount = "";
+          
+          await this.getDiodeBalanceWithRetry();
+          await this.getStakedTokens();
+          
+        } catch (approvalError) {
+          throw approvalError;
         }
-        
-        console.log("Sending stake transaction...");
-        const stakeTx = await window.ethereum.request({
-          method: "eth_sendTransaction",
-          params: [stakeTxParams]
-        });
-        
-        console.log("Stake transaction submitted:", stakeTx);
-        
-        let pendingTx = {
-          hash: stakeTx,
-          type: 'addStake',
-          amount: this.stakeAmount,
-          fleet: this.contract,
-          timestamp: Date.now()
-        };
-        this.storePendingTransaction(pendingTx);
-        
-        alert(`Successfully initiated staking of ${this.stakeAmount} DIODE tokens to fleet ${this.abbreviateAddress(this.contract)}`);
-        
-        this.stakeAmount = "";
-        
-        await this.getDiodeBalanceWithRetry();
-        await this.getStakedTokens();
       } catch (error) {
-        console.error("Error staking tokens:", error);
         this.stakeError = `Failed to stake tokens: ${error.message || "Unknown error"}`;
         
         if (error.message && error.message.includes("insufficient funds")) {
@@ -1065,14 +1133,24 @@ var FleetRegistration = Vue.component("fleet_registration", {
       }
     },
     
-    getTokenBalance: async function() {
-      try {
-        const balance = await CallToken("balanceOf", [this.account]);
-        return balance;
-      } catch (error) {
-        console.error("Error getting token balance:", error);
-        return "0";
+    waitForTransactionReceipt: async function(txHash, maxAttempts = 30) {
+      let attempts = 0;
+      
+      while (attempts < maxAttempts) {
+        try {
+          const receipt = await MoonbeamWallet.web3().eth.getTransactionReceipt(txHash);
+          if (receipt) {
+            return receipt;
+          }
+        } catch (error) {
+        }
+        
+        attempts++;
+        const delay = Math.min(1000 * Math.pow(1.5, attempts), 10000);
+        await new Promise(resolve => setTimeout(resolve, delay));
       }
+      
+      return null;
     },
     
     execAfter: function (callback, time) {
@@ -1124,12 +1202,10 @@ var FleetRegistration = Vue.component("fleet_registration", {
       navigator.clipboard.writeText(text).then(function () {
         alert('Address copied to clipboard!');
       }).catch(function (err) {
-        console.error('Could not copy text: ', err);
       });
     },
     checkNetworkConnection: async function() {
       if (!window.ethereum) {
-        console.warn("MetaMask not detected");
         return false;
       }
       
@@ -1139,14 +1215,11 @@ var FleetRegistration = Vue.component("fleet_registration", {
         });
         
         if (accounts && accounts.length > 0) {
-          console.log("Network connection test succeeded");
           return true;
         } else {
-          console.warn("Network connection test failed - no accounts available");
           return false;
         }
       } catch (error) {
-        console.warn("Network connection test failed:", error);
         return false;
       }
     },
@@ -1161,77 +1234,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
       let pendingTxs = JSON.parse(localStorage.getItem('pendingTransactions') || '[]');
       pendingTxs.push(tx);
       localStorage.setItem('pendingTransactions', JSON.stringify(pendingTxs));
-      console.log("Stored pending transaction in local storage:", tx);
-    },
-    
-    checkTransactionStatusInBackground: function(txHash) {
-      console.log("Starting background check for transaction:", txHash);
-      
-      if (!this.backgroundChecks) {
-        this.backgroundChecks = {};
-      }
-      
-      if (this.backgroundChecks[txHash]) {
-        console.log("Background check already running for this transaction");
-        return;
-      }
-      
-      this.backgroundChecks[txHash] = true;
-      
-      let checkCount = 0;
-      const maxChecks = 30; 
-      let delay = 5000; 
-      
-      const checkReceipt = () => {
-        if (checkCount >= maxChecks) {
-          console.log("Abandoning background check after maximum attempts");
-          delete this.backgroundChecks[txHash];
-          return;
-        }
-        
-        checkCount++;
-        console.log(`Background check attempt ${checkCount}/${maxChecks} for tx: ${txHash}`);
-        
-        setTimeout(() => {
-          MoonbeamWallet.web3().eth.getTransactionReceipt(txHash)
-            .then(receipt => {
-              if (receipt) {
-                console.log("Transaction confirmed:", receipt);
-                
-                if (receipt.status) {
-                  this.loadNewFleet()
-                    .then(() => {
-                      console.log("New fleet loaded successfully");
-                    })
-                    .catch(err => {
-                      console.error("Error loading new fleet:", err);
-                    });
-                } else {
-                  console.error("Transaction failed on-chain");
-                }
-                
-                delete this.backgroundChecks[txHash];
-              } else {
-                delay = Math.min(delay * 1.5, 60000); 
-                setTimeout(checkReceipt, delay);
-              }
-            })
-            .catch(err => {
-              console.warn("Error checking transaction receipt:", err);
-              
-              if (err.message && (
-                  err.message.includes("connection not open") || 
-                  err.message.includes("JsonRpcEngine"))) {
-                setTimeout(checkReceipt, 10000); 
-              } else {
-                delay = Math.min(delay * 1.5, 60000);
-                setTimeout(checkReceipt, delay);
-              }
-            });
-        }, 0);
-      };
-      
-      checkReceipt();
     },
     abbreviateAddress: function (address) {
       if (!address) return '';
@@ -1251,19 +1253,15 @@ var FleetRegistration = Vue.component("fleet_registration", {
       }
       
       try {
-        console.log("Getting staked tokens for fleet:", this.contract);
         const fleetData = await CallRegistry("GetFleet", [this.contract]);
         
         if (fleetData && fleetData[0] === true) { 
           const stakedAmount = fleetData[1]; 
-          console.log("Staked tokens:", stakedAmount);
           this.stakedTokens = stakedAmount;
         } else {
-          console.log("Fleet not found or doesn't exist");
           this.stakedTokens = "0";
         }
       } catch (error) {
-        console.error("Error getting staked tokens:", error);
         this.stakedTokens = "0";
       }
     },
