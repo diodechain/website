@@ -955,6 +955,14 @@ var FleetRegistration = Vue.component("fleet_registration", {
         return;
       }
       
+      const stakeAmountWei = MoonbeamWallet.web3().utils.toWei(this.stakeAmount.toString(), 'ether');
+      
+      if (BigInt(stakeAmountWei) > BigInt(this.diodeBalance)) {
+        this.stakeError = "Insufficient DIODE tokens in your wallet";
+        alert("You don't have enough DIODE tokens to stake. You have " + this.formatAmount(this.diodeBalance) + " DIODE but you're trying to stake " + this.stakeAmount + " DIODE.");
+        return;
+      }
+      
       try {
         const chainId = await window.ethereum.request({ method: 'eth_chainId' });
         if (chainId !== '0x504') { // Moonbeam
