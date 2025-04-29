@@ -6,8 +6,8 @@
         <button style="text-decoration: underline;" v-on:click="walletProvider.switchAccount()" class="button">Switch Account</button>
       </div>
       <div style="display: flex; justify-content: space-between;">
-        <h2>Gas token balance: <% formatAmount(balance) %> GLMR</h2>
-        <h2 style="margin-left: 32px;">DIODE token balance: <% formatAmount(diodeBalance) %> DIODE</h2>
+        <h2>Gas token balance: <% formatAmountWithDecimals(balance, 2) %> GLMR</h2>
+        <h2 style="margin-left: 32px;">DIODE token balance: <% formatAmountWithDecimals(diodeBalance, 2) %> DIODE</h2>
       </div>
     </div>
     <div class="content">
@@ -88,11 +88,6 @@
                     <i class="pe-7s-copy-file" style="font-size: 16px;"></i>
                   </button>
                 </div>
-              </div>
-
-              <div class="flex-col">
-                <span class="text-sm text-gray">Balance</span>
-                <span class="font-medium"><% valueToBalance(balance) %> GLMR</span>
               </div>
 
               <div class="flex-col">
@@ -338,7 +333,8 @@ var FleetRegistration = Vue.component("fleet_registration", {
 
     try {
       if (typeof Wallet !== 'undefined') {
-        Wallet.subscribe(this);
+   
+        // Wallet.subscribe(this);
       }
     } catch (e) {
       console.error("Error initializing with Wallet:", e);
@@ -348,6 +344,10 @@ var FleetRegistration = Vue.component("fleet_registration", {
       setTimeout(() => {
         this.enable();
       }, 500);
+    }
+    
+    if (window.networkEnforceInterval) {
+      clearInterval(window.networkEnforceInterval);
     }
   },
   watch: {
@@ -364,11 +364,14 @@ var FleetRegistration = Vue.component("fleet_registration", {
       }
 
       try {
+        window.isNetworkSwitchingDisabled = true;
+        
         let isConnected = false;
         try {
           isConnected = await window.ethereum._metamask.isUnlocked();
         } catch (unlockError) {
           console.warn("Could not check MetaMask unlock state:", unlockError);
+
         }
 
         const moonbeamChainData = [{
@@ -387,8 +390,10 @@ var FleetRegistration = Vue.component("fleet_registration", {
         let chainId = null;
         try {
           chainId = await window.ethereum.request({ method: 'eth_chainId' });
+          
         } catch (chainIdError) {
           console.warn("eth_chainId error:", chainIdError);
+
         }
         
         if (chainId && chainId !== moonbeamChainData[0].chainId) {
@@ -409,6 +414,15 @@ var FleetRegistration = Vue.component("fleet_registration", {
               }
             }
           }
+        }
+        
+        try {
+          chainId = await window.ethereum.request({ method: 'eth_chainId' });
+          if (chainId !== moonbeamChainData[0].chainId) {
+            alert("This page requires the Moonbeam network. Please switch networks in MetaMask and reload the page.");
+            return;
+          }
+        } catch (verifyChainError) {
         }
         
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
@@ -437,6 +451,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
               this.handleChainChanged(parseInt(chainId, 16));
             } catch (e) {
               console.error("Error handling chain change:", e);
+
             }
           });
           
@@ -474,6 +489,11 @@ var FleetRegistration = Vue.component("fleet_registration", {
           this.handleChainChanged(parseInt(finalChainId, 16));
         } catch (chainError) {
           console.warn("Could not get final chainId:", chainError);
+
+        }
+        
+        if (window.ethereum._networkMonitor) {
+          window.ethereum._networkMonitor = null;
         }
         
       } catch (error) {
@@ -528,11 +548,11 @@ var FleetRegistration = Vue.component("fleet_registration", {
       this.getStakedTokens();
     },
     addDevice: function (id, saveInStorage) {
-      if (this.devices[id] || !web3.utils.isAddress(id)) return;
+      if (this.devices[id] || !MoonbeamWallet.web3().utils.isAddress(id)) return;
 
       let dev = {
         id,
-        allowed: undefined,
+        allowed: false,
         deviceId2: undefined,
         rerender: false,
       };
@@ -557,16 +577,85 @@ var FleetRegistration = Vue.component("fleet_registration", {
       }
     },
     isValidAddress: function (address) {
-      return web3.utils.isAddress(address);
+      return MoonbeamWallet.web3().utils.isAddress(address);
     },
     validateDeviceId: function () {
     },
+    isWhiteListed: function(device, callback) {
+      if (!this.contract) return;
+      
+      try {
+        const deviceWhitelistMethod = fleetMethods["deviceWhitelist"];
+        if (deviceWhitelistMethod) {
+          const callData = MoonbeamWallet.web3().eth.abi.encodeFunctionCall(
+            deviceWhitelistMethod,
+            [device]
+          );
+          
+          MoonbeamWallet.web3().eth.call({
+            to: this.contract,
+            data: callData
+          }).then(response => {
+            try {
+              const decodedResponse = MoonbeamWallet.web3().eth.abi.decodeParameter('bool', response);
+              
+              if (callback && typeof callback === 'function') {
+                callback(decodedResponse);
+              }
+            } catch (decodeError) {
+              try {
+                const decoded = MoonbeamWallet.web3().eth.abi.decodeParameter('uint256', response);
+                if (callback && typeof callback === 'function') {
+                  callback(decoded !== '0');
+                }
+              } catch (err) {
+                if (callback && typeof callback === 'function') {
+                  callback(false);
+                }
+              }
+            }
+          }).catch(err => {
+            CallFleet("deviceWhitelist", this.contract, [device], (result) => {
+              if (callback && typeof callback === 'function') {
+                callback(result);
+              }
+            });
+          });
+        } else {
+          CallFleet("deviceWhitelist", this.contract, [device], (result) => {
+            if (callback && typeof callback === 'function') {
+              callback(result);
+            }
+          });
+        }
+      } catch (error) {
+        if (callback && typeof callback === 'function') {
+          callback('0x0');
+        }
+      }
+    },
     reloadDevice: function (id) {
       this.isWhiteListed(id, (allowed) => {
-        this.devices[id].allowed = web3.utils.hexToNumber(allowed)
-          ? true
-          : false;
-        this.$set(this.devices, id, this.devices[id]);
+        try {
+          let isAllowed = false;
+          
+          if (allowed === true || allowed === 'true') {
+            isAllowed = true;
+          } else if (typeof allowed === 'string' && allowed !== '0x' && allowed !== '0x0') {
+            if (allowed.startsWith('0x')) {
+              const hexNumber = MoonbeamWallet.web3().utils.hexToNumber(allowed);
+              isAllowed = hexNumber !== 0;
+            } else {
+              isAllowed = allowed !== '0' && allowed !== 'false';
+            }
+          }
+          
+          this.devices[id].allowed = isAllowed;
+          this.$set(this.devices, id, this.devices[id]);
+        } catch (error) {
+          this.devices[id].allowed = false;
+          this.$set(this.devices, id, this.devices[id]);
+        }
       });
     },
     loadDevivesInMemory: function () {
@@ -827,17 +916,36 @@ var FleetRegistration = Vue.component("fleet_registration", {
     },
     
     whitelistDevice: async function (device, allowed) {
-      let contract = this.contracts[0];
+      if (!this.contract) {
+        alert("No fleet contract selected. Please select a fleet first.");
+        return;
+      }
+      
+      const setDeviceWhitelistMethod = fleetMethods["SetDeviceWhitelist"];
+      if (!setDeviceWhitelistMethod) {
+        alert("Contract method not found. This may be due to an ABI mismatch.");
+        return;
+      }
+      
+      const allowedValue = allowed === true;
+      
       let call = MoonbeamWallet.web3().eth.abi.encodeFunctionCall(
-        fleetMethods["SetDeviceWhitelist"],
-        [device, allowed]
+        setDeviceWhitelistMethod,
+        [device, allowedValue]
       );
       this.$set(this.submitDevices, device, true);
       
       try {
         const isConnected = await this.checkNetworkConnection();
-        if (!isConnected) {
-        }
+        
+        try {
+          const networkId = await window.ethereum.request({ method: 'net_version' });
+          if (networkId !== "1284") { 
+            alert("Please switch to the Moonbeam network in MetaMask");
+            this.$set(this.submitDevices, device, false);
+            return;
+          }
+        } catch (networkErr) { }
         
         let retryCount = 0;
         const maxRetries = 2;
@@ -848,7 +956,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
           try {
             const txParams = {
               from: this.account,
-              to: contract,
+              to: this.contract,
               data: call,
             };
             
@@ -859,6 +967,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
               });
               txParams.gas = gasEstimate;
             } catch (gasError) {
+              txParams.gas = "200000";
             }
             
             tx = await window.ethereum.request({
@@ -870,7 +979,6 @@ var FleetRegistration = Vue.component("fleet_registration", {
               success = true;
             }
           } catch (err) {
-            
             if (err.message && (
                 err.message.includes("JsonRpcEngine") || 
                 err.message.includes("connection not open"))) {
@@ -927,12 +1035,43 @@ var FleetRegistration = Vue.component("fleet_registration", {
               clearInterval(checkInterval);
               
               if (receipt.status) {
-                this.reloadDevice(device);
+                setTimeout(() => {
+                  try {
+                    const deviceWhitelistMethod = fleetMethods["deviceWhitelist"];
+                    if (deviceWhitelistMethod) {
+                      const callData = MoonbeamWallet.web3().eth.abi.encodeFunctionCall(
+                        deviceWhitelistMethod,
+                        [device]
+                      );
+                      
+                      MoonbeamWallet.web3().eth.call({
+                        to: this.contract,
+                        data: callData
+                      }).then(response => {
+                        try {
+                          const decodedResponse = MoonbeamWallet.web3().eth.abi.decodeParameter('bool', response);
+                          
+                          if (this.devices[device]) {
+                            this.devices[device].allowed = decodedResponse;
+                            this.$set(this.devices, device, this.devices[device]);
+                          }
+                        } catch (decodeError) {
+                          this.reloadDevice(device);
+                        }
+                      }).catch(err => {
+                        this.reloadDevice(device);
+                      });
+                    } else {
+                      this.reloadDevice(device);
+                    }
+                  } catch (error) {
+                    this.reloadDevice(device);
+                  }
+                }, 2000); 
               }
             }
           })
-          .catch(err => {
-          });
+          .catch(err => { });
       }, 10000); 
       
       setTimeout(() => {
@@ -1199,6 +1338,11 @@ var FleetRegistration = Vue.component("fleet_registration", {
     formatAmount(amountWei) {
       return web3.utils.fromWei(amountWei);
     },
+    formatAmountWithDecimals(amountWei, decimals) {
+      if (!amountWei) return "0.00";
+      const amount = parseFloat(web3.utils.fromWei(amountWei));
+      return amount.toFixed(decimals);
+    },
     valueToBalance(value) {
       if (!value) return "0";
       return parseFloat(web3.utils.fromWei(value)).toFixed(4);
@@ -1213,6 +1357,10 @@ var FleetRegistration = Vue.component("fleet_registration", {
       return address.slice(0, 6) + '...' + address.slice(-4);
     },
     handleChainChanged: function(chainId) {
+      if (chainId !== 1284) { 
+        alert("This page requires the Moonbeam network. Some features may not work correctly.");
+      }
+      
       this.getContracts();
       this.getDiodeBalanceWithRetry();
       if (this.contract) {
