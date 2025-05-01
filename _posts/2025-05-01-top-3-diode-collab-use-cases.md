@@ -11,6 +11,8 @@ image: 	assets/img/blog/3 Main Use Cases.jpg
 ---
 ## Top 3 Diode Collab Use Cases
 
+People turn to Diode Collab for many reasons, whether it's a personal preference for privacy, a need for secure team collaboration, or a way to share files without third-party risk. Whatever the case, Diode Collab is built for individuals and teams who want a collaboration platform that prioritizes privacy and puts them in full control of their data. Below are some common reasons people choose Diode Collab and how the app is designed to meet those needs.
+
 ### Personal & Individual Use
 
 **Key Needs:**
