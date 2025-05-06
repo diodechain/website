@@ -38,6 +38,8 @@
     {% include_relative vue/dns_list.vue %}
     {% include_relative vue/dns_list_moonbeam.vue %}
     {% include_relative vue/moonbeam.vue %}
+    {% include_relative vue/dns_list_oasis.vue %}
+    {% include_relative vue/oasis.vue %}
     {% include_relative vue/foundation.vue %}
     {% include_relative vue/power_distribution.vue %}
     {% include_relative vue/account.vue %}
@@ -174,6 +176,16 @@
             name: false,
             path: '/moonbeam',
             component: Moonbeam,
+        },
+        {
+            name: false,
+            path: '/oasis',
+            component: Oasis,
+        },
+        {
+            name: false,
+            path: '/odns',
+            component: OasisDNSList,
         },
         {
             name: false,
