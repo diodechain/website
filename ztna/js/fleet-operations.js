@@ -1,6 +1,7 @@
 // Fleet operations for the Perimeter Manager application
 import * as wallet from './wallet.js';
 import fleetContractAbi from './perimeter-abi.js';
+import * as bnsOperations from './bns-operations.js';
 
 // Helper function for sending transactions
 async function doSend(fleetAddress, method, args, successMessage) {
@@ -18,12 +19,27 @@ export async function updateFleetLabel(fleetAddress, label) {
 }
 
 // Get users of a fleet
-export async function getFleetUsers(fleetAddress) {
+export async function getOperator(fleetAddress) {
+  return doCall(fleetAddress, 'operator', []);
+}
+
+// Get users of a fleet
+export async function getPerimeterUsers(fleetAddress) {
   return doCall(fleetAddress, 'getAllUsers', []);
 }
 
 // Add a user to a fleet
 export async function addFleetUser(fleetAddress, userAddress, nickname = '', email = '', avatarURI = '') {
+  // Check if user is an address or a BNS name
+  if (userAddress.includes('.') || !userAddress.startsWith('0x')) {
+    // It's a BNS name, resolve it to an address
+    const resolvedAddress = await bnsOperations.resolveName(userAddress);
+    if (!resolvedAddress) {
+      throw new Error('Invalid BNS name');
+    }
+    userAddress = resolvedAddress;
+  }
+
   return doSend(
     fleetAddress, 
     'createUser', 

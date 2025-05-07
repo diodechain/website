@@ -4,8 +4,10 @@ import * as fleetOperations from './fleet-operations.js';
 import * as registryOperations from './registry-operations.js';
 import * as userManagement from './user-management.js';
 import * as userGroupManagement from './user-group-management.js';
+import * as bnsOperations from './bns-operations.js';
 import { DeviceManagementComponent } from './device-management.js';
 import { TagManagementComponent } from './tag-management.js';
+import { UserManagementComponent } from './user-management.js';
 import * as navigation from './navigation.js';
 import * as utils from './utils.js';
 
@@ -24,7 +26,7 @@ const app = createApp({
     const sharedFleets = ref([]);
     const selectedFleet = ref(null);
     const fleetDetails = ref({});
-    const fleetUsers = ref([]);
+    const perimeterOperators = ref([]);
     const isLoading = ref(false);
     const isLocked = ref(0);
     const isCreatingFleet = ref(false);
@@ -36,7 +38,7 @@ const app = createApp({
     const selectedAccountIndex = ref(0);
     const showPerimeterManagementModal = ref(false);
     const managedFleet = ref('');
-    const managedFleetUsers = ref([]);
+    const perimeterUsers = ref([]);
     const newFleetUserAddress = ref('');
     const showToast = ref(false);
     const toastMessage = ref('');
@@ -74,6 +76,10 @@ const app = createApp({
     const selectedTagToAdd = ref('');
     const showDeviceTransferModal = ref(false);
     const newDeviceOwner = ref('');
+    
+    // New state variables for address validation
+    const addressValidationState = ref(''); // 'valid', 'invalid', or ''
+    const validationTimeout = ref(null);
     
     // Computed properties
     const groupedSharedFleets = computed(() => {
@@ -277,7 +283,7 @@ const app = createApp({
     const closePerimeterManagementModal = () => {
       showPerimeterManagementModal.value = false;
       managedFleet.value = '';
-      managedFleetUsers.value = [];
+      perimeterOperators.value = [];
       newFleetUserAddress.value = '';
     };
 
@@ -288,13 +294,13 @@ const app = createApp({
         
         managedFleet.value = fleetAddress;
         
-        // Get fleet users
-        managedFleetUsers.value = [];
-        const userCount = await registryOperations.getFleetUserCount(fleetAddress);
+        // Get operators
+        perimeterOperators.value = [];
+        const operatorCount = await registryOperations.getFleetOperatorCount(fleetAddress);
         
-        for (let i = 0; i < userCount; i++) {
-          const userAddress = await registryOperations.getFleetUser(fleetAddress, i);
-          managedFleetUsers.value.push(userAddress);
+        for (let i = 0; i < operatorCount; i++) {
+          const operatorAddress = await registryOperations.getFleetOperator(fleetAddress, i);
+          perimeterOperators.value.push(operatorAddress);
         }
         
         showPerimeterManagementModal.value = true;
@@ -322,7 +328,7 @@ const app = createApp({
         );
         
         // Refresh fleet users
-        managedFleetUsers.value.push(newFleetUserAddress.value);
+        perimeterUsers.value.push(newFleetUserAddress.value);
         
         newFleetUserAddress.value = '';
         utils.showToastMessage('User added successfully!');
@@ -394,9 +400,54 @@ const app = createApp({
 
     // Load user data
     window.loadUserData = () => loadUserData(); 
+    window.connectWallet = () => connectWallet();
+
+    // Validate address with debouncing
+    const validateAddress = async (address) => {
+      if (!address) {
+        addressValidationState.value = '';
+        return;
+      }
+      
+      // Check if it's a BNS name (contains a dot) or an Ethereum address
+      if (address.startsWith('0x') && address.length == 42) {
+        addressValidationState.value = 'valid';
+      } else {
+        let resolvedAddress = await bnsOperations.resolveName(address);
+        if (resolvedAddress) {
+          addressValidationState.value = 'valid';
+        } else {
+          addressValidationState.value = 'invalid';
+        }
+      }
+    };
+
+    const debouncedValidateAddress = (event) => {
+      if (validationTimeout.value) {
+        clearTimeout(validationTimeout.value);
+      }
+      
+      validationTimeout.value = setTimeout(() => {
+        validateAddress(event.target.value);
+      }, 300); // 300ms debounce
+    };
+
+    // Reset validation state when modal is closed
+    const closeAddUserModal = () => {
+      showingAddUserModal.value = false;
+      targetFleetForUser.value = null;
+      newUserAddress.value = '';
+      isAddingUser.value = false;
+      isLoading.value = false;
+      addressValidationState.value = '';
+      if (validationTimeout.value) {
+        clearTimeout(validationTimeout.value);
+      }
+    };
 
     // Return all functions and state variables
     return {
+      showToastMessage: utils.showToastMessage,
       isConnected,
       account,
       ownFleetCount,
@@ -404,7 +455,7 @@ const app = createApp({
       sharedFleets,
       selectedFleet,
       fleetDetails,
-      fleetUsers,
+      perimeterOperators,
       isLoading,
       isLocked,
       isCreatingFleet,
@@ -416,7 +467,7 @@ const app = createApp({
       selectedAccountIndex,
       showPerimeterManagementModal,
       managedFleet,
-      managedFleetUsers,
+      perimeterUsers,
       newFleetUserAddress,
       showToast,
       toastMessage,
@@ -456,7 +507,11 @@ const app = createApp({
       // Methods
       connectWallet,
       createFleet,
-      addFleetUser: fleetOperations.addFleetUser,
+      addFleetUser: async (fleetAddress, userAddress) => {
+        await fleetOperations.addFleetUser(fleetAddress, userAddress);
+        await closeAddUserModal();
+        await loadUserData();
+      },
       removeFleetUser: fleetOperations.removeFleetUser,
       closePerimeterManagementModal,
       addFleetUserFromManager,
@@ -469,15 +524,7 @@ const app = createApp({
       switchAccount,
       changeAccount,
       manageFleet,
-      
-      // User management
-      loadAllUsers: userManagement.loadAllUsers,
-      selectUser: userManagement.selectUser,
-      createNewUser: userManagement.createNewUser,
-      updateUserDetails: userManagement.updateUserDetails,
-      removeUserFromSystem: userManagement.removeUserFromSystem,
-      isUserAdmin: userManagement.isUserAdmin,
-      
+           
       // User Group management
       loadUserGroups: userGroupManagement.loadUserGroups,
       selectUserGroup: userGroupManagement.selectUserGroup,
@@ -497,14 +544,10 @@ const app = createApp({
       // Modal state
       showingAddUserModal,
       targetFleetForUser,
-      closeAddUserModal: () => {
-        showingAddUserModal.value = false;
-        targetFleetForUser.value = null;
-        newUserAddress.value = '';
-        isAddingUser.value = false;
-        isLoading.value = false;
-      },
-      openAddUserModal
+      closeAddUserModal,
+      openAddUserModal,
+      addressValidationState,
+      debouncedValidateAddress
     };
   }
 });
@@ -512,6 +555,7 @@ const app = createApp({
 // Mount the app
 app.component('device-management-component', DeviceManagementComponent);
 app.component('tag-management-component', TagManagementComponent);
+app.component('user-management-component', UserManagementComponent);
 const mountedApp = app.mount('#app');
 
 // Store the app reference in the window object for external access

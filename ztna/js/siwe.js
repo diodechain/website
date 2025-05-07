@@ -9,7 +9,8 @@ export class SiweMessage {
         if (typeof this.chainId === 'string') {
             throw new Error("chainId must be a number");
         }
-        this.nonce = this.nonce || crypto.randomUUID();
+        this.nonce = param.nonce || crypto.randomUUID();
+        this.expirationTime = param.expirationTime;
     }
 
     toMessage() {

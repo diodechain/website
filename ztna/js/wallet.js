@@ -118,9 +118,17 @@ export async function connectWallet() {
     });
     
     // Handle chain changes
-    ethereum.on('chainChanged', () => {
-      showToastMessage('Network changed. Reloading...');
-      window.location.reload();
+    let lastChainId = null;
+    ethereum.on('chainChanged', (newChainId) => {
+      if (newChainId != lastChainId && networks.find(network => network.chainId === lastChainId) != null) {
+        showToastMessage('Network changed from ' + lastChainId + ' to ' + newChainId + '. Reloading...');
+        lastChainId = newChainId;
+        //window.location.reload();
+        // Reload data with new account
+        if (typeof window.connectWallet === 'function') {
+          window.connectWallet();
+        }
+      }
     });
     
     return { web3, account, ethereum };
@@ -165,7 +173,8 @@ export var networks = [
       decimals: 18
     },
     blockExplorerUrls: ["https://explorer.oasis.io/mainnet/sapphire"],
-    registry: '0xf90314E31D34C7ad82382f1a9dCB5Fc0FDA71ACe'
+    registry: '0xf90314E31D34C7ad82382f1a9dCB5Fc0FDA71ACe',
+    bns: '0xBC7a66a80E760dD0D84f6e39Df6cfD937C6c94F6'
   },
   {
     index: 1,
@@ -204,8 +213,12 @@ export async function getCurrentChain() {
       method: "eth_chainId" 
     });
     console.log("Current chain ID:", chainId);
-
-    return networks.find(network => network.chainId === chainId);
+    let network = networks.find(network => network.chainId === chainId);
+    if (network) {
+      return network;
+    }
+    await switchNetwork(0);
+    return await getCurrentChain();
     // return chainId;
   } catch (err) {
     console.error("Error getting chain:", err);
@@ -220,10 +233,15 @@ export async function switchNetwork(networkKey) {
   try {
     // Try to switch to the network
     console.log("req ");
-    await ethereum.request({
+    let ret = await ethereum.request({
       method: "wallet_switchEthereumChain",
       params: [{ chainId: network.chainId }]
     });
+    console.log("req ret ", ret);
+    let networkId = await ethereum.request({
+      method: "eth_chainId"
+    });
+    console.log("networkId ", networkId);
     console.log("req ok");
 
   } catch (err) {
@@ -254,6 +272,7 @@ import registryAbi from './registry-abi.js';
 
 export async function ensureUserWallet() {
   let chain = await getCurrentChain();
+  if (!chain) { return null; }
   let { web3, account, ethereum } = await connectWallet();
   let storageKey = "siwe_token_" + account + "_" + chain.chainId;
 
@@ -297,6 +316,7 @@ export async function ensureUserWallet() {
     uri: `http://${domain}`,
     version: "1",
     chainId: web3.utils.hexToNumber(chain.chainId),
+    expirationTime: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365 * 3).toISOString(),
   }).toMessage();
 
   const sig = await ethereum.request({

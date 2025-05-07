@@ -417,45 +417,11 @@
           <div class="bg-white rounded-lg shadow overflow-hidden">
             <!-- Users Tab -->
             <div v-if="activeTab === 'users'" class="p-6">
-              <div class="flex justify-between items-center mb-4">
-                <h3 class="text-lg font-semibold">Users</h3>
-                <button 
-                  @click="openAddUserModal(managedFleet)" 
-                  class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm">
-                  Add User
-                </button>
-              </div>
-              
-              <div v-if="isLoading" class="text-center py-4 text-gray-500">
-                <p>Loading users...</p>
-              </div>
-              
-              <div v-else-if="managedFleetUsers.length === 0" class="text-center py-4 text-gray-500">
-                <p>No users found for this fleet.</p>
-              </div>
-              
-              <div v-else class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200">
-                  <thead class="bg-gray-50">
-                    <tr>
-                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User Address</th>
-                      <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody class="bg-white divide-y divide-gray-200">
-                    <tr v-for="user in managedFleetUsers" :key="user.userAddress">
-                      <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-900">{{ user.userAddress }}</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <button 
-                          @click="removeFleetUser(managedFleet, user.userAddress)" 
-                          class="text-red-600 hover:text-red-900">
-                          Remove
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <user-management-component 
+                :managed-fleet="managedFleet"
+                :is-loading="isLoading"
+                @show-toast="showToastMessage">
+              </user-management-component>
             </div>
             
             <!-- User Groups Tab -->
@@ -495,15 +461,33 @@
         </div>
         
         <div class="p-6">
-          <form @submit.prevent="addFleetUser">
+          <form @submit.prevent="addFleetUser(managedFleet, newUserAddress)">
             <div class="mb-4">
-              <label for="userAddress" class="block text-sm font-medium text-gray-700 mb-1">User Address</label>
-              <input 
-                type="text" 
-                id="userAddress" 
-                v-model="newUserAddress" 
-                class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                placeholder="0x...">
+              <label for="userAddress" class="block text-sm font-medium text-gray-700 mb-1">User Address or BNS name</label>
+              <div class="relative">
+                <input 
+                  type="text" 
+                  id="userAddress" 
+                  v-model="newUserAddress"
+                  @input="debouncedValidateAddress"
+                  class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 pr-10"
+                  :class="{
+                    'border-red-300 focus:border-red-500 focus:ring-red-500': addressValidationState === 'invalid',
+                    'border-green-300 focus:border-green-500 focus:ring-green-500': addressValidationState === 'valid'
+                  }"
+                  placeholder="0x...">
+                <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                  <svg v-if="addressValidationState === 'valid'" class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <svg v-if="addressValidationState === 'invalid'" class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <p v-if="addressValidationState === 'invalid'" class="mt-1 text-sm text-red-600">
+                Please enter a valid Ethereum address or BNS name
+              </p>
             </div>
             
             <div class="flex justify-end space-x-2">
@@ -516,7 +500,7 @@
               <button 
                 type="submit" 
                 class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                :disabled="isAddingUser">
+                :disabled="isAddingUser || addressValidationState !== 'valid'">
                 {{ isAddingUser ? 'Adding...' : 'Add User' }}
               </button>
             </div>

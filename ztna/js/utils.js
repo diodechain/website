@@ -91,7 +91,7 @@ export const setLoadingWithSafety = (isLoadingState) => {
         window.app.isLoading = false;
         showToastMessage('Loading timed out. Please try again.', 5000);
       }
-    }, 30000); // 30 second timeout
+    }, 120000); // 2 minutes timeout
   }
 };
 
