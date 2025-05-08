@@ -11,7 +11,7 @@ image: 	assets/img/blog/3 Main Use Cases.jpg
 ---
 ## Top 3 Diode Collab Use Cases
 
-People turn to Diode Collab for many reasons, whether it's a personal preference for privacy, a need for secure team collaboration, or a way to share files without third-party risk. Whatever the case, Diode Collab is built for individuals and teams who want a collaboration platform that prioritizes privacy and puts them in full control of their data. Below are some common reasons people choose Diode Collab and how the app is designed to meet those needs.
+People use Diode Collab for many reasons, whether it's a personal preference for privacy, a need for secure team collaboration, or a way to share files without third-party risk. Whatever the case, Diode Collab is built for individuals and teams who want a collaboration platform that prioritizes security and puts them in full control of their data. Below are some common use cases in which people choose Diode Collab and how the app is designed to meet those needs.
 
 ### Personal & Individual Use
 
@@ -24,8 +24,8 @@ People turn to Diode Collab for many reasons, whether it's a personal preference
 
 **Diode Collab:**
 
-*   **Secure Storage and Sharing:** Personal data never passes through centralized server and everything is [end-to-end encrypted](https://app.docs.diode.io/docs/using/how-it-works/).  
-*   **No Identifiable Information:** [No email or phone numbers](https://diode.io/blog/messaging-app-without-a-phone-number) are needed to use Diode Collab. Access is based on blockchain-based identity, giving the user full control. 
+*   **Secure Storage and Sharing:** Personal data is never exposed to a server and everything is [end-to-end encrypted](https://app.docs.diode.io/docs/using/how-it-works/).  
+*   **No Identifiable Information:** [No email or phone numbers](https://diode.io/blog/messaging-app-without-a-phone-number) are needed to use Diode Collab, or to gain or restore access to your account. Access is based on blockchain-based identity, giving the user full control. 
 *   **Access Across Devices:** Information can be synced securely [across devices](https://app.docs.diode.io/docs/using/linked-devices/) without relying on third parties.
 *   **Built-In Tools:** Create [notes](https://app.docs.diode.io/docs/features/take-secure-notes-with-diode-drive/), share documents, or create/upload files
 *   **Secure Communication:** Create group channels with friends and family to [chat](https://app.docs.diode.io/docs/using/create-a-group-chat/).
@@ -40,7 +40,7 @@ People turn to Diode Collab for many reasons, whether it's a personal preference
 
 **Diode Collab:**
 
-*   **Censorship-Resistant**: Built on [DePIN infrastructure](https://diode.io/blog/depin-headwinds-and-tailwinds), it functions even in hostile networks or under shutdown attempts.
+*   **Censorship-Resistant**: Built on [DePIN infrastructure](https://diode.io/blog/depin-headwinds-and-tailwinds), it functions even in hostile Internet regions or under shutdown attempts.
 *   **Offline Capabilities:** Continue working in high-risk environments even with [poor or monitored Internet](https://diode.io/blog/diode-self-custody).
 *   **Secure Storage and Sharing:** Personal data never passes through centralized server and everything is [end-to-end encrypted](https://app.docs.diode.io/docs/using/how-it-works/).
 *   **Access From Anywhere [Without VPN](https://diode.io/blog/does-vpn-protect-my-information):** Operate securely from any location without exposing your traffic to third parties while maintaining access to tools with [ZTN's regional tunneling](https://app.docs.diode.io/docs/features/regional-tunnels/).
@@ -51,13 +51,13 @@ People turn to Diode Collab for many reasons, whether it's a personal preference
 
 **Key Needs:**
 
-*   Collaborate securely across departments, vendors, or locations
+*   Collaborate securely across departments, vendors, customers, or locations
 *   Protect IP, legal docs, and sensitive communications
 *   Ensure tool access from anywhere in the world
 
 **Diode Collab:**
 
-*   **Team Workspaces:** Zones, channels, and direct chats can be created for projects, client accounts, or internal resources. Great for [teams](https://diode.io/usecases/)!
+*   **Team Workspaces:** Zones, channels, and direct chats can be created for projects, client accounts, or internal resources. Great for [teams](https://diode.io/usecases/) and support desks!
 *   **Access From Anywhere [Without VPN](https://diode.io/blog/does-vpn-protect-my-information):** Ideal for [traveling executives](https://diode.io/blog/strategies-for-executive-protection) or [remote/distributed teams](https://diode.io/blog/replacing-VPN-for-international-teams). Operate securely from any location without exposing your traffic to third parties while maintaining access to tools with [ZTN's regional tunneling](https://app.docs.diode.io/docs/features/regional-tunnels/).
 *   **Built-In Tools:** Built-in [chat](https://app.docs.diode.io/docs/using/create-a-group-chat/), files, wikis, and [share links](https://app.docs.diode.io/docs/using/share-a-file-or-folder-via-web-browser/) all under the same encrypted roof.
 *   **Secure Storage and Sharing:** Personal data never passes through centralized server and everything is [end-to-end encrypted](https://app.docs.diode.io/docs/using/how-it-works/).
