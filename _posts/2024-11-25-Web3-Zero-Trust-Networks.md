@@ -35,7 +35,7 @@ In addition to creating the solutions listed above, Web3 Zero Trust Networks int
 
 Soon after the launch of our Web3 ZTNA Relay Node, in November 2024, over fifty public nodes were providing permissionless Web3 ZTNA services.  Diode's Web3 ZTNA community leverages the fundmentals of Web3 DEPIN to drive global expansion, as more individuals and entities become node runners. Diode Relay Nodes are easy to run - anyone with a medium level of computer sophistication can run one and help the world take a step closer to transforming the Internet into everyone’s private network. 
 
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXclpVJU1KxeM8ZYFjVHcsGKB65zzqLrq0oYuZRaQ_kZGRJB18_OesvCc0sHTykwtD1FsPC6S6ggiueijIJSH6k99zExLzZ-0m7BDc0sa_Q9zQMFKS50SoAjVnVbOS8neROmKeRzQA?key=CI2YT0C6jsOjJAarGeDOFlcY)
+<img src="../assets/img/blog/node-map-update.jpeg">
 
 Nodes are permissionless - anyone can run them.  New nodes come online frequently, extending Diode's availability into more regions through new global communication points. Recent locations like Santiago de Querétaro, Doha, Taiwan, Sogndal, and more, enhance secure in-theatre connections while enabling communication with the rest of the world. The best part? You can set it up in [under 3 minutes](https://www.youtube.com/watch?v=Klh6KK_wNAM&t=8s). 
 
