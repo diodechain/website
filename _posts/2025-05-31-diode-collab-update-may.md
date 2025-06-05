@@ -21,7 +21,7 @@ The Diode team rolled out some great updates in May, making the Diode Collab app
 **Faster Discover Page**
 <br>Community cards now load much quicker on the Discover page.
 
-**Improved Linked Devicess**
+**Improved Linked Devices**
 <br>Zone invites are no longer auto-accepted across linked devices—you choose what to join.
 
 **Zone Publication Banners**
