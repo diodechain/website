@@ -164,7 +164,7 @@ solutions:
       url: "/products/cli/"
   - title: No access to your data
     icon: icons/vault.svg
-    content: Diode never has access to any of your messages or files that you and your team share. This provides you with another level of security that most cloud providers can’t offer.
+    content: Diode never has access to any of your messages or files that you and your team share. This provides you with another level of security that most providers can’t offer.
     button:
       title: Request Demo
       class: "btn--blank btn--arrow"
