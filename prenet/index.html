@@ -19,6 +19,9 @@
     <script src="prenet/storage.js"></script>
     <script src="prenet/donut.js"></script>
     <script src="prenet/blocklist.js"></script>
+    <script src="dist/agent.min.js"></script>
+    <script src="prenet/canister_factory.js"></script>
+    <script src="prenet/zone_availability_canister.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     </link>
     <link rel="shortcut icon" href="images/favicon.png" title="Favicon">
@@ -50,6 +53,7 @@
     {% include_relative vue/transactions.vue %}
     {% include_relative vue/network.vue %}
     {% include_relative vue/search.vue %}
+    {% include_relative vue/icp.vue %}
     <div id="app">
         <div class="header">
             <div class="logo">
@@ -181,6 +185,11 @@
             name: false,
             path: '/oasis',
             component: Oasis,
+        },
+        {
+            name: false,
+            path: '/icp',
+            component: ICP,
         },
         {
             name: false,
