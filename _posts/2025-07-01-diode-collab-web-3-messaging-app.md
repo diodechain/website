@@ -51,6 +51,10 @@ One of the biggest shifts for Web3 is that people don't have to place trust in a
   
 With Diode Collab, trust is something that’s already built in.
 
+**Diode Collab Leading the Future of Web3 Secure Communications**
+
+Diode Collab is built by a team wanting to help you protect your team’s data by combining the core principles of Web3's decentralization, ownership, and trustless security to deliver privacy, control, and resilience in how you communicate and collaborate. 
+
 To explore further please:
 <div class="story__buttons">
   <a href="{{"https://contactdiode.paperform.co"}}" class="btn" target="">Get in Touch</a>
