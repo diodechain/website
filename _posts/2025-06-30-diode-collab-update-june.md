@@ -10,19 +10,16 @@ image: 	assets/img/blog/collab product update.jpg
 
 ---
 
-June brought a new round of improvements to the Diode Collab app with these updates now live in versions v1.17.5 to v1.17.9.
+June brought a new round of improvements to the Diode Collab app - the following updates are live in versions v1.17.5 to v1.17.9!
 
 **Billing Entitlement to Create Canisters**
-<br>Paid plans are now able to support ICP canisters by default! 
+<br>Paid plans are now able to support ICP canisters by default! This means that you can retain full self-custody to your data without having to manage a hardware/virtual peer to ensure chats and files are always online.  
 
 **Customizable Font Size**
 <br>There is now a “font size” setting in your profile area - this allows you to configure your device to show text in whatever size is most comfortable for you.
 
-**Invite Order**
-<br>The ignored invites list is now ordered showing the most recently received invitation at the top of the list instead of the bottom.
-
-**About Page Links**
-<br>The Ignored Invites page now has a search field.
+**Invite Updates**
+<br>The ignored invites list is now ordered showing the most recently received invitation at the top of the list instead of the bottom.  And, the Ignored Invites page now has a search field.
 
 **Bug Fixes** 
 <br>
