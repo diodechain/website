@@ -197,7 +197,7 @@
                             <% number(fleet.total_tickets) %>
                         </td>
                         <td>
-                            <% Math.round(bn(fleet.total_score)/(1024*1024*1024)) %> GB
+                            <% bytes_to_text(fleet.total_score) %>
                         </td>
                         <td>
                             0 GB
@@ -228,7 +228,7 @@
                             <% number(fleet.total_tickets) %>
                         </td>
                         <td>
-                            <% Math.round(bn(fleet.total_score)/(1024*1024*1024)) %> GB
+                            <% bytes_to_text(fleet.total_score) %>
                         </td>
                         <td>
                             <% (Math.round(fleet_score(fleet)/(1024*1024*1024) * 100) / 100).toFixed(2) %> GB
@@ -282,6 +282,18 @@ var DiodeNode = Vue.component("diode_node", {
     },
 
     methods: {
+        bytes_to_text(bytes) {
+            bytes = this.bn(bytes);
+            if (bytes.lt(this.bn(1024))) {
+                return bytes.toString() + " B";
+            } else if (bytes.lt(this.bn(1024*1024))) {
+                return Math.round(bytes.div(this.bn(1024)).toNumber()) + " KB";
+            } else if (bytes.lt(this.bn(1024*1024*1024))) {
+                return Math.round(bytes.div(this.bn(1024*1024)).toNumber()) + " MB";
+            } else {
+                return Math.round(bytes.div(this.bn(1024*1024*1024)).toNumber()) + " GB";
+            }
+        },
         number(hex) { return web3.utils.hexToNumber(hex) },
         bn(hex) { return web3.utils.toBN(hex) },
         last_score(fleet) {
