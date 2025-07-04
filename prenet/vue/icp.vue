@@ -79,7 +79,7 @@ var ICP = Vue.component("icp", {
         zone_id = "Unknown";
       }
       this.accounts.push({ 
-        nr: i,
+        nr: this.total - i,
         name: can.toString(), 
         address: can.toString() ,
         version: version,
