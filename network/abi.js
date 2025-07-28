@@ -1,5 +1,6 @@
 const DNSAddr = "0xaf60faa5cd840b724742f1af116168276112d6a6"
 const Registry = "0xD78653669fd3df4dF8F3141Ffa53462121d117a4"
+const NodeRegistry = "0xc4b466f63c0A31302Bc8A688A7c90e1199Bb6f84"
 const DiodeToken = "0x434116a99619f2B465A137199C38c1Aab0353913"
 const FleetFactory = "0xa21D0a54dFee3Ff4B9f82959C09B538863744839"
 let DNSActive = {};
@@ -195,6 +196,24 @@ var registryMethods = {
             components: [
                 { type: "address", name: "node" },
                 { type: "uint256", name: "score" }
+            ]
+        }]
+    }
+}
+
+var nodeRegistryMethods = {
+    "nodes": {
+        name: "nodes",
+        type: "function",
+        inputs: [{type: "address", name: "node" }],
+        outputs: [{
+            internalType: "struct Node",
+            name: "",
+            type: "tuple",
+            components: [
+                { type: "address", name: "accountant" },
+                { type: "address", name: "node" },
+                { type: "uint256", name: "stake" }
             ]
         }]
     }
@@ -652,6 +671,10 @@ async function async_call(abi, to, args) {
 
 function CallDNS(name, args, callback) {
     call(dnsMethods[name], DNSAddr, args, callback)
+}
+
+async function CallNodeRegistry(name, args) {
+    return await callMoonbeam(nodeRegistryMethods[name], NodeRegistry, args)
 }
 
 async function CallRegistry(name, args) {

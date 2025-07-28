@@ -179,7 +179,8 @@ let Wallet = {
             } else if (tx.status === true) {
                 return tx;
             } else {
-                throw new Error("tx was failed");
+                console.log("tx failed", txHash);
+                return false;
             }
         } catch (err) {
             console.log("isTxConfirmed err", err);

@@ -8,6 +8,28 @@
             <div style="display: flex">
                 <div class="headtable" v-bind:style="{width: typeof (usageHistory) != 'string' ? '45%' : '100%'}">
                     <div class="doclet">
+                        <h2>
+                            Accountant 
+                            <span v-if="accountant_active()" style="color: green; font-weight: bold;">Active</span>
+                            <span v-if="accountant_mismatch()" style="color: red; font-weight: bold;">Mismatch</span>
+                        </h2>
+                        <div style="margin-top: 11px">
+                            <button v-if="!enabled" v-on:click="MoonbeamWallet.enable()" class="button">Connect Wallet</button>
+
+                            <div v-if="accountant_active()">
+                                <button v-if="bn(node_info.stake).gt(bn(0))" class="button" v-on:click="unstake()" :disabled="tx != null">Unstake</button>
+                                <span v-else>Nothing to unstake</span>
+                            </div>
+                            <div v-if="tx">
+                                Transaction submitted: <% tx %>. Please wait for confirmation.
+                            </div>
+                            <div v-if="error" style="color: red;">
+                                <% error %>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="doclet">
                         <h2>Name</h2>
                         <div style="margin-top: 11px">
                             <% name %>
@@ -72,7 +94,7 @@
                     <div class="doclet">
                         <h2>Balance</h2>
                         <div class="link"><a target="_blank" :href="'https://moonscan.io/token/0x434116a99619f2B465A137199C38c1Aab0353913?a=' + nodeid" class="no-decoration">
-                            <% balance %>
+                            <% node_balance %>
                         </a></div>
                     </div>
                     <div class="doclet">
@@ -255,13 +277,18 @@ var DiodeNode = Vue.component("diode_node", {
         let epoch_percentage = Math.floor(100 * (now - epoch_start) / 2_592_000);
 
         return {
+            account: null,
+            tx: null,
+            error: null,
+            enabled: false,
             epochPercentage: epoch_percentage,
             epochStart: epoch_start,
             epochEnd: epoch_end,
             connectivity: 'loading',
-            balance: 'loading',
+            node_balance: 'loading',
             node: 'loading',
             nodeid: this.nodeid,
+            node_info: null,
             usageHistory: 'loading',
             usage: 'loading',
             traffic: 'loading',
@@ -272,6 +299,7 @@ var DiodeNode = Vue.component("diode_node", {
     },
 
     created: async function () {
+        MoonbeamWallet.subscribe(this);
         this.updateNode(this.nodeid);
     },
 
@@ -305,6 +333,12 @@ var DiodeNode = Vue.component("diode_node", {
                 return this.bn(0)
             }
         },
+        accountant_active() {
+            return this.node_info != null && this.account != null && this.node_info.accountant == this.account
+        },
+        accountant_mismatch() {
+            return this.node_info != null && this.account != null && this.node_info.accountant != this.account
+        },
 
         fleet_score(fleet) {
             let score = this.bn(fleet["state"]["score"])
@@ -331,7 +365,7 @@ var DiodeNode = Vue.component("diode_node", {
             if (web3.utils.isAddress(nodeid)) {
                 await this.doUpdateNode(nodeid);
             } else {
-                this.balance = 'invalid';
+                this.node_balance = 'invalid';
                 this.node = 'invalid';
                 this.usage = 'invalid';
                 this.traffic = 'invalid';
@@ -341,7 +375,11 @@ var DiodeNode = Vue.component("diode_node", {
 
         async doUpdateNode(nodeid) {
             console.log("Updating node", nodeid);
-            this.balance = valueToBalance(await CallToken("balanceOf", [nodeid]))
+            this.node_info = await CallNodeRegistry("nodes", [nodeid])
+            let stake_balance = this.bn(this.node_info[2])
+            let owned_balance = this.bn(await CallToken("balanceOf", [nodeid]))
+
+            this.node_balance = valueToBalance(owned_balance.add(stake_balance))
             let node = await web3.eth.getNode(nodeid);
             let extra = {};
 
@@ -431,6 +469,33 @@ var DiodeNode = Vue.component("diode_node", {
 
             this.usageHistory = usageHistory;
         },
+
+        async unstake() {
+            let [ok, ret] = await MoonbeamWallet.runTransaction(
+                "unstakeNode",
+                {
+                    name: "unstakeNode",
+                    type: "function",
+                    inputs: [{ type: "address", name: "node" }]
+                },
+                NodeRegistry,
+                [this.nodeid],
+                0
+            );
+
+            if (ok) {
+                this.tx = ret;
+                let confirmed = await MoonbeamWallet.isTxConfirmed(ret);
+                if (confirmed) {
+                    this.node_info = await CallNodeRegistry("nodes", [this.nodeid]);
+                } else {
+                    this.error = "Transaction not confirmed";
+                }
+                this.tx = null;
+            } else {
+                this.error = ret;
+            }
+        }
     },
 });
 </script> 
