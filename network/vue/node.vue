@@ -14,7 +14,8 @@
                             <span v-if="accountant_mismatch()" style="color: red; font-weight: bold;">Mismatch</span>
                         </h2>
                         <div style="margin-top: 11px">
-                            <button v-if="!enabled" v-on:click="MoonbeamWallet.enable()" class="button">Connect Wallet</button>
+                            <button v-if="!enabled && !accountant_notset()" v-on:click="MoonbeamWallet.enable()" class="button">Connect Wallet</button>
+                            <span v-if="accountant_notset()">No accountant set</span>
 
                             <div v-if="accountant_active()">
                                 <button v-if="bn(node_info.stake).gt(bn(0))" class="button" v-on:click="unstake()" :disabled="tx != null">Unstake</button>
@@ -339,6 +340,9 @@ var DiodeNode = Vue.component("diode_node", {
         accountant_mismatch() {
             return this.node_info != null && this.account != null && this.node_info.accountant != this.account
         },
+        accountant_notset() {
+            return this.node_info != null && this.node_info.accountant == "0x0000000000000000000000000000000000000000"
+        },
 
         fleet_score(fleet) {
             let score = this.bn(fleet["state"]["score"])
@@ -376,6 +380,7 @@ var DiodeNode = Vue.component("diode_node", {
         async doUpdateNode(nodeid) {
             console.log("Updating node", nodeid);
             this.node_info = await CallNodeRegistry("nodes", [nodeid])
+            console.log("NodeInfo:", this.node_info)
             let stake_balance = this.bn(this.node_info[2])
             let owned_balance = this.bn(await CallToken("balanceOf", [nodeid]))
 
