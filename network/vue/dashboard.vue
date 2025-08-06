@@ -1,8 +1,8 @@
 <template id="dashboard">
     <div class="dashboard prenet">
         <div class="title row">
-            <h1>Epoch <% currentEpoch %> Dashboard</h1>
-            <div class="subtitle">Registry Version <% registryVersion %></div>
+            <h1>Epoch <span v-if="currentEpoch === '...'" class="loading-state">Loading</span><span v-else><% currentEpoch %></span> Dashboard</h1>
+            <div class="subtitle">Registry Version <span v-if="registryVersion === '...'" class="loading-state">Loading</span><span v-else><% registryVersion %></span></div>
         </div>
         <div class="page-content">
             <!-- Stats Summary -->
@@ -13,12 +13,12 @@
                 </div>
                 <div class="stat-box">
                     <h3>Staked Fleet Balance</h3>
-                    <div class="stat-value"><% totalBalance %> DIODE</div>
+                    <div class="stat-value"><% formatBalance(totalBalance) %> DIODE</div>
                 </div>
-                <div class="stat-box">
+                <!--div class="stat-box">
                     <h3>Total Bandwidth</h3>
-                    <div class="stat-value"><% totalScore.div(web3.utils.toBN(1024*1024*1024*1024)).toString() %> TB</div>
-                </div>
+                    <div class="stat-value"><% formatBandwidth(totalScore) %></div>
+                </div-->
             </div>
 
             <!-- Main Content Grid -->
@@ -29,46 +29,28 @@
                     <table class="scores">
                         <thead>
                             <tr>
-                                <th>Fleet Address</th>
-                                <th>Balance</th>
-                                <th>Score</th>
+                                <th>Fleet</th>
+                                <th>Staked Balance</th>
+                                <!--<th>Score</th>-->
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="fleet in fleets" :key="fleet.address">
-                                <td>
+                                <td style="display: flex; align-items: center; gap: 10px; overflow: clip;">
+                                    <img v-if="fleet.icon" :src="'network/' + fleet.icon" class="fleet-icon" style="width: 2em;"/>
                                     <a :href="'https://moonscan.io/address/' + fleet.address" target="_blank">
-                                        <% formatAddr(fleet.address, 'full') %>
+                                        <% fleet.name %>
                                     </a>
                                 </td>
                                 <td><% valueToBalance(fleet.currentBalance) %></td>
-                                <td><% formatNumber(fleet.score) %></td>
+                                <!--<td><% formatNumber(fleet.score) %></td>-->
                             </tr>
                         </tbody>
                     </table>
-
-                    <!-- Fleet Distribution Chart -->
-                    <div class="chart-container">
-                        <h3>Balance Distribution</h3>
-                        <svg id="fleet-chart" width="100%" height="300">
-                            <g :transform="'translate(' + width/3 + ',150)'">
-                                <path v-for="(slice, index) in pieSlices" 
-                                      :d="slice.path"
-                                      :fill="getColor(index)"
-                                      :key="index"
-                                      @mouseover="showTooltip($event, slice)"
-                                      @mouseout="hideTooltip()">
-                                </path>
-                            </g>
-                        </svg>
-                        <div class="tooltip" v-show="tooltipVisible" :style="tooltipStyle">
-                            <div><% tooltipContent %></div>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Right Column - Relay Nodes -->
-                <div class="relay-column">
+                <!-- div class="relay-column">
                     <h2>Relay Nodes</h2>
                     <table class="scores">
                         <thead>
@@ -95,7 +77,7 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div -->
             </div>
         </div>
     </div>
@@ -190,12 +172,17 @@ var Dashboard = Vue.component("dashboard", {
                     withdrawRequestSize: fleet.withdrawRequestSize,
                     withdrawableBalance: fleet.withdrawableBalance,
                     currentEpoch: fleet.currentEpoch,
-                    score: fleet.score
-                }));
+                    score: fleet.score,
+                    icon: getFleet(fleetAddresses[index]).icon,
+                    name: getFleet(fleetAddresses[index]).name
+                })).sort((a, b) => b.currentBalance - a.currentBalance);
 
                 // Calculate totals
-                this.totalBalance = this.fleets.reduce((sum, fleet) => 
-                    sum + web3.utils.fromWei(fleet.currentBalance), 0);
+                let totalBalance = this.fleets.reduce((sum, fleet) => 
+                    sum.add(web3.utils.toBN(fleet.currentBalance)), web3.utils.toBN(0));
+                
+                this.totalBalance = web3.utils.fromWei(totalBalance.toString());
+
                 this.totalScore = this.fleets.reduce((sum, fleet) => 
                     sum.add(web3.utils.toBN(fleet.score)), web3.utils.toBN(0));
 
@@ -283,66 +270,140 @@ var Dashboard = Vue.component("dashboard", {
         },
         formatNumber(value) {
             return formatNumber(value);
+        },
+        formatBalance(value) {
+            // Format large numbers with proper thousands separators
+            const num = parseFloat(value);
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(2) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num.toFixed(2);
+        },
+        formatBandwidth(totalScore) {
+            try {
+                // Simple, safe calculation: divide by 1024^4 for TB
+                const tb = totalScore.div(web3.utils.toBN(1024*1024*1024*1024));
+                
+                if (tb.gt(web3.utils.toBN(0))) {
+                    // Use formatNumber for comma formatting
+                    return this.formatNumber(tb.toString()) + ' TB';
+                } else {
+                    // Show in GB for smaller values
+                    const gb = totalScore.div(web3.utils.toBN(1024*1024*1024));
+                    return this.formatNumber(gb.toString()) + ' GB';
+                }
+            } catch (error) {
+                console.error('Error formatting bandwidth:', error);
+                return '0 TB';
+            }
         }
     }
 });
 </script>
 
 <style scoped>
-.dashboard { 
+.dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .title {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 20px 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .title h1 {
+        font-size: 2.5em;
+        color: #1a2942;
+        margin: 0;
+        font-weight: 700;
+    }
 
     .dashboard-grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
+        display: flex;
+        x-display: grid;
+        x-grid-template-columns: minmax(600px, 2fr) minmax(400px, 1fr);
         gap: 30px;
         margin-top: 30px;
     }
 
+    @media (max-width: 1200px) {
+        .dashboard-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
     .fleet-column, .relay-column {
         background: #fff;
-        border-radius: 12px;
-        padding: 24px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 16px;
+        padding: 32px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        border: 1px solid #f0f0f0;
+        transition: box-shadow 0.3s ease;
     }
 
-    .fleet-column {
-        min-width: 300px;
-    }
-
-    .relay-column {
-        min-width: 600px;
+    .fleet-column:hover, .relay-column:hover {
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     }
 
     .stats-summary {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        margin: 20px 0;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin: 30px 0;
+    }
+
+    @media (max-width: 768px) {
+        .stats-summary {
+            grid-template-columns: 1fr;
+        }
     }
 
     .stat-box {
-        background: #fff;
-        padding: 24px;
-        border-radius: 12px;
+        background: linear-gradient(135deg, #fff 0%, #f8f9fb 100%);
+        padding: 32px 24px;
+        border-radius: 16px;
         text-align: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        transition: transform 0.2s;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        border: 1px solid #f0f0f0;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stat-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #4ECDC4, #45B7D1);
     }
 
     .stat-box:hover {
-        transform: translateY(-2px);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     }
 
     .stat-box h3 {
         color: #1a2942;
-        margin-bottom: 10px;
+        margin-bottom: 16px;
         font-size: 1.1em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
     .stat-value {
-        font-size: 28px;
-        font-weight: bold;
+        font-size: 32px;
+        font-weight: 700;
         color: #2c4167;
+        line-height: 1.2;
     }
 
     .chart-container {
@@ -354,16 +415,30 @@ var Dashboard = Vue.component("dashboard", {
     .fleet-score {
         display: flex;
         justify-content: space-between;
-        padding: 2px 0;
-        font-size: 0.9em;
+        align-items: center;
+        padding: 8px 12px;
+        margin: 4px 0;
+        background: #f8f9fb;
+        border-radius: 8px;
+        font-size: 0.85em;
+        border-left: 3px solid #4ECDC4;
+        transition: all 0.2s ease;
+    }
+
+    .fleet-score:hover {
+        background: #e8f4f8;
+        transform: translateX(2px);
     }
 
     .fleet-label {
-        margin-right: 10px;
+        font-weight: 500;
+        color: #1a2942;
     }
 
     .score-value {
-        color: #2c3e50;
+        color: #2c4167;
+        font-weight: 600;
+        font-family: 'Monaco', 'Consolas', monospace;
     }
 
     .tooltip {
@@ -380,36 +455,44 @@ var Dashboard = Vue.component("dashboard", {
 
     table.scores {
         width: 100%;
-        margin-top: 10px;
-        font-size: 0.9em;
+        margin-top: 20px;
+        font-size: 0.95em;
         border-collapse: separate;
         border-spacing: 0;
-        border-radius: 8px;
+        border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        border: 1px solid #f0f0f0;
     }
 
     table.scores th {
-        background: #1a2942;
+        background: linear-gradient(135deg, #1a2942 0%, #2c4167 100%);
         color: white;
-        padding: 12px;
+        padding: 16px 20px;
         text-align: left;
         font-weight: 600;
         letter-spacing: 0.5px;
-        border-bottom: 2px solid #2c4167;
         text-transform: uppercase;
-        font-size: 1.1em;
+        font-size: 0.9em;
+        position: relative;
     }
 
-    table.scores thead tr {
-        background: #1a2942;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    table.scores th::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #4ECDC4, #45B7D1);
     }
 
     table.scores td {
-        padding: 12px;
-        border-bottom: 1px solid #eee;
+        padding: 16px 20px;
+        border-bottom: 1px solid #f5f5f5;
         background: #fff;
+        transition: background-color 0.2s ease;
+        vertical-align: top;
     }
 
     table.scores tr:last-child td {
@@ -417,24 +500,72 @@ var Dashboard = Vue.component("dashboard", {
     }
 
     table.scores tr:hover td {
-        background: #f8f9fa;
+        background: #f8f9fb;
+    }
+
+    table.scores td a {
+        color: #45B7D1;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    table.scores td a:hover {
+        color: #2c4167;
+        text-decoration: underline;
     }
 
     h2 {
-        margin: 0;
-        color: #2c3e50;
-        font-size: 1.5em;
+        margin: 0 0 20px 0;
+        color: #1a2942;
+        font-size: 1.8em;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, #4ECDC4, #45B7D1);
+        border-radius: 2px;
     }
 
     h3 {
-        color: #2c3e50;
-        font-size: 1.2em;
+        color: #1a2942;
+        font-size: 1.3em;
+        font-weight: 600;
+        margin: 20px 0 15px 0;
     }
 
     .subtitle {
-        color: #666;
-        font-size: 0.8em;
-        margin-left: 15px;
+        color:rgb(224, 224, 224);
+        font-size: 1em;
+        margin-top: 8px;
+        font-weight: 400;
+    }
+
+    .loading-state {
+        display: inline-flex;
+        align-items: center;
+        color:rgb(224, 224, 224);
+        font-style: italic;
+    }
+
+    .loading-state::after {
+        content: '...';
+        animation: loading-dots 1.5s infinite;
+    }
+
+    @keyframes loading-dots {
+        0%, 20% { content: ''; }
+        40% { content: '.'; }
+        60% { content: '..'; }
+        80%, 100% { content: '...'; }
     }
 }
 </style> 
