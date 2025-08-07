@@ -13,7 +13,7 @@ image: 	assets/img/blog/collab product update.jpg
 July brought a new round of improvements to the Diode Collab app - the following updates are live in versions v1.17.10 to v1.17.13!
 
 **ICP Support for Join & Chat Attachments**
-<br>Diode now uses Internet Computer Protocol (ICP) canisters and vetKeys to enable secure Zone joining and chat attachment syncing, even when no existing members are online, by validating membership through ChainFusion and providing decryption keys through the Zone smart contract.  
+<br>Diode now uses Internet Computer Protocol (ICP) canisters and vetKeys to enable secure Zone joining and chat attachment syncing, even when no existing members are online, by validating membership through ChainFusion and providing decryption keys through the Zone smart contract. You must be using a paid Zone to add Canister support - contact Diode to enable. 
 
 **"View All" Conversations**
 <br>A “View all conversations” link now appears in DMs, letting you see all chats with a contact across Zones and jump to the right one.
@@ -35,7 +35,7 @@ July brought a new round of improvements to the Diode Collab app - the following
 
 **Bug Fixes** 
 <br>
-The team addressed various bugs including fixing PIN issues, accidental pause of filing syncing, push notifications only be available to members accepted to a Zone, and the quicker validation of join codes.
+The team addressed various bugs including fixing a PIN entry issue, accidental pause of filing syncing, restricted push notifications to active members of a Zone, and sped up validation of join codes.
 
 If you want to read more about the specifics of each update and read through the additional updates, go to our [App Versions](https://app.docs.diode.io/docs/versions/1-17-11/) page and check out the specific version details.
 

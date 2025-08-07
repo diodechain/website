@@ -14,6 +14,10 @@ const Fleetlist = {
     "0x51246d0595Ea5a55673311F3ae32704398017132": {
         "name": "Chronara",
         "icon": "img/chronara.png"
+    },
+    "0x0d3b95b38846Fa77997e3A56ff06aBDcd4D5d902": {
+        "name": "Diode Collab",
+        "icon": "img/collab.png"
     }
 }
 
