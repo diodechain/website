@@ -63,11 +63,11 @@ protected:
   title: 
   heading: World's most secure team messaging app
   content: |
-    Your team can chat, share files, and browse securely in a private network that distributes across global nodes. 
+    Your team can chat, share files, and browse securely in a private network. 
 
     No servers or phone numbers are needed, and all data is end-to-end encrypted and fully controlled by you.
 
-    Whether working remotely or in the same room, your communications stay private without VPN risks or third-party access.
+    Whether working remotely or in the same room, your communications stay private without being exposed to any server or vendor.
   image:
     src: story/app-homepage.webp
     alt: Protected no matter what
@@ -79,11 +79,11 @@ anywhere:
   title: 
   heading: Private and secure file sharing
   content: |
-    Send and receive sensitive files directly without uploading to third party servers. 
+    Send and receive sensitive files directly without uploading to third party servers.  Files travel only between you and the recipient, fully end-to-end encrypted.
 
-    Files travel only between you and the recipient, fully end-to-end encrypted and under your control.
-  
-    Set custom access permissions for your team, or share via a web browser link. Start in minutes - no IT setup, no maintenance, and no compromises on privacy.
+    Diode is different - even your team membership, permissions, and other access controls are fully under your - and only your - control.
+
+    Start in minutes - no IT setup, no maintenance, and no compromises on privacy.
   image:
     src: story/file_sharing.webp
     alt: Protected no matter what
@@ -95,11 +95,11 @@ developers:
   class: "story--homepage"
   animated: false
   title:  
-  heading: Safer than VPNs for accessing tools
+  heading: Safer than a VPN for accessing tools
   content: |
-    Access remote applications and assets without leaking information about your session.  
+    Remotely access applications, servers, and OT assets without exposing data, or even session information, to the Internet.  
     
-    Diode works in every region.  You can connect directly to your tools (without touching the public Internet), or always from a safe country - all from bookmarks in your Zone. 
+    Diode works in every region.  You can connect end-to-end encrypted to your tools, or use a safe "regional exit" - all from bookmarks in your Zone. 
 
     No matter if your tool is remote equipment, or a SaaS app like Microsoft Teams, secure access for the team is just one click away.
   image:
