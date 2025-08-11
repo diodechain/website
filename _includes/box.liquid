@@ -27,13 +27,6 @@
             <div class="col col-12 col-md-10 col-lg-8 col-xxl-6">
                 <div class="box__content">
                     {{ data.content | markdownify }}
-                    {%- if data.buttons -%}
-                        <div class="box__buttons">
-                            {% for button in data.buttons %}
-                                <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
                 </div>
             </div>
         {% endif %}
@@ -67,6 +60,13 @@
                     </section>
                 </div>
             {% endfor %}
+        {% endif %}
+        {%- if data.buttons -%}
+            <div class="box__buttons">
+                {% for button in data.buttons %}
+                    <a href="{{ button.url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                {% endfor %}
+            </div>
         {% endif %}
     </div>
 </section>

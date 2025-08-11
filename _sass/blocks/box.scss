@@ -87,7 +87,7 @@
       margin-top: 40px;
     }
     @include media-breakpoint-up(xl) {
-      margin-top: 70px;
+      margin-top: 40px;
       margin-bottom: 16px;
     }
   }
@@ -329,13 +329,88 @@
     }
   }
 
+&--headline {
+    font-size: 15px;
+    line-height: 16px;
+    position: relative;
+    z-index: 1;
+    @include media-breakpoint-up(md) {
+      font-size: 17px;
+      line-height: 18px;
+    }
+    @include media-breakpoint-up(xl) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      font-size: 22px;
+      line-height: 24px;
+      .box__content {margin: 0 -65px;}
+      .box__heading {margin-bottom: 40px;}
+    }
+    &::before {
+      @include pseudo;
+      width: 352px;
+      height: 528px;
+      margin-left: -50vw;
+      display: none;
+      position: absolute;
+      top: -88px;
+      left: 50%;
+      z-index: -1;
+      background: url('#{$img}/pattern.svg') no-repeat bottom left;
+      background-size: 535px auto;
+      opacity: .6;
+      transform: rotate(-90deg);
+      @include media-breakpoint-up(lg) {
+        display: block;
+      }
+    }
+  }
+
+  &--cta {
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include media-breakpoint-up(md) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @include media-breakpoint-up(xl) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    &::before {
+      @include pseudo;
+      width: 352px;
+      height: 528px;
+      margin-left: -50vw;
+      display: none;
+      position: absolute;
+      top: -88px;
+      left: 50%;
+      z-index: -1;
+      background: url('#{$img}/pattern.svg') no-repeat bottom left;
+      background-size: 535px auto;
+      opacity: .6;
+      transform: rotate(-90deg);
+      @include media-breakpoint-up(lg) {
+        display: block;
+      }
+
+      .box__button {
+        margin:100px;
+        }
+    }
+  }
+
   &--testimonials {
     position: relative;
     z-index: 1;
     padding-top: 50px;
     padding-bottom: 50px;
+    margin-top: 20px;
     @include media-breakpoint-up(xl) {
-      margin-top: 100px;
+      margin-top: 50px;
     }
     @include media-breakpoint-up(xxl) {
       padding-bottom: 50px;

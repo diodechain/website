@@ -50,6 +50,7 @@ textarea.form-control {
   background: $color-orange;
   transition: color $effect-s, border-color $effect, background-color $effect;
   outline: none;
+  margin-right:20px;
   @include media-breakpoint-up(md) {
     min-width: 189px;
     padding: 14px 28px;

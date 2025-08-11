@@ -5,10 +5,10 @@
   margin-bottom: 80px;
   padding-top: 20px;
   @include media-breakpoint-up(md) {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
   }
   @include media-breakpoint-up(xl) {
-    margin-bottom: 120px;
+    margin-bottom: 80px;
   }
 
   .main > .container > &:last-child {
@@ -369,7 +369,10 @@
       @include media-breakpoint-up(xxl) {
         margin-bottom: -100px;
         img {
-          width: 1220px;
+          max-height: 500px;      /* or any value you prefer */
+          width: auto;            /* preserves aspect ratio */
+          max-width: 1220px;        /* prevents overflow, responsive */
+          height: auto;           /* ensures proportionate scaling */
         }
       }
     }
@@ -397,6 +400,7 @@
         margin-bottom: -100px;
         img {
           width: 1220px;
+          max-height: 600px;
         }
       }
     }
@@ -404,6 +408,23 @@
     & + .story + .story {
       @include media-breakpoint-up(xl) {
         margin-bottom: 110px;
+      }
+    }
+  }
+
+
+  // centered version
+  &--centered {
+    .story__image {
+      justify-content: center;  /* centers items horizontally */
+      align-items: center;      /* centers items vertically */
+      @include media-breakpoint-up(lg) {
+        width: 50vw;
+        margin-left: -15px;
+        overflow: hidden;
+      }
+      @include media-breakpoint-up(xxl) {
+        margin-bottom: -100px;
       }
     }
   }

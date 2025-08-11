@@ -11,44 +11,42 @@ hero:
   class: hero--homepage
   animated: true
   heading: Privacy-first collaboration
-  subheading: Messaging and remote access for executives, expats, and ops teams - for when security is paramount.
+  subheading: Messaging and remote access for ops teams, executives, and expats - for when security is essential.
   buttons:
-  - title: Request Demo
-    url: "https://diodedemo.paperform.co/"
-  - title: Learn More
-    class: btn--bordered
-    url: "/products/collab/"
+  - title: GET THE APP
+    url: "#download-app"
+    class: popup-open
   image: hero/home.webp
 
 
 ### Box: Why Diode
-why-diode:
-  class: box--orange
-  animated: false
-  title: Protect your organization, and yourself, against risks from cyber threats
-  heading: "\"I trust Diode for private messaging and secure access to the web and corporate resources\" <br><br>- VP, Multinational"
-  solutions:
-  - title: Guarantee Privacy
-    icon: icons/vault.svg
-    content: You collaborate with trusted advisors every day. In your line of work, it is essential that those discussions and documents remain strictly private - from cybercriminals, nation-states, and other threat actors.
-    button:
-      title: Request Demo
-      class: "btn--blank btn--arrow"
-      url: "https://diodedemo.paperform.co/"
-  - title: Global Access
-    icon: icons/cli.svg
-    content: No matter where you go in the world, protected access to the Internet, corporate assets, and team members is seamlessly delivered with Diode.  There are few things more frustrating than to lose access to your team, tools, or family members when abroad.
-    button:
-      title: FIND OUT MORE
-      class: "btn--blank btn--arrow"
-      url: "/products/collab/"
-  - title: Regulated Data
-    icon: icons/app.svg
-    content: With privacy laws like GDPR and HIPAA, and oversight by regional regulatory authorities including the SEC, HHS, and other geopolitical-specific bodies, it is key that you do everything possible to avoid a breach of protected data.
-    button:
-      title: CONTACT SALES
-      class: "btn--blank btn--arrow"
-      url: "https://contactdiode.paperform.co/"
+#why-diode:
+#  class: box--orange
+#  animated: false
+#  title: Protect your organization, and yourself, against risks from cyber threats
+#  heading: "\"I trust Diode for private messaging and secure access to the web and corporate resources\" <br><br>- #VP, Multinational"
+#  solutions:
+#  - title: Guarantee Privacy
+#    icon: icons/vault.svg
+#    content: You collaborate with trusted advisors every day. In your line of work, it is essential that those #discussions and documents remain strictly private - from cybercriminals, nation-states, and other threat actors.
+#    button:
+#      title: Request Demo
+#      class: "btn--blank btn--arrow"
+#      url: "https://diodedemo.paperform.co/"
+#  - title: Global Access
+#    icon: icons/cli.svg
+#    content: No matter where you go in the world, protected access to the Internet, corporate assets, and team #members is seamlessly delivered with Diode.  There are few things more frustrating than to lose access to your #team, tools, or family members when abroad.
+#    button:
+#      title: FIND OUT MORE
+#      class: "btn--blank btn--arrow"
+#      url: "/products/collab/"
+#  - title: Regulated Data
+#    icon: icons/app.svg
+#    content: With privacy laws like GDPR and HIPAA, and oversight by regional regulatory authorities including the #SEC, HHS, and other geopolitical-specific bodies, it is key that you do everything possible to avoid a breach of vprotected data.
+#    button:
+#      title: CONTACT SALES
+#      class: "btn--blank btn--arrow"
+#      url: "https://contactdiode.paperform.co/"
 
 
 ### Box: Designed
@@ -56,7 +54,6 @@ designed:
   class: "box--network"
   animated: false
   title: Designed for collaboration where security is essential.
-
   
 
 ### Story: Fort Knox protection
@@ -64,16 +61,13 @@ protected:
   class: "story--homepage"
   animated: false
   title: 
-  heading: Communicate securely <br/>across organizations
+  heading: World's most secure team messaging app
   content: |
-    You discuss sensitive matters with your team, as well as with trusted advisors outside of your organization. 
+    Your team can chat, share files, and browse securely in a private network that distributes across global nodes. 
 
-    Strict confidentiality in discussions with lawyers, advisors, and consultants is essential to protect your projects.
+    No servers or phone numbers are needed, and all data is end-to-end encrypted and fully controlled by you.
 
-    With Diode, only the people included in the communication have access to the messages.  It is like having a VPN tunnel between each team member.
-  buttons:
-  - title: Request Demo
-    url: "https://diodedemo.paperform.co/"
+    Whether working remotely or in the same room, your communications stay private without VPN risks or third-party access.
   image:
     src: story/app-homepage.webp
     alt: Protected no matter what
@@ -83,16 +77,13 @@ protected:
 anywhere:
   animated: false
   title: 
-  heading: File sharing without cloud storage
+  heading: Private and secure file sharing
   content: |
-    You need to share files, sometimes even sensitive ones, as you collaborate with your peers.  
+    Send and receive sensitive files directly without uploading to third party servers. 
 
-    Email attachments are convenient, but not secure enough - you know unintended disclosure can lead to regulatory issues.
+    Files travel only between you and the recipient, fully end-to-end encrypted and under your control.
   
-    With Diode's decentralized architecture, you can share files directly with your team - neither Diode, nor anyone else, has access to them. 
-  buttons:
-  - title: Learn More
-    url: "/products/collab/"
+    Set custom access permissions for your team, or share via a web browser link. Start in minutes - no IT setup, no maintenance, and no compromises on privacy.
   image:
     src: story/file_sharing.webp
     alt: Protected no matter what
@@ -104,19 +95,27 @@ developers:
   class: "story--homepage"
   animated: false
   title:  
-  heading: Safer than VPNs for accessing applications
+  heading: Safer than VPNs for accessing tools
   content: |
-    You need access to various applications when working remotely - from home or around the world.
+    Access remote applications and assets without leaking information about your session.  
     
-    GMail, Dropbox, and the like just don’t have end-to-end encrypted security like we provide. 
+    Diode works in every region.  You can connect directly to your tools (without touching the public Internet), or always from a safe country - all from bookmarks in your Zone. 
 
-    With Diode, you can tunnel directly to your tools, or ensure you are always accessing them from a "safe" region - all from bookmark links built into the app.
-  buttons:
-  - title: Contact Sales
-    url: "https://contactdiode.paperform.co/"
+    No matter if your tool is remote equipment, or a SaaS app like Microsoft Teams, secure access for the team is just one click away.
   image:
     src: story/network-full.webp
     alt: Diode Collab&trade;
+
+
+### Box: reclaim
+reclaim:
+  class: "box--cta"
+  animated: false
+  title: Reclaim your digital sovereignty - download today 
+  buttons:
+  - title: GET THE APP
+    url: "#download-app"
+    class: popup-open
 
 
 
@@ -142,41 +141,42 @@ testimonials:
     author: Josh, YetiCGI
 
 
+### Box: CTAS
+reluctant-ctas:
+  class: "box--cta"
+  animated: false
+  title: 
+  buttons:
+  - title: HOW IT WORKS
+    url: "/how-it-works/"
+  - title: GET A DEMO
+    url: "https://diodedemo.paperform.co/"
+
+
 ### Box: Our solutions
 solutions:
   class: box--orange
   animated: false
   heading: What makes Diode different?
   solutions:
-  - title: No cloud storage
+  - title: Works in every region
     icon: icons/app.svg
-    content: The cloud is great. But hackers and malicious actors love it too. We never store any of your messages or files in the cloud. That’s our decentralized technology at work.
-    button:
-      title: Contact Sales
-      class: "btn--blank btn--arrow"
-      url: "https://contactdiode.paperform.co/"
-  - title: Highly secure (256bit E2EE)
+    content: Diode works everywhere, even in sensitive regions.  Operate securely when traveling and with regional partners no matter the Internet situation.  Encryption on disk and safety profiles provide physical security.
+  - title: Only you have access to your data
     icon: icons/cli.svg
-    content: From the beginning, Diode has been designed using world-changing technology to ensure privacy and security in your communications and sharing. No compromises.
-    button:
-      title: Find Out More
-      class: "btn--blank btn--arrow"
-      url: "/products/cli/"
-  - title: No access to your data
+    content: Unlike other team messaging apps that break encryption at the server, Diode Collab uses end-to-end encryption for message, files, and connections.  Not even Diode has access to your data.
+  - title: Anonymous accounts
     icon: icons/vault.svg
-    content: Diode never has access to any of your messages or files that you and your team share. This provides you with another level of security that most providers can’t offer.
-    button:
-      title: Request Demo
-      class: "btn--blank btn--arrow"
-      url: "https://diodedemo.paperform.co/"
-
+    content: Diode only requires a username - it never asks for phone numbers, emails, or any personal details.  Access is managed through decentralized credentials that you control.  Full digital ownership from day one.
 
 
 ---
 
 {%- include hero.liquid -%}
 
+{% comment %}
 {%- include box.liquid data="why-diode" -%}
+{% endcomment %}
 
 {%- include box.liquid data="designed" -%}
 
@@ -186,7 +186,11 @@ solutions:
 
 {%- include story.liquid data="developers" -%}
 
+{%- include box.liquid data="reclaim" -%}
+
 {%- include box.liquid data="testimonials" -%}
+
+{%- include box.liquid data="reluctant-ctas" -%}
 
 {%- include box.liquid data="solutions" -%}
 
