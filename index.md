@@ -63,7 +63,7 @@ protected:
   title: 
   heading: World's most secure team messaging app
   content: |
-    Your team can chat, share files, and browse securely in a private network whose only data exposure is on your end devices. 
+    Your team can chat, share files, and browse securely in a private network - your only data exposure is on your end devices. 
 
     No servers or phone numbers are needed, and all data is end-to-end encrypted and fully controlled by you.
 
