@@ -127,17 +127,17 @@ testimonials:
   quotes:
   - quote: Diode unlocks our training software for use in regulated and sensitive environments.
     author: Erich, CEO Compendium
-  - quote: I am migrating to Diode to have secure remote control capabilities for our building systems.
+  - quote: I use Diode for secure remote control capabilities for our building systems.
     author: Ettoire, Modosmart
   - quote: Diode's response to my support requests highlights how much they really care about all of their customers.
     author: Krista, RPG
   - quote: Diode just works.
     author: Joey, Exosite
-  - quote: We are able to deploy remote MES components and equipment that are fully GDPR compliant and have now created a Diode-based product line.
+  - quote: We can now deploy remote MES components and equipment that are fully GDPR compliant - we have created a Diode-based product line.
     author: Omer, Dera Technologies
-  - quote: We use Diode to securely administrate our network and for financial interactions with portfolio companies.
+  - quote: Diode has enabled us to securely administrate our network and to do private financial diligence with portfolio companies.
     author: Eric, Global Enterprise Network
-  - quote: Diode allows us to move quickly while protecting the communities and industries we serve.
+  - quote: Diode allows us to move quickly without sacrificing security for the communities and industries we serve.
     author: Josh, YetiCGI
 
 
@@ -170,6 +170,18 @@ solutions:
     content: Diode Collab only requires a username - no phone number, email, or any personal details are required.  Access is managed through decentralized credentials that you control - it is full digital ownership from day one.
 
 
+### Box: IT people
+it-people:
+  class: "box--cta"
+  animated: false
+  title: <br><br>Just want to use the network or build your own app?
+  buttons:
+  - title: LEARN ABOUT THE NETWORK
+    url: "/products/network/"
+  - title: CLI DOCS
+    url: "https://cli.docs.diode.io"
+
+
 ---
 
 {%- include hero.liquid -%}
@@ -193,4 +205,6 @@ solutions:
 {%- include box.liquid data="reluctant-ctas" -%}
 
 {%- include box.liquid data="solutions" -%}
+
+{%- include box.liquid data="it-people" -%}
 

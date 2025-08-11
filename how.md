@@ -48,7 +48,7 @@ features:
   - title: Visibility
     content: Clients publish resources via the Diode Network and can do so publicly, privately (allow list), or protected (Zone/Fleet).  Diode’s Blockchain Name System can be used for Client friendly names, and Kademlia routing is used to optimize routes.
     buttons:
-    - title: BROWSE THE NETWORK
+    - title: VISIT THE NETWORK
       url: "https://diodenetwork.io/"
       target: _blank
     - title: SCHEDULE A DEMO
