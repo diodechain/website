@@ -63,11 +63,11 @@ protected:
   title: 
   heading: World's most secure team messaging app
   content: |
-    Your team can chat, share files, and browse securely in a private network. 
+    Your team can chat, share files, and browse securely in a private network whose only data exposure is on your end devices. 
 
     No servers or phone numbers are needed, and all data is end-to-end encrypted and fully controlled by you.
 
-    Whether working remotely or in the same room, your communications stay private without being exposed to any server or vendor.
+    Whether working remotely or in the same room, your collaborations stay private and digitally sovereign.
   image:
     src: story/app-homepage.webp
     alt: Protected no matter what
@@ -125,19 +125,19 @@ testimonials:
   animated: false
   title: What teams are saying
   quotes:
-  - quote: Diode is an amazing technology and product - it unlocks our software for use in regulated and sensitive environments.
+  - quote: Diode unlocks our training software for use in regulated and sensitive environments.
     author: Erich, CEO Compendium
-  - quote: I really like the approach you are taking at **diode.io** and am migrating to Diode to have secure remote control capabilities.
+  - quote: I am migrating to Diode to have secure remote control capabilities for our building systems.
     author: Ettoire, Modosmart
   - quote: Diode's response to my support requests highlights how much they really care about all of their customers.
     author: Krista, RPG
   - quote: Diode just works.
     author: Joey, Exosite
-  - quote: Diode has changed the way we do business - we are able to deploy MES components and environments fully GDPR compliant and have created a Diode-based product line.
+  - quote: We are able to deploy remote MES components and equipment that are fully GDPR compliant and have now created a Diode-based product line.
     author: Omer, Dera Technologies
-  - quote: We are now using Diode for both our administration of the network and for our financial interactions with portfolio companies.  This tool has changed how we do business.
+  - quote: We use Diode to securely administrate our network and for financial interactions with portfolio companies.
     author: Eric, Global Enterprise Network
-  - quote: Diode allows us to move quickly while achieving the level of information protection for the communities and industries we serve.
+  - quote: Diode allows us to move quickly while protecting the communities and industries we serve.
     author: Josh, YetiCGI
 
 
@@ -161,13 +161,13 @@ solutions:
   solutions:
   - title: Works in every region
     icon: icons/app.svg
-    content: Diode works everywhere, even in sensitive regions.  Operate securely when traveling and with regional partners no matter the Internet situation.  Encryption on disk and safety profiles provide physical security.
+    content: Diode works everywhere, even in sensitive regions.  Your team can operate securely when traveling and when interacting with regional partners no matter their location.  Encryption on disk and safety profiles provide physical security.
   - title: Only you have access to your data
     icon: icons/cli.svg
-    content: Unlike other team messaging apps that break encryption at the server, Diode Collab uses end-to-end encryption for message, files, and connections.  Not even Diode has access to your data.
+    content: Unlike other team messaging apps that break encryption at the server, Diode Collab uses end-to-end encryption for message, files, and connections.  Not even Diode has access to your data, accounts, or configurations.
   - title: Anonymous accounts
     icon: icons/vault.svg
-    content: Diode only requires a username - it never asks for phone numbers, emails, or any personal details.  Access is managed through decentralized credentials that you control.  Full digital ownership from day one.
+    content: Diode Collab only requires a username - no phone number, email, or any personal details are required.  Access is managed through decentralized credentials that you control - it is full digital ownership from day one.
 
 
 ---
