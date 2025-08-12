@@ -81,7 +81,7 @@ anywhere:
   content: |
     Send and receive sensitive files directly without uploading to third party servers.  Files travel only between you and the recipient, fully end-to-end encrypted.
 
-    Diode is different - even your team membership, permissions, and other access controls are fully under your - and only your - control.
+    Diode is different - even your team membership, permissions, and access controls are fully under your - and only your - control.
 
     Start in minutes - no IT setup, no maintenance, and no compromises on privacy.
   image:
