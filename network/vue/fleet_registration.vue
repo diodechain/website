@@ -180,9 +180,17 @@
         <div v-if="enabled && contracts && contracts.length > 0" class="card">
           <div class="mb-6">
             <h2 class="font-medium">Devices</h2>
-            <p class="text-sm text-gray mt-4">
-              Fleet: <span class="font-mono"><% contract ? contract.substring(0, 8) + '...' + contract.substring(contract.length - 6) : '' %></span>
-            </p>
+            <div class="account-name flex">
+              <p class="text-sm text-gray mt-4">
+                Fleet: <span class="font-mono"><% contract %></span>
+              </p>
+              <button 
+                class="copy-button"
+                @click="copyToClipboard(contract)"
+              >
+                <i class="pe-7s-copy-file" style="font-size: 16px;"></i>
+              </button>
+            </div>
           </div>
 
           <div class="mb-6">
