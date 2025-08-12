@@ -12,7 +12,7 @@ const Fleetlist = {
         "icon": "img/orenda.png"
     },
     "0x5bC162CA6f78a07713Ec6038999eA6c9844A24a2": {
-        "name": "Chronara",
+        "name": "Chronara AI",
         "icon": "img/chronara.png"
     },
     "0x0d3b95b38846Fa77997e3A56ff06aBDcd4D5d902": {
