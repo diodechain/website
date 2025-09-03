@@ -92,7 +92,7 @@ social:
 # Download Links
 download:
   app:
-    macos: "https://download.diode.io/downloads/collab/dDrive-1.17.17.dmg"
+    macos: "https://download.diode.io/downloads/collab/dDrive-1.17.20.dmg"
     macos-checksum:
     windows: "https://download.diode.io/downloads/collab/dDrive-1.17.17.exe"
     windows-checksum:
