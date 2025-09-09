@@ -19,14 +19,28 @@ nav:
       // setTimeout(function() { window.location.href = "ddrive://invite/" + code }, 2000);
   }
 
+  // Helper function to strip leading/trailing spaces from text
+  function stripSpaces(str) {
+    return str.replace(/^\s+|\s+$/g, '');
+  }
+
   function CopyToClipboard(id)
   {
-    var r = document.createRange();
-    r.selectNode(document.getElementById(id));
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(r);
+    var el = document.getElementById(id);
+    // Get the text content and strip leading/trailing spaces
+    var text = stripSpaces(el.textContent || el.innerText || "");
+    // Create a temporary textarea to copy the stripped text
+    // If the element contains a <script>, extract only the code variable
+    if (el.querySelector && el.querySelector('script')) {
+      text = code;
+    }
+    var tempInput = document.createElement("textarea");
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
     document.execCommand('copy');
-    window.getSelection().removeAllRanges();
+    document.body.removeChild(tempInput);
+
     document.querySelector("#notify").style.display = "";
     setTimeout(function(){
       document.querySelector("#notify").style.display = "none";
@@ -57,5 +71,4 @@ nav:
     <a href="#download-app" class="btn popup-open" target="">{{ site.links.download.title }}</a>
   </div>
 </div>
-
 
