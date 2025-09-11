@@ -13,7 +13,7 @@ hero:
   image: hero/download.webp
 
 thanks:
-  title: Here are some links to help you get started
+  title: Some links to help you get started
   items:
   - title: Setup Diode Collab
     link: https://app.docs.diode.io/docs/
