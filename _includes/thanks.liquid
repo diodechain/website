@@ -4,40 +4,70 @@
     {% assign data = page.thanks %}
 {% endif %}
 
-<h3 class="thanks__title">Subscribe to customer stories and app updates</h3>
-<p class="thanks__title--small">We promise to only send you valuable content!</p>
-<script src='https://diode-729427091830296891.myfreshworks.com/crm/sales/web_forms/2ba3246bf91fd7da70dc4a6ac8c320f4c9a947dc7f2c4c0adf50775967b46621/form.js' crossorigin='anonymous' id='fs_2ba3246bf91fd7da70dc4a6ac8c320f4c9a947dc7f2c4c0adf50775967b46621'></script>
-<script>
-    // Wait for the form to load, then hide the "powered-by" div
-    function styleFreshworks() {
-        var poweredBy = document.querySelector('.powered-by');
-        if (poweredBy) {
-            poweredBy.style.display = 'none';
-            // Also left justify the content in div with class 'fserv-container'
-            var fservContainer = document.querySelector('.fserv-container');
-            if (fservContainer) {
-                fservContainer.style.textAlign = 'left';
-                fservContainer.style.margin = '0px';
-                fservContainer.style.padding = '0px';
-            }
-            var fservButton = document.querySelector('.fserv-button-submit');
-            if (fservButton) {
-                fservButton.style.margin = '0px 20px 20px 20px';
-            }
-        } else {
-            // Try again in 200ms if not found yet
-            setTimeout(styleFreshworks, 200);
-        }
+{% comment %} 
+  Wrap both the subscription form and the next section in a flexbox container.
+  The first div is the subscription form, the second is the "thanks" section.
+  Use a class "thanks-flex" for the flex container and "thanks-flex__item" for each child.
+  Add a <style> block for responsive flex layout.
+{% endcomment %}
+<style>
+  .thanks-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: stretch;
+    margin-bottom: 2rem;
+  }
+  @media (min-width: 800px) {
+    .thanks-flex {
+      flex-direction: row;
+      align-items: flex-start;
     }
-    styleFreshworks();
-</script>
-<br>
-<section class="thanks" id="thanks">
-    {%- if data.title -%}<h3 class="thanks__title">{{ data.title }}</h3>{% endif %}
-    <br>
-    {% for item in data.items %}
-        <ul class="thanks__list">
-            <li><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></li>
-        </ul>
-    {% endfor %}
-</section>
+    .thanks-flex__item {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+  }
+</style>
+<div class="thanks-flex">
+  <div class="thanks-flex__item">
+    <h3 class="thanks__title">Subscribe to customer stories and app updates</h3>
+    <p class="thanks__title--small">We promise to only send you valuable content!</p>
+    <script src='https://diode-729427091830296891.myfreshworks.com/crm/sales/web_forms/2ba3246bf91fd7da70dc4a6ac8c320f4c9a947dc7f2c4c0adf50775967b46621/form.js' crossorigin='anonymous' id='fs_2ba3246bf91fd7da70dc4a6ac8c320f4c9a947dc7f2c4c0adf50775967b46621'></script>
+    <script>
+        // Wait for the form to load, then hide the "powered-by" div
+        function styleFreshworks() {
+            var poweredBy = document.querySelector('.powered-by');
+            if (poweredBy) {
+                poweredBy.style.display = 'none';
+                // Also left justify the content in div with class 'fserv-container'
+                var fservContainer = document.querySelector('.fserv-container');
+                if (fservContainer) {
+                    fservContainer.style.textAlign = 'left';
+                    fservContainer.style.margin = '0px';
+                    fservContainer.style.padding = '0px';
+                }
+                var fservButton = document.querySelector('.fserv-button-submit');
+                if (fservButton) {
+                    fservButton.style.margin = '0px 20px 20px 20px';
+                }
+            } else {
+                // Try again in 200ms if not found yet
+                setTimeout(styleFreshworks, 200);
+            }
+        }
+        styleFreshworks();
+    </script>
+  </div>
+  <div class="thanks-flex__item">
+    <section class="thanks" id="thanks">
+        {%- if data.title -%}<h3 class="thanks__title">{{ data.title }}</h3>{% endif %}
+        <br>
+        {% for item in data.items %}
+            <ul class="thanks__list">
+                <li><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></li>
+            </ul>
+        {% endfor %}
+    </section>
+  </div>
+</div>
