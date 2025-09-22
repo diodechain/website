@@ -9,7 +9,7 @@ noindex: true
 hero:
   class: hero--rounded hero--smaller
   animated: true
-  heading: Most secure team messaging
+  heading: Secure Team Messaging App
   subheading: Unlimited free users, no data on servers
   buttons:
   - title: Try Now
