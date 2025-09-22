@@ -9,7 +9,7 @@ noindex: true
 hero:
   class: hero--rounded hero--smaller
   animated: true
-  heading: Most secure team messaging
+  heading: Secure File Sharing
   subheading: Unlimited free users, no data on servers
   buttons:
   - title: Try Now
@@ -25,7 +25,7 @@ story:
   title: End-to-End Encrypted
   heading: No Personal Information Required
   content: |
-    No compromises, secure messaging that works for your team. When it comes to business, there are two non-negotiables: the security of your data and the ease of communication for your team. That’s where Diode stands out. Unlike other messaging apps that either ask for personal details or lack full encryption, Diode gives you both—end-to-end encryption with no need for employees to share their phone numbers. It’s the secure messaging solution your business deserves. 
+    No compromises, secure file sharing that works for your team. When it comes to business, there are two non-negotiables: the security of your data and the ease of communication for your team. That’s where Diode stands out. Unlike other file sharing apps that either ask for personal details or lack full encryption, Diode gives you both—end-to-end encryption with no need for employees to share their phone numbers. It’s the secure file sharing solution your business deserves. 
   
     The Diode Network&trade; ensures that not even Diode has access to your team’s communications, information, or activity.
 
