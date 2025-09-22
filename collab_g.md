@@ -2,7 +2,7 @@
 title: Diode Collab&trade;
 layout: page
 class: header--white
-permalink: /products/collab-x/
+permalink: /products/collab-g/
 noindex: true
 
 ### Hero
@@ -15,7 +15,7 @@ hero:
   - title: Try Now
     url: "#download-app"
     class: popup-open
-    id: x-download-1
+    id: g-download
   image: hero/app.webp
   
 ### Story: For Teams
