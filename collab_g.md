@@ -12,7 +12,7 @@ hero:
   heading: Most secure team messaging
   subheading: Unlimited free users, no data on servers
   buttons:
-  - title: Try Now
+  - title: Download Now
     url: "#download-app"
     class: popup-open
     id: g-download
