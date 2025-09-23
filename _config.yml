@@ -157,3 +157,7 @@ defaults:
     path: "staging/**/*.*"
   values:
     sitemap: false
+- scope:
+    path: "*.*"
+  values:
+    image: images/diode_og.png
