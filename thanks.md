@@ -6,8 +6,7 @@ permalink: /download/thanks/
 
 ### Hero
 hero:
-  class: hero--right
-  heading: Thanks
+  class: hero--rightthanks
   subheading: Thank you for downloading Diode Collab!
   scroll: "#thanks"
   image: hero/download.webp
