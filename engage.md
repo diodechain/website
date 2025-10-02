@@ -6,8 +6,7 @@ permalink: /engage/
 
 ### Hero
 hero:
-  class: hero--right
-  heading: Engage
+  class: hero--rightthanks
   subheading: Thank you for your interest in Diode!
   scroll: "#thanks"
   image: hero/download.webp
