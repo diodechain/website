@@ -1,5 +1,5 @@
 ---
-title: Download Hub
+title: Download Center
 layout: page
 class: header--dark
 permalink: /download/
@@ -11,8 +11,7 @@ redirect_from:
 hero:
   animated: true
   class: hero--right
-  heading: Download Hub
-  small: Your spot for downloading Diode's security solutions
+  heading: Download Center
   subheading: Download our zero trust collaboration app, asset management CLI, and network node below.
   scroll: "#app"
   image: hero/download.webp
