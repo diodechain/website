@@ -34,11 +34,11 @@ export const DeviceManagementComponent = {
       selectedTagToAdd: '',
       showCreateDeviceModal: false,
       propertyKeys: [
-        { key: "public", label: "Publicly published port" },
-        { key: "protected", label: "Fleet published port" },
-        { key: "extra_config", label: "Additional configuration" },
-        { key: "operators", label: "Authorized operators" },
-        { key: "wireguard", label: "Wireguard" }
+        { key: "public", label: "Publicly published port", type: "input" },
+        { key: "protected", label: "Fleet published port", type: "input" },
+        { key: "extra_config", label: "Additional configuration", type: "input" },
+        { key: "operators", label: "Authorized operators", type: "input" },
+        { key: "wireguard", label: "Wireguard configuration", type: "textarea" }
       ],
       selectedPropertyKey: '',
       propertyValue: '',
@@ -177,27 +177,27 @@ export const DeviceManagementComponent = {
                   <div>
                     <label class="block text-sm font-medium text-gray-700">Device ID</label>
                     <input type="text" :value="selectedDevice.id" disabled
-                      class="mt-1 block w-full bg-gray-100 rounded-md border-gray-300 shadow-sm text-gray-600">
+                      class="mt-1 block w-full bg-gray-300 rounded-md border-gray-300 shadow-sm text-gray-600">
                   </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-700">Name</label>
                     <input type="text" v-model="newDeviceData.name" 
-                      class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                      class="mt-1 block w-full bg-gray-300 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                   </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-700">Description</label>
                     <textarea v-model="newDeviceData.description" 
-                      class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+                      class="mt-1 block w-full bg-gray-300 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
                   </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-700">Device Type</label>
                     <input type="text" v-model="newDeviceData.deviceType" 
-                      class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                      class="mt-1 block w-full bg-gray-300 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                   </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-700">Location</label>
                     <input type="text" v-model="newDeviceData.location" 
-                      class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                      class="mt-1 block w-full bg-gray-300 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                   </div>
                 </div>
                 
@@ -206,7 +206,7 @@ export const DeviceManagementComponent = {
                     <h4 class="font-medium text-gray-700">Tags</h4>
                     <div class="flex items-center space-x-2 mb-2">
                       <select v-model="selectedTagToAdd" 
-                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        class="bg-gray-300 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                         <option value="">Select a tag</option>
                         <option v-for="tag in availableTags" :key="tag.id" :value="tag.id">{{ tag.name }}</option>
                       </select>
@@ -235,7 +235,7 @@ export const DeviceManagementComponent = {
                     <h4 class="font-medium text-gray-700">Properties</h4>
                     <div class="flex items-center space-x-2 mb-2">
                       <select v-model="selectedPropertyKey" 
-                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        class="bg-gray-300block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                         <option value="">Select a property</option>
                         <option v-for="prop in propertyKeys" :key="prop.key" :value="prop.key">{{ prop.label }}</option>
                       </select>
@@ -244,8 +244,10 @@ export const DeviceManagementComponent = {
                     <div v-if="selectedPropertyKey" class="mb-2">
                       <label class="block text-sm font-medium text-gray-700">Value</label>
                       <div class="flex items-center space-x-2">
-                        <input type="text" v-model="propertyValue" 
-                          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <input v-if="getPropertyType(selectedPropertyKey) === 'input'" type="text" v-model="propertyValue" 
+                          class="bg-gray-300 mt-1 block w-full rounded-md border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg">
+                        <textarea v-if="getPropertyType(selectedPropertyKey) === 'textarea'" v-model="propertyValue" 
+                          class="bg-gray-300 mt-1 block w-full rounded-md border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
                         <button type="button" @click="setDevicePropertyValue" 
                           class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm">
                           Set
@@ -339,6 +341,11 @@ export const DeviceManagementComponent = {
     getPropertyLabel(key) {
       const property = this.propertyKeys.find(p => p.key === key);
       return property ? property.label : key;
+    },
+
+    getPropertyType(key) {
+      const property = this.propertyKeys.find(p => p.key === key);
+      return property ? property.type : 'input';
     },
 
     async createNewDevice() {
