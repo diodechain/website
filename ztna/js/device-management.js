@@ -37,7 +37,8 @@ export const DeviceManagementComponent = {
         { key: "public", label: "Publicly published port" },
         { key: "protected", label: "Fleet published port" },
         { key: "extra_config", label: "Additional configuration" },
-        { key: "operators", label: "Authorized operators" }
+        { key: "operators", label: "Authorized operators" },
+        { key: "wireguard", label: "Wireguard" }
       ],
       selectedPropertyKey: '',
       propertyValue: '',
