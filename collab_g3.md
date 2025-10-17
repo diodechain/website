@@ -65,16 +65,16 @@ features:
         15. Incident claiming and escalation
         16. Geolocation statistics of ITRs
         17. Geolocation map dashboard of ITRs
+
+      
+  - title: Secure Chat and Files
+    content: |
+      Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of Diode Collab. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available.
     buttons:
     - title: REQUEST A DEMO
       class: btn--blank btn--arrow
       url: "https://diodedemo.paperform.co/"
       target: _blank
-      
-  - title: Secure Chat and Files
-    content: |
-      Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of Diode Collab. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available.
-
   -
     
   - title: Access the Internet from Anywhere
@@ -122,6 +122,11 @@ solutions:
 ---
 
 {%- include hero.liquid -%}
+
 {%- include story.liquid -%}
+
+---
+
 {%- include features.liquid -%}
+
 {%- include box.liquid data="solutions" -%}
