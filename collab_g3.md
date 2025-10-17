@@ -75,7 +75,6 @@ features:
       class: btn--blank btn--arrow
       url: "https://diodedemo.paperform.co/"
       target: _blank
-  -
     
   - title: Access the Internet from Anywhere
     content: |
@@ -83,9 +82,6 @@ features:
 
   -
   
-  - title: Secure Upload Sites
-    content: |
-      Sometimes you need to share, or collect, information with people who don't have Diode Collab installed - via a share link accessible from any web browser. This is a great way to exchange information securely with customers, partners, and vendors when operating in a regulated industry. Creating a secure upload site can be done with a single click on any file or folder you'd like to make available.
   - title: Protected Identities
     content: |
       Diode Collab doesn’t require any personally identifiable information from you or your team to sign up and get going - all a Diode account requires is a pseudo anonymous username. Whether your team members use a single device or multiple linked devices, they can all be managed via self-custody credentials that are never stored on a server. 
