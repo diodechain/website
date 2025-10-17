@@ -1,5 +1,5 @@
 ---
-title: Diode Collab Crisis Management&trade;
+title: Diode Collab&trade;
 layout: page
 class: header--white
 permalink: /products/collab-g3/
@@ -17,8 +17,8 @@ hero:
     class: popup-open
     id: g3-demo
   image: hero/app.webp
-  
-### Story: For Teams
+
+### Story: For Teams  
 story:
   animated: false
   class: story--next
@@ -32,12 +32,10 @@ story:
       4. Escalate incident alerts within the CRT until claimed
       5. Communicate existing and developing threat alerts to ITRs, leadership and stakeholders
       6. Geolocate ITRs in the case of emerging situations or active emergencies
-
   image:
     src: story/app-full.webp
     alt: App
     class: network-wide
-
 
 ### Features
 features:
@@ -48,7 +46,6 @@ features:
   - title: Secure Chat and Files
     content: |
       Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of Diode Collab. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available. 
-
   - title: Incident Report Zones
     content: |
       The Incident Reporting and Crisis Management Platform is designed to provide emerging situation alerts, real time incident response, training, advisory support, and follow-up for trainers, trainees and stakeholders. Each zone is configured accordingly:
@@ -76,23 +73,15 @@ features:
       class: btn--blank btn--arrow
       url: "https://diodedemo.paperform.co/"
       target: _blank
-
   - title: Access the Internet from Anywhere
     content: |
       Collaborating with Diode Collab is like using a VPN and collaboration tool built in one.  This allows your team to connect from anywhere in the world. And, if they happen to be in the same office, their devices direct-connect to carry on the conversation without even touching the Internet.
-      
-  -
-
   - title: Secure Upload Sites
     content: |
       Sometimes you need to share, or collect, information with people who don't have Diode Collab installed - via a share link accessible from any web browser. This is a great way to exchange information securely with customers, partners, and vendors when operating in a regulated industry. Creating a secure upload site can be done with a single click on any file or folder you'd like to make available.
-      
-  -
-
   - title: Protected Identities
     content: |
       Diode Collab doesn’t require any personally identifiable information from you or your team to sign up and get going - all a Diode account requires is a pseudo anonymous username. Whether your team members use a single device or multiple linked devices, they can all be managed via self-custody credentials that are never stored on a server. 
-
 
 ### Box: Our solutions
 solutions:
@@ -126,11 +115,6 @@ solutions:
 ---
 
 {%- include hero.liquid -%}
-
 {%- include story.liquid -%}
-
----
-
 {%- include features.liquid -%}
-
 {%- include box.liquid data="solutions" -%}
