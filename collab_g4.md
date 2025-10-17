@@ -10,7 +10,7 @@ hero:
   class: hero--rounded hero--smaller
   animated: true
   heading: Secure Crisis Management Tool
-  subheading: Protect global teams with secure incident reporting and automated emergency notification distribution to your Crisis Response Team
+  subheading: Protect global teams
   buttons:
   - title: Request a Demo
     url: "https://diodedemo.paperform.co/"
