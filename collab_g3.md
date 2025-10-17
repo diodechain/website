@@ -66,16 +66,23 @@ features:
         16. Geolocation statistics of ITRs
         17. Geolocation map dashboard of ITRs
     buttons:
-  - title: REQUEST A DEMO
+    - title: REQUEST A DEMO
       class: btn--blank btn--arrow
       url: "https://diodedemo.paperform.co/"
       target: _blank
+      
   - title: Secure Chat and Files
     content: |
-      Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of Diode Collab. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available.     
+      Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of Diode Collab. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available.
+
+  -
+    
   - title: Access the Internet from Anywhere
     content: |
       Collaborating with Diode Collab is like using a VPN and collaboration tool built in one.  This allows your team to connect from anywhere in the world. And, if they happen to be in the same office, their devices direct-connect to carry on the conversation without even touching the Internet.
+
+  -
+  
   - title: Secure Upload Sites
     content: |
       Sometimes you need to share, or collect, information with people who don't have Diode Collab installed - via a share link accessible from any web browser. This is a great way to exchange information securely with customers, partners, and vendors when operating in a regulated industry. Creating a secure upload site can be done with a single click on any file or folder you'd like to make available.
