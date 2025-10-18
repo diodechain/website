@@ -18,7 +18,7 @@ hero:
     id: g3-demo
   image: hero/app.webp
 
-### Story: For Teams  
+### Story: For Teams
 story:
   animated: false
   class: story--next
@@ -66,7 +66,6 @@ features:
         16. Geolocation statistics of ITRs
         17. Geolocation map dashboard of ITRs
 
-      
   - title: Secure Chat and Files
     content: |
       Communications and structured information are at the core of everything teams do.  That’s why we built direct messaging, group chat, and file syncing into the core of Diode Collab. All capabilities are fully end-to-end encrypted, ensuring that your team operates at only the highest security level available.
@@ -75,16 +74,16 @@ features:
       class: btn--blank btn--arrow
       url: "https://diodedemo.paperform.co/"
       target: _blank
-    
+
   - title: Access the Internet from Anywhere
     content: |
       Collaborating with Diode Collab is like using a VPN and collaboration tool built in one.  This allows your team to connect from anywhere in the world. And, if they happen to be in the same office, their devices direct-connect to carry on the conversation without even touching the Internet.
 
   -
-  
+
   - title: Protected Identities
     content: |
-      Diode Collab doesn’t require any personally identifiable information from you or your team to sign up and get going - all a Diode account requires is a pseudo anonymous username. Whether your team members use a single device or multiple linked devices, they can all be managed via self-custody credentials that are never stored on a server. 
+      Diode Collab doesn’t require any personally identifiable information from you or your team to sign up and get going - all a Diode account requires is a pseudo anonymous username. Whether your team members use a single device or multiple linked devices, they can all be managed via self-custody credentials that are never stored on a server.
 
 ### Box: Our solutions
 solutions:
