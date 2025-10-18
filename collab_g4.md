@@ -13,9 +13,9 @@ hero:
   subheading: Protect global teams
   buttons:
   - title: Request a Demo
+    class: btn--blank btn--arrow
     url: "https://diodedemo.paperform.co/"
-    class: popup-open
-    id: g3-demo
+    target: _blank
   image: hero/app.webp
 
 ### Story: For Teams
