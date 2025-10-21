@@ -18,6 +18,7 @@ const app = createApp({
   setup() {
     // State
     const isConnected = ref(false);
+    const userWalletAddress = ref('');
     const account = ref('');
     const ethereum = ref(null);
     const web3 = ref(null);
@@ -101,6 +102,8 @@ const app = createApp({
         utils.showToastMessage('Please connect to MetaMask.');
       } else if (accounts[0] !== account.value) {
         account.value = accounts[0];
+        let userWallet = await wallet.ensureUserWallet();
+        userWalletAddress.value = userWallet.address;
         isConnected.value = true;
         await loadUserData();
       }
@@ -449,6 +452,7 @@ const app = createApp({
     return {
       showToastMessage: utils.showToastMessage,
       isConnected,
+      userWalletAddress,
       account,
       ownFleetCount,
       ownFleets,
@@ -540,6 +544,10 @@ const app = createApp({
       showDashboard: navigation.showDashboard,
       showCreateFleetView: navigation.showCreateFleetView,
       showPerimeterManagement: navigation.showPerimeterManagement,
+      copyUserWalletAddress: () => {
+        navigator.clipboard.writeText(userWalletAddress.value);
+        utils.showToastMessage('Copied to clipboard');
+      },
       
       // Modal state
       showingAddUserModal,

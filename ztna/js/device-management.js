@@ -247,7 +247,7 @@ export const DeviceManagementComponent = {
                         <input v-if="getPropertyType(selectedPropertyKey) === 'input'" type="text" v-model="propertyValue" 
                           class="bg-gray-300 mt-1 block w-full rounded-md border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg">
                         <textarea v-if="getPropertyType(selectedPropertyKey) === 'textarea'" v-model="propertyValue" 
-                          class="bg-gray-300 mt-1 block w-full rounded-md border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+                          class="bg-gray-300 mt-1 block w-full rounded-md border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 h-full min-h-[100px]"></textarea>
                         <button type="button" @click="setDevicePropertyValue" 
                           class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm">
                           Set
@@ -263,7 +263,10 @@ export const DeviceManagementComponent = {
                       <div v-for="(value, key) in deviceProperties" :key="key" class="flex justify-between items-center p-2 bg-gray-50 rounded">
                         <div>
                           <span class="font-medium">{{ getPropertyLabel(key) }}</span>
-                          <span class="text-sm text-gray-600 block">{{ value }}</span>
+                          <span class="text-sm text-gray-600 block">
+                            <span v-if="getPropertyType(key) === 'input'">{{ value }}</span>
+                            <span v-else><pre>{{ value }}</pre></span>
+                          </span>
                         </div>
                         <button @click="removeDeviceProperty(key)" class="text-red-600 hover:text-red-900">
                           &times;

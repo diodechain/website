@@ -216,8 +216,16 @@
               {{ isLoading ? 'Connecting...' : 'Connect Wallet' }}
             </button>
           </div>
+          <div v-if="isConnected" class="bg-white rounded-lg shadow p-6 flex justify-between items-center">
+            <h2 class="text-lg font-semibold text-gray-800">Account</h2>
+            <button 
+              @click="copyUserWalletAddress" 
+              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm">
+              {{ userWalletAddress }}
+            </button>
+          </div>
           
-          <div v-else class="space-y-6">
+          <div v-if="isConnected" class="space-y-6">
             <!-- Your Fleets Section -->
             <div class="bg-white rounded-lg shadow overflow-hidden">
               <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
