@@ -18,6 +18,11 @@ export function shortenAddress(address, chars = 6) {
  */
 export function formatDate(timestamp) {
   if (!timestamp) return 'N/A';
+
+  if (typeof timestamp === 'object') {
+    return timestamp.toLocaleString();
+  }
+
   const date = new Date(timestamp * 1000);
   return date.toLocaleString();
 }
