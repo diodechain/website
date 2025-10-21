@@ -512,7 +512,12 @@ const app = createApp({
       connectWallet,
       createFleet,
       addFleetUser: async (fleetAddress, userAddress) => {
-        await fleetOperations.addFleetUser(fleetAddress, userAddress);
+        if (!await wallet.isUserWallet(userAddress)) {
+          utils.showToastMessage('This is not a ZTNA Account, please use a ZTNA Account to share the perimeter to');
+          return;
+        }
+
+        await registryOperations.addFleetUser(fleetAddress, userAddress);
         await closeAddUserModal();
         await loadUserData();
       },

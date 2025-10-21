@@ -1,6 +1,6 @@
  // Registry operations for the Perimeter Manager application
 import * as wallet from './wallet.js';
-import registryContractAbi from './registry-abi.js  ';
+import registryContractAbi from './registry-abi.js';
 
 async function call(method, args) {
     let registryAddress = (await wallet.getCurrentChain()).registry;
@@ -53,6 +53,7 @@ export async function createFleet(label) {
 }
 
 export async function addFleetUser(fleetAddress, userAddress) {
+  console.log('Adding fleet user:', fleetAddress, userAddress);
   return await send('AddFleetUser', [fleetAddress, userAddress]);
 }
 

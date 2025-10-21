@@ -270,6 +270,19 @@ export async function switchNetwork(networkKey) {
 
 import registryAbi from './registry-abi.js';
 
+export async function isUserWallet(accountAddress) {
+  try {
+    let { web3, account, ethereum } = await connectWallet();
+    let walletContract = new web3.eth.Contract(walletAbi, accountAddress);
+    let owner = await walletContract.methods.Owner().call();
+    return owner != null && owner.toLowerCase() != '0x0000000000000000000000000000000000000000';
+  } catch (error) {
+    // console.error('Error checking user wallet:', error);
+    // We're expecting this to fail if the account is not a ZTNA Account
+    return false;
+  }
+}
+
 export async function ensureUserWallet() {
   let chain = await getCurrentChain();
   if (!chain) { return null; }
