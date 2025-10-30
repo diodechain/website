@@ -13,7 +13,7 @@ image: 	assets/img/blog/collab product update.jpg
 The Diode Collab app saw great progress throughout September and October, with impactful updates in versions v1.17.21 to v1.17.27 as the team continues advancing a broader set of major developments in upcoming versions that are soon to be released.
 
 **Enable ICP Canisters on All Zones**
-<br> As of 1.17.23, all Zones now include an ICP Canister by default, bringing always-on self-custody benefits to every Zone. Learn more: https://diode.io/blog/diode-self-custody
+<br> As of 1.17.23, all Zones now include an ICP Canister by default, bringing always-on self-custody benefits to every Zone. Learn more [here](https://diode.io/blog/diode-self-custody).
 
 **Dismiss Desktop OS Notifications Automatically**
 <br>OS notifications on desktop are now dismissed automatically as soon as the message has been read.
