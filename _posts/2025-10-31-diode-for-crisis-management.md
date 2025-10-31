@@ -2,7 +2,7 @@
 layout: post
 title: Security and Crisis Management Platform with Diode
 description: What are the top 3 types of projects and people using Diode Collab?
-date: 2025-10-23 12:00
+date: 2025-10-31 12:00
 categories: [Diode, Security]
 tags: [Diode, Diode Collab, Security, Decentraliztion, Self-Custody, Zero Trust]
 author: MNJR
