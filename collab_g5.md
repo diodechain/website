@@ -57,6 +57,7 @@ features:
       Photos, mesages, documents, passwords
     
       Some things matter more than conveniece. Safeguarding your family's digital life is worth investing in, every day.
+    buttons:
     - title: Family group plan
       class: btn--blank btn--arrow
       url: "https://diode.io/pricing/"
