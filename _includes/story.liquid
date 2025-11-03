@@ -57,7 +57,7 @@
         <div class="col col-12 col-lg-6">
         {% endif %}
             <div class="story__content">
-                {%- if data.title -%}<p class="story__title">{{ data.title }}</p>{% endif %}
+                {%- if data.title -%}<p id="{%- if data.id -%}{{ data.id }}{% endif %}" class="story__title">{{ data.title }}</p>{% endif %}
                 {%- if data.heading -%}<h2 class="story__heading">{{ data.heading }}{%- if data.icon -%}<img class="story__icon" src="{{ data.icon | prepend: site.path.images | relative_url }}" height="50" alt="">{% endif %}</h2>{% endif %}
                 {%- if data.content -%}{{ data.content | markdownify }}{% endif %}
                 {%- if data.buttons -%}

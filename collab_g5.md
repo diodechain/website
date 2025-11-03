@@ -12,10 +12,9 @@ hero:
   heading: Reclaim Family Privacy
   subheading: Communicate, share photos, and distribute important documents securely - no information is ever on a cloud server.
   buttons:
-  - title: Family Group Plan
+  - title: Read more
     class: btn--blank btn--arrow
-    url: "https://diode.io/pricing/"
-    target: _blank
+    url: "#for-families"
   image: hero/app.webp
 
 ### Story: For Families
@@ -24,6 +23,7 @@ story:
   class: story--next
   title: Keep your information private
   heading: For families
+  id: for-families
   content: |
     Some things matter more than convenience. Safeguarding your family's digital life is worth investing in, every day.
 

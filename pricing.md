@@ -19,7 +19,7 @@ pricing:
   animated: false
   title: Privacy-first communication
   heading: Protect your collaboration
-  include: <a href="https://app.docs.diode.io/docs/faq/what-can-i-do-with-the-free-version/" target="_blank">Free plans include</a>
+  include: <a href="https://app.docs.diode.io/docs/faq/what-can-i-do-with-the-free-version/" target="_blank">All plans include</a>
 
 
   plans:
