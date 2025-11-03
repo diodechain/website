@@ -2,7 +2,7 @@
 title: Diode Collab&trade;
 layout: page
 class: header--white
-permalink: /products/collab-g4/
+permalink: /products/collab-g5/
 noindex: true
 
 ### Hero
