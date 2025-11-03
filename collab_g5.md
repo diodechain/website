@@ -52,7 +52,7 @@ features:
     content: |
       Diode offers unlimited storage for your fmaily to share photos, documents, and information together, without limits or extra fees. Unlike traditional cloud based storage services, everything stays private and under your control, with no corporate access or monitoring. Enjoy all the benefits of sharing and storage, but without the usual risks and restriction.
 
-  - title: Use for
+  - title: Use For
     content: |
       Photos, mesages, documents, passwords
     
