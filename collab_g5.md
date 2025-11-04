@@ -27,9 +27,9 @@ story:
   content: |
     Some things matter more than convenience. Safeguarding your family's digital life is worth investing in, every day.
 
-    Your family's conversations and files shouldn't be stored or scanned by outside servers. With Diode, everything stays securely within your group. Share photos, coordinate schedules, and exchange private details knowing they never leave your control.
+    Your family's conversations and files shouldn't be stored or scanned by outside servers. With Diode, everything stays securely on your own devices. Share photos, coordinate schedules, and exchange private details knowing they never leave your control.
 
-    Diode's decentralized zero-trust technology locks down access at the source.
+    Diode is a break-through decentralized technology that allows your devices to communicate without servers - your data is locked down at the source.
 
     No cloud storage, no tracking, no leaks.
   buttons:
@@ -50,7 +50,7 @@ features:
   list:
   - title: Unlimited private storage
     content: |
-      Diode offers unlimited storage for your family to share photos, documents, and information together, without limits or extra fees. Unlike traditional cloud based storage services, everything stays private and under your control, with no corporate access or monitoring. Enjoy all the benefits of sharing and storage, but without the usual risks and restriction.
+      Diode offers unlimited storage for your family to share photos, documents, and information together, without limits or extra fees. Unlike traditional cloud based storage services, everything stays private and under your control, with no corporate access or monitoring. Enjoy all the benefits of sharing and storage, but without the restrictions and risks.
 
   - title: Use For
     content: |
@@ -65,12 +65,12 @@ features:
 
   - title: No Servers, Only On Your Devices
     content: |
-      Diode keeps your family's data off third-party servers, it's stored and shared only across your own devices. Photos, messages, and files never leave your private network, so you control exactly where information lives and who accesses it. Enjoy total privacy and security, powered by your devices and protected by decentralized technology.
+      Diode keeps your family's data off third-party servers.  Information is stored and shared only across your own devices. Photos, messages, and files never leave your private network, so you control exactly where information lives and who accesses it. Enjoy total privacy and security, powered by your devices and protected by decentralized technology.
   -
 
   - title: Better and More Secure
     content: |
-      Unlike communication apps such as Signal and WhatsApp, Diode doesn't require phone numbers or personal identifiers. Your family connects privately without exposing contact details. Where Slack and Discord keep messages on centralized servers, Diode ensures all communication is end-to-end encrypted and stored only on your devices, so no one outside your group can ever access your conversations.
+      Unlike communication apps such as Signal and WhatsApp, Diode doesn't require phone numbers or personal identifiers. Your family connects privately without exposing contact details. Where the other apps keep messages on centralized servers, Diode ensures all communication is end-to-end encrypted and stored only on your devices.  No one outside your group can ever access your conversations.
 ### Box: Our solutions
 solutions:
   animated: false
