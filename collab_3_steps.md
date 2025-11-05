@@ -23,7 +23,7 @@ story:
   heading: 3 Easy Steps
   subheading: Set up your private family zone in minutes.
   blocks:
-    - image: /assets/images/protected.svg
+    - image: story/protected.svg
       title: Step 1: Download the App
       text: >
         Get Diode Collab for your device and sign in securely. Available for macOS, Windows, Linux, iOS, and Android.
@@ -32,18 +32,18 @@ story:
           url: "#download-app"
           class: btn btn--secondary
 
-    - image: /assets/images/protected.svg
+    - image: story/protected.svg
       title: Step 2: Create Your Zone
       text: >
         Set up your first private zone. It’s your family’s own encrypted network — no data ever stored on servers.
 
-    - image: /assets/images/protected.svg
+    - image: story/protected.svg
       title: Step 3: Upgrade and Invite Your Family
       text: >
         Upgrade your plan for expanded storage and group features. Then send your join code to your family and start sharing securely.
       buttons:
         - title: Read the Docs
-          url: /docs/getting-started/
+          url: "https://diode.io/docs/getting-started/"
           class: btn btn--primary
 
 ### Story: For Families
