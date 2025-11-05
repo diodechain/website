@@ -18,8 +18,8 @@ hero:
   image: hero/app.webp
 
 ### 3 Easy Steps
-steps:
-  class: section section--steps
+story:
+  class: story--next
   heading: 3 Easy Steps
   subheading: Set up your private family zone in minutes.
   blocks:
