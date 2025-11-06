@@ -22,14 +22,14 @@ solutions:
     icon: "icons/cli.svg"
     content: Download Diode Collab and choose a username. Available for MacOS, Windows, Linux, iOS, and Android.
     button:
-      title: Installation Instructions
+      title: Install
       class: "btn--bored"
       url: "https://app.docs.diode.io/docs/"
   - title: <br>Create Your Zone
     icon: "icons/vault.svg"
     content: Create a zone - it’s your family’s own encrypted network — no data ever stored on servers.
     button:
-      title: See How to Create a Zone
+      title: Create Zone
       class: "btn--bored"
       url: "https://app.docs.diode.io/docs/using/create-a-zone/"
   - title: <br>Upgrade the Plan
