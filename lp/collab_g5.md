@@ -2,49 +2,20 @@
 title: Diode Collab&trade;
 layout: page
 class: header--white
-permalink: /products/collab-3-steps/
+permalink: /products/collab-g5/
 noindex: true
 
 ### Hero
 hero:
   class: hero--rounded hero--smaller
   animated: true
-  heading: 3 Easy Steps to Get Started
-  subheading: Today’s the day — get your family connected securely!
+  heading: Reclaim Family Privacy
+  subheading: Communicate, share photos, and distribute important documents securely - no information is ever on a cloud server.
   buttons:
   - title: Read more
     class: btn--blank btn--arrow
     url: "#for-families"
   image: hero/app.webp
-
-### 3 Easy Steps
-story:
-  class: story--next
-  heading: 3 Easy Steps
-  subheading: Set up your private family zone in minutes.
-  blocks:
-    - image: story/protected.svg
-      title: Step 1: Download the App
-      text: >
-        Get Diode Collab for your device and sign in securely. Available for macOS, Windows, Linux, iOS, and Android.
-      buttons:
-        - title: Download Now
-          url: "#download-app"
-          class: btn btn--secondary
-
-    - image: story/protected.svg
-      title: Step 2: Create Your Zone
-      text: >
-        Set up your first private zone. It’s your family’s own encrypted network — no data ever stored on servers.
-
-    - image: story/protected.svg
-      title: Step 3: Upgrade and Invite Your Family
-      text: >
-        Upgrade your plan for expanded storage and group features. Then send your join code to your family and start sharing securely.
-      buttons:
-        - title: Read the Docs
-          url: "https://diode.io/docs/getting-started/"
-          class: btn btn--primary
 
 ### Story: For Families
 story:
@@ -62,9 +33,9 @@ story:
 
     No cloud storage, no tracking, no leaks.
   buttons:
-  - title: Secure your family for $3/member
+  - title: Reclaim your privacy in 3 easy steps
     class: btn--blank btn--arrow
-    url: "https://diode.io/pricing/"
+    url: "/products/collab-start/"
     target: _blank
   image:
     src: story/app-full.webp
@@ -87,9 +58,9 @@ features:
     
       Some things matter more than convenience. Safeguarding your family's digital life is worth investing in, every day.
     buttons:
-    - title: Family group plan
+    - title: Reclaim your privacy in 3 easy steps
       class: btn--blank btn--arrow
-      url: "https://diode.io/pricing/"
+      url: "/products/collab-start/"
       target: _blank
 
   - title: No Servers, Only On Your Devices

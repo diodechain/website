@@ -179,6 +179,18 @@
           }
         }
       }
+
+      &--bored {
+        color: black;
+        background-color: transparent;
+        @media (hover: hover) {
+          &:hover, &:focus {
+            border-color: black;
+            background-color: transparent;
+          }
+        }
+      } 
+
     }
   }
 
