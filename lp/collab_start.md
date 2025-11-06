@@ -22,23 +22,23 @@ solutions:
     icon: "icons/cli.svg"
     content: Download Diode Collab and choose a username. Available for MacOS, Windows, Linux, iOS, and Android.
     button:
-      title: Show Me How
+      title: Installation Instructions
       class: "btn--bored"
-      url: "#download-app"
+      url: "https://app.docs.diode.io/docs/"
   - title: <br>Create Your Zone
     icon: "icons/vault.svg"
     content: Create a zone - it’s your family’s own encrypted network — no data ever stored on servers.
     button:
-      title: Show Me How
+      title: See How to Create a Zone
       class: "btn--bored"
-      url: "/products/vault/"
+      url: "https://app.docs.diode.io/docs/using/create-a-zone/"
   - title: <br>Upgrade the Plan
     icon: "icons/network.svg"
     content: Upgrade your plan to get everything a family needs - channels, drives, private invitations, and more.
     button:
-      title: Show Me How
+      title: Get Your Plan
       class: "btn--bored"
-      url: "/products/network/"
+      url: "https://app.docs.diode.io/docs/features/pricing-and-plans/"
 
 
 
