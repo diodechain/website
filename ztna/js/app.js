@@ -21,7 +21,6 @@ const app = createApp({
     const userWalletAddress = ref('');
     const account = ref('');
     const ethereum = ref(null);
-    const web3 = ref(null);
     const ownFleetCount = ref(0);
     const ownFleets = ref([]);
     const sharedFleets = ref([]);
@@ -114,11 +113,10 @@ const app = createApp({
       try {
         utils.setLoadingWithSafety(true);
 
-        if (!ethereum.value || !await wallet.getAccount()) {
+        if (!await wallet.getAccount()) {
           return;
         }
   
-        
         try {
           // Request accounts
           console.log('Requesting accounts');
@@ -136,9 +134,6 @@ const app = createApp({
           console.log('Current Chain:', chain);
           selectedNetworkIndex.value = chain.index;
 
-          // Initialize Web3
-          web3.value = new Web3(ethereum.value);
-          
           // Load user's fleets
           await handleAccountsChanged(accounts);
           
@@ -168,7 +163,7 @@ const app = createApp({
         utils.setLoadingWithSafety(true);
         
         // Get available accounts
-        availableAccounts.value = await web3.value.eth.getAccounts();
+        availableAccounts.value = await ethereum.value.request({ method: 'eth_requestAccounts' });
         let userWallet = await wallet.ensureUserWallet();
 
         // Get own fleet count
@@ -191,8 +186,8 @@ const app = createApp({
           ownFleets.value.push({
             owner: fleet.owner,
             fleet: fleet.fleet,
-            createdAt: new Date(fleet.createdAt * 1000),
-            updatedAt: new Date(fleet.updatedAt * 1000),
+            createdAt: new Date(Number(fleet.createdAt) * 1000),
+            updatedAt: new Date(Number(fleet.updatedAt) * 1000),
             label: fleetLabel || ''
           });
         }
@@ -224,8 +219,8 @@ const app = createApp({
             sharedFleets.value.push({
               owner: fleet.owner,
               fleet: fleet.fleet,
-              createdAt: new Date(fleet.createdAt * 1000),
-              updatedAt: new Date(fleet.updatedAt * 1000),
+              createdAt: new Date(Number(fleet.createdAt) * 1000),
+              updatedAt: new Date(Number(fleet.updatedAt) * 1000),
               label: fleetLabel || ''
             });
           }

@@ -408,8 +408,8 @@ export const DeviceManagementComponent = {
               description: deviceData.description,
               deviceType: deviceData.deviceType,
               location: deviceData.location,
-              createdAt: new Date(deviceData.createdAt * 1000),
-              lastSeen: new Date(deviceData.lastSeen * 1000),
+              createdAt: new Date(Number(deviceData.createdAt) * 1000),
+              lastSeen: new Date(Number(deviceData.lastSeen) * 1000),
               active: deviceData.active
             });
           } catch (error) {
@@ -440,7 +440,7 @@ export const DeviceManagementComponent = {
               name: tagData.name,
               description: tagData.description,
               color: tagData.color,
-              createdAt: new Date(tagData.createdAt * 1000),
+              createdAt: new Date(Number(tagData.createdAt) * 1000),
               createdBy: tagData.createdBy,
               active: tagData.active
             });
@@ -526,7 +526,7 @@ export const DeviceManagementComponent = {
               name: tagData.name,
               description: tagData.description,
               color: tagData.color,
-              createdAt: new Date(tagData.createdAt * 1000),
+              createdAt: new Date(Number(tagData.createdAt) * 1000),
               createdBy: tagData.createdBy,
               active: tagData.active
             });

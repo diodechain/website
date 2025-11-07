@@ -5,12 +5,60 @@ import walletAbi from './wallet-abi.js';
 
 // Initialize MetaMask SDK
 let ethereum;
+let web3;
+let requestId = 1000;
 
+const account_public = '0x0e48995d50399607107ac6a3f47cee46b4fd573c';
+const account_private = '0x4a7c0cb395a4eaa6d185b319b2269f5b8b55abf8458f0c215ccb9e9df74c1d08';
 export const initializeMetaMask = async () => {
   if (ethereum) {
     return ethereum;
   }
 
+  let options = {
+      clientConfig: { keepalive: true, keepaliveInterval: 60000 },
+      reconnect: { auto: true, delay: 5000, maxAttempts: 5, onTimeout: false }
+  };
+  const url = 'wss://sapphire.oasis.io/ws'
+  ethereum = new Web3.providers.WebsocketProvider(url, options);
+
+  let originalRequest = ethereum.request.bind(ethereum);
+  ethereum.request = async (params) => {
+    if (params.jsonrpc) {
+      return await originalRequest(params);
+    }
+
+
+    switch (params.method) {
+      case 'wallet_switchEthereumChain':
+        return { chainId: networks[0].chainId };
+      case 'eth_chainId':
+        return networks[0].chainId;
+      case 'wallet_getPermissions':
+        return [{ parentCapability: 'eth_accounts', caveats: [{ type: 'restrictReturnedAccounts', value: [account_public] }] }];
+      case 'eth_requestAccounts':
+        return [account_public];
+      case 'personal_sign':
+        return (await web3.eth.sign(
+          params.params[0],
+          params.params[1],
+        )).signature;
+      case 'eth_accounts':
+        return [account_public];
+      default:
+        console.log('request', params);
+        params.jsonrpc = '2.0';
+        params.id = 'f32' +requestId++;
+        let result = await originalRequest(params);
+        console.log('result', result);
+        return result;
+    }
+  }
+  window.ethereum = ethereum;
+  return ethereum;
+}
+
+export const initializeMetaMaskOld = async () => {
   try {
     const sdk = new MetaMaskSDK.MetaMaskSDK({
       dappMetadata: {
@@ -37,7 +85,6 @@ export const initializeMetaMask = async () => {
   }
 }; 
 
-let web3;
 let account;
 let accounts;
 
@@ -53,13 +100,8 @@ async function initWeb3() {
       // Request account access
       console.log("Requesting account access");
       accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-      web3 = new Web3(ethereum);
+      web3 = new_web3(ethereum);
       window.web3 = web3;
-      
-      // Check if this is a mock provider (for development/testing)
-      if (ethereum.isMock) {
-        console.warn('Using mock provider for Web3. Limited functionality available.');
-      }
       
       return { web3, account: accounts[0] };
     } catch (error) {
@@ -69,6 +111,13 @@ async function initWeb3() {
   } else {
     throw new Error("No Ethereum browser extension detected. Please install MetaMask.");
   }
+}
+
+function new_web3(provider) {
+  let w = new Web3(ethereum);
+  w.defaultTransactionType = '0x00';
+  w.eth.accounts.wallet.add(account_private);
+  return w;
 }
 
 export async function getAccount() {
@@ -362,7 +411,7 @@ export async function send(abi, address, method, args, successMessage) {
   try {
     lockUI();
     const { account, ethereum } = await connectWallet();
-    let web3 = new Web3(wrapEthereumProvider(ethereum));
+    let web3 = new_web3(wrapEthereumProvider(ethereum));
     let contract = new web3.eth.Contract(abi, address);
     let result;
 
@@ -397,7 +446,7 @@ export async function send(abi, address, method, args, successMessage) {
 export async function call(abi, address, method, args) {
   try {
     const { ethereum } = await connectWallet();
-    let web3 = new Web3(wrapEthereumProvider(ethereum));
+    let web3 = new_web3(wrapEthereumProvider(ethereum));
     let {address: userWallet, token: token} = await ensureUserWallet();
 
     let methodAbi = abi.find(item => item.name === method && item.inputs.length === args.length);

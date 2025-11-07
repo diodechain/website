@@ -20,7 +20,7 @@ export const loadUserGroups = async () => {
           id: groupData.id,
           name: groupData.name,
           description: groupData.description,
-          createdAt: new Date(groupData.createdAt * 1000),
+          createdAt: new Date(Number(groupData.createdAt) * 1000),
           createdBy: groupData.createdBy,
           active: groupData.active
         });
@@ -74,7 +74,7 @@ export const loadGroupMembers = async (groupId) => {
           email: userData.email,
           avatarURI: userData.avatarURI,
           isAdmin: userData.isAdmin,
-          createdAt: new Date(userData.createdAt * 1000),
+          createdAt: new Date(Number(userData.createdAt) * 1000),
           active: userData.active
         });
       } catch (error) {
