@@ -19,21 +19,21 @@ solutions:
   id: for-families
   solutions:
   - title: <br>Download the App
-    image: images/step1.png
+    image: story/step1.webp
     content: Download Diode Collab and choose a username. Available for MacOS, Windows, Linux, iOS, and Android.
     button:
       title: Install
       class: "btn--bored"
       url: "https://app.docs.diode.io/docs/"
   - title: <br>Create Your Zone
-    image: images/step2.png
+    image: story/step2.webp
     content: Create a zone - it’s your family’s own encrypted network — no data ever stored on servers.
     button:
       title: Create Zone
       class: "btn--bored"
       url: "https://app.docs.diode.io/docs/using/create-a-zone/"
   - title: <br>Upgrade the Plan
-    image: images/step3.png
+    image: story/step3.webp
     content: Upgrade your plan to get everything a family needs - channels, drives, private invitations, and more.
     button:
       title: Get Your Plan
