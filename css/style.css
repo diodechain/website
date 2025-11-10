@@ -5603,6 +5603,13 @@ section.solutions-section .solution-description {
   }
 }
 
+section.solutions-section .solution .box__solution-image {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
 /**
  *
  *  Solutions Download Section Style
