@@ -5608,6 +5608,9 @@ section.solutions-section .solution .box__solution-image {
   margin: 0;
   padding: 0;
   background: transparent;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
 }
 
 /**
