@@ -5605,11 +5605,10 @@ section.solutions-section .solution-description {
 
 section.solutions-section .solution .box__solution-image {
   display: block;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  height: 100%;
   width: auto;
+  height: calc(100% - 50px); /* subtract top+bottom padding */
+  margin: 0 auto;
+  background: transparent;
   object-fit: cover;
 }
 
