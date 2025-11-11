@@ -3,7 +3,6 @@ title: Diode Collab&trade;
 layout: page
 class: header--dark
 permalink: /products/collab-start/
-noindex: true
 
 ### Hero
 hero:
@@ -25,6 +24,7 @@ solutions:
       title: Install
       class: "btn--bored"
       url: "https://app.docs.diode.io/docs/"
+      target: "_blank"
   - title: <br>Create Your Zone
     icon: icons/two.svg
     content: Create a zone - it’s your family’s own encrypted network — no data ever stored on servers.
@@ -32,6 +32,7 @@ solutions:
       title: Create Zone
       class: "btn--bored"
       url: "https://app.docs.diode.io/docs/using/create-a-zone/"
+      target: "_blank"
   - title: <br>Upgrade the Plan
     icon: icons/three.svg
     content: Upgrade your plan to get everything a family needs - channels, drives, private invitations, and more.
@@ -39,7 +40,7 @@ solutions:
       title: Get Your Plan
       class: "btn--bored"
       url: "https://app.docs.diode.io/docs/features/pricing-and-plans/"
-
+      target: "_blank"
 
 
 ---
