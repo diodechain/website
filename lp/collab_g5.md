@@ -32,6 +32,8 @@ story:
     Diode is a break-through decentralized technology that allows your devices to communicate without servers - your data is locked down at the source.
 
     No cloud storage, no tracking, no leaks.
+
+    Use coupon code **Privacy4Family** to claim a **free 1-month upgrade** to the group plan!
   buttons:
   - title: Reclaim your privacy in 3 easy steps
     class: btn--blank btn--arrow
