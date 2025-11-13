@@ -33,7 +33,8 @@ story:
 
     No cloud storage, no tracking, no leaks.
 
-    Use coupon code **Privacy4Family** to claim a **free 1-month upgrade** to the group plan!
+    Use coupon code **PRIVACY4FAMILY** for a free trial upgrade to the Group plan.  The Group plan adds the ability to have multiple channels, private invitation codes, admin roles, <a href="/pricing">and more</a>.
+
   buttons:
   - title: Reclaim your privacy in 3 easy steps
     class: btn--blank btn--arrow

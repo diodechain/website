@@ -56,7 +56,15 @@
                             {%- if solution.image -%}<img class="box__solution-image" src="{{ solution.image | prepend: site.path.images | relative_url }}" height="400" alt="{{ solution.title }}">{% endif %}
                             {%- if solution.title -%}<h3>{{ solution.title }}</h3>{% endif %}
                             {%- if solution.content -%}<p>{{ solution.content }}</p>{% endif %}
-                            {%- if solution.button -%}<a href="{{ solution.button.url | relative_url }}" class="btn {{ solution.button.class }}">{{ solution.button.title }}</a>{% endif %}
+                            {% if solution.button -%}
+                                {% assign btn_url = solution.button.url %}
+                                {% if btn_url and btn_url != "" and btn_url[0] == "/" %}
+                                    <a href="{{ btn_url | relative_url }}" class="btn {{ solution.button.class }}" target="{{ solution.button.target }}">{{ solution.button.title }}</a>
+                                {% else %}
+                                    <a href="{{ btn_url }}" class="btn {{ solution.button.class }}" target="{{ solution.button.target }}">{{ solution.button.title }}</a>
+                                {% endif %}
+                            {% endif %}
+                            {%- if solution.button.instructions -%}<p class="instruction"><a href="{{ solution.button.instructions | relative_url }}" target="_blank">{%- if solution.button.instructions-title -%}{{ solution.button.instructions-title }}{% else %}Read More{% endif %}</a></p>{% endif %}
                         {% endif %}
                     </section>
                 </div>

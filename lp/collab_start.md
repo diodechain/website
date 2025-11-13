@@ -19,28 +19,33 @@ solutions:
   solutions:
   - title: <br>Download the App
     icon: icons/one.svg
-    content: Download Diode Collab and choose a username. Available for MacOS, Windows, Linux, iOS, and Android.<br><br><a href="https://app.docs.diode.io/docs">Instructions</a>
+    content: Download Diode Collab and choose a username.<br><br>Available for MacOS, Windows, Linux, iOS, and Android.
     button:
       title: Install
-      class: "btn--bored"
-      url: "https://app.docs.diode.io/docs/"
-      target: "_blank"
+      class: "btn--bored popup-open"
+      url: "#download-app"
+      instructions: "https://app.docs.diode.io/docs/"
+      instructions-title: "Read How"
   - title: <br>Create Your Zone
     icon: icons/two.svg
-    content: Create a zone - it’s your family’s own encrypted network — no data ever stored on servers.<br><br><a href="https://app.docs.diode.io/docs/using/create-a-zone/">Instructions</a>
+    content: Create a zone - it’s your family’s own isolated collaboration environment.<br><br>Chats, files, personal details - no data ever stored on servers.
     button:
       title: Create Zone
       class: "btn--bored"
       url: "https://app.docs.diode.io/docs/using/create-a-zone/"
       target: "_blank"
-  - title: <br>Upgrade the Plan
+      instructions: "https://app.docs.diode.io/docs/using/create-a-zone/"
+      instructions-title: "Read How"
+  - title: <br>Apply Your Coupon
     icon: icons/three.svg
-    content: Upgrade your plan to get everything a family needs - channels, drives, private invitations, and more.<br><br><a href="https://app.docs.diode.io/docs/features/pricing-and-plans/">Instructions</a>
+    content: Use your <strong>PRIVACY4FAMILY</strong> promotion code to get a free Group trial.<br><br>Group plans get you private channels, drives, invitations, and more.
     button:
-      title: Get Your Plan
+      title: Get Free Upgrade
       class: "btn--bored"
-      url: "https://app.docs.diode.io/docs/features/pricing-and-plans/"
+      url: "/plans/group_monthly"
       target: "_blank"
+      instructions: "https://app.docs.diode.io/docs/features/pricing-and-plans/"
+      instructions-title: "Read How"
 
 
 ---

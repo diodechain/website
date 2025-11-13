@@ -164,6 +164,25 @@
       }
     }
 
+    .instruction {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 0;
+      
+      a {
+        color: $color-orange;
+        text-decoration: underline;
+        text-decoration-thickness: .0625em;
+        text-underline-offset: .084em;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+
     .btn {
       padding: 0;
       color: white;
@@ -184,6 +203,7 @@
         margin-left: 20px;
         color: black;
         background-color: transparent;
+        line-height: 3;
         @media (hover: hover) {
           &:hover, &:focus {
             border-color: black;
