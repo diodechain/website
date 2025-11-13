@@ -19,7 +19,7 @@ solutions:
   solutions:
   - title: <br>Download the App
     icon: icons/one.svg
-    content: Download Diode Collab and choose a username. Available for MacOS, Windows, Linux, iOS, and Android.
+    content: Download Diode Collab and choose a username. Available for MacOS, Windows, Linux, iOS, and Android.<br><br><a href="https://app.docs.diode.io/docs">Instructions</a>
     button:
       title: Install
       class: "btn--bored"
@@ -27,7 +27,7 @@ solutions:
       target: "_blank"
   - title: <br>Create Your Zone
     icon: icons/two.svg
-    content: Create a zone - it’s your family’s own encrypted network — no data ever stored on servers.
+    content: Create a zone - it’s your family’s own encrypted network — no data ever stored on servers.<br><br><a href="https://app.docs.diode.io/docs/using/create-a-zone/">Instructions</a>
     button:
       title: Create Zone
       class: "btn--bored"
@@ -35,7 +35,7 @@ solutions:
       target: "_blank"
   - title: <br>Upgrade the Plan
     icon: icons/three.svg
-    content: Upgrade your plan to get everything a family needs - channels, drives, private invitations, and more.
+    content: Upgrade your plan to get everything a family needs - channels, drives, private invitations, and more.<br><br><a href="https://app.docs.diode.io/docs/features/pricing-and-plans/">Instructions</a>
     button:
       title: Get Your Plan
       class: "btn--bored"
