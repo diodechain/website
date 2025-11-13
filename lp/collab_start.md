@@ -8,14 +8,14 @@ permalink: /products/collab-start/
 hero:
   class: hero--rightthanks
   subheading: Get going with Diode Collab in 3 easy steps
-  scroll: "#thanks"
+  scroll: "#steps"
   image: hero/download.webp
 
 ### Box: Our solutions
 solutions:
   animated: false
   class: box
-  id: for-families
+  id: steps
   solutions:
   - title: <br>Download the App
     icon: icons/one.svg
