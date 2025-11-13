@@ -36,7 +36,7 @@ solutions:
       target: "_blank"
       instructions: "https://app.docs.diode.io/docs/using/create-a-zone/"
       instructions-title: "Read How"
-  - title: <br>Apply Your Coupon
+  - title: <br>Apply the Coupon
     icon: icons/three.svg
     content: Use your <strong>PRIVACY4FAMILY</strong> promotion code to get a free Group trial.<br><br>Group plans get you private channels, drives, invitations, and more.
     button:
