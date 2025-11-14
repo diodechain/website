@@ -34,6 +34,7 @@ pricing:
       - New user moderation
       - Admin role
       - Private chat channels
+      - Private drives
       - Chat visibility policy
       - 10 chat channels
       - 10 web links
