@@ -6,6 +6,7 @@ var ready = (callback) => {
 // On Ready
 ready(() => {
   initPopup();
+  initVideoPopup();
   initTestimonials();
   initPartners();
   initTags();
@@ -191,6 +192,82 @@ function initPopup() {
     let t = document.querySelector('#cookies-consent');
     showPopup(t);
   }
+}
+
+function initVideoPopup() {
+  // Create video popup element if it doesn't exist
+  let videoPopup = document.querySelector('.popup--video');
+  if (!videoPopup) {
+    videoPopup = document.createElement('div');
+    videoPopup.className = 'popup popup--video';
+    videoPopup.innerHTML = `
+      <div class="popup--video__container">
+        <video class="popup--video__video" controls autoplay muted></video>
+        <div class="popup--video__close"></div>
+      </div>
+      <div class="popup--video__background"></div>
+    `;
+    document.body.appendChild(videoPopup);
+  }
+
+  const videoElement = videoPopup.querySelector('.popup--video__video');
+  const closeButton = videoPopup.querySelector('.popup--video__close');
+  const background = videoPopup.querySelector('.popup--video__background');
+
+  // Handle video popup triggers
+  document.querySelectorAll('.popup-video-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      const videoSource = this.getAttribute('data-video-source');
+      if (videoSource) {
+        // Reset video
+        videoElement.pause();
+        videoElement.currentTime = 0;
+        videoElement.src = videoSource;
+        videoElement.load(); // Force reload
+        
+        videoPopup.classList.add('visible');
+        setTimeout(function() {
+          videoPopup.classList.add('open');
+          // Wait for video to be ready before playing
+          if (videoElement.readyState >= 2) {
+            videoElement.play().catch(function(error) {
+              // Autoplay was prevented, user interaction may be required
+            });
+          } else {
+            videoElement.addEventListener('canplay', function() {
+              videoElement.play().catch(function(error) {
+                // Autoplay was prevented, user interaction may be required
+              });
+            }, { once: true });
+          }
+        }, 25);
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Close popup handlers
+  function closeVideoPopup() {
+    videoPopup.classList.remove('open');
+    setTimeout(function() {
+      videoPopup.classList.remove('visible');
+      videoElement.pause();
+      videoElement.src = '';
+      document.body.style.overflow = '';
+    }, 250);
+  }
+
+  closeButton.addEventListener('click', closeVideoPopup);
+  background.addEventListener('click', closeVideoPopup);
+
+  // Close on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && videoPopup.classList.contains('visible')) {
+      closeVideoPopup();
+    }
+  });
 }
 
 function initTestimonials() {

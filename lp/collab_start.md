@@ -26,6 +26,8 @@ solutions:
       url: "#download-app"
       instructions: "https://app.docs.diode.io/docs/"
       instructions-title: "Read How"
+      popup-video-title: "Watch a short video"
+      popup-video-source: "/assets/video/lp-download-diode-collab.mp4"
   - title: <br>Create Your Zone
     icon: icons/two.svg
     content: Create a zone - it’s your family’s own isolated collaboration environment.<br><br>Chats, files, personal details - no data ever stored on servers.
@@ -36,6 +38,8 @@ solutions:
       target: "_blank"
       instructions: "https://app.docs.diode.io/docs/using/create-a-zone/"
       instructions-title: "Read How"
+      popup-video-title: "Watch a short video"
+      popup-video-source: "/assets/video/lp-create-zone.mp4"
   - title: <br>Apply the Coupon
     icon: icons/three.svg
     content: Use your <strong>PRIVACY4FAMILY</strong> promotion code to get a free Group trial.<br><br>Group plans get you private channels, drives, invitations, and more.
@@ -46,6 +50,8 @@ solutions:
       target: "_blank"
       instructions: "https://app.docs.diode.io/docs/features/pricing-and-plans/"
       instructions-title: "Read How"
+      popup-video-title: "Watch a short video"
+      popup-video-source: "/assets/video/lp-pricing-plan.mp4"
 
 
 ---

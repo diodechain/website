@@ -137,4 +137,69 @@
       max-width: 920px;
     }
   }
+
+  &--video {
+    &.visible {
+      display: flex;
+    }
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+
+    &__container {
+      width: 75%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    &__video {
+      width: 100%;
+      height: auto;
+      max-height: 100vh;
+      object-fit: contain;
+    }
+
+    &__close {
+      width: 40px;
+      height: 40px;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 201;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before, &::after {
+        @include pseudo;
+        width: 23px;
+        height: 2px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        background: white;
+      }
+      &::before {transform: rotate(45deg);}
+      &::after {transform: rotate(-45deg);}
+    }
+
+    &__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      z-index: -1;
+    }
+  }
 }

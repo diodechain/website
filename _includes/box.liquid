@@ -64,6 +64,7 @@
                                     <a href="{{ btn_url }}" class="btn {{ solution.button.class }}" target="{{ solution.button.target }}">{{ solution.button.title }}</a>
                                 {% endif %}
                             {% endif %}
+                            {%- if solution.button.popup-video-title -%}<p class="instruction"><a href="#" class="popup-video-trigger" data-video-source="{{ solution.button.popup-video-source | relative_url }}">{%- if solution.button.popup-video-title -%}{{ solution.button.popup-video-title }}{% endif %}</a></p>{% endif %}
                             {%- if solution.button.instructions -%}<p class="instruction"><a href="{{ solution.button.instructions | relative_url }}" target="_blank">{%- if solution.button.instructions-title -%}{{ solution.button.instructions-title }}{% else %}Read More{% endif %}</a></p>{% endif %}
                         {% endif %}
                     </section>
