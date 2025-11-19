@@ -106,7 +106,7 @@
       margin-left: 0;
     }
 
-    img {
+    img, video {
       width: 100%;
       max-width: 100%;
       height: auto;
@@ -115,8 +115,9 @@
       @include user-select;
     }
 
+
     &.circle, &.oval {
-      img {
+      img, video {
         max-width: 272px;
         border-radius: 136px;
         @include media-breakpoint-up(sm) {
@@ -138,7 +139,7 @@
       }
     }
     &.circle {
-      img {
+      img, video {
         @include media-breakpoint-up(xxl) {
           max-width: 461px;
           border-radius: 50%;
@@ -147,7 +148,7 @@
     }
     &.oval {
       @include media-breakpoint-up(xxl) {
-        img {
+        img, video {
           max-width: 477px;
           border-radius: 239px;
         }
@@ -161,7 +162,7 @@
       @include media-breakpoint-up(xl) {
         padding-right: 37px;
       }
-      img {
+      img, video {
         @include media-breakpoint-up(lg) {
           width: 840px;
           max-width: none;
@@ -184,7 +185,7 @@
         margin-bottom: -155px;
         margin-left: -64px;
       }
-      img {
+      img, video {
         @include media-breakpoint-up(xxl) {
           width: 737px;
           max-width: none;
@@ -198,7 +199,7 @@
         margin-left: -40px;
         margin-bottom: -40px;
       }
-      img {
+      img, video {
         @include media-breakpoint-up(xxl) {
           width: 625px;
           max-width: none;
@@ -207,7 +208,7 @@
       }
     }
     &.vault-full {
-      img {
+      img, video {
         @include media-breakpoint-up(lg) {
           width: 800px;
           max-width: none;
@@ -220,7 +221,7 @@
       }
     }
     &.network-full {
-      img {
+      img, video {
         @include media-breakpoint-up(lg) {
           width: 860px;
           max-width: none;

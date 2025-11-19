@@ -42,9 +42,9 @@ solutions:
       popup-video-source: "/assets/video/lp-create-zone.mp4"
   - title: <br>Apply the Coupon
     icon: icons/three.svg
-    content: Use your <strong>PRIVACY4FAMILY</strong> promotion code to get a free Group trial.<br><br>Group plans get you private channels, drives, invitations, and more.
+    content: Use your <strong>PRIVACY4FAMILY</strong> promotion code to get a 50% discount for 3 months.<br><br>Group plans have private channels, drives, invitations, and more.
     button:
-      title: Get Free Upgrade
+      title: Get Upgrade
       class: "btn--bored"
       url: "/plans/group_monthly"
       target: "_blank"

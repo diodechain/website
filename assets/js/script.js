@@ -7,6 +7,7 @@ var ready = (callback) => {
 ready(() => {
   initPopup();
   initVideoPopup();
+  initStoryVideos();
   initTestimonials();
   initPartners();
   initTags();
@@ -226,21 +227,37 @@ function initVideoPopup() {
         videoElement.src = videoSource;
         videoElement.load(); // Force reload
         
+        // Add error handling
+        videoElement.addEventListener('error', function(e) {
+          console.error('Video error:', e);
+          console.error('Video error details:', videoElement.error);
+        }, { once: true });
+        
         videoPopup.classList.add('visible');
         setTimeout(function() {
           videoPopup.classList.add('open');
-          // Wait for video to be ready before playing
-          if (videoElement.readyState >= 2) {
-            videoElement.play().catch(function(error) {
-              // Autoplay was prevented, user interaction may be required
-            });
-          } else {
-            videoElement.addEventListener('canplay', function() {
+          // Wait for video to have enough data before playing
+          const tryPlay = () => {
+            if (videoElement.readyState >= 2) {
               videoElement.play().catch(function(error) {
-                // Autoplay was prevented, user interaction may be required
+                console.log('Autoplay prevented or play failed:', error);
+                // User can click play manually
               });
-            }, { once: true });
-          }
+            }
+          };
+          
+          // Try immediately if ready
+          tryPlay();
+          
+          // Also wait for canplay event (video has enough data to start)
+          videoElement.addEventListener('canplay', tryPlay, { once: true });
+          
+          // And wait for loadeddata (metadata loaded)
+          videoElement.addEventListener('loadeddata', function() {
+            if (videoElement.paused) {
+              tryPlay();
+            }
+          }, { once: true });
         }, 25);
         // Prevent body scroll
         document.body.style.overflow = 'hidden';
@@ -267,6 +284,56 @@ function initVideoPopup() {
     if (e.key === 'Escape' && videoPopup.classList.contains('visible')) {
       closeVideoPopup();
     }
+  });
+}
+
+function initStoryVideos() {
+  // Preserve playback position and prevent unexpected resets
+  document.querySelectorAll('.story__image video').forEach((video) => {
+    let savedTime = 0;
+    let wasPlaying = false;
+    
+    // Save current time periodically
+    setInterval(() => {
+      if (!video.ended && video.currentTime > 0) {
+        savedTime = video.currentTime;
+      }
+    }, 1000);
+    
+    // If video gets reset to beginning unexpectedly, restore position
+    video.addEventListener('loadeddata', function() {
+      // If we have a saved time and video is at the beginning, restore it
+      if (savedTime > 1 && this.currentTime < 1 && this.duration > savedTime) {
+        this.currentTime = savedTime;
+        if (wasPlaying) {
+          this.play().catch(() => {});
+        }
+      }
+    });
+    
+    // Track playing state
+    video.addEventListener('play', function() {
+      wasPlaying = true;
+    });
+    
+    video.addEventListener('pause', function() {
+      wasPlaying = false;
+      // Save time when paused
+      if (this.currentTime > 0) {
+        savedTime = this.currentTime;
+      }
+    });
+    
+    // If video time jumps to 0 unexpectedly, restore
+    let lastKnownTime = 0;
+    video.addEventListener('timeupdate', function() {
+      if (this.currentTime > 0) {
+        lastKnownTime = this.currentTime;
+      } else if (lastKnownTime > 1 && this.duration > lastKnownTime) {
+        // Time jumped to 0 unexpectedly, restore
+        this.currentTime = lastKnownTime;
+      }
+    });
   });
 }
 
