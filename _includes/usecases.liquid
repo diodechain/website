@@ -1,0 +1,33 @@
+{%- if include.data -%}
+    {% assign data = page[include.data] %}
+{% else %}
+    {% assign data = page.usecases %}
+{% endif %}
+
+<div class="teams">
+    {%- if site.usecases -%}
+        {% assign sorted_usecases = site.usecases | sort: 'order' %}
+        {% for usecase in sorted_usecases %}
+            {% capture thecycle %}{% cycle "odd", "even" %}{% endcapture %}
+            {% if thecycle == "odd" %}<div class="row">{% endif %}
+                <div class="col col-12 col-md-6" id="{{ usecase.anchor }}">
+                    {%- if data.animated -%}
+                    <article class="teams__entry" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" data-aos-easing="ease-out" data-aos-once="true">
+                    {% else %}
+                    <article class="teams__entry">
+                    {% endif %}
+                        {%- if usecase.image -%}<figure class="teams__photo"><img src="{{ usecase.image.src | prepend: site.path.images | relative_url }}" width="304" height="304" alt="{{ usecase.heading }}"></figure>{% endif %}
+                        {%- if usecase.title -%}<h4 class="teams__title">{{ usecase.title }}</h4>{% endif %}
+                        {%- if usecase.heading -%}<h2 class="teams__heading">{{ usecase.heading }}</h2>{% endif %}
+                        {%- if usecase.summary -%}<div class="teams__content">{{ usecase.summary | markdownify }}</div>{% endif %}
+                        <div class="story__buttons">
+                            <a href="{{ usecase.url | relative_url }}" class="btn btn--primary">Learn more</a>
+                        </div>
+                    </article>
+                </div>
+            {% if thecycle == "even" %}</div>{% if forloop.last == false %}<hr>{% endif %}{% endif %}
+        {% endfor %}
+        {% assign remainder = sorted_usecases.size | modulo: 2 %}
+        {% if remainder == 1 %}</div>{% endif %}
+    {% endif %}
+</div>

@@ -128,6 +128,12 @@ security:
   content: "We’re governed by the belief that technology should help people thrive. It should enhance our ability to operate, create, explore, educate, and innovate - unhindered."
 
 
+# Collections
+collections:
+  usecases:
+    output: true
+    permalink: /:name/
+
 # Blog Settings
 paginate: 10
 paginate_path: "/blog/:num"

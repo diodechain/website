@@ -1,0 +1,32 @@
+---
+layout: page
+---
+
+{%- if page.hero -%}
+{%- include hero.liquid -%}
+{%- endif -%}
+
+<div class="usecase">
+    <div class="row">
+        <div class="col col-12 col-lg-8">
+            <div class="usecase__content">
+                {{ content }}
+            </div>
+            
+            <div class="usecase__buttons">
+                {% for button in page.buttons %}
+                    <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                {% endfor %}
+                <a href="#download-app" class="btn popup-open" target="">{{ site.links.download.title }}</a>
+            </div>
+        </div>
+        
+        {%- if page.image -%}
+        <div class="col col-12 col-lg-4">
+            <figure class="usecase__image">
+                <img src="{{ page.image.src | prepend: site.path.images | relative_url }}" alt="{{ page.image.alt | default: page.title }}">
+            </figure>
+        </div>
+        {% endif %}
+    </div>
+</div>
