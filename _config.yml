@@ -94,7 +94,7 @@ download:
   app:
     macos: "https://download.diode.io/downloads/collab/dDrive-1.17.29.dmg"
     macos-checksum:
-    windows: "https://download.diode.io/downloads/collab/dDrive-1.17.29.exe"
+    windows: "https://download.diode.io/downloads/collab/dDrive-1.18.3.exe"
     windows-checksum:
     linux: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.18.0-linux-x86_64.run"
     linux-checksum: f56fa5b6f07f9667fe2b9818c78c8813ee96e3ce
