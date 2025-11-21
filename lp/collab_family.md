@@ -32,10 +32,12 @@ story:
 
     No cloud storage, no tracking, no leaks.
 
+    <a href="/products/collab-start/" class="btn" target="">Get Started</a>
+
     Use coupon code **PRIVACY4FAMILY** for a 50% discount for 3 months to the Group plan.  The Group plan adds the ability to have multiple channels, private drives, admin roles, and more.
     
   buttons:
-  - title: Reclaim your privacy in 3 easy steps
+  - title: Try Diode out
     class: btn--blank btn--arrow
     url: "/products/collab-start/"
     target: _blank
