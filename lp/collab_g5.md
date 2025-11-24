@@ -44,6 +44,8 @@ story:
     target: _blank
   video:
     src: /assets/video/lp-reclaim-family-privacy.mp4
+    poster: video/lp-reclaim-family-privacy-poster.jpg
+
     alt: App
     class: network-wide
 

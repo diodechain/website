@@ -35,8 +35,7 @@
                     <figure class="story__video"><a href="{{ data.video.src }}"><img src="{{ data.video.preview | prepend: site.path.images | relative_url }}" alt="{{ data.video.alt }}"></a></figure>
                 {%- else -%}
                     <figure class="story__image {{ data.video.class }}">
-                        <video src="{{ data.video.src | relative_url }}"{% if data.video.alt %} title="{{ data.video.alt }}"{% endif %} controls preload="auto"></video>
-                    </figure>
+<video src="{{ data.video.src | relative_url }}"{% if data.video.alt %} title="{{ data.video.alt }}"{% endif %}{% if data.video.poster %} poster="{{ data.video.poster | prepend: site.path.images | relative_url }}"{% endif %} controls preload="metadata"></video>                    </figure>
                 {%- endif -%}
             {% endif %}
             {%- if data.teams -%}
