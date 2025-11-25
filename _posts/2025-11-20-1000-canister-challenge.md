@@ -22,7 +22,7 @@ As part of this challenge, users create and expand Diode Collab community Zones 
 
 **Challenge highlights:**
 
-* 📩 To Submit:  Post an X link about the Zone to the [Diode Telegram Channel](t.me/diode_chain)
+* 📩 To Submit:  Post an X link about the Zone to the Diode Telegram Channel: https://t.me/diode_chain 
 * ✍️ Stack your Zone's points!:
   - +5 for customizing the Zone icon
   - +10 for customizing the About page
