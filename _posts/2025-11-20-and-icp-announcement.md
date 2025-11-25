@@ -10,25 +10,28 @@ image: 	assets/img/blog/icp x diode.png
 
 ---
 
-Diode’s collaboration with the Internet Computer Protocol (ICP) introduced always-on, self-custody decentralized infrastructure to private teams for peer-to-peer communication and collaboration. By integrating ICP canisters directly into Diode Collab Zones, teams can keep messages and files encrypted and available even when no one is online, without making data to centralized servers or third‑party clouds.
+Diode’s collaboration with the Internet Computer Protocol (ICP) has introduced always-on, self-custody decentralized infrastructure for private team collaboration. 
 
-### Celebrating 1,000 Private Communities with the Internet Computer Protocol
+Since enabling canisters for all communities in October 2025, over 1,000 Diode Collab Zones are now using canisters for decentralized team collaboration! This milestone highlights the growing adoption of self-custody collaboration for organizations, teams, communities, and families who value privacy.
 
-Diode Collab has surpassed 1,000 ICP canisters, a major milestone for decentralized group collaboration. This achievement highlights the growing adoption of self-custody Zones, giving teams, communities, and families always-on private spaces where messages and files stay secure, easy to access, and fully under their control.
+### Celebrating 1,000 Private Communities with the Internet Computer Protocol!
 
-To celebrate this milestone, Diode launched the ["1,000 Canister Zone Challenge"](https://x.com/DiodeFoundation/status/1987921334370697292), inviting users to build or expand their own Zones within Diode Collab. The campaign turns that 1,000-canister benchmark into a community event, rewarding creative, real-world uses of always-on, self-custody collaboration spaces.
+To celebrate this milestone, Diode is launching the ["1,000 Canister Zone Challenge"](https://x.com/DiodeFoundation/status/1987921334370697292).  
 
-### ICP: Replacing the Traditional Cloud
+As part of this challenge, users create and expand Diode Collab community Zones - on December 7th, 2025 the top Zones will be selected for rewards.
 
-[ICP](https://internetcomputer.org/) (Internet Computer Protocol) offers a decentralized, secure cloud that leverages blockchain infrastructure, eliminating reliance on centralized servers. It provides scalable, tamperproof smart contracts with fast computation and on-chain data storage. ICP’s architecture ensures data stays secure and available, even offline, while enabling seamless interaction with other blockchains without risky bridges. This approach removes single points of failure, making applications safer, more resilient, and accessible anywhere.
+**Challenge highlights:**
 
-### Diode: Enabling Secure and Decentralized Teams
+* To submit:  post an X link about the Zone to the Diode Telegram channel
+* Key criteria:
+* Top pick reward:
+* 3 runner up rewards:
 
-Diode specializes in simplifying secure communications for organizations. With mounting global complexities over data breaches, Diode eliminates single points of failure and removes vulnerable third parties, so only the intended users ever have access. 
 
-With their secure messaging app, [Diode Collab](https://diode.io/products/collab/), teams can chat, share files, and use web tools privately thanks to direct, encrypted connections—no data gets stored or exposed on traditional servers. Diode’s approach gives groups full control over their information, providing private collaboration and reliable access wherever they work.​
+The campaign turns that 1,000-canister benchmark into a community event, rewarding creative, real-world uses of always-on, self-custody collaboration spaces.
 
-### Diode x ICP: Advancing Decentralized Collaboration
+
+## Diode x ICP: Advancing Decentralized Collaboration
 
 Diode and ICP have teamed up to bring secure, private group collaboration to the next level. By combining Diode’s expertise in direct, encrypted communication with ICP’s innovative blockchain infrastructure, teams can chat and share files with full privacy and control, no central servers required. This collaboration is setting a powerful new standard for everyday digital teamwork, delivering reliability and a sense of full ownership for group spaces.​
 
