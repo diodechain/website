@@ -10,7 +10,13 @@ image: 	assets/img/blog/icp x diode.png
 
 ---
 
-Diode’s collaboration with the Internet Computer Protocol (ICP) is bringing always-on, self-custody decentralized infrastructure to private teams for peer-to-peer communication and collaboration. By integrating ICP canisters directly into Diode Collab Zones, teams can keep messages and files encrypted and available even when no one is online, without making data to centralized servers or third‑party clouds.
+Diode’s collaboration with the Internet Computer Protocol (ICP) introduced always-on, self-custody decentralized infrastructure to private teams for peer-to-peer communication and collaboration. By integrating ICP canisters directly into Diode Collab Zones, teams can keep messages and files encrypted and available even when no one is online, without making data to centralized servers or third‑party clouds.
+
+### Celebrating 1,000 Private Communities with the Internet Computer Protocol
+
+Diode Collab has surpassed 1,000 ICP canisters, a major milestone for decentralized group collaboration. This achievement highlights the growing adoption of self-custody Zones, giving teams, communities, and families always-on private spaces where messages and files stay secure, easy to access, and fully under their control.
+
+To celebrate this milestone, Diode launched the ["1,000 Canister Zone Challenge"](https://x.com/DiodeFoundation/status/1987921334370697292), inviting users to build or expand their own Zones within Diode Collab. The campaign turns that 1,000-canister benchmark into a community event, rewarding creative, real-world uses of always-on, self-custody collaboration spaces.
 
 ### ICP: Replacing the Traditional Cloud
 
