@@ -22,10 +22,14 @@ As part of this challenge, users create and expand Diode Collab community Zones 
 
 **Challenge highlights:**
 
-* To submit:  post an X link about the Zone to the Diode Telegram channel
-* Key criteria:
-* Top pick reward:
-* 3 runner up rewards:
+* 📩 To Submit:  Post an X link about the Zone to the [Diode Telegram Channel](t.me/diode_chain)
+* ✍️ Key Criteria:
+  - +5 for having 2+ daily interactions within your Zone
+  - +10 for creating a Wiki page
+  - +5 for adding a profile image
+  - +10 for making a public post tagging @DiodeFoundation and #UseDiode on X.
+* 🏆 Top Pick Reward: 500 [DIODE](https://network.docs.diode.io/docs/features/is-there-a-diode-token/)
+* 🥇🥈🥉  3 Runner-Up Rewards: [1 Disrupt NFT each](https://diode.foundation/docs/programs/disrupt_nft.html)
 
 
 The campaign turns that 1,000-canister benchmark into a community event, rewarding creative, real-world uses of always-on, self-custody collaboration spaces.
