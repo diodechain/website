@@ -30,7 +30,7 @@ As part of this challenge, users create and expand Diode Collab community Zones 
   - +15 for added a Discovery card banner image and blurb
   - +20 for posting on X and tagging @DiodeFoundation and #UseDiode
   - +25 for 2+ daily interactions in your Zone
-* 🏆 **Top Pick Reward**: 500 [DIODE](https://network.docs.diode.io/docs/features/is-there-a-diode-token/)
+* 🏆 **Top Pick Reward**: 500 [$DIODE](https://network.docs.diode.io/docs/features/is-there-a-diode-token/)
 * 🥇🥈🥉  **3 Runner-Up Rewards**: [1 Disrupt NFT each](https://diode.foundation/docs/programs/disrupt_nft.html)
 * ⭐️ **Top 10 Zones are featured on the Discover page in Diode Collab** 
 
