@@ -1,6 +1,7 @@
 ---
-title: Diode Collab&trade;
+title: Diode Collab&trade; - Reclaim Family Privacy
 layout: page
+description: Secure family messaging and file sharing app with no cloud servers. Share photos, messages, and documents privately across your own devices with end-to-end encryption.
 class: header--white
 permalink: /products/collab-family/
 
