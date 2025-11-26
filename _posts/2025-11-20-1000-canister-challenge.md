@@ -10,19 +10,34 @@ image: 	assets/img/blog/icp x diode.png
 
 ---
 
-Diode’s collaboration with the Internet Computer Protocol (ICP) is bringing always-on, self-custody decentralized infrastructure to private teams for peer-to-peer communication and collaboration. By integrating ICP canisters directly into Diode Collab Zones, teams can keep messages and files encrypted and available even when no one is online, without making data to centralized servers or third‑party clouds.
+Diode’s collaboration with the Internet Computer Protocol (ICP) has introduced always-on, self-custody decentralized infrastructure for private team collaboration. 
 
-### ICP: Replacing the Traditional Cloud
+Since enabling canisters for all communities in October 2025, over 1,000 Diode Collab Zones are now using canisters for decentralized team collaboration! This milestone highlights the growing adoption of self-custody collaboration for organizations, teams, communities, and families who value privacy.
 
-[ICP](https://internetcomputer.org/) (Internet Computer Protocol) offers a decentralized, secure cloud that leverages blockchain infrastructure, eliminating reliance on centralized servers. It provides scalable, tamperproof smart contracts with fast computation and on-chain data storage. ICP’s architecture ensures data stays secure and available, even offline, while enabling seamless interaction with other blockchains without risky bridges. This approach removes single points of failure, making applications safer, more resilient, and accessible anywhere.
+### Celebrating 1,000 Private Communities with the Internet Computer Protocol!
 
-### Diode: Enabling Secure and Decentralized Teams
+To celebrate this milestone, Diode is launching the ["1,000 Canister Zone Challenge"](https://x.com/DiodeFoundation/status/1987921334370697292).  
 
-Diode specializes in simplifying secure communications for organizations. With mounting global complexities over data breaches, Diode eliminates single points of failure and removes vulnerable third parties, so only the intended users ever have access. 
+As part of this challenge, users create and expand Diode Collab community Zones - on December 7th, 2025 the top Zones will be selected for rewards.
 
-With their secure messaging app, [Diode Collab](https://diode.io/products/collab/), teams can chat, share files, and use web tools privately thanks to direct, encrypted connections—no data gets stored or exposed on traditional servers. Diode’s approach gives groups full control over their information, providing private collaboration and reliable access wherever they work.​
+**Challenge highlights:**
 
-### Diode x ICP: Advancing Decentralized Collaboration
+* 📩 To Submit:  Post an X link about the Zone to the Diode Telegram Channel
+* ✍️ Stack your Zone's points!:
+  - +5 for customizing the Zone icon
+  - +10 for customizing the About page
+  - +15 for added a Discovery card banner image and blurb
+  - +20 for posting on X and tagging @DiodeFoundation and #UseDiode
+  - +25 for 2+ daily interactions in your Zone
+* 🏆 Top Pick Reward: 500 [DIODE](https://network.docs.diode.io/docs/features/is-there-a-diode-token/)
+* 🥇🥈🥉  3 Runner-Up Rewards: [1 Disrupt NFT each](https://diode.foundation/docs/programs/disrupt_nft.html)
+* ⭐️ Top 10 Zones are featured on the Discover page in Diode Collab 
+
+
+The campaign turns that 1,000-canister benchmark into a community event, rewarding creative, real-world uses of always-on, self-custody collaboration spaces.
+
+
+## Diode x ICP: Advancing Decentralized Collaboration
 
 Diode and ICP have teamed up to bring secure, private group collaboration to the next level. By combining Diode’s expertise in direct, encrypted communication with ICP’s innovative blockchain infrastructure, teams can chat and share files with full privacy and control, no central servers required. This collaboration is setting a powerful new standard for everyday digital teamwork, delivering reliability and a sense of full ownership for group spaces.​
 
