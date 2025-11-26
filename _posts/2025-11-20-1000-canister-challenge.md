@@ -16,22 +16,23 @@ Since enabling canisters for all communities in October 2025, over 1,000 Diode C
 
 ### Celebrating 1,000 Private Communities with the Internet Computer Protocol!
 
-To celebrate this milestone, Diode is launching the ["1,000 Canister Zone Challenge"](https://x.com/DiodeFoundation/status/1987921334370697292).  
+To celebrate this milestone, Diode is launching the ["1,000 Canister Zone Challenge"](https://x.com/DiodeFoundation/status/1987921334370697292) on Dec 7th, 2025.  
 
-As part of this challenge, users create and expand Diode Collab community Zones - on December 7th, 2025 the top Zones will be selected for rewards.
+As part of this challenge, users create and expand Diode Collab community Zones - on Dec 31st, 2025 the top Zones will be selected for rewards.
 
 **Challenge highlights:**
 
-* 📩 To Submit:  Post an X link about the Zone to the Diode Telegram Channel
-* ✍️ Stack your Zone's points!:
+* 🗳️ **To Register:** Create and regsiter your Zone in the [Diode Referral Zone](https://network.docs.diode.io/docs/faq/how-do-i-register-a-zone-in-the-diode-collab/)
+* 📩 **To Submit:**  Post an X link about the Zone (or a screenshot of the Zone) to the Diode Telegram Channel paired with the hashtag #UseDiode
+* ✍️ **Stack your Zone's points!**:
   - +5 for customizing the Zone icon
   - +10 for customizing the About page
   - +15 for added a Discovery card banner image and blurb
   - +20 for posting on X and tagging @DiodeFoundation and #UseDiode
   - +25 for 2+ daily interactions in your Zone
-* 🏆 Top Pick Reward: 500 [DIODE](https://network.docs.diode.io/docs/features/is-there-a-diode-token/)
-* 🥇🥈🥉  3 Runner-Up Rewards: [1 Disrupt NFT each](https://diode.foundation/docs/programs/disrupt_nft.html)
-* ⭐️ Top 10 Zones are featured on the Discover page in Diode Collab 
+* 🏆 **Top Pick Reward**: 500 [DIODE](https://network.docs.diode.io/docs/features/is-there-a-diode-token/)
+* 🥇🥈🥉  **3 Runner-Up Rewards**: [1 Disrupt NFT each](https://diode.foundation/docs/programs/disrupt_nft.html)
+* ⭐️ **Top 10 Zones are featured on the Discover page in Diode Collab** 
 
 
 The campaign turns that 1,000-canister benchmark into a community event, rewarding creative, real-world uses of always-on, self-custody collaboration spaces.
