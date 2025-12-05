@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Diode Collab Update - September & October
-description: Diode Collab's update for August
+description: Diode Collab's update for September & October
 date: 2025-10-28 12:00
 categories: [Diode, Roadmap]
 tags: [Diode, Diode Collab]
