@@ -14,6 +14,8 @@ Family communication should be simple, safe, and truly secure. Group messaging k
 
 But here’s the uncomfortable truth: most traditional messaging apps fall short on family safety and secure messaging.
 
+<iframe width="1040" height="585" src="https://www.youtube.com/embed/EjoiAUY3rlU" title="Reclaim Family Privacy With Diode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### The Problem
 
 Every photo, message, and document shared usually passes through, and often stays on, someone else’s server. Even “secure” messaging apps rely on centralized systems that can be logged, exposed, or linked to personal identifiers like phone numbers and emails.
