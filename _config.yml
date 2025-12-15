@@ -92,16 +92,16 @@ social:
 # Download Links
 download:
   app:
-    macos: "https://download.diode.io/downloads/collab/dDrive-1.18.3.dmg"
+    macos: "https://download.diode.io/downloads/collab/dDrive-1.18.10.dmg"
     macos-checksum:
-    windows: "https://download.diode.io/downloads/collab/dDrive-1.18.9.exe"
+    windows: "https://download.diode.io/downloads/collab/dDrive-1.18.10.exe"
     windows-checksum:
-    linux: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.18.3-linux-x86_64.run"
-    linux-checksum: b77684a5a0c8f76c17c5865c1011ce6c4ad9da08
-    raspberry-pi: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.18.3-linux-arm32.run"
-    raspberry-pi-checksum: 927efe239ce8138f46dedfe85d9845c8b77f131d
-    raspberry-pi-64: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.18.3-linux-arm64.run"
-    raspberry-pi-64-checksum: 1d8bfda996a1a2f69714980f445008f1eab19df7
+    linux: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.18.10-linux-x86_64.run"
+    linux-checksum: ff30d63f9981525561e2494e2ddc518b48be2a26
+    raspberry-pi: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.18.10-linux-arm32.run"
+    raspberry-pi-checksum: e7ac39d5f5afb22027ef2cdf1b04b7cb175b2594
+    raspberry-pi-64: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.18.10-linux-arm64.run"
+    raspberry-pi-64-checksum: 327bd8c0c89e2b2db7df86abbff0b5967645a249
     ios: "https://apps.apple.com/us/app/diode-drive/id1605222443"
     ios-checksum:
     android: "https://play.google.com/store/apps/details?id=io.diode.drive"
