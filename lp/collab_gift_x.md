@@ -35,7 +35,7 @@ story:
 
     <a href="/products/collab-start-gift-x/" class="btn" target="">Get Started</a>
 
-    Use coupon code **FamilyChristmas2025** for $2 off per family member.  The Group plan adds the ability to have multiple channels, private drives, admin roles, and more.
+    Use Christmas discount code **FamilyChristmas2025** for $1 per family member.  The Group plan adds the ability to have multiple channels, private drives, admin roles, and more. Discount lasts 3 months.
 
   buttons:
   - title: Try Diode out

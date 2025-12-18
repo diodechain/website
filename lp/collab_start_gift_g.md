@@ -42,7 +42,7 @@ solutions:
       popup-video-source: "/assets/video/lp-create-zone.mp4"
   - title: <br>Apply the Coupon
     icon: icons/three.svg
-    content: Use your <strong>FamilyChristmas2025</strong> promotion code for $2 off per family member.<br><br>Group plans have private channels, drives, invitations, and more.
+    content: Use Christmas discount code <strong>FamilyChristmas2025</strong> for $1 per family member.  The Group plan adds the ability to have multiple channels, private drives, admin roles, and more. Discount lasts 3 months.
     button:
       title: Get Upgrade
       class: "btn--bored"
