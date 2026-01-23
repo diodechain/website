@@ -9,66 +9,174 @@ nav:
 ---
 
 <script>
-  var url = new URL(document.location.toString());
-  let code = url.hash.slice(1)
-  if (code.length < 32) {
-      window.location.replace((url.origin + url.pathname).replace("/joinzone/", "/"));
-  } else {
-      // After 2 seconds, open the invite link
-      // Not enabled for now
-      // setTimeout(function() { window.location.href = "ddrive://invite/" + code }, 2000);
-  }
+  (function () {
+    const url = new URL(window.location.href);
+    const codePattern = /^[A-Za-z0-9_-]{32,}$/;
 
-  // Helper function to strip leading/trailing spaces from text
-  function stripSpaces(str) {
-    return str.replace(/^\s+|\s+$/g, '');
-  }
+    const hashValue = (url.hash || "").replace(/^#/, "").trim();
+    const queryValue = (url.searchParams.get("invite") || url.searchParams.get("code") || "").trim();
 
-  function CopyToClipboard(id)
-  {
-    var el = document.getElementById(id);
-    // Get the text content and strip leading/trailing spaces
-    var text = stripSpaces(el.textContent || el.innerText || "");
-    // Create a temporary textarea to copy the stripped text
-    // If the element contains a <script>, extract only the code variable
-    if (el.querySelector && el.querySelector('script')) {
-      text = code;
+    const looksLikeCode = (value) => codePattern.test(value);
+    const inviteCode = looksLikeCode(queryValue) ? queryValue : (looksLikeCode(hashValue) ? hashValue : "");
+
+    if (!inviteCode) {
+      window.location.replace((url.origin + url.pathname).replace(/\/joinzone\/?$/, "/"));
+      return;
     }
+
+    // Backwards compatibility: turn /joinzone/#<code> into /joinzone/?invite=<code>
+    // so the hash remains available for popups like #download-app.
+    if (!looksLikeCode(queryValue) && looksLikeCode(hashValue)) {
+      url.hash = "";
+      url.searchParams.set("invite", inviteCode);
+      history.replaceState({}, "", url.toString());
+    }
+
+    window.__joinzoneInviteCode = inviteCode;
+  })();
+
+  function CopyToClipboard(id) {
+    var el = document.getElementById(id);
+    var text = (el && (el.textContent || el.innerText) || "").trim();
+
     var tempInput = document.createElement("textarea");
     tempInput.value = text;
     document.body.appendChild(tempInput);
     tempInput.select();
-    document.execCommand('copy');
+    document.execCommand("copy");
     document.body.removeChild(tempInput);
 
     document.querySelector("#notify").style.display = "";
-    setTimeout(function(){
+    setTimeout(function () {
       document.querySelector("#notify").style.display = "none";
     }, 3000);
   }
 
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const getInviteCode = () => {
+      if (window.__joinzoneInviteCode) return window.__joinzoneInviteCode;
+      const u = new URL(window.location.href);
+      const codePattern = /^[A-Za-z0-9_-]{32,}$/;
+      const hashValue = (u.hash || "").replace(/^#/, "").trim();
+      const queryValue = (u.searchParams.get("invite") || u.searchParams.get("code") || "").trim();
+      const looksLikeCode = (value) => codePattern.test(value);
+      const inviteCode = looksLikeCode(queryValue) ? queryValue : (looksLikeCode(hashValue) ? hashValue : "");
+      return inviteCode;
+    };
+
+    const inviteCode = getInviteCode();
+    if (!inviteCode) return;
+
+    const deepLink = "ddrive://invite/" + inviteCode;
+    const joinCodeEl = document.getElementById("joincode");
+    if (joinCodeEl) joinCodeEl.textContent = inviteCode;
+
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const isMobile = isAndroid || isIOS;
+
+    const cfgEl = document.getElementById("joinzone-config");
+    const iosStoreUrl = (cfgEl && cfgEl.dataset && cfgEl.dataset.iosStoreUrl) || "";
+    const androidStoreUrl = (cfgEl && cfgEl.dataset && cfgEl.dataset.androidStoreUrl) || "";
+    const downloadCenterUrl = (cfgEl && cfgEl.dataset && cfgEl.dataset.downloadCenterUrl) || "/download/";
+    const downloadUrl = isIOS ? iosStoreUrl : (isAndroid ? androidStoreUrl : downloadCenterUrl);
+
+    document.querySelectorAll("[data-joinzone-download]").forEach((link) => {
+      link.setAttribute("href", downloadUrl || downloadCenterUrl);
+    });
+
+    const desktopModal = document.getElementById("joinzone-openapp-modal");
+    const mobileStatus = document.getElementById("joinzone-mobile-status");
+    const fallback = document.getElementById("joinzone-fallback");
+
+    function attemptOpenApp(url) {
+      try {
+        window.location.href = url;
+      } catch (e) {}
+
+      // If the app didn't open (blocked, not installed, or user canceled), reveal a fallback CTA.
+      setTimeout(function () {
+        if (fallback) fallback.hidden = false;
+      }, 1500);
+    }
+
+    document.querySelectorAll("[data-joinzone-openinapp]").forEach((link) => {
+      link.setAttribute("href", deepLink);
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        attemptOpenApp(deepLink);
+      });
+    });
+
+    document.querySelectorAll("[data-joinzone-close]").forEach((button) => {
+      button.addEventListener("click", function () {
+        if (desktopModal) desktopModal.hidden = true;
+      });
+    });
+
+    if (isMobile) {
+      if (mobileStatus) mobileStatus.hidden = false;
+      attemptOpenApp(deepLink);
+    } else {
+      if (desktopModal) desktopModal.hidden = false;
+    }
+  });
+</script>
+
+<div
+  id="joinzone-config"
+  hidden
+  data-ios-store-url="{{ site.download.app.ios }}"
+  data-android-store-url="{{ site.download.app.android }}"
+  data-download-center-url="{{ site.links.download.url | relative_url }}"
+></div>
+
+<div class="joinzone-openapp-modal" id="joinzone-openapp-modal" hidden>
+  <div class="joinzone-openapp-modal__backdrop" data-joinzone-close></div>
+  <div class="joinzone-openapp-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="joinzone-openapp-title">
+    <button type="button" class="joinzone-openapp-modal__close" data-joinzone-close aria-label="Close">×</button>
+    <h3 class="joinzone-openapp-modal__title" id="joinzone-openapp-title">Open in Diode</h3>
+    <p class="joinzone-openapp-modal__text">Click below to open the Diode app and join this Zone.</p>
+    <div class="joinzone-openapp-modal__actions">
+      <a class="btn" href="#" role="button" data-joinzone-openinapp>Open in App</a>
+      <a class="btn btn--blank" href="#close" data-joinzone-close>Continue on Web</a>
+    </div>
+    <p class="joinzone-openapp-modal__note">No app? <a href="#download-app" class="popup-open" data-joinzone-close>Download Diode</a></p>
+  </div>
+</div>
+
 <div class="text-center joinzone">
   <h2 class="title">Join Code</h2>
   <hr class="title_line">
   <p class="subtitle">Click the "Join" button on the Zones page in Diode and enter this Join Code!</p>
-  <h3 type="text" class="joincode" id="joincode">
-      <script>
-          document.write(code)
-      </script>
-  </h3>
-  <button onclick="CopyToClipboard('joincode')" class="btn popup-open" id="cc-copy">
-    Copy to Clipboard
-  </button>
+
+  <h3 class="joincode" id="joincode"></h3>
+
+  <div class="joinzone__actions">
+    <a class="btn" href="#" role="button" data-joinzone-openinapp>Open in App</a>
+    <button onclick="CopyToClipboard('joincode')" class="btn" id="cc-copy">Copy to Clipboard</button>
+  </div>
+
   <div class="download-prompt" id="notify" role="alert" style="display: none;">
     Copied!
   </div>
+
+  <div class="joinzone__status" id="joinzone-mobile-status" hidden>
+    Opening Diode…
+  </div>
+
+  <div class="joinzone__fallback" id="joinzone-fallback" hidden>
+    <p>If Diode didn’t open, you can use the Join Code above or download the app.</p>
+    <a class="btn" href="{{ site.links.download.url | relative_url }}" data-joinzone-download>Get Diode</a>
+  </div>
+
   <br/><br/>
-  <img style="display:block; margin-left:auto; margin-right: auto; width: 520px;" src="{{ "joinzone/joincode-entry-example.gif" | prepend: site.path.images | relative_url}}" alt="how to join zone with join code">
+  <img style="display:block; margin-left:auto; margin-right: auto; width: 520px;" src="{{ 'joinzone/joincode-entry-example.gif' | prepend: site.path.images | relative_url}}" alt="how to join zone with join code">
   <p class="download-prompt">Need Diode?</p>
   <div>
-    <a href="#download-app" class="btn popup-open" target="">{{ site.links.download.title }}</a>
+    <a href="#download-app" class="btn popup-open">{{ site.links.download.title }}</a>
   </div>
 </div>
-
