@@ -39,33 +39,49 @@ nav:
     var el = document.getElementById(id);
     var text = (el && (el.textContent || el.innerText) || "").trim();
 
-    var tempInput = document.createElement("textarea");
-    tempInput.value = text;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
+    function showNotification() {
+      document.querySelector("#notify").style.display = "";
+      setTimeout(function () {
+        document.querySelector("#notify").style.display = "none";
+      }, 3000);
+    }
 
-    document.querySelector("#notify").style.display = "";
-    setTimeout(function () {
-      document.querySelector("#notify").style.display = "none";
-    }, 3000);
+    function legacyCopy(value) {
+      var tempInput = document.createElement("textarea");
+      tempInput.value = value;
+      tempInput.setAttribute("readonly", "");
+      tempInput.style.position = "fixed";
+      tempInput.style.top = "0";
+      tempInput.style.left = "0";
+      tempInput.style.opacity = "0";
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand("copy");
+        showNotification();
+      } catch (err) {
+        console.error("Could not copy text: ", err);
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    if (!text) return;
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(showNotification, function (err) {
+        console.error("Could not copy text: ", err);
+        legacyCopy(text);
+      });
+    } else {
+      legacyCopy(text);
+    }
   }
 
 </script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const getInviteCode = () => {
-      if (window.__joinzoneInviteCode) return window.__joinzoneInviteCode;
-      const u = new URL(window.location.href);
-      const codePattern = /^[A-Za-z0-9_-]{32,}$/;
-      const hashValue = (u.hash || "").replace(/^#/, "").trim();
-      const queryValue = (u.searchParams.get("invite") || u.searchParams.get("code") || "").trim();
-      const looksLikeCode = (value) => codePattern.test(value);
-      const inviteCode = looksLikeCode(queryValue) ? queryValue : (looksLikeCode(hashValue) ? hashValue : "");
-      return inviteCode;
-    };
+    const getInviteCode = () => window.__joinzoneInviteCode || "";
 
     const inviteCode = getInviteCode();
     if (!inviteCode) return;
