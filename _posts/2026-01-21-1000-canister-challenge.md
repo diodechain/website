@@ -2,7 +2,7 @@
 layout: post
 title: Diode & ICP – Driving Secure, Decentralized Collaboration
 description: Diode and ICP collaboraiton
-date: 2026-01-21 12:00
+date: 2026-02-09 12:00
 categories: [Press]
 tags: [Diode, Diode Collab, Press, Blockchain, Self-Custody, Zero Trust]
 author: MNJR
