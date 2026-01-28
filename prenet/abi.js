@@ -26,6 +26,14 @@ const NullValue = "0x00000000000000000000000000000000000000000000000000000000000
 const NullAddr = "0x0000000000000000000000000000000000000000"
 const NOT_FOUND_INDEX = -1
 
+const DriveMemberTargets = [
+    "0x6329e652E2212a33529334A3b39B3441861Efa58",
+    "0x667619ceDa6a52993fAc3F8400d1dE46b14C6B59",
+    "0x44a2d560426B773221477006aEFA98880905CFb7",
+    "0x68c5a1cEAb106711E3cCD9e58518c2978c0Ea768",
+    "0x210eab6667c1c578bea68D2d4ad2E9433bC5e59a"
+]
+
 const ACCOUNTS_FILTER_MAP = {
     "fleets": "Fleet",
     "contracts": "Contract",
@@ -266,14 +274,65 @@ var dnsMethods = {
     }
 }
 
+var driveMethods = false;
+axios.get('./prenet/abi/Drive.json').then(function(response) {
+    var driveAbi = response.data.abi;
+    let methods = {};
+    driveAbi.forEach(function(entry) {
+        if (entry.type === 'function') {
+            methods[entry.name] = entry;
+        }
+    });
+    driveMethods = methods;
+}).catch(function(err) {
+    console.error("Couldn't load Drive abi:", err);
+});
+
+var driveMemberMethods = false;
+axios.get('./prenet/abi/DriveMember.json').then(function(response) {
+    var driveMemberAbi = response.data.abi;
+    let methods = {};
+    driveMemberAbi.forEach(function(entry) {
+        if (entry.type === 'function') {
+            methods[entry.name] = entry;
+        }
+    });
+    driveMemberMethods = methods;
+}).catch(function(err) {
+    console.error("Couldn't load DriveMember abi:", err);
+});
+
+function CallDriveMember(name, to, args, callback) {
+    if (!driveMemberMethods) {
+        setTimeout(() => {
+            CallDriveMember(name, to, args, callback);
+        }, 100);
+    } else {
+        call(driveMemberMethods[name], to, args, callback);
+    }
+}
+
+function CallDrive(name, to, args, callback) {
+    if (!driveMethods) {
+        setTimeout(() => {
+            CallDrive(name, to, args, callback);
+        }, 100);
+    } else {
+        call(driveMethods[name], to, args, callback);
+    }
+}
+
 function call(abi, to, args, callback) {
     let call = web3.eth.abi.encodeFunctionCall(abi, args)
-    web3.eth.call({
+    return web3.eth.call({
         to: to,
         data: call,
-        gasPrice: 0
+        gas: 10000000,
+        gasPrice: 0,
+        from: "0x0000000000000000000000000000000000000000"
     }).then((data) => {
         if (abi.outputs) {
+            console.log(abi.outputs[0], data);
             data = web3.eth.abi.decodeParameter(abi.outputs[0], data)
         }
         callback(data)

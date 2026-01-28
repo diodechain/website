@@ -154,6 +154,18 @@
           <th>Code Hash</th>
           <td><% codehash %></td>
         </tr>
+        <tr v-if="funs">
+          <th>Functions</th>
+          <td>
+            <table class="data nested">
+              <tr v-for="fun in funs">
+                <td><% fun.name %>(<% fun.inputs.map(input => input.name).join(", ") %>)</td>
+                <td><% callResults[fun.name] ? callResults[fun.name] : "--" %></td>
+                <td><button v-if="fun.inputs.length == 0" style="border: 1px solid black; cursor: pointer; color: black;" @click="call(fun)">Call</button></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
         <tr v-if="code">
           <th>Storage</th>
           <td class="big" :style="{ height : ((storage.length * 50) + 140) + 'px' }">
@@ -189,6 +201,7 @@ var VAccount = Vue.component("account", {
   data: () => {
     return {
       base: "",
+      target: undefined,
       error: undefined,
       balance: undefined,
       stake: undefined,
@@ -206,6 +219,9 @@ var VAccount = Vue.component("account", {
       searchActivated: false,
       searchFinished: false,
       searchResults: [],
+      callResults: {},
+      rawType: undefined,
+      funs: [],
     };
   },
   computed: {
@@ -214,6 +230,7 @@ var VAccount = Vue.component("account", {
       if (this.object) return "Device";
       if (this.rawcode == "0x") return "User (Human or Miner or Device)";
       if (this.codehash == FleetHash) return "Fleet";
+      if (this.rawType != undefined) return this.rawType;
       return "Contract";
     },
     code: function () {
@@ -230,6 +247,18 @@ var VAccount = Vue.component("account", {
     this.update();
   },
   methods: {
+    call: function (fun) {
+      call(fun, this.hash, [], (ret, a, b) => {
+        this.callResults[fun.name] = ret;
+        this.$forceUpdate();
+      }).catch(err => {
+        this.callResults[fun.name] = "Not supported";
+        this.$forceUpdate();
+      });
+    },
+    readOnly: function (methods) {
+      return Object.values(methods).filter(method => method.stateMutability === "view" || method.stateMutability === "pure" || method.outputs.length > 0);
+    },
     notnull: function (amount) {
       return amount != undefined && amount != "0x0000000000000000000000000000000000000000000000000000000000000000";
     },
@@ -242,7 +271,7 @@ var VAccount = Vue.component("account", {
       });
       web3.eth.getNode(this.hash, true, (err, ret) => {
         this.err = undefined;
-        if (err || ret[0] != "server") {
+        if (err || ret == undefined || ret[0] != "server") {
           this.node = undefined;
           return;
         }
@@ -250,7 +279,7 @@ var VAccount = Vue.component("account", {
       });
       web3.eth.getObject(this.hash, true, (err, ret) => {
         this.err = undefined;
-        if (err || (ret[0] != "ticketv2" && ret[0] != "ticket")) return;
+        if (err || ret == undefined || (ret[0] != "ticketv2" && ret[0] != "ticket")) return;
 
         switch (ret[0]) {
           case "ticketv2":
@@ -304,11 +333,26 @@ var VAccount = Vue.component("account", {
         this.err = undefined;
         if (err) this.error = err;
         else this.storage = ret.sort();
+
+        for (let i = 0; i < this.storage.length; i++) {
+          let [key, value] = this.storage[i];
+          if (key == "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc") {
+            this.target = valueToAddress(value);
+            if (DriveMemberTargets.includes(this.target)) {
+              this.rawType = "DriveMember";
+              this.$forceUpdate();
+            }
+          }
+        }
       });
       web3.eth.getTransactionCount(this.hash, (err, ret) => {
         this.err = undefined;
         if (err) this.error = err;
         else this.nonce = ret;
+      });
+      CallDrive("Type", this.hash, [], (ret) => { 
+        this.rawType = ret;
+        this.$forceUpdate();
       });
       fetchStakeN(this.hash, (stake) => { this.stake = stake; },  0);
       fetchStakeN(this.hash, (stake) => { this.stake1 = stake; }, 1);
@@ -322,8 +366,18 @@ var VAccount = Vue.component("account", {
       this.searchActivated = false;
       this.searchFinished = false;
       this.searchResults = [];
-
+      this.rawType = undefined;
+      this.callResults = {};
       this.update();
+    },
+    type: function () {
+      if (this.type == "Drive") {
+        this.funs = this.readOnly(driveMethods);
+      } else if (this.rawType == "DriveMember") {
+        this.funs = this.readOnly(driveMemberMethods);
+      } else {
+        this.funs = [];
+      }
     },
   },
 });
