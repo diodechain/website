@@ -638,7 +638,7 @@
   @include media-breakpoint-up(lg) {
     display: block;
     position: absolute;
-    top: 120px; // align top with bottom of header (header height)
+    top: 100px; // align top with bottom of header (header height)
     right: -40px;
     z-index: 10; // on top of hero overlay (0) and content (1)
     pointer-events: none;

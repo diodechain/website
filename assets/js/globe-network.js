@@ -82,6 +82,39 @@
       var ctx = canvas.getContext('2d');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, canvas.width, canvas.height);
+
+      var vw = MAP_CONFIG.viewBoxWidth;
+      var vh = MAP_CONFIG.viewBoxHeight;
+      var scaleX = MAP_CANVAS_W / vw;
+      var scaleY = MAP_CANVAS_H / vh;
+
+      ctx.strokeStyle = 'rgba(40,40,40,0.2)';
+      ctx.lineWidth = 0.5;
+      ctx.beginPath();
+      var lngStep = 15;
+      var lng = -180;
+      while (lng <= 180) {
+        var s = geographicToSvg(0, lng);
+        var x = s.x * scaleX;
+        if (x >= 0 && x <= MAP_CANVAS_W) {
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, MAP_CANVAS_H);
+        }
+        lng += lngStep;
+      }
+      var latStep = 15;
+      var lat = -60;
+      while (lat <= 60) {
+        var s = geographicToSvg(lat, 0);
+        var y = s.y * scaleY;
+        if (y >= 0 && y <= MAP_CANVAS_H) {
+          ctx.moveTo(0, y);
+          ctx.lineTo(MAP_CANVAS_W, y);
+        }
+        lat += latStep;
+      }
+      ctx.stroke();
+
       var texture = new THREE.CanvasTexture(canvas);
       texture.needsUpdate = true;
       callback(texture);
@@ -285,15 +318,26 @@
       animate();
     }
 
-    // Points (radius 0.025; globe mesh is skipped when picking so click still works)
-    var pointGeom = new THREE.SphereGeometry(0.025, 8, 6);
-    var pointMat = new THREE.MeshBasicMaterial({ color: 0xf15d2f });
+    // Points: outer sphere (current size, 50% transparent) + inner sphere (bright orange core)
+    var pointRadiusOuter = 0.01875;
+    var pointRadiusInner = pointRadiusOuter * 0.35;
+    var pointGeomOuter = new THREE.SphereGeometry(pointRadiusOuter, 8, 6);
+    var pointGeomInner = new THREE.SphereGeometry(pointRadiusInner, 8, 6);
+    var pointMatOuter = new THREE.MeshBasicMaterial({
+      color: 0xf15d2f,
+      transparent: true,
+      opacity: 0.5
+    });
+    var pointMatInner = new THREE.MeshBasicMaterial({ color: 0xf15d2f });
     POINTS.forEach(function (p) {
       var pos = latLngToVector3MatchingMap(p.lat, p.lng);
-      var mesh = new THREE.Mesh(pointGeom, pointMat.clone());
-      mesh.position.copy(pos);
-      mesh.userData = p;
-      pointsGroup.add(mesh);
+      var outerMesh = new THREE.Mesh(pointGeomOuter, pointMatOuter.clone());
+      outerMesh.position.copy(pos);
+      outerMesh.userData = p;
+      pointsGroup.add(outerMesh);
+      var innerMesh = new THREE.Mesh(pointGeomInner, pointMatInner.clone());
+      innerMesh.position.copy(pos);
+      pointsGroup.add(innerMesh);
     });
     globeGroup.add(pointsGroup);
 
