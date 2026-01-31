@@ -295,10 +295,28 @@
       canvas.addEventListener('mouseleave', onMouseUp);
 
       var clock = new THREE.Clock();
+      var glowStates = [];
+      var GLOW_COUNT = 3;
+      var GLOW_DURATION = 1.4;
+      var GLOW_PEAK_OPACITY = 0.75;
+      var GLOW_START_DELAY = 0.5;
+
+      function pickRandomGlowIndex(excludeIndices) {
+        var n = glowMeshes.length;
+        if (n === 0) return -1;
+        var exclude = {};
+        for (var i = 0; i < excludeIndices.length; i++) exclude[excludeIndices[i]] = true;
+        var candidates = [];
+        for (var j = 0; j < n; j++) if (!exclude[j]) candidates.push(j);
+        return candidates.length > 0 ? candidates[Math.floor(Math.random() * candidates.length)] : -1;
+      }
+
       function animate() {
         if (!el.isConnected) return;
         requestAnimationFrame(animate);
         var dt = clock.getDelta();
+        var now = clock.getElapsedTime();
+
         if (!isDragging) {
           rotationX += velocityX;
           rotationY += velocityY;
@@ -311,6 +329,37 @@
             rotationY += ROTATION_SPEED * dt;
           }
         }
+
+        if (glowMeshes.length > 0) {
+          scene.updateMatrixWorld(true);
+          for (var gi = 0; gi < glowMeshes.length; gi++) {
+            glowMeshes[gi].mesh.lookAt(camera.position);
+          }
+          for (var i = glowStates.length - 1; i >= 0; i--) {
+            var g = glowStates[i];
+            var t = (now - g.startTime) / g.duration;
+            if (t >= 1) {
+              glowMeshes[g.index].material.opacity = 0;
+              glowStates.splice(i, 1);
+            } else {
+              glowMeshes[g.index].material.opacity = GLOW_PEAK_OPACITY * Math.sin(Math.PI * t);
+            }
+          }
+          var activeIndices = glowStates.map(function (g) { return g.index; });
+          if (now >= GLOW_START_DELAY) {
+            while (glowStates.length < GLOW_COUNT) {
+              var idx = pickRandomGlowIndex(activeIndices);
+              if (idx < 0) break;
+              activeIndices.push(idx);
+              glowStates.push({
+                index: idx,
+                startTime: now,
+                duration: GLOW_DURATION
+              });
+            }
+          }
+        }
+
         globeGroup.rotation.x = rotationX;
         globeGroup.rotation.y = rotationY;
         renderer.render(scene, camera);
@@ -318,17 +367,22 @@
       animate();
     }
 
-    // Points: outer sphere (current size, 50% transparent) + inner sphere (bright orange core)
+    // Points: outer sphere (current size, 50% transparent) + inner sphere (bright orange core) + glow (animated)
     var pointRadiusOuter = 0.01875;
     var pointRadiusInner = pointRadiusOuter * 0.35;
+    var pointRadiusGlow = pointRadiusOuter * 1.3;
     var pointGeomOuter = new THREE.SphereGeometry(pointRadiusOuter, 8, 6);
     var pointGeomInner = new THREE.SphereGeometry(pointRadiusInner, 8, 6);
+    var ringInner = pointRadiusGlow * 0.97;
+    var ringOuter = pointRadiusGlow * 1.03;
+    var pointGeomGlow = new THREE.RingGeometry(ringInner, ringOuter, 64);
     var pointMatOuter = new THREE.MeshBasicMaterial({
       color: 0xf15d2f,
       transparent: true,
       opacity: 0.5
     });
     var pointMatInner = new THREE.MeshBasicMaterial({ color: 0xf15d2f });
+    var glowMeshes = [];
     POINTS.forEach(function (p) {
       var pos = latLngToVector3MatchingMap(p.lat, p.lng);
       var outerMesh = new THREE.Mesh(pointGeomOuter, pointMatOuter.clone());
@@ -338,6 +392,18 @@
       var innerMesh = new THREE.Mesh(pointGeomInner, pointMatInner.clone());
       innerMesh.position.copy(pos);
       pointsGroup.add(innerMesh);
+      var glowMat = new THREE.MeshBasicMaterial({
+        color: 0x88ddff,
+        transparent: true,
+        opacity: 0,
+        depthWrite: false,
+        depthTest: false,
+        side: THREE.DoubleSide
+      });
+      var glowMesh = new THREE.Mesh(pointGeomGlow, glowMat);
+      glowMesh.position.copy(pos);
+      pointsGroup.add(glowMesh);
+      glowMeshes.push({ material: glowMat, mesh: glowMesh });
     });
     globeGroup.add(pointsGroup);
 
