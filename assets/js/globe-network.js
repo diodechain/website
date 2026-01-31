@@ -1,6 +1,7 @@
 (function () {
-  var POINTS = window.DIODE_NETWORK_POINTS || [];
   var CONTAINER_ID = 'globe-network';
+  var RPC_WS_URL = window.DIODE_GLOBE_RPC_WS || 'wss://prenet.diode.io:8443/ws';
+  var IP_GEO_URL = window.DIODE_GLOBE_IP_GEO || 'https://monitor.testnet.diode.io/ip/';
   var RADIUS = 1;
   var ROTATION_SPEED = 0.15;
   var MAP_CANVAS_W = 1024;
@@ -70,6 +71,66 @@
   function latLngToVector3MatchingMap(lat, lng) {
     var svg = geographicToSvg(lat, lng);
     return svgToVector3(svg.x, svg.y);
+  }
+
+  function isLocalIP(ip) {
+    if (!ip || typeof ip !== 'string') return true;
+    if (ip.indexOf('127.') === 0 || ip.indexOf('10.') === 0 || ip.indexOf('192.168') === 0) return true;
+    if (ip.indexOf('172.') === 0) {
+      var parts = ip.split('.');
+      if (parts.length >= 2 && parseInt(parts[1], 10) >= 16 && parseInt(parts[1], 10) < 32) return true;
+    }
+    return false;
+  }
+
+  function fetchNetworkPoints(onPoint) {
+    var staticFallback = window.DIODE_NETWORK_POINTS;
+    var done = false;
+    function useStatic() {
+      if (done || !staticFallback || !Array.isArray(staticFallback)) return;
+      done = true;
+      staticFallback.forEach(function (p) {
+        if (p && typeof p.lat === 'number' && typeof p.lng === 'number') onPoint(p);
+      });
+    }
+    var fallbackTimer = setTimeout(function () { ws.close(); useStatic(); }, 12000);
+    var ws = new WebSocket(RPC_WS_URL);
+    ws.onopen = function () {
+      ws.send(JSON.stringify({ jsonrpc: '2.0', method: 'dio_network', params: [], id: 1 }));
+    };
+    ws.onmessage = function (event) {
+      try {
+        var msg = JSON.parse(event.data);
+        if (!msg.result || !Array.isArray(msg.result)) return;
+        clearTimeout(fallbackTimer);
+        done = true;
+        ws.close();
+        var seen = {};
+        msg.result.forEach(function (entry) {
+          var node = entry[1] || (entry.node);
+          if (!node || !Array.isArray(node)) return;
+          var ip = node[1];
+          if (!ip || isLocalIP(ip) || seen[ip]) return;
+          seen[ip] = true;
+          fetch(IP_GEO_URL + ip, { headers: { 'Accept': 'application/json' } })
+            .then(function (r) { return r.json(); })
+            .then(function (loc) {
+              var lat = loc.latitude != null ? Number(loc.latitude) : null;
+              var lng = loc.longitude != null ? Number(loc.longitude) : null;
+              if (lat == null || lng == null || isNaN(lat) || isNaN(lng)) return;
+              onPoint({
+                lat: lat,
+                lng: lng,
+                city: loc.city || '',
+                country: loc.country_name || loc.country || ''
+              });
+            })
+            .catch(function () {});
+        });
+      } catch (e) {}
+    };
+    ws.onerror = function () { clearTimeout(fallbackTimer); ws.close(); useStatic(); };
+    ws.onclose = function () { if (!done) useStatic(); };
   }
 
   function createMapTexture(mapImageUrl, callback) {
@@ -383,7 +444,8 @@
     });
     var pointMatInner = new THREE.MeshBasicMaterial({ color: 0xf15d2f });
     var glowMeshes = [];
-    POINTS.forEach(function (p) {
+
+    function addPoint(p) {
       var pos = latLngToVector3MatchingMap(p.lat, p.lng);
       var outerMesh = new THREE.Mesh(pointGeomOuter, pointMatOuter.clone());
       outerMesh.position.copy(pos);
@@ -404,13 +466,18 @@
       glowMesh.position.copy(pos);
       pointsGroup.add(glowMesh);
       glowMeshes.push({ material: glowMat, mesh: glowMesh });
-    });
+    }
+
     globeGroup.add(pointsGroup);
 
     if (mapImageUrl) {
-      createMapTexture(mapImageUrl, buildGlobe);
+      createMapTexture(mapImageUrl, function (texture) {
+        buildGlobe(texture);
+        fetchNetworkPoints(addPoint);
+      });
     } else {
       buildGlobe(null);
+      fetchNetworkPoints(addPoint);
     }
 
     function onResize() {

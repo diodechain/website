@@ -12,16 +12,14 @@
 	{%- include header.liquid -%}
 
 	<main class="main" role="main">
-		<article class="container{% if site.data.network_points %}{% if page.hero and page.hero.globe %} article--with-hero-globe{% elsif page.url == '/' or page.url == '' or page.path == 'index.md' %} article--with-hero-globe{% endif %}{% endif %}">
+		{%- assign show_globe = false -%}
+		{%- if page.hero and page.hero.globe -%}
+			{%- assign show_globe = true -%}
+		{%- elsif page.url == "/" or page.url == "" or page.path == "index.md" -%}
+			{%- assign show_globe = true -%}
+		{%- endif -%}
+		<article class="container{% if show_globe %} article--with-hero-globe{% endif %}">
 			{{ content }}
-			{%- assign show_globe = false -%}
-			{%- if site.data.network_points -%}
-				{%- if page.hero and page.hero.globe -%}
-					{%- assign show_globe = true -%}
-				{%- elsif page.url == "/" or page.url == "" or page.path == "index.md" -%}
-					{%- assign show_globe = true -%}
-				{%- endif -%}
-			{%- endif -%}
 			{%- if show_globe -%}
 			<section class="hero-globe-section" aria-hidden="true">
 				<div class="hero-globe__frame">
