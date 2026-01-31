@@ -101,28 +101,47 @@
     ws.onmessage = function (event) {
       try {
         var msg = JSON.parse(event.data);
-        if (!msg.result || !Array.isArray(msg.result)) return;
+        if (!msg.result) return;
+        var result = Array.isArray(msg.result) ? msg.result : (msg.result.nodes || msg.result.entries || []);
+        if (!Array.isArray(result) || result.length === 0) return;
         clearTimeout(fallbackTimer);
         done = true;
         ws.close();
-        var seen = {};
-        msg.result.forEach(function (entry) {
-          var node = entry[1] || (entry.node);
-          if (!node || !Array.isArray(node)) return;
-          var ip = node[1];
-          if (!ip || isLocalIP(ip) || seen[ip]) return;
-          seen[ip] = true;
+        var byIp = {};
+        result.forEach(function (entry) {
+          var node = entry[1] != null ? entry[1] : entry.node;
+          var nodeId = entry[0] != null ? entry[0] : entry.node_id;
+          if (!node || nodeId == null) return;
+          var ip = Array.isArray(node) ? node[1] : (node.ip || node.address || node[1]);
+          if (!ip || typeof ip !== 'string' || isLocalIP(ip)) return;
+          if (!byIp[ip]) byIp[ip] = { nodeIds: [] };
+          byIp[ip].nodeIds.push(nodeId);
+        });
+        var ips = Object.keys(byIp);
+        if (ips.length === 0) {
+          ws.close();
+          useStatic();
+          return;
+        }
+        ips.forEach(function (ip) {
+          var nodeIds = byIp[ip].nodeIds;
           fetch(IP_GEO_URL + ip, { headers: { 'Accept': 'application/json' } })
             .then(function (r) { return r.json(); })
             .then(function (loc) {
+              if (!loc) return;
               var lat = loc.latitude != null ? Number(loc.latitude) : null;
               var lng = loc.longitude != null ? Number(loc.longitude) : null;
               if (lat == null || lng == null || isNaN(lat) || isNaN(lng)) return;
-              onPoint({
-                lat: lat,
-                lng: lng,
-                city: loc.city || '',
-                country: loc.country_name || loc.country || ''
+              var countryCode = loc.country_code || loc.countryCode || '';
+              nodeIds.forEach(function (nodeId) {
+                onPoint({
+                  lat: lat,
+                  lng: lng,
+                  city: loc.city || '',
+                  countryCode: countryCode,
+                  nodeId: nodeId,
+                  ip: ip
+                });
               });
             })
             .catch(function () {});
@@ -264,28 +283,67 @@
     }
 
     function onMouseMove(e) {
-      if (!isDragging) return;
-      var deltaX = e.clientX - lastClientX;
-      var deltaY = e.clientY - lastClientY;
-      rotationY += deltaX * DRAG_SENSITIVITY;
-      rotationX += deltaY * DRAG_SENSITIVITY;
-      rotationX = Math.max(ROTATION_X_MIN, Math.min(ROTATION_X_MAX, rotationX));
-      velocityX = deltaY * DRAG_SENSITIVITY * INERTIA_TRANSFER;
-      velocityY = deltaX * DRAG_SENSITIVITY * INERTIA_TRANSFER;
-      lastClientX = e.clientX;
-      lastClientY = e.clientY;
+      if (isDragging) {
+        var deltaX = e.clientX - lastClientX;
+        var deltaY = e.clientY - lastClientY;
+        rotationY += deltaX * DRAG_SENSITIVITY;
+        rotationX += deltaY * DRAG_SENSITIVITY;
+        rotationX = Math.max(ROTATION_X_MIN, Math.min(ROTATION_X_MAX, rotationX));
+        velocityX = deltaY * DRAG_SENSITIVITY * INERTIA_TRANSFER;
+        velocityY = deltaX * DRAG_SENSITIVITY * INERTIA_TRANSFER;
+        lastClientX = e.clientX;
+        lastClientY = e.clientY;
+      } else if (canvas) {
+        var rect = canvas.getBoundingClientRect();
+        mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+        mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+        scene.updateMatrixWorld(true);
+        raycaster.setFromCamera(mouse, camera);
+        var intersects = raycaster.intersectObjects([globeGroup], true);
+        var overPoint = false;
+        for (var i = 0; i < intersects.length; i++) {
+          if (intersects[i].object.userData && intersects[i].object.userData.lat != null) {
+            overPoint = true;
+            break;
+          }
+        }
+        canvas.style.cursor = overPoint ? 'pointer' : 'grab';
+      }
     }
 
     function showTooltip(pointData, clientX, clientY) {
       var tip = tooltipEl || document.getElementById('globe-network-tooltip');
       if (!tip) return;
       var city = pointData.city || '';
-      var country = pointData.country || '';
-      var locationText = city && country ? city + ', ' + country : (city || country || 'Unknown');
-      var prenetUrl = (typeof window.location !== 'undefined' && window.location.pathname) ? window.location.origin + '/prenet/#/network' : '/prenet/#/network';
+      var countryCode = pointData.countryCode || pointData.country || '';
+      var locationText = city && countryCode ? city + ', ' + countryCode : (city || countryCode || 'Unknown');
+      var base = (typeof window.location !== 'undefined' && window.location.origin) ? window.location.origin : '';
+      var nodeBase = base + '/network/#/node/';
+      var networkMapSectionUrl = 'https://diodenetwork.io/#network-map-section';
+      var nodeEntries = pointData.nodeEntries || [];
+      var nodeIds = pointData.nodeIds || [];
+      if (nodeEntries.length === 0 && nodeIds.length > 0) {
+        nodeIds.forEach(function (id) { nodeEntries.push({ nodeId: id, ip: '' }); });
+      }
+      var linkParts = [];
+      var n = Math.min(3, nodeEntries.length);
+      var targetBlank = ' target="_blank" rel="noopener noreferrer"';
+      for (var i = 0; i < n; i++) {
+        var ent = nodeEntries[i];
+        var nodeId = ent.nodeId != null ? ent.nodeId : nodeIds[i];
+        var label = (ent.ip ? escapeHtml(ent.ip) + ' ' : '') + '(' + escapeHtml(truncateAddress(nodeId)) + ')';
+        if (!label.trim()) label = 'View node';
+        linkParts.push('<a href="' + nodeBase + encodeURIComponent(nodeId) + '"' + targetBlank + '>' + label + '</a>');
+      }
+      if (nodeEntries.length > 3) {
+        linkParts.push('<a href="' + networkMapSectionUrl + '"' + targetBlank + '>' + (nodeEntries.length - 3) + ' more...</a>');
+      }
+      if (linkParts.length === 0) {
+        linkParts.push('<a href="' + networkMapSectionUrl + '"' + targetBlank + '>View on Network Map</a>');
+      }
       tip.innerHTML = '<div class="globe-tooltip__inner">' +
-        '<strong>Location:</strong> ' + escapeHtml(locationText) + '<br>' +
-        '<a href="' + prenetUrl + '">View on Network Map</a>' +
+        escapeHtml(locationText) + '<br>' +
+        '<div class="globe-tooltip__links">' + linkParts.join('<br>') + '</div>' +
         '</div>';
       tip.setAttribute('aria-hidden', 'false');
       tip.style.display = 'block';
@@ -312,6 +370,14 @@
       var div = document.createElement('div');
       div.textContent = str;
       return div.innerHTML;
+    }
+
+    function truncateAddress(id) {
+      if (id == null) return '';
+      var s = String(id);
+      if (s.length <= 14) return s;
+      if (s.indexOf('0x') === 0) return s.slice(0, 6) + '\u2026' + s.slice(-4);
+      return s.slice(0, 6) + '\u2026' + s.slice(-4);
     }
 
     function onMouseUp(e) {
@@ -428,15 +494,10 @@
       animate();
     }
 
-    // Points: outer sphere (current size, 50% transparent) + inner sphere (bright orange core) + glow (animated)
-    var pointRadiusOuter = 0.01875;
-    var pointRadiusInner = pointRadiusOuter * 0.35;
-    var pointRadiusGlow = pointRadiusOuter * 1.3;
-    var pointGeomOuter = new THREE.SphereGeometry(pointRadiusOuter, 8, 6);
-    var pointGeomInner = new THREE.SphereGeometry(pointRadiusInner, 8, 6);
-    var ringInner = pointRadiusGlow * 0.97;
-    var ringOuter = pointRadiusGlow * 1.03;
-    var pointGeomGlow = new THREE.RingGeometry(ringInner, ringOuter, 64);
+    // Points: clustered by overlap; one sphere per cluster, size proportional to count
+    var pointRadiusBase = 0.01875;
+    var OVERLAP_THRESHOLD = 0.045;
+    var clusters = [];
     var pointMatOuter = new THREE.MeshBasicMaterial({
       color: 0xf15d2f,
       transparent: true,
@@ -445,13 +506,36 @@
     var pointMatInner = new THREE.MeshBasicMaterial({ color: 0xf15d2f });
     var glowMeshes = [];
 
-    function addPoint(p) {
-      var pos = latLngToVector3MatchingMap(p.lat, p.lng);
-      var outerMesh = new THREE.Mesh(pointGeomOuter, pointMatOuter.clone());
+    function scaleRadius(n) {
+      return Math.pow(n, 0.4);
+    }
+
+    function createClusterMeshes(centerLat, centerLng, count, representative, nodeEntries) {
+      var s = scaleRadius(count);
+      var rOuter = pointRadiusBase * s;
+      var rInner = rOuter * 0.35;
+      var rGlow = rOuter * 1.3;
+      var pos = latLngToVector3MatchingMap(centerLat, centerLng);
+      var geomOuter = new THREE.SphereGeometry(rOuter, 8, 6);
+      var geomInner = new THREE.SphereGeometry(rInner, 8, 6);
+      var ringInner = rGlow * 0.97;
+      var ringOuter = rGlow * 1.03;
+      var geomGlow = new THREE.RingGeometry(ringInner, ringOuter, 64);
+      var outerMesh = new THREE.Mesh(geomOuter, pointMatOuter.clone());
       outerMesh.position.copy(pos);
-      outerMesh.userData = p;
+      var entries = nodeEntries || [];
+      var nodeIds = entries.map(function (e) { return e.nodeId; });
+      outerMesh.userData = {
+        lat: representative.lat,
+        lng: representative.lng,
+        city: representative.city || '',
+        countryCode: representative.countryCode || '',
+        count: count,
+        nodeEntries: entries,
+        nodeIds: nodeIds
+      };
       pointsGroup.add(outerMesh);
-      var innerMesh = new THREE.Mesh(pointGeomInner, pointMatInner.clone());
+      var innerMesh = new THREE.Mesh(geomInner, pointMatInner.clone());
       innerMesh.position.copy(pos);
       pointsGroup.add(innerMesh);
       var glowMat = new THREE.MeshBasicMaterial({
@@ -462,10 +546,51 @@
         depthTest: false,
         side: THREE.DoubleSide
       });
-      var glowMesh = new THREE.Mesh(pointGeomGlow, glowMat);
+      var glowMesh = new THREE.Mesh(geomGlow, glowMat);
       glowMesh.position.copy(pos);
       pointsGroup.add(glowMesh);
-      glowMeshes.push({ material: glowMat, mesh: glowMesh });
+      return { outerMesh: outerMesh, innerMesh: innerMesh, glowMesh: glowMesh, glowMat: glowMat };
+    }
+
+    function removeClusterMeshes(cluster) {
+      pointsGroup.remove(cluster.outerMesh);
+      pointsGroup.remove(cluster.innerMesh);
+      pointsGroup.remove(cluster.glowMesh);
+    }
+
+    function addPoint(p) {
+      var pos = latLngToVector3MatchingMap(p.lat, p.lng);
+      for (var i = 0; i < clusters.length; i++) {
+        var c = clusters[i];
+        var cPos = latLngToVector3MatchingMap(c.center.lat, c.center.lng);
+        if (pos.distanceTo(cPos) < OVERLAP_THRESHOLD) {
+          removeClusterMeshes(c);
+          if (p.nodeId != null) c.nodeEntries.push({ nodeId: p.nodeId, ip: p.ip || '' });
+          var newCount = c.count + 1;
+          var meshes = createClusterMeshes(c.center.lat, c.center.lng, newCount, c.representative, c.nodeEntries);
+          c.outerMesh = meshes.outerMesh;
+          c.innerMesh = meshes.innerMesh;
+          c.glowMesh = meshes.glowMesh;
+          c.glowMat = meshes.glowMat;
+          c.count = newCount;
+          glowMeshes[c.glowIndex] = { material: meshes.glowMat, mesh: meshes.glowMesh };
+          return;
+        }
+      }
+      var nodeEntries = p.nodeId != null ? [{ nodeId: p.nodeId, ip: p.ip || '' }] : [];
+      var meshes = createClusterMeshes(p.lat, p.lng, 1, p, nodeEntries);
+      clusters.push({
+        center: { lat: p.lat, lng: p.lng },
+        representative: { lat: p.lat, lng: p.lng, city: p.city || '', countryCode: p.countryCode || '' },
+        nodeEntries: nodeEntries,
+        count: 1,
+        outerMesh: meshes.outerMesh,
+        innerMesh: meshes.innerMesh,
+        glowMesh: meshes.glowMesh,
+        glowMat: meshes.glowMat,
+        glowIndex: glowMeshes.length
+      });
+      glowMeshes.push({ material: meshes.glowMat, mesh: meshes.glowMesh });
     }
 
     globeGroup.add(pointsGroup);
