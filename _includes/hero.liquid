@@ -47,6 +47,9 @@
                     {% endfor %}
                 </div>
             {% endif %}
+            {%- if data.tagline -%}
+                <div class="hero__tagline">{{ data.tagline | markdownify }}</div>
+            {% endif %}
             </div>
         </div>
     </div>

@@ -423,19 +423,42 @@
 
       var clock = new THREE.Clock();
       var glowStates = [];
-      var GLOW_COUNT = 3;
+      var GLOW_BURST_SIZE = 5;
       var GLOW_DURATION = 1.4;
-      var GLOW_PEAK_OPACITY = 0.75;
+      var GLOW_PEAK_OPACITY = 0.95;
       var GLOW_START_DELAY = 0.5;
+      var BURST_2_DELAY = 0.35;
+      var PAUSE_AFTER_BURSTS = 1.5;
+      var glowBurstPhase = 0;
+      var glowNextTime = GLOW_START_DELAY;
 
-      function pickRandomGlowIndex(excludeIndices) {
+      function pickRandomGlowIndices(count, excludeIndices) {
         var n = glowMeshes.length;
-        if (n === 0) return -1;
+        if (n === 0 || count <= 0) return [];
         var exclude = {};
         for (var i = 0; i < excludeIndices.length; i++) exclude[excludeIndices[i]] = true;
         var candidates = [];
         for (var j = 0; j < n; j++) if (!exclude[j]) candidates.push(j);
-        return candidates.length > 0 ? candidates[Math.floor(Math.random() * candidates.length)] : -1;
+        var result = [];
+        for (var k = 0; k < count && candidates.length > 0; k++) {
+          var idx = Math.floor(Math.random() * candidates.length);
+          result.push(candidates[idx]);
+          exclude[candidates[idx]] = true;
+          candidates.splice(idx, 1);
+        }
+        return result;
+      }
+
+      function startGlowBurst(count, now) {
+        var activeIndices = glowStates.map(function (g) { return g.index; });
+        var indices = pickRandomGlowIndices(count, activeIndices);
+        for (var i = 0; i < indices.length; i++) {
+          glowStates.push({
+            index: indices[i],
+            startTime: now,
+            duration: GLOW_DURATION
+          });
+        }
       }
 
       function animate() {
@@ -472,18 +495,16 @@
               glowMeshes[g.index].material.opacity = GLOW_PEAK_OPACITY * Math.sin(Math.PI * t);
             }
           }
-          var activeIndices = glowStates.map(function (g) { return g.index; });
-          if (now >= GLOW_START_DELAY) {
-            while (glowStates.length < GLOW_COUNT) {
-              var idx = pickRandomGlowIndex(activeIndices);
-              if (idx < 0) break;
-              activeIndices.push(idx);
-              glowStates.push({
-                index: idx,
-                startTime: now,
-                duration: GLOW_DURATION
-              });
-            }
+          if (glowBurstPhase === 0 && now >= glowNextTime) {
+            startGlowBurst(GLOW_BURST_SIZE, now);
+            glowBurstPhase = 1;
+            glowNextTime = now + BURST_2_DELAY;
+          } else if (glowBurstPhase === 1 && now >= glowNextTime) {
+            startGlowBurst(GLOW_BURST_SIZE, now);
+            glowBurstPhase = 2;
+          } else if (glowBurstPhase === 2 && glowStates.length === 0) {
+            glowBurstPhase = 0;
+            glowNextTime = now + PAUSE_AFTER_BURSTS;
           }
         }
 
@@ -539,7 +560,7 @@
       innerMesh.position.copy(pos);
       pointsGroup.add(innerMesh);
       var glowMat = new THREE.MeshBasicMaterial({
-        color: 0x88ddff,
+        color: 0xaaefff,
         transparent: true,
         opacity: 0,
         depthWrite: false,

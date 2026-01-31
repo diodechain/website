@@ -12,13 +12,19 @@ hero:
   animated: true
   globe: true
   heading: Blockchain secured networking
-  subheading: Peer to peer connectivity with a private, self-custody, and serverless control plane.
+  subheading: Upgrade your zero trust connectivity
   buttons:
-  - title: GET THE APP
+  - title: Login or Signup
     url: "#download-app"
     class: popup-open
+  tagline: Permissionless TCP/UDP relays with out-of-the box WireGuard, private AI, messaging, files, and more.
   image: hero/solutions.webp
 
+### Headline below Hero
+headline:
+  animated: false
+  title: Why blockchain?
+  text: Blockchain eliminates vendor risk.  Diode's approach ensures your serverless control plane is private, highly secure, immutable, and self-custody.<br><br>READ MORE
 
 ### Box: Why Diode
 #why-diode:
@@ -54,7 +60,7 @@ hero:
 designed:
   class: "box--network"
   animated: false
-  title: Designed for collaboration where security is essential.
+  title: Permissionless private Automated TCP/UDP relays choreographed by encrypted blockchain defined perimeters.
   
 
 ### Story: Fort Knox protection
@@ -187,6 +193,7 @@ it-people:
 
 {%- include hero.liquid -%}
 
+{%- include headline.liquid -%}
 {% comment %}
 {%- include box.liquid data="why-diode" -%}
 {% endcomment %}
