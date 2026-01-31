@@ -9,6 +9,9 @@
 {% else %}
     {% assign class = "" %}
 {% endif %}
+{%- if data.globe -%}
+    {% assign class = class | append: ' hero--with-globe' %}
+{% endif %}
 
 {% assign image = data.image | prepend: site.path.images | relative_url %}
 
@@ -21,7 +24,10 @@
 {% else %}
 <header class="hero{{ class }}" style="background-image:url('{{ image }}');">
 {% endif %}
-    <div class="row">
+    {%- if data.class contains 'homepage' -%}
+    <div class="hero__overlay" aria-hidden="true"></div>
+    {%- endif -%}
+    <div class="row hero__row">
         <div class="col col-12 col-lg-10">
             {%- if data.animated -%}
             <div class="hero__content{{ buttons }}" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1500" data-aos-easing="ease-out" data-aos-once="true">

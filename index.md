@@ -10,13 +10,14 @@ redirect_from:
 hero:
   class: hero--homepage
   animated: true
-  heading: Privacy-first collaboration
-  subheading: Messaging and remote access for ops teams, executives, and expats - for when security is essential.
+  globe: true
+  heading: Blockchain secured networking
+  subheading: Peer to peer connectivity with a private, self-custody, and serverless control plane.
   buttons:
   - title: GET THE APP
     url: "#download-app"
     class: popup-open
-  image: hero/home.webp
+  image: hero/solutions.webp
 
 
 ### Box: Why Diode

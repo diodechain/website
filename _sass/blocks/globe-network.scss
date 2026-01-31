@@ -1,0 +1,52 @@
+/* ==========================================================================
+   GLOBE NETWORK (3D rotating globe with node points)
+   ========================================================================== */
+.globe-network-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  max-height: 600px;
+  margin: 1rem 0 2rem;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.globe-network-canvas {
+  display: block;
+  width: 100%;
+}
+
+.globe-tooltip {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  max-width: 280px;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+
+  &.globe-tooltip--visible {
+    display: block;
+  }
+
+  a {
+    color: #f15d2f;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.globe-tooltip__inner {
+  strong {
+    font-weight: 600;
+  }
+}

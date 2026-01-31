@@ -1,0 +1,13 @@
+[
+  {"lat": 51.4964, "lng": -0.1224, "city": "England", "country": "United Kingdom"},
+  {"lat": 35.6963, "lng": 139.7386, "city": "Tokyo", "country": "Japan"},
+  {"lat": 1.32, "lng": 103.8198, "city": "Singapore", "country": "Singapore"},
+  {"lat": 37.5483, "lng": -121.9886, "city": "Freemont", "country": "United States"},
+  {"lat": 40.7387, "lng": -74.1945, "city": "Newark", "country": "United States"},
+  {"lat": 32.9482, "lng": -96.7297, "city": "Dallas", "country": "United States"},
+  {"lat": 50.1155, "lng": 8.6842, "city": "Frankfurt", "country": "Germany"},
+  {"lat": 51.3838, "lng": 0.0408, "city": "London", "country": "United Kingdom"},
+  {"lat": 43.7417, "lng": -79.3733, "city": "Toronto", "country": "Canada"},
+  {"lat": -33.865, "lng": 151.2094, "city": "Sydney", "country": "Australia"},
+  {"lat": 19.0144, "lng": 72.8479, "city": "Mumbai", "country": "India"}
+]
