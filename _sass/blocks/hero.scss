@@ -679,11 +679,11 @@
   }
 
   @include media-breakpoint-up(md) {
-    top: 100px; // align top with bottom of header (header height)
+    top: 80px; // align top with bottom of header (header height)
     right: -40px;
     z-index: 10; // on top of hero overlay (0) and content (1)
     @include media-breakpoint-up(xl) {
-      top: 160px; // header height at xl
+      top: 100px; // header height at xl
     }
   }
 }

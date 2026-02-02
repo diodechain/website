@@ -368,36 +368,19 @@
     position: absolute;
     z-index: 5;
     @include media-breakpoint-down(md) {
-      width: 40px;
-      height: 40px;
-      min-width: 0;
-      padding: 0;
-      border: none;
-      border-radius: 0;
-      overflow: hidden;
-      top: 25px;
-      right: 55px;
-      text-indent: -1000px;
-      white-space: nowrap;
-      transition: none;
-      &, &:hover {background: url($icon-download) no-repeat center center;}
-    }
-    @include media-breakpoint-down(sm) {
-      right: 65px;
-    }
-    @include media-breakpoint-down(xss) {
+      top: 28px;
       right: 55px;
     }
     @include media-breakpoint-up(md) {
       display: block;
       top: 28px;
-      right: 55px;
+      right: 45px;
     }
     @include media-breakpoint-up(xl) {
       top: 65px;
     }
     @include media-breakpoint-up(xxl) {
-      right: 102px;
+      right: 95px;
     }
     @media (hover: hover) {
       &:hover, &:focus {color: black}
@@ -430,31 +413,31 @@
     font-weight: 300;
     position: absolute;
     z-index: 5;
+    @include media-breakpoint-down(xs) {
+      display: block;
+      top: 28px;
+      right: 105px;
+    }
+    @include media-breakpoint-up(sm) {
+      display: block;
+      top: 28px;
+      right: 155px;
+    }
     @include media-breakpoint-down(md) {
       display: block;
       top: 28px;
-      right: 105px;
-    }
-    @include media-breakpoint-down(sm) {
-      display: block;
-      top: 28px;
-      right: 105px;
-    }
-    @include media-breakpoint-down(xss) {
-      display: block;
-      top: 28px;
-      right: 105px;
+      right: 155px;
     }
     @include media-breakpoint-up(md) {
       display: block;
       top: 28px;
-      right: 187px;
+      right: 155px;
     }
     @include media-breakpoint-up(xl) {
       top: 65px;
     }
     @include media-breakpoint-up(xxl) {
-      right: 232px;
+      right: 205px;
     }
     @media (hover: hover) {
       &:hover, &:focus {color: black}
@@ -476,6 +459,10 @@
           }
         }
       }
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: none !important;
     }
   }
 

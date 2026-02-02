@@ -3,7 +3,7 @@
    ========================================================================== */
 .headline {
   padding: 70px 15px;
-  margin: -80px -15px 93px;
+  margin: -80px -15px 10px;
   font-size: 16px;
   line-height: 18px;
   color: black;
@@ -22,7 +22,6 @@
     border-radius: 120px 120px 0 120px;
     margin-top: 0;
     margin-right: -15px;
-    margin-bottom: 120px;
     margin-left: -15px;
     position: relative;
     z-index: 2;
@@ -44,7 +43,6 @@
     padding: 45px 110px;
     border-radius: 145px 145px 0 145px;
     margin-top: -30px;
-    margin-bottom: 175px;
     font-size: 22px;
     line-height: 24px;
     background: $color-orange;
@@ -135,8 +133,7 @@
       margin-top: -80px;
     }
     @include media-breakpoint-up(xl) {
-      margin-top: -80px;
-      margin-bottom: 118px;
+      margin-top: -120px;
     }
   }
 }

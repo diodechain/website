@@ -12,11 +12,16 @@
     <div class="headline__content">
         {%- if data.title -%}<h3 class="headline__title">{{ data.title }}</h3>{% endif %}
         {%- if data.text -%}{{ data.text | markdownify }}{% endif %}
-        {%- if data.buttons -%}
+        {%- if data.link_url or data.buttons -%}
             <div class="headline__buttons">
-                {% for button in data.buttons %}
-                    <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
-                {% endfor %}
+                {%- if data.link_url -%}
+                    <a href="{{ data.link_url | relative_url }}" class="btn btn--blank btn--arrow" target="{{ data.link_target | default: '_self' }}">{{ data.link_title | default: 'READ MORE' }}</a>
+                {%- endif -%}
+                {%- if data.buttons -%}
+                    {% for button in data.buttons %}
+                        <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}" target="{{ button.target }}">{{ button.title }}</a>
+                    {% endfor %}
+                {% endif %}
             </div>
         {% endif %}
     </div>

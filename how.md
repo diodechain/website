@@ -24,6 +24,8 @@ story:
   title: No third parties
   heading: Zero Leakage.
   content: |
+    The network of automated TCP/UDP relays are choreographed by encrypted blockchain defined perimeters
+    
     Diode’s [Blockquick&trade;](https://eprint.iacr.org/2019/579.pdf) algorithm allows people and devices using the open source Diode Network to bootstrap trust in the network so they can define and validate their security perimeters.  This enables them to connect with each other without using managed server environments. 
   
     Our autonomous E2EE environment eliminates third parties from the IT stack, thereby removing a major attack surface and setting a new standard for security.

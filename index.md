@@ -11,20 +11,27 @@ hero:
   class: hero--homepage
   animated: true
   globe: true
-  heading: Blockchain secured networking
-  subheading: Upgrade your zero trust connectivity
+  heading: Blockchain secured communication
+  #heading: Blockchain secured ZTNA
+  #heading: Blockchain secured networking
+  subheading: Upgrade your zero trust networking
+  #Lock down your network in the age of AI
+  #Lock down your network in the age of AI
   buttons:
-  - title: Login or Signup
+  - title: Signup
     url: "#download-app"
     class: popup-open
-  tagline: Permissionless TCP/UDP relays with out-of-the box WireGuard, private AI, messaging, files, and more.
+  tagline: Out-of-the box WireGuard, private AI, messaging, files, and more.
+  #tagline: Permissionless TCP/UDP relays with out-of-the box WireGuard, private AI, messaging, files, and more.
   image: hero/solutions.webp
 
 ### Headline below Hero
 headline:
   animated: false
   title: Why blockchain?
-  text: Blockchain eliminates vendor risk.  Diode's approach ensures your serverless control plane is private, highly secure, immutable, and self-custody.<br><br>READ MORE
+  text: Blockchain eliminates vendor risk.  Diode's approach ensures your serverless control plane is private, highly secure, immutable, and self-custody.
+  link_title: READ MORE
+  link_url: /how-it-works/
 
 ### Box: Why Diode
 #why-diode:
@@ -56,45 +63,52 @@ headline:
 #      url: "https://contactdiode.paperform.co/"
 
 
-### Box: Designed
-designed:
-  class: "box--network"
-  animated: false
-  title: Permissionless private Automated TCP/UDP relays choreographed by encrypted blockchain defined perimeters.
-  
+#### Box: Designed
+#designed:
+#  class: "box--network"
+#  animated: false
+#  title: The network of automated TCP/UDP relays are choreographed by encrypted blockchain defined perimeters
 
 ### Story: Fort Knox protection
 protected:
   class: "story--homepage"
   animated: false
   title: 
-  heading: World's most secure team messaging app
+  heading: Zero Trust WireGuard
   content: |
-    Your team can chat, share files, and browse securely in a private network - your only data exposure is on your end devices. 
+    No server to host.  No vendor risk on the control plane.  Just P2P WireGuard.
 
-    No servers or phone numbers are needed, and all data is end-to-end encrypted and fully controlled by you.
+    WireGuard was meant to be P2P.  Diode's automated network of UDP relays and encrypted blockchain control plane unleash WireGuard's full potential. 
 
-    Whether working remotely or in the same room, your collaborations stay private and digitally sovereign.
+    If you are in a regulated industry and need to ensure your routes are locked down to known IP addresses, it is as simple as adding one or more autonomous relays.  Automated, efficient, and extremely low maintenance.  
   image:
     src: story/app-homepage.webp
     alt: Protected no matter what
+  buttons:
+    - title: TRY IT OUT
+      url: "https://collab.diode.io/"
+      target: _blank
 
 
 ### Story: From anywhere, whenever
 anywhere:
   animated: false
   title: 
-  heading: Private and secure file sharing
+  heading: Private AI
   content: |
-    Send and receive sensitive files directly without uploading to third party servers.  Files travel only between you and the recipient, fully end-to-end encrypted.
+    Prove value and innovate with AI without compromising confidentiality.
 
-    Diode is different - even your team membership, permissions, and access controls are fully under your - and only your - control.
+    Diode's end-to-end encrypted private AIs deliver performant LLM capabilities into sensitive operations.
 
-    Start in minutes - no IT setup, no maintenance, and no compromises on privacy.
+    Diode can deliver a full private AI suite, including the LLM, pipeline, tools, and user interface.
   image:
     src: story/file_sharing.webp
     alt: Protected no matter what
   mirrored: true
+  buttons:
+    - title: TRY IT OUT
+      url: "https://collab.diode.io/"
+      target: _blank
 
 
 ### Story: From anywhere, whenever
@@ -102,16 +116,20 @@ developers:
   class: "story--homepage"
   animated: false
   title:  
-  heading: Safer than a VPN for accessing tools
+  heading: Private Team Collaboration
   content: |
-    Remotely access applications, servers, and OT assets without exposing data, or even session information, to the Internet.  
-    
-    Diode works in every region.  You can connect end-to-end encrypted to your tools, or use a safe "regional exit" - all from bookmarks in your Zone. 
+    Diode Collab is a new take on messaging, file sharing, and VPN - everything needed for a team to stay securely connected, everywhere in the world.  
 
-    No matter if your tool is remote equipment, or a SaaS app like Microsoft Teams, secure access for the team is just one click away.
+    It is a cross-platform app that has no data on servers.  Your devices tunnel to each other with nothing in the middle.
+
+    Advanced physical security features bring peace of mind even in contested environments.
   image:
     src: story/network-full.webp
     alt: Diode Collab&trade;
+  buttons:
+    - title: TRY IT OUT
+      url: "https://collab.diode.io/"
+      target: _blank
 
 
 ### Box: reclaim
@@ -196,9 +214,8 @@ it-people:
 {%- include headline.liquid -%}
 {% comment %}
 {%- include box.liquid data="why-diode" -%}
-{% endcomment %}
-
 {%- include box.liquid data="designed" -%}
+{% endcomment %}
 
 {%- include story.liquid data="protected" -%}
 

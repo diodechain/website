@@ -63,7 +63,7 @@ nav:
 # Other Links
 links:
   download:
-    title: Get the App
+    title: Login
     url: "/download/"
   node:
     title: Run a Node
