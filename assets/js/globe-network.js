@@ -83,6 +83,26 @@
     return false;
   }
 
+  var IP_GEO_CONCURRENCY = window.DIODE_GLOBE_IP_GEO_CONCURRENCY || 6;
+  var IP_GEO_RETRY_DELAY_MS = 1500;
+
+  function runWithConcurrency(items, concurrency, runOne) {
+    var index = 0;
+    var inFlight = 0;
+    function next() {
+      if (index >= items.length && inFlight === 0) return;
+      while (inFlight < concurrency && index < items.length) {
+        inFlight += 1;
+        runOne(items[index], function () {
+          inFlight -= 1;
+          next();
+        });
+        index += 1;
+      }
+    }
+    next();
+  }
+
   function fetchNetworkPoints(onPoint) {
     var staticFallback = window.DIODE_NETWORK_POINTS;
     var done = false;
@@ -123,28 +143,46 @@
           useStatic();
           return;
         }
-        ips.forEach(function (ip) {
+        runWithConcurrency(ips, IP_GEO_CONCURRENCY, function (ip, slotDone) {
           var nodeIds = byIp[ip].nodeIds;
-          fetch(IP_GEO_URL + ip, { headers: { 'Accept': 'application/json' } })
-            .then(function (r) { return r.json(); })
-            .then(function (loc) {
-              if (!loc) return;
-              var lat = loc.latitude != null ? Number(loc.latitude) : null;
-              var lng = loc.longitude != null ? Number(loc.longitude) : null;
-              if (lat == null || lng == null || isNaN(lat) || isNaN(lng)) return;
-              var countryCode = loc.country_code || loc.countryCode || '';
-              nodeIds.forEach(function (nodeId) {
-                onPoint({
-                  lat: lat,
-                  lng: lng,
-                  city: loc.city || '',
-                  countryCode: countryCode,
-                  nodeId: nodeId,
-                  ip: ip
+          var resolved = false;
+          var retried = false;
+          function doneOnce() {
+            if (resolved) return;
+            resolved = true;
+            slotDone();
+          }
+          function doFetch() {
+            fetch(IP_GEO_URL + ip, { headers: { 'Accept': 'application/json' } })
+              .then(function (r) { return r.json(); })
+              .then(function (loc) {
+                if (!loc) { doneOnce(); return; }
+                var lat = loc.latitude != null ? Number(loc.latitude) : null;
+                var lng = loc.longitude != null ? Number(loc.longitude) : null;
+                if (lat == null || lng == null || isNaN(lat) || isNaN(lng)) { doneOnce(); return; }
+                var countryCode = loc.country_code || loc.countryCode || '';
+                nodeIds.forEach(function (nodeId) {
+                  onPoint({
+                    lat: lat,
+                    lng: lng,
+                    city: loc.city || '',
+                    countryCode: countryCode,
+                    nodeId: nodeId,
+                    ip: ip
+                  });
                 });
+                doneOnce();
+              })
+              .catch(function () {
+                if (!retried) {
+                  retried = true;
+                  setTimeout(doFetch, IP_GEO_RETRY_DELAY_MS);
+                } else {
+                  doneOnce();
+                }
               });
-            })
-            .catch(function () {});
+          }
+          doFetch();
         });
       } catch (e) {}
     };
