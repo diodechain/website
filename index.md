@@ -11,17 +11,18 @@ hero:
   class: hero--homepage
   animated: true
   globe: true
-  heading: Blockchain secured communication
+  heading: Blockchain secured infrastructure
+  #heading: Blockchain secured communication
   #heading: Blockchain secured ZTNA
   #heading: Blockchain secured networking
-  subheading: Upgrade your zero trust networking
+  subheading: Off-the-shelf WireGuard, private AI, messaging, files, and web tunneling
   #Lock down your network in the age of AI
   #Lock down your network in the age of AI
   buttons:
   - title: Signup
-    url: "#download-app"
+    url: "https://ztna.diode.io"
     class: popup-open
-  tagline: Out-of-the box WireGuard, private AI, messaging, files, and more.
+  tagline: Upgrade your zero trust networking
   #tagline: Permissionless TCP/UDP relays with out-of-the box WireGuard, private AI, messaging, files, and more.
   image: hero/solutions.webp
 
@@ -69,9 +70,8 @@ headline:
 #  animated: false
 #  title: The network of automated TCP/UDP relays are choreographed by encrypted blockchain defined perimeters
 
-### Story: Fort Knox protection
-protected:
-  class: "story--homepage"
+### Story
+wireguard:
   animated: false
   title: 
   heading: Zero Trust WireGuard
@@ -82,16 +82,16 @@ protected:
 
     If you are in a regulated industry and need to ensure your routes are locked down to known IP addresses, it is as simple as adding one or more autonomous relays.  Automated, efficient, and extremely low maintenance.  
   image:
-    src: story/app-homepage.webp
+    src: story/wg-full.webp
     alt: Protected no matter what
   buttons:
-    - title: TRY IT OUT
-      url: "https://collab.diode.io/"
+    - title: Connect Assets Now
+      url: "https://ztna.diode.io/"
       target: _blank
 
 
-### Story: From anywhere, whenever
-anywhere:
+### Story
+private-ai:
   animated: false
   title: 
   heading: Private AI
@@ -102,8 +102,8 @@ anywhere:
 
     Diode can deliver a full private AI suite, including the LLM, pipeline, tools, and user interface.
   image:
-    src: story/file_sharing.webp
-    alt: Protected no matter what
+    src: story/app-homepage.webp
+    alt: Protected AI at every level
   mirrored: true
   buttons:
     - title: TRY IT OUT
@@ -111,9 +111,9 @@ anywhere:
       target: _blank
 
 
-### Story: From anywhere, whenever
-developers:
-  class: "story--homepage"
+### Story
+diode-collab:
+#  class: "story--homepage"
   animated: false
   title:  
   heading: Private Team Collaboration
@@ -124,82 +124,35 @@ developers:
 
     Advanced physical security features bring peace of mind even in contested environments.
   image:
-    src: story/network-full.webp
+    src: story/app-full.webp
     alt: Diode Collab&trade;
   buttons:
-    - title: TRY IT OUT
+    - title: GET THE APP
+      url: "#download-app"
+      class: popup-open
+    - title: Learn more
+      class: "btn--blank btn--arrow"
       url: "https://collab.diode.io/"
       target: _blank
 
 
+
 ### Box: reclaim
-reclaim:
-  class: "box--cta"
-  animated: false
-  title: Reclaim your digital sovereignty - download today 
-  buttons:
-  - title: GET THE APP
-    url: "#download-app"
-    class: popup-open
-
-
-
-### Box: What teams are saying
-testimonials:
-  class: box--testimonials
-  animated: false
-  title: What teams are saying
-  quotes:
-  - quote: Diode unlocks our training software for use in regulated and sensitive environments.
-    author: Erich, CEO Compendium
-  - quote: I use Diode for secure remote control capabilities for our building systems.
-    author: Ettoire, Modosmart
-  - quote: Diode's response to my support requests highlights how much they really care about all of their customers.
-    author: Krista, RPG
-  - quote: Diode just works.
-    author: Joey, Exosite
-  - quote: We can now deploy remote MES components and equipment that are fully GDPR compliant - we have created a Diode-based product line.
-    author: Omer, Dera Technologies
-  - quote: Diode has enabled us to securely administrate our network and to do private financial diligence with portfolio companies.
-    author: Eric, Global Enterprise Network
-  - quote: Diode allows us to move quickly without sacrificing security for the communities and industries we serve.
-    author: Josh, YetiCGI
-
-
-### Box: CTAS
-reluctant-ctas:
-  class: "box--cta"
-  animated: false
-  title: 
-  buttons:
-  - title: HOW IT WORKS
-    url: "/how-it-works/"
-  - title: GET A DEMO
-    url: "https://diodedemo.paperform.co/"
-
-
-### Box: Our solutions
-solutions:
-  class: box--orange
-  animated: false
-  heading: What makes Diode different?
-  solutions:
-  - title: Works in every region
-    icon: icons/app.svg
-    content: Diode works everywhere, even in sensitive regions.  Your team can operate securely when traveling and when interacting with regional partners no matter their location.  Encryption on disk and safety profiles provide physical security.
-  - title: Only you have access to your data
-    icon: icons/cli.svg
-    content: Unlike other team messaging apps that break encryption at the server, Diode Collab uses end-to-end encryption for message, files, and connections.  Not even Diode has access to your data, accounts, or configurations.
-  - title: Anonymous accounts
-    icon: icons/vault.svg
-    content: Diode Collab only requires a username - no phone number, email, or any personal details are required.  Access is managed through decentralized credentials that you control - it is full digital ownership from day one.
+#reclaim:
+#  class: "box--cta"
+#  animated: false
+#  title: Reclaim your digital sovereignty - download today 
+#  buttons:
+#  - title: GET THE APP
+#    url: "#download-app"
+#    class: popup-open
 
 
 ### Box: IT people
 it-people:
   class: "box--cta"
   animated: false
-  title: <br><br>Just want to use the network or build your own app?
+  title: <br><br>Just want to use the relay network, or build your own app?
   buttons:
   - title: LEARN ABOUT THE NETWORK
     url: "/products/network/"
@@ -217,19 +170,11 @@ it-people:
 {%- include box.liquid data="designed" -%}
 {% endcomment %}
 
-{%- include story.liquid data="protected" -%}
+{%- include story.liquid data="wireguard" -%}
 
-{%- include story.liquid data="anywhere" -%}
+{%- include story.liquid data="private-ai" -%}
 
-{%- include story.liquid data="developers" -%}
-
-{%- include box.liquid data="reclaim" -%}
-
-{%- include box.liquid data="testimonials" -%}
-
-{%- include box.liquid data="reluctant-ctas" -%}
-
-{%- include box.liquid data="solutions" -%}
+{%- include story.liquid data="diode-collab" -%}
 
 {%- include box.liquid data="it-people" -%}
 

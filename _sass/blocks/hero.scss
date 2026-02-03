@@ -296,22 +296,23 @@
   }
 
   &__tagline {
-    margin-top: 16px;
+    margin-top: 8px;
     margin-bottom: 0;
     font-size: 14px;
     line-height: 1.4;
     color: rgba(white, .75);
     @include media-breakpoint-up(md) {
       font-size: 15px;
-      margin-top: 18px;
+      margin-top: 10px;
     }
     @include media-breakpoint-up(xl) {
       font-size: 16px;
-      margin-top: 20px;
+      margin-top: 12px;
       color: rgba(white, .85);
     }
     @include media-breakpoint-up(xxl) {
       font-size: 17px;
+      margin-top: 12px;
     }
     p { margin: 0; }
   }
@@ -471,13 +472,13 @@
 
     .hero__buttons {
       margin: 0;
+      margin-bottom: 12px;
       @include media-breakpoint-up(md) {
         position: relative;
         left: auto;
         bottom: auto;
       }
       @include media-breakpoint-up(xl) {
-        margin-bottom: 37px;
       }
       @include media-breakpoint-up(xxl) {
         .btn.btn--bordered {

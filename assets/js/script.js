@@ -177,7 +177,10 @@ function initPopup() {
     var popup = document.querySelector(target);
     if (popup) {
       link.area = popup;
-      link.addEventListener('click', togglePopup, false);
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        togglePopup(e);
+      }, false);
     }
   });
 

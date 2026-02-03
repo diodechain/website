@@ -12,11 +12,11 @@ redirect_from:
 hero:
   animated: true
   class: hero--rounded
-  heading: Build on top&nbsp;of&nbsp;Diode Network
-  subheading: Expand your team’s security perimeter
+  heading: Permissionless ZTNA
+  subheading: More secure than other solutions, for a fraction of the cost
   buttons:
-  - title: VISIT THE NETWORK
-    url: "https://diodenetwork.io"
+  - title: USE THE NETWORK
+    url: "https://ztna.diode.io"
     target: _blank
   image: hero/network.webp
 
@@ -25,16 +25,20 @@ hero:
 story:
   animated: false
   class: story--dash
-  title: Zero trust data fabric
-  heading: Security and Access
+  title: Anyone can run a node, and anyone can use the network
+  heading: Zero trust data fabric
   content: |
-    The Diode Network is the world’s most advanced Smart Network. It is an open-source web3 communications network that combines the highest security with the best accessibility. And it’s available off-the-shelf as a service to the world.
-  
-    We believe the Diode Network is the beginning of great things for the future of the Internet.
+    The Diode Network is lower cost and more secure than other ZTNAs.
+    
+    It is an open-source network of relay nodes that facilitate TCP and UDP connections - it routes traffic between any two points in the universe.
+
+    It is a new take on zero trust networking: globally unique identifiers, blockchain-based sovereign definitions, permissionless access (no account required), and a commodity bandwidth fee structure.
+    
+    The Diode Network is the beginning of great things for the future of the Internet.
   buttons:
-  - title: See how teams are using Diode
+  - title: Visit the Diode Network site
     class: btn--blank btn--arrow
-    url: "/usecases/"
+    url: "https://diodenetwork.io"
   image:
     src: story/network-full.webp
     alt: Network
@@ -45,35 +49,39 @@ story:
 features:
   animated: false
   list:
+  - title: Private Nodes
+    content: |
+      You can host your own Diode Network relay node (aka Point of Presence) to isolate your enterprise traffic or to expand the reach of the Diode Network.
+
+  - title: Isolated Sidechannel
+    content: |
+      A Diode connection can be a valuable sidechannel for your existing application.  Every client gets its own routable Ethereum public key (like an IP address).  
+
   - title: Automated Security
     content: |
-      The Diode Network uses hardened smart contracts running on a blockchain network to automate provisioning and to guarantee security. This means you can use it like a SaaS product and operate your application like an air-gapped security environment.
+      The Diode Network is choreographed by smart contracts running on a blockchain network.  Its behavior is automated, and security is deterministic. This means you can use it like a SaaS product while achieving security like an air-gapped environment.
 
-  - title: Use for
+  - title: Internet Exit Nodes
     content: |
-      Custom apps, private networks, fleet sponsorship
+      Each virtual network can include one or more independently addressable Internet exit nodes.  This allows you to choreograph what region your web traffic emerges from - like a private consumer VPN.
+
+  - title: Multi Protocol Routing
+    content: |
+      Every type of protocol can be routed over the network - HTTPS, WebRTC, WireGuard, etc.
+
+  - title: Use the network for -
+    content: |
+      Private AI, enterprise VPN, secure SaaS apps, zero trust networks
   
       Use the public network off the shelf, extend with your own relay node, or connect with us about private network options.
     buttons:
-    - title: VISIT THE NETWORK
-      url: "https://diodenetwork.io"
-      target: _blank
     - title: RUN A NODE
       url: "https://network.docs.diode.io/docs/"
       target: _blank
-    - title: HOW IT WORKS
+    - title: USE THE NETWORK
       class: btn--blank btn--arrow
-      url: "/how-it-works/"
-
-  - title: Your Own Relay Node
-    content: |
-      You can host your own Diode Network relay node (aka PoP Node) to expand the reach of the Diode Network. As a node host, you can also direct your assets to prioritize the use of your own nodes to further isolate your traffic, reduce your cost, and to integrate with enterprise tools.
-
-  -
-
-  - title: Private Networks
-    content: |
-      Connect with us to learn about how you can deploy and use a fully private Diode Network to enable your Enterprise.
+      url: "https://ztna.diode.io"
+      target: _blank
 
 
 ### Box: Our solutions
@@ -83,27 +91,27 @@ solutions:
   title: No third parties means Zero&nbsp;Leakage&trade;
   heading: Our products
   solutions:
-  - title: App
-    icon: "icons/app.svg"
-    content: Diode Collab&trade; is for your team. Whether replacing a leaky chat app, sharing files E2EE, securing a server dashboard, or deploying advanced OT assets, our app unlocks the power of Diode for people.
-    button:
-      title: Find Out More
-      class: "btn--blank btn--arrow"
-      url: "/products/collab/"
-  - title: CLI
+  - title: Zero Trust WireGuard
     icon: "icons/cli.svg"
-    content: The Diode CLI is a headless tool for OT, IT, and IoT devices. It can be used stand-alone to secure autonomous systems, and/or in concert with team members using Diode Collab.
+    content: WireGuard how it was meant to be - point-to-point connections with a sovereign control plane that you fully control.  The Diode Network delivers world wide STUN/TURN so your team and systems can connect from anywhere.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
       url: "/products/cli/"
-  - title: Vault
+  - title: Secure AI
     icon: "icons/vault.svg"
-    content: The Diode Vault is an autonomous tool that combines both App and CLI features in a small box or cloud appliance. 24-7 availability, backup, and geo-access for your team and assets.
+    content: Diode provides a full suite of private AI capabilities, delivered via our automated zero trust network.  Provision private LLMs, extend with a secure pipeline, expand with secure tools & MCP servers.
     button:
       title: Find Out More
       class: "btn--blank btn--arrow"
       url: "/products/vault/"
+  - title: Diode Collab
+    icon: "icons/app.svg"
+    content: Diode Collab&trade; is for your team. Whether replacing a leaky chat app, sharing files E2EE, securing a server dashboard, or deploying advanced OT assets, Diode Collab unlocks the power of Diode for people.
+    button:
+      title: Find Out More
+      class: "btn--blank btn--arrow"
+      url: "https://collab.diode.io"
 
 ---
 
