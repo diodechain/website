@@ -20,6 +20,7 @@ hero:
   #Lock down your network in the age of AI
   buttons:
   - title: Signup
+    target: _blank
     url: "https://ztna.diode.io"
     class: popup-open
   tagline: Upgrade your zero trust networking
@@ -107,7 +108,7 @@ private-ai:
   mirrored: true
   buttons:
     - title: TRY IT OUT
-      url: "https://collab.diode.io/"
+      url: "https://privateaidemo.diode.link/"
       target: _blank
 
 

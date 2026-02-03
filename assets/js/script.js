@@ -170,9 +170,12 @@ function initPopup() {
 
   document.querySelectorAll('.popup-open').forEach((link) => {
     var target = link.getAttribute('href');
-    // Skip if href is a URL path (starts with / or http) rather than a CSS selector
-    if (target && (target.startsWith('/') || target.startsWith('http://') || target.startsWith('https://'))) {
-      return; // Skip this link, it's not a popup trigger
+    if (!target) return;
+    // If href is a path with a hash (e.g. /#download-app from relative_url), use the hash as the popup selector
+    if (target.indexOf('#') !== -1) {
+      target = target.slice(target.indexOf('#'));
+    } else if (target.startsWith('/') || target.startsWith('http://') || target.startsWith('https://')) {
+      return; // Skip: full URL with no hash, not a popup trigger
     }
     var popup = document.querySelector(target);
     if (popup) {
