@@ -40,23 +40,23 @@ nav:
     url: "/products/vault/"
   - title: Network
     url: "/products/network/"
-- title: Use Cases
-  url: "/usecases/"
+#- title: Use Cases
+#  url: "/usecases/"
 - title: Docs
   url: "https://docs.diode.io/"
   target: _blank
-- title: Pricing
-  url: "/pricing/" 
+#- title: Pricing
+#  url: "/pricing/" 
 - title: About Us
   url: "/about/"
   sub:
-  - title: Download
-    url: "/download/"
+#  - title: Download
+#    url: "/download/"
   - title: How it works
     url: "/how-it-works/"
-  - title: Explore the network
-    url: "https://diodenetwork.io"
-    target: _blank
+#  - title: Explore the network
+#    url: "https://diodenetwork.io"
+#    target: _blank
   - title: Blog
     url: "/blog/"
 
@@ -122,7 +122,7 @@ download:
 
 
 # Footer
-copyright: "DIODE &copy; 2024, All Rights Reserved"
+copyright: "DIODE &copy; 2026, All Rights Reserved"
 security:
   title: "Secure your perimeter."
   content: "We’re governed by the belief that technology should help people thrive. It should enhance our ability to operate, create, explore, educate, and innovate - unhindered."

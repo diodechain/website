@@ -18,7 +18,8 @@
             {% else %}
             <div class="story__content">
             {% endif %}
-                {%- if data.heading -%}<h3 class="article__heading">{{ data.heading }}</h3>{% endif %}
+                {%- if data.title -%}<p class="story__title">{{ data.title }}</p>{% endif %}
+                {%- if data.heading -%}<h2 class="story__heading">{{ data.heading }}</h2>{% endif %}
                 {%- if data.content -%}{{ data.content | markdownify }}{% endif %}
                 {%- if data.buttons -%}
                     <div class="story__buttons">

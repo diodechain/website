@@ -13,7 +13,7 @@ hero:
   animated: true
   class: hero--rounded
   heading: Permissionless ZTNA
-  subheading: More secure than other solutions, for a fraction of the cost
+  subheading: More secure than other solutions, with greater availability, for a fraction of the cost
   buttons:
   - title: USE THE NETWORK
     url: "https://ztna.diode.io"
@@ -28,7 +28,7 @@ story:
   title: Anyone can run a node, and anyone can use the network
   heading: Zero trust data fabric
   content: |
-    The Diode Network is lower cost and more secure than other ZTNAs.
+    The Diode Network is lower cost, more available, and higher security than other ZTNAs.
     
     It is an open-source network of relay nodes that facilitate TCP and UDP connections - it routes traffic between any two points in the universe.
 
@@ -39,6 +39,11 @@ story:
   - title: Visit the Diode Network site
     class: btn--blank btn--arrow
     url: "https://diodenetwork.io"
+    target: _blank
+  - title: Read the docs
+    class: btn--blank btn--arrow
+    url: "https://network.docs.diode.io"
+    target: _blank
   image:
     src: story/network-full.webp
     alt: Network
@@ -67,13 +72,13 @@ features:
 
   - title: Multi Protocol Routing
     content: |
-      Every type of protocol can be routed over the network - HTTPS, WebRTC, WireGuard, etc.
+      Every type of protocol can be routed over the network - HTTPS, WebRTC, WireGuard, etc.  Our ZTNA console makes it easy to setup and manage Diode-native infrastructure and/or WireGuard deployments.
 
   - title: Use the network for -
     content: |
-      Private AI, enterprise VPN, secure SaaS apps, zero trust networks
+      Enterprise VPN, private AI, secure SaaS apps, unblockable connections, zero trust networks
   
-      Use the public network off the shelf, extend with your own relay node, or connect with us about private network options.
+      You can use the public network off the shelf, extend with your own relay node, or connect with us about private network options.
     buttons:
     - title: RUN A NODE
       url: "https://network.docs.diode.io/docs/"

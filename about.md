@@ -1,7 +1,7 @@
 ---
 title: About
 layout: page
-class: header--dark
+class: header--dark page--about
 permalink: /about/
 redirect_from:
 - /resources/about/
@@ -10,8 +10,8 @@ redirect_from:
 ### Hero
 hero:
   animated: true
-  heading: A little bit <br>about us
-  subheading: How we started, what we believe in, <br>and where we’re going
+  heading: Not your keys,<br>not your data
+  subheading: Reclaim your digital sovereignty
   image: hero/about.webp
 
 
@@ -19,7 +19,7 @@ hero:
 headline:
   animated: false
   title: What drives us. Everyday.
-  text: We’re governed by the belief that technology should help humans thrive. It should enhance our ability to operate, create, explore, educate, and innovate - unhindered.
+  text: We’re governed by the belief that technology should help humans thrive. It should enhance our ability to operate, create, explore, educate, and innovate.
 
 
 ### Top Story
@@ -38,36 +38,36 @@ story:
 
 
 ### Our Team
-team:
-  animated: false
-  title: Our Team
-  heading: The Diode team has collaborated for over 10 years on high availability software that helps organizations transform their industries
-  members:
-  - name: Hans
-    title: CEO and Co-Founder
-    linkedin: "https://www.linkedin.com/in/hansrempel/"
-    photo: team/hans.jpg
-
-  - name: Dominic
-    title: CTO and Co-Founder
-    linkedin: "https://www.linkedin.com/in/dominic-letz/"
-    photo: team/dominic.jpg
-
-  - name: Zach
-    title: Developer
-    photo: team/zach.png
-
-  - name: Eric
-    title: Business Development
-    photo: team/eric.jpg
-
-  - name: Spiros
-    title: Developer
-    photo: team/spiros.jpg
-
-  - name: Jon
-    title: Brand and Market
-    photo: team/jon.png
+#team:
+#  animated: false
+#  title: Our Team
+#  heading: The Diode team has collaborated for over 10 years on high availability software that helps #organizations transform their industries
+#  members:
+#  - name: Hans
+#    title: CEO and Co-Founder
+#    linkedin: "https://www.linkedin.com/in/hansrempel/"
+#    photo: team/hans.jpg
+#
+#  - name: Dominic
+#    title: CTO and Co-Founder
+#    linkedin: "https://www.linkedin.com/in/dominic-letz/"
+#    photo: team/dominic.jpg
+#
+#  - name: Zach
+#    title: Developer
+#    photo: team/zach.png
+#
+#  - name: Eric
+#    title: Business Development
+#    photo: team/eric.jpg
+#
+#  - name: Spiros
+#    title: Developer
+#    photo: team/spiros.jpg
+#
+#  - name: Jon
+#    title: Brand and Market
+#    photo: team/jon.png
 
 
 ### Article: Our desire
@@ -75,11 +75,11 @@ article:
   animated: false
   heading: Our vision is to transform the Internet into everyone's private network
   content: |
-    At Diode, we love how the Internet is a wonderful tool that can enable free, civil, and thriving collaboration. However, it is has become increasingly difficult to leverage the Internet’s benefits without risking privacy or sustainability. 
-  
-    Everything we do at Diode strives to enable teams and organizations with the means of secure and confidential operations.
-  
-    Today, the Diode team is busy developing next generation applications, expanding the capabilities of the Diode Network, and growing our base of customers, partners, and developers.
+    We love how easy the Internet makes it to stay connected - with people, with equipment, with information. However, as data and identities have become a commodoties, it is has become difficult to connect securely.  Every part of the tech stack you don't control can be used to attack your digital ecosystem.
+    
+    Diode is changing all that.  
+    
+    Just as Bitcoin uses "not your keys, not your coins" to secure financial transactions on highly available software infrastructure, Diode uses "not your keys, not your data" to secure indentities and control planes on highly available network infrastructure.  The convenience of SaaS, without the custodial risk.
 
     If you’d like to find out more, or chat about how to best collaborate:
   buttons:
@@ -92,11 +92,11 @@ article:
 {%- include hero.liquid -%}
 
 {%- include headline.liquid -%}
-
+{% comment %}
 {%- include story.liquid -%}
 
 {%- include team.liquid -%}
 
 ---
-
+{% endcomment %}
 {%- include article.liquid data="article" -%}

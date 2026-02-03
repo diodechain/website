@@ -1,5 +1,5 @@
 ---
-title: How Diode works.
+title: How Diode works
 layout: page
 class: header--white
 permalink: /how-it-works/
@@ -12,26 +12,45 @@ redirect_from:
 hero:
   animated: true
   class: hero--rounded
-  heading: How Diode works
-  subheading: A look at what makes Diode tick
+  heading: Self custody for data
+  subheading: How Diode leverages blockchain to upgrade the Internet
   image: hero/how-it-works.webp
 
 
 ### Story: Zero Leakage
-story:
+article:
   animated: false
-  class: "story--dash"
   title: No third parties
-  heading: Zero Leakage.
+  heading: Zero Leakage
   content: |
-    The network of automated TCP/UDP relays are choreographed by encrypted blockchain defined perimeters
+    Diode is digital sovereignty - our autonomous end to end encrypted connectivity eliminates third parties from the IT stack, thereby removing a major attack surface and setting a new standard for security.
 
-    Sovereinty
-    Escrow / walk away / keep it / take it with you
+    There are three basic innovations that make Diode special:
+    1. Trustless connections
+    2. Permissionless infrastructure
+    3. Encrypted blockchain
+
+    ### Trustless connections
+
+    A not-so-well-kept-secret in blockchain is that the devices using blockchain tech are interact with highly centralized "RPC" servers that they must trust.  Although the blockchain ledger building process is decentralized/trustless, the on-ramp/off-ramp is not.  
+
+    Diode’s [Blockquick&trade;](https://eprint.iacr.org/2019/579.pdf) family of algorithms allows people and devices using the open source Diode Network to bootstrap trust in the network so they can define and validate their security perimeters.  This not only enables them to connect with each other without using managed server environments, it is also a blueprint for the full decentralization of the Internet.
+
+    Connections that can be trusted are at the very base of Diode's security.
+
+    ### Permissionless infrastructure
+
+    At its heart, Diode is a permissionless network of automated TCP/UDP relays that are choreographed by encrypted blockchain defined perimeters.  The configurations that control the network's behavior are fixed - they are part of immutable blockchain smart contracts that the operator owns.  Diode just provides the tools to enable operators with this type of self-custody ownership of their configurations.
+
+    This also allows anyone to contribute to the network.  Anyone can add a node to the network and help expand its reach, or to ensure their communication routes only touch known IP addresses and infrastructure.
+
+    Not only is the network infrastructure permissionless, so are the devices and users themselves.  Every device has a blockchain "wallet", which it self propagates without any central authority.  These devices can use the network with no other mechanisms, or they can join bootstrapped groups to increase relational security.
+
+    ### Encrypted blockchain
+
+    One of the main challenges for real world adoption of blockchain is that most blockchains are public ledger that store information in a publicly accessible format.  This can leak potentially critical information or meta data available to anyone with access to an RPC node.  While Diode does use some public ledger systems, we attempt to reduce the non-encrypted information on the ledger to only the information needed by infrastructure for routing.  
     
-    Diode’s [Blockquick&trade;](https://eprint.iacr.org/2019/579.pdf) algorithm allows people and devices using the open source Diode Network to bootstrap trust in the network so they can define and validate their security perimeters.  This enables them to connect with each other without using managed server environments. 
-  
-    Our autonomous E2EE environment eliminates third parties from the IT stack, thereby removing a major attack surface and setting a new standard for security.
+    However, for all of our products, we also support the Oasis blockchain.  Oasis is a privacy-first encrypted blockchain that stores smart contract information in encrypted format.  On Oasis, only the members of the contract can access contract data.  The encryption is enforced at the hardware layer on every RPC node, and provides a strong pattern for the future of on chain private communication and connectivity.
 
 
 ### Features: The moving pieces
@@ -67,6 +86,6 @@ features:
 
 {%- include hero.liquid -%}
 
-{%- include story.liquid -%}
+{%- include article.liquid data="article" -%}
 
 {%- include features.liquid -%}

@@ -136,4 +136,21 @@
       margin-top: -120px;
     }
   }
+
+  // About page: headline higher (closer to hero)
+  .page--about .hero + & {
+    margin-bottom: 40px;
+    @include media-breakpoint-up(sm) {
+      margin-top: -80px;
+    }
+    @include media-breakpoint-up(md) {
+      margin-top: -80px;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-top: -80px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: -120px;
+    }
+  }
 }

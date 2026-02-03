@@ -15,7 +15,7 @@ hero:
   #heading: Blockchain secured communication
   #heading: Blockchain secured ZTNA
   #heading: Blockchain secured networking
-  subheading: Off-the-shelf WireGuard, private AI, messaging, files, and web tunneling
+  subheading: with off-the-shelf WireGuard, private AI, messaging, files, and web tunneling
   #Lock down your network in the age of AI
   #Lock down your network in the age of AI
   buttons:
@@ -31,7 +31,7 @@ hero:
 headline:
   animated: false
   title: Why blockchain?
-  text: Blockchain eliminates vendor risk.  Diode's approach ensures your serverless control plane is private, highly secure, immutable, and self-custody.
+  text: Blockchain eliminates vendor risk.  Diode's approach ensures your serverless control plane is private, highly secure, immutable, and portable.
   link_title: READ MORE
   link_url: /how-it-works/
 
@@ -106,10 +106,10 @@ private-ai:
     src: story/app-homepage.webp
     alt: Protected AI at every level
   mirrored: true
-  buttons:
-    - title: TRY IT OUT
-      url: "https://privateaidemo.diode.link/"
-      target: _blank
+#  buttons:
+#    - title: TRY IT OUT
+#      url: "https://privateaidemo.diode.link/"
+#      target: _blank
 
 
 ### Story
@@ -117,7 +117,7 @@ diode-collab:
 #  class: "story--homepage"
   animated: false
   title:  
-  heading: Private Team Collaboration
+  heading: E2EE Team Collaboration
   content: |
     Diode Collab is a new take on messaging, file sharing, and VPN - everything needed for a team to stay securely connected, everywhere in the world.  
 

@@ -10,4 +10,22 @@
   @include media-breakpoint-up(xl) {
     margin-bottom: 80px;
   }
+
+  /* Reuse story title/heading typography */
+  .story__title {
+    margin-bottom: 24px;
+    font: 600 20px/22px $font-default;
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 21px;
+      font-size: 22px;
+      line-height: 24px;
+    }
+  }
+
+  .story__heading {
+    margin-bottom: 22px;
+    @include media-breakpoint-up(xxl) {
+      margin-right: -50px;
+    }
+  }
 }
