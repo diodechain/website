@@ -9,11 +9,17 @@
             <div class="col col-12">
                 <header class="post__header">
                     <h1 class="h2 post__title">{{ page.title }}</h1>
-                    <p class="post__info">
-                        {%- if page.author %}by {{ page.author }} | {% endif -%}
-                        {{ page.date | date: "%B %d, %Y" }}
-                        | Category: {{ page.tags | first }}
-                    </p>
+                   <p class="post__info">
+    {%- if page.author %}by {{ page.author }} | {% endif -%}
+    {% assign date_format = '%B %d, %Y' %}
+    {% if page.last_modified %}
+        Published {{ page.date | date: date_format }} · 
+        <span class="updated">Updated {{ page.last_modified | date: date_format }}</span>
+    {% else %}
+        {{ page.date | date: date_format }}
+    {% endif %}
+    | Category: {{ page.tags | first }}
+</p>
                 </header>
             </div>
         {% endif %}
