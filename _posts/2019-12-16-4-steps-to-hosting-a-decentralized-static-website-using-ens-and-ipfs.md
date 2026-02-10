@@ -2,6 +2,7 @@
 layout: post
 title: 4 Steps to Hosting a Decentralized Static Website using ENS and IPFS
 date: 2019-12-16 00:20
+last_modified: 2026-02-10
 categories: [Diode]
 tags: [Diode, Decentralization, Blockchain, IoT]
 author: Yahsin Huang

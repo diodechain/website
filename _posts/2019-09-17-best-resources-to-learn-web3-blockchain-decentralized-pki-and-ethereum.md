@@ -1,6 +1,7 @@
 ---
 layout: post
 date: 2019-09-19 17:30
+last_modified: 2026-02-10
 categories: [Blockchain]
 tags: [Blockchain, Web3, PKI, Decentralization]
 author: Yahsin Huang

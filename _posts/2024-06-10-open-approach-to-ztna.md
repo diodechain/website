@@ -3,6 +3,7 @@ layout: post
 title: The Need for an Open Architecture Approach to Zero Trust Networks (ZTNA)
 description: ZTNA architecture 
 date: 2024-06-11 9:00
+last_modified: 2026-02-10
 categories: [Diode, Security]
 tags: [Diode, Diode Drive, Executive Protection, Security, Zero Trust, Dencentralization, Blockchain]
 author: Hans Rempel, CEO diode.io

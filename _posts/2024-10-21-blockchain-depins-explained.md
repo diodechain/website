@@ -3,6 +3,7 @@ layout: post
 title: Blockchain DePINs Explained
 description: What are blockchain DePINs?
 date: 2024-10-21 12:00
+last_modified: 2026-02-10
 categories: [Diode]
 tags: [Diode, Decentralization, DePIN]
 author: Hans Rempel

@@ -1,6 +1,7 @@
 ---
 layout: post
 date: 2019-07-15 11:06
+last_modified: 2026-02-10
 categories: [IoT]
 tags: [IoT, Blockquick, Development, Blockchain]
 author: Dominic Letz

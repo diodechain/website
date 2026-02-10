@@ -1,6 +1,7 @@
 ---
 layout: post
 date: 2019-05-24 19:12
+last_modified: 2026-02-10
 categories: [Burning-Platform-PKI]
 tags: [Burning Platform, Security, Time, Blockchain]
 author: Dominic Letz

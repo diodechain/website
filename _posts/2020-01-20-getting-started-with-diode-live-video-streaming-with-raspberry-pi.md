@@ -2,6 +2,7 @@
 layout: post
 title: Getting Started with Diode
 date: 2020-01-20 01:39
+last_modified: 2026-02-10
 categories: [Diode]
 tags: [Diode, Blockchain, How To, IoT, Decentralization, Web3]
 author: Yahsin Huang

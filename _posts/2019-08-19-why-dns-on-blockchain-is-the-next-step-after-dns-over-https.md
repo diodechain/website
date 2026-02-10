@@ -1,6 +1,7 @@
 ---
 layout: post
 date: 2019-08-19 11:41
+last_modified: 2026-02-10
 categories: [Decentralization]
 tags: [Decentralization, Security, Blockchain]
 author: Peter Lai

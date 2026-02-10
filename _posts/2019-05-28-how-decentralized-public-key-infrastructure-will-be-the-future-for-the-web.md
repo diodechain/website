@@ -1,6 +1,7 @@
 ---
 layout: post
 date: 2019-05-28 15:54
+last_modified: 2026-02-10
 categories: [PKI]
 tags: [PKI, Blockchain, Security, Decentralization]
 author: Yahsin Huang

@@ -2,6 +2,7 @@
 layout: post
 title: Decentralized Web Hosting
 date: 2022-03-15 16:33
+last_modified: 2026-02-10
 categories: [Web3]
 tags: [Web3, Self-Custody, Decentralization, Decentralized Web Hosting]
 author: Allen M
