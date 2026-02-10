@@ -129,7 +129,7 @@ diode-collab:
     alt: Diode Collab&trade;
   buttons:
     - title: GET THE APP
-      url: "#download-app"
+      url: "https://collab.diode.io/download/"
       class: popup-open
     - title: Learn more
       class: "btn--blank btn--arrow"

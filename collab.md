@@ -17,7 +17,7 @@ hero:
   subheading: Secure chat and system access for teams
   buttons:
   - title: Download
-    url: "#download-app"
+    url: "https://collab.diode.io/download/"
     class: popup-open
   image: hero/app.webp
 
