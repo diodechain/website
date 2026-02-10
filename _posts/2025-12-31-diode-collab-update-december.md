@@ -10,7 +10,7 @@ image: 	assets/img/blog/collab product update.jpg
 
 ---
 
-The Diode Collab app made strong improvements throughout November, delivering valuable improvements across versions v1.18.8 through v1.18.13.
+The Diode Collab app made strong improvements throughout December, delivering valuable improvements across versions v1.18.8 through v1.18.13.
 
 **Reduced Memory Usage**
 <br> Memory usage in the app has been decreased by around 50%, increasing the performance of the app noticeably for most users.
