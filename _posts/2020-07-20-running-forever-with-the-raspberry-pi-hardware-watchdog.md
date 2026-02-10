@@ -24,7 +24,8 @@ That's the point the Pi froze, and only manual powering down, and powering up ag
 
 But the Pis are very resourceful tools. And one of their underdocumented features is a builtin hardware watchdog. This little hardware service will _once enabled_ watch the system activity and automatically power cycle the Raspberry Pi once it gets stuck. 
 
-So if you're running your Raspberry Pi as a remote sensor reachable remotely from any place in the world with Diode network, then we recommend to enable this hardware watchdog for your devices as well. 
+So if you're running your Raspberry Pi as a remote sensor for the Diode Network, decentralized web hosting, or a Diode website — or using it to power Diode Collab secure team collaboration — we recommend enabling this hardware watchdog for maximum uptime.
+
 
 It's done in few steps directly on a _terminal_ on your Pi:
 
@@ -96,3 +97,5 @@ With this additional configuration line, the watchdog will also power cycle the 
 1) [ Host a decentralized website ](https://app.docs.diode.io/raspberry-pi/host-a-public-wordpress-website-on-raspberry-pi/)
 2) [ Replace Dropbox / Google Drive ](https://app.docs.diode.io/raspberry-pi/use-your-raspberry-pi-as-a-remote-file-server-backup-device/)
 3) [ Be a private chat server ](https://app.docs.diode.io/raspberry-pi/use-your-raspberry-pi-as-a-private-chat-server/)
+
+Ready to deploy reliable Raspberry Pi nodes? Power your Diode Network sensors, host a decentralized website, or run D[iode Collab](https://collab.diode.io/) for secure team messaging and decentralized hosting — all with bulletproof uptime through hardware watchdogs.

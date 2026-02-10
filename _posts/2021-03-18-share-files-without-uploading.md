@@ -14,7 +14,7 @@ When we talk on the phone, our experience is one of directly calling another per
 
 **Why isn’t file sharing like calling someone on the phone - a direct connection without the involvement of third parties?**
 
-Diode Drive makes this possible - it allows you to share files directly from your computer straight to another computer or device!
+Diode Collab makes this possible - it allows you to share files directly from your computer straight to another computer or device!
 
 [![Get Started](../assets/img/blog/button-getstarted-145px.png)](/download/)
  
@@ -22,7 +22,7 @@ Cloud-based file sharing applications, like Google Drive, Dropbox, and others, a
  
 **What if you could share a file directly with another person without the privacy concerns of third parties?**
  
-With Diode Drive any file, no matter the size, can both be shared and synchronized with the people you choose - all without ever uploading to the cloud.
+With Diode Collab any file, no matter the size, can both be shared and synchronized with the people you choose - all without ever uploading to the cloud.
 
 [![Learn More](../assets/img/blog/button-learn-more-145px.png)](/solutions/app/)
 

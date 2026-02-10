@@ -10,7 +10,7 @@ image: 	assets/img/blog/depin blog.jpg
 
 ---
 
-Blockchain DePINs are an exciting new way to create better services for end users by unlocking the value in assets operated, and often owned, by node hosts.
+Blockchain DePINs unlock superior services by tapping underutilized assets operated by node hosts worldwide — powering everything from wireless coverage to secure communication networks like the Diode Network.
 
 Read below for more information and emerging use cases.
 

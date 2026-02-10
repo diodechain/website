@@ -11,6 +11,8 @@ redirect_from:
 
 [- Click here if you just want to read the Paper -](https://eprint.iacr.org/2019/579.pdf)
 
+This breakthrough enables the Diode Network and [Diode Collab](https://collab.diode.io/) — bringing blockchain-secured trust to resource-constrained devices through secure team messaging, decentralized hosting, and a Slack alternative that operates as a chatting app without phone number requirements.
+
 In the last two posts of this series, we [first introduced the governance issues in PKI](/burning-platform-pki/why-there-are-3652-organizations-that-can-read-everyones-encrypted-traffic-19098/) and then the circular dependency between establishing trust in PKI certificates and [establishing the current time on a connected device](/burning-platform-pki/why-we-cant-trust-network-time-19116/).
 
 So let's break that circular dependency between time and trust. The difference between trusting a person/an entity and trusting data is key here. How can we establish trust in the data, specifically in the time information, without trusting the individual messenger of this data? This is, in fact, leads to the same problem that Satoshi Nakamoto set out to solve with bitcoin the first blockchain network. The term blockchain has become [rather muddy, but by convention, the property we're talking about is the trustless blockchain](https://hackernoon.com/decentralized-data-why-blockchain-is-meaningless-and-trustless-is-everything-318fd14d3827). Creating a public consensus of the current state of facts without trusting any individual. 

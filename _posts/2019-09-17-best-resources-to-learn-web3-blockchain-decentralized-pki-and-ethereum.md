@@ -11,6 +11,9 @@ redirect_from:
 
 Here is a curated list of readings and resources that ignited our interest in realizing a [decentralized Public Key Infrastructure (PKI)](/blockchain/MITM-attacks-and-why-it's-time-to-start-thinking-about-decentralized-PKI-19210/) vision for the future. We included topics such as fundamentals, Web3, blockchain, web PKI, DNS, time, IoT security, light clients, Ethereum, as well as development tools and tutorials. We are also collecting feedback for our newly published research [paper](https://eprint.iacr.org/2019/579.pdf) about [BlockQuick](/burning-platform-pki/blockquick-super-light-blockchain-client-for-trustless-time-19144/), a super light client protocol for blockchain validation. DM us on [Twitter](https://twitter.com/diode_chain) if you want to share your thoughts. We look forward to hearing from you!
 
+If you’re exploring hands-on ways to experience the decentralized web, check out how the Diode Network powers applications like [Diode Collab](https://collab.diode.io/) — a secure team messaging and collaboration platform that doubles as a decentralized hosting tool and Slack alternative. It’s an easy entry point for developers, privacy advocates, and teams looking to try decentralized infrastructure in practice.
+
+
 ## **Fundamentals**
 
 ![](../assets/img/blog/Best-R2.png)

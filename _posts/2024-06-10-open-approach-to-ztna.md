@@ -136,6 +136,11 @@ The shift towards an open architecture for ZTNA is not just a technological pref
 
 As organizations continue to navigate the challenges of digital transformation, adopting an open, decentralized approach to Zero Trust will be crucial in building resilient and future-proof networks.
 
+
+### Ready for Open ZTNA?
+
+Deploy the Diode Network today — the production-ready open ZTNA platform powering Diode Collab secure team messaging and decentralized hosting at commodity pricing. Download the Diode app (Diode Collab) for your Slack alternative with no phone number requirements, or run Lite Nodes for global zero-trust access without vendor lock-in.
+
 ### References
 
 **CrowdStrike**: ["What is Zero Trust Network Access (ZTNA)? Zero Trust Network Access Explained"](https://www.crowdstrike.com/cybersecurity-101/zero-trust-security/ztna/)
@@ -169,6 +174,7 @@ As organizations continue to navigate the challenges of digital transformation, 
 **Zscaler**: ["What is Zero Trust Security? Principles & Benefits"](https://www.zscaler.com/resources/security-terms-glossary/what-is-zero-trust) 
 
 **Cimcor**: ["5 Zero Trust Architecture Benefits You Can't Afford To Miss"](https://www.cimcor.com/blog/zero-trust-architecture-benefits) 
+
 
 To explore further please:
 <div class="story__buttons">

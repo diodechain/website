@@ -10,7 +10,7 @@ redirect_from:
 - /diode/Getting-Started-with-Diode-Live-Video-Streaming-with-Raspberry-Pi-20020/
 ---
 
-Last week we released a [demo](https://youtu.be/Zibg-6CClc4) on YouTube that shows how to get started with [Diode](https://github.com/diodechain). It’s a simple guide to help you get a Raspberry Pi connected to the Diode network.
+Last week we released a [demo](https://youtu.be/Zibg-6CClc4) on YouTube that shows how to get started with [Diode](https://github.com/diodechain). It’s a simple guide to help you get a Raspberry Pi connected to the Diode Network.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zibg-6CClc4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

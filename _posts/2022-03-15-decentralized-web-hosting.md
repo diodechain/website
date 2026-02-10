@@ -20,6 +20,8 @@ The reasons for wanting to do decentralized web hosting, sometimes referred to a
 2.	Security and privacy – website information is not accessible by third parties who would otherwise be involved with hosting a centralized website
 3.	Protection against de-platforming / censorship – the website hosting components cannot easily be intentionally blocked or decommissioned
 
+ If you’re exploring decentralized hosting options, the Diode Network offers powerful tools like the [Diode Collab]https://collab.diode.io/ - enabling secure team messaging, decentralized web hosting, and even a Slack alternative for private communication.
+
 ## How to Host a Decentralized Website
 
 *TLDR:* You can use Diode to [deploy a decentralized WordPress website from a Raspberry Pi](https://app.docs.diode.io/raspberry-pi/host-a-public-wordpress-website-on-raspberry-pi/). 

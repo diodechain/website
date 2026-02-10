@@ -9,9 +9,9 @@ redirect_from:
 - /blockchain/MITM-attacks-and-why-it's-time-to-start-thinking-about-decentralized-PKI-19210/
 ---
 
-Picture this: you’re sitting in a coffee shop with your laptop, and find yourself trying to connect to the internet, like most people, using a public WiFi connection provided by the coffee shop. Wouldn’t it be nice to book a hotel room over the weekend, you ask your partner?
+Picture this: you’re sitting in a coffee shop with your laptop, and find yourself trying to connect to the internet, like most people, using a public WiFi connection provided by the coffee shop. Wouldn’t it be nice to book a hotel room over the weekend, you ask your partner? This everyday scenario highlights why secure access matters across the decentralized web and modern chatting apps.
 
-You click on an online reservation website, search for a hotel room to book, and you’re looking forward to the vacation. You may not be aware that the corner sits a stranger using a laptop spoofing the public WiFi connections. This is a common cyber attack scenario known as [Man-In-The-Middle (MITM) attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack).
+You click on an online reservation website, search for a hotel room to book, and you’re looking forward to the vacation. You may not be aware that the corner sits a stranger using a laptop spoofing the public WiFi connections. This is a common cyber attack scenario known as [Man-In-The-Middle (MITM) attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack), and it’s one of the reasons secure communication matters on today’s decentralized web.
 
 A MITM attack is when an attacker intercepts a communication between the two parties. Your personal data such as your credit card numbers and your social media user login credentials can easily be intercepted if not properly protected in a MITM attack.
 
@@ -41,4 +41,8 @@ Proposed by Benedikt Bünz in 2018, [FlyClient](https://eprint.iacr.org/2019/226
 
 ### Conclusion
 
-The nature of decentralization gives blockchain an edge over traditional PKI systems. As blockchain technology is expected to flourish over the next few years, the world will be seeing more innovation coming out from the startup community in Asia and across the globe. By leveraging the power of blockchain technology, developers and entrepreneurs will be able to create the next generation of PKI that would impact every aspect of the industry. Stay connected! Follow us on Twitter and our website.
+The nature of decentralization gives blockchain an edge over traditional PKI systems. As blockchain technology is expected to flourish over the next few years, the world will be seeing more innovation coming out from the startup community in Asia and across the globe. By leveraging the power of blockchain technology, developers and entrepreneurs will be able to create the next generation of PKI that would impact every aspect of the industry.
+
+Ready to protect your team from MITM attacks on public WiFi? Try the [Diode Collab](https://collab.diode.io/) app for secure team messaging, deploy a Diode website with decentralized web hosting on the Diode Network, sync files securely via Diode Drive, or collaborate globally with Diode Collab.
+
+ Stay connected! Follow us on [X](https://x.com/diode_chain) and our [website](https://diode.io/).

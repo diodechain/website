@@ -9,7 +9,7 @@ redirect_from:
 - /iot/hardware-requirements-of-blockchain-clients-19196/
 ---
 
-You just decided to start your next project using blockchain. That is awesome congrats! But now you face the many choices: Which blockchain platform and clients are technically suited for your use case?
+You just decided to start your next project using blockchain. That is awesome congrats! But now you face the many choices: Which blockchain platform and clients are technically suited for your use case, especially when considering platforms like the Diode Network that power [Diode Collab](https://collab.diode.io/) for secure team messaging and decentralized hosting?
 
 Makers and IoT specialists know that when designing embedded systems it's important to understand the technical parameters within which each component can work. The same is true when selecting the blockchain technology. Required storage capacity on the device, RAM usage, and bandwidth required are the three key technical criteria to look at - when deciding which hardware to settle on, or which blockchain technology to adopt. To illustrate this, the HTC Exodus smartphone decided to adopt Bitcoin and integrate a client type that requires around 200 gigabytes of persistent storage dedicated to the Blockchain connectivity. On the other hand blockchain prototypes have been developed on devices such as the ESP32 with less than one megabyte of persistent storage
 
