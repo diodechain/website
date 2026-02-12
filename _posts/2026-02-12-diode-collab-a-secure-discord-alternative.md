@@ -14,7 +14,7 @@ In early 2026, Discord’s new [identity verification policy](https://www.thever
 
 ## Why Users Are Moving Away from Discord
 
-Discord, while popular for communities and teams, was never designed with enterprise-grade privacy in mind. Recent reports of [data breaches](https://arstechnica.com/tech-policy/2026/02/discord-faces-backlash-over-age-checks-after-data-breach-exposed-70000-ids/) and the platform’s planned facial recognition measures raise serious questions about user control and identity tracking. Like many other collaboration platforms, Discord stores user data on centralized servers, meaning that the company (and by extension, governments and potential hackers) can access sensitive messages or files when breaches or requests occur.
+Discord, while popular for communities and teams, was never designed with enterprise-grade privacy in mind. Recent reports of [data breaches](https://arstechnica.com/tech-policy/2026/02/discord-faces-backlash-over-age-checks-after-data-breach-exposed-70000-ids/) and the platform’s planned facial recognition measures raise serious questions about user control and identity tracking. Like many other collaboration platforms, Discord stores user data on centralized servers, meaning that the company (and by extension, other unwanted third parties) can access sensitive messages or files when breaches or requests occur.
 
 ## Why Diode Collab Is Different
 
@@ -38,7 +38,7 @@ While Discord and similar apps focus heavily on convenience, Diode Collab also p
 
 ## The Bottom Line
 
-Privacy shouldn’t be optional. As mainstream platforms tighten identity verification and expand surveillance, Diode Collab restores privacy and control to the user. For those that care about security, sovereignty, and autonomy, it’s the clear choice over centralized communication tools.
+Privacy should be the default. As mainstream platforms tighten identity verification and expand surveillance, Diode Collab restores privacy and control to the user. For those that care about security, sovereignty, and autonomy, it’s a clear choice over centralized communication tools.
 
 
 To explore further please:
