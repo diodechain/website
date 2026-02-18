@@ -27,7 +27,7 @@ solutions:
       instructions: "https://app.docs.diode.io/docs/"
       instructions-title: "Read How"
       popup-video-title: "Watch a short video"
-      popup-video-source: "/assets/video/lp-download-diode-collab.mp4"
+      popup-video-source: "/assets/video/View-Plans-In-App.mp4"
   - title: <br>Create Your Zone
     icon: icons/two.svg
     content: Create a zone - it’s your family’s own isolated collaboration environment.<br><br>Chats, files, personal details - no data ever stored on servers.
