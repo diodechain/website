@@ -2,11 +2,11 @@
 layout: post
 title: New Collaboration Strengthens Trust in Oil and Gas Certification Data
 description: Diode and CleanConnect.ai Announce AI-Driven Framework for Verifiable Real World Assets.
-date: 2026-03-16 7:00
+date: 2026-03-17 8:00
 categories: [Press]
 tags: [Diode, Diode Collab, Decentralization, Security, Self-Custody, Zero Trust]
 author: Hans Rempel
-image:  assets/img/blog/diode clean connect oasis collaboration.jpg
+image:  assets/img/blog/diode-clean-connect-ai-oasis-collaboration.jpg
 
 ---
 
