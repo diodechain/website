@@ -1,5 +1,5 @@
 ---
-title: Privacy-first Collaboration & Remote Access
+title: Private AI infrastructure for agentic systems
 layout: page
 class: page--homepage header--dark
 redirect_from:
@@ -11,27 +11,28 @@ hero:
   class: hero--homepage
   animated: true
   globe: true
-  heading: Blockchain secured infrastructure
+  heading: Private AI infrastructure
+  # 26-03-17  Blockchain secured infrastructure
   #heading: Blockchain secured communication
   #heading: Blockchain secured ZTNA
   #heading: Blockchain secured networking
-  subheading: with off-the-shelf WireGuard, private AI, messaging, files, and web tunneling
+  subheading: Rapidly innovate agentic systems with automated security
+  # 26-03-17 subheading: with off-the-shelf WireGuard, private AI, messaging, files, and web tunneling  
   #Lock down your network in the age of AI
   #Lock down your network in the age of AI
   buttons:
-  - title: Signup
+  - title: GET A DEMO
     target: _blank
-    url: "https://ztna.diode.io"
-    class: popup-open
-  tagline: Upgrade your zero trust networking
+    url: "https://diodedemo.paperform.co/"
+  tagline: Push leverage to your teams, customers, and operations
   #tagline: Permissionless TCP/UDP relays with out-of-the box WireGuard, private AI, messaging, files, and more.
   image: hero/solutions.webp
 
 ### Headline below Hero
 headline:
   animated: false
-  title: Why blockchain?
-  text: Blockchain eliminates vendor risk.  Diode's approach ensures your serverless control plane is private, highly secure, immutable, and portable.
+  title: Blockchain automated security
+  text: Blockchain eliminates vendor risk .  Diode's approach ensures your serverless control plane is private, automated, highly secure, immutable, and portable.
   link_title: READ MORE
   link_url: /how-it-works/
 
@@ -75,6 +76,26 @@ headline:
 wireguard:
   animated: false
   title: 
+  heading: Private AI
+  content: |
+    Prove value and innovate with AI without compromising confidentiality.
+
+    Diode's end-to-end encrypted private AIs deliver performant LLM capabilities into sensitive operations.
+
+    Diode's private AI suite includes agentic piplines, LLM pools, tools, insights, channels, and user interface.
+  image:
+    src: story/wg-full.webp
+    alt: Protected AI at every level
+  buttons:
+    - title: GET A DEMO
+      url: "https://diodedemo.paperform.co/"
+      target: _blank
+
+
+### Story
+private-ai:
+  animated: false
+  title: 
   heading: Zero Trust WireGuard
   content: |
     No server to host.  No vendor risk on the control plane.  Just P2P WireGuard.
@@ -83,34 +104,13 @@ wireguard:
 
     If you are in a regulated industry and need to ensure your routes are locked down to known IP addresses, it is as simple as adding one or more autonomous relays.  Automated, efficient, and extremely low maintenance.  
   image:
-    src: story/wg-full.webp
+    src: story/app-homepage.webp
     alt: Protected no matter what
+  mirrored: true
   buttons:
     - title: Connect Assets Now
       url: "https://ztna.diode.io/"
       target: _blank
-
-
-### Story
-private-ai:
-  animated: false
-  title: 
-  heading: Private AI
-  content: |
-    Prove value and innovate with AI without compromising confidentiality.
-
-    Diode's end-to-end encrypted private AIs deliver performant LLM capabilities into sensitive operations.
-
-    Diode can deliver a full private AI suite, including the LLM, pipeline, tools, and user interface.
-  image:
-    src: story/app-homepage.webp
-    alt: Protected AI at every level
-  mirrored: true
-#  buttons:
-#    - title: TRY IT OUT
-#      url: "https://privateaidemo.diode.link/"
-#      target: _blank
-
 
 ### Story
 diode-collab:
