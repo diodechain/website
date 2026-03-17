@@ -23,13 +23,13 @@ _Diode and CleanConnect.ai Announce AI-Driven Framework for Verifiable Real Worl
 
 “Oasis provides the private foundation that makes zero-trust networking so powerful for regulated industries," said **Marko Stokic, Head of AI at Oasis**. "Seeing that infrastructure now underpinning real-world certification workflows in the energy sector is the kind of adoption we built for.  We look forward to seeing CleanConnect.ai and Diode push the boundaries even further."
 
-To read the case study on how Diode, Oasis, and CleanConnect.ai are delivering verifiable Real World Assets, go [here](https://docsend.com/view/7g5b6czg9vbd4hdy).
+To read the case study on how Diode, Oasis, and CleanConnect.ai are delivering verifiable Real World Assets, go [here](https://docsend.com/view/m2rjm2re5vr25e4s).
 
 **About Oasis**
 
 Oasis makes applications private and verifiable, empowering developers to build experiences where data ownership and user confidentiality are foundational and where user data is protected by default. Learn more at [oasis.net](http://oasis.net/).  
 
-**About** [**CleanConnect.ai**](http://cleanconnect.ai/)
+**About CleanConnect.ai**
 
 CleanConnect.ai provides AI-driven automation solutions that monitor and reduce methane emissions across oil and gas operations, enabling cost savings, regulatory compliance, and environmental sustainability in real time. Learn more at [cleanconnect.ai](http://cleanconnect.ai/).
 
