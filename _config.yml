@@ -92,20 +92,27 @@ social:
 # Download Links
 download:
   app:
-    macos: "https://download.diode.io/downloads/collab/dDrive-1.18.13.dmg"
-    macos-checksum:
-    windows: "https://download.diode.io/downloads/collab/dDrive-1.18.13.exe"
+    # Direct download URLs (same host as Windows/Linux); do not use collab.diode.io/download
+    macos-arm: "https://download.diode.io/downloads/collab/dDrive-1.19.2.dmg"
+    macos-arm-checksum:
+    macos-legacy: "https://download.diode.io/downloads/collab/dDrive-1.17.29.dmg"
+    macos-legacy-checksum:
+    macos-intel: "https://download.diode.io/downloads/collab/dDrive-1.19.2-intel.dmg"
+    macos-intel-checksum:
+    windows: "https://download.diode.io/downloads/collab/dDrive-1.19.2.exe"
     windows-checksum:
-    linux: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.18.13-linux-x86_64.run"
-    linux-checksum: f774d7da1a937fc4e2e630c5b9bbf950bc0c1b4e
-    raspberry-pi: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.18.13-linux-arm32.run"
-    raspberry-pi-checksum: eab99f6654ad8b0d8d13e11a6c245090bea1308f
-    raspberry-pi-64: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.18.13-linux-arm64.run"
-    raspberry-pi-64-checksum: 168f6e49583200d3a1203541647aeb0863929b21
+    linux: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.19.2-linux-x86_64.run"
+    linux-checksum: b40350539ca03c4aaf74b268cb39649da0121e11
+    raspberry-pi: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.19.2-linux-arm32.run"
+    raspberry-pi-checksum: aed1d2a999f5d11a159d930d3ada503492649fd1
+    raspberry-pi-64: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.19.2-linux-arm64.run"
+    raspberry-pi-64-checksum: 7e740bb8fe7e46b777f2cd2bef14542c8edd8fc0
     ios: "https://apps.apple.com/us/app/diode-drive/id1605222443"
     ios-checksum:
     android: "https://play.google.com/store/apps/details?id=io.diode.drive"
     android-checksum: 
+    android-apk: "https://download.diode.io/downloads/collab/diode-collab-v1.16.1.apk"
+    android-apk-checksum: 0399df338d1d66a4bed1a6b6ec4b31d37b9be3e0
   cli:
     macos: "https://github.com/diodechain/diode_go_client/releases/download/v0.13.7/diode_darwin_amd64.zip"
     macos-checksum:

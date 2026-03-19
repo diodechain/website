@@ -15,24 +15,28 @@
 
             <div class="download-popup">
                 <div class="download-popup__buttons detect-os">
-                    <a class="btn btn-primary os macos" href="{{ site.download.app.macos }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR MacOS X</a>
-                    <a class="btn btn-primary os windows hide" href="{{ site.download.app.windows }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR Windows (64-bit)</a>
-                    <a class="btn btn-primary os linux hide" href="{{ site.download.app.linux }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR Linux (64-bit)</a>
-                    <a class="btn btn-primary os raspberry-pi hide" href="{{ site.download.app.raspberry-pi }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR Raspberry Pi / ARM 32bit</a>
-                    <a class="btn btn-primary os raspberry-pi-64 hide" href="{{ site.download.app.raspberry-pi-64 }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR Raspberry Pi / ARM 64bit</a>
-                    <a class="btn btn-primary os ios hide" href="{{ site.download.app.ios }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">GET FOR iOS</a>
-                    <a class="btn btn-primary os android hide" href="{{ site.download.app.android }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">GET FOR Android</a>
+                    <a class="btn btn-primary os macos-legacy" href="{{ site.download.app.macos-legacy }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR MacOS (Legacy ARM / Intel)</a>
+                    <a class="btn btn-primary os macos-arm hide" href="{{ site.download.app.macos-arm }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR MacOS (Apple Silicon)</a>
+                    <a class="btn btn-primary os macos-intel hide" href="{{ site.download.app.macos-intel }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR MacOS (Intel)</a>
+                    <a class="btn btn-primary os windows hide" href="{{ site.download.app.windows }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR Windows (64-bit)</a>
+                    <a class="btn btn-primary os linux hide" href="{{ site.download.app.linux }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR Linux (64-bit)</a>
+                    <a class="btn btn-primary os raspberry-pi hide" href="{{ site.download.app.raspberry-pi }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR Raspberry Pi / ARM 32bit</a>
+                    <a class="btn btn-primary os raspberry-pi-64 hide" href="{{ site.download.app.raspberry-pi-64 }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">DOWNLOAD FOR Raspberry Pi / ARM 64bit</a>
+                    <a class="btn btn-primary os ios hide" href="{{ site.download.app.ios }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">GET FOR iOS</a>
+                    <a class="btn btn-primary os android hide" href="{{ site.download.app.android }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">GET FOR Android</a>
                 </div>
 
                 <p class="download-popup__other-title">Or choose another Platform:</p>
                 <ul class="download-popup__other">
-                    <li><a href="{{ site.download.app.macos }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">MacOS X</a><br></li>
-                    <li><a href="{{ site.download.app.windows }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Windows (64-bit)</a></li>
-                    <li><a href="{{ site.download.app.linux }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Linux (64-bit)</a><code class="sha">{{ site.download.app.linux-checksum }}</code></li>
-                    <li><a href="{{ site.download.app.raspberry-pi }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Raspberry Pi / ARM 32bit</a><code class="sha">{{ site.download.app.raspberry-pi-checksum }}</code></li>
-                    <li><a href="{{ site.download.app.raspberry-pi-64 }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Raspberry Pi / ARM 64bit</a><code class="sha">{{ site.download.app.raspberry-pi-64-checksum }}</code></li>
-                    <li><a href="{{ site.download.app.ios }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">iOS</a></li>
-                    <li><a href="{{ site.download.app.android }}" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Android</a></li>
+                    <li><a href="{{ site.download.app.macos-arm }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">MacOS (Apple Silicon)</a></li>
+                    <li><a href="{{ site.download.app.macos-intel }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">MacOS (Intel - TAHOE BETA ONLY)</a></li>
+                    <li><a href="{{ site.download.app.macos-legacy }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">MacOS (Legacy ARM / Intel)</a></li>
+                    <li><a href="{{ site.download.app.windows }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Windows (64-bit)</a></li>
+                    <li><a href="{{ site.download.app.linux }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Linux (64-bit)</a><code class="sha">{{ site.download.app.linux-checksum }}</code></li>
+                    <li><a href="{{ site.download.app.raspberry-pi }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Raspberry Pi / ARM 32bit</a><code class="sha">{{ site.download.app.raspberry-pi-checksum }}</code></li>
+                    <li><a href="{{ site.download.app.raspberry-pi-64 }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Raspberry Pi / ARM 64bit</a><code class="sha">{{ site.download.app.raspberry-pi-64-checksum }}</code></li>
+                    <li><a href="{{ site.download.app.ios }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">iOS</a></li>
+                    <li><a href="{{ site.download.app.android }}" target="_blank" rel="noopener" onclick="ThankYouRedirect('{{ site.links.thanks.url }}')">Android</a></li>
                 </ul>
                 <hr>
                 <p class="download-popup__note">MacOS + Windows builds are signed/notarized. For Linux builds please compare the SHA-1 checksum above with the file downloaded for validation.</p>

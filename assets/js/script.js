@@ -504,53 +504,77 @@ function initScroll() {
   });
 }
 
+function versionGreaterThan(versionA, versionB) {
+  var a = (versionA || '0').toString().split('.').map(function (n) { return parseInt(n, 10) || 0; });
+  var b = (versionB || '0').toString().split('.').map(function (n) { return parseInt(n, 10) || 0; });
+  for (var i = 0; i < Math.max(a.length, b.length); i++) {
+    var na = a[i] || 0;
+    var nb = b[i] || 0;
+    if (na > nb) return true;
+    if (na < nb) return false;
+  }
+  return false;
+}
+
 function initOS() {
   let OSName = 'Unknown OS';
-  if (navigator.userAgent.indexOf('Win') !== -1) {
+  var ua = navigator.userAgent;
+  var platform = (navigator.platform || '').toLowerCase();
+
+  if (/armv[67]l|aarch64/.test(platform)) {
+    OSName = /aarch64/.test(platform) ? 'Raspberry Pi 64' : 'Raspberry Pi';
+  }
+  if (ua.indexOf('Raspberry') !== -1 || ua.indexOf('Raspbian') !== -1) {
+    OSName = (/aarch64|arm64/i.test(ua) || /aarch64/.test(platform)) ? 'Raspberry Pi 64' : 'Raspberry Pi';
+  }
+
+  if (OSName !== 'Unknown OS') {
+    // Already identified as Raspberry Pi
+  } else if (ua.indexOf('Win') !== -1) {
     OSName = 'Windows';
-  }
-  if (navigator.userAgent.indexOf('Mac') !== -1) {
-    OSName = 'MacOS';
-  }
-  if (navigator.userAgent.indexOf('iPod') !== -1) {
+  } else if (ua.indexOf('Mac') !== -1 && ua.indexOf('iPhone') === -1 && ua.indexOf('iPad') === -1) {
+    OSName = 'MacOS Legacy';
+  } else if (ua.indexOf('iPod') !== -1 || ua.indexOf('iPad') !== -1 || ua.indexOf('iPhone') !== -1) {
     OSName = "iOS";
-  }
-  if (navigator.userAgent.indexOf('iPad') !== -1) {
-    OSName = "iOS";
-  }
-  if (navigator.userAgent.indexOf('iPhone') !== -1) {
-    OSName = "iOS";
-  }
-  if (navigator.userAgent.indexOf('Linux') !== -1) {
-    if (navigator.userAgent.indexOf('arm') !== -1) {
-      OSName = 'Raspberry Pi';
-    } else {
-      OSName = 'Linux';
-    }
-  }
-  if (navigator.userAgent.indexOf('Raspberry') !== -1) {
-    OSName = 'Raspberry Pi';
-  }
-  if (navigator.userAgent.indexOf('Raspbian') !== -1) {
-    OSName = 'Raspberry Pi';
-  }
-  if (navigator.userAgent.indexOf('Android') !== -1) {
+  } else if (ua.indexOf('Android') !== -1) {
     OSName = 'Android';
+  } else if (ua.indexOf('Linux') !== -1) {
+    var isArm = ua.indexOf('arm') !== -1 || ua.indexOf('aarch64') !== -1 || /aarch64|armv[67]l|arm64/i.test(ua);
+    OSName = (/aarch64|arm64/i.test(ua)) ? 'Raspberry Pi 64' : (isArm ? 'Raspberry Pi' : 'Linux');
   }
 
   let os = OSName.toLowerCase().replace(/\s+/g, '-');
 
-  document.querySelectorAll('.detect-os').forEach((entry) => {
-    cls = '.' + os;
-    var target = entry.querySelector(cls);
-    if (target) {
-      var all = entry.querySelectorAll('.os');
-      all.forEach((one) => {
-        one.classList.add('hide');
-      });
-      target.classList.remove('hide');
-    }
-  });
+  function applyDetectedOS(selectedOs) {
+    document.querySelectorAll('.detect-os').forEach((entry) => {
+      var target = entry.querySelector('.' + selectedOs);
+      if (target) {
+        var all = entry.querySelectorAll('.os');
+        all.forEach((one) => {
+          one.classList.add('hide');
+        });
+        target.classList.remove('hide');
+      }
+    });
+  }
+  applyDetectedOS(os);
+
+  if (navigator.userAgentData && typeof navigator.userAgentData.getHighEntropyValues === 'function') {
+    navigator.userAgentData.getHighEntropyValues(['architecture', 'bitness', 'platform', 'platformVersion']).then(function (hints) {
+      var plat = String(hints.platform || '').toLowerCase();
+      var arch = String(hints.architecture || '').toLowerCase();
+      var pv = String(hints.platformVersion || '0');
+      if (plat === 'linux' && arch === 'arm') {
+        applyDetectedOS('raspberry-pi');
+      } else if ((plat === 'mac' || plat === 'macos') && arch === 'arm') {
+        applyDetectedOS('macos-arm');
+      } else if ((plat === 'mac' || plat === 'macos') && arch === 'x86') {
+        if (versionGreaterThan(pv, '30.0.0')) {
+          applyDetectedOS('macos-intel');
+        }
+      }
+    }).catch(function () {});
+  }
 
   return os;
 }
