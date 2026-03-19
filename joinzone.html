@@ -8,6 +8,8 @@ nav:
 
 ---
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
 <script>
   (function () {
     const url = new URL(window.location.href);
@@ -38,12 +40,19 @@ nav:
   function CopyToClipboard(id) {
     var el = document.getElementById(id);
     var text = (el && (el.textContent || el.innerText) || "").trim();
+    var copyButton = document.getElementById("cc-copy");
 
     function showNotification() {
-      document.querySelector("#notify").style.display = "";
-      setTimeout(function () {
-        document.querySelector("#notify").style.display = "none";
-      }, 3000);
+      if (!copyButton) return;
+      if (copyButton._restoreTimer) {
+        clearTimeout(copyButton._restoreTimer);
+      }
+      copyButton.classList.add("is-copied");
+      copyButton.innerHTML = '<span class="joinzone__copied-text" aria-live="polite">Copied!</span>';
+      copyButton._restoreTimer = setTimeout(function () {
+        copyButton.classList.remove("is-copied");
+        copyButton.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">content_copy</span>';
+      }, 2000);
     }
 
     function legacyCopy(value) {
@@ -102,6 +111,8 @@ nav:
 
     document.querySelectorAll("[data-joinzone-download]").forEach((link) => {
       link.setAttribute("href", downloadUrl || downloadCenterUrl);
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener");
     });
 
     const desktopModal = document.getElementById("joinzone-openapp-modal");
@@ -147,20 +158,20 @@ nav:
   hidden
   data-ios-store-url="{{ site.download.app.ios }}"
   data-android-store-url="{{ site.download.app.android }}"
-  data-download-center-url="{{ site.links.download.url | relative_url }}"
+  data-download-center-url="https://collab.diode.io/#download-app"
 ></div>
 
 <div class="joinzone-openapp-modal" id="joinzone-openapp-modal" hidden>
   <div class="joinzone-openapp-modal__backdrop" data-joinzone-close></div>
   <div class="joinzone-openapp-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="joinzone-openapp-title">
     <button type="button" class="joinzone-openapp-modal__close" data-joinzone-close aria-label="Close">×</button>
-    <h3 class="joinzone-openapp-modal__title" id="joinzone-openapp-title">Open in Diode</h3>
+    <h3 class="joinzone-openapp-modal__title" id="joinzone-openapp-title">Join in Diode</h3>
     <p class="joinzone-openapp-modal__text">Click below to open the Diode app and join this Zone.</p>
     <div class="joinzone-openapp-modal__actions">
-      <a class="btn" href="#" role="button" data-joinzone-openinapp>Open in App</a>
+      <a class="btn" href="#" role="button" data-joinzone-openinapp>Join in Diode Collab</a>
       <a class="btn btn--blank" href="#close" data-joinzone-close>Continue on Web</a>
     </div>
-    <p class="joinzone-openapp-modal__note">No app? <a href="#download-app" class="popup-open" data-joinzone-close>Download Diode</a></p>
+    <p class="joinzone-openapp-modal__note">No app? <a href="https://collab.diode.io/#download-app" data-joinzone-download data-joinzone-close target="_blank" rel="noopener">Download Diode</a></p>
   </div>
 </div>
 
@@ -169,15 +180,15 @@ nav:
   <hr class="title_line">
   <p class="subtitle">Click the "Join" button on the Zones page in Diode and enter this Join Code!</p>
 
-  <h3 class="joincode" id="joincode"></h3>
-
-  <div class="joinzone__actions">
-    <a class="btn" href="#" role="button" data-joinzone-openinapp>Open in App</a>
-    <button onclick="CopyToClipboard('joincode')" class="btn" id="cc-copy">Copy to Clipboard</button>
+  <div class="joinzone__code-row">
+    <h3 class="joincode" id="joincode"></h3>
+    <button type="button" onclick="CopyToClipboard('joincode')" class="joinzone__copy-icon" id="cc-copy" aria-label="Copy join code" title="Copy join code">
+      <span class="material-symbols-outlined" aria-hidden="true">content_copy</span>
+    </button>
   </div>
 
-  <div class="download-prompt" id="notify" role="alert" style="display: none;">
-    Copied!
+  <div class="joinzone__actions">
+    <a class="btn btn--blank" href="#" role="button" data-joinzone-openinapp>Join in Diode Collab</a>
   </div>
 
   <div class="joinzone__status" id="joinzone-mobile-status" hidden>
@@ -186,13 +197,13 @@ nav:
 
   <div class="joinzone__fallback" id="joinzone-fallback" hidden>
     <p>If Diode didn’t open, you can use the Join Code above or download the app.</p>
-    <a class="btn" href="{{ site.links.download.url | relative_url }}" data-joinzone-download>Get Diode</a>
+    <a class="btn btn--bordered" href="https://collab.diode.io/#download-app" data-joinzone-download target="_blank" rel="noopener">Download</a>
   </div>
 
   <br/><br/>
   <img style="display:block; margin-left:auto; margin-right: auto; width: 520px;" src="{{ 'joinzone/joincode-entry-example.gif' | prepend: site.path.images | relative_url}}" alt="how to join zone with join code">
   <p class="download-prompt">Need Diode?</p>
   <div>
-    <a href="#download-app" class="btn popup-open">{{ site.links.download.title }}</a>
+    <a href="https://collab.diode.io/#download-app" class="btn btn--bordered" target="_blank" rel="noopener">Download</a>
   </div>
 </div>

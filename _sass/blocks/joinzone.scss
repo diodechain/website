@@ -25,11 +25,75 @@
   }
 
   .joincode {
-      /* width: 400px; */
-      word-wrap: break-word;
-      padding-right: 30px;
+      margin: 0;
       font-size: 13pt;
       color: #54595e;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+  }
+
+  .joinzone__code-row {
+    max-width: 820px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 22px;
+    column-gap: 6px;
+    align-items: start;
+  }
+
+  .joinzone__copy-icon {
+    width: 22px;
+    min-width: 22px;
+    height: 22px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+    color: #f68c1f;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color .2s ease;
+    position: relative;
+
+    .material-symbols-outlined {
+      display: block;
+      font-size: 22px;
+      line-height: 1;
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .joinzone__copied-text {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 600;
+      color: #2faa57;
+      white-space: nowrap;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.is-copied {
+      color: #2faa57;
+    }
+
+    &:hover,
+    &:focus {
+      color: #e47f17;
+      outline: none;
+      box-shadow: none;
+      border: 0;
+      background: transparent;
+    }
+
+    &.is-copied:hover,
+    &.is-copied:focus {
+      color: #2faa57;
+    }
   }
 
   .download-prompt {
@@ -55,6 +119,11 @@
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
+
+    p {
+      font-size: 15px;
+      line-height: 1.45;
+    }
   }
 }
 
