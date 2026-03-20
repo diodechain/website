@@ -88,7 +88,7 @@ var OasisDNSList = Vue.component("dns_list_oasis", {
       let abi = dnsMethods[method];
       let call = this.web3.eth.abi.encodeFunctionCall(abi, params)
       let data = await this.web3.eth.call({
-          to: "0xBC7a66a80E760dD0D84f6e39Df6cfD937C6c94F6",
+          to: "0x6cbf10355F8a16F7cd2F7aa762c08374959cE1bD",
           data: call,
           gasPrice: 0
       })
