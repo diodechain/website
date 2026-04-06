@@ -120,10 +120,23 @@ is_command() {
   command -v "$1" >/dev/null
 }
 uname_os() {
+  # Optional override for unusual environments (CI, embedded shells, etc.)
+  if [ -n "${DIODE_OS:-}" ]; then
+    echo "${DIODE_OS}"
+    return
+  fi
+
+  # Git Bash / MSYS2 / Cygwin: uname -s can vary; uname -o is reliable here.
+  # On real Linux/macOS, uname -o is typically GNU/Linux or Darwin, not msys/cygwin.
+  case "$(uname -o 2>/dev/null | tr '[:upper:]' '[:lower:]')" in
+    msys | cygwin) echo "windows"; return ;;
+  esac
+
   os=$(uname -s | tr '[:upper:]' '[:lower:]')
   case $os in
     msys*) os="windows" ;;
     mingw*) os="windows" ;;
+    cygwin*) os="windows" ;;
   esac
   echo "${os}"
 }
@@ -183,7 +196,17 @@ untar() {
   case "${tarball}" in
     *.tar.gz | *.tgz) tar -xzf "${tarball}" ;;
     *.tar) tar -xf "${tarball}" ;;
-    *.zip) unzip -o "${tarball}" ;;
+    *.zip)
+      # Git Bash on Windows often lacks unzip; bsdtar/GNU tar can extract zips.
+      if is_command unzip; then
+        unzip -o "${tarball}"
+      elif tar -xf "${tarball}" 2>/dev/null; then
+        :
+      else
+        echo "untar: need unzip or tar with zip support to extract ${tarball}"
+        return 1
+      fi
+      ;;
     *)
       echo "Unknown archive format for ${tarball}"
       return 1
