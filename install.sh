@@ -10,6 +10,20 @@ Usage: $this [-b] bindir [version]
    [version] is a version number from
    https://github.com/diodechain/diode_go_client/releases
    If version is missing, then an attempt to find the latest will be found.
+
+WSL:
+  When run inside WSL (Linux), this script installs the Linux CLI and also
+  places diode.exe under your Windows user profile (default:
+  /mnt/c/Users/<WindowsUsername>/opt/diode) so you can add it to Windows PATH.
+  Override Windows install dir: BINDIR_WINDOWS=/mnt/c/Users/you/opt/diode
+  Skip the Windows copy: DIODE_SKIP_WINDOWS_EXE=1
+
+Git Bash (no WSL):
+  Run: ...\\Git\\bin\\bash.exe -lc "curl -Ssf https://diode.io/install.sh | bash"
+
+Force Windows build only (no Linux):
+  set DIODE_OS=windows
+  curl -Ssf https://diode.io/install.sh | bash
 EOF
   exit 2
 }
@@ -28,22 +42,40 @@ parse_args() {
   shift $((OPTIND - 1))
   VERSION=$1
 }
-# this function wraps all the destructive operations
-# if a curl|bash cuts off the end of the script due to
-# network, either nothing will happen or will syntax error
-# out preventing half-done work
-execute() {
-  TMPDIR=$(mktmpdir)
-  echo "$PREFIX: downloading ${TARBALL_URL} to ${TMPDIR}/${TARBALL}"
-  http_download "${TMPDIR}/${TARBALL}" "${TARBALL_URL}"
+# Expand ~/ and similar in BINDIR paths
+expand_bindir() {
+  eval echo "$1"
+}
 
-  (cd "${TMPDIR}" && untar "${TARBALL}")
-  install -d "${BINDIR}"
-  install "${TMPDIR}/${BINARY}" "${BINDIR}/"
-  echo "$PREFIX: installed as ${BINDIR}/${BINARY}"
+# Download and install one release (linux/amd64, windows/amd64, etc.)
+install_one_platform() {
+  local ios="$1" iarch="$2" idest_raw="$3"
+  local idest
+  idest=$(expand_bindir "$idest_raw")
+  local plat="${ios}/${iarch}"
+  if ! is_supported_platform "$plat"; then
+    echo "$PREFIX: error: platform $plat is not supported"
+    return 1
+  fi
+  local base="diode"
+  local nm="${base}_${ios}_${iarch}"
+  local tb="${nm}.${FORMAT}"
+  local url="${GITHUB_DOWNLOAD}/v${VERSION}/${tb}"
+  local binf="${base}"
+  [ "$ios" = "windows" ] && binf="${base}.exe"
+  local tmp
+  tmp=$(mktmpdir)
+  echo "$PREFIX: downloading ${url} to ${tmp}/${tb}"
+  http_download "${tmp}/${tb}" "${url}"
+  (cd "${tmp}" && untar "${tb}")
+  install -d "${idest}"
+  install "${tmp}/${binf}" "${idest}/"
+  echo "$PREFIX: installed (${plat}) as ${idest}/${binf}"
+}
 
-  # installing path into .bashrc and .bash_profile and .zshrc for macOS
-  TERM="export PATH=${BINDIR}:\$PATH"
+append_shell_path() {
+  local bdir="$1"
+  TERM="export PATH=${bdir}:\$PATH"
   for FILE in ~/.bashrc ~/.bash_profile ~/.zshrc; do
     if test -f "$FILE"; then
       grep -qxF "$TERM" "$FILE" || echo "$TERM" >> "$FILE"
@@ -54,7 +86,18 @@ execute() {
   done
   echo
   echo "Restart your terminal to use or run below line right now:"
-  echo "export PATH=${BINDIR}:\$PATH"
+  echo "export PATH=${bdir}:\$PATH"
+}
+
+wsl_detected() {
+  [ -r /proc/version ] 2>/dev/null && grep -qi microsoft /proc/version 2>/dev/null
+}
+
+windows_username_for_wsl() {
+  local u
+  u=$(cmd.exe /c 'echo %USERNAME%' 2>/dev/null | tr -d '\r\n' | head -c 256)
+  [ -n "$u" ] && echo "$u" && return
+  echo "${USER:-user}"
 }
 is_supported_platform() {
   platform=$1
@@ -122,9 +165,15 @@ is_command() {
 uname_os() {
   # Optional override for unusual environments (CI, embedded shells, etc.)
   if [ -n "${DIODE_OS:-}" ]; then
-    echo "${DIODE_OS}"
+    echo "${DIODE_OS}" | tr '[:upper:]' '[:lower:]'
     return
   fi
+
+  # Native Windows build (diode.exe) while shell is WSL/Git-Bash edge cases.
+  # Same as DIODE_OS=windows — use when cmd.exe runs WSL bash but Diode runs on Windows.
+  case "${DIODE_WINDOWS:-}" in
+    1 | yes | true | TRUE) echo "windows"; return ;;
+  esac
 
   # Git Bash / MSYS2 / Cygwin: uname -s can vary; uname -o is reliable here.
   # On real Linux/macOS, uname -o is typically GNU/Linux or Darwin, not msys/cygwin.
@@ -204,6 +253,9 @@ untar() {
         :
       else
         echo "untar: need unzip or tar with zip support to extract ${tarball}"
+        if [ -r /proc/version ] && grep -qi microsoft /proc/version 2>/dev/null; then
+          echo "untar: on WSL, install unzip in your distro, e.g.: sudo apt-get update && sudo apt-get install -y unzip"
+        fi
         return 1
       fi
       ;;
@@ -330,15 +382,34 @@ adjust_os
 
 adjust_arch
 
-echo "$PREFIX: found version ${VERSION} for ${OS}/${ARCH}"
+BINDIR_EXPANDED=$(expand_bindir "$BINDIR")
 
-NAME=${BINARY}_${OS}_${ARCH}
-TARBALL=${NAME}.${FORMAT}
-TARBALL_URL=${GITHUB_DOWNLOAD}/v${VERSION}/${TARBALL}
-
-# Adjust binary name if windows
-if [ "$OS" = "windows" ]; then
-  BINARY="${BINARY}.exe"
+if wsl_detected && [ "$OS" = "linux" ] && [ -z "${DIODE_OS:-}" ] && [ -z "${DIODE_WINDOWS:-}" ] && [ -z "${DIODE_SKIP_WINDOWS_EXE:-}" ]; then
+  echo "$PREFIX: WSL detected: installing Linux ${ARCH} CLI and Windows diode.exe (under your Windows user folder)"
+  echo "$PREFIX: found version ${VERSION} for linux/${ARCH} (+ windows/${ARCH} companion)"
+  install_one_platform linux "$ARCH" "$BINDIR" || exit 1
+  append_shell_path "$BINDIR_EXPANDED"
+  if [ "$ARCH" = "amd64" ] || [ "$ARCH" = "386" ]; then
+    WUSER=$(windows_username_for_wsl)
+    if [ -n "${BINDIR_WINDOWS:-}" ]; then
+      WBIND_RAW="$BINDIR_WINDOWS"
+    else
+      WBIND_RAW="/mnt/c/Users/${WUSER}/opt/diode"
+    fi
+    if [ -d "/mnt/c/Users/${WUSER}" ]; then
+      install_one_platform windows "$ARCH" "$WBIND_RAW" || echo "$PREFIX: warning: Windows diode.exe install failed (Linux CLI is installed)."
+      WEXP=$(expand_bindir "$WBIND_RAW")
+      if command -v wslpath >/dev/null 2>&1 && [ -d "$WEXP" ]; then
+        WP=$(wslpath -w "$WEXP" 2>/dev/null) && echo "$PREFIX: Windows: add this folder to PATH for cmd.exe/PowerShell: $WP"
+      fi
+    else
+      echo "$PREFIX: warning: /mnt/c/Users/${WUSER} not found; skipping Windows diode.exe."
+    fi
+  else
+    echo "$PREFIX: note: only amd64/386 Windows builds are published; skipping Windows diode.exe."
+  fi
+else
+  echo "$PREFIX: found version ${VERSION} for ${OS}/${ARCH}"
+  install_one_platform "$OS" "$ARCH" "$BINDIR" || exit 1
+  append_shell_path "$BINDIR_EXPANDED"
 fi
-
-execute
