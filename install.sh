@@ -15,6 +15,8 @@ WSL:
   When run inside WSL (Linux), this script installs the Linux CLI and also
   places diode.exe under your Windows user profile (default:
   /mnt/c/Users/<WindowsUsername>/opt/diode) so you can add it to Windows PATH.
+  Bare WSL (no unzip/python): extraction uses Windows tar.exe or PowerShell
+  (via wslpath) so nothing extra needs to be installed in the distro.
   Override Windows install dir: BINDIR_WINDOWS=/mnt/c/Users/you/opt/diode
   Skip the Windows copy: DIODE_SKIP_WINDOWS_EXE=1
 
@@ -67,9 +69,17 @@ install_one_platform() {
   tmp=$(mktmpdir)
   echo "$PREFIX: downloading ${url} to ${tmp}/${tb}"
   http_download "${tmp}/${tb}" "${url}"
-  (cd "${tmp}" && untar "${tb}")
-  install -d "${idest}"
-  install "${tmp}/${binf}" "${idest}/"
+  if ! (cd "${tmp}" && untar "${tb}"); then
+    echo "$PREFIX: error: failed to extract ${tb}"
+    return 1
+  fi
+  if [ ! -f "${tmp}/${binf}" ]; then
+    echo "$PREFIX: error: expected ${binf} not found after extract (in ${tmp})"
+    ls -la "${tmp}" 2>/dev/null || true
+    return 1
+  fi
+  install -d "${idest}" || return 1
+  install "${tmp}/${binf}" "${idest}/" || return 1
   echo "$PREFIX: installed (${plat}) as ${idest}/${binf}"
 }
 
@@ -246,18 +256,39 @@ untar() {
     *.tar.gz | *.tgz) tar -xzf "${tarball}" ;;
     *.tar) tar -xf "${tarball}" ;;
     *.zip)
-      # Git Bash on Windows often lacks unzip; bsdtar/GNU tar can extract zips.
-      if is_command unzip; then
-        unzip -o "${tarball}"
+      # Prefer Linux tools; on bare WSL (nothing installed), use Windows' tar.exe or PowerShell via wslpath.
+      _zip_abs="$(pwd)/${tarball}"
+      if is_command unzip && unzip -o "${tarball}"; then
+        :
       elif tar -xf "${tarball}" 2>/dev/null; then
         :
+      elif is_command python3 && python3 -c "import zipfile,sys; z=zipfile.ZipFile(sys.argv[1]); z.extractall('.'); z.close()" "${tarball}" 2>/dev/null; then
+        :
+      elif is_command python && python -c "import zipfile,sys; z=zipfile.ZipFile(sys.argv[1]); z.extractall('.'); z.close()" "${tarball}" 2>/dev/null; then
+        :
+      elif is_command wslpath && [ -f /mnt/c/Windows/System32/tar.exe ] && /mnt/c/Windows/System32/tar.exe -xf "$(wslpath -w "$_zip_abs")" -C "$(wslpath -w "$(pwd)")" 2>/dev/null; then
+        :
+      elif is_command wslpath && [ -f /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe ]; then
+        _wz=$(wslpath -w "$_zip_abs")
+        _wd=$(wslpath -w "$(pwd)")
+        if /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -NoProfile -NonInteractive -Command "Expand-Archive -LiteralPath '$_wz' -DestinationPath '$_wd' -Force" 2>/dev/null; then
+          :
+        else
+          echo "untar: could not extract ${tarball} (tried unzip, tar, python, Windows tar.exe, PowerShell)"
+          if [ -r /proc/version ] && grep -qi microsoft /proc/version 2>/dev/null; then
+            echo "untar: minimal WSL: install unzip (sudo apt update && sudo apt install -y unzip) or ensure Windows tar.exe / PowerShell can reach this path."
+          fi
+          return 1
+        fi
       else
-        echo "untar: need unzip or tar with zip support to extract ${tarball}"
+        echo "untar: could not extract ${tarball} (tried unzip, tar, python, Windows tar.exe, PowerShell)"
         if [ -r /proc/version ] && grep -qi microsoft /proc/version 2>/dev/null; then
-          echo "untar: on WSL, install unzip in your distro, e.g.: sudo apt-get update && sudo apt-get install -y unzip"
+          echo "untar: on WSL: sudo apt-get update && sudo apt-get install -y unzip"
+          echo "untar: or ensure wslpath exists and C:\\Windows\\System32\\tar.exe can read the WSL path to this zip."
         fi
         return 1
       fi
+      unset _zip_abs _wz _wd 2>/dev/null || true
       ;;
     *)
       echo "Unknown archive format for ${tarball}"
@@ -386,6 +417,9 @@ BINDIR_EXPANDED=$(expand_bindir "$BINDIR")
 
 if wsl_detected && [ "$OS" = "linux" ] && [ -z "${DIODE_OS:-}" ] && [ -z "${DIODE_WINDOWS:-}" ] && [ -z "${DIODE_SKIP_WINDOWS_EXE:-}" ]; then
   echo "$PREFIX: WSL detected: installing Linux ${ARCH} CLI and Windows diode.exe (under your Windows user folder)"
+  if [ "$(id -u)" -eq 0 ]; then
+    echo "$PREFIX: note: running as root — Linux CLI goes to /root/opt/diode. Use your normal WSL user for ~/opt/diode under /home/<you>." >&2
+  fi
   echo "$PREFIX: found version ${VERSION} for linux/${ARCH} (+ windows/${ARCH} companion)"
   install_one_platform linux "$ARCH" "$BINDIR" || exit 1
   append_shell_path "$BINDIR_EXPANDED"
