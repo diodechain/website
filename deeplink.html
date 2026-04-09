@@ -1,0 +1,192 @@
+---
+title: Open in Diode
+layout: page
+class: header--white
+permalink: /deeplink/
+
+nav:
+
+---
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+<script>
+  (function () {
+    const url = new URL(window.location.href);
+
+    function allowedDeepLink(href) {
+      if (!href || typeof href !== "string") return false;
+      try {
+        var u = new URL(href.trim());
+        var scheme = u.protocol.replace(/:$/, "").toLowerCase();
+        return scheme === "ddrive" || scheme === "diode";
+      } catch (e) {
+        return false;
+      }
+    }
+
+    var raw =
+      (url.searchParams.get("url") ||
+        url.searchParams.get("link") ||
+        url.searchParams.get("path") ||
+        url.searchParams.get("u") ||
+        "").trim();
+
+    var deepLink = "";
+    if (raw) {
+      try {
+        deepLink = decodeURIComponent(raw);
+      } catch (e) {
+        deepLink = raw;
+      }
+    }
+
+    if (!allowedDeepLink(deepLink)) {
+      window.location.replace(url.origin + "/");
+      return;
+    }
+
+    window.__deeplinkUrl = deepLink;
+  })();
+
+  function CopyToClipboard(id) {
+    var el = document.getElementById(id);
+    var text = (el && (el.textContent || el.innerText) || "").trim();
+    var copyButton = document.getElementById("deeplink-copy");
+
+    function showNotification() {
+      if (!copyButton) return;
+      if (copyButton._restoreTimer) {
+        clearTimeout(copyButton._restoreTimer);
+      }
+      copyButton.classList.add("is-copied");
+      copyButton.innerHTML = '<span class="joinzone__copied-text" aria-live="polite">Copied!</span>';
+      copyButton._restoreTimer = setTimeout(function () {
+        copyButton.classList.remove("is-copied");
+        copyButton.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">content_copy</span>';
+      }, 2000);
+    }
+
+    function legacyCopy(value) {
+      var tempInput = document.createElement("textarea");
+      tempInput.value = value;
+      tempInput.setAttribute("readonly", "");
+      tempInput.style.position = "fixed";
+      tempInput.style.top = "0";
+      tempInput.style.left = "0";
+      tempInput.style.opacity = "0";
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand("copy");
+        showNotification();
+      } catch (err) {
+        console.error("Could not copy text: ", err);
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    if (!text) return;
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(showNotification, function (err) {
+        console.error("Could not copy text: ", err);
+        legacyCopy(text);
+      });
+    } else {
+      legacyCopy(text);
+    }
+  }
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var deepLink = window.__deeplinkUrl || "";
+    if (!deepLink) return;
+
+    var linkEl = document.getElementById("deeplink-url");
+    if (linkEl) linkEl.textContent = deepLink;
+
+    var isAndroid = /Android/i.test(navigator.userAgent);
+    var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    var isMobile = isAndroid || isIOS;
+
+    var cfgEl = document.getElementById("deeplink-config");
+    var iosStoreUrl = (cfgEl && cfgEl.dataset && cfgEl.dataset.iosStoreUrl) || "";
+    var androidStoreUrl = (cfgEl && cfgEl.dataset && cfgEl.dataset.androidStoreUrl) || "";
+    var downloadCenterUrl = (cfgEl && cfgEl.dataset && cfgEl.dataset.downloadCenterUrl) || "/download/";
+    var downloadUrl = isIOS ? iosStoreUrl : isAndroid ? androidStoreUrl : downloadCenterUrl;
+
+    document.querySelectorAll("[data-deeplink-download]").forEach(function (link) {
+      link.setAttribute("href", downloadUrl || downloadCenterUrl);
+      if (downloadUrl && downloadUrl.indexOf("http") === 0) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+      }
+    });
+
+    var mobileStatus = document.getElementById("deeplink-mobile-status");
+    var fallback = document.getElementById("deeplink-fallback");
+
+    function attemptOpenApp(href) {
+      try {
+        window.location.href = href;
+      } catch (e) {}
+
+      setTimeout(function () {
+        if (fallback) fallback.hidden = false;
+      }, 1500);
+    }
+
+    // CTA stays href="#"; custom scheme only via attemptOpenApp (avoids href + location both firing).
+    document.querySelectorAll("[data-deeplink-openinapp]").forEach(function (link) {
+      link.setAttribute("href", "#");
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        attemptOpenApp(deepLink);
+      });
+    });
+
+    if (mobileStatus && isMobile) mobileStatus.hidden = false;
+    attemptOpenApp(deepLink);
+  });
+</script>
+
+<div
+  id="deeplink-config"
+  hidden
+  data-ios-store-url="{{ site.download.app.ios }}"
+  data-android-store-url="{{ site.download.app.android }}"
+  data-download-center-url="{{ site.links.collab_download.url }}"
+></div>
+
+<div class="text-center joinzone">
+  <h2 class="title">Open in Diode</h2>
+  <hr class="title_line" />
+  <p class="subtitle">We’re opening this link in the Diode app.</p>
+
+  <div class="joinzone__code-row">
+    <h3 class="joincode" id="deeplink-url"></h3>
+    <button
+      type="button"
+      onclick="CopyToClipboard('deeplink-url')"
+      class="joinzone__copy-icon"
+      id="deeplink-copy"
+      aria-label="Copy link"
+      title="Copy link"
+    >
+      <span class="material-symbols-outlined" aria-hidden="true">content_copy</span>
+    </button>
+  </div>
+
+  <div class="joinzone__actions">
+    <a class="btn btn--blank" href="#" role="button" data-deeplink-openinapp>Open in Diode Collab</a>
+  </div>
+
+  <div class="joinzone__status" id="deeplink-mobile-status" hidden>Opening Diode…</div>
+
+  <div class="joinzone__fallback" id="deeplink-fallback" hidden>
+    <p>If Diode didn’t open, tap “Open in Diode Collab” above or copy the link. You can also install the app below.</p>
+    <a class="btn btn--bordered" href="{{ site.links.collab_download.url }}" data-deeplink-download target="_blank" rel="noopener noreferrer">Download</a>
+  </div>
+</div>

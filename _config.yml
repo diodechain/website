@@ -65,6 +65,10 @@ links:
   download:
     title: Login
     url: "https://ztna.diode.io"
+  # Diode Collab app installers (Download Center on collab.diode.io)
+  collab_download:
+    title: Download Diode Collab 
+    url: "https://collab.diode.io/download/"
   node:
     title: Run a Node
     url: "https://network.docs.diode.io/docs/"

@@ -158,7 +158,7 @@ nav:
   hidden
   data-ios-store-url="{{ site.download.app.ios }}"
   data-android-store-url="{{ site.download.app.android }}"
-  data-download-center-url="https://collab.diode.io/#download-app"
+  data-download-center-url="{{ site.links.collab_download.url }}"
 ></div>
 
 <div class="joinzone-openapp-modal" id="joinzone-openapp-modal" hidden>
@@ -171,7 +171,7 @@ nav:
       <a class="btn" href="#" role="button" data-joinzone-openinapp>Join in Diode Collab</a>
       <a class="btn btn--blank" href="#close" data-joinzone-close>Continue on Web</a>
     </div>
-    <p class="joinzone-openapp-modal__note">No app? <a href="https://collab.diode.io/#download-app" data-joinzone-download data-joinzone-close target="_blank" rel="noopener">Download Diode</a></p>
+    <p class="joinzone-openapp-modal__note">No app? <a href="{{ site.links.collab_download.url }}" data-joinzone-download data-joinzone-close target="_blank" rel="noopener">Download Diode</a></p>
   </div>
 </div>
 
@@ -197,13 +197,13 @@ nav:
 
   <div class="joinzone__fallback" id="joinzone-fallback" hidden>
     <p>If Diode didn’t open, you can use the Join Code above or download the app.</p>
-    <a class="btn btn--bordered" href="https://collab.diode.io/#download-app" data-joinzone-download target="_blank" rel="noopener">Download</a>
+    <a class="btn btn--bordered" href="{{ site.links.collab_download.url }}" data-joinzone-download target="_blank" rel="noopener">Download</a>
   </div>
 
   <br/><br/>
   <img style="display:block; margin-left:auto; margin-right: auto; width: 520px;" src="{{ 'joinzone/joincode-entry-example.gif' | prepend: site.path.images | relative_url}}" alt="how to join zone with join code">
   <p class="download-prompt">Need Diode?</p>
   <div>
-    <a href="https://collab.diode.io/#download-app" class="btn btn--bordered" target="_blank" rel="noopener">Download</a>
+    <a href="{{ site.links.collab_download.url }}" class="btn btn--bordered" target="_blank" rel="noopener">Download</a>
   </div>
 </div>
