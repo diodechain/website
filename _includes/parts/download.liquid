@@ -1,1 +1,2 @@
-<a href="https://ztna.diode.io" class="btn header__download" target="_blank" rel="noopener noreferrer">{{ site.links.download.title }}</a>
+{% assign _dl = site.links.download.url %}
+<a href="{% if _dl contains '://' %}{{ _dl }}{% else %}{{ _dl | relative_url }}{% endif %}" class="btn header__download"{% if _dl contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ site.links.download.title }}</a>

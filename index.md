@@ -80,17 +80,19 @@ wireguard:
   content: |
     Prove value and innovate with AI without compromising confidentiality.
 
-    Diode's end-to-end encrypted private AIs deliver performant LLM capabilities into sensitive operations.
+    Our end-to-end encrypted private AIs and secure deployment tools deliver performant LLM capabilities into sensitive operations.
 
-    Diode's private AI suite includes agentic piplines, LLM pools, tools, insights, channels, and user interface.
+    Use Diode security to protect your team's innovation at pace.
   image:
     src: story/wg-full.webp
     alt: Protected AI at every level
   buttons:
-    - title: GET A DEMO
-      url: "https://diodedemo.paperform.co/"
+    - title: 🔒️ DEPLOY VIBE APPS
+      url: "https://deployer.diode.link/"
       target: _blank
-
+    - title: CREATE PRIVATE AGENTS
+      url: "https://pipelinedemo.diode.link:8080"
+      target: _blank
 
 ### Story
 private-ai:

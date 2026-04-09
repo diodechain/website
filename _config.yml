@@ -64,7 +64,7 @@ nav:
 links:
   download:
     title: Login
-    url: "/download/"
+    url: "https://ztna.diode.io"
   node:
     title: Run a Node
     url: "https://network.docs.diode.io/docs/"
