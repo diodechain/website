@@ -70,19 +70,38 @@
   &__buttons {
     margin-top: 22px;
     display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    column-gap: 10px;
+    row-gap: 12px;
+    @include media-breakpoint-up(sm) {
+      column-gap: 20px;
+    }
     @include media-breakpoint-up(md) {
       margin-top: 33px;
     }
+    @include media-breakpoint-up(xl) {
+      flex-wrap: nowrap;
+      column-gap: 24px;
+    }
+    @include media-breakpoint-up(xxl) {
+      column-gap: 40px;
+    }
 
     .btn {
-      & + .btn {
-        margin-left: 10px;
-        @include media-breakpoint-up(sm) {
-          margin-left: 20px;
-        }
-        @include media-breakpoint-up(xl) {
-          margin-left: 40px;
-        }
+      max-width: 100%;
+      margin-right: 0;
+      white-space: normal;
+
+      @include media-breakpoint-up(xl) {
+        max-width: none;
+        white-space: nowrap;
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+      @include media-breakpoint-up(xxl) {
+        padding-left: 28px;
+        padding-right: 28px;
       }
 
       &--arrow {
