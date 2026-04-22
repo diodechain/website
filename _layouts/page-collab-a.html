@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}" style="height: 100%;">
+
+{%- include head.liquid -%}
+
+<body class="page--collab-a header--dark">
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59C3BGK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	{%- include header.liquid -%}
+
+	<div class="collab-a">
+		{{ content }}
+	</div>
+
+	{%- include footer.liquid -%}
+
+	{%- include download-popup.liquid id="download-app" -%}
+	{%- include cookies-consent.liquid id="cookies-consent" -%}
+
+</body>
+</html>
