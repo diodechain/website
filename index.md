@@ -88,10 +88,10 @@ wireguard:
     alt: Protected AI at every level
   buttons:
     - title: 🔒️ DEPLOY VIBE APPS
-      url: "https://deployer.diode.link/"
+      url: "https://vibe.diode.io/"
       target: _blank
     - title: CREATE PRIVATE AGENTS
-      url: "https://pipelinedemo.diode.link:8080"
+      url: "https://nexus.diode.io"
       target: _blank
 
 ### Story
