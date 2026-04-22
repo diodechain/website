@@ -130,7 +130,7 @@ body.page--collab-a h1.collab-a-title{font-size:30px}
         <rect x="82" y="17" width="220" height="14" rx="3" fill="#3a3a40"/>
         <rect x="88" y="21.5" width="4.5" height="3.5" rx="0.5" fill="#28c840"/>
         <path d="M88.8 21.5V20.5C88.8 19.5 89.6 18.7 90.3 18.7C91 18.7 91.8 19.5 91.8 20.5V21.5" stroke="#28c840" stroke-width="0.7" fill="none" stroke-linecap="round"/>
-        <text x="97" y="27.5" font-family="'SF Mono','IBM Plex Mono',monospace" font-size="6.5" fill="#b0b0b8">deployer.diode.link/settings/vibe</text>
+        <text x="97" y="27.5" font-family="'SF Mono','IBM Plex Mono',monospace" font-size="6.5" fill="#b0b0b8">vibe.diode.io/settings/vibe</text>
         <!-- page content area — white -->
         <rect x="26" y="37" width="348" height="166" fill="#fafafa"/>
         <!-- sidebar hint -->
