@@ -1,6 +1,6 @@
 ---
-title: Securely Deploy Vibe-Coded Apps — Diode Deployer
-description: "Deploy vibe-coded apps off the public internet. No public URL, no exposed database, no auth code for AI to get wrong. Private by default with Diode Deployer."
+title: Securely Deploy Vibe-Coded Apps — Diode Vibe
+description: "Deploy vibe-coded apps off the public internet. No public URL, no exposed database, no auth code for AI to get wrong. Private by default with Diode Vibe."
 layout: page-collab-a
 permalink: /lp/vibe-deploy/
 noindex: false
@@ -10,9 +10,9 @@ collab_a_hero:
   subheading: |
     **Build. Deploy. Control Access.**
 
-    Go from idea to operational app without managing infrastructure. Diode Deployer publishes your vibe-coded app privately to your team, or publicly.
+    Go from idea to operational app without managing infrastructure. Diode Vibe publishes your vibe-coded app privately to your team, or publicly.
   btn_download: GET STARTED
-  btn_url: "https://deployer.diode.io"
+  btn_url: "https://vibe.diode.io"
 ---
 
 <style>
@@ -114,7 +114,7 @@ body.page--collab-a h1.collab-a-title{font-size:30px}
 <div class="collab-a-row1">
   <div class="collab-a-col-left">
     <div class="hero-laptop-wrap">
-      <svg viewBox="0 0 400 268" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diode Deployer interface showing editor selection and deploy configuration">
+      <svg viewBox="0 0 400 268" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diode Vibe interface showing editor selection and deploy configuration">
         <!-- DISPLAY LID — dark bezel (hardware) -->
         <path d="M18 10 Q18 4 24 4 L376 4 Q382 4 382 10 L382 210 L18 210 Z" fill="#1e1e22" stroke="#444" stroke-width="1.2"/>
         <!-- screen — light UI background -->
@@ -249,7 +249,7 @@ body.page--collab-a h1.collab-a-title{font-size:30px}
           </ul>
         </div>
         <div class="lp-compare-col lp-compare-us">
-          <div class="lp-compare-label lp-compare-label-us">Diode Deployer</div>
+          <div class="lp-compare-label lp-compare-label-us">Diode Vibe</div>
           <ul class="lp-compare-list">
             <li class="lp-compare-good">No central servers: apps publish through the Diode network, not third-party infrastructure</li>
             <li class="lp-compare-good">Controlled membership: private Zones with end-to-end encryption and no PII required</li>
@@ -270,7 +270,7 @@ body.page--collab-a h1.collab-a-title{font-size:30px}
         </div>
         <div class="lp-usecase-card">
           <h4>Tool Compatibility</h4>
-          <p>Link and use your preferred coding tools and workflows. Deployer integrates with the editors you already use.</p>
+          <p>Link and use your preferred coding tools and workflows. Diode Vibe integrates with the editors you already use.</p>
         </div>
         <div class="lp-usecase-card">
           <h4>Guided Setup</h4>
@@ -299,7 +299,7 @@ body.page--collab-a h1.collab-a-title{font-size:30px}
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#f15d2f" stroke-width="1"/><path d="M5 8L7 10L11 6" stroke="#f15d2f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Works with Cursor, Zed, Claude Desktop, VS Code, Windsurf, and more
     </p>
-    <a href="https://deployer.diode.io" class="collab-a-btn-download lp-cta-btn" target="_blank" rel="noopener">GET STARTED</a>
+    <a href="https://vibe.diode.io" class="collab-a-btn-download lp-cta-btn" target="_blank" rel="noopener">GET STARTED</a>
     <p class="lp-cta-note">No central servers. No exposed databases. Full control over access.</p>
   </div>
 
