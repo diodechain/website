@@ -9,6 +9,10 @@
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59C3BGK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
 
+	{%- if page.url == "/" -%}
+		{%- include collab-banner.liquid -%}
+	{%- endif -%}
+
 	{%- include header.liquid -%}
 
 	<main class="main" role="main">
