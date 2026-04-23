@@ -1,22 +1,29 @@
 <div class="collab-banner" id="collab-banner" hidden>
     <div class="collab-banner__inner">
-        <p class="collab-banner__text"><strong>Diode Collab</strong> &mdash; Private Team Collaboration &mdash; Messaging. Files. VPN.</p>
-        <a href="https://collab.diode.io/" class="collab-banner__cta" target="_blank" rel="noopener">Get the app &rarr;</a>
+        <p class="collab-banner__text">Looking for <strong>Diode Collab</strong>? &mdash; Private Team Collaboration &mdash; Messaging. Files. VPN.</p>
+        <a href="https://collab.diode.io/#download-app" class="collab-banner__cta" target="_blank" rel="noopener">Get the app &rarr;</a>
         <button type="button" class="collab-banner__close" aria-label="Dismiss">&times;</button>
     </div>
 </div>
 <style>
 .collab-banner{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(22,28,42,.85);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-top:2px solid #f15d2f;color:#fff;font-size:13px}
-.collab-banner__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;padding:10px 44px 10px 16px;max-width:1200px;margin:0 auto;position:relative}
+.collab-banner__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;padding:10px 48px 10px 16px;margin:0 auto;position:relative}
 .collab-banner__text{margin:0;line-height:1.35;text-align:center;flex:1 1 auto}
-.collab-banner__text strong{color:#f15d2f;font-weight:600}
-.collab-banner__cta{color:#fff;font-weight:600;text-decoration:none;white-space:nowrap;padding:5px 12px;border:1px solid #f15d2f;border-radius:4px;transition:background .2s,color .2s}
-.collab-banner__cta:hover,.collab-banner__cta:focus{background:#f15d2f;color:#161c2a}
-.collab-banner__close{position:absolute;top:50%;right:10px;transform:translateY(-50%);background:transparent;border:0;color:#fff;opacity:.6;font-size:22px;line-height:1;cursor:pointer;padding:6px;transition:opacity .2s}
+.collab-banner__text strong{color:#fff;font-weight:600}
+.collab-banner__cta{color:#fff;font-weight:600;text-decoration:none;margin-right:30px;white-space:nowrap;padding:5px 12px;border:1px solid #f15d2f;border-radius:4px;transition:background .2s,color .2s}
+.collab-banner__cta:hover,.collab-banner__cta:focus{background:#f15d2f;color:#fff}
+.collab-banner__close{position:absolute;top:50%;right:30px;transform:translateY(-50%);background:transparent;border:0;color:#fff;opacity:.6;font-size:22px;line-height:1;cursor:pointer;padding:6px;transition:opacity .2s}
 .collab-banner__close:hover,.collab-banner__close:focus{opacity:1}
 body.has-collab-banner{padding-top:var(--collab-banner-h,56px)}
 body.has-collab-banner .header{top:var(--collab-banner-h,56px)}
-@media (min-width:768px){.collab-banner__inner{flex-wrap:nowrap;gap:24px;padding:12px 56px 12px 24px}.collab-banner__text{text-align:left;font-size:14px}.collab-banner__cta{font-size:14px}}
+@media (min-width:768px)
+{
+    .collab-banner__inner{flex-wrap:nowrap;gap:24px;padding:12px 56px 12px 24px}.collab-banner__text{text-align:left;font-size:14px}.collab-banner__cta{font-size:14px}
+}
+@media (max-width:480px)
+{
+    .collab-banner__cta{margin-right:0px;}
+}
 </style>
 <script>
 (function(){
