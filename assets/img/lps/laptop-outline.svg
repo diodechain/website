@@ -1,0 +1,13 @@
+<svg width="1854" height="1031" viewBox="0 0 1854 1031" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <mask id="vibeLaptopScreenHole" maskUnits="userSpaceOnUse" x="0" y="0" width="1854" height="1031">
+    <rect width="1854" height="1031" fill="white"/>
+    <rect x="220.687" y="66.1071" width="1412.013" height="821.245" fill="black"/>
+  </mask>
+</defs>
+<g mask="url(#vibeLaptopScreenHole)">
+<path d="M1731.49 1030.5H121.9C54.8426 1030.5 0.5 976.13 0.5 909.1C0.5 897.111 10.2309 887.38 22.2203 887.38H1831.2C1843.19 887.38 1852.92 897.111 1852.92 909.1C1852.92 976.157 1798.55 1030.5 1731.49 1030.5ZM1632.7 887.352H220.687V66.1071C220.687 29.8601 250.074 0.5 286.294 0.5H1567.09C1603.31 0.5 1632.7 29.8601 1632.7 66.1071V887.38V887.352Z" fill="#272D2C" stroke="white" stroke-miterlimit="10"/>
+<path d="M1731.49 1030.5H121.9C54.8426 1030.5 0.5 976.13 0.5 909.1C0.5 897.111 10.2309 887.38 22.2203 887.38H1831.2C1843.19 887.38 1852.92 897.111 1852.92 909.1C1852.92 976.157 1798.55 1030.5 1731.49 1030.5ZM1632.7 887.352H220.687V66.1071C220.687 29.8601 250.074 0.5 286.294 0.5H1567.09C1603.31 0.5 1632.7 29.8601 1632.7 66.1071V887.38V887.352Z" fill="#272D2C" stroke="white" stroke-miterlimit="10" stroke-linecap="round"/>
+</g>
+<path d="M220.176 93.293H1632" stroke="white" stroke-miterlimit="10" stroke-linecap="round"/>
+</svg>

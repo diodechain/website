@@ -26,8 +26,14 @@ body.page--collab-a h1.collab-a-title{font-size:44.8px;font-weight:500;line-heig
 .collab-a a{cursor:pointer}
 .collab-a-bg{display:contents}
 .diode-mesh{position:absolute;bottom:0;right:-25.2px;width:calc(100% - 0px);max-width:304.5px}
-.collab-a-row1{position:relative;z-index:5;margin-left:28px;margin-top:0;display:flex;align-items:flex-start;gap:60px;align-self:center;color:#fff;font-weight:300;flex-grow:1}
-.collab-a-col-left{position:relative;width:480px;display:flex;flex-direction:column;gap:0;flex-shrink:0;padding-top:44.8px;padding-bottom:93.1px;align-items:center;align-self:center}
+.collab-a-row1{position:relative;z-index:5;margin-left:28px;margin-top:0;display:flex;align-items:flex-start;gap:130px;align-self:center;color:#fff;font-weight:300;flex-grow:1;overflow:visible}
+@media screen and (max-width:1199px){
+.collab-a-row1{gap:80px}
+}
+@media screen and (max-width:1023px){
+.collab-a-row1{gap:40px}
+}
+.collab-a-col-left{position:relative;width:640px;max-width:100%;display:flex;flex-direction:column;gap:0;flex-shrink:0;padding-top:44.8px;padding-bottom:93.1px;align-items:center;align-self:center;overflow:visible}
 .collab-a-col-right{margin-top:70.7px;width:400px;display:flex;flex-direction:column;gap:23.1px;flex-shrink:0;text-align:left}
 .collab-a-title{margin:-1.4px 7px 0 -1.4px;color:var(--collab-a-white,#fff)}
 .collab-a-subtitle{margin-left:2.1px;margin-right:-3.5px;font-size:16px;line-height:1.074}
@@ -35,8 +41,26 @@ body.page--collab-a h1.collab-a-title{font-size:44.8px;font-weight:500;line-heig
 .collab-a-btn-download{margin-left:2.1px;margin-top:9.1px;display:flex;justify-content:center;align-self:flex-start;font-size:14px;font-style:normal;line-height:1.55;letter-spacing:0.28px;text-align:center;background-color:#f15d2f;padding:7px 18px 7.7px 18px;border-radius:21px;border:0;cursor:pointer;color:#fff;text-decoration:none;font-family:inherit;white-space:nowrap}
 .collab-a-btn-download:hover{filter:brightness(1.2)}
 .collab-a-line{margin-left:2.1px;margin-top:12.6px;width:120.4px;height:0;flex-shrink:0;align-self:flex-start;border-top:2px solid #a7a9ac}
-.hero-laptop-wrap{position:relative;z-index:2;width:110%;max-width:528px;margin-left:-5%}
-.hero-laptop-wrap svg{width:100%;height:auto;display:block;filter:drop-shadow(0 8px 32px rgba(0,0,0,0.25))}
+.hero-laptop{--laptop-png-left:-145px;--laptop-png-top:30px;--laptop-png-w:calc(100% + 290px);--laptop-png-h:calc(100% - 60px);position:relative;z-index:2;width:110%;max-width:528px;margin-left:-5%;box-sizing:border-box;overflow:visible;filter:drop-shadow(0 8px 32px rgba(0,0,0,0.25))}
+.hero-laptop::before{content:'';display:block;width:100%;padding-bottom:calc(100% * 1031 / 1854 + 55px)}
+.hero-laptop-mp4-wrap{position:absolute;left:30px;top:-7px;width:calc(100% - 60px);height:100%;z-index:2;box-sizing:border-box;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.hero-laptop-mp4-wrap:focus{outline:none}
+.hero-laptop-mp4-wrap:focus-visible{outline:2px solid #f15d2f;outline-offset:3px}
+.hero-laptop-mp4-wrap .hero-laptop-video{max-width:90%;max-height:90%;width:auto;height:auto;margin:0;padding:0;border:0;background:transparent;object-fit:contain;display:block;vertical-align:top}
+.hero-laptop-png-wrap{position:absolute;left:var(--laptop-png-left);top:var(--laptop-png-top);width:var(--laptop-png-w);height:var(--laptop-png-h);z-index:1;box-sizing:border-box;pointer-events:none;line-height:0}
+.hero-laptop-png-wrap .hero-laptop-png{width:100%;height:100%;object-fit:fill;object-position:center;display:block;vertical-align:top}
+.lp-hero-video-modal{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:max(16px,3vw);box-sizing:border-box;background:rgba(0,0,0,0.42);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.lp-hero-video-modal.is-open{display:flex}
+.lp-hero-video-modal__panel{position:relative;width:75%;max-width:1400px;background:transparent;box-shadow:none}
+.lp-hero-video-modal__close{position:absolute;top:12px;right:12px;z-index:2;width:42px;height:42px;display:flex;align-items:center;justify-content:center;padding:0;border:0;border-radius:50%;background:#fff;color:#111;cursor:pointer;box-shadow:0 2px 14px rgba(0,0,0,0.14);transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.lp-hero-video-modal__close:hover{background:#f8f8f8;transform:scale(1.04);box-shadow:0 4px 20px rgba(0,0,0,0.18)}
+.lp-hero-video-modal__close:focus{outline:none}
+.lp-hero-video-modal__close:focus-visible{outline:2px solid #f15d2f;outline-offset:3px;background:#f8f8f8;transform:scale(1.04);box-shadow:0 4px 20px rgba(0,0,0,0.18)}
+.lp-hero-video-modal__close svg{display:block}
+.lp-hero-video-modal__panel video{width:100%;height:auto;display:block;vertical-align:top}
+@media screen and (max-width:860px){
+.lp-hero-video-modal__panel{width:100%;max-width:none}
+}
 .lp-tool-badges{margin-left:2.1px;margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;align-self:flex-start}
 .lp-tool-badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:400;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:4px 10px;font-family:'IBM Plex Mono','Poppins',monospace;letter-spacing:0.3px}
 .lp-sections{position:relative;z-index:2;display:flex;flex-direction:column;gap:0;width:100vw;margin-left:calc(-50vw + 50%);color:#fff;font-family:'Poppins',sans-serif}
@@ -80,7 +104,7 @@ body.page--collab-a h1.collab-a-title{font-size:44.8px;font-weight:500;line-heig
 .lp-hero-btn{width:auto;padding:9px 32px}
 @media screen and (max-width:860px){
 body.page--collab-a h1.collab-a-title{font-size:36px}
-.hero-laptop-wrap{width:100%;max-width:480px;margin-left:0}
+.hero-laptop{width:100%;max-width:480px;margin-left:0}
 .lp-pillars{padding:36px 22.4px}
 .lp-pillars-inner{grid-template-columns:1fr;gap:28px}
 .lp-pillar:not(:last-child){border-right:none;border-bottom:1px solid rgba(255,255,255,0.18);margin-right:0;padding-bottom:28px;padding-right:0}
@@ -102,7 +126,7 @@ body.page--collab-a h1.collab-a-title{font-size:30px}
 }
 @container collab-a (width < 790px){
 .collab-a-row1{margin-left:0;margin-top:30px;flex-direction:column;align-items:center;gap:0;width:100%}
-.collab-a-col-left{width:100%;max-width:480px;align-items:center;align-self:center}
+.collab-a-col-left{width:100%;max-width:640px;align-items:center;align-self:center}
 .collab-a-col-right{margin-top:24px;width:100%;max-width:none;align-items:flex-start}
 }
 </style>
@@ -113,82 +137,13 @@ body.page--collab-a h1.collab-a-title{font-size:30px}
 
 <div class="collab-a-row1">
   <div class="collab-a-col-left">
-    <div class="hero-laptop-wrap">
-      <svg viewBox="0 0 400 268" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diode Vibe interface showing editor selection and deploy configuration">
-        <!-- DISPLAY LID — dark bezel (hardware) -->
-        <path d="M18 10 Q18 4 24 4 L376 4 Q382 4 382 10 L382 210 L18 210 Z" fill="#1e1e22" stroke="#444" stroke-width="1.2"/>
-        <!-- screen — light UI background -->
-        <rect x="26" y="11" width="348" height="192" rx="3" fill="#f0f0f2"/>
-        <!-- browser chrome — dark tab bar -->
-        <rect x="26" y="11" width="348" height="26" rx="3" fill="#2c2c30"/>
-        <rect x="26" y="34" width="348" height="3" fill="#2c2c30"/>
-        <!-- traffic dots -->
-        <circle cx="42" cy="24" r="3.5" fill="#ff5f57"/>
-        <circle cx="54" cy="24" r="3.5" fill="#febc2e"/>
-        <circle cx="66" cy="24" r="3.5" fill="#28c840"/>
-        <!-- URL bar -->
-        <rect x="82" y="17" width="220" height="14" rx="3" fill="#3a3a40"/>
-        <rect x="88" y="21.5" width="4.5" height="3.5" rx="0.5" fill="#28c840"/>
-        <path d="M88.8 21.5V20.5C88.8 19.5 89.6 18.7 90.3 18.7C91 18.7 91.8 19.5 91.8 20.5V21.5" stroke="#28c840" stroke-width="0.7" fill="none" stroke-linecap="round"/>
-        <text x="97" y="27.5" font-family="'SF Mono','IBM Plex Mono',monospace" font-size="6.5" fill="#b0b0b8">vibe.diode.io/settings/vibe</text>
-        <!-- page content area — white -->
-        <rect x="26" y="37" width="348" height="166" fill="#fafafa"/>
-        <!-- sidebar hint -->
-        <rect x="26" y="37" width="50" height="166" fill="#f2f2f4"/>
-        <line x1="76" y1="37" x2="76" y2="203" stroke="#e0e0e4" stroke-width="0.5"/>
-        <!-- sidebar items -->
-        <rect x="32" y="48" width="38" height="5" rx="1" fill="#d0d0d4"/>
-        <rect x="32" y="60" width="34" height="4" rx="1" fill="#c8c8cc"/>
-        <rect x="32" y="70" width="36" height="4" rx="1" fill="#c8c8cc"/>
-        <!-- sidebar active item (Vibe apps — orange) -->
-        <rect x="30" y="80" width="42" height="6" rx="2" fill="rgba(241,93,47,0.12)"/>
-        <rect x="32" y="81" width="30" height="4" rx="1" fill="#f15d2f"/>
-        <rect x="32" y="92" width="32" height="4" rx="1" fill="#c8c8cc"/>
-        <!-- page title -->
-        <text x="86" y="56" font-family="'Poppins',sans-serif" font-size="9" font-weight="600" fill="#222">Configure your vibe coding app</text>
-        <!-- select card -->
-        <rect x="86" y="64" width="200" height="34" rx="4" fill="#fff" stroke="#ddd" stroke-width="0.6"/>
-        <text x="94" y="75" font-family="'Poppins',sans-serif" font-size="5.5" fill="#888">Select your coding tool</text>
-        <!-- dropdown -->
-        <rect x="94" y="80" width="120" height="14" rx="2.5" fill="#fff" stroke="#ccc" stroke-width="0.6"/>
-        <path d="M100 87L102 89.5L104 87" stroke="#f15d2f" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <text x="108" y="90" font-family="'Poppins',sans-serif" font-size="6.5" font-weight="500" fill="#222">Cursor</text>
-        <path d="M204 85L207 88L210 85" stroke="#999" stroke-width="0.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- OS detection bar -->
-        <rect x="86" y="104" width="200" height="16" rx="3" fill="#f6f6f8" stroke="#e8e8ec" stroke-width="0.5"/>
-        <!-- laptop icon -->
-        <rect x="92" y="108" width="9" height="6" rx="1" stroke="#888" stroke-width="0.5" fill="none"/>
-        <line x1="89" y1="115.5" x2="104" y2="115.5" stroke="#888" stroke-width="0.5" stroke-linecap="round"/>
-        <text x="107" y="114.5" font-family="'Poppins',sans-serif" font-size="5" fill="#666">It looks like you are on a</text>
-        <text x="173" y="114.5" font-family="'Poppins',sans-serif" font-size="5" font-weight="600" fill="#222">macOS</text>
-        <text x="194" y="114.5" font-family="'Poppins',sans-serif" font-size="5" fill="#666">system</text>
-        <!-- step section -->
-        <text x="86" y="132" font-family="'Poppins',sans-serif" font-size="5.5" fill="#888">Pick your editor or agent stack, then follow the numbered steps.</text>
-        <!-- steps card -->
-        <rect x="86" y="138" width="272" height="58" rx="4" fill="#fff" stroke="#e0e0e4" stroke-width="0.5"/>
-        <text x="94" y="150" font-family="'Poppins',sans-serif" font-size="7" font-weight="600" fill="#222">Cursor</text>
-        <!-- step 1 -->
-        <circle cx="100" cy="163" r="5.5" fill="#f15d2f"/>
-        <text x="98" y="165.5" font-family="'Poppins',sans-serif" font-size="6" font-weight="600" fill="#fff">1</text>
-        <text x="110" y="165.5" font-family="'Poppins',sans-serif" font-size="6" font-weight="600" fill="#333">Prepare app for deployment</text>
-        <!-- step 2 -->
-        <circle cx="100" cy="177" r="5.5" fill="none" stroke="#f15d2f" stroke-width="0.8"/>
-        <text x="98" y="179.5" font-family="'Poppins',sans-serif" font-size="6" font-weight="600" fill="#f15d2f">2</text>
-        <text x="110" y="179.5" font-family="'Poppins',sans-serif" font-size="6" font-weight="500" fill="#666">Install Diode CLI</text>
-        <!-- step 3 -->
-        <circle cx="100" cy="191" r="5.5" fill="none" stroke="#f15d2f" stroke-width="0.8"/>
-        <text x="98" y="193.5" font-family="'Poppins',sans-serif" font-size="6" font-weight="600" fill="#f15d2f">3</text>
-        <text x="110" y="193.5" font-family="'Poppins',sans-serif" font-size="6" font-weight="500" fill="#666">Add this deploy tool to your vibe app</text>
-        <!-- MACBOOK PRO BASE -->
-        <rect x="14" y="210" width="372" height="3" rx="0.5" fill="#2a2a2e"/>
-        <path d="M14 213 L6 213 Q2 213 1 215 L0 221 Q0 224 3 224 L397 224 Q400 224 400 221 L399 215 Q398 213 394 213 L386 213 Z" fill="#26262a" stroke="#52525a" stroke-width="0.8"/>
-        <line x1="16" y1="213.5" x2="384" y2="213.5" stroke="#606068" stroke-width="0.3"/>
-        <path d="M160 213 Q160 215.5 163 215.5 L237 215.5 Q240 215.5 240 213" fill="#222226" stroke="#52525a" stroke-width="0.5"/>
-        <line x1="20" y1="221" x2="380" y2="221" stroke="#3a3a3e" stroke-width="0.3"/>
-        <circle cx="30" cy="224" r="1.5" fill="#222226"/>
-        <circle cx="370" cy="224" r="1.5" fill="#222226"/>
-        <ellipse cx="200" cy="228" rx="180" ry="3" fill="#000" opacity="0.08"/>
-      </svg>
+    <div class="hero-laptop">
+      <div class="hero-laptop-mp4-wrap" id="hero-vibe-video-open" role="button" tabindex="0" aria-label="Open video in larger player" aria-haspopup="dialog">
+        <video class="hero-laptop-video" src="{{ '/assets/video/diode-vibe-deploy-example-lp.mp4' | relative_url }}" autoplay muted loop playsinline aria-label="Diode Vibe deploy configuration screen recording"></video>
+      </div>
+      <div class="hero-laptop-png-wrap" aria-hidden="true">
+        <img class="hero-laptop-png" src="{{ '/assets/img/lps/laptop-outline.png' | relative_url }}" alt="" width="1854" height="1031" decoding="async" />
+      </div>
     </div>
   </div>
   <div class="collab-a-col-right">
@@ -204,6 +159,13 @@ body.page--collab-a h1.collab-a-title{font-size:30px}
       <span class="lp-tool-badge">VS Code</span>
       <span class="lp-tool-badge">Windsurf</span>
     </div>
+  </div>
+</div>
+
+<div class="lp-hero-video-modal" id="hero-vibe-video-modal" role="dialog" aria-modal="true" aria-label="Diode Vibe demo video" hidden>
+  <div class="lp-hero-video-modal__panel">
+    <button type="button" class="lp-hero-video-modal__close" aria-label="Close video"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg></button>
+    <video src="{{ '/assets/video/diode-vibe-deploy-example-lp.mp4' | relative_url }}" controls playsinline></video>
   </div>
 </div>
 
@@ -304,3 +266,49 @@ body.page--collab-a h1.collab-a-title{font-size:30px}
   </div>
 
 </div>
+
+<script>
+(function(){
+  var openEl=document.getElementById('hero-vibe-video-open');
+  var modal=document.getElementById('hero-vibe-video-modal');
+  if(!openEl||!modal)return;
+  var closeBtn=modal.querySelector('.lp-hero-video-modal__close');
+  var heroVideo=openEl.querySelector('video');
+  var modalVideo=modal.querySelector('video');
+  var lastFocus=null;
+  function openModal(){
+    lastFocus=document.activeElement;
+    modal.removeAttribute('hidden');
+    modal.classList.add('is-open');
+    document.body.style.overflow='hidden';
+    if(heroVideo&&modalVideo){
+      try{modalVideo.currentTime=heroVideo.currentTime;}catch(e){}
+      heroVideo.pause();
+    }
+    modalVideo.play().catch(function(){});
+    closeBtn.focus();
+  }
+  function closeModal(){
+    modal.classList.remove('is-open');
+    modal.setAttribute('hidden','');
+    document.body.style.overflow='';
+    modalVideo.pause();
+    if(heroVideo){heroVideo.play().catch(function(){});}
+    openEl.blur();
+    if(lastFocus&&typeof lastFocus.focus==='function'&&lastFocus!==openEl&&!openEl.contains(lastFocus)){
+      try{lastFocus.focus({focusVisible:false});}catch(_){lastFocus.focus();}
+    }
+    lastFocus=null;
+  }
+  openEl.addEventListener('click',function(e){e.preventDefault();openModal();});
+  openEl.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal();}
+  });
+  closeBtn.addEventListener('click',function(e){e.stopPropagation();closeModal();});
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&modal.classList.contains('is-open')){e.preventDefault();closeModal();}
+  });
+})();
+</script>
+
