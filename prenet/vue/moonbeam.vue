@@ -73,6 +73,7 @@ var Moonbeam = Vue.component("moonbeam", {
         "0x68e0bafdda9ef323f692fc080d612718c941d120": "as1",
         "0x1350d3b501d6842ed881b59de4b95b27372bfae8": "as2",
         "0x7102533b13b950c964efd346ee15041e3e55413f": "migration",
+        "0x16685ec02a1160dca36fcb54b9673b4ba547b26c": "console",
       },
       accounts: [],
       web3: new Web3("wss://moonbeam.api.onfinality.io/ws?apikey=49e8baf7-14c3-4d0f-916a-94abf1c4c14a")
