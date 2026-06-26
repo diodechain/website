@@ -89,11 +89,6 @@
                   </button>
                 </div>
               </div>
-
-              <div class="flex-col">
-                <span class="text-sm text-gray">Staked Tokens</span>
-                <span class="font-medium"><% formatAmount(stakedTokens) %> DIODE</span>
-              </div>
             </div>
             <div v-else class="not-enabled">
               <button class="button button-primary" v-on:click="enable()">Enable MetaMask</button>
@@ -133,7 +128,11 @@
               </select>
             </div>
 
-            <div v-if="contract" class="mt-4">
+            <div v-if="contract" class="mt-4 space-y">
+              <div class="flex-col">
+                <span class="text-sm text-gray">Staked Tokens</span>
+                <span class="font-medium"><% formatAmount(stakedTokens) %> DIODE</span>
+              </div>
               <div class="flex items-center" style="gap: 0.75rem; flex-wrap: wrap;">
                 <span class="text-sm text-gray">
                   Version:
@@ -803,6 +802,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
         this.loadFleetVersionInfo();
       } else {
         this.contract = null;
+        this.stakedTokens = "0";
         this.resetFleetVersionState();
       }
     },
