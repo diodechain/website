@@ -89,11 +89,6 @@
                   </button>
                 </div>
               </div>
-
-              <div class="flex-col">
-                <span class="text-sm text-gray">Staked Tokens</span>
-                <span class="font-medium"><% formatAmount(stakedTokens) %> DIODE</span>
-              </div>
             </div>
             <div v-else class="not-enabled">
               <button class="button button-primary" v-on:click="enable()">Enable MetaMask</button>
@@ -131,6 +126,37 @@
                   <% abbreviateAddress(c) %>
                 </option>
               </select>
+            </div>
+
+            <div v-if="contract" class="mt-4 space-y">
+              <div class="flex-col">
+                <span class="text-sm text-gray">Staked Tokens</span>
+                <span class="font-medium"><% formatAmount(stakedTokens) %> DIODE</span>
+              </div>
+              <div class="flex items-center" style="gap: 0.75rem; flex-wrap: wrap;">
+                <span class="text-sm text-gray">
+                  Version:
+                  <span v-if="fleetVersionLoading" class="loading-state">Loading</span>
+                  <span v-else-if="fleetVersion === 'legacy'" class="font-medium">Legacy</span>
+                  <span v-else class="font-medium"><% fleetVersion %></span>
+                </span>
+                <button
+                  v-if="canUpgradeFleet && !fleetVersionLoading"
+                  class="button button-primary"
+                  v-on:click="upgradeFleet()"
+                  :disabled="submitUpgrade"
+                >
+                  <span>Upgrade</span>
+                  <img
+                    v-show="submitUpgrade"
+                    class="btn-loading"
+                    src="images/spinning.gif"
+                  />
+                </button>
+              </div>
+              <p v-if="upgradeAvailableHint && !fleetVersionLoading" class="text-sm text-gray mt-2">
+                Upgrade available — only the fleet owner can upgrade.
+              </p>
             </div>
 
             <button
@@ -329,7 +355,14 @@ var FleetRegistration = Vue.component("fleet_registration", {
       tableHeight: 300,
       contractsCount: 100,
       diodeRegistryAddress: "0xD78653669fd3df4dF8F3141Ffa53462121d117a4",
-      fleetFactoryAddress: "0xa21D0a54dFee3Ff4B9f82959C09B538863744839"
+      fleetFactoryAddress: "0xa21D0a54dFee3Ff4B9f82959C09B538863744839",
+      fleetVersionLoading: false,
+      fleetVersion: null,
+      factoryVersion: null,
+      canUpgradeFleet: false,
+      upgradeAvailableHint: false,
+      submitUpgrade: false,
+      fleetProxyOwnerSlot: "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103"
     };
   },
 
@@ -554,6 +587,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
     onContractChange: function (event) {
       this.loadDevivesInMemory();
       this.getStakedTokens();
+      this.loadFleetVersionInfo();
     },
     addDevice: function (id, saveInStorage) {
       if (this.devices[id] || !MoonbeamWallet.web3().utils.isAddress(id)) return;
@@ -765,7 +799,218 @@ var FleetRegistration = Vue.component("fleet_registration", {
         this.contract = this.contracts[0];
         this.loadDevivesInMemory();
         this.getStakedTokens();
+        this.loadFleetVersionInfo();
+      } else {
+        this.contract = null;
+        this.stakedTokens = "0";
+        this.resetFleetVersionState();
       }
+    },
+    resetFleetVersionState: function () {
+      this.fleetVersionLoading = false;
+      this.fleetVersion = null;
+      this.factoryVersion = null;
+      this.canUpgradeFleet = false;
+      this.upgradeAvailableHint = false;
+    },
+    loadFleetVersionInfo: async function () {
+      this.resetFleetVersionState();
+      if (!this.contract || !this.account) {
+        return;
+      }
+
+      this.fleetVersionLoading = true;
+      try {
+        let fleetVersion;
+        try {
+          fleetVersion = await CallFleetAsync("Version", this.contract, []);
+          fleetVersion = parseInt(fleetVersion);
+          if (isNaN(fleetVersion)) {
+            throw new Error("invalid fleet version");
+          }
+          this.fleetVersion = fleetVersion;
+        } catch (versionError) {
+          this.fleetVersion = "legacy";
+          return;
+        }
+
+        let factoryImpl;
+        try {
+          factoryImpl = await CallFleetFactory("GetFleetContractImplementation", []);
+        } catch (factoryError) {
+          return;
+        }
+
+        let factoryVersion;
+        try {
+          factoryVersion = await CallFleetAsync("Version", factoryImpl, []);
+          factoryVersion = parseInt(factoryVersion);
+          if (isNaN(factoryVersion)) {
+            return;
+          }
+          this.factoryVersion = factoryVersion;
+        } catch (factoryVersionError) {
+          return;
+        }
+
+        let isProxyOwner = false;
+        try {
+          const storage = await MoonbeamWallet.web3().eth.getStorageAt(
+            this.contract,
+            this.fleetProxyOwnerSlot
+          );
+          const owner = MoonbeamWallet.web3().utils.toChecksumAddress(
+            "0x" + storage.slice(-40)
+          );
+          isProxyOwner = owner.toLowerCase() === this.account.toLowerCase();
+        } catch (ownerError) {
+          isProxyOwner = false;
+        }
+
+        const behind = fleetVersion < factoryVersion;
+        this.canUpgradeFleet = behind && isProxyOwner;
+        this.upgradeAvailableHint = behind && !isProxyOwner;
+      } finally {
+        this.fleetVersionLoading = false;
+      }
+    },
+    upgradeFleet: async function () {
+      if (!this.canUpgradeFleet || this.submitUpgrade) {
+        return;
+      }
+
+      if (!confirm(
+        "Upgrade fleet from version " + this.fleetVersion + " to " + this.factoryVersion + "?"
+      )) {
+        return;
+      }
+
+      this.submitUpgrade = true;
+
+      try {
+        try {
+          const networkId = await window.ethereum.request({ method: "net_version" });
+          if (networkId !== "1284") {
+            alert("Please switch to the Moonbeam network in MetaMask");
+            return;
+          }
+        } catch (networkErr) {
+        }
+
+        const implementation = await CallFleetFactory("GetFleetContractImplementation", []);
+        const methodAbi = proxyMethods["_proxy_set_target"];
+        if (!methodAbi) {
+          throw new Error("_proxy_set_target method not found in ABI definitions");
+        }
+
+        const methodCall = MoonbeamWallet.web3().eth.abi.encodeFunctionCall(
+          methodAbi,
+          [implementation]
+        );
+
+        const txParams = {
+          from: this.account,
+          to: this.contract,
+          data: methodCall,
+          gas: "200000"
+        };
+
+        try {
+          const gasEstimate = await window.ethereum.request({
+            method: "eth_estimateGas",
+            params: [txParams]
+          });
+          txParams.gas = gasEstimate;
+        } catch (gasError) {
+        }
+
+        const tx = await window.ethereum.request({
+          method: "eth_sendTransaction",
+          params: [txParams],
+        });
+
+        if (tx) {
+          alert("Fleet upgrade transaction submitted! It may take a few minutes to confirm.");
+          this.checkUpgradeTransactionStatusInBackground(tx);
+        } else {
+          throw new Error("Failed to submit transaction");
+        }
+      } catch (err) {
+        if (err.message && err.message.includes("connection not open")) {
+          alert("Network connection to Moonbeam is unavailable. Please check your internet connection and try again later.");
+        } else if (err.message && (err.message.includes("JsonRpcEngine") || err.message.includes("Internal JSON-RPC error"))) {
+          alert("Network issue detected. Your transaction may still be processed. Please wait a few minutes and check the fleet version again.");
+        } else if (err.message && err.message.includes("insufficient funds")) {
+          alert("Your account doesn't have enough funds to upgrade the fleet. You need some GLMR tokens in your account.");
+        } else if (err.message && err.message.includes("User denied")) {
+          alert("Transaction was rejected in your wallet. Please try again and approve the transaction.");
+        } else {
+          alert("Transaction failed: " + (err.message || "Unknown error") + ". Please try again later.");
+        }
+      } finally {
+        this.submitUpgrade = false;
+      }
+    },
+    checkUpgradeTransactionStatusInBackground: function (txHash) {
+      if (!this.backgroundChecks) {
+        this.backgroundChecks = {};
+      }
+
+      if (this.backgroundChecks[txHash]) {
+        return;
+      }
+
+      this.backgroundChecks[txHash] = true;
+
+      let checkCount = 0;
+      const maxChecks = 30;
+      let delay = 5000;
+
+      const checkReceipt = () => {
+        if (checkCount >= maxChecks) {
+          delete this.backgroundChecks[txHash];
+          return;
+        }
+
+        checkCount++;
+
+        setTimeout(() => {
+          MoonbeamWallet.web3().eth.getTransactionReceipt(txHash)
+            .then(receipt => {
+              if (receipt) {
+                if (receipt.status) {
+                  setTimeout(() => {
+                    this.loadFleetVersionInfo()
+                      .then(() => {
+                        alert("Fleet upgrade was successful!");
+                      })
+                      .catch(() => {
+                      });
+                  }, 5000);
+                } else {
+                  alert("Fleet upgrade failed on the blockchain. Please try again.");
+                }
+
+                delete this.backgroundChecks[txHash];
+              } else {
+                delay = Math.min(delay * 1.5, 60000);
+                setTimeout(checkReceipt, delay);
+              }
+            })
+            .catch(err => {
+              if (err.message && (
+                  err.message.includes("connection not open") ||
+                  err.message.includes("JsonRpcEngine"))) {
+                setTimeout(checkReceipt, 10000);
+              } else {
+                delay = Math.min(delay * 1.5, 60000);
+                setTimeout(checkReceipt, delay);
+              }
+            });
+        }, 0);
+      };
+
+      checkReceipt();
     },
     createFleet: async function () {
       this.submitFleet = true;
@@ -1373,6 +1618,7 @@ var FleetRegistration = Vue.component("fleet_registration", {
       this.getDiodeBalanceWithRetry();
       if (this.contract) {
         this.getStakedTokens();
+        this.loadFleetVersionInfo();
       }
     },
     getStakedTokens: async function() {

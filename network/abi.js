@@ -88,6 +88,27 @@ var fleetMethods = {
         }]
     },
 
+    "Version": {
+        name: "Version",
+        type: "function",
+        inputs: [],
+        outputs: [{
+            type: "uint256",
+            name: ""
+        }]
+    },
+
+}
+
+var proxyMethods = {
+    "_proxy_set_target": {
+        name: "_proxy_set_target",
+        type: "function",
+        inputs: [{
+            type: "address",
+            name: "_newtarget"
+        }]
+    },
 }
 
 var registryMethods = {
@@ -621,6 +642,15 @@ var fleetFactoryMethods = {
             type: "address",
             name: ""
         }]
+    },
+    "GetFleetContractImplementation": {
+        name: "GetFleetContractImplementation",
+        type: "function",
+        inputs: [],
+        outputs: [{
+            type: "address",
+            name: ""
+        }]
     }
 }
 
@@ -687,6 +717,10 @@ async function CallToken(name, args) {
 
 function CallFleet(name, to, args, callback) {
     call(fleetMethods[name], to, args, callback)
+}
+
+async function CallFleetAsync(name, to, args) {
+    return await callMoonbeam(fleetMethods[name], to, args);
 }
 
 async function CallFleetFactory(name, args) {
