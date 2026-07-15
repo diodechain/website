@@ -29,7 +29,7 @@
               <td>
                 <% acc.name %>
               </td>
-              <td><a :href="'https://moonscan.io/address/' + acc.address">
+              <td><a :href="'https://basescan.org/address/' + acc.address">
                   <% acc.address %>
                 </a></td>
               <td>
