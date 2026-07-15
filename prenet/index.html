@@ -40,6 +40,8 @@
     {% include_relative vue/dns.vue %}
     {% include_relative vue/dns_list.vue %}
     {% include_relative vue/dns_list_moonbeam.vue %}
+    {% include_relative vue/base.vue %}
+    {% include_relative vue/dns_list_base.vue %}
     {% include_relative vue/moonbeam.vue %}
     {% include_relative vue/dns_list_oasis.vue %}
     {% include_relative vue/oasis.vue %}
@@ -173,6 +175,11 @@
         },
         {
             name: false,
+            path: '/bdns',
+            component: BDNSList,
+        },
+        {
+            name: false,
             path: '/mdns',
             component: MDNSList,
         },
@@ -180,6 +187,11 @@
             name: false,
             path: '/moonbeam',
             component: Moonbeam,
+        },
+        {
+            name: false,
+            path: '/base',
+            component: Base,
         },
         {
             name: false,

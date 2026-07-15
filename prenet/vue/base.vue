@@ -1,8 +1,8 @@
-<template id="moonbeam">
+<template id="base">
   <div>
     <div class="title row">
       <div class="col-md-3 no-padding">
-        <h1>Moonbeam Accounts overview</h1>
+        <h1>Base Accounts overview</h1>
       </div>
     </div>
     <div class="page-content">
@@ -36,10 +36,10 @@
                 <% acc.nonce %>
               </td>
               <td v-if="parseFloat(acc.pbalance) >= 100">
-                <% acc.pbalance %> GLMR
+                <% acc.pbalance %> ETH
               </td>
               <td v-else style="color: red">
-                <% acc.pbalance %> GLMR
+                <% acc.pbalance %> ETH
               </td>
             </tr>
           </table>
@@ -59,8 +59,8 @@
   </div>
 </template>
 <script>
-var Moonbeam = Vue.component("moonbeam", {
-  template: document.getElementById("moonbeam").innerHTML,
+var Base = Vue.component("base", {
+  template: document.getElementById("base").innerHTML,
   delimiters: ["<%", "%>"],
   data: () => {
     return {
@@ -76,7 +76,7 @@ var Moonbeam = Vue.component("moonbeam", {
         "0x16685ec02a1160dca36fcb54b9673b4ba547b26c": "console",
       },
       accounts: [],
-      web3: new Web3("wss://moonbeam.api.onfinality.io/ws?apikey=49e8baf7-14c3-4d0f-916a-94abf1c4c14a")
+      web3: new Web3("wss://base.gateway.tenderly.co")
     };
   },
 
