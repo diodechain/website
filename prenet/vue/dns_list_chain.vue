@@ -132,7 +132,7 @@ var BDNSList = createChainDNSList({
 var MDNSList = createChainDNSList({
   componentName: "dns_list_mb",
   title: "Moonbeam Blockchain Name System",
-  rpcUrl: "wss://moonbeam.api.onfinality.io/ws?apikey=49e8baf7-14c3-4d0f-916a-94abf1c4c14a",
+  rpcUrl: "wss://eu-e84146e5.dedicated-rpc-nodes.com/api/ffef1787-e88a-48b2-97ba-c0959d79fb33",
   contractAddress: "0x8a093e3A83F63A00FFFC4729aa55482845a49294",
 });
 
