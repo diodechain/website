@@ -35,7 +35,7 @@
               <td>
                 <% acc.nonce %>
               </td>
-              <td v-if="(acc.balance + '').length == 21">
+              <td v-if="parseFloat(acc.pbalance) >= 100">
                 <% acc.pbalance %> ROSE
               </td>
               <td v-else style="color: red">
@@ -87,7 +87,7 @@ var Oasis = Vue.component("oasis", {
         balance: await this.web3.eth.getBalance(seed),
         nonce: await this.web3.eth.getTransactionCount(seed),
       }
-      node.pbalance = this.web3.utils.fromWei(node.balance, 'ether');
+      node.pbalance = parseFloat(this.web3.utils.fromWei(node.balance, 'ether')).toFixed(4);
       this.accounts.push(node);
     }
 

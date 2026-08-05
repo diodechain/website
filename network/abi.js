@@ -732,12 +732,45 @@ async function CallFleetFactory(name, args) {
     }
 }
 
-function NewWeb3(url) {
-    let options = {
-        clientConfig: { keepalive: true, keepaliveInterval: 60000 },
-        reconnect: { auto: true, delay: 5000, maxAttempts: 5, onTimeout: false }
+const WebsocketProviderOptions = {
+    clientConfig: { keepalive: true, keepaliveInterval: 60000 },
+    reconnect: { auto: true, delay: 5000, maxAttempts: 5, onTimeout: false }
+};
+
+// web3 1.x WebsocketProvider binds new listener refs on each add but removes the
+// unbound methods, so close handlers accumulate across reconnect/reset.
+function patchWebsocketProviderPrototype() {
+    let Proto = Web3.providers.WebsocketProvider.prototype;
+    if (Proto.__stableSocketListeners) return;
+    Proto.__stableSocketListeners = true;
+
+    Proto._addSocketListeners = function () {
+        if (!this.__stableHandlers) {
+            this._onMessage = this._onMessage.bind(this);
+            this._onConnect = this._onConnect.bind(this);
+            this._onClose = this._onClose.bind(this);
+            this.__stableHandlers = true;
+        }
+        this.connection.addEventListener('message', this._onMessage);
+        this.connection.addEventListener('open', this._onConnect);
+        this.connection.addEventListener('close', this._onClose);
     };
-    let provider = new Web3.providers.WebsocketProvider(url, options);
+
+    Proto._removeSocketListeners = function () {
+        if (!this.connection) return;
+        this.connection.removeEventListener('message', this._onMessage);
+        this.connection.removeEventListener('open', this._onConnect);
+        this.connection.removeEventListener('close', this._onClose);
+    };
+}
+
+function NewWebsocketProvider(url, options) {
+    patchWebsocketProviderPrototype();
+    return new Web3.providers.WebsocketProvider(url, options || WebsocketProviderOptions);
+}
+
+function NewWeb3(url) {
+    let provider = NewWebsocketProvider(url);
     let obj = new Web3(provider);
     obj.extend({
         property: 'eth',
