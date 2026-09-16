@@ -116,7 +116,7 @@ download:
     macos-legacy-checksum:
     macos-intel: "https://download.diode.io/downloads/collab/dDrive-1.22.10-intel.dmg"
     macos-intel-checksum:
-    windows: "https://download.diode.io/downloads/collab/dDrive-1.22.10.exe"
+    windows: "https://download.diode.io/downloads/collab/dDrive-1.22.12.exe"
     windows-checksum:
     linux: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.22.10-linux-x86_64.run"
     linux-checksum: fa59166349128722465510897fd7005de2140ff6
