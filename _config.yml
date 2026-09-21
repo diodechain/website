@@ -110,20 +110,20 @@ social:
 download:
   app:
     # Direct download URLs (same host as Windows/Linux); do not use collab.diode.io/download
-    macos-arm: "https://download.diode.io/downloads/collab/dDrive-1.22.10.dmg"
+    macos-arm: "https://download.diode.io/downloads/collab/dDrive-1.22.14.dmg"
     macos-arm-checksum:
     macos-legacy: "https://download.diode.io/downloads/collab/dDrive-1.17.29.dmg"
     macos-legacy-checksum:
-    macos-intel: "https://download.diode.io/downloads/collab/dDrive-1.22.10-intel.dmg"
+    macos-intel: "https://download.diode.io/downloads/collab/dDrive-1.22.14-intel.dmg"
     macos-intel-checksum:
-    windows: "https://download.diode.io/downloads/collab/dDrive-1.22.12.exe"
+    windows: "https://download.diode.io/downloads/collab/dDrive-1.22.14.exe"
     windows-checksum:
-    linux: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.22.10-linux-x86_64.run"
-    linux-checksum: fa59166349128722465510897fd7005de2140ff6
-    raspberry-pi: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.22.10-linux-arm32.run"
-    raspberry-pi-checksum: ce3709c534b801791a781cb794ce1cd64545a2ca
-    raspberry-pi-64: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.22.10-linux-arm64.run"
-    raspberry-pi-64-checksum: 3c0c4b9a3173c17d0c381dccc06ce8284abefc19
+    linux: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.22.14-linux-x86_64.run"
+    linux-checksum: 5f1fd03048d6775f9630ef5be0a36a7e179a4833
+    raspberry-pi: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.22.14-linux-arm32.run"
+    raspberry-pi-checksum: 471d1e51e08ec8f659b30dd4d6d63ed05faac3d1
+    raspberry-pi-64: "https://github.com/diodechain/diode_feedback/releases/download/v1.0.0/dDrive-1.22.14-linux-arm64.run"
+    raspberry-pi-64-checksum: 7f740c9932c56000118dd87b82ebdbf2d3e9bdc5
     ios: "https://apps.apple.com/us/app/diode-drive/id1605222443"
     ios-checksum:
     android: "https://play.google.com/store/apps/details?id=io.diode.drive"
